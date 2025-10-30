@@ -5,7 +5,7 @@ def execute():
 	fields = [
 		"courses",
 		"batches",
-		"certified_participants",
+		# "certified_participants",
 		"jobs",
 		"statistics",
 		"notifications",
