@@ -39,12 +39,11 @@
 						@input="updateCourses()"
 					/>
 					<div class="w-full lg:min-w-0 lg:w-32 xl:w-40">
-						<Select
-							v-if="categories.length"
-							v-model="currentCategory"
-							:options="categories"
+						<Link
+							doctype="LMS Category"
+							:value="currentCategory"
 							:placeholder="__('Category')"
-							@change="updateCourses()"
+							@change="(val) => { currentCategory = val; updateCourses() }"
 						/>
 					</div>
 				</div>
@@ -86,11 +85,12 @@ import {
 	call,
 	createListResource,
 	FormControl,
-	Select,
 	TabButtons,
 	usePageMeta,
 } from 'frappe-ui'
+import Link from '@/components/Controls/Link.vue'
 import { computed, inject, onMounted, ref, watch } from 'vue'
+import { useDebounceFn } from '@vueuse/core'
 import { Plus } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import { canCreateCourse } from '@/utils'
@@ -102,7 +102,6 @@ const user = inject('$user')
 const dayjs = inject('$dayjs')
 const start = ref(0)
 const pageLength = ref(30)
-const categories = ref([])
 const currentCategory = ref(null)
 const title = ref('')
 const certification = ref(false)
@@ -115,12 +114,6 @@ onMounted(() => {
 	setFiltersFromQuery()
 	updateCourses()
 	getCourseCount()
-	categories.value = [
-		{
-			label: '',
-			value: null,
-		},
-	]
 })
 
 const setFiltersFromQuery = () => {
@@ -136,20 +129,8 @@ const courses = createListResource({
 	cache: ['courses', user.data?.name],
 	pageLength: pageLength.value,
 	start: start.value,
-	onSuccess(data) {
-		setCategories(data)
-	},
+	auto: false,
 })
-
-const setCategories = (data) => {
-	let allCategories = data.map((course) => course.category)
-	allCategories = allCategories.filter(
-		(category, index) => allCategories.indexOf(category) === index && category
-	)
-	if (categories.value.length <= allCategories.length) {
-		updateCategories(data)
-	}
-}
 
 const isPersonaCaptured = async () => {
 	let persona = await call('frappe.client.get_single_value', {
@@ -182,13 +163,13 @@ const getCourseCount = () => {
 	})
 }
 
-const updateCourses = () => {
+const updateCourses = useDebounceFn(() => {
 	updateFilters()
 	courses.update({
 		filters: filters.value,
 	})
 	courses.reload()
-}
+}, 200)
 
 const updateFilters = () => {
 	updateCategoryFilter()
@@ -284,19 +265,6 @@ const setQueryParams = () => {
 	}
 
 	history.replaceState({}, '', `${location.pathname}${queryString}`)
-}
-
-const updateCategories = (data) => {
-	data.forEach((course) => {
-		if (
-			course.category &&
-			!categories.value.find((category) => category.value === course.category)
-		)
-			categories.value.push({
-				label: course.category,
-				value: course.category,
-			})
-	})
 }
 
 watch(currentTab, () => {

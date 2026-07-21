@@ -84,50 +84,47 @@
 									:data-chapter="chapter.name"
 								>
 									<template #item="{ element: lesson }">
-										<div
-											class="outline-lesson pl-8 py-2 pr-4 text-ink-gray-9"
+										<router-link
+											class="block outline-lesson pl-8 py-2 pr-4 text-ink-gray-9 focus:outline-none transition-colors"
 											:class="
-												isActiveLesson(lesson.number) ? 'bg-surface-gray-3' : ''
+												isActiveLesson(lesson.number) ? 'bg-surface-gray-3 font-medium' : 'hover:bg-surface-gray-2'
 											"
+											:to="{
+												name: allowEdit ? 'LessonForm' : 'Lesson',
+												params: {
+													courseName: courseName,
+													chapterNumber: lesson.number.split('.')[0],
+													lessonNumber: lesson.number.split('.')[1],
+												},
+											}"
 										>
-											<router-link
-												:to="{
-													name: allowEdit ? 'LessonForm' : 'Lesson',
-													params: {
-														courseName: courseName,
-														chapterNumber: lesson.number.split('.')[0],
-														lessonNumber: lesson.number.split('.')[1],
-													},
-												}"
-											>
-												<div class="flex items-center text-sm leading-5 group">
-													<MonitorPlay
-														v-if="lesson.icon === 'icon-youtube'"
-														class="h-4 w-4 stroke-1 mr-2"
-													/>
-													<HelpCircle
-														v-else-if="lesson.icon === 'icon-quiz'"
-														class="h-4 w-4 stroke-1 mr-2"
-													/>
-													<FileText
-														v-else-if="lesson.icon === 'icon-list'"
-														class="h-4 w-4 text-ink-gray-9 stroke-1 mr-2"
-													/>
-													{{ lesson.title }}
-													<Trash2
-														v-if="allowEdit"
-														@click.prevent="
-															trashLesson(lesson.name, chapter.name)
-														"
-														class="h-4 w-4 text-ink-red-3 ml-auto invisible group-hover:visible"
-													/>
-													<Check
-														v-if="lesson.is_complete"
-														class="h-4 w-4 text-green-700 ml-2"
-													/>
-												</div>
-											</router-link>
-										</div>
+											<div class="flex items-center text-sm leading-5 group">
+												<MonitorPlay
+													v-if="lesson.icon === 'icon-youtube'"
+													class="h-4 w-4 stroke-1 mr-2 shrink-0"
+												/>
+												<HelpCircle
+													v-else-if="lesson.icon === 'icon-quiz'"
+													class="h-4 w-4 stroke-1 mr-2 shrink-0"
+												/>
+												<FileText
+													v-else-if="lesson.icon === 'icon-list'"
+													class="h-4 w-4 text-ink-gray-9 stroke-1 mr-2 shrink-0"
+												/>
+												<span class="truncate">{{ lesson.title }}</span>
+												<Trash2
+													v-if="allowEdit"
+													@click.prevent="
+														trashLesson(lesson.name, chapter.name)
+													"
+													class="h-4 w-4 text-ink-red-3 ml-auto invisible group-hover:visible shrink-0"
+												/>
+												<Check
+													v-if="lesson.is_complete"
+													class="h-4 w-4 text-green-700 ml-auto shrink-0"
+												/>
+											</div>
+										</router-link>
 									</template>
 								</Draggable>
 								<div v-if="allowEdit" class="flex mt-2 mb-4 pl-8">

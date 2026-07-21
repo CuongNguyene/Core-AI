@@ -16,7 +16,8 @@
   "section_break_fywc",
   "source",
   "column_break_uuyv",
-  "watch_time"
+  "watch_time",
+  "duration"
  ],
  "fields": [
   {
@@ -97,6 +98,12 @@
    "in_list_view": 1,
    "label": "Watch Time",
    "reqd": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Duration"
   }
  ],
  "grid_page_length": 50,
