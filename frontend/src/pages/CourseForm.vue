@@ -235,26 +235,27 @@
 
 					<div class="px-5 md:px-10 pb-5 space-y-5 border-b">
 						<div class="text-lg font-semibold mt-5">
-							{{ __('Pricing and Certification') }}
+							<!-- {{ __('Pricing and Certification') }} -->
+							{{ __('Certification') }}
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-							<FormControl
+							<!-- <FormControl
 								type="checkbox"
 								v-model="course.paid_course"
 								:label="__('Paid Course')"
-							/>
+							/> -->
 							<FormControl
 								type="checkbox"
 								v-model="course.enable_certification"
 								:label="__('Completion Certificate')"
 							/>
-							<FormControl
+							<!-- <FormControl
 								type="checkbox"
 								v-model="course.paid_certificate"
 								:label="__('Paid Certificate')"
-							/>
+							/> -->
 						</div>
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+						<!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 							<div class="space-y-5">
 								<FormControl
 									v-if="course.paid_course || course.paid_certificate"
@@ -290,7 +291,7 @@
 									:placeholder="__('e.g. IST, UTC, GMT...')"
 								/>
 							</div>
-						</div>
+						</div> -->
 					</div>
 
 					<div class="px-5 md:px-10 pb-5 space-y-5">

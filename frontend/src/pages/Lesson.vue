@@ -262,6 +262,37 @@
 							/>
 						</div>
 					</div>
+
+					<!-- Reading Timer Bar -->
+					<div
+						v-if="lesson.data.membership && lesson.data.min_reading_time > 0 && !readingTimeMet"
+						class="mt-6 px-5"
+					>
+						<div class="flex items-center justify-between mb-1 text-sm text-ink-gray-5">
+							<span>{{ __('Reading time required') }}</span>
+							<span>{{ readingTimeElapsed }}s / {{ lesson.data.min_reading_time }}s</span>
+						</div>
+						<div class="w-full h-1.5 bg-surface-gray-3 rounded-full overflow-hidden">
+							<div
+								class="h-full bg-blue-500 rounded-full transition-all duration-1000"
+								:style="{ width: (readingTimeElapsed / lesson.data.min_reading_time * 100) + '%' }"
+							></div>
+						</div>
+					</div>
+
+					<!-- Completion Quiz -->
+					<div
+						v-if="lesson.data.completion_quiz && lesson.data.membership"
+						class="mt-8 px-5"
+					>
+						<div class="flex items-center gap-2 mb-4 pb-3 border-b">
+							<MessageCircleQuestion class="w-5 h-5 text-blue-500" />
+							<span class="font-semibold text-ink-gray-9">{{ __('Lesson Quiz') }}</span>
+							<span class="text-sm text-ink-gray-5">{{ __('(required to complete this lesson)') }}</span>
+						</div>
+						<QuizBlock :quiz="lesson.data.completion_quiz" />
+					</div>
+
 					<div
 						v-if="lesson.data"
 						class="mt-10 pb-20 pt-5 border-t px-5"
@@ -366,6 +397,7 @@ import {
 import { getEditorTools, enablePlyr, highlightText } from '@/utils'
 import { sessionStore } from '@/stores/session'
 import { useSidebar } from '@/stores/sidebar'
+import { useSettings } from '@/stores/settings'
 import EditorJS from '@editorjs/editorjs'
 import LessonContent from '@/components/LessonContent.vue'
 import CourseInstructors from '@/components/CourseInstructors.vue'
@@ -377,6 +409,7 @@ import CourseOutline from '@/components/CourseOutline.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
 import Notes from '@/components/Notes/Notes.vue'
 import InlineLessonMenu from '@/components/Notes/InlineLessonMenu.vue'
+import QuizBlock from '@/components/QuizBlock.vue'
 
 const user = inject('$user')
 const socket = inject('$socket')
@@ -392,8 +425,14 @@ const showStatsDialog = ref(false)
 const hasQuiz = ref(false)
 const discussionsContainer = ref(null)
 const timer = ref(0)
+const readingTimeElapsed = ref(0)
+const readingTimeMet = ref(false)
 const { brand } = sessionStore()
 const sidebarStore = useSidebar()
+const settingsStore = useSettings()
+const threshold = computed(
+	() => Number(settingsStore.videoCompletionThreshold?.data) || 90
+)
 const plyrSources = ref([])
 const showInlineMenu = ref(false)
 const currentTab = ref('Notes')
@@ -620,6 +659,8 @@ const resetLessonState = (newChapterNumber, newLessonNumber) => {
 	})
 	clearInterval(timerInterval)
 	timer.value = 0
+	readingTimeElapsed.value = 0
+	readingTimeMet.value = false
 }
 
 const trackVideoWatchDuration = () => {
@@ -637,10 +678,16 @@ const getVideoDetails = () => {
 	const videos = document.querySelectorAll('video')
 	if (videos.length > 0) {
 		videos.forEach((video) => {
-			if (video.currentTime == video.duration) markProgress()
+			if (video.duration > 0) {
+				const pct = (video.currentTime / video.duration) * 100
+				if (pct >= threshold.value) markProgress()
+			} else if (video.currentTime == video.duration) {
+				markProgress()
+			}
 			details.push({
 				source: video.src,
 				watch_time: video.currentTime,
+				duration: video.duration || 0,
 			})
 		})
 	}
@@ -650,14 +697,61 @@ const getVideoDetails = () => {
 const getPlyrSourceDetails = () => {
 	let details = []
 	plyrSources.value.forEach((source) => {
-		if (source.currentTime == source.duration) markProgress()
+		if (source.duration > 0) {
+			const pct = (source.currentTime / source.duration) * 100
+			if (pct >= threshold.value) markProgress()
+		} else if (source.currentTime == source.duration) {
+			markProgress()
+		}
 		let src = cleanYouTubeUrl(source.source)
 		details.push({
 			source: src,
 			watch_time: source.currentTime,
+			duration: source.duration || 0,
 		})
 	})
 	return details
+}
+
+const attachVideoProgressListeners = () => {
+	plyrSources.value.forEach((plyrSource) => {
+		plyrSource.on('timeupdate', () => {
+			if (plyrSource.duration > 0) {
+				const pct = (plyrSource.currentTime / plyrSource.duration) * 100
+				if (pct >= threshold.value) {
+					trackVideoWatchDuration()
+					markProgress()
+				}
+			}
+		})
+		plyrSource.on('pause', () => {
+			trackVideoWatchDuration()
+		})
+		plyrSource.on('ended', () => {
+			trackVideoWatchDuration()
+			markProgress()
+		})
+	})
+
+	const videos = document.querySelectorAll('video')
+	videos.forEach((vid) => {
+		vid.addEventListener('timeupdate', () => {
+			if (vid.duration > 0) {
+				const pct = (vid.currentTime / vid.duration) * 100
+				if (pct >= threshold.value) {
+					trackVideoWatchDuration()
+					markProgress()
+				}
+			}
+		})
+		vid.addEventListener('pause', () => {
+			trackVideoWatchDuration()
+		})
+		vid.addEventListener('ended', () => {
+			trackVideoWatchDuration()
+			markProgress()
+		})
+	})
 }
 
 const cleanYouTubeUrl = (url) => {
@@ -683,6 +777,7 @@ const getPlyrSource = async () => {
 		plyrSources.value = await enablePlyr()
 	}
 	updateVideoWatchDuration()
+	attachVideoProgressListeners()
 }
 
 const updateVideoWatchDuration = () => {
@@ -731,9 +826,15 @@ const updateVideoTime = (video) => {
 }
 
 const startTimer = () => {
-	let timerInterval = setInterval(() => {
+	readingTimeElapsed.value = 0
+	readingTimeMet.value = false
+	clearInterval(timerInterval)
+	timerInterval = setInterval(() => {
 		timer.value++
-		if (timer.value == 30) {
+		const minTime = lesson.data?.min_reading_time || 30
+		readingTimeElapsed.value = Math.min(timer.value, minTime)
+		if (timer.value >= minTime) {
+			readingTimeMet.value = true
 			clearInterval(timerInterval)
 			markProgress()
 		}

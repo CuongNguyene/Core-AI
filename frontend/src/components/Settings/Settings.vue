@@ -130,6 +130,13 @@ const tabsStructure = computed(() => {
 							type: 'Column Break',
 						},
 						{
+							label: 'Video Completion Threshold (%)',
+							name: 'video_completion_threshold',
+							type: 'number',
+							description:
+								'Minimum watch percentage (0-100%) required to mark video lessons as completed',
+						},
+						{
 							label: 'Livecode URL',
 							name: 'livecode_url',
 							doctype: 'Livecode URL',
