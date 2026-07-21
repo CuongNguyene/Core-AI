@@ -77,7 +77,7 @@ import Evaluators from '@/components/Settings/Evaluators.vue'
 import Categories from '@/components/Settings/Categories.vue'
 import EmailTemplates from '@/components/Settings/EmailTemplates.vue'
 import BrandSettings from '@/components/Settings/BrandSettings.vue'
-import PaymentGateways from '@/components/Settings/PaymentGateways.vue'
+//import PaymentGateways from '@/components/Settings/PaymentGateways.vue'
 import Transactions from '@/components/Settings/Transactions.vue'
 import ZoomSettings from '@/components/Settings/ZoomSettings.vue'
 import Badges from '@/components/Settings/Badges.vue'
@@ -180,61 +180,61 @@ const tabsStructure = computed(() => {
 				},
 			],
 		},
-		{
-			label: 'Payment',
-			hideLabel: false,
-			items: [
-				{
-					label: 'Configuration',
-					icon: 'CreditCard',
-					description: 'Manage all your payment related settings and defaults',
-					fields: [
-						{
-							label: 'Default Currency',
-							name: 'default_currency',
-							type: 'Link',
-							doctype: 'Currency',
-						},
-						{
-							label: 'Payment Gateway',
-							name: 'payment_gateway',
-							type: 'Link',
-							doctype: 'Payment Gateway',
-						},
-						{
-							type: 'Column Break',
-						},
-						{
-							label: 'Apply GST for India',
-							name: 'apply_gst',
-							type: 'checkbox',
-						},
-						{
-							label: 'Show USD equivalent amount',
-							name: 'show_usd_equivalent',
-							type: 'checkbox',
-						},
-						{
-							label: 'Apply rounding on equivalent',
-							name: 'apply_rounding',
-							type: 'checkbox',
-						},
-					],
-				},
-				{
-					label: 'Gateways',
-					icon: 'DollarSign',
-					template: markRaw(PaymentGateways),
-					description: 'Add and manage all your payment gateways',
-				},
-				{
-					label: 'Transactions',
-					icon: 'Landmark',
-					template: markRaw(Transactions),
-					description: 'View all your payment transactions',
-				},
-			],
-		},
+		// {
+		// 	label: 'Payment',
+		// 	hideLabel: false,
+		// 	items: [
+		// 		{
+		// 			label: 'Configuration',
+		// 			icon: 'CreditCard',
+		// 			description: 'Manage all your payment related settings and defaults',
+		// 			fields: [
+		// 				{
+		// 					label: 'Default Currency',
+		// 					name: 'default_currency',
+		// 					type: 'Link',
+		// 					doctype: 'Currency',
+		// 				},
+		// 				{
+		// 					label: 'Payment Gateway',
+		// 					name: 'payment_gateway',
+		// 					type: 'Link',
+		// 					doctype: 'Payment Gateway',
+		// 				},
+		// 				{
+		// 					type: 'Column Break',
+		// 				},
+		// 				{
+		// 					label: 'Apply GST for India',
+		// 					name: 'apply_gst',
+		// 					type: 'checkbox',
+		// 				},
+		// 				{
+		// 					label: 'Show USD equivalent amount',
+		// 					name: 'show_usd_equivalent',
+		// 					type: 'checkbox',
+		// 				},
+		// 				{
+		// 					label: 'Apply rounding on equivalent',
+		// 					name: 'apply_rounding',
+		// 					type: 'checkbox',
+		// 				},
+		// 			],
+		// 		},
+		// 		{
+		// 			label: 'Gateways',
+		// 			icon: 'DollarSign',
+		// 			template: markRaw(PaymentGateways),
+		// 			description: 'Add and manage all your payment gateways',
+		// 		},
+		// 		{
+		// 			label: 'Transactions',
+		// 			icon: 'Landmark',
+		// 			template: markRaw(Transactions),
+		// 			description: 'View all your payment transactions',
+		// 		},
+		// 	],
+		// },
 		{
 			label: 'Lists',
 			hideLabel: false,
@@ -327,11 +327,11 @@ const tabsStructure = computed(() => {
 							name: 'batches',
 							type: 'checkbox',
 						},
-						{
-							label: 'Programming Exercises',
-							name: 'programming_exercises',
-							type: 'checkbox',
-						},
+						// {
+						// 	label: 'Programming Exercises',
+						// 	name: 'programming_exercises',
+						// 	type: 'checkbox',
+						// },
 						{
 							label: 'Certifications',
 							name: 'certifications',
@@ -340,11 +340,11 @@ const tabsStructure = computed(() => {
 						{
 							type: 'Column Break',
 						},
-						{
-							label: 'Jobs',
-							name: 'jobs',
-							type: 'checkbox',
-						},
+						// {
+						// 	label: 'Jobs',
+						// 	name: 'jobs',
+						// 	type: 'checkbox',
+						// },
 						{
 							label: 'Statistics',
 							name: 'statistics',

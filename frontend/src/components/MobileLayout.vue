@@ -142,7 +142,7 @@ watch(userResource, () => {
 		isInstructor.value = userResource.data.is_instructor
 		addPrograms()
 		if (isModerator.value || isInstructor.value) {
-			addProgrammingExercises()
+			// addProgrammingExercises()
 			addQuizzes()
 			addAssignments()
 		}
@@ -165,13 +165,13 @@ const addAssignments = () => {
 	})
 }
 
-const addProgrammingExercises = () => {
-	otherLinks.value.push({
-		label: 'Programming Exercises',
-		icon: 'Code',
-		to: 'ProgrammingExercises',
-	})
-}
+// const addProgrammingExercises = () => {
+// 	otherLinks.value.push({
+// 		label: 'Programming Exercises',
+// 		icon: 'Code',
+// 		to: 'ProgrammingExercises',
+// 	})
+// }
 
 const addPrograms = async () => {
 	let canAddProgram = await checkIfCanAddProgram()

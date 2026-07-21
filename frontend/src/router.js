@@ -101,17 +101,17 @@ const routes = [
 			},
 		],
 	},
-	{
-		path: '/job-openings',
-		name: 'Jobs',
-		component: () => import('@/pages/Jobs.vue'),
-	},
-	{
-		path: '/job-openings/:job',
-		name: 'JobDetail',
-		component: () => import('@/pages/JobDetail.vue'),
-		props: true,
-	},
+	// {
+	// 	path: '/job-openings',
+	// 	name: 'Jobs',
+	// 	component: () => import('@/pages/Jobs.vue'),
+	// },
+	// {
+	// 	path: '/job-openings/:job',
+	// 	name: 'JobDetail',
+	// 	component: () => import('@/pages/JobDetail.vue'),
+	// 	props: true,
+	// },
 	{
 		path: '/courses/:courseName/edit',
 		name: 'CourseForm',
@@ -213,29 +213,33 @@ const routes = [
 		name: 'PersonaForm',
 		component: () => import('@/pages/PersonaForm.vue'),
 	},
+	// {
+	// 	path: '/programming-exercises',
+	// 	name: 'ProgrammingExercises',
+	// 	component: () =>
+	// 		import('@/pages/ProgrammingExercises/ProgrammingExercises.vue'),
+	// },
+	// {
+	// 	path: '/programming-exercises/submissions',
+	// 	name: 'ProgrammingExerciseSubmissions',
+	// 	component: () =>
+	// 		import(
+	// 			'@/pages/ProgrammingExercises/ProgrammingExerciseSubmissions.vue'
+	// 		),
+	// 	props: true,
+	// },
+	// {
+	// 	path: '/programming-exercises/:exerciseID/submission/:submissionID',
+	// 	name: 'ProgrammingExerciseSubmission',
+	// 	component: () =>
+	// 		import(
+	// 			'@/pages/ProgrammingExercises/ProgrammingExerciseSubmission.vue'
+	// 		),
+	// 	props: true,
 	{
-		path: '/programming-exercises',
-		name: 'ProgrammingExercises',
-		component: () =>
-			import('@/pages/ProgrammingExercises/ProgrammingExercises.vue'),
-	},
-	{
-		path: '/programming-exercises/submissions',
-		name: 'ProgrammingExerciseSubmissions',
-		component: () =>
-			import(
-				'@/pages/ProgrammingExercises/ProgrammingExerciseSubmissions.vue'
-			),
-		props: true,
-	},
-	{
-		path: '/programming-exercises/:exerciseID/submission/:submissionID',
-		name: 'ProgrammingExerciseSubmission',
-		component: () =>
-			import(
-				'@/pages/ProgrammingExercises/ProgrammingExerciseSubmission.vue'
-			),
-		props: true,
+		path: '/:pathMatch(.*)*',
+		name: 'NotFound',
+		component: () => import('@/pages/NotFound.vue'),
 	},
 ]
 

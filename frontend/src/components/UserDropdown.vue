@@ -118,12 +118,12 @@ watch(
 	}
 )
 
-const toggleTheme = () => {
-	const currentTheme = document.documentElement.getAttribute('data-theme')
-	theme.value = currentTheme === 'dark' ? 'light' : 'dark'
-	document.documentElement.setAttribute('data-theme', theme.value)
-	localStorage.setItem('theme', theme.value)
-}
+// const toggleTheme = () => {
+// 	const currentTheme = document.documentElement.getAttribute('data-theme')
+// 	theme.value = currentTheme === 'dark' ? 'light' : 'dark'
+// 	document.documentElement.setAttribute('data-theme', theme.value)
+// 	localStorage.setItem('theme', theme.value)
+// }
 
 const userDropdownOptions = computed(() => {
 	return [
@@ -140,24 +140,13 @@ const userDropdownOptions = computed(() => {
 						return isLoggedIn
 					},
 				},
-				{
-					icon: theme.value === 'light' ? Moon : Sun,
-					label: 'Toggle Theme',
-					onClick: () => {
-						toggleTheme()
-					},
-				},
-				{
-					component: markRaw(Apps),
-					condition: () => {
-						let cookies = new URLSearchParams(
-							document.cookie.split('; ').join('&')
-						)
-						let system_user = cookies.get('system_user')
-						if (system_user === 'yes') return true
-						else return false
-					},
-				},
+				// {
+				// 	icon: theme.value === 'light' ? Moon : Sun,
+				// 	label: 'Toggle Theme',
+				// 	onClick: () => {
+				// 		toggleTheme()
+				// 	},
+				// },
 				{
 					icon: Settings,
 					label: 'Settings',
