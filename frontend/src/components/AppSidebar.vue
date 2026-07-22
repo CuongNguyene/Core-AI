@@ -183,16 +183,7 @@ const setSidebarLinks = () => {
 
 const unreadNotifications = createResource({
 	cache: 'Unread Notifications Count',
-	url: 'frappe.client.get_count',
-	makeParams(values) {
-		return {
-			doctype: 'Notification Log',
-			filters: {
-				for_user: user,
-				read: 0,
-			},
-		}
-	},
+	url: 'lms.lms.api.get_unread_notification_count',
 	onSuccess(data) {
 		unreadCount.value = data
 		sidebarLinks.value = sidebarLinks.value.map((link) => {

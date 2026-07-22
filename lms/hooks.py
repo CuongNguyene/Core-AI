@@ -75,9 +75,9 @@ setup_wizard_requires = "assets/lms/js/setup_wizard.js"
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+	"LMS Notification": "lms.lms.doctype.lms_notification.lms_notification.get_permission_query_conditions",
+}
 #
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
@@ -102,7 +102,6 @@ doc_events = {
 		]
 	},
 	"Discussion Reply": {"after_insert": "lms.lms.utils.handle_notifications"},
-	"Notification Log": {"on_change": "lms.lms.utils.publish_notifications"},
 	"User": {
 		"validate": "lms.lms.user.validate_username_duplicates",
 		"after_insert": "lms.lms.user.after_insert",

@@ -91,7 +91,7 @@ const notifications = computed(() => {
 })
 
 const unReadNotifications = createListResource({
-	doctype: 'Notification Log',
+	doctype: 'LMS Notification',
 	url: 'lms.lms.api.get_notifications',
 	filters: {
 		for_user: user.data?.name,
@@ -102,7 +102,7 @@ const unReadNotifications = createListResource({
 })
 
 const readNotifications = createListResource({
-	doctype: 'Notification Log',
+	doctype: 'LMS Notification',
 	url: 'lms.lms.api.get_notifications',
 	filters: {
 		for_user: user.data?.name,

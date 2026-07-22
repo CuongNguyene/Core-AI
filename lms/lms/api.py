@@ -651,7 +651,7 @@ def get_all_users():
 
 @frappe.whitelist()
 def mark_as_read(name):
-	doc = frappe.get_doc("Notification Log", name)
+	doc = frappe.get_doc("LMS Notification", name)
 	doc.read = 1
 	doc.save(ignore_permissions=True)
 
@@ -659,7 +659,7 @@ def mark_as_read(name):
 @frappe.whitelist()
 def mark_all_as_read():
 	notifications = frappe.get_all(
-		"Notification Log", {"for_user": frappe.session.user, "read": 0}, pluck="name"
+		"LMS Notification", {"for_user": frappe.session.user, "read": 0}, pluck="name"
 	)
 
 	for notification in notifications:
@@ -1454,7 +1454,7 @@ def get_week_difference(start_date, current_date):
 @frappe.whitelist()
 def get_notifications(filters):
 	notifications = frappe.get_all(
-		"Notification Log",
+		"LMS Notification",
 		filters,
 		["subject", "from_user", "link", "read", "name"],
 		order_by="creation desc",
@@ -1467,6 +1467,11 @@ def get_notifications(filters):
 		notification.update(from_user_details)
 
 	return notifications
+
+
+@frappe.whitelist()
+def get_unread_notification_count():
+	return frappe.db.count("LMS Notification", {"for_user": frappe.session.user, "read": 0})
 
 
 @frappe.whitelist(allow_guest=True)
