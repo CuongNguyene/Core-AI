@@ -48,12 +48,12 @@
 				{{ formatTime(batch.data.end_time) }}
 			</span>
 		</div>
-		<div v-if="batch.data.timezone" class="flex items-center text-ink-gray-7">
+		<!-- <div v-if="batch.data.timezone" class="flex items-center text-ink-gray-7">
 			<Globe class="h-4 w-4 stroke-1.5 mr-2" />
 			<span>
 				{{ batch.data.timezone }}
 			</span>
-		</div>
+		</div> -->
 		<div v-if="!readOnlyMode">
 			<router-link
 				v-if="canAccessBatch"

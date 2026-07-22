@@ -131,7 +131,7 @@
 							{{ formatTime(batch.data.end_time) }}
 						</span>
 					</div>
-					<div
+					<!-- <div
 						v-if="batch.data.timezone"
 						class="flex items-center mb-3 text-ink-gray-7"
 					>
@@ -139,7 +139,7 @@
 						<span>
 							{{ batch.data.timezone }}
 						</span>
-					</div>
+					</div> -->
 				</div>
 				<div v-if="dayjs().isSameOrAfter(dayjs(batch.data.start_date))">
 					<div class="text-ink-gray-7 font-semibold mb-2">

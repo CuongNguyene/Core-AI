@@ -19,10 +19,10 @@
 								@click="() => togglePopover()"
 								:disabled="attrs.readonly"
 							>
-								<div class="flex items-center">
+								<div class="flex items-center min-w-0 flex-1">
 									<slot name="prefix" />
 									<span
-										class="overflow-hidden text-ellipsis whitespace-nowrap text-base leading-5"
+										class="overflow-hidden text-ellipsis whitespace-nowrap text-base leading-5 min-w-0"
 										v-if="selectedValue"
 									>
 										{{ displayValue(selectedValue) }}
@@ -31,7 +31,7 @@
 										{{ placeholder || '' }}
 									</span>
 								</div>
-								<ChevronDown class="h-4 w-4 stroke-1.5" />
+								<ChevronDown class="h-4 w-4 stroke-1.5 flex-shrink-0" />
 							</button>
 						</div>
 					</slot>

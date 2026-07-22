@@ -121,9 +121,14 @@ watchDebounced(
 	{ debounce: 300, immediate: true }
 )
 
+watchDebounced(
+	() => props.filters,
+	() => reload(text.value),
+	{ debounce: 300, deep: true }
+)
+
 const options = createResource({
 	url: 'frappe.desk.search.search_link',
-	cache: [props.doctype, text.value],
 	method: 'POST',
 	auto: true,
 	params: {

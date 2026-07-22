@@ -42,7 +42,7 @@
 					{{ formatTime(batch.start_time) }} - {{ formatTime(batch.end_time) }}
 				</span>
 			</div>
-			<div
+			<!-- <div
 				v-if="batch.timezone"
 				class="flex items-center text-sm text-ink-gray-7"
 			>
@@ -50,7 +50,7 @@
 				<span>
 					{{ batch.timezone }}
 				</span>
-			</div>
+			</div> -->
 		</div>
 		<div
 			v-if="batch.instructors?.length"
