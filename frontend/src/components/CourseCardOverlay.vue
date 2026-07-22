@@ -34,7 +34,7 @@
 							</span>
 						</Button>
 					</router-link>
-					<!-- <CertificationLinks :courseName="course.data.name" class="w-full" /> -->
+					<CertificationLinks :courseName="course.data.name" class="w-full" />
 				</div>
 				<!-- <router-link
 					v-else-if="course.data.paid_course"
@@ -76,7 +76,7 @@
 						{{ __('Start Learning') }}
 					</span>
 				</Button>
-				<!-- <Button
+				<Button
 					v-if="canGetCertificate"
 					@click="fetchCertificate()"
 					variant="subtle"
@@ -87,7 +87,7 @@
 						<GraduationCap class="size-4 stroke-1.5" />
 					</template>
 					{{ __('Get Certificate') }}
-				</Button> -->
+				</Button>
 				<Button
 					v-if="user.data?.is_moderator || is_instructor()"
 					class="w-full mt-2"
@@ -147,7 +147,7 @@
 						{{ course.data.rating }} {{ __('Rating') }}
 					</span>
 				</div>
-				<!-- <div
+				<div
 					v-if="course.data.enable_certification"
 					class="flex items-center font-semibold text-ink-gray-9"
 				>
@@ -155,7 +155,7 @@
 					<span class="ml-2">
 						{{ __('Certificate of Completion') }}
 					</span>
-				</div> -->
+				</div>
 				<!-- <div
 					v-if="course.data.paid_certificate"
 					class="flex items-center font-semibold text-ink-gray-9"
@@ -191,7 +191,7 @@ import { Badge, Button, call, createResource, toast } from 'frappe-ui'
 import { formatAmount } from '@/utils/'
 import { capture } from '@/telemetry'
 import { useRouter } from 'vue-router'
-// import CertificationLinks from '@/components/CertificationLinks.vue'
+import CertificationLinks from '@/components/CertificationLinks.vue'
 import CourseProgressSummary from '@/components/Modals/CourseProgressSummary.vue'
 
 const router = useRouter()
@@ -256,39 +256,39 @@ const is_instructor = () => {
 	return user_is_instructor
 }
 
-// const canGetCertificate = computed(() => {
-// 	if (
-// 		props.course.data?.enable_certification &&
-// 		props.course.data?.membership?.progress == 100
-// 	) {
-// 		return true
-// 	}
-// 	return false
-// })
+const canGetCertificate = computed(() => {
+	if (
+		props.course.data?.enable_certification &&
+		props.course.data?.membership?.progress == 100
+	) {
+		return true
+	}
+	return false
+})
 
-// const certificate = createResource({
-// 	url: 'lms.lms.doctype.lms_certificate.lms_certificate.create_certificate',
-// 	makeParams(values) {
-// 		return {
-// 			course: values.course,
-// 		}
-// 	},
-// 	onSuccess(data) {
-// 		window.open(
-// 			`/api/method/frappe.utils.print_format.download_pdf?doctype=LMS+Certificate&name=${
-// 				data.name
-// 			}&format=${encodeURIComponent(data.template)}`,
-// 			'_blank'
-// 		)
-// 	},
-// })
+const certificate = createResource({
+	url: 'lms.lms.doctype.lms_certificate.lms_certificate.create_certificate',
+	makeParams(values) {
+		return {
+			course: values.course,
+		}
+	},
+	onSuccess(data) {
+		window.open(
+			`/api/method/frappe.utils.print_format.download_pdf?doctype=LMS+Certificate&name=${
+				data.name
+			}&format=${encodeURIComponent(data.template)}`,
+			'_blank'
+		)
+	},
+})
 
-// const fetchCertificate = () => {
-// 	certificate.submit({
-// 		course: props.course.data?.name,
-// 		member: user.data?.name,
-// 	})
-// }
+const fetchCertificate = () => {
+	certificate.submit({
+		course: props.course.data?.name,
+		member: user.data?.name,
+	})
+}
 
 const showProgressSummary = () => {
 	showProgressModal.value = true

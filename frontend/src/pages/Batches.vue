@@ -43,12 +43,11 @@
 						@input="updateBatches()"
 					/>
 					<div class="min-w-40 lg:min-w-0 lg:w-32 xl:w-40">
-						<Select
-							v-if="categories.length"
-							v-model="currentCategory"
-							:options="categories"
+						<Link
+							doctype="LMS Category"
+							:value="currentCategory"
 							:placeholder="__('Category')"
-							@change="updateBatches()"
+							@change="(val) => { currentCategory = val; updateBatches() }"
 						/>
 					</div>
 				</div>
@@ -88,13 +87,12 @@
 import {
 	Breadcrumbs,
 	Button,
-	call,
 	createListResource,
 	FormControl,
-	Select,
 	TabButtons,
 	usePageMeta,
 } from 'frappe-ui'
+import Link from '@/components/Controls/Link.vue'
 import { computed, inject, onMounted, ref, watch } from 'vue'
 import { Plus } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
