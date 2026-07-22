@@ -102,7 +102,8 @@
 					<FormControl
 						v-else
 						:key="field.name"
-						v-model="data[field.name]"
+						v-model="field.value"
+						@update:modelValue="(val) => (data[field.name] = val)"
 						:label="__(field.label)"
 						:type="field.type"
 						:rows="field.rows"
@@ -145,6 +146,7 @@ const columns = computed(() => {
 				currentColumn = []
 			}
 		} else {
+			field.value = props.data[field.name]
 			if (field.type == 'checkbox') {
 				field.value = props.data[field.name] ? true : false
 			}

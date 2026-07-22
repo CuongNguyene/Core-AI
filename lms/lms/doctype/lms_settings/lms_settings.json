@@ -12,6 +12,7 @@
   "column_break_zdel",
   "allow_guest_access",
   "prevent_skipping_videos",
+  "video_completion_threshold",
   "column_break_bjis",
   "unsplash_access_key",
   "livecode_url",
@@ -403,6 +404,13 @@
    "fieldname": "prevent_skipping_videos",
    "fieldtype": "Check",
    "label": "Prevent Skipping Videos"
+  },
+  {
+   "default": "90",
+   "description": "Minimum watch percentage (0-100%) required to mark video lessons as completed",
+   "fieldname": "video_completion_threshold",
+   "fieldtype": "Int",
+   "label": "Video Completion Threshold (%)"
   },
   {
    "fieldname": "column_break_bjis",

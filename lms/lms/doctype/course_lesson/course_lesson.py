@@ -7,6 +7,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.realtime import get_website_room
+from frappe.utils import flt
 from frappe.utils.telemetry import capture
 
 from lms.lms.utils import get_course_progress
@@ -65,11 +66,12 @@ def save_progress(lesson, course, scorm_details=None):
 
 	quiz_completed = get_quiz_progress(lesson)
 	assignment_completed = get_assignment_progress(lesson)
+	video_completed = get_video_progress(lesson)
 
 	if scorm_details:
 		scorm_details = frappe._dict(**scorm_details)
 
-	if not progress_already_exists and quiz_completed and assignment_completed and not scorm_details:
+	if not progress_already_exists and quiz_completed and assignment_completed and video_completed and not scorm_details:
 		frappe.get_doc(
 			{
 				"doctype": "LMS Course Progress",
@@ -127,7 +129,9 @@ def capture_progress_for_analytics(progress, course):
 
 
 def get_quiz_progress(lesson):
-	lesson_details = frappe.db.get_value("Course Lesson", lesson, ["body", "content"], as_dict=1)
+	lesson_details = frappe.db.get_value(
+		"Course Lesson", lesson, ["body", "content", "completion_quiz"], as_dict=1
+	)
 	quizzes = []
 
 	if lesson_details.content:
@@ -145,6 +149,10 @@ def get_quiz_progress(lesson):
 	elif lesson_details.body:
 		macros = find_macros(lesson_details.body)
 		quizzes = [value for name, value in macros if name == "Quiz"]
+
+	# Mandatory completion quiz
+	if lesson_details.completion_quiz:
+		quizzes.append(lesson_details.completion_quiz)
 
 	for quiz in quizzes:
 		passing_percentage = frappe.db.get_value("LMS Quiz", quiz, "passing_percentage")
@@ -187,3 +195,47 @@ def get_assignment_progress(lesson):
 @frappe.whitelist()
 def get_lesson_info(chapter):
 	return frappe.db.get_value("Course Chapter", chapter, "course")
+
+
+def get_video_progress(lesson):
+	lesson_details = frappe.db.get_value("Course Lesson", lesson, ["body", "content"], as_dict=1)
+	if not lesson_details:
+		return True
+
+	has_video = False
+	if lesson_details.content:
+		content = json.loads(lesson_details.content)
+		for block in content.get("blocks", []):
+			if block.get("type") in ["upload", "embed"]:
+				has_video = True
+				break
+	elif lesson_details.body:
+		macros = find_macros(lesson_details.body)
+		videos = [value for name, value in macros if name in ["YouTubeVideo", "Video"]]
+		if videos:
+			has_video = True
+
+	if not has_video:
+		return True
+
+	threshold = flt(frappe.db.get_single_value("LMS Settings", "video_completion_threshold") or 90)
+
+	records = frappe.get_all(
+		"LMS Video Watch Duration",
+		filters={"lesson": lesson, "member": frappe.session.user},
+		fields=["watch_time", "duration"],
+	)
+	if not records:
+		return False
+
+	for rec in records:
+		watch_time = flt(rec.get("watch_time"))
+		duration = flt(rec.get("duration"))
+		if duration > 0:
+			pct = (watch_time / duration) * 100
+			if pct >= threshold:
+				return True
+		elif watch_time > 0 and threshold == 0:
+			return True
+
+	return False

@@ -21,6 +21,13 @@ export const useSettings = defineStore('settings', () => {
 		cache: ['preventSkippingVideos'],
 	})
 
+	const videoCompletionThreshold = createResource({
+		url: 'lms.lms.api.get_lms_setting',
+		params: { field: 'video_completion_threshold' },
+		auto: true,
+		cache: ['videoCompletionThreshold'],
+	})
+
 	const contactUsEmail = createResource({
 		url: 'lms.lms.api.get_lms_setting',
 		params: { field: 'contact_us_email' },
@@ -46,6 +53,7 @@ export const useSettings = defineStore('settings', () => {
 		activeTab,
 		allowGuestAccess,
 		preventSkippingVideos,
+		videoCompletionThreshold,
 		contactUsEmail,
 		contactUsURL,
 		sidebarSettings,

@@ -24,6 +24,10 @@
   "youtube",
   "column_break_9",
   "quiz_id",
+  "section_break_reading",
+  "min_reading_time",
+  "column_break_reading",
+  "completion_quiz",
   "section_break_16",
   "question",
   "column_break_15",
@@ -103,6 +107,29 @@
    "fieldname": "youtube",
    "fieldtype": "Data",
    "label": "YouTube Video URL"
+  },
+  {
+   "fieldname": "section_break_reading",
+   "fieldtype": "Section Break",
+   "label": "Reading Completion Settings"
+  },
+  {
+   "default": "0",
+   "description": "Minimum seconds the student must spend on this lesson before it can be marked complete (0 = no minimum)",
+   "fieldname": "min_reading_time",
+   "fieldtype": "Int",
+   "label": "Minimum Reading Time (seconds)"
+  },
+  {
+   "fieldname": "column_break_reading",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Students must pass this quiz to mark the lesson complete",
+   "fieldname": "completion_quiz",
+   "fieldtype": "Link",
+   "label": "Completion Quiz",
+   "options": "LMS Quiz"
   },
   {
    "fieldname": "section_break_16",

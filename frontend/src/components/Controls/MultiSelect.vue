@@ -6,7 +6,7 @@
 		</label>
 		<div class="w-full">
 			<Combobox v-model="selectedValue" nullable>
-				<Popover class="w-full" v-model:show="showOptions">
+				<Popover class="w-full" v-model:show="showOptions" match-target-width>
 					<template #target="{ togglePopover }">
 						<ComboboxInput
 							ref="search"
@@ -25,12 +25,12 @@
 						/>
 					</template>
 					<template #body="{ isOpen, close }">
-						<div v-show="isOpen">
+						<div v-show="isOpen" class="w-full">
 							<div
-								class="mt-1 rounded-lg bg-surface-white py-1 text-base border-2"
+								class="mt-1 rounded-lg bg-surface-white py-1 text-base border-2 w-full"
 							>
 								<ComboboxOptions
-									class="my-1 min-h-[6rem] max-h-[12rem] overflow-y-auto px-1.5"
+									class="my-1 min-h-[4rem] max-h-[12rem] overflow-y-auto px-1.5"
 									static
 								>
 									<ComboboxOption
@@ -55,39 +55,45 @@
 											</div>
 										</li>
 									</ComboboxOption>
-									<div class="h-10"></div>
 									<div
-										v-if="attrs.onCreate"
-										class="absolute bottom-2 left-1 w-[99%] pt-2 bg-white border-t"
+										v-if="options.length === 0"
+										class="px-2.5 py-2 text-base text-ink-gray-5"
 									>
-										<Button
-											variant="ghost"
-											class="w-full !justify-start"
-											:label="__('Create New')"
-											@click="attrs.onCreate(close)"
-										>
-											<template #prefix>
-												<Plus class="h-4 w-4 stroke-1.5" />
-											</template>
-										</Button>
+										No results found
 									</div>
 								</ComboboxOptions>
+								<div
+									v-if="attrs.onCreate"
+									class="border-t p-1"
+								>
+									<Button
+										variant="ghost"
+										class="w-full !justify-start"
+										:label="__('Create New')"
+										@click="attrs.onCreate(close)"
+									>
+										<template #prefix>
+											<Plus class="h-4 w-4 stroke-1.5" />
+										</template>
+									</Button>
+								</div>
 							</div>
 						</div>
 					</template>
 				</Popover>
 			</Combobox>
 		</div>
-		<div v-if="values.length" class="grid grid-cols-2 gap-2 mt-1">
+		<div v-if="values?.length" class="flex flex-wrap gap-2 mt-2">
 			<div
 				v-for="value in values"
-				class="flex items-center justify-between break-all bg-surface-gray-2 text-ink-gray-7 word-wrap p-2 rounded-md mr-2"
+				:key="value"
+				class="inline-flex items-center gap-1.5 bg-surface-gray-2 text-ink-gray-7 px-2.5 py-1.5 rounded-md text-sm max-w-full"
 			>
 				<span class="break-all">
-					{{ value }}
+					{{ getLabel(value) }}
 				</span>
 				<X
-					class="size-4 stroke-1.5 cursor-pointer"
+					class="size-3.5 stroke-1.5 cursor-pointer text-ink-gray-6 hover:text-ink-gray-9 flex-shrink-0 ml-1"
 					@click="removeValue(value)"
 				/>
 			</div>
@@ -103,8 +109,8 @@ import {
 	ComboboxOptions,
 	ComboboxOption,
 } from '@headlessui/vue'
-import { createResource, Popover, Button } from 'frappe-ui'
-import { ref, computed, nextTick, useAttrs } from 'vue'
+import { createResource, Popover, Button, call } from 'frappe-ui'
+import { ref, computed, nextTick, useAttrs, watch } from 'vue'
 import { watchDebounced } from '@vueuse/core'
 import { X, Plus } from 'lucide-vue-next'
 
@@ -145,6 +151,11 @@ const error = ref(null)
 const query = ref('')
 const text = ref('')
 const showOptions = ref(false)
+const labelMap = ref({})
+
+const getLabel = (val) => {
+	return labelMap.value[val] || val
+}
 
 const selectedValue = computed({
 	get: () => query.value || '',
@@ -153,7 +164,12 @@ const selectedValue = computed({
 		if (val) {
 			showOptions.value = false
 		}
-		val?.value && addValue(val.value)
+		if (val?.value) {
+			if (val.description || val.label) {
+				labelMap.value[val.value] = val.description || val.label
+			}
+			addValue(val.value)
+		}
 	},
 })
 
@@ -182,6 +198,54 @@ const filterOptions = createResource({
 const options = computed(() => {
 	return filterOptions.data || []
 })
+
+watch(
+	options,
+	(newOptions) => {
+		if (newOptions && Array.isArray(newOptions)) {
+			newOptions.forEach((opt) => {
+				if (opt.value) {
+					labelMap.value[opt.value] = opt.description || opt.label || opt.value
+				}
+			})
+		}
+	},
+	{ immediate: true, deep: true }
+)
+
+const fetchMissingLabels = (missingValues) => {
+	if (!missingValues || !missingValues.length) return
+	call('frappe.client.get_list', {
+		doctype: props.doctype,
+		filters: { name: ['in', missingValues] },
+		fields: ['name', 'full_name', 'title'],
+		limit_page_length: missingValues.length,
+	})
+		.then((res) => {
+			if (res && Array.isArray(res)) {
+				res.forEach((doc) => {
+					const label = doc.full_name || doc.title || doc.name
+					if (label) {
+						labelMap.value[doc.name] = label
+					}
+				})
+			}
+		})
+		.catch(() => {})
+}
+
+watch(
+	() => values.value,
+	(newValues) => {
+		if (Array.isArray(newValues) && newValues.length) {
+			const missing = newValues.filter((v) => v && !labelMap.value[v])
+			if (missing.length) {
+				fetchMissingLabels(missing)
+			}
+		}
+	},
+	{ immediate: true, deep: true }
+)
 
 function reload(val) {
 	filterOptions.update({

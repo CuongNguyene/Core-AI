@@ -9,7 +9,7 @@
 			nullable
 			v-slot="{ open: isComboboxOpen }"
 		>
-			<Popover class="w-full" v-model:show="showOptions">
+			<Popover class="w-full" v-model:show="showOptions" match-target-width>
 				<template #target="{ open: openPopover, togglePopover }">
 					<slot name="target" v-bind="{ open: openPopover, togglePopover }">
 						<div class="w-full">
@@ -37,9 +37,9 @@
 					</slot>
 				</template>
 				<template #body="{ isOpen }">
-					<div v-show="isOpen" class="">
+					<div v-show="isOpen" class="w-full">
 						<div
-							class="mt-1 rounded-lg bg-surface-white py-1 text-base border-2"
+							class="mt-1 rounded-lg bg-surface-white py-1 text-base border-2 w-full"
 						>
 							<div class="relative px-1.5 pt-0.5">
 								<ComboboxInput
