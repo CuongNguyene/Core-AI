@@ -3,9 +3,10 @@
 
 import frappe
 from frappe import _
-from frappe.desk.doctype.notification_log.notification_log import make_notification_logs
 from frappe.model.document import Document
 from frappe.utils import validate_url
+
+from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
 
 
 class LMSAssignmentSubmission(Document):
@@ -76,7 +77,7 @@ class LMSAssignmentSubmission(Document):
 				"link": f"/assignment-submission/{self.assignment}/{self.name}",
 			}
 		)
-		make_notification_logs(notification, [self.member])
+		make_lms_notification_logs(notification, [self.member])
 
 
 @frappe.whitelist()

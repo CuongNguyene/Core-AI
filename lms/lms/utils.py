@@ -8,8 +8,8 @@ import frappe
 import requests
 from frappe import _
 from frappe.desk.doctype.dashboard_chart.dashboard_chart import get_result
-from frappe.desk.doctype.notification_log.notification_log import make_notification_logs
 from frappe.desk.notifications import extract_mentions
+from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
 from frappe.rate_limiter import rate_limit
 from frappe.utils import (
 	add_months,
@@ -631,7 +631,7 @@ def create_notification_log(doc, topic):
 		}
 	)
 
-	make_notification_logs(notification, users)
+	make_lms_notification_logs(notification, users)
 
 
 def notify_mentions_on_portal(doc, topic):
@@ -663,7 +663,7 @@ def notify_mentions_on_portal(doc, topic):
 				"link": link,
 			}
 		)
-		make_notification_logs(notification, user)
+		make_lms_notification_logs(notification, user)
 
 
 def notify_mentions_via_email(doc, topic):
@@ -1854,10 +1854,6 @@ def get_roles(name):
 		"batch_evaluator": has_course_evaluator_role(name),
 		"lms_student": has_student_role(name),
 	}
-
-
-def publish_notifications(doc, method):
-	frappe.publish_realtime("publish_lms_notifications", user=doc.for_user, after_commit=True)
 
 
 def update_payment_record(doctype, docname):

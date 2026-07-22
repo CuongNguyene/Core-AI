@@ -3,9 +3,10 @@
 
 import frappe
 from frappe import _
-from frappe.desk.doctype.notification_log.notification_log import make_notification_logs
 from frappe.model.document import Document
 from frappe.utils import cint
+
+from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
 
 
 class LMSQuizSubmission(Document):
@@ -68,7 +69,7 @@ class LMSQuizSubmission(Document):
 				}
 			)
 
-			make_notification_logs(notification, [self.member])
+			make_lms_notification_logs(notification, [self.member])
 
 
 class MaximumAttemptsExceededError(frappe.DuplicateEntryError):
