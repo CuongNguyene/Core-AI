@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "serve": "vite preview",
-    "build": "vite build --base=/assets/lms/frontend/ && yarn copy-html-entry",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' vite build --base=/assets/lms/frontend/ && yarn copy-html-entry",
     "copy-html-entry": "cp ../lms/public/frontend/index.html ../lms/www/lms.html"
   },
   "dependencies": {
@@ -34,6 +34,8 @@
     "feather-icons": "^4.28.0",
     "frappe-ui": "^0.1.201",
     "highlight.js": "^11.11.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
     "lucide-vue-next": "^0.383.0",
     "markdown-it": "^14.0.0",
     "pinia": "^2.0.33",

@@ -518,6 +518,32 @@ def has_course_evaluator_role(member=None):
 	)
 
 
+def get_report_department_scope(user=None):
+	"""Returns the list of departments a user is allowed to see in the
+	department/employee report, or None if the user is allowed to see all
+	departments (System Manager / Moderator), or [] if the user has no access.
+	"""
+	user = user or frappe.session.user
+
+	if user == "Administrator" or "System Manager" in frappe.get_roles(user) or has_course_moderator_role(user):
+		return None
+
+	if not frappe.db.exists("DocType", "Department"):
+		return []
+
+	managed_departments = frappe.get_all("Department", {"manager_department": user}, pluck="name")
+	if not managed_departments:
+		return []
+
+	from frappe.utils.nestedset import get_descendants_of
+
+	departments = set(managed_departments)
+	for department in managed_departments:
+		departments.update(get_descendants_of("Department", department, ignore_permissions=True))
+
+	return list(departments)
+
+
 def has_student_role(member=None):
 	return frappe.db.get_value(
 		"Has Role",
