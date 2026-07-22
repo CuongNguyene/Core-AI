@@ -18,6 +18,7 @@ from frappe.query_builder import DocType
 from frappe.translate import get_all_translations
 from frappe.utils import (
 	add_days,
+	add_months,
 	cint,
 	date_diff,
 	flt,
@@ -153,6 +154,10 @@ def get_user_info():
 	user.is_student = not user.is_instructor and not user.is_moderator and not user.is_evaluator
 	#user.is_fc_site = is_fc_site()
 	user.is_system_manager = "System Manager" in user.roles
+
+	from lms.lms.utils import get_report_department_scope
+
+	user.can_view_department_report = get_report_department_scope(user.name) != []
 	user.sitename = frappe.local.site
 	user.developer_mode = frappe.conf.developer_mode
 	# if user.is_fc_site and user.is_system_manager:
@@ -311,6 +316,168 @@ def get_chart_details():
 	details.completions = frappe.db.count("LMS Enrollment", {"progress": ["like", "%100%"]})
 	details.certifications = frappe.db.count("LMS Certificate", {"published": 1})
 	return details
+
+
+def get_department_report_filters(
+	department=None, employee=None, company=None, from_date=None, to_date=None, granularity="Monthly"
+):
+	"""Resolves the permission scope and builds the shared SQL filter
+	fragments for the department/employee report queries. Raises
+	frappe.PermissionError if the user has no access.
+	"""
+	from lms.lms.utils import get_report_department_scope
+
+	if not frappe.db.exists("DocType", "Employee"):
+		frappe.throw(_("Employee doctype is not available on this site."))
+
+	scope = get_report_department_scope()
+	if scope == []:
+		frappe.throw(_("You are not permitted to view this report."), frappe.PermissionError)
+
+	if scope is not None:
+		if department and department not in scope:
+			frappe.throw(_("You are not permitted to view this department's report."), frappe.PermissionError)
+		departments = [department] if department else scope
+	else:
+		departments = [department] if department else None
+
+	from_date = from_date or add_months(get_datetime().date(), -12)
+	to_date = to_date or get_datetime().date()
+
+	conditions = ["e.creation >= %(from_date)s", "e.creation <= %(to_date)s"]
+	values = {"from_date": from_date, "to_date": to_date}
+
+	if departments:
+		conditions.append("emp.department in %(departments)s")
+		values["departments"] = departments
+
+	if employee:
+		conditions.append("emp.name = %(employee)s")
+		values["employee"] = employee
+
+	if company:
+		conditions.append("emp.company = %(company)s")
+		values["company"] = company
+
+	period_expr = (
+		"CONCAT(YEAR(e.creation), '-Q', QUARTER(e.creation))"
+		if granularity == "Quarterly"
+		else "DATE_FORMAT(e.creation, '%%Y-%%m')"
+	)
+
+	return frappe._dict(
+		conditions=conditions,
+		params=values,
+		departments=departments,
+		employee=employee,
+		company=company,
+		period_expr=period_expr,
+	)
+
+
+def build_period_summary_query(
+	department=None, employee=None, company=None, from_date=None, to_date=None, granularity="Monthly"
+):
+	"""Returns per-period aggregates (across all matching departments/employees):
+	enrollments, completions, completion rate, certifications, avg progress and
+	distinct employees — the series used for the charts."""
+	f = get_department_report_filters(department, employee, company, from_date, to_date, granularity)
+	conditions, values, departments, employee, company, period_expr = (
+		f.conditions,
+		f.params,
+		f.departments,
+		f.employee,
+		f.company,
+		f.period_expr,
+	)
+
+	rows = frappe.db.sql(
+		f"""
+		SELECT
+			{period_expr} AS period,
+			COUNT(*) AS enrollments,
+			SUM(CASE WHEN e.progress = 100 THEN 1 ELSE 0 END) AS completions,
+			AVG(e.progress) AS avg_progress,
+			COUNT(DISTINCT emp.name) AS employees
+		FROM `tabLMS Enrollment` e
+		INNER JOIN `tabEmployee` emp ON emp.user_id = e.member
+		WHERE {" and ".join(conditions)}
+		GROUP BY period
+		ORDER BY period
+		""",
+		values,
+		as_dict=True,
+	)
+
+	certificates = frappe.db.sql(
+		f"""
+		SELECT
+			{period_expr.replace("e.creation", "c.issue_date")} AS period,
+			COUNT(*) AS certifications
+		FROM `tabLMS Certificate` c
+		INNER JOIN `tabEmployee` emp ON emp.user_id = c.member
+		WHERE c.issue_date >= %(from_date)s AND c.issue_date <= %(to_date)s
+		{"AND emp.department in %(departments)s" if departments else ""}
+		{"AND emp.name = %(employee)s" if employee else ""}
+		{"AND emp.company = %(company)s" if company else ""}
+		GROUP BY period
+		""",
+		values,
+		as_dict=True,
+	)
+	certification_map = {c.period: c.certifications for c in certificates}
+
+	for row in rows:
+		row.completions = cint(row.completions)
+		row.certifications = cint(certification_map.get(row.period, 0))
+		row.completion_rate = flt(row.completions / row.enrollments * 100, 2) if row.enrollments else 0
+		row.avg_progress = flt(row.avg_progress, 2)
+
+	return rows
+
+
+def build_department_summary_query(
+	department=None, employee=None, company=None, from_date=None, to_date=None, granularity="Monthly"
+):
+	"""Returns total enrollments grouped by department — the series used for the
+	'Enrollments by Department' chart."""
+	f = get_department_report_filters(department, employee, company, from_date, to_date, granularity)
+	conditions, values = f.conditions, f.params
+
+	return frappe.db.sql(
+		f"""
+		SELECT
+			emp.department AS department,
+			dept.department_name AS department_name,
+			COUNT(*) AS enrollments
+		FROM `tabLMS Enrollment` e
+		INNER JOIN `tabEmployee` emp ON emp.user_id = e.member
+		LEFT JOIN `tabDepartment` dept ON dept.name = emp.department
+		WHERE {" and ".join(conditions)}
+		GROUP BY emp.department
+		ORDER BY enrollments DESC
+		""",
+		values,
+		as_dict=True,
+	)
+
+
+@frappe.whitelist()
+def get_department_report(
+	department=None, employee=None, company=None, from_date=None, to_date=None, granularity="Monthly"
+):
+	"""Multi-dimensional (department/employee/time) enrollment report."""
+	period_summary = build_period_summary_query(department, employee, company, from_date, to_date, granularity)
+	department_summary = build_department_summary_query(department, employee, company, from_date, to_date, granularity)
+
+	summary = frappe._dict(
+		enrollments=sum(row.enrollments for row in period_summary),
+		completions=sum(row.completions for row in period_summary),
+		certifications=sum(row.certifications for row in period_summary),
+	)
+	summary.completion_rate = flt(summary.enrollments and summary.completions / summary.enrollments * 100, 2)
+
+	return {"summary": summary, "period_summary": period_summary, "department_summary": department_summary}
 
 
 @frappe.whitelist()
