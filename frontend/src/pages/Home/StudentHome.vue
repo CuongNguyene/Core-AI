@@ -64,8 +64,7 @@
 			</div>
 		</div>
 
-		<div class="grid grid-cols-2 gap-5 mt-10">
-			<UpcomingEvaluations :forHome="true" />
+		<div class="grid grid-cols-1 gap-5 mt-10">
 			<div v-if="myLiveClasses.data?.length">
 				<div class="font-semibold text-lg mb-3 text-ink-gray-9">
 					{{ __('Upcoming Live Classes') }}
@@ -97,7 +96,7 @@
 								class="flex items-center space-x-2 text-ink-gray-9 mt-auto"
 							>
 								<a
-									v-if="user.data?.is_moderator || user.data?.is_evaluator"
+									v-if="user.data?.is_moderator || user.data?.is_instructor"
 									:href="cls.start_url"
 									target="_blank"
 									class="cursor-pointer inline-flex items-center justify-center gap-2 transition-colors focus:outline-none text-ink-gray-8 bg-surface-gray-2 hover:bg-surface-gray-3 active:bg-surface-gray-4 focus-visible:ring focus-visible:ring-outline-gray-3 h-7 text-base px-2 rounded"
@@ -148,7 +147,6 @@ import {
 } from 'lucide-vue-next'
 import CourseCard from '@/components/CourseCard.vue'
 import BatchCard from '@/components/BatchCard.vue'
-import UpcomingEvaluations from '@/components/UpcomingEvaluations.vue'
 
 const dayjs = inject<any>('$dayjs')
 const user = inject<any>('$user')

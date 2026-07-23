@@ -256,8 +256,7 @@ const checkIfUserIsPermitted = (doc: any = null) => {
 	if (
 		doc.owner != user.data?.name &&
 		!user.data?.is_instructor &&
-		!user.data?.is_moderator &&
-		!user.data.is_evaluator
+		!user.data?.is_moderator
 	) {
 		router.push({
 			name: 'ProgrammingExerciseSubmission',

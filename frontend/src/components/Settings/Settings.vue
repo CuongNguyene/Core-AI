@@ -40,8 +40,7 @@
 							...(activeTab.label == 'Branding'
 								? { fields: activeTab.fields }
 								: {}),
-							...(activeTab.label == 'Evaluators' ||
-							activeTab.label == 'Members' ||
+							...(activeTab.label == 'Members' ||
 							activeTab.label == 'Transactions'
 								? { 'onUpdate:show': (val) => (show = val), show }
 								: {}),
@@ -73,7 +72,6 @@ import { useSettings } from '@/stores/settings'
 import SettingDetails from '@/components/Settings/SettingDetails.vue'
 import SidebarLink from '@/components/SidebarLink.vue'
 import Members from '@/components/Settings/Members.vue'
-import Evaluators from '@/components/Settings/Evaluators.vue'
 import Categories from '@/components/Settings/Categories.vue'
 import EmailTemplates from '@/components/Settings/EmailTemplates.vue'
 import BrandSettings from '@/components/Settings/BrandSettings.vue'
@@ -252,14 +250,6 @@ const tabsStructure = computed(() => {
 						'Add new members or manage roles and permissions of existing members',
 					icon: 'UserRoundPlus',
 					template: markRaw(Members),
-				},
-				{
-					label: 'Evaluators',
-					description: '',
-					icon: 'UserCheck',
-					description:
-						'Add new evaluators or check the slots existing evaluators',
-					template: markRaw(Evaluators),
 				},
 				{
 					label: 'Zoom Accounts',

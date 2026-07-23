@@ -26,12 +26,12 @@ const routes = [
 		component: () => import('@/pages/Lesson.vue'),
 		props: true,
 	},
-	{
-		path: '/courses/:courseName/certification',
-		name: 'CourseCertification',
-		component: () => import('@/pages/CourseCertification.vue'),
-		props: true,
-	},
+	// {
+	// 	path: '/courses/:courseName/certification',
+	// 	name: 'CourseCertification',
+	// 	component: () => import('@/pages/CourseCertification.vue'),
+	// 	props: true,
+	// },
 	{
 		path: '/courses/:courseName/learn/:chapterName',
 		name: 'SCORMChapter',
@@ -88,17 +88,17 @@ const routes = [
 				path: 'roles',
 				component: () => import('@/pages/ProfileRoles.vue'),
 			},
-			{
-				name: 'ProfileEvaluator',
-				path: 'slots',
-				component: () => import('@/pages/ProfileEvaluator.vue'),
-			},
-			{
-				name: 'ProfileEvaluationSchedule',
-				path: 'schedule',
-				component: () =>
-					import('@/pages/ProfileEvaluationSchedule.vue'),
-			},
+			// {
+			// 	name: 'ProfileEvaluator',
+			// 	path: 'slots',
+			// 	component: () => import('@/pages/ProfileEvaluator.vue'),
+			// },
+			// {
+			// 	name: 'ProfileEvaluationSchedule',
+			// 	path: 'schedule',
+			// 	component: () =>
+			// 		import('@/pages/ProfileEvaluationSchedule.vue'),
+			// },
 		],
 	},
 	// {

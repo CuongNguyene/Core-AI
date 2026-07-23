@@ -29,12 +29,6 @@
 				@change.stop="changeRole('course_creator')"
 			/>
 			<FormControl
-				:label="__('Evaluator')"
-				v-model="batch_evaluator"
-				type="checkbox"
-				@change.stop="changeRole('batch_evaluator')"
-			/>
-			<FormControl
 				:label="__('Student')"
 				v-model="lms_student"
 				type="checkbox"
@@ -51,7 +45,6 @@ import { CircleAlert } from 'lucide-vue-next'
 
 const moderator = ref(false)
 const course_creator = ref(false)
-const batch_evaluator = ref(false)
 const lms_student = ref(false)
 const readOnlyMode = window.read_only_mode
 
@@ -73,7 +66,6 @@ const roles = createResource({
 		let roles = [
 			'moderator',
 			'course_creator',
-			'batch_evaluator',
 			'lms_student',
 		]
 		for (let role of roles) {

@@ -147,7 +147,7 @@ onMounted(() => {
 })
 
 const fetchZoomAccounts = () => {
-	if (!user?.data?.is_moderator && !user?.data?.is_evaluator) return
+	if (!user?.data?.is_moderator && !user?.data?.is_instructor) return
 
 	if (!user?.data?.is_moderator) {
 		zoomAccounts.update({

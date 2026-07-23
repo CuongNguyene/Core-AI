@@ -202,7 +202,7 @@ const getRowRoute = (row) => {
 
 const canAddAssessments = () => {
 	if (readOnlyMode) return false
-	return user.data?.is_moderator || user.data?.is_evaluator
+	return user.data?.is_moderator || user.data?.is_instructor
 }
 
 const getAssessmentColumns = () => {

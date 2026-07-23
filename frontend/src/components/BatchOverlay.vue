@@ -205,11 +205,11 @@ const isModerator = computed(() => {
 	return user.data?.is_moderator
 })
 
-const isEvaluator = computed(() => {
-	return user.data?.is_evaluator
+const isInstructor = computed(() => {
+	return user.data?.is_instructor
 })
 
 const canAccessBatch = computed(() => {
-	return isModerator.value || isStudent.value || isEvaluator.value
+	return isModerator.value || isStudent.value || isInstructor.value
 })
 </script>
