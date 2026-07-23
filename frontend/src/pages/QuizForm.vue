@@ -255,8 +255,6 @@ const questions = ref([])
 
 const isNew = computed(() => props.quizID === 'new')
 
-/* A blank quiz so the form can render before the document exists.
-   Fields mirror the ones bound in the Details section above. */
 const getBlankQuiz = () => ({
 	title: '',
 	max_attempts: 0,
@@ -339,8 +337,6 @@ const createQuiz = () => {
 		},
 		{
 			onSuccess(data) {
-				// Point the document resource at the freshly created quiz before
-				// navigating, so the reload triggered by the route change fetches it.
 				quizDetails.name = data.name
 				quizDetails.doc = data
 				toast.success(__('Quiz created successfully'))
