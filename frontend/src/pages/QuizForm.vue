@@ -125,7 +125,7 @@
 			</div>
 		</div>
 
-		<div class="px-20 pb-5 space-y-5 mb-5">
+		<div v-if="!isNew" class="px-20 pb-5 space-y-5 mb-5">
 			<div class="flex items-center justify-between mb-4">
 				<div class="text-lg font-semibold text-ink-gray-9">
 					{{ __('Questions') }}
@@ -253,6 +253,25 @@ const props = defineProps({
 
 const questions = ref([])
 
+const isNew = computed(() => props.quizID === 'new')
+
+/* A blank quiz so the form can render before the document exists.
+   Fields mirror the ones bound in the Details section above. */
+const getBlankQuiz = () => ({
+	title: '',
+	max_attempts: 0,
+	duration: '',
+	total_marks: 0,
+	passing_percentage: 0,
+	show_answers: 0,
+	show_submission_history: 0,
+	shuffle_questions: 0,
+	limit_questions_to: 0,
+	enable_negative_marking: 0,
+	marks_to_cut: 0,
+	questions: [],
+})
+
 onMounted(() => {
 	if (
 		props.quizID == 'new' &&
@@ -263,6 +282,8 @@ onMounted(() => {
 	}
 	if (props.quizID !== 'new') {
 		quizDetails.reload()
+	} else {
+		quizDetails.doc = getBlankQuiz()
 	}
 	window.addEventListener('keydown', keyboardShortcut)
 })
@@ -298,7 +319,49 @@ const quizDetails = createDocumentResource({
 	},
 })
 
+const newQuizResource = createResource({
+	url: 'frappe.client.insert',
+	makeParams(values) {
+		return {
+			doc: {
+				doctype: 'LMS Quiz',
+				...values,
+			},
+		}
+	},
+})
+
+const createQuiz = () => {
+	newQuizResource.submit(
+		{
+			...quizDetails.doc,
+			total_marks: calculateTotalMarks(),
+		},
+		{
+			onSuccess(data) {
+				// Point the document resource at the freshly created quiz before
+				// navigating, so the reload triggered by the route change fetches it.
+				quizDetails.name = data.name
+				quizDetails.doc = data
+				toast.success(__('Quiz created successfully'))
+				router.push({
+					name: 'QuizForm',
+					params: { quizID: data.name },
+				})
+			},
+			onError(err) {
+				toast.error(err.messages?.[0] || err)
+			},
+		}
+	)
+}
+
 const submitQuiz = () => {
+	if (isNew.value) {
+		createQuiz()
+		return
+	}
+
 	quizDetails.setValue.submit(
 		{
 			...quizDetails.doc,

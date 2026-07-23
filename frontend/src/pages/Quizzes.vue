@@ -3,7 +3,11 @@
 		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
-		<Button v-if="!readOnlyMode" variant="solid" @click="showForm = true">
+		<Button
+			v-if="!readOnlyMode"
+			variant="solid"
+			@click="router.push({ name: 'QuizForm', params: { quizID: 'new' } })"
+		>
 			<template #prefix>
 				<Plus class="w-4 h-4" />
 			</template>
@@ -95,33 +99,12 @@
 			</Button>
 		</div>
 	</div>
-	<Dialog
-		v-model="showForm"
-		:options="{
-			title: __('Create a Quiz'),
-			size: 'sm',
-			actions: [
-				{
-					label: __('Save'),
-					variant: 'solid',
-					onClick({ close }) {
-						insertQuiz(close)
-					},
-				},
-			],
-		}"
-	>
-		<template #body-content>
-			<FormControl v-model="title" :label="__('Title')" type="text" />
-		</template>
-	</Dialog>
 </template>
 <script setup>
 import {
 	Breadcrumbs,
 	Button,
 	createListResource,
-	Dialog,
 	FeatherIcon,
 	FormControl,
 	ListView,
@@ -147,8 +130,6 @@ const router = useRouter()
 const search = ref('')
 const readOnlyMode = window.read_only_mode
 const quizFilters = ref({})
-const showForm = ref(false)
-const title = ref('')
 
 onMounted(() => {
 	if (!user.data?.is_moderator && !user.data?.is_instructor) {
@@ -190,30 +171,6 @@ const quizzes = createListResource({
 		})
 	},
 })
-
-const insertQuiz = (close) => {
-	quizzes.insert.submit(
-		{
-			title: title.value,
-		},
-		{
-			onSuccess(data) {
-				toast.success(__('Quiz created successfully'))
-				close()
-				title.value = ''
-				router.push({
-					name: 'QuizForm',
-					params: {
-						quizID: data.name,
-					},
-				})
-			},
-			onError(error) {
-				toast.error(__('Error creating quiz: {0}', error.message))
-			},
-		}
-	)
-}
 
 const deleteQuiz = (selections, unselectAll) => {
 	Array.from(selections).forEach(async (quizName) => {
