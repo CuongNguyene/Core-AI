@@ -17,10 +17,11 @@
 	>
 		<template #body-content>
 			<div class="space-y-4">
-				<Link
-					v-model="details.evaluator"
-					:label="__('Evaluator')"
-					doctype="Course Evaluator"
+				<Autocomplete
+					:modelValue="details.evaluator"
+					@update:modelValue="(opt) => (details.evaluator = opt?.value)"
+					:label="__('Instructor')"
+					:options="getInstructors()"
 				/>
 				<FormControl
 					type="date"
@@ -32,19 +33,17 @@
 					v-model="details.expiry_date"
 					:label="__('Expiry Date')"
 				/>
-				<FormControl
-					type="select"
-					v-model="details.course"
+				<Autocomplete
+					:modelValue="details.course"
+					@update:modelValue="(opt) => (details.course = opt?.value)"
 					:label="__('Course')"
 					:options="getCourses()"
 				/>
-				<Link
-					v-model="details.template"
+				<Autocomplete
+					:modelValue="details.template"
+					@update:modelValue="(opt) => (details.template = opt?.value)"
 					:label="__('Template')"
-					doctype="Print Format"
-					:filters="{
-						doc_type: 'LMS Certificate',
-					}"
+					:options="templates.data || []"
 				/>
 				<Switch
 					size="sm"
@@ -62,8 +61,16 @@
 </template>
 <script setup>
 import { inject, reactive } from 'vue'
-import { createResource, Dialog, FormControl, Switch, toast } from 'frappe-ui'
-import Link from '@/components/Controls/Link.vue'
+import {
+	call,
+	createResource,
+	createListResource,
+	Dialog,
+	FormControl,
+	Switch,
+	toast,
+} from 'frappe-ui'
+import Autocomplete from '@/components/Controls/Autocomplete.vue'
 
 const show = defineModel()
 const dayjs = inject('$dayjs')
@@ -72,6 +79,7 @@ const details = reactive({
 	expiry_date: null,
 	template: null,
 	evaluator: null,
+	course: null,
 	published: true,
 })
 
@@ -79,6 +87,23 @@ const props = defineProps({
 	batch: {
 		type: [Object, null],
 		required: true,
+	},
+})
+
+const templates = createListResource({
+	doctype: 'Print Format',
+	fields: ['name'],
+	filters: {
+		doc_type: 'LMS Certificate',
+	},
+	orderBy: 'name asc',
+	pageLength: 100,
+	auto: true,
+	transform(data) {
+		return data.map((template) => ({
+			label: template.name,
+			value: template.name,
+		}))
 	},
 })
 
@@ -101,8 +126,37 @@ const createCertificate = createResource({
 	},
 })
 
-const generateCertificates = (close) => {
-	props.batch?.students.forEach((student) => {
+const generateCertificates = async (close) => {
+	let students = props.batch?.students || []
+
+	let [courseDuplicates, batchDuplicates] = await Promise.all([
+		call('frappe.client.get_list', {
+			doctype: 'LMS Certificate',
+			filters: {
+				course: details.course,
+				member: ['in', students],
+			},
+			fields: ['member'],
+			limit_page_length: 0,
+		}),
+		call('frappe.client.get_list', {
+			doctype: 'LMS Certificate',
+			filters: {
+				batch_name: props.batch.name,
+				member: ['in', students],
+			},
+			fields: ['member'],
+			limit_page_length: 0,
+		}),
+	])
+
+	let alreadyCertified = new Set([
+		...courseDuplicates.map((d) => d.member),
+		...batchDuplicates.map((d) => d.member),
+	])
+	let eligibleStudents = students.filter((student) => !alreadyCertified.has(student))
+
+	eligibleStudents.forEach((student) => {
 		createCertificate.submit(
 			{
 				course: details.course,
@@ -117,14 +171,33 @@ const generateCertificates = (close) => {
 		)
 	})
 	close()
-	toast.success(__('Certificates generated successfully'))
+
+	if (eligibleStudents.length) {
+		toast.success(__('Certificates generated successfully'))
+	}
+	if (alreadyCertified.size) {
+		toast.info(
+			__('{0} student(s) were already certified and were skipped').format(
+				alreadyCertified.size
+			)
+		)
+	}
 }
 
 const getCourses = () => {
 	return props.batch?.courses.map((course) => {
 		return {
-			label: course.course,
+			label: course.title || course.course,
 			value: course.course,
+		}
+	})
+}
+
+const getInstructors = () => {
+	return props.batch?.instructors.map((instructor) => {
+		return {
+			label: instructor.full_name,
+			value: instructor.name,
 		}
 	})
 }

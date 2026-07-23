@@ -441,9 +441,7 @@ const removeSubmission = () => {
 
 const canGradeSubmission = computed(() => {
 	return (
-		(user.data?.is_moderator ||
-			user.data?.is_evaluator ||
-			user.data?.is_instructor) &&
+		(user.data?.is_moderator || user.data?.is_instructor) &&
 		props.submissionName != 'new' &&
 		router.currentRoute.value.name == 'AssignmentSubmission'
 	)

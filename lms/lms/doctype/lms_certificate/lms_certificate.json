@@ -93,15 +93,15 @@
   {
    "fieldname": "evaluator",
    "fieldtype": "Link",
-   "label": "Evaluator",
-   "options": "Course Evaluator"
+   "label": "Instructor",
+   "options": "User"
   },
   {
    "fetch_from": "evaluator.full_name",
    "fieldname": "evaluator_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Evaluator Name",
+   "label": "Instructor Name",
    "read_only": 1
   },
   {

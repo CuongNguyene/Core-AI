@@ -34,22 +34,6 @@
 				{{ __('Get Certified') }}
 			</Button>
 		</router-link>
-		<router-link
-			v-else-if="!certification.data.membership.certificate"
-			:to="{
-				name: 'CourseCertification',
-				params: {
-					courseName: courseName,
-				},
-			}"
-		>
-			<Button class="w-full">
-				<template #prefix>
-					<GraduationCap class="size-4 stroke-1.5" />
-				</template>
-				{{ __('Get Certified') }}
-			</Button>
-		</router-link>
 	</div>
 </template>
 <script setup>

@@ -276,9 +276,8 @@ const batchTabs = computed(() => {
 
 	if (
 		user.data?.is_moderator ||
-		user.data?.is_instructor ||
-		user.data?.is_evaluator
-	) {
+		user.data?.is_instructor
+) {
 		tabs.push({ label: __('Upcoming') })
 		tabs.push({ label: __('Archived') })
 		tabs.push({ label: __('Unpublished') })
@@ -292,9 +291,8 @@ const canCreateBatch = () => {
 	if (readOnlyMode) return false
 	if (
 		user.data?.is_moderator ||
-		user.data?.is_instructor ||
-		user.data?.is_evaluator
-	)
+		user.data?.is_instructor
+)
 		return true
 	return false
 }
