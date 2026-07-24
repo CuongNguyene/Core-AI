@@ -541,37 +541,43 @@ const checkAnswer = () => {
 	let answers = getAnswers()
 	if (!answers.length) {
 		toast.warning(__('Please select an option'))
-		return
+		return Promise.resolve()
 	}
 
-	createResource({
-		url: 'lms.lms.doctype.lms_quiz.lms_quiz.check_answer',
-		params: {
-			question: currentQuestion.value,
-			type: questionDetails.data.type,
-			answers: JSON.stringify(answers),
-		},
-		auto: true,
-		onSuccess(data) {
-			let type = questionDetails.data.type
-			if (type == 'Choices') {
-				selectedOptions.forEach((option, index) => {
-					if (option) {
-						showAnswers[index] = option && data[index]
-					} else if (data[index] == 2) {
-						showAnswers[index] = 2
-					} else {
-						showAnswers[index] = undefined
-					}
-				})
-			} else {
-				showAnswers.push(data)
-			}
-			addToLocalStorage()
-			if (!quiz.data.show_answers) {
-				resetQuestion()
-			}
-		},
+	return new Promise((resolve) => {
+		createResource({
+			url: 'lms.lms.doctype.lms_quiz.lms_quiz.check_answer',
+			params: {
+				question: currentQuestion.value,
+				type: questionDetails.data.type,
+				answers: JSON.stringify(answers),
+			},
+			auto: true,
+			onSuccess(data) {
+				let type = questionDetails.data.type
+				if (type == 'Choices') {
+					selectedOptions.forEach((option, index) => {
+						if (option) {
+							showAnswers[index] = option && data[index]
+						} else if (data[index] == 2) {
+							showAnswers[index] = 2
+						} else {
+							showAnswers[index] = undefined
+						}
+					})
+				} else {
+					showAnswers.push(data)
+				}
+				addToLocalStorage()
+				if (!quiz.data.show_answers) {
+					resetQuestion()
+				}
+				resolve()
+			},
+			onError() {
+				resolve()
+			},
+		})
 	})
 }
 
@@ -615,13 +621,11 @@ const resetQuestion = () => {
 	possibleAnswer.value = null
 }
 
-const submitQuiz = () => {
+const submitQuiz = async () => {
 	if (!quiz.data.show_answers) {
 		if (questionDetails.data.type == 'Open Ended') addToLocalStorage()
-		else checkAnswer()
-		setTimeout(() => {
-			createSubmission()
-		}, 500)
+		else await checkAnswer()
+		createSubmission()
 		return
 	}
 	createSubmission()

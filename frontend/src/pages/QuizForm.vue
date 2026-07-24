@@ -64,6 +64,9 @@
 						disabled
 					/>
 					<FormControl
+						type="number"
+						:min="0"
+						:max="100"
 						v-model="quizDetails.doc.passing_percentage"
 						:label="__('Passing Percentage')"
 						:required="true"
