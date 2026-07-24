@@ -47,10 +47,10 @@
 										>
 											<div class="flex flex-col gap-1 p-1">
 												<div class="text-base font-medium text-ink-gray-8">
-													{{ option.description }}
+													{{ option.label || option.description }}
 												</div>
 												<div class="text-sm text-ink-gray-5">
-													{{ option.value }}
+													{{ option.label ? option.description : option.value }}
 												</div>
 											</div>
 										</li>
@@ -166,7 +166,7 @@ const selectedValue = computed({
 		}
 		if (val?.value) {
 			if (val.description || val.label) {
-				labelMap.value[val.value] = val.description || val.label
+				labelMap.value[val.value] = val.label || val.description
 			}
 			addValue(val.value)
 		}
@@ -205,7 +205,7 @@ watch(
 		if (newOptions && Array.isArray(newOptions)) {
 			newOptions.forEach((opt) => {
 				if (opt.value) {
-					labelMap.value[opt.value] = opt.description || opt.label || opt.value
+					labelMap.value[opt.value] = opt.label || opt.description || opt.value
 				}
 			})
 		}

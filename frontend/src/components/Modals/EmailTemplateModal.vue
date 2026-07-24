@@ -109,6 +109,7 @@ const createNewTemplate = (close) => {
 		{
 			__newname: template.name,
 			...template,
+			is_lms_template: 1,
 		},
 		{
 			onSuccess() {

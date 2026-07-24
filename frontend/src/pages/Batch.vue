@@ -1,10 +1,12 @@
 <template>
 	<div v-if="user.data?.is_moderator || isStudent" class="">
 		<header
-			class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
-			<Breadcrumbs class="h-7" :items="breadcrumbs" />
-			<div class="flex items-center space-x-2">
+			<div class="min-w-0 flex-1 overflow-hidden">
+				<Breadcrumbs class="h-7" :items="breadcrumbs" />
+			</div>
+			<div class="flex items-center space-x-2 shrink-0">
 				<Button
 					v-if="
 						(user.data?.is_moderator ||

@@ -3,13 +3,15 @@
 		<div class="grid md:grid-cols-[75%,25%] h-screen">
 			<div class="border-r">
 				<header
-					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between border-b overflow-hidden bg-surface-white px-3 py-2.5 sm:px-5"
+					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 				>
-					<Breadcrumbs class="text-ellipsis" :items="breadcrumbs" />
+					<div class="min-w-0 flex-1 overflow-hidden">
+						<Breadcrumbs :items="breadcrumbs" />
+					</div>
 					<Button
 						variant="solid"
 						@click="saveLesson({ showSuccessMessage: true })"
-						class="mt-3 md:mt-0"
+						class="mt-3 md:mt-0 shrink-0"
 					>
 						{{ __('Save') }}
 					</Button>
@@ -26,6 +28,13 @@
 							v-model="lesson.include_in_preview"
 							type="checkbox"
 							label="Include in Preview"
+						/>
+						<FormControl
+							v-model="lesson.min_reading_time"
+							type="number"
+							label="Minimum Reading Time (seconds)"
+							description="Minimum time a student must spend on this lesson before it can be marked complete. 0 means no minimum."
+							class="mt-4"
 						/>
 					</div>
 					<div class="border-t mt-4">
@@ -156,6 +165,7 @@ const lesson = reactive({
 	body: '',
 	instructor_notes: '',
 	content: '',
+	min_reading_time: 0,
 })
 
 const lessonDetails = createResource({

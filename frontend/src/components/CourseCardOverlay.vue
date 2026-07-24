@@ -35,6 +35,9 @@
 						</Button>
 					</router-link>
 					<CertificationLinks :courseName="course.data.name" class="w-full" />
+					<div v-if="timeSpent.data?.seconds" class="text-sm text-ink-gray-6">
+						{{ __('Time spent on this course: {0}').format(formatTimeSpent(timeSpent.data.seconds)) }}
+					</div>
 				</div>
 				<!-- <router-link
 					v-else-if="course.data.paid_course"
@@ -212,6 +215,21 @@ const video_link = computed(() => {
 	}
 	return null
 })
+
+const timeSpent = createResource({
+	url: 'lms.lms.api.get_member_time_spent',
+	params: {
+		course: props.course.data.name,
+	},
+	auto: props.course.data.membership ? true : false,
+})
+
+const formatTimeSpent = (seconds) => {
+	let hours = Math.floor(seconds / 3600)
+	let minutes = Math.floor((seconds % 3600) / 60)
+	if (hours) return __('{0}h {1}m').format(hours, minutes)
+	return __('{0}m').format(minutes)
+}
 
 function enrollStudent() {
 	if (!user.data) {

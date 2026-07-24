@@ -164,6 +164,7 @@
 	/>
 	<BatchStudentProgress
 		:student="selectedStudent"
+		:batch="props.batch.data.name"
 		v-model="showStudentProgressModal"
 	/>
 </template>

@@ -146,12 +146,14 @@ const tabsStructure = computed(() => {
 							label: 'Batch Confirmation Email Template',
 							name: 'batch_confirmation_template',
 							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
 							type: 'Link',
 						},
 						{
 							label: 'Certification Email Template',
 							name: 'certification_template',
 							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
 							type: 'Link',
 						},
 						{

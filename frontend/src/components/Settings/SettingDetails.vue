@@ -59,6 +59,9 @@ const update = () => {
 	props.data.save.submit(
 		{},
 		{
+			onSuccess() {
+				toast.success(__('Settings updated successfully'))
+			},
 			onError(err) {
 				toast.error(err.messages?.[0] || err)
 			},

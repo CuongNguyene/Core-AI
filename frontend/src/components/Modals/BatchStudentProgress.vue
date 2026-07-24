@@ -23,6 +23,9 @@
 							>
 								{{ student.progress }}% {{ __('Complete') }}
 							</Badge>
+							<Badge v-if="timeSpent.data" theme="gray">
+								{{ formatDuration(timeSpent.data.seconds) }}
+							</Badge>
 						</div>
 						<div class="text-sm text-ink-gray-7">
 							{{ student.email }}
@@ -115,7 +118,8 @@
 	</Dialog>
 </template>
 <script setup>
-import { Avatar, Badge, Dialog } from 'frappe-ui'
+import { Avatar, Badge, createResource, Dialog } from 'frappe-ui'
+import { watch } from 'vue'
 import StudentHeatmap from '@/components/StudentHeatmap.vue'
 
 const show = defineModel()
@@ -124,7 +128,36 @@ const props = defineProps({
 		type: Object,
 		default: null,
 	},
+	batch: {
+		type: String,
+		default: null,
+	},
 })
+
+const timeSpent = createResource({
+	url: 'lms.lms.api.get_member_time_spent',
+	auto: false,
+})
+
+watch(
+	() => [show.value, props.student],
+	([isOpen, student]) => {
+		if (isOpen && student?.email && props.batch) {
+			timeSpent.submit({
+				member: student.email,
+				batch: props.batch,
+			})
+		}
+	},
+	{ immediate: true }
+)
+
+const formatDuration = (seconds) => {
+	let hours = Math.floor(seconds / 3600)
+	let minutes = Math.floor((seconds % 3600) / 60)
+	if (hours) return __('{0}h {1}m spent').format(hours, minutes)
+	return __('{0}m spent').format(minutes)
+}
 
 const isAssignment = (value) => {
 	return isNaN(value)
