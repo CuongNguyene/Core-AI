@@ -27,6 +27,7 @@
 							:label="__('Title')"
 							:required="true"
 							class="w-full"
+							:placeholder="__('Enter the title of the batch')"
 						/>
 						<MultiSelect
 							v-model="instructors"
@@ -139,6 +140,7 @@
 						:editable="true"
 						:fixedMenu="true"
 						editorClass="prose-sm max-w-none border-b border-x bg-surface-gray-2 rounded-b-md py-1 px-2 min-h-[7rem] max-h-[20rem] overflow-y-scroll mb-4"
+						:placeholder="__('Enter the batch details')"
 					/>
 				</div>
 			</div>
@@ -158,6 +160,7 @@
 						/>
 						<Link
 							doctype="Email Template"
+							:filters="{ is_lms_template: 1 }"
 							:label="__('Email Template')"
 							v-model="batch.confirmation_email_template"
 							:onCreate="
@@ -165,6 +168,7 @@
 									openSettings('Email Templates', close)
 								}
 							"
+							:placeholder="__('Select or create an email template')"
 						/>
 						<Link
 							doctype="LMS Zoom Settings"
@@ -175,6 +179,7 @@
 									openSettings('Zoom Accounts', close)
 								}
 							"
+							:placeholder="__('Select or create a zoom account')"
 						/>
 					</div>
 					<div class="space-y-5">
@@ -199,6 +204,7 @@
 							:label="__('Category')"
 							v-model="batch.category"
 							:onCreate="(value, close) => openSettings('Categories', close)"
+							:placeholder="__('Select or create a category')"
 						/>
 					</div>
 					<div class="space-y-5">
@@ -260,7 +266,7 @@
 				</div>
 			</div>
 
-			<div class="px-5 md:px-20 pb-5 space-y-5">
+			<!-- <div class="px-5 md:px-20 pb-5 space-y-5">
 				<div class="text-lg text-ink-gray-9 font-semibold">
 					{{ __('Pricing') }}
 				</div>
@@ -285,7 +291,7 @@
 						:label="__('Currency')"
 					/>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b">
 				<div class="text-lg text-ink-gray-9 font-semibold">

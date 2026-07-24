@@ -5,7 +5,6 @@
 		>
 			<Breadcrumbs class="h-7" :items="breadcrumbs" />
 			<Button
-				v-if="canViewDepartmentReport"
 				:label="__('Export')"
 				:icon-left="Download"
 				@click="showExportModal = true"
@@ -70,6 +69,9 @@
 					:filters="employeeFilters"
 				/>
 			</div>
+			<div v-else class="max-w-56 mb-4">
+				<DateRangeFilter v-model="filters.period" :label="__('Date Range')" />
+			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 				<Tooltip :text="__('Published Courses')">
@@ -83,7 +85,9 @@
 						class="border rounded-md"
 						:config="{
 							title: 'Enrollments',
-							value: summary?.enrollments ?? chartDetails.data.enrollments,
+							value: isStaffView
+								? summary?.enrollments ?? chartDetails.data.enrollments
+								: myStats.data?.enrollments ?? 0,
 						}"
 					/>
 				</Tooltip>
@@ -92,7 +96,9 @@
 						class="border rounded-md"
 						:config="{
 							title: 'Completions',
-							value: summary?.completions ?? chartDetails.data.completions,
+							value: isStaffView
+								? summary?.completions ?? chartDetails.data.completions
+								: myStats.data?.completions ?? 0,
 						}"
 					/>
 				</Tooltip>
@@ -101,7 +107,9 @@
 						class="border rounded-md"
 						:config="{
 							title: 'Certifications',
-							value: summary?.certifications ?? chartDetails.data.certifications,
+							value: isStaffView
+								? summary?.certifications ?? chartDetails.data.certifications
+								: myStats.data?.certifications ?? 0,
 						}"
 					/>
 				</Tooltip>
@@ -115,7 +123,7 @@
 						<AxisChart v-if="employeesChartConfig" :config="employeesChartConfig" />
 					</div>
 				</template>
-				<div v-else class="border rounded-md min-h-72">
+				<div v-else-if="isStaffView" class="border rounded-md min-h-72">
 					<AxisChart v-if="signupsChartConfig" :config="signupsChartConfig" />
 				</div>
 				<div class="border rounded-md min-h-72">
@@ -135,6 +143,12 @@
 						v-if="departmentChartConfig"
 						:config="departmentChartConfig"
 					/>
+				</div>
+			</div>
+
+			<div class="mt-4">
+				<div class="border rounded-md min-h-72">
+					<AxisChart v-if="timeSpentChartConfig" :config="timeSpentChartConfig" />
 				</div>
 			</div>
 		</div>
@@ -164,7 +178,7 @@
 									/>
 								</div>
 							</template>
-							<div v-else class="border rounded-md min-h-72">
+							<div v-else-if="isStaffView" class="border rounded-md min-h-72">
 								<AxisChart v-if="signupsChartConfig" :config="signupsChartConfig" />
 							</div>
 							<div class="border rounded-md min-h-72">
@@ -186,6 +200,12 @@
 								<DonutChart
 									v-if="departmentChartConfig"
 									:config="departmentChartConfig"
+								/>
+							</div>
+							<div class="border rounded-md min-h-72">
+								<AxisChart
+									v-if="timeSpentChartConfig"
+									:config="timeSpentChartConfig"
 								/>
 							</div>
 						</div>
@@ -226,6 +246,7 @@ import { computed, reactive, ref, watch } from 'vue'
 import { sessionStore } from '../stores/session'
 import { usersStore } from '../stores/user'
 import Link from '@/components/Controls/Link.vue'
+import DateRangeFilter from '@/components/Common/DateRangeFilter.vue'
 
 const { brand } = sessionStore()
 const { userResource } = usersStore()
@@ -233,6 +254,22 @@ const { userResource } = usersStore()
 const canViewDepartmentReport = computed(
 	() => !!userResource.data?.can_view_department_report
 )
+
+const canViewTimeSpent = computed(
+	() =>
+		userResource.data?.is_moderator ||
+		userResource.data?.is_instructor ||
+		userResource.data?.is_system_manager
+)
+
+const isStaffView = computed(
+	() => canViewTimeSpent.value || canViewDepartmentReport.value
+)
+
+const myStats = createResource({
+	url: 'lms.lms.api.get_my_learning_stats',
+	auto: true,
+})
 
 function getLastXDays(days) {
 	let to = dayjs().format('YYYY-MM-DD')
@@ -580,10 +617,7 @@ const chartDetails = createResource({
 
 const signupsChart = createResource({
 	url: 'lms.lms.utils.get_chart_data',
-	params: {
-		chart_name: 'New Signups',
-	},
-	auto: true,
+	auto: false,
 	transform(data) {
 		return data.map((item) => {
 			return {
@@ -596,11 +630,7 @@ const signupsChart = createResource({
 
 const enrollmentChart = createResource({
 	url: 'lms.lms.utils.get_chart_data',
-	cache: ['enrollments'],
-	params: {
-		chart_name: 'Course Enrollments',
-	},
-	auto: true,
+	auto: false,
 	transform(data) {
 		return data.map((item) => {
 			return {
@@ -613,11 +643,7 @@ const enrollmentChart = createResource({
 
 const certification = createResource({
 	url: 'lms.lms.utils.get_chart_data',
-	cache: ['certifications'],
-	params: {
-		chart_name: 'Certification',
-	},
-	auto: true,
+	auto: false,
 	transform(data) {
 		return data.map((item) => {
 			return {
@@ -630,8 +656,73 @@ const certification = createResource({
 
 const courseCompletion = createResource({
 	url: 'lms.lms.utils.get_course_completion_data',
-	auto: true,
-	cache: ['courseCompletion'],
+	auto: false,
+})
+
+watch(
+	[() => userResource.data, () => filters.period],
+	([data]) => {
+		if (!data) return
+		let member = isStaffView.value ? undefined : data.name
+		let [from_date, to_date] = (filters.period || '').split(',')
+		signupsChart.reload({ chart_name: 'New Signups', member, from_date, to_date })
+		enrollmentChart.reload({
+			chart_name: 'Course Enrollments',
+			member,
+			from_date,
+			to_date,
+		})
+		certification.reload({ chart_name: 'Certification', member, from_date, to_date })
+		courseCompletion.reload({ member })
+	},
+	{ immediate: true }
+)
+
+const timeSpentGranularity = computed(() => {
+	let [from, to] = (filters.period || '').split(',')
+	if (!from || !to) return 'day'
+	let days = dayjs(to).diff(dayjs(from), 'day')
+	if (days <= 31) return 'day'
+	if (days <= 120) return 'week'
+	return 'month'
+})
+
+const timeSpent = createResource({
+	url: 'lms.lms.api.get_time_spent_summary',
+	auto: false,
+})
+
+watch(
+	[() => filters.period, () => userResource.data],
+	() => {
+		if (!userResource.data) return
+		let [from_date, to_date] = (filters.period || '').split(',')
+		timeSpent.submit({
+			from_date,
+			to_date,
+			granularity: timeSpentGranularity.value,
+			member: isStaffView.value ? undefined : userResource.data.name,
+		})
+	},
+	{ immediate: true }
+)
+
+const timeSpentChartConfig = computed(() => {
+	if (!timeSpent.data) return null
+	let data = timeSpent.data.map((row) => ({
+		label: row.label,
+		hours: +(row.seconds / 3600).toFixed(2),
+	}))
+	return {
+		data,
+		title: 'Time Spent',
+		subtitle: isStaffView.value
+			? 'Total hours studied across all students'
+			: 'Your hours studied',
+		xAxis: { key: 'label', type: 'category', title: 'Period' },
+		yAxis: { title: 'Hours' },
+		series: [{ name: 'hours', type: 'bar' }],
+	}
 })
 
 usePageMeta(() => {

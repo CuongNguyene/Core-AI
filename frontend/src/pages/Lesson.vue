@@ -1,10 +1,12 @@
 <template>
 	<div v-if="lesson.data" class="">
 		<header
-			class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
-			<Breadcrumbs class="h-7" :items="breadcrumbs" />
-			<div class="flex items-center space-x-2">
+			<div class="min-w-0 flex-1 overflow-hidden">
+				<Breadcrumbs class="h-7" :items="breadcrumbs" />
+			</div>
+			<div class="flex items-center space-x-2 shrink-0">
 				<Tooltip v-if="canGoZen()" :text="__('Zen Mode')">
 					<Button @click="goFullScreen()">
 						<template #icon>
@@ -293,6 +295,16 @@
 						<QuizBlock :quiz="lesson.data.completion_quiz" />
 					</div>
 
+					<!-- Manual completion fallback -->
+					<div v-if="lesson.data.membership && !lesson.data.progress" class="mt-8 px-5">
+						<Button @click="markLessonCompleteManually()">
+							<template #prefix>
+								<CircleCheck class="w-4 h-4 stroke-1.5" />
+							</template>
+							{{ __('Mark as Complete') }}
+						</Button>
+					</div>
+
 					<div
 						v-if="lesson.data"
 						class="mt-10 pb-20 pt-5 border-t px-5"
@@ -371,6 +383,7 @@ import {
 	createListResource,
 	createResource,
 	TabButtons,
+	toast,
 	Tooltip,
 	usePageMeta,
 } from 'frappe-ui'
@@ -387,6 +400,7 @@ import { useRouter, useRoute } from 'vue-router'
 import {
 	ChevronLeft,
 	ChevronRight,
+	CircleCheck,
 	LockKeyholeIcon,
 	LogIn,
 	Focus,
@@ -437,6 +451,7 @@ const plyrSources = ref([])
 const showInlineMenu = ref(false)
 const currentTab = ref('Notes')
 let timerInterval
+let studyTimeInterval
 
 const tabs = ref([
 	{
@@ -462,6 +477,7 @@ const props = defineProps({
 
 onMounted(() => {
 	startTimer()
+	startStudyTimeTracking()
 	sidebarStore.isSidebarCollapsed = true
 	document.addEventListener('fullscreenchange', attachFullscreenEvent)
 	socket.on('update_lesson_progress', (data) => {
@@ -470,6 +486,20 @@ onMounted(() => {
 		}
 	})
 })
+
+const STUDY_TIME_HEARTBEAT_SECONDS = 30
+
+const startStudyTimeTracking = () => {
+	clearInterval(studyTimeInterval)
+	studyTimeInterval = setInterval(() => {
+		if (document.visibilityState === 'visible' && lesson.data?.membership) {
+			call('lms.lms.api.record_study_time', {
+				course: props.courseName,
+				seconds: STUDY_TIME_HEARTBEAT_SECONDS,
+			})
+		}
+	}, STUDY_TIME_HEARTBEAT_SECONDS * 1000)
+}
 
 const attachFullscreenEvent = () => {
 	if (document.fullscreenElement) {
@@ -562,6 +592,31 @@ const markProgress = () => {
 	if (user.data && lesson.data && !lesson.data.progress) {
 		progress.submit()
 	}
+}
+
+const markLessonCompleteManually = () => {
+	clearInterval(timerInterval)
+	readingTimeMet.value = true
+	progress.submit(
+		{},
+		{
+			async onSuccess() {
+				await lesson.reload({
+					chapter: props.chapterNumber,
+					lesson: props.lessonNumber,
+				})
+				if (lesson.data?.progress) {
+					toast.success(__('Lesson marked as complete'))
+				} else {
+					toast.info(
+						__(
+							'Please finish the quiz, video or assignment above before this lesson can be marked complete'
+						)
+					)
+				}
+			},
+		}
+	)
 }
 
 const progress = createResource({
@@ -827,11 +882,18 @@ const updateVideoTime = (video) => {
 
 const startTimer = () => {
 	readingTimeElapsed.value = 0
-	readingTimeMet.value = false
 	clearInterval(timerInterval)
+
+	const minTime = lesson.data?.min_reading_time || 0
+	if (minTime <= 0) {
+		readingTimeMet.value = true
+		markProgress()
+		return
+	}
+
+	readingTimeMet.value = false
 	timerInterval = setInterval(() => {
 		timer.value++
-		const minTime = lesson.data?.min_reading_time || 30
 		readingTimeElapsed.value = Math.min(timer.value, minTime)
 		if (timer.value >= minTime) {
 			readingTimeMet.value = true
@@ -843,6 +905,7 @@ const startTimer = () => {
 
 onBeforeUnmount(() => {
 	clearInterval(timerInterval)
+	clearInterval(studyTimeInterval)
 })
 
 const checkIfDiscussionsAllowed = () => {

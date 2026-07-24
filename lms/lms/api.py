@@ -24,12 +24,19 @@ from frappe.utils import (
 	flt,
 	format_date,
 	get_datetime,
+	getdate,
 	now,
+	nowdate,
 )
 from frappe.utils.response import Response
 
 from lms.lms.doctype.course_lesson.course_lesson import save_progress
-from lms.lms.utils import get_average_rating, get_lesson_count
+from lms.lms.utils import (
+	get_average_rating,
+	get_lesson_count,
+	has_course_moderator_role,
+	is_instructor,
+)
 
 
 @frappe.whitelist()
@@ -299,6 +306,29 @@ def get_job_opportunities(filters=None, orFilters=None):
 		job.description = frappe.utils.strip_html_tags(job.description)
 		job.applicants = frappe.db.count("LMS Job Application", {"job": job.name})
 	return jobs
+
+
+@frappe.whitelist()
+def get_my_learning_stats():
+	"""
+	Returns the current user's own enrollment/completion/certification counts,
+	for the personal view of the Statistics page shown to students.
+	"""
+	member = frappe.session.user
+	progress_values = frappe.get_all("LMS Enrollment", {"member": member}, pluck="progress")
+	enrollments = len(progress_values)
+	completions = len([p for p in progress_values if flt(p) == 100])
+	certifications = frappe.db.count("LMS Certificate", {"member": member})
+
+	return {
+		"enrollments": enrollments,
+		"completions": completions,
+		"certifications": certifications,
+		"donut": [
+			{"label": "Completed", "value": completions},
+			{"label": "In Progress", "value": enrollments - completions},
+		],
+	}
 
 
 @frappe.whitelist(allow_guest=True)
@@ -1768,6 +1798,113 @@ def track_new_watch_time(lesson, video):
 		doc.duration = video.get("duration")
 	doc.member = frappe.session.user
 	doc.save()
+
+
+@frappe.whitelist()
+def record_study_time(course, seconds):
+	"""
+	Accumulate the time (in seconds) the current user has spent studying a
+	course today. Called periodically (heartbeat) while a lesson is open and
+	visible in the browser.
+	"""
+	seconds = cint(seconds)
+	if seconds <= 0 or not course:
+		return
+
+	member = frappe.session.user
+	if member == "Guest":
+		return
+
+	today = nowdate()
+	name = f"{member}-{course}-{today}"
+	existing = frappe.db.get_value("LMS Course Time Log", name, "seconds_spent")
+	if existing is not None:
+		frappe.db.set_value("LMS Course Time Log", name, "seconds_spent", cint(existing) + seconds)
+	else:
+		frappe.get_doc(
+			{
+				"doctype": "LMS Course Time Log",
+				"member": member,
+				"course": course,
+				"date": today,
+				"seconds_spent": seconds,
+			}
+		).insert(ignore_permissions=True)
+
+
+def can_view_other_members_time(course=None, batch=None):
+	user = frappe.session.user
+	roles = frappe.get_roles(user)
+	if "System Manager" in roles or "Course Creator" in roles or has_course_moderator_role():
+		return True
+	if course and is_instructor(course):
+		return True
+	if batch:
+		instructors = frappe.get_all(
+			"Course Instructor", {"parent": batch, "parenttype": "LMS Batch"}, pluck="instructor"
+		)
+		if user in instructors:
+			return True
+	return False
+
+
+def get_time_log_filters(course=None, batch=None, member=None, from_date=None, to_date=None):
+	filters = {}
+	if member:
+		filters["member"] = member
+
+	if course:
+		filters["course"] = course
+	elif batch:
+		batch_courses = frappe.get_all("Batch Course", {"parent": batch}, pluck="course")
+		filters["course"] = ["in", batch_courses or [""]]
+
+	if from_date and to_date:
+		filters["date"] = ["between", [getdate(from_date), getdate(to_date)]]
+
+	return filters
+
+
+@frappe.whitelist()
+def get_time_spent_summary(course=None, batch=None, member=None, from_date=None, to_date=None, granularity="day"):
+	"""
+	Returns a [{label, seconds}] time-spent series bucketed by day/week/month,
+	optionally scoped to a course, a batch (all its courses), and/or a member.
+	"""
+	if member != frappe.session.user and not can_view_other_members_time(course, batch):
+		frappe.throw(_("You are not permitted to view this data"), frappe.PermissionError)
+
+	filters = get_time_log_filters(course, batch, member, from_date, to_date)
+	logs = frappe.get_all("LMS Course Time Log", filters=filters, fields=["date", "seconds_spent"])
+
+	buckets = frappe._dict()
+	for log in logs:
+		log_date = getdate(log.date)
+		if granularity == "week":
+			key = add_days(log_date, -log_date.weekday()).strftime("%Y-%m-%d")
+		elif granularity == "month":
+			key = log_date.strftime("%Y-%m-01")
+		else:
+			key = log_date.strftime("%Y-%m-%d")
+		buckets[key] = buckets.get(key, 0) + cint(log.seconds_spent)
+
+	return [{"label": key, "seconds": seconds} for key, seconds in sorted(buckets.items())]
+
+
+@frappe.whitelist()
+def get_member_time_spent(member=None, course=None, batch=None, from_date=None, to_date=None):
+	"""
+	Returns the total time (in seconds) a member has spent studying, optionally
+	scoped to a course, a batch (all its courses), and/or a date range. Defaults
+	to the current session user if no member is passed.
+	"""
+	member = member or frappe.session.user
+	if member != frappe.session.user and not can_view_other_members_time(course, batch):
+		frappe.throw(_("You are not permitted to view this data"), frappe.PermissionError)
+
+	filters = get_time_log_filters(course, batch, member, from_date, to_date)
+	logs = frappe.get_all("LMS Course Time Log", filters=filters, fields=["seconds_spent"])
+	return {"seconds": sum(cint(log.seconds_spent) for log in logs)}
 
 
 @frappe.whitelist()

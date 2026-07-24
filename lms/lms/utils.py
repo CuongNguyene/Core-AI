@@ -767,6 +767,7 @@ def get_chart_data(
 	timegrain="Daily",
 	from_date=None,
 	to_date=None,
+	member=None,
 ):
 	if not from_date:
 		from_date = add_months(getdate(), -1)
@@ -785,6 +786,12 @@ def get_chart_data(
 	filters = filters + json.loads(chart.filters_json)
 	filters.append([doctype, datefield, ">=", from_date, False])
 	filters.append([doctype, datefield, "<=", to_date, False])
+
+	if member:
+		# Restrict to the requesting member's own records when not viewing the
+		# platform-wide staff dashboard (e.g. a student's personal statistics).
+		member_field = "name" if doctype == "User" else "member"
+		filters.append([doctype, member_field, "=", member, False])
 
 	data = frappe.db.get_all(
 		doctype,
@@ -808,9 +815,12 @@ def get_chart_data(
 
 
 @frappe.whitelist(allow_guest=False)
-def get_course_completion_data():
-	all_membership = frappe.db.count("LMS Enrollment")
-	completed = frappe.db.count("LMS Enrollment", {"progress": ["like", "%100%"]})
+def get_course_completion_data(member=None):
+	filters = {"member": member} if member else {}
+	all_membership = frappe.db.count("LMS Enrollment", filters)
+	completed = frappe.db.count(
+		"LMS Enrollment", {**filters, "progress": ["like", "%100%"]}
+	)
 
 	return [
 		{"label": "Completed", "value": completed},
@@ -1615,6 +1625,7 @@ def get_batch_students(batch):
 	for student in students_list:
 		courses_completed = 0
 		assessments_completed = 0
+		progress_values = []
 		detail = frappe.db.get_value(
 			"User",
 			student.member,
@@ -1628,10 +1639,14 @@ def get_batch_students(batch):
 
 		""" Iterate through courses and track their progress """
 		for course in batch_courses:
-			progress = frappe.db.get_value(
-				"LMS Enrollment", {"course": course.course, "member": student.member}, "progress"
+			progress = (
+				frappe.db.get_value(
+					"LMS Enrollment", {"course": course.course, "member": student.member}, "progress"
+				)
+				or 0
 			)
 			detail.courses[course.title] = progress
+			progress_values.append(progress)
 			if progress == 100:
 				courses_completed += 1
 
@@ -1643,16 +1658,15 @@ def get_batch_students(batch):
 			)
 			detail.assessments[title] = assessment_info
 
+			assessment_progress = 100 if assessment_info.result == "Pass" else 0
+			progress_values.append(assessment_progress)
 			if assessment_info.result == "Pass":
 				assessments_completed += 1
 
 		detail.courses_completed = courses_completed
 		detail.assessments_completed = assessments_completed
-		if len(batch_courses) + len(assessments):
-			detail.progress = flt(
-				((courses_completed + assessments_completed) / (len(batch_courses) + len(assessments)) * 100),
-				2,
-			)
+		if progress_values:
+			detail.progress = flt(sum(progress_values) / len(progress_values), 2)
 		else:
 			detail.progress = 0
 
@@ -1834,6 +1848,7 @@ def get_lesson_creation_details(course, chapter, lesson):
 				"instructor_content",
 				"youtube",
 				"quiz_id",
+				"min_reading_time",
 			],
 			as_dict=1,
 		)
