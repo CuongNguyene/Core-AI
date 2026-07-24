@@ -1,16 +1,16 @@
 <template>
 	<div class="space-y-10">
-		<UpcomingEvaluations
+		<!-- <UpcomingEvaluations
 			:batch="batch.data.name"
 			:endDate="batch.data.evaluation_end_date"
 			:courses="batch.data.courses"
-		/>
+		/> -->
 		<Assessments :batch="batch.data.name" />
 		<!-- <StudentHeatmap /> -->
 	</div>
 </template>
 <script setup>
-import UpcomingEvaluations from '@/components/UpcomingEvaluations.vue'
+// import UpcomingEvaluations from '@/components/UpcomingEvaluations.vue'
 import Assessments from '@/components/Assessments.vue'
 
 const props = defineProps({

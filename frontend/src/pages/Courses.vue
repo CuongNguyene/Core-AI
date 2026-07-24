@@ -285,8 +285,7 @@ const courseTabs = computed(() => {
 	]
 	if (
 		user.data?.is_moderator ||
-		user.data?.is_instructor ||
-		user.data?.is_evaluator
+		user.data?.is_instructor
 	) {
 		tabs.push({ label: __('Created') })
 		tabs.push({ label: __('Unpublished') })

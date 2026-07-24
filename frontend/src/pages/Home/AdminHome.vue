@@ -87,42 +87,6 @@
 		</div>
 
 		<div class="grid grid-cols-2 gap-5 mt-10">
-			<div v-if="evals?.data?.length">
-				<div class="font-semibold text-lg mb-3">
-					{{ __('Upcoming Evaluations') }}
-				</div>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-					<div
-						v-for="evaluation in evals?.data"
-						class="border rounded-md p-3 flex flex-col h-full cursor-pointer"
-						@click="redirectToProfile()"
-					>
-						<div class="font-semibold text-ink-gray-9 text-lg mb-1">
-							{{ evaluation.course_title }}
-						</div>
-						<div class="text-ink-gray-7 text-sm">
-							<div class="flex items-center mb-2">
-								<Calendar class="w-4 h-4 stroke-1.5" />
-								<span class="ml-2">
-									{{ dayjs(evaluation.date).format('DD MMMM YYYY') }}
-								</span>
-							</div>
-							<div class="flex items-center mb-2">
-								<Clock class="w-4 h-4 stroke-1.5" />
-								<span class="ml-2">
-									{{ formatTime(evaluation.start_time) }}
-								</span>
-							</div>
-							<div class="flex items-center">
-								<GraduationCap class="w-4 h-4 stroke-1.5" />
-								<span class="ml-2">
-									{{ evaluation.member_name }}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div v-if="liveClasses?.data?.length">
 				<div class="font-semibold text-lg mb-3">
 					{{ __('Upcoming Live Classes') }}
@@ -154,7 +118,7 @@
 								class="flex items-center space-x-2 text-ink-gray-9 mt-auto"
 							>
 								<a
-									v-if="user.data?.is_moderator || user.data?.is_evaluator"
+									v-if="user.data?.is_moderator || user.data?.is_instructor"
 									:href="cls.start_url"
 									target="_blank"
 									class="cursor-pointer inline-flex items-center justify-center gap-2 transition-colors focus:outline-none text-ink-gray-8 bg-surface-gray-2 hover:bg-surface-gray-3 active:bg-surface-gray-4 focus-visible:ring focus-visible:ring-outline-gray-3 h-7 text-base px-2 rounded"
@@ -194,7 +158,6 @@
 <script setup lang="ts">
 import { Button, createResource, Tooltip } from 'frappe-ui'
 import { inject } from 'vue'
-import { useRouter } from 'vue-router'
 import {
 	Calendar,
 	Clock,
@@ -211,11 +174,9 @@ import BatchCard from '@/components/BatchCard.vue'
 
 const user = inject<any>('$user')
 const dayjs = inject<any>('$dayjs')
-const router = useRouter()
 
 const props = defineProps<{
 	liveClasses?: { data?: any[] }
-	evals?: { data?: any[] }
 }>()
 
 const createdCourses = createResource({
@@ -254,10 +215,4 @@ const hasClassEnded = (cls: {
 	return now > classEnd
 }
 
-const redirectToProfile = () => {
-	router.push({
-		name: 'ProfileEvaluationSchedule',
-		params: { username: user.data?.username },
-	})
-}
 </script>

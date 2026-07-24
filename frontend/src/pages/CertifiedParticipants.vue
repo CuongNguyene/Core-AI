@@ -29,11 +29,11 @@
 					v-if="categories.data?.length"
 					class="min-w-40 lg:min-w-0 lg:w-32 xl:w-40"
 				>
-					<Select
-						v-model="currentCategory"
+					<Autocomplete
+						:value="currentCategory"
 						:options="categories.data"
 						:placeholder="__('Category')"
-						@change="updateParticipants()"
+						@change="(val) => { currentCategory = val?.value || ''; updateParticipants() }"
 					/>
 				</div>
 			</div>
@@ -108,13 +108,13 @@ import {
 	call,
 	createListResource,
 	FormControl,
-	Select,
 	usePageMeta,
 } from 'frappe-ui'
 import { computed, inject, onMounted, ref } from 'vue'
 import { GraduationCap } from 'lucide-vue-next'
 import { sessionStore } from '../stores/session'
 import EmptyState from '@/components/EmptyState.vue'
+import Autocomplete from '@/components/Controls/Autocomplete.vue'
 
 const currentCategory = ref('')
 const filters = ref({})
@@ -150,8 +150,9 @@ const categories = createListResource({
 	cache: ['certification_categories'],
 	auto: true,
 	transform(data) {
-		data.unshift({ label: __(''), value: '' })
-		return data
+		let options = data.map((category) => ({ label: category, value: category }))
+		options.unshift({ label: __('All Categories'), value: '' })
+		return options
 	},
 })
 

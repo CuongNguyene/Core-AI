@@ -6,7 +6,12 @@
 			<Breadcrumbs class="h-7" :items="breadcrumbs" />
 			<div class="flex items-center space-x-2">
 				<Button
-					v-if="user.data?.is_moderator && batch.data?.certification"
+					v-if="
+						(user.data?.is_moderator ||
+							user.data?.is_instructor ||
+							user.data?.is_system_manager) &&
+						batch.data?.certification
+					"
 					@click="openCertificateDialog = true"
 				>
 					{{ __('Generate Certificates') }}
@@ -364,7 +369,7 @@ const canMakeAnnouncement = () => {
 
 	if (!batch.data?.students?.length) return false
 
-	return user.data?.is_moderator || user.data?.is_evaluator
+	return user.data?.is_moderator || user.data?.is_instructor
 }
 
 usePageMeta(() => {

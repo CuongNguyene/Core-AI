@@ -255,11 +255,7 @@ const deleteExercises = (selections: Set<string>, unselectAll: () => void) => {
 }
 
 const isStudent = computed(() => {
-	return (
-		!user.data?.is_instructor &&
-		!user.data?.is_moderator &&
-		!user.data?.is_evaluator
-	)
+	return !user.data?.is_instructor && !user.data?.is_moderator
 })
 
 const submissionColumns = computed(() => {
