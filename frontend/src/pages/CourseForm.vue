@@ -3,10 +3,12 @@
 		<div class="grid grid-cols-1 md:grid-cols-[70%,30%] h-full">
 			<div>
 				<header
-					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 				>
-					<Breadcrumbs class="h-7" :items="breadcrumbs" />
-					<div class="flex items-center mt-3 md:mt-0">
+					<div class="min-w-0 flex-1 overflow-hidden">
+						<Breadcrumbs class="h-7" :items="breadcrumbs" />
+					</div>
+					<div class="flex items-center mt-3 md:mt-0 shrink-0">
 						<Button v-if="courseResource.data?.name" @click="trashCourse()">
 							<template #icon>
 								<Trash2 class="w-4 h-4 stroke-1.5" />
@@ -29,12 +31,14 @@
 								v-model="course.title"
 								:label="__('Title')"
 								:required="true"
+								:placeholder="__('Enter the course title')"
 							/>
 							<Link
 								doctype="LMS Category"
 								v-model="course.category"
 								:label="__('Category')"
 								:onCreate="(value, close) => openSettings('Categories', close)"
+								:placeholder="__('Select a category')"
 							/>
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -204,6 +208,7 @@
 								:editable="true"
 								:fixedMenu="true"
 								editorClass="prose-sm max-w-none border-b border-x bg-surface-gray-2 rounded-b-md py-1 px-2 min-h-[7rem]"
+								:placeholder="__('Write a detailed description of the course')"
 							/>
 						</div>
 

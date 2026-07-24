@@ -78,7 +78,7 @@ def make_lms_notification_logs(doc, users):
 	in the LMS notification inbox.
 	"""
 	users = users if isinstance(users, (list, tuple)) else [users]
-	user_names = frappe.db.get_values("User", {"enabled": 1, "email": ("in", users)}, "name", pluck=True)
+	user_names = frappe.db.get_values("User", {"enabled": 1, "name": ("in", users)}, "name", pluck=True)
 
 	for user in user_names:
 		notification = frappe.new_doc("LMS Notification")

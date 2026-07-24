@@ -13,6 +13,7 @@
 						v-if="field.type == 'Link'"
 						v-model="data[field.name]"
 						:doctype="field.doctype"
+						:filters="field.filters"
 						:label="__(field.label)"
 						:description="__(field.description)"
 					/>

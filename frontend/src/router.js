@@ -248,6 +248,45 @@ let router = createRouter({
 	routes,
 })
 
+// After a new deploy, previously-loaded pages reference chunk files (by
+// content hash) that no longer exist on the server. Loading a route not yet
+// fetched in this session then fails with "Failed to fetch dynamically
+// imported module" and silently aborts navigation. Recover by doing a single
+// hard reload to pick up the new build instead of leaving the user stuck.
+const RELOAD_FLAG = 'lms:reloaded-after-chunk-error'
+
+function isChunkLoadError(error) {
+	let message = error?.message || ''
+	return (
+		/failed to fetch dynamically imported module/i.test(message) ||
+		/error loading dynamically imported module/i.test(message) ||
+		/importing a module script failed/i.test(message)
+	)
+}
+
+function reloadOnce() {
+	if (sessionStorage.getItem(RELOAD_FLAG)) return
+	sessionStorage.setItem(RELOAD_FLAG, '1')
+	window.location.reload()
+}
+
+router.onError((error, to) => {
+	if (isChunkLoadError(error)) {
+		reloadOnce()
+	}
+})
+
+router.afterEach(() => {
+	// A route that resolved successfully means the current build's assets are
+	// loadable again, so a future genuine error should be allowed to trigger
+	// another reload rather than being silently swallowed by the guard.
+	sessionStorage.removeItem(RELOAD_FLAG)
+})
+
+window.addEventListener('vite:preloadError', () => {
+	reloadOnce()
+})
+
 router.beforeEach(async (to, from, next) => {
 	const { userResource } = usersStore()
 	let { isLoggedIn } = sessionStore()

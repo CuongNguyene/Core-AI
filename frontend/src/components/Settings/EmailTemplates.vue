@@ -113,6 +113,9 @@ const selectedTemplate = ref(null)
 const emailTemplates = createListResource({
 	doctype: 'Email Template',
 	fields: ['name', 'subject', 'use_html', 'response', 'response_html'],
+	filters: {
+		is_lms_template: 1,
+	},
 	auto: true,
 	orderBy: 'modified desc',
 	cache: 'email-templates',

@@ -27,7 +27,7 @@
 	</div>
 </template>
 <script setup>
-import { createResource, Button, Badge } from 'frappe-ui'
+import { createResource, Button, Badge, toast } from 'frappe-ui'
 import SettingFields from '@/components/Settings/SettingFields.vue'
 import { watch, ref } from 'vue'
 
@@ -86,6 +86,10 @@ const update = () => {
 		{
 			onSuccess(data) {
 				isDirty.value = false
+				toast.success(__('Settings updated successfully'))
+			},
+			onError(err) {
+				toast.error(err.messages?.[0] || err)
 			},
 		}
 	)
