@@ -68,11 +68,19 @@
 				<div class="font-semibold text-lg text-ink-gray-9">
 					{{ quiz.data.title }}
 				</div>
+				<div v-if="!questions.length" class="leading-5 text-ink-gray-7 mt-4">
+					{{
+						__(
+							'This quiz has no questions yet. Please add at least one question before testing this quiz.'
+						)
+					}}
+				</div>
 				<div class="flex items-center justify-center space-x-2 mt-4">
 					<Button
 						v-if="
-							!quiz.data.max_attempts ||
-							attempts.data?.length < quiz.data.max_attempts
+							questions.length &&
+							(!quiz.data.max_attempts ||
+								attempts.data?.length < quiz.data.max_attempts)
 						"
 						variant="solid"
 						@click="startQuiz"
@@ -485,7 +493,9 @@ const questionDetails = createResource({
 
 watch(activeQuestion, (value) => {
 	if (value > 0) {
-		currentQuestion.value = quiz.data.questions[value - 1].question
+		const question = quiz.data?.questions?.[value - 1]
+		if (!question) return
+		currentQuestion.value = question.question
 		questionDetails.reload()
 	}
 })

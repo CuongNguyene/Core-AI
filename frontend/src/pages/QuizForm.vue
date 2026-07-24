@@ -7,22 +7,12 @@
 			<Badge v-if="quizDetails.isDirty" theme="orange">
 				{{ __('Not Saved') }}
 			</Badge>
-			<router-link
-				v-if="quizDetails.doc?.name"
-				:to="{
-					name: 'QuizPage',
-					params: {
-						quizID: quizDetails.doc.name,
-					},
-				}"
-			>
-				<Button>
-					<template #prefix>
-						<ListChecks class="size-4 stroke-1.5" />
-					</template>
-					{{ __('Test Quiz') }}
-				</Button>
-			</router-link>
+			<Button v-if="quizDetails.doc?.name" @click="testQuiz()">
+				<template #prefix>
+					<ListChecks class="size-4 stroke-1.5" />
+				</template>
+				{{ __('Test Quiz') }}
+			</Button>
 			<router-link
 				v-if="quizDetails.doc?.name"
 				:to="{
@@ -373,6 +363,22 @@ const submitQuiz = () => {
 			},
 		}
 	)
+}
+
+const testQuiz = () => {
+	if (!quizDetails.doc?.questions?.length) {
+		toast.warning(
+			__('Please add at least one question before testing this quiz.')
+		)
+		return
+	}
+
+	router.push({
+		name: 'QuizPage',
+		params: {
+			quizID: quizDetails.doc.name,
+		},
+	})
 }
 
 const calculateTotalMarks = () => {
