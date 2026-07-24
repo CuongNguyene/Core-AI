@@ -7,22 +7,12 @@
 			<Badge v-if="quizDetails.isDirty" theme="orange">
 				{{ __('Not Saved') }}
 			</Badge>
-			<router-link
-				v-if="quizDetails.doc?.name"
-				:to="{
-					name: 'QuizPage',
-					params: {
-						quizID: quizDetails.doc.name,
-					},
-				}"
-			>
-				<Button>
-					<template #prefix>
-						<ListChecks class="size-4 stroke-1.5" />
-					</template>
-					{{ __('Test Quiz') }}
-				</Button>
-			</router-link>
+			<Button v-if="quizDetails.doc?.name" @click="testQuiz()">
+				<template #prefix>
+					<ListChecks class="size-4 stroke-1.5" />
+				</template>
+				{{ __('Test Quiz') }}
+			</Button>
 			<router-link
 				v-if="quizDetails.doc?.name"
 				:to="{
@@ -125,7 +115,7 @@
 			</div>
 		</div>
 
-		<div class="px-20 pb-5 space-y-5 mb-5">
+		<div v-if="!isNew" class="px-20 pb-5 space-y-5 mb-5">
 			<div class="flex items-center justify-between mb-4">
 				<div class="text-lg font-semibold text-ink-gray-9">
 					{{ __('Questions') }}
@@ -253,6 +243,23 @@ const props = defineProps({
 
 const questions = ref([])
 
+const isNew = computed(() => props.quizID === 'new')
+
+const getBlankQuiz = () => ({
+	title: '',
+	max_attempts: 0,
+	duration: '',
+	total_marks: 0,
+	passing_percentage: 0,
+	show_answers: 0,
+	show_submission_history: 0,
+	shuffle_questions: 0,
+	limit_questions_to: 0,
+	enable_negative_marking: 0,
+	marks_to_cut: 0,
+	questions: [],
+})
+
 onMounted(() => {
 	if (
 		props.quizID == 'new' &&
@@ -263,6 +270,8 @@ onMounted(() => {
 	}
 	if (props.quizID !== 'new') {
 		quizDetails.reload()
+	} else {
+		quizDetails.doc = getBlankQuiz()
 	}
 	window.addEventListener('keydown', keyboardShortcut)
 })
@@ -298,7 +307,47 @@ const quizDetails = createDocumentResource({
 	},
 })
 
+const newQuizResource = createResource({
+	url: 'frappe.client.insert',
+	makeParams(values) {
+		return {
+			doc: {
+				doctype: 'LMS Quiz',
+				...values,
+			},
+		}
+	},
+})
+
+const createQuiz = () => {
+	newQuizResource.submit(
+		{
+			...quizDetails.doc,
+			total_marks: calculateTotalMarks(),
+		},
+		{
+			onSuccess(data) {
+				quizDetails.name = data.name
+				quizDetails.doc = data
+				toast.success(__('Quiz created successfully'))
+				router.push({
+					name: 'QuizForm',
+					params: { quizID: data.name },
+				})
+			},
+			onError(err) {
+				toast.error(err.messages?.[0] || err)
+			},
+		}
+	)
+}
+
 const submitQuiz = () => {
+	if (isNew.value) {
+		createQuiz()
+		return
+	}
+
 	quizDetails.setValue.submit(
 		{
 			...quizDetails.doc,
@@ -314,6 +363,22 @@ const submitQuiz = () => {
 			},
 		}
 	)
+}
+
+const testQuiz = () => {
+	if (!quizDetails.doc?.questions?.length) {
+		toast.warning(
+			__('Please add at least one question before testing this quiz.')
+		)
+		return
+	}
+
+	router.push({
+		name: 'QuizPage',
+		params: {
+			quizID: quizDetails.doc.name,
+		},
+	})
 }
 
 const calculateTotalMarks = () => {

@@ -108,7 +108,19 @@ const quizColumns = computed(() => {
 })
 
 const breadcrumbs = computed(() => {
-	return [{ label: __('Quiz Submissions') }]
+	return [
+		{
+			label: __('Quizzes'),
+			route: { name: 'Quizzes' },
+		},
+		{
+			label: submissions.data?.[0]?.quiz_title || __('Quiz'),
+			route: { name: 'QuizForm', params: { quizID: props.quizID } },
+		},
+		{
+			label: __('Submissions'),
+		},
+	]
 })
 
 usePageMeta(() => {
