@@ -3,7 +3,15 @@
 		v-if="!fromLesson"
 		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
 	>
-		<Breadcrumbs :items="breadcrumbs" />
+		<div class="flex items-center space-x-2">
+			<Button @click="goBack()">
+				<template #prefix>
+					<ArrowLeft class="size-4 stroke-1.5" />
+				</template>
+				{{ __('Back') }}
+			</Button>
+			<Breadcrumbs :items="breadcrumbs" />
+		</div>
 	</header>
 	<div
 		class="md:w-7/12 md:mx-auto mx-4 py-10"
@@ -14,9 +22,10 @@
 </template>
 <script setup>
 import Quiz from '@/components/Quiz.vue'
-import { createResource, Breadcrumbs, usePageMeta } from 'frappe-ui'
+import { createResource, Breadcrumbs, Button, usePageMeta } from 'frappe-ui'
 import { computed, inject, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ArrowLeft } from 'lucide-vue-next'
 import { sessionStore } from '../stores/session'
 
 const { brand } = sessionStore()
@@ -41,6 +50,14 @@ const props = defineProps({
 	},
 })
 
+const goBack = () => {
+	if (window.history.state?.back) {
+		router.back()
+	} else {
+		router.push({ name: 'Courses' })
+	}
+}
+
 const title = createResource({
 	url: 'frappe.client.get_value',
 	params: {
@@ -54,7 +71,7 @@ const title = createResource({
 })
 
 const breadcrumbs = computed(() => {
-	return [{ label: __('Quiz Submission') }, { label: title.data?.title }]
+	return [{ label: __('Quiz') }, { label: title.data?.title }]
 })
 
 usePageMeta(() => {

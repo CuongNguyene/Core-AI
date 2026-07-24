@@ -128,7 +128,20 @@ const submissionDetails = createDocumentResource({
 const breadcrumbs = computed(() => {
 	return [
 		{
-			label: __('Quiz Submissions'),
+			label: __('Quizzes'),
+			route: { name: 'Quizzes' },
+		},
+		{
+			label: submissionDetails.doc.quiz_title,
+			route: {
+				name: 'QuizForm',
+				params: {
+					quizID: submissionDetails.doc.quiz,
+				},
+			},
+		},
+		{
+			label: __('Submissions'),
 			route: {
 				name: 'QuizSubmissionList',
 				params: {
@@ -137,7 +150,7 @@ const breadcrumbs = computed(() => {
 			},
 		},
 		{
-			label: submissionDetails.doc.quiz_title,
+			label: submissionDetails.doc.member_name,
 		},
 	]
 })
