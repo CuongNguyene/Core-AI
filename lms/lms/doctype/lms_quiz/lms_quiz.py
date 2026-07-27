@@ -25,6 +25,12 @@ class LMSQuiz(Document):
 		self.validate_limit()
 		self.calculate_total_marks()
 		self.validate_open_ended_questions()
+		self.validate_passing_percentage()
+
+	def validate_passing_percentage(self):
+		percentage = cint(self.passing_percentage)
+		if percentage < 0 or percentage > 100:
+			frappe.throw(_("Passing Percentage must be between 0 and 100."))
 
 	def validate_duplicate_questions(self):
 		questions = [row.question for row in self.questions]
@@ -131,7 +137,7 @@ def quiz_summary(quiz, results):
 		"score": score,
 		"score_out_of": score_out_of,
 		"submission": submission.name,
-		"pass": percentage == quiz_details.passing_percentage,
+		"pass": percentage >= quiz_details.passing_percentage,
 		"percentage": percentage,
 		"is_open_ended": is_open_ended,
 	}
