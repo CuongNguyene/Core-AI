@@ -509,10 +509,16 @@ watch(
 	}
 )
 
-const startQuiz = () => {
+const startQuiz = async () => {
 	activeQuestion.value = 1
 	localStorage.removeItem(quiz.data.title)
-	if (quiz.data.duration) startTimer()
+	if (quiz.data.duration) {
+		const attempt = await call('lms.lms.doctype.lms_quiz.lms_quiz.start_quiz_attempt', {
+			quiz: quiz.data.name,
+		})
+		timer.value = attempt.remaining_seconds
+		startTimer()
+	}
 }
 
 const markAnswer = (index) => {
@@ -544,40 +550,38 @@ const checkAnswer = () => {
 		return Promise.resolve()
 	}
 
-	return new Promise((resolve) => {
-		createResource({
-			url: 'lms.lms.doctype.lms_quiz.lms_quiz.check_answer',
-			params: {
-				question: currentQuestion.value,
-				type: questionDetails.data.type,
-				answers: JSON.stringify(answers),
-			},
-			auto: true,
-			onSuccess(data) {
-				let type = questionDetails.data.type
-				if (type == 'Choices') {
-					selectedOptions.forEach((option, index) => {
-						if (option) {
-							showAnswers[index] = option && data[index]
-						} else if (data[index] == 2) {
-							showAnswers[index] = 2
-						} else {
-							showAnswers[index] = undefined
-						}
-					})
-				} else {
-					showAnswers.push(data)
-				}
-				addToLocalStorage()
-				if (!quiz.data.show_answers) {
-					resetQuestion()
-				}
-				resolve()
-			},
-			onError() {
-				resolve()
-			},
-		})
+	createResource({
+		url: 'lms.lms.doctype.lms_quiz.lms_quiz.check_answer',
+		params: {
+			question: currentQuestion.value,
+			type: questionDetails.data.type,
+			answers: JSON.stringify(answers),
+			quiz: quiz.data.name,
+		},
+		auto: true,
+		onSuccess(data) {
+			// The server only returns per-option correctness when the quiz has
+			// show_answers enabled, so it never leaks the answer key for quizzes
+			// that are meant to hide it until (or unless) grading is shown.
+			let type = questionDetails.data.type
+			if (data && type == 'Choices') {
+				selectedOptions.forEach((option, index) => {
+					if (option) {
+						showAnswers[index] = option && data[index]
+					} else if (data[index] == 2) {
+						showAnswers[index] = 2
+					} else {
+						showAnswers[index] = undefined
+					}
+				})
+			} else if (data) {
+				showAnswers.push(data)
+			}
+			addToLocalStorage()
+			if (!quiz.data.show_answers) {
+				resetQuestion()
+			}
+		},
 	})
 }
 
