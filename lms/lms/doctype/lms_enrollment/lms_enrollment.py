@@ -14,6 +14,20 @@ class LMSEnrollment(Document):
 
 	def on_update(self):
 		update_program_progress(self.member)
+		self.sync_worksuite_task()
+
+	def sync_worksuite_task(self):
+		if not self.worksuite_task or self.progress != 100:
+			return
+
+		from lms.lms.worksuite_integration import complete_learning_task
+
+		try:
+			complete_learning_task(self)
+		except Exception:
+			frappe.log_error(
+				frappe.get_traceback(), f"Failed to complete Worksuite task for {self.name}"
+			)
 
 	def validate_membership_in_same_batch(self):
 		filters = {"member": self.member, "course": self.course, "name": ["!=", self.name]}
@@ -92,6 +106,14 @@ def create_membership(course, batch=None, member=None, member_type="Student", ro
 		}
 	)
 	enrollment.insert()
+
+	from lms.lms.worksuite_integration import create_learning_task
+
+	try:
+		create_learning_task(enrollment)
+	except Exception:
+		frappe.log_error(frappe.get_traceback(), f"Failed to create Worksuite task for {enrollment.name}")
+
 	return enrollment
 
 

@@ -9,7 +9,7 @@ import frappe
 from frappe import _, safe_decode
 from frappe.core.doctype.file.utils import get_random_filename
 from frappe.model.document import Document
-from frappe.utils import cint, comma_and, cstr
+from frappe.utils import cint, comma_and, cstr, now_datetime, time_diff_in_seconds
 from frappe.utils.file_manager import safe_b64decode
 from fuzzywuzzy import fuzz
 
@@ -17,6 +17,10 @@ from lms.lms.doctype.course_lesson.course_lesson import save_progress
 from lms.lms.utils import (
 	generate_slug,
 )
+
+# Grace period to absorb network/render latency between the client-side timer
+# hitting zero and the auto-submit request actually reaching the server.
+QUIZ_DURATION_GRACE_SECONDS = 60
 
 
 class LMSQuiz(Document):
@@ -118,9 +122,12 @@ def quiz_summary(quiz, results):
 			"course",
 			"enable_negative_marking",
 			"marks_to_cut",
+			"duration",
 		],
 		as_dict=1,
 	)
+
+	attempt = validate_quiz_duration(quiz_details, frappe.session.user)
 
 	data = process_results(results, quiz_details)
 	results = data["results"]
@@ -130,6 +137,9 @@ def quiz_summary(quiz, results):
 	score_out_of = quiz_details.total_marks
 	percentage = (score / score_out_of) * 100 if score_out_of else 0
 	submission = create_submission(quiz, results, score_out_of, quiz_details.passing_percentage)
+
+	if attempt:
+		frappe.db.set_value("LMS Quiz Attempt", attempt.name, "submission", submission.name)
 
 	save_progress_after_quiz(quiz_details, percentage)
 
@@ -141,6 +151,118 @@ def quiz_summary(quiz, results):
 		"percentage": percentage,
 		"is_open_ended": is_open_ended,
 	}
+
+
+@frappe.whitelist()
+def start_quiz_attempt(quiz):
+	"""Records (or resumes) a server-side start time for this user's attempt,
+	so the quiz duration can be enforced independently of the client-side timer.
+	Returns the remaining time computed server-side, so the client never has to
+	reconcile timezone-dependent timestamps itself."""
+	user = frappe.session.user
+	if not user or user == "Guest":
+		frappe.throw(_("Please log in to take this quiz."))
+
+	duration = cint(frappe.db.get_value("LMS Quiz", quiz, "duration"))
+	if not duration:
+		return {"duration": 0, "remaining_seconds": None}
+
+	attempt = get_open_attempt(quiz, user)
+	if not attempt or is_attempt_expired(attempt, duration):
+		attempt = frappe.get_doc(
+			{
+				"doctype": "LMS Quiz Attempt",
+				"quiz": quiz,
+				"member": user,
+				"start_time": now_datetime(),
+			}
+		).insert(ignore_permissions=True)
+
+	elapsed = time_diff_in_seconds(now_datetime(), attempt.start_time)
+	remaining_seconds = max(duration * 60 - int(elapsed), 0)
+
+	return {"duration": duration, "remaining_seconds": remaining_seconds}
+
+
+ATTEMPT_CLAIM_MARKER = "__claiming__"
+
+
+def get_open_attempt(quiz, user):
+	"""frappe.get_all is used here (rather than a plain db.get_value filter)
+	because it's the NULL-safe form: a brand-new attempt's "submission"
+	column is NULL, not "", and only get_all's query builder treats an
+	empty-string filter as matching that."""
+	attempts = frappe.get_all(
+		"LMS Quiz Attempt",
+		filters={"quiz": quiz, "member": user, "submission": ""},
+		fields=["name", "start_time"],
+		order_by="creation desc",
+		limit_page_length=1,
+	)
+	return attempts[0] if attempts else None
+
+
+def claim_attempt_for_submission(attempt_name):
+	"""Atomically marks the attempt as claimed via a conditional UPDATE, so two
+	concurrent duplicate submissions for the same attempt (double-click, or a
+	client retry after a timed-out request) can't both succeed.
+
+	Deliberately not a SELECT ... FOR UPDATE: MariaDB 11 runs with
+	innodb_snapshot_isolation=ON by default, under which a locking read
+	inside Frappe's long-lived per-request transaction that has to wait for a
+	concurrently-modified row raises "Record has changed since last read"
+	(error 1020) instead of quietly seeing the new value once unblocked. A
+	single UPDATE with a WHERE guard sidesteps that, since InnoDB evaluates
+	an UPDATE's WHERE clause and takes its lock against the row's current
+	version, not the transaction's original snapshot. That UPDATE can still
+	hit error 1020 itself if this row was already changed by another
+	transaction since ours began, so that specific error is treated as "someone
+	else already claimed it" rather than left to bubble up as a raw 500.
+	"""
+	try:
+		frappe.db.sql(
+			"""
+			update `tabLMS Quiz Attempt`
+			set submission = %s
+			where name = %s and (submission is null or submission = '')
+			""",
+			(ATTEMPT_CLAIM_MARKER, attempt_name),
+		)
+	except Exception as e:
+		if getattr(e, "args", None) and e.args[0] == 1020:
+			frappe.db.rollback()
+			return False
+		raise
+
+	return frappe.db.sql("select row_count()")[0][0] == 1
+
+
+def is_attempt_expired(attempt, duration):
+	elapsed = time_diff_in_seconds(now_datetime(), attempt.start_time)
+	return elapsed > (duration * 60 + QUIZ_DURATION_GRACE_SECONDS)
+
+
+def validate_quiz_duration(quiz_details, user):
+	"""Rejects a submission if it arrives after the quiz's server-tracked
+	start time plus its duration (and a small network-latency grace period),
+	and exclusively claims the attempt so it can't be submitted twice."""
+	duration = cint(quiz_details.get("duration"))
+	if not duration:
+		return None
+
+	attempt = get_open_attempt(quiz_details.name, user)
+	if not attempt:
+		if frappe.db.exists("LMS Quiz Attempt", {"quiz": quiz_details.name, "member": user}):
+			frappe.throw(_("This quiz attempt has already been submitted."))
+		frappe.throw(_("No active attempt found for this quiz. Please start the quiz again."))
+
+	if is_attempt_expired(attempt, duration):
+		frappe.throw(_("The time limit for this quiz has expired. Please start the quiz again."))
+
+	if not claim_attempt_for_submission(attempt.name):
+		frappe.throw(_("This quiz attempt has already been submitted."))
+
+	return attempt
 
 
 def process_results(results, quiz_details):
@@ -160,13 +282,11 @@ def process_results(results, quiz_details):
 		result["marks_out_of"] = question_details.marks
 
 		if question_details.type != "Open Ended":
-			if len(result["is_correct"]) > 0:
-				correct = result["is_correct"][0]
-				for point in result["is_correct"]:
-					correct = correct and point
-				result["is_correct"] = correct
-			else:
-				result["is_correct"] = 0
+			submitted_answers = [
+				answer for answer in cstr(result.get("answer", "")).split(",") if answer
+			]
+			correct = evaluate_answer(question_details.question, question_details.type, submitted_answers)
+			result["is_correct"] = correct
 
 			if correct:
 				marks = question_details.marks
@@ -188,6 +308,27 @@ def process_results(results, quiz_details):
 		"score": score,
 		"is_open_ended": is_open_ended,
 	}
+
+
+def evaluate_answer(question, type, submitted_answers):
+	"""Recomputes correctness server-side from the DB, ignoring any is_correct
+	value the client may have sent, since that value is user-editable (e.g. via
+	localStorage) before the final submission request."""
+	if type == "Choices":
+		fields = []
+		for num in range(1, 5):
+			fields.append(f"option_{num}")
+			fields.append(f"is_correct_{num}")
+
+		question_details = frappe.db.get_value("LMS Question", question, fields, as_dict=1)
+		correct_options = {
+			question_details[f"option_{num}"]
+			for num in range(1, 5)
+			if question_details.get(f"option_{num}") and question_details.get(f"is_correct_{num}")
+		}
+		return set(submitted_answers) == correct_options
+
+	return bool(check_input_answers(question, submitted_answers[0] if submitted_answers else ""))
 
 
 def _save_file(match):
@@ -274,12 +415,21 @@ def get_question_details(question):
 
 
 @frappe.whitelist()
-def check_answer(question, type, answers):
+def check_answer(question, type, answers, quiz=None):
 	answers = json.loads(answers)
 	if type == "Choices":
-		return check_choice_answers(question, answers)
+		result = check_choice_answers(question, answers)
 	else:
-		return check_input_answers(question, answers[0])
+		result = check_input_answers(question, answers[0])
+
+	# Only reveal per-question correctness when the quiz is explicitly set up
+	# for it. Otherwise this endpoint would hand out the answer key over the
+	# network for quizzes that are meant to hide it (e.g. graded assessments),
+	# regardless of whether the frontend chooses to display the response.
+	if not quiz or not frappe.db.get_value("LMS Quiz", quiz, "show_answers"):
+		return None
+
+	return result
 
 
 def check_choice_answers(question, answers):
