@@ -11,7 +11,7 @@ from frappe.utils import cint, today
 
 from lms.lms.utils import get_chapters
 
-from ...utils import generate_slug, update_payment_record, validate_image
+from ...utils import update_payment_record, validate_image
 
 
 class LMSCourse(Document):
@@ -126,10 +126,6 @@ class LMSCourse(Document):
 			)
 			frappe.enqueue(method=frappe.sendmail, queue="short", timeout=300, is_async=True, **email_args)
 			frappe.db.set_value("LMS Course Interest", user.name, "email_sent", True)
-
-	def autoname(self):
-		if not self.name:
-			self.name = generate_slug(self.title, "LMS Course")
 
 	def __repr__(self):
 		return f"<Course#{self.name}>"

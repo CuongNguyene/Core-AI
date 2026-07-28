@@ -33,11 +33,12 @@
 					v-model="titleFilter"
 					:placeholder="__('Search by title')"
 				/>
-				<FormControl
-					v-model="typeFilter"
-					type="select"
+				<Autocomplete
+					:modelValue="typeFilter"
+					@update:modelValue="(opt) => (typeFilter = opt?.value || '')"
 					:options="assignmentTypes"
 					:placeholder="__('Type')"
+					size="sm"
 				/>
 			</div>
 		</div>
@@ -89,6 +90,7 @@ import { useRouter } from 'vue-router'
 import { sessionStore } from '../stores/session'
 import AssignmentForm from '@/components/Modals/AssignmentForm.vue'
 import EmptyState from '@/components/EmptyState.vue'
+import Autocomplete from '@/components/Controls/Autocomplete.vue'
 
 const user = inject('$user')
 const dayjs = inject('$dayjs')
@@ -187,7 +189,7 @@ const getAssignmentCount = () => {
 }
 
 const assignmentTypes = computed(() => {
-	let types = ['', 'Document', 'Image', 'PDF', 'URL', 'Text']
+	let types = ['Document', 'Image', 'PDF', 'URL', 'Text']
 	return types.map((type) => {
 		return {
 			label: __(type),

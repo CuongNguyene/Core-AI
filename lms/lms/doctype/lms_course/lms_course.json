@@ -9,6 +9,7 @@
  ],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "CRS-.YYYY.-.#####",
  "creation": "2022-02-22 15:28:26.091549",
  "doctype": "DocType",
  "editable_grid": 1,

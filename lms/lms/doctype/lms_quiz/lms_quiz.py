@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import json
+import random
 import re
 from binascii import Error as BinasciiError
 
@@ -15,7 +16,7 @@ from fuzzywuzzy import fuzz
 
 from lms.lms.doctype.course_lesson.course_lesson import save_progress
 from lms.lms.utils import (
-	generate_slug,
+	check_quiz_access,
 )
 
 # Grace period to absorb network/render latency between the client-side timer
@@ -77,10 +78,6 @@ class LMSQuiz(Document):
 			else:
 				self.show_answers = 0
 
-	def autoname(self):
-		if not self.name:
-			self.name = generate_slug(self.title, "LMS Quiz")
-
 	def get_last_submission_details(self):
 		"""Returns the latest submission for this user."""
 		user = frappe.session.user
@@ -97,6 +94,60 @@ class LMSQuiz(Document):
 
 		if result:
 			return result[0]
+
+
+@frappe.whitelist()
+def get_quiz(quiz):
+	"""Returns quiz metadata for the student-facing quiz runner. Deliberately
+	excludes the `questions` child table, which embeds the full text of every
+	question (via question_detail) regardless of shuffle_questions or
+	limit_questions_to — sending it here would hand the browser the entire
+	question bank up front. Use get_quiz_questions/get_question_details to
+	fetch the (server-selected) questions and their content instead."""
+	quiz_doc = frappe.get_doc("LMS Quiz", quiz)
+	check_quiz_access(quiz_doc)
+
+	fields = [
+		"name",
+		"title",
+		"max_attempts",
+		"show_answers",
+		"show_submission_history",
+		"total_marks",
+		"passing_percentage",
+		"duration",
+		"shuffle_questions",
+		"limit_questions_to",
+		"enable_negative_marking",
+		"marks_to_cut",
+		"lesson",
+		"course",
+	]
+	return {field: quiz_doc.get(field) for field in fields}
+
+
+@frappe.whitelist()
+def get_quiz_questions(quiz):
+	"""Selects (and shuffles/limits, per the quiz's own settings) the question
+	set for this attempt on the server, instead of sending the full question
+	bank to the browser and trusting it to slice/shuffle client-side. Only
+	question refs are returned here — the actual question text and options
+	are fetched one at a time via get_question_details."""
+	quiz_doc = frappe.get_doc("LMS Quiz", quiz)
+	check_quiz_access(quiz_doc)
+
+	questions = [
+		{"name": row.name, "question": row.question, "marks": row.marks, "type": row.type}
+		for row in quiz_doc.questions
+	]
+
+	if quiz_doc.shuffle_questions:
+		random.shuffle(questions)
+
+	if quiz_doc.limit_questions_to:
+		questions = questions[: cint(quiz_doc.limit_questions_to)]
+
+	return questions
 
 
 def set_total_marks(questions):
@@ -126,6 +177,8 @@ def quiz_summary(quiz, results):
 		],
 		as_dict=1,
 	)
+
+	check_quiz_access(quiz_details)
 
 	attempt = validate_quiz_duration(quiz_details, frappe.session.user)
 
@@ -163,6 +216,8 @@ def start_quiz_attempt(quiz):
 	if not user or user == "Guest":
 		frappe.throw(_("Please log in to take this quiz."))
 
+	check_quiz_access(frappe.get_doc("LMS Quiz", quiz))
+
 	duration = cint(frappe.db.get_value("LMS Quiz", quiz, "duration"))
 	if not duration:
 		return {"duration": 0, "remaining_seconds": None}
@@ -181,7 +236,7 @@ def start_quiz_attempt(quiz):
 	elapsed = time_diff_in_seconds(now_datetime(), attempt.start_time)
 	remaining_seconds = max(duration * 60 - int(elapsed), 0)
 
-	return {"duration": duration, "remaining_seconds": remaining_seconds}
+	return {"duration": duration, "remaining_seconds": remaining_seconds, "name": attempt.name}
 
 
 ATTEMPT_CLAIM_MARKER = "__claiming__"
@@ -398,20 +453,6 @@ def save_progress_after_quiz(quiz_details, percentage):
 		save_progress(quiz_details.lesson, quiz_details.course)
 	elif not quiz_details.passing_percentage:
 		save_progress(quiz_details.lesson, quiz_details.course)
-
-
-@frappe.whitelist()
-def get_question_details(question):
-	if frappe.db.exists("LMS Quiz Question", question):
-		fields = ["name", "question", "type"]
-		for num in range(1, 5):
-			fields.append(f"option_{cstr(num)}")
-			fields.append(f"is_correct_{cstr(num)}")
-			fields.append(f"explanation_{cstr(num)}")
-			fields.append(f"possibility_{cstr(num)}")
-
-		return frappe.db.get_value("LMS Quiz Question", question, fields, as_dict=1)
-	return
 
 
 @frappe.whitelist()

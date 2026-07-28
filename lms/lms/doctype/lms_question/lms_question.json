@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:QTS-{YYYY}-{#####}",
+ "autoname": "QTS-.YYYY.-.#####",
  "creation": "2023-10-10 10:24:14.035772",
  "default_view": "List",
  "doctype": "DocType",

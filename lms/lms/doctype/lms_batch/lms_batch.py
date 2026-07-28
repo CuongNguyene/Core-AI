@@ -12,7 +12,6 @@ from frappe.model.document import Document
 from frappe.utils import add_days, cint, format_datetime, get_time, nowdate
 
 from lms.lms.utils import (
-	generate_slug,
 	get_assignment_details,
 	get_lesson_index,
 	get_lesson_url,
@@ -33,10 +32,6 @@ class LMSBatch(Document):
 		self.validate_membership()
 		self.validate_timetable()
 		self.validate_evaluation_end_date()
-
-	def autoname(self):
-		if not self.name:
-			self.name = generate_slug(self.title, "LMS Batch")
 
 	def validate_batch_end_date(self):
 		if self.end_date < self.start_date:

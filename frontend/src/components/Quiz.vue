@@ -1,5 +1,5 @@
 <template>
-	<div v-if="quiz.data">
+	<div v-if="quiz.data" ref="quizRoot">
 		<div
 			class="bg-surface-blue-2 space-y-2 py-2 px-3 mb-4 rounded-md text-sm text-ink-blue-2 leading-5"
 		>
@@ -51,6 +51,17 @@
 					)
 				}}
 			</div>
+		</div>
+
+		<div
+			v-if="violationCount > 0"
+			class="bg-surface-amber-2 py-2 px-3 mb-4 rounded-md text-sm text-ink-amber-3 leading-5"
+		>
+			{{
+				__(
+					'Bạn đã rời khỏi màn hình làm bài. Hành động này đã được ghi nhận (lần {0}).'
+				).format(violationCount)
+			}}
 		</div>
 
 		<div v-if="quiz.data.duration" class="flex flex-col space-x-1 my-4">
@@ -132,7 +143,11 @@
 						class="text-ink-gray-9 font-semibold mt-2 leading-5"
 						v-html="questionDetails.data.question"
 					></div>
-					<div v-if="questionDetails.data.type == 'Choices'" v-for="index in 4">
+					<div
+						v-if="questionDetails.data.type == 'Choices'"
+						v-for="index in questionDetails.data.option_order || [1, 2, 3, 4]"
+						:key="index"
+					>
 						<label
 							v-if="questionDetails.data[`option_${index}`]"
 							class="flex items-center bg-surface-gray-3 rounded-md p-3 mt-4 w-full cursor-pointer focus:border-blue-600"
@@ -330,11 +345,13 @@ import {
 	FormControl,
 	toast,
 } from 'frappe-ui'
-import { ref, watch, reactive, inject, computed } from 'vue'
+import { ref, watch, reactive, inject, computed, onBeforeUnmount } from 'vue'
 import { CheckCircle, XCircle, MinusCircle } from 'lucide-vue-next'
 import { timeAgo } from '@/utils'
 import { useRouter } from 'vue-router'
 import ProgressBar from '@/components/ProgressBar.vue'
+import { useVisibilityLog } from '@/composables/useVisibilityLog'
+import { useExamGuards } from '@/composables/useExamGuards'
 
 const user = inject('$user')
 const activeQuestion = ref(0)
@@ -345,6 +362,15 @@ let questions = reactive([])
 const possibleAnswer = ref(null)
 const timer = ref(0)
 let timerInterval = null
+const violationCount = ref(0)
+const quizRoot = ref(null)
+let visibilityLog = { start: () => {}, stop: () => {} }
+let examGuards = { start: () => {}, stop: () => {} }
+
+onBeforeUnmount(() => {
+	visibilityLog.stop()
+	examGuards.stop()
+})
 
 const props = defineProps({
 	quizName: {
@@ -362,11 +388,10 @@ const props = defineProps({
 })
 
 const quiz = createResource({
-	url: 'frappe.client.get',
+	url: 'lms.lms.doctype.lms_quiz.lms_quiz.get_quiz',
 	makeParams(values) {
 		return {
-			doctype: 'LMS Quiz',
-			name: props.quizName,
+			quiz: props.quizName,
 		}
 	},
 	cache: ['quiz', props.quizName],
@@ -380,16 +405,23 @@ const quiz = createResource({
 	},
 })
 
-const populateQuestions = () => {
-	let data = quiz.data
-	if (data.shuffle_questions) {
-		questions = shuffleArray(data.questions)
-		if (data.limit_questions_to) {
-			questions = questions.slice(0, data.limit_questions_to)
+// The server picks (and, per the quiz's own settings, shuffles/limits) which
+// questions this attempt gets — the browser never sees the full question
+// bank, only the subset it's allowed to answer right now.
+const quizQuestions = createResource({
+	url: 'lms.lms.doctype.lms_quiz.lms_quiz.get_quiz_questions',
+	makeParams(values) {
+		return {
+			quiz: props.quizName,
 		}
-	} else {
-		questions = data.questions
-	}
+	},
+	onSuccess(data) {
+		questions = data
+	},
+})
+
+const populateQuestions = () => {
+	quizQuestions.reload()
 }
 
 const setupTimer = () => {
@@ -422,14 +454,6 @@ const formatTimer = (seconds) => {
 const timerProgress = computed(() => {
 	return (timer.value / (quiz.data.duration * 60)) * 100
 })
-
-const shuffleArray = (array) => {
-	for (let i = array.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1))
-		;[array[i], array[j]] = [array[j], array[i]]
-	}
-	return array
-}
 
 const attempts = createResource({
 	url: 'frappe.client.get_list',
@@ -487,13 +511,14 @@ const questionDetails = createResource({
 	makeParams(values) {
 		return {
 			question: currentQuestion.value,
+			quiz: quiz.data?.name,
 		}
 	},
 })
 
 watch(activeQuestion, (value) => {
 	if (value > 0) {
-		const question = quiz.data?.questions?.[value - 1]
+		const question = questions[value - 1]
 		if (!question) return
 		currentQuestion.value = question.question
 		questionDetails.reload()
@@ -518,6 +543,30 @@ const startQuiz = async () => {
 		})
 		timer.value = attempt.remaining_seconds
 		startTimer()
+
+		// Only timed quizzes get a tracked attempt to log against — an
+		// untimed quiz has no time pressure pushing someone to look answers
+		// up elsewhere, so there's little value (and no attempt name to log
+		// against) in tracking tab switches there.
+		const onLog = (count) => {
+			violationCount.value = count || 0
+		}
+
+		visibilityLog.stop()
+		visibilityLog = useVisibilityLog({
+			referenceDoctype: 'LMS Quiz Attempt',
+			referenceName: attempt.name,
+			onLog,
+		})
+		visibilityLog.start()
+
+		examGuards.stop()
+		examGuards = useExamGuards({
+			referenceDoctype: 'LMS Quiz Attempt',
+			referenceName: attempt.name,
+			onLog,
+		})
+		examGuards.start(quizRoot.value)
 	}
 }
 
@@ -618,7 +667,7 @@ const nextQuestion = () => {
 }
 
 const resetQuestion = () => {
-	if (activeQuestion.value == quiz.data.questions.length) return
+	if (activeQuestion.value == questions.length) return
 	activeQuestion.value = activeQuestion.value + 1
 	selectedOptions.splice(0, selectedOptions.length, ...[0, 0, 0, 0])
 	showAnswers.length = 0
@@ -643,6 +692,8 @@ const createSubmission = () => {
 				markLessonProgress()
 				if (quiz.data && quiz.data.max_attempts) attempts.reload()
 				if (quiz.data.duration) clearInterval(timerInterval)
+				visibilityLog.stop()
+				examGuards.stop()
 			},
 			onError(err) {
 				const errorTitle = err?.message || ''
@@ -665,6 +716,9 @@ const resetQuiz = () => {
 	quizSubmission.reset()
 	populateQuestions()
 	setupTimer()
+	visibilityLog.stop()
+	examGuards.stop()
+	violationCount.value = 0
 }
 
 const getInstructions = (question) => {

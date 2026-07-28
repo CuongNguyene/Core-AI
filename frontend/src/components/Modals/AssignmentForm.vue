@@ -20,11 +20,12 @@
 						:label="__('Title')"
 						:required="true"
 					/>
-					<FormControl
-						v-model="assignment.type"
-						type="select"
+					<Autocomplete
+						:modelValue="assignment.type"
+						@update:modelValue="(opt) => (assignment.type = opt.value)"
 						:options="assignmentOptions"
 						:label="__('Submission Type')"
+						size="sm"
 						:required="true"
 					/>
 					<div>
@@ -65,6 +66,7 @@
 </template>
 <script setup lang="ts">
 import { Button, Dialog, FormControl, TextEditor, toast } from 'frappe-ui'
+import Autocomplete from '@/components/Controls/Autocomplete.vue'
 import { computed, reactive, watch } from 'vue'
 
 const show = defineModel()

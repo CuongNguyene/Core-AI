@@ -19,6 +19,7 @@
 				v-model="course"
 				:label="__('Course')"
 				:required="true"
+				:placeholder="__('Select a course')"
 				:onCreate="
 					(value, close) => {
 						close()

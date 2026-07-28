@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{####} {title}",
+ "autoname": "CHP-.####.-.{title}",
  "creation": "2021-05-03 05:49:08.383058",
  "doctype": "DocType",
  "editable_grid": 1,
