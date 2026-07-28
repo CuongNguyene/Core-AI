@@ -89,20 +89,14 @@ const props = defineProps({
 
 const title = computed(() => props.program?.title || props.program?.name || '')
 
-// Student "enrolled" programs carry a `progress`; admin / "published" ones don't.
 const hasProgress = computed(
 	() => 'progress' in props.program && props.program.progress != null
 )
 
-// Badges only exist on admin data (published / enforce_course_order). Skip the
-// row entirely for student cards so there is no empty trailing block.
 const hasBadges = computed(
 	() => 'published' in props.program || !!props.program.enforce_course_order
 )
 
-// Programs have no image field, so use the same gradient-fallback style as
-// CourseCard. A stable hash over the title picks a palette so cards aren't all
-// identical, falling back to blue if a color is unavailable.
 const palette = ['blue', 'green', 'orange', 'red', 'purple', 'teal', 'pink']
 
 const getGradientColor = () => {
