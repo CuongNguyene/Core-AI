@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "PAY-.YYYY.-.#####",
  "creation": "2023-08-24 17:46:52.065763",
  "default_view": "List",
  "doctype": "DocType",

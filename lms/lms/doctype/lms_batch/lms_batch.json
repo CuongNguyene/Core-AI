@@ -2,6 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "BCH-.YYYY.-.#####",
  "creation": "2022-11-09 16:14:05.876933",
  "default_view": "List",
  "doctype": "DocType",

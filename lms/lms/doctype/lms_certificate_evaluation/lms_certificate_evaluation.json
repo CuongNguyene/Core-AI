@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "CEVAL-.YYYY.-.#####",
  "creation": "2022-03-29 09:32:16.769951",
  "doctype": "DocType",
  "editable_grid": 1,

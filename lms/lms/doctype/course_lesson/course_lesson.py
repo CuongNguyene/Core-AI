@@ -10,7 +10,7 @@ from frappe.realtime import get_website_room
 from frappe.utils import flt
 from frappe.utils.telemetry import capture
 
-from lms.lms.utils import get_course_progress
+from lms.lms.utils import get_course_progress, has_met_reading_time
 
 from ...md import find_macros
 
@@ -67,11 +67,20 @@ def save_progress(lesson, course, scorm_details=None):
 	quiz_completed = get_quiz_progress(lesson)
 	assignment_completed = get_assignment_progress(lesson)
 	video_completed = get_video_progress(lesson)
+	min_reading_time = frappe.db.get_value("Course Lesson", lesson, "min_reading_time")
+	reading_time_met = has_met_reading_time(lesson, min_reading_time)
 
 	if scorm_details:
 		scorm_details = frappe._dict(**scorm_details)
 
-	if not progress_already_exists and quiz_completed and assignment_completed and video_completed and not scorm_details:
+	if (
+		not progress_already_exists
+		and quiz_completed
+		and assignment_completed
+		and video_completed
+		and reading_time_met
+		and not scorm_details
+	):
 		frappe.get_doc(
 			{
 				"doctype": "LMS Course Progress",

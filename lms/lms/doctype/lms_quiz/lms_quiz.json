@@ -2,6 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "QUIZ-.YYYY.-.#####",
  "creation": "2021-06-07 10:50:17.893625",
  "doctype": "DocType",
  "editable_grid": 1,

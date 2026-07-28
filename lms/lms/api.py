@@ -19,6 +19,7 @@ from frappe.translate import get_all_translations
 from frappe.utils import (
 	add_days,
 	add_months,
+	add_to_date,
 	cint,
 	date_diff,
 	flt,
@@ -26,6 +27,7 @@ from frappe.utils import (
 	get_datetime,
 	getdate,
 	now,
+	now_datetime,
 	nowdate,
 )
 from frappe.utils.response import Response
@@ -1798,6 +1800,96 @@ def track_new_watch_time(lesson, video):
 		doc.duration = video.get("duration")
 	doc.member = frappe.session.user
 	doc.save()
+
+
+@frappe.whitelist()
+def log_activity_event(reference_doctype, reference_name, duration_seconds, event_type="Tab Hidden"):
+	"""Records a soft deterrence/audit signal (tab-hidden, copy/right-click
+	attempt, devtools opened, etc.) for a quiz attempt or lesson. Not an
+	enforcement mechanism — the client is trusted for the event itself.
+	Tab-hidden duration is also used to correct server-side reading-time
+	calculations (see has_met_reading_time); every event type feeds the
+	visible violation count shown while taking a timed quiz."""
+	if reference_doctype not in ("LMS Quiz Attempt", "Course Lesson"):
+		frappe.throw(_("Invalid reference doctype."))
+
+	if not frappe.db.exists(reference_doctype, reference_name):
+		frappe.throw(_("Invalid reference."))
+
+	count_filters = {
+		"member": frappe.session.user,
+		"reference_doctype": reference_doctype,
+		"reference_name": reference_name,
+	}
+
+	_insert_activity_log(count_filters, event_type, flt(duration_seconds))
+
+	return {"count": frappe.db.count("LMS Activity Log", count_filters)}
+
+
+def _insert_activity_log(count_filters, event_type, duration_seconds):
+	"""Tab Hidden is a real duration and is naturally rate-limited by
+	requiring a genuine gap (see log_activity_event's caller); the other
+	event types are point-events with no duration, so they're deduplicated
+	within a 10s window instead, so a spam-click (repeated right-click,
+	devtools closed/reopened rapidly) can't inflate the violation count."""
+	if event_type == "Tab Hidden":
+		if duration_seconds < 2:
+			return
+	else:
+		recently_logged = frappe.db.exists(
+			"LMS Activity Log",
+			{
+				**count_filters,
+				"event_type": event_type,
+				"timestamp": [">", add_to_date(now_datetime(), seconds=-10)],
+			},
+		)
+		if recently_logged:
+			return
+
+	frappe.get_doc(
+		{
+			"doctype": "LMS Activity Log",
+			"event_type": event_type,
+			"timestamp": now_datetime(),
+			"duration_seconds": duration_seconds,
+			**count_filters,
+		}
+	).insert(ignore_permissions=True)
+
+
+@frappe.whitelist()
+def check_concurrent_sessions(reference_doctype, reference_name):
+	"""Heartbeat, called periodically while taking a timed quiz. Backed by
+	Frappe core's `Sessions` table — each fresh login (different browser or
+	device) gets its own sid, while multiple tabs in the same logged-in
+	browser share one sid, so this doesn't false-positive on someone just
+	having the quiz open in two tabs."""
+	if reference_doctype not in ("LMS Quiz Attempt", "Course Lesson"):
+		frappe.throw(_("Invalid reference doctype."))
+
+	if not frappe.db.exists(reference_doctype, reference_name):
+		frappe.throw(_("Invalid reference."))
+
+	other_sessions = frappe.db.count(
+		"Sessions",
+		{
+			"user": frappe.session.user,
+			"sid": ["!=", frappe.session.sid],
+			"lastupdate": [">", add_to_date(now_datetime(), minutes=-10)],
+		},
+	)
+
+	count_filters = {
+		"member": frappe.session.user,
+		"reference_doctype": reference_doctype,
+		"reference_name": reference_name,
+	}
+	if other_sessions > 0:
+		_insert_activity_log(count_filters, "Concurrent Session", 0)
+
+	return {"count": frappe.db.count("LMS Activity Log", count_filters)}
 
 
 @frappe.whitelist()

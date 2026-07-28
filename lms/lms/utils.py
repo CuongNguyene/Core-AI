@@ -1,5 +1,6 @@
 import hashlib
 import json
+import random
 import re
 import string
 from datetime import timedelta
@@ -23,8 +24,10 @@ from frappe.utils import (
 	get_fullname,
 	get_time_str,
 	getdate,
+	now_datetime,
 	nowtime,
 	pretty_date,
+	time_diff_in_seconds,
 )
 
 from lms.lms.md import find_macros, markdown_to_html
@@ -1334,6 +1337,10 @@ def get_lesson(course, chapter, lesson):
 	lesson_details.paid_certificate = course_info.paid_certificate
 	lesson_details.disable_self_learning = course_info.disable_self_learning
 	lesson_details.videos = get_video_details(lesson_name)
+
+	if frappe.session.user != "Guest":
+		mark_lesson_view_started(lesson_details.name)
+
 	return lesson_details
 
 
@@ -1343,6 +1350,49 @@ def get_video_details(lesson_name):
 		{"lesson": lesson_name, "member": frappe.session.user},
 		["source", "watch_time"],
 	)
+
+
+def lesson_view_start_cache_key(lesson, member=None):
+	return f"lms_lesson_view_start:{member or frappe.session.user}:{lesson}"
+
+
+def mark_lesson_view_started(lesson):
+	"""Records the first time this user opened this lesson, so min_reading_time
+	can be enforced server-side (see has_met_reading_time) instead of trusting
+	the client-side timer in Lesson.vue. Only the first view is recorded so
+	that reloading the page doesn't reset the clock."""
+	key = lesson_view_start_cache_key(lesson)
+	if not frappe.cache().exists(key):
+		frappe.cache().set_value(key, now_datetime(), expires_in_sec=86400)
+
+
+def has_met_reading_time(lesson, min_reading_time):
+	if not min_reading_time:
+		return True
+
+	started_at = frappe.cache().get_value(lesson_view_start_cache_key(lesson), expires=True)
+	if not started_at:
+		return False
+
+	elapsed = time_diff_in_seconds(now_datetime(), started_at)
+	hidden = get_lesson_hidden_seconds(lesson, started_at)
+
+	return (elapsed - hidden) >= cint(min_reading_time)
+
+
+def get_lesson_hidden_seconds(lesson, since):
+	"""Sums the tab-hidden intervals logged for this lesson (see
+	useVisibilityLog/log_activity_event) since the user started reading it,
+	so time spent on another tab isn't counted towards min_reading_time."""
+	total = frappe.db.sql(
+		"""
+		select sum(duration_seconds) from `tabLMS Activity Log`
+		where member=%s and reference_doctype='Course Lesson' and reference_name=%s
+		and timestamp >= %s
+		""",
+		(frappe.session.user, lesson, since),
+	)[0][0]
+	return flt(total)
 
 
 def get_neighbour_lesson(course, chapter, lesson):
@@ -1474,14 +1524,48 @@ def get_country_code():
 	return
 
 
+def check_quiz_access(quiz_doc):
+	"""Mirrors the enrollment gate used for lesson content (see get_lesson):
+	moderators/instructors/system managers always have access, everyone else
+	must be enrolled in the course the quiz belongs to. Quizzes with no course
+	(e.g. standalone quizzes not yet attached to a lesson) are only reachable
+	by their creators anyway, so they're left open to any logged-in user."""
+	user = frappe.session.user
+	if user == "Guest":
+		frappe.throw(_("Please log in to access this quiz."), frappe.PermissionError)
+
+	if "System Manager" in frappe.get_roles(user):
+		return
+
+	if not quiz_doc.course:
+		return
+
+	if has_course_moderator_role() or is_instructor(quiz_doc.course):
+		return
+
+	if not frappe.db.exists("LMS Enrollment", {"course": quiz_doc.course, "member": user}):
+		frappe.throw(_("You are not enrolled in the course this quiz belongs to."), frappe.PermissionError)
+
+
 @frappe.whitelist()
-def get_question_details(question):
+def get_question_details(question, quiz=None):
+	if not quiz or not frappe.db.exists("LMS Quiz Question", {"parent": quiz, "question": question}):
+		frappe.throw(_("This question does not belong to the specified quiz."), frappe.PermissionError)
+
+	check_quiz_access(frappe.get_doc("LMS Quiz", quiz))
+
 	fields = ["question", "type", "multiple"]
 	for i in range(1, 5):
 		fields.append(f"option_{i}")
 		fields.append(f"explanation_{i}")
 
 	question_details = frappe.db.get_value("LMS Question", question, fields, as_dict=1)
+
+	if question_details and question_details.get("type") == "Choices":
+		option_order = [i for i in range(1, 5) if question_details.get(f"option_{i}")]
+		random.shuffle(option_order)
+		question_details["option_order"] = option_order
+
 	return question_details
 
 
