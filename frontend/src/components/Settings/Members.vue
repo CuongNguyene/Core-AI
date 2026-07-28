@@ -121,7 +121,7 @@ import { Avatar, Button, createResource, Dialog, FormControl } from 'frappe-ui'
 import { useRouter } from 'vue-router'
 import { ref, watch, reactive, inject } from 'vue'
 import { RefreshCw, Plus, Search, Shield } from 'lucide-vue-next'
-import { useOnboarding } from 'frappe-ui/frappe'
+import { useOnboarding } from '@/utils/onboardingCompat'
 import type { User } from '@/components/Settings/types'
 
 type Member = {

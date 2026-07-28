@@ -10,7 +10,10 @@
 				{{ program.data.name }}
 			</div>
 
-			<Badge :theme="program.data.progress < 100 ? 'orange' : 'green'">
+			<Badge
+				v-if="program.data.progress != null"
+				:theme="program.data.progress < 100 ? 'orange' : 'green'"
+			>
 				{{ program.data.progress }}% {{ __('completed') }}
 			</Badge>
 
@@ -26,7 +29,10 @@
 				<Info class="size-3 cursor-pointer" />
 			</Tooltip>
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+		<div
+			v-if="program.data.courses?.length"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5"
+		>
 			<div
 				v-for="course in program.data.courses"
 				:key="course.name"
@@ -56,6 +62,7 @@
 				</div>
 			</div>
 		</div>
+		<EmptyState v-else type="Courses" />
 	</div>
 </template>
 <script setup lang="ts">
@@ -72,6 +79,7 @@ import { sessionStore } from '@/stores/session'
 import { LockKeyhole, Info } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import CourseCard from '@/components/CourseCard.vue'
+import EmptyState from '@/components/EmptyState.vue'
 
 const { brand } = sessionStore()
 const router = useRouter()

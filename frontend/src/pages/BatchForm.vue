@@ -341,7 +341,7 @@ import {
 import { useRouter } from 'vue-router'
 import { Image, Trash2 } from 'lucide-vue-next'
 import { capture } from '@/telemetry'
-import { useOnboarding } from 'frappe-ui/frappe'
+import { useOnboarding } from '@/utils/onboardingCompat'
 import { sessionStore } from '../stores/session'
 import MultiSelect from '@/components/Controls/MultiSelect.vue'
 import Link from '@/components/Controls/Link.vue'

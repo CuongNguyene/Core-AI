@@ -10,43 +10,44 @@
 			{{ __('New') }}
 		</Button>
 	</header>
-	<div v-if="programs.data?.length && !isStudent" class="py-10 w-3/4 mx-auto">
-		<div class="text-lg font-semibold text-ink-gray-9 mb-5">
-			{{
-				__('{0} {1}').format(
-					programs.data.length,
-					programs.data.length == 1 ? __('Program') : __('Programs')
-				)
-			}}
+	<StudentPrograms v-if="isStudent" />
+	<div v-else class="p-5 pb-10">
+		<div
+			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
+		>
+			<div class="text-lg text-ink-gray-9 font-semibold">
+				{{ __('All Programs') }}
+			</div>
+			<FormControl
+				v-model="title"
+				:placeholder="__('Search by Title')"
+				type="text"
+				class="w-full lg:w-40"
+				@input="updatePrograms()"
+			/>
 		</div>
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+		<div
+			v-if="programs.data?.length"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
+		>
 			<div
 				v-for="program in programs.data"
 				@click="openForm(program.name)"
-				class="border rounded-md p-3 hover:border-outline-gray-3 cursor-pointer space-y-2"
+				class="cursor-pointer"
 			>
-				<div class="text-lg font-semibold">
-					{{ program.name }}
-				</div>
-				<div class="flex items-center space-x-1">
-					<BookOpen class="h-4 w-4 stroke-1.5 mr-1" />
-					<span>
-						{{ program.course_count }}
-						{{ program.course_count == 1 ? __('Course') : __('Courses') }}
-					</span>
-				</div>
-				<div class="flex items-center space-x-1">
-					<User class="h-4 w-4 stroke-1.5 mr-1" />
-					<span>
-						{{ program.member_count || 0 }}
-						{{ program.member_count == 1 ? __('member') : __('members') }}
-					</span>
-				</div>
+				<ProgramCard :program="program" />
 			</div>
 		</div>
+		<EmptyState v-else-if="!programs.list?.loading" type="Programs" />
+		<div
+			v-if="!programs.list?.loading && programs.hasNextPage"
+			class="flex justify-center mt-5"
+		>
+			<Button @click="programs.next()">
+				{{ __('Load More') }}
+			</Button>
+		</div>
 	</div>
-	<StudentPrograms v-else-if="isStudent" />
-	<EmptyState v-else type="Programs" />
 	<ProgramForm
 		v-model="showForm"
 		:programName="currentProgram"
@@ -54,11 +55,19 @@
 	/>
 </template>
 <script setup>
-import { Breadcrumbs, Button, usePageMeta, createListResource } from 'frappe-ui'
+import {
+	Breadcrumbs,
+	Button,
+	FormControl,
+	usePageMeta,
+	createListResource,
+} from 'frappe-ui'
 import { computed, inject, onMounted, ref } from 'vue'
-import { BookOpen, Plus, User } from 'lucide-vue-next'
+import { useDebounceFn } from '@vueuse/core'
+import { Plus } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import ProgramForm from '@/pages/Programs/ProgramForm.vue'
+import ProgramCard from '@/components/ProgramCard.vue'
 import EmptyState from '@/components/EmptyState.vue'
 import StudentPrograms from '@/pages/Programs/StudentPrograms.vue'
 
@@ -67,6 +76,8 @@ const user = inject('$user')
 const showForm = ref(false)
 const currentProgram = ref(null)
 const readOnlyMode = window.read_only_mode
+const title = ref('')
+const filters = ref({})
 
 onMounted(() => {
 	if (!user.data) {
@@ -89,8 +100,19 @@ const programs = createListResource({
 		'enforce_course_order',
 	],
 	auto: false,
+	pageLength: 20,
 	orderBy: 'creation desc',
 })
+
+const updatePrograms = useDebounceFn(() => {
+	if (title.value) {
+		filters.value.title = ['like', `%${title.value}%`]
+	} else {
+		delete filters.value.title
+	}
+	programs.update({ filters: filters.value })
+	programs.reload()
+}, 300)
 
 const canCreateProgram = () => {
 	if (readOnlyMode) return false
@@ -111,6 +133,7 @@ const isStudent = computed(() => {
 const breadcrumbs = computed(() => [
 	{
 		label: __('Programs'),
+		route: { name: 'Programs' },
 	},
 ])
 

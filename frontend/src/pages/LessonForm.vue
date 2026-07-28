@@ -109,7 +109,7 @@ import LessonHelp from '@/components/LessonHelp.vue'
 import { ChevronRight } from 'lucide-vue-next'
 import { getEditorTools, enablePlyr } from '@/utils'
 import { capture, startRecording, stopRecording } from '@/telemetry'
-import { useOnboarding } from 'frappe-ui/frappe'
+import { useOnboarding } from '@/utils/onboardingCompat'
 
 const { brand } = sessionStore()
 const editor = ref(null)

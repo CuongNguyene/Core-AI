@@ -128,7 +128,7 @@ import {
 } from 'frappe-ui'
 import { computed, watch, reactive, ref, inject } from 'vue'
 import Link from '@/components/Controls/Link.vue'
-import { useOnboarding } from 'frappe-ui/frappe'
+import { useOnboarding } from '@/utils/onboardingCompat'
 
 const show = defineModel()
 const quiz = defineModel('quiz')

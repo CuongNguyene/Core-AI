@@ -217,19 +217,19 @@
 			/>
 		</template>
 		<template #actions="{ close }">
-			<div class="flex justify-end space-x-2 group">
+			<div class="flex items-center justify-between">
 				<Button
 					v-if="programName != 'new'"
 					@click="deleteProgram(close)"
 					variant="outline"
 					theme="red"
-					class="invisible group-hover:visible"
 				>
 					<template #prefix>
 						<Trash2 class="size-4 stroke-1.5" />
 					</template>
 					{{ __('Delete') }}
 				</Button>
+				<span v-else></span>
 				<Button variant="solid" @click="saveProgram(close)">
 					{{ __('Save') }}
 				</Button>

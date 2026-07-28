@@ -357,7 +357,7 @@ import {
 import { Image, Trash2, X } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import { capture, startRecording, stopRecording } from '@/telemetry'
-import { useOnboarding } from 'frappe-ui/frappe'
+import { useOnboarding } from '@/utils/onboardingCompat'
 import { sessionStore } from '../stores/session'
 import {
 	openSettings,

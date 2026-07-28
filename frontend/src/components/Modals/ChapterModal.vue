@@ -82,7 +82,7 @@ import { reactive, watch, inject } from 'vue'
 import { getFileSize } from '@/utils/'
 import { capture } from '@/telemetry'
 import { FileText, X } from 'lucide-vue-next'
-import { useOnboarding } from 'frappe-ui/frappe'
+import { useOnboarding } from '@/utils/onboardingCompat'
 
 const show = defineModel()
 const outline = defineModel('outline')
