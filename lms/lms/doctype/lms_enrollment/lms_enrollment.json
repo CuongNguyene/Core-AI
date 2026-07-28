@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
+ "autoname": "ENR-.YYYY.-.#####",
  "creation": "2022-02-07 12:01:40.929633",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -24,7 +25,8 @@
   "batch_old",
   "column_break_12",
   "member_type",
-  "role"
+  "role",
+  "worksuite_task"
  ],
  "fields": [
   {
@@ -150,6 +152,13 @@
    "fieldname": "member_image",
    "fieldtype": "Attach Image",
    "label": "Member Image"
+  },
+  {
+   "description": "Name of the linked Worksuite (todo app) Task, if the Worksuite integration is active on this site.",
+   "fieldname": "worksuite_task",
+   "fieldtype": "Data",
+   "label": "Worksuite Task",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,

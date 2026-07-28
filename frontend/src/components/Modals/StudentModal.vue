@@ -19,6 +19,7 @@
 					doctype="User"
 					v-model="student"
 					:filters="{ ignore_user_type: 1 }"
+					:placeholder="__('Search for a student')"
 					:onCreate="
 						(value, close) => {
 							openSettings('Members', close)

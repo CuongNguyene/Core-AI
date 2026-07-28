@@ -15,11 +15,12 @@
 	>
 		<template #body-content>
 			<div class="space-y-4">
-				<FormControl
-					type="select"
+				<Autocomplete
+					:modelValue="assessmentType"
+					@update:modelValue="(opt) => (assessmentType = opt.value)"
 					:options="assessmentTypes"
-					v-model="assessmentType"
 					:label="__('Type')"
+					size="sm"
 				/>
 				<Link
 					v-model="assessment"
@@ -48,8 +49,9 @@
 	</Dialog>
 </template>
 <script setup>
-import { Dialog, FormControl, createResource, toast } from 'frappe-ui'
+import { Dialog, createResource, toast } from 'frappe-ui'
 import Link from '@/components/Controls/Link.vue'
+import Autocomplete from '@/components/Controls/Autocomplete.vue'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 

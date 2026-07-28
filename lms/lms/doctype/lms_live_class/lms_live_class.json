@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "LIVE-.YYYY.-.#####",
  "creation": "2023-03-02 10:59:01.741349",
  "default_view": "List",
  "doctype": "DocType",

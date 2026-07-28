@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format: ASG-SUB-{#####}",
+ "autoname": "ASG-SUB-.#####",
  "creation": "2021-12-21 16:15:22.651658",
  "doctype": "DocType",
  "editable_grid": 1,

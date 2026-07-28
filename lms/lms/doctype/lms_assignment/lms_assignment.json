@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format: ASG-{#####}",
+ "autoname": "ASG-.#####",
  "creation": "2023-05-26 19:41:26.025081",
  "default_view": "List",
  "doctype": "DocType",

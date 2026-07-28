@@ -2,7 +2,7 @@
  "actions": [],
  "allow_events_in_timeline": 1,
  "allow_rename": 1,
- "autoname": "format:{####} {title}",
+ "autoname": "LES-.####.-.{title}",
  "creation": "2021-05-03 06:21:12.995984",
  "doctype": "DocType",
  "editable_grid": 1,

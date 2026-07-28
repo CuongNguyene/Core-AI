@@ -409,6 +409,7 @@ import {
 	TrendingUp,
 } from 'lucide-vue-next'
 import { getEditorTools, enablePlyr, highlightText } from '@/utils'
+import { useVisibilityLog } from '@/composables/useVisibilityLog'
 import { sessionStore } from '@/stores/session'
 import { useSidebar } from '@/stores/sidebar'
 import { useSettings } from '@/stores/settings'
@@ -452,6 +453,7 @@ const showInlineMenu = ref(false)
 const currentTab = ref('Notes')
 let timerInterval
 let studyTimeInterval
+let visibilityLog = { start: () => {}, stop: () => {} }
 
 const tabs = ref([
 	{
@@ -562,6 +564,19 @@ const setupLesson = (data) => {
 		checkIfDiscussionsAllowed()
 	})
 	checkQuiz()
+
+	// Silent — unlike the quiz-taking warning banner, switching tabs while
+	// reading/watching a lesson is normal (e.g. listening while multitasking).
+	// This is only used server-side to exclude backgrounded time from
+	// min_reading_time (see has_met_reading_time), not to warn the student.
+	visibilityLog.stop()
+	if (data.name) {
+		visibilityLog = useVisibilityLog({
+			referenceDoctype: 'Course Lesson',
+			referenceName: data.name,
+		})
+		visibilityLog.start()
+	}
 }
 
 const checkQuiz = () => {
@@ -906,6 +921,7 @@ const startTimer = () => {
 onBeforeUnmount(() => {
 	clearInterval(timerInterval)
 	clearInterval(studyTimeInterval)
+	visibilityLog.stop()
 })
 
 const checkIfDiscussionsAllowed = () => {
