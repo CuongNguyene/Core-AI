@@ -204,7 +204,7 @@
 								ignore_user_type: 1,
 							}"
 							:label="__('Program Member')"
-							:onCreate="(value: string, close: () => void) => openSettings('Members', close)"
+							:onCreate="(value: string, close: () => void) => createMember(close)"
 						/>
 					</div>
 				</template>
@@ -414,6 +414,19 @@ const openForm = (formType: 'course' | 'member') => {
 	} else {
 		member.value = ''
 	}
+}
+
+// Close both dialogs before opening Settings. frappe-ui dialogs carry no
+// z-index, so stacking follows DOM order and a still-open ProgramForm can paint
+// over the Settings modal. `close` here is the Link's autocomplete dropdown
+// close, not a dialog close — hence the explicit dialog resets.
+// Courses/members are persisted on add, so only unsaved title/published/
+// enforce_course_order edits are dropped.
+const createMember = (close: () => void) => {
+	close()
+	showFormDialog.value = false
+	show.value = false
+	openSettings('Members')
 }
 
 const addCourse = (close: () => void) => {
