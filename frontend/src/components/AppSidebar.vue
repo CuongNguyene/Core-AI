@@ -124,11 +124,11 @@ import {
 	TrialBanner,
 	HelpModal,
 	GettingStartedBanner,
-	useOnboarding,
 	showHelpModal,
 	minimize,
 	IntermediateStepModal,
 } from 'frappe-ui/frappe'
+import { useOnboarding, isOnboardingSupported } from '@/utils/onboardingCompat'
 
 const { user } = sessionStore()
 const { userResource } = usersStore()
@@ -543,6 +543,10 @@ const articles = ref([
 ])
 
 const setUpOnboarding = () => {
+	// TEMP (Frappe v15 compat): skip onboarding entirely when the backend has no
+	// frappe.onboarding module, so the GettingStartedBanner / HelpModal (which
+	// call the missing API internally) never mount. Remove with onboardingCompat.
+	if (!isOnboardingSupported()) return
 	if (userResource.data?.is_system_manager) {
 		onboardingDetails = useOnboarding('learning')
 		onboardingDetails.setUp(steps)

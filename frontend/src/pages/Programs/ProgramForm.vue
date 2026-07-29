@@ -203,8 +203,8 @@
 							:filters="{
 								ignore_user_type: 1,
 							}"
-							:label="__('programs.form.programMember')"
-							:onCreate="(value: string, close: () => void) => openSettings('Members', close)"
+							:label="__('Program Member')"
+							:onCreate="(value: string, close: () => void) => createMember(close)"
 						/>
 					</div>
 				</template>
@@ -217,19 +217,19 @@
 			/>
 		</template>
 		<template #actions="{ close }">
-			<div class="flex justify-end space-x-2 group">
+			<div class="flex items-center justify-between">
 				<Button
 					v-if="programName != 'new'"
 					@click="deleteProgram(close)"
 					variant="outline"
 					theme="red"
-					class="invisible group-hover:visible"
 				>
 					<template #prefix>
 						<Trash2 class="size-4 stroke-1.5" />
 					</template>
 					{{ __('programs.form.delete') }}
 				</Button>
+				<span v-else></span>
 				<Button variant="solid" @click="saveProgram(close)">
 					{{ __('programs.form.save') }}
 				</Button>
@@ -414,6 +414,13 @@ const openForm = (formType: 'course' | 'member') => {
 	} else {
 		member.value = ''
 	}
+}
+
+const createMember = (close: () => void) => {
+	close()
+	showFormDialog.value = false
+	show.value = false
+	openSettings('Members')
 }
 
 const addCourse = (close: () => void) => {

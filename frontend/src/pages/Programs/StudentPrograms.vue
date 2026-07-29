@@ -1,49 +1,35 @@
 <template>
-	<div class="py-5 px-5 w-full lg:w-3/4 lg:px-0 mx-auto">
-		<div class="flex items-center justify-between mb-5">
+	<div class="p-5 pb-10">
+		<div
+			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
+		>
 			<div class="text-lg text-ink-gray-9 font-semibold">
 				{{ __('programs.studentPrograms.allPrograms') }}
 			</div>
-			<TabButtons v-model="currentTab" :buttons="tabs" class="w-fit" />
+			<div
+				class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
+			>
+				<TabButtons v-model="currentTab" :buttons="tabs" class="w-fit" />
+				<FormControl
+					v-model="searchQuery"
+					:placeholder="__('Search by Title')"
+					type="text"
+					class="w-full lg:w-40"
+				/>
+			</div>
 		</div>
 		<div v-for="(data, category) in programs.data">
 			<div v-if="category == currentTab">
 				<div
-					v-if="data.length > 0"
-					class="grid grid-cols-1 lg:grid-cols-3 gap-5"
+					v-if="filterPrograms(data).length > 0"
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
 				>
 					<div
-						v-for="program in data"
+						v-for="program in filterPrograms(data)"
 						@click="openDetails(program.name, category)"
-						class="border rounded-md p-3 hover:border-outline-gray-3 cursor-pointer"
+						class="cursor-pointer"
 					>
-						<div class="text-lg font-semibold mb-2">
-							{{ program.name }}
-						</div>
-
-						<div class="flex items-center space-x-5 text-sm text-ink-gray-7">
-							<div class="flex items-center space-x-1">
-								<BookOpen class="size-3 stroke-1.5" />
-								<span>
-									{{ program.course_count }}
-									{{ program.course_count == 1 ? __('programs.studentPrograms.course') : __('programs.studentPrograms.courses') }}
-								</span>
-							</div>
-							<div class="flex items-center space-x-1">
-								<User class="size-4 stroke-1.5" />
-								<span>
-									{{ program.member_count || 0 }}
-									{{ program.member_count == 1 ? __('programs.list.member') : __('programs.list.members') }}
-								</span>
-							</div>
-						</div>
-
-						<div v-if="Object.keys(program).includes('progress')" class="mt-5">
-							<ProgressBar :progress="program.progress" />
-							<div class="text-sm mt-1">
-								{{ Math.ceil(program.progress) }}% {{ __('programs.completed') }}
-							</div>
-						</div>
+						<ProgramCard :program="program" />
 					</div>
 				</div>
 				<EmptyState v-else :type="convertToTitleCase(category) + ' Programs'" />
@@ -59,12 +45,11 @@
 	/>
 </template>
 <script setup lang="ts">
-import { createResource, TabButtons } from 'frappe-ui'
+import { createResource, FormControl, TabButtons } from 'frappe-ui'
 import { computed, ref } from 'vue'
-import { BookOpen, User } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import { convertToTitleCase } from '@/utils'
-import ProgressBar from '@/components/ProgressBar.vue'
+import ProgramCard from '@/components/ProgramCard.vue'
 import ProgramEnrollment from '@/pages/Programs/ProgramEnrollment.vue'
 import EmptyState from '@/components/EmptyState.vue'
 
@@ -72,11 +57,21 @@ const currentTab = ref('enrolled')
 const router = useRouter()
 const showEnrollmentConfirmation = ref(false)
 const enrollmentProgram = ref(null)
+const searchQuery = ref('')
 
 const programs = createResource({
 	url: 'lms.lms.utils.get_programs',
 	auto: true,
 })
+
+// Client-side title filter (get_programs returns all programs; no API change).
+const filterPrograms = (data: any[]) => {
+	if (!searchQuery.value) return data
+	const query = searchQuery.value.toLowerCase()
+	return data.filter((program) =>
+		(program.name || '').toLowerCase().includes(query)
+	)
+}
 
 const openDetails = (programName: any, category: string) => {
 	if (category === 'enrolled') {

@@ -85,7 +85,7 @@ def update_program_progress(member):
 			progress = progress or 0
 			total_progress += progress
 
-		average_progress = ceil(total_progress / len(courses))
+		average_progress = ceil(total_progress / len(courses)) if courses else 0
 		frappe.db.set_value("LMS Program Member", program.name, "progress", average_progress)
 
 
