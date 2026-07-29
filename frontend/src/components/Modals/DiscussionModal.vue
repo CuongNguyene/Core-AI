@@ -5,7 +5,7 @@
 			size: '2xl',
 			actions: [
 				{
-					label: 'Post',
+					label: __('batches.discussions.post'),
 					variant: 'solid',
 					onClick: (close) => submitTopic(close),
 				},
@@ -15,11 +15,11 @@
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<div>
-					<FormControl v-model="topic.title" :label="__('Title')" type="text" />
+					<FormControl v-model="topic.title" :label="__('batches.discussions.title')" type="text" />
 				</div>
 				<div>
 					<div class="mb-1.5 text-sm text-ink-gray-5">
-						{{ __('Details') }}
+						{{ __('batches.discussions.details') }}
 					</div>
 					<TextEditor
 						:content="topic.reply"
@@ -99,10 +99,10 @@ const submitTopic = (close) => {
 		{
 			validate() {
 				if (!topic.title) {
-					return 'Title cannot be empty.'
+					return __('batches.discussions.titleRequired')
 				}
 				if (!topic.reply) {
-					return 'Reply cannot be empty.'
+					return __('batches.discussions.replyRequired')
 				}
 			},
 			onSuccess(data) {

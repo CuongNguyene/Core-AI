@@ -2,19 +2,19 @@
 	<div v-if="batch.data" class="">
 		<div class="w-full flex items-center justify-between pb-4">
 			<div class="font-medium text-ink-gray-7">
-				{{ __('Statistics') }}
+				{{ __('batches.students.statistics') }}
 			</div>
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
 			<NumberChart
 				class="border rounded-md"
-				:config="{ title: __('Students'), value: students.data?.length || 0 }"
+				:config="{ title: __('batches.students.students'), value: students.data?.length || 0 }"
 			/>
 
 			<NumberChart
 				class="border rounded-md"
 				:config="{
-					title: __('Certified'),
+					title: __('batches.students.certified'),
 					value: certificationCount.data || 0,
 				}"
 			/>
@@ -22,14 +22,14 @@
 			<NumberChart
 				class="border rounded-md"
 				:config="{
-					title: __('Courses'),
+					title: __('batches.students.courses'),
 					value: batch.data.courses?.length || 0,
 				}"
 			/>
 
 			<NumberChart
 				class="border rounded-md"
-				:config="{ title: __('Assessments'), value: assessmentCount || 0 }"
+				:config="{ title: __('batches.students.assessments'), value: assessmentCount || 0 }"
 			/>
 		</div>
 
@@ -37,15 +37,15 @@
 			v-if="showProgressChart"
 			:config="{
 				data: chartData,
-				title: __('Batch Summary'),
-				subtitle: __('Progress of students in courses and assessments'),
+				title: __('batches.students.batchSummary'),
+				subtitle: __('batches.students.progressSubtitle'),
 				xAxis: {
 					key: 'task',
 					title: 'Tasks',
 					type: 'category',
 				},
 				yAxis: {
-					title: __('Number of Students'),
+					title: __('batches.students.numberOfStudents'),
 					echartOptions: {
 						minInterval: 1,
 					},
@@ -64,13 +64,13 @@
 	<div>
 		<div class="flex items-center justify-between mb-4">
 			<div class="text-ink-gray-7 font-medium">
-				{{ __('Students') }}
+				{{ __('batches.students.students') }}
 			</div>
 			<Button v-if="!readOnlyMode" @click="openStudentModal()">
 				<template #prefix>
 					<Plus class="h-4 w-4" />
 				</template>
-				{{ __('Add') }}
+				{{ __('batches.students.add') }}
 			</Button>
 		</div>
 
@@ -152,7 +152,7 @@
 			</ListView>
 		</div>
 		<div v-else class="text-sm italic text-ink-gray-5">
-			{{ __('There are no students in this batch.') }}
+			{{ __('batches.students.noStudents') }}
 		</div>
 	</div>
 
@@ -232,19 +232,19 @@ const students = createResource({
 const getStudentColumns = () => {
 	let columns = [
 		{
-			label: 'Full Name',
+			label: __('batches.students.fullName'),
 			key: 'full_name',
 			width: '20rem',
 			icon: 'user',
 		},
 		{
-			label: 'Progress',
+			label: __('batches.students.progress'),
 			key: 'progress',
 			width: '15rem',
 			icon: 'activity',
 		},
 		{
-			label: 'Last Active',
+			label: __('batches.students.lastActive'),
 			key: 'last_active',
 			width: '10rem',
 			align: 'center',
@@ -283,7 +283,7 @@ const removeStudents = (selections, unselectAll) => {
 			onSuccess(data) {
 				students.reload()
 				props.batch.reload()
-				toast.success(__('Students deleted successfully'))
+				toast.success(__('batches.students.deletedSuccess'))
 				unselectAll()
 			},
 		}

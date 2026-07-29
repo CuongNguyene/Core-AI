@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Create a Live Class'),
+			title: __('batches.liveClass.createLiveClass'),
 			size: 'xl',
 			actions: [
 				{
-					label: 'Submit',
+					label: __('batches.liveClass.submit'),
 					variant: 'solid',
 					onClick: ({ close }) => submitLiveClass(close),
 				},
@@ -20,20 +20,20 @@
 						<FormControl
 							type="text"
 							v-model="liveClass.title"
-							:label="__('Title')"
+							:label="__('batches.liveClass.title')"
 							:required="true"
 						/>
 						<FormControl
 							v-model="liveClass.date"
 							type="date"
-							:label="__('Date')"
+							:label="__('batches.liveClass.date')"
 							:required="true"
 						/>
-						<Tooltip :text="__('Duration of the live class in minutes')">
+						<Tooltip :text="__('batches.liveClass.durationTooltip')">
 							<FormControl
 								type="number"
 								v-model="liveClass.duration"
-								:label="__('Duration')"
+								:label="__('batches.liveClass.duration')"
 								:required="true"
 							/>
 						</Tooltip>
@@ -42,21 +42,21 @@
 						<Tooltip
 							:text="
 								__(
-									'Time must be in 24 hour format (HH:mm). Example 11:30 or 22:00'
+									'batches.liveClass.timeTooltip'
 								)
 							"
 						>
 							<FormControl
 								v-model="liveClass.time"
 								type="time"
-								:label="__('Time')"
+								:label="__('batches.liveClass.time')"
 								:required="true"
 							/>
 						</Tooltip>
 
 						<div class="space-y-1.5">
 							<label class="block text-ink-gray-5 text-xs" for="batchTimezone">
-								{{ __('Timezone') }}
+								{{ __('batches.liveClass.timezone') }}
 								<span class="text-ink-red-3">*</span>
 							</label>
 							<Autocomplete
@@ -70,14 +70,14 @@
 							v-model="liveClass.auto_recording"
 							type="select"
 							:options="getRecordingOptions()"
-							:label="__('Auto Recording')"
+							:label="__('batches.liveClass.autoRecording')"
 						/>
 					</div>
 				</div>
 				<FormControl
 					v-model="liveClass.description"
 					type="textarea"
-					:label="__('Description')"
+					:label="__('batches.liveClass.description')"
 				/>
 			</div>
 		</template>
@@ -139,15 +139,15 @@ const getTimezoneOptions = () => {
 const getRecordingOptions = () => {
 	return [
 		{
-			label: 'No Recording',
+			label: __('batches.liveClass.noRecording'),
 			value: 'No Recording',
 		},
 		{
-			label: 'Local',
+			label: __('batches.liveClass.local'),
 			value: 'Local',
 		},
 		{
-			label: 'Cloud',
+			label: __('batches.liveClass.cloud'),
 			value: 'Cloud',
 		},
 	]
@@ -183,19 +183,19 @@ const submitLiveClass = (close) => {
 
 const validateFormFields = () => {
 	if (!liveClass.title) {
-		return __('Please enter a title.')
+		return __('batches.liveClass.titleRequired')
 	}
 	if (!liveClass.date) {
-		return __('Please select a date.')
+		return __('batches.liveClass.dateRequired')
 	}
 	if (!liveClass.time) {
-		return __('Please select a time.')
+		return __('batches.liveClass.timeRequired')
 	}
 	if (!liveClass.timezone) {
-		return __('Please select a timezone.')
+		return __('batches.liveClass.timezoneRequired')
 	}
 	if (!valideTime()) {
-		return __('Please enter a valid time in the format HH:mm.')
+		return __('batches.liveClass.invalidTimeFormat')
 	}
 	const liveClassDateTime = dayjs(`${liveClass.date}T${liveClass.time}`).tz(
 		liveClass.timezone,
@@ -207,10 +207,10 @@ const validateFormFields = () => {
 			'minute'
 		)
 	) {
-		return __('Please select a future date and time.')
+		return __('batches.liveClass.futureDateTimeRequired')
 	}
 	if (!liveClass.duration) {
-		return __('Please select a duration.')
+		return __('batches.liveClass.durationRequired')
 	}
 }
 

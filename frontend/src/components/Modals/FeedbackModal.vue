@@ -8,7 +8,7 @@
 		<template #body>
 			<div class="p-5 min-h-[300px]">
 				<div class="text-lg font-semibold mb-4">
-					{{ __('Training Feedback') }}
+					{{ __('batches.feedback.trainingFeedback') }}
 				</div>
 				<ListView
 					:columns="feedbackColumns"
@@ -86,27 +86,27 @@ const props = defineProps({
 const feedbackColumns = computed(() => {
 	return [
 		{
-			label: 'Member',
+			label: __('batches.feedback.member'),
 			key: 'member_name',
 			width: '10rem',
 		},
 		{
-			label: 'Feedback',
+			label: __('batches.feedback.feedback'),
 			key: 'feedback',
 			width: '15rem',
 		},
 		{
-			label: 'Content',
+			label: __('batches.feedback.content'),
 			key: 'content',
 			width: '9rem',
 		},
 		{
-			label: 'Instructors',
+			label: __('batches.feedback.instructors'),
 			key: 'instructors',
 			width: '9rem',
 		},
 		{
-			label: 'Value',
+			label: __('batches.feedback.value'),
 			key: 'value',
 			width: '9rem',
 		},

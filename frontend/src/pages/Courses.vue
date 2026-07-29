@@ -275,22 +275,25 @@ const courseTabs = computed(() => {
 	let tabs = [
 		{
 			label: __('courses.list.live'),
+			value: 'Live',
 		},
 		{
 			label: __('courses.list.new'),
+			value: 'New',
 		},
 		{
 			label: __('courses.list.upcoming'),
+			value: 'Upcoming',
 		},
 	]
 	if (
 		user.data?.is_moderator ||
 		user.data?.is_instructor
 	) {
-		tabs.push({ label: __('courses.list.created') })
-		tabs.push({ label: __('courses.list.unpublished') })
+		tabs.push({ label: __('courses.list.created'), value: 'Created' })
+		tabs.push({ label: __('courses.list.unpublished'), value: 'Unpublished' })
 	} else if (user.data) {
-		tabs.push({ label: __('courses.list.enrolled') })
+		tabs.push({ label: __('courses.list.enrolled'), value: 'Enrolled' })
 	}
 	return tabs
 })

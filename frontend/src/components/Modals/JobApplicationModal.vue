@@ -3,11 +3,11 @@
 		v-model="show"
 		class="text-base"
 		:options="{
-			title: __('Apply for this job'),
+			title: __('jobApplication.applyForJob'),
 			size: 'lg',
 			actions: [
 				{
-					label: 'Submit',
+					label: __('jobApplication.submit'),
 					variant: 'solid',
 					onClick: (close) => {
 						submitResume(close)
@@ -21,7 +21,7 @@
 				<p class="text-ink-gray-9">
 					{{
 						__(
-							'Submit your resume to proceed with your application for this position. Upon submission, it will be shared with the job poster.'
+							'jobApplication.description'
 						)
 					}}
 				</p>
@@ -39,7 +39,7 @@
 							<div class="">
 								<Button @click="openFileSelector" :loading="uploading">
 									{{
-										uploading ? `Uploading ${progress}%` : 'Upload your resume'
+										uploading ? __('profile.coverImage.uploading').format(progress) : __('jobApplication.uploadResume')
 									}}
 								</Button>
 							</div>
@@ -84,7 +84,7 @@ const props = defineProps({
 const validateFile = (file) => {
 	let extension = file.name.split('.').pop().toLowerCase()
 	if (extension != 'pdf') {
-		return 'Only PDF file is allowed'
+		return __('jobApplication.onlyPdfAllowed')
 	}
 }
 
@@ -108,11 +108,11 @@ const submitResume = (close) => {
 		{
 			validate() {
 				if (!resume.value) {
-					return 'Please upload your resume'
+					return __('jobApplication.uploadRequired')
 				}
 			},
 			onSuccess() {
-				toast.success('Your application has been submitted successfully')
+				toast.success(__('jobApplication.submittedSuccess'))
 				application.value.reload()
 				close()
 			},

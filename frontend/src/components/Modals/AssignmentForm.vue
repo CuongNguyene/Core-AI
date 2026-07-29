@@ -10,27 +10,27 @@
 				<div class="text-lg text-ink-gray-9 font-semibold mb-5">
 					{{
 						assignmentID === 'new'
-							? __('Create an Assignment')
-							: __('Edit Assignment')
+							? __('assignments.createAssignment')
+							: __('assignments.editAssignment')
 					}}
 				</div>
 				<div class="space-y-4 max-h-[75vh] overflow-y-auto">
 					<FormControl
 						v-model="assignment.title"
-						:label="__('Title')"
+						:label="__('assignments.title')"
 						:required="true"
 					/>
 					<Autocomplete
 						:modelValue="assignment.type"
 						@update:modelValue="(opt) => (assignment.type = opt.value)"
 						:options="assignmentOptions"
-						:label="__('Submission Type')"
+						:label="__('assignments.submissionType')"
 						size="sm"
 						:required="true"
 					/>
 					<div>
 						<div class="text-xs text-ink-gray-5 mb-2">
-							{{ __('Question') }}
+							{{ __('assignments.question') }}
 							<span class="text-ink-red-3">*</span>
 						</div>
 						<TextEditor
@@ -53,11 +53,11 @@
 						}"
 					>
 						<Button v-if="assignmentID !== 'new'" variant="subtle">
-							{{ __('Check Submissions') }}
+							{{ __('assignments.checkSubmissions') }}
 						</Button>
 					</router-link>
 					<Button variant="solid" @click="saveAssignment">
-						{{ __('Save') }}
+						{{ __('assignments.save') }}
 					</Button>
 				</div>
 			</div>
@@ -124,7 +124,7 @@ const saveAssignment = () => {
 			{
 				onSuccess() {
 					show.value = false
-					toast.success(__('Assignment created successfully'))
+					toast.success(__('assignments.createdSuccess'))
 				},
 			}
 		)
@@ -137,7 +137,7 @@ const saveAssignment = () => {
 			{
 				onSuccess() {
 					show.value = false
-					toast.success(__('Assignment updated successfully'))
+					toast.success(__('assignments.updatedSuccess'))
 				},
 			}
 		)
@@ -146,11 +146,11 @@ const saveAssignment = () => {
 
 const assignmentOptions = computed(() => {
 	return [
-		{ label: 'PDF', value: 'PDF' },
-		{ label: 'Image', value: 'Image' },
-		{ label: 'Document', value: 'Document' },
-		{ label: 'Text', value: 'Text' },
-		{ label: 'URL', value: 'URL' },
+		{ label: __('assignments.typePdf'), value: 'PDF' },
+		{ label: __('assignments.typeImage'), value: 'Image' },
+		{ label: __('assignments.typeDocument'), value: 'Document' },
+		{ label: __('assignments.typeText'), value: 'Text' },
+		{ label: __('assignments.typeUrl'), value: 'URL' },
 	]
 })
 </script>

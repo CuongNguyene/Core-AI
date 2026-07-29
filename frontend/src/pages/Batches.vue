@@ -14,7 +14,7 @@
 				<template #prefix>
 					<Plus class="h-4 w-4 stroke-1.5" />
 				</template>
-				{{ __('Create') }}
+				{{ __('batches.list.create') }}
 			</Button>
 		</router-link>
 	</header>
@@ -23,7 +23,7 @@
 			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
 		>
 			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('All Batches') }}
+				{{ __('batches.list.allBatches') }}
 			</div>
 			<div
 				class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
@@ -37,7 +37,7 @@
 				<div class="grid grid-cols-2 gap-2">
 					<FormControl
 						v-model="title"
-						:placeholder="__('Search by Title')"
+						:placeholder="__('batches.list.searchByTitle')"
 						type="text"
 						class="min-w-40 lg:min-w-0 lg:w-32 xl:w-40"
 						@input="updateBatches()"
@@ -46,7 +46,7 @@
 						<Link
 							doctype="LMS Category"
 							:value="currentCategory"
-							:placeholder="__('Category')"
+							:placeholder="__('batches.list.category')"
 							@change="(val) => { currentCategory = val; updateBatches() }"
 						/>
 					</div>
@@ -54,7 +54,7 @@
 
 				<FormControl
 					v-model="certification"
-					:label="__('Certification')"
+					:label="__('batches.list.certification')"
 					type="checkbox"
 					@change="updateBatches()"
 				/>
@@ -78,7 +78,7 @@
 			class="flex justify-center mt-5"
 		>
 			<Button @click="batches.next()">
-				{{ __('Load More') }}
+				{{ __('batches.list.loadMore') }}
 			</Button>
 		</div>
 	</div>
@@ -270,7 +270,8 @@ watch(currentTab, () => {
 const batchTabs = computed(() => {
 	let tabs = [
 		{
-			label: __('All'),
+			label: __('batches.list.all'),
+			value: 'All',
 		},
 	]
 
@@ -278,11 +279,11 @@ const batchTabs = computed(() => {
 		user.data?.is_moderator ||
 		user.data?.is_instructor
 ) {
-		tabs.push({ label: __('Upcoming') })
-		tabs.push({ label: __('Archived') })
-		tabs.push({ label: __('Unpublished') })
+		tabs.push({ label: __('batches.list.upcoming'), value: 'Upcoming' })
+		tabs.push({ label: __('batches.list.archived'), value: 'Archived' })
+		tabs.push({ label: __('batches.list.unpublished'), value: 'Unpublished' })
 	} else if (user.data) {
-		tabs.push({ label: __('Enrolled') })
+		tabs.push({ label: __('batches.list.enrolled'), value: 'Enrolled' })
 	}
 	return tabs
 })
@@ -299,14 +300,14 @@ const canCreateBatch = () => {
 
 const breadcrumbs = computed(() => [
 	{
-		label: __('Batches'),
+		label: __('batches.list.batches'),
 		route: { name: 'Batches' },
 	},
 ])
 
 usePageMeta(() => {
 	return {
-		title: __('Batches'),
+		title: __('batches.list.batches'),
 		icon: brand.favicon,
 	}
 })
