@@ -62,6 +62,7 @@ function loadLanguage() {
 
 	const applyLanguage = (user) => {
 		window.translatedMessages = (user?.language && translations[user.language]) || {}
+		window.lmsLanguage = user?.language || 'en'
 	}
 
 	if (userResource.data) {

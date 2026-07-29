@@ -36,7 +36,7 @@
 		</ListView>
 		<div class="flex justify-center my-5">
 			<Button v-if="submissions.hasNextPage" @click="submissions.next()">
-				{{ __('Load More') }}
+				{{ __('quiz.submission.loadMore') }}
 			</Button>
 		</div>
 	</div>
@@ -88,18 +88,18 @@ const submissions = createListResource({
 const quizColumns = computed(() => {
 	return [
 		{
-			label: __('Member'),
+			label: __('quiz.submission.member'),
 			key: 'member_name',
 			width: 1,
 		},
 		{
-			label: __('Score'),
+			label: __('quiz.submission.score'),
 			key: 'score',
 			width: 1,
 			align: 'center',
 		},
 		{
-			label: __('Percentage'),
+			label: __('quiz.submission.percentage'),
 			key: 'percentage',
 			width: 1,
 			align: 'center',
@@ -110,22 +110,22 @@ const quizColumns = computed(() => {
 const breadcrumbs = computed(() => {
 	return [
 		{
-			label: __('Quizzes'),
+			label: __('quiz.builder.quizzes'),
 			route: { name: 'Quizzes' },
 		},
 		{
-			label: submissions.data?.[0]?.quiz_title || __('Quiz'),
+			label: submissions.data?.[0]?.quiz_title || __('quiz.builder.quiz'),
 			route: { name: 'QuizForm', params: { quizID: props.quizID } },
 		},
 		{
-			label: __('Submissions'),
+			label: __('quiz.submission.submissions'),
 		},
 	]
 })
 
 usePageMeta(() => {
 	return {
-		title: __('Quiz Submissions'),
+		title: __('quiz.submission.quizSubmissions'),
 		icon: brand.favicon,
 	}
 })

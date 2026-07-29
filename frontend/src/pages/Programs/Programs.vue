@@ -7,15 +7,15 @@
 			<template #prefix>
 				<Plus class="h-4 w-4 stroke-1.5" />
 			</template>
-			{{ __('New') }}
+			{{ __('programs.list.new') }}
 		</Button>
 	</header>
 	<div v-if="programs.data?.length && !isStudent" class="py-10 w-3/4 mx-auto">
 		<div class="text-lg font-semibold text-ink-gray-9 mb-5">
 			{{
-				__('{0} {1}').format(
+				__('programs.list.countLabel').format(
 					programs.data.length,
-					programs.data.length == 1 ? __('Program') : __('Programs')
+					programs.data.length == 1 ? __('programs.list.program') : __('programs.list.programs')
 				)
 			}}
 		</div>
@@ -32,14 +32,14 @@
 					<BookOpen class="h-4 w-4 stroke-1.5 mr-1" />
 					<span>
 						{{ program.course_count }}
-						{{ program.course_count == 1 ? __('Course') : __('Courses') }}
+						{{ program.course_count == 1 ? __('programs.list.course') : __('programs.list.courses') }}
 					</span>
 				</div>
 				<div class="flex items-center space-x-1">
 					<User class="h-4 w-4 stroke-1.5 mr-1" />
 					<span>
 						{{ program.member_count || 0 }}
-						{{ program.member_count == 1 ? __('member') : __('members') }}
+						{{ program.member_count == 1 ? __('programs.list.member') : __('programs.list.members') }}
 					</span>
 				</div>
 			</div>
@@ -110,13 +110,13 @@ const isStudent = computed(() => {
 
 const breadcrumbs = computed(() => [
 	{
-		label: __('Programs'),
+		label: __('programs.list.title'),
 	},
 ])
 
 usePageMeta(() => {
 	return {
-		title: __('Programs'),
+		title: __('programs.list.title'),
 		icon: brand.favicon,
 	}
 })

@@ -11,7 +11,7 @@
 			<template #prefix>
 				<Plus class="w-4 h-4" />
 			</template>
-			{{ __('Create') }}
+			{{ __('quiz.list.create') }}
 		</Button>
 	</header>
 	<div class="py-5 mx-5">
@@ -19,11 +19,11 @@
 			<div class="text-lg font-semibold text-ink-gray-7">
 				{{
 					quizzes.data?.length
-						? __('{0} Quizzes').format(quizzes.data.length)
-						: __('No Quizzes')
+						? __('quiz.list.nQuizzes').format(quizzes.data.length)
+						: __('quiz.list.noQuizzes')
 				}}
 			</div>
-			<FormControl v-model="search" type="text" placeholder="Search">
+			<FormControl v-model="search" type="text" :placeholder="__('quiz.list.search')">
 				<template #prefix>
 					<FeatherIcon name="search" class="size-4 text-ink-gray-5" />
 				</template>
@@ -95,7 +95,7 @@
 		<EmptyState v-else type="Quizzes" />
 		<div v-if="quizzes.hasNextPage" class="flex justify-center my-5">
 			<Button @click="quizzes.next()">
-				{{ __('Load More') }}
+				{{ __('quiz.list.loadMore') }}
 			</Button>
 		</div>
 	</div>
@@ -177,47 +177,47 @@ const deleteQuiz = (selections, unselectAll) => {
 		await quizzes.delete.submit(quizName)
 	})
 	unselectAll()
-	toast.success(__('Quizzes deleted successfully'))
+	toast.success(__('quiz.list.deletedSuccess'))
 }
 
 const quizColumns = computed(() => {
 	return [
 		{
-			label: __('Title'),
+			label: __('quiz.builder.title'),
 			key: 'title',
 			width: 2,
 			icon: 'file-text',
 		},
 		{
-			label: __('Total Marks'),
+			label: __('quiz.builder.totalMarks'),
 			key: 'total_marks',
 			width: 1,
 			align: 'center',
 			icon: 'hash',
 		},
 		{
-			label: __('Passing Percentage'),
+			label: __('quiz.builder.passingPercentage'),
 			key: 'passing_percentage',
 			width: 1,
 			align: 'center',
 			icon: 'percent',
 		},
 		{
-			label: __('Max Attempts'),
+			label: __('quiz.list.maxAttempts'),
 			key: 'max_attempts',
 			width: 1,
 			align: 'center',
 			icon: 'repeat',
 		},
 		{
-			label: __('Show Answers'),
+			label: __('quiz.builder.showAnswers'),
 			key: 'show_answers',
 			width: 1,
 			align: 'center',
 			icon: 'eye',
 		},
 		{
-			label: __('Modified'),
+			label: __('quiz.list.modified'),
 			key: 'modified',
 			width: 1,
 			align: 'center',
@@ -229,7 +229,7 @@ const quizColumns = computed(() => {
 const breadcrumbs = computed(() => {
 	return [
 		{
-			label: __('Quizzes'),
+			label: __('quiz.builder.quizzes'),
 			route: {
 				name: 'Quizzes',
 			},
@@ -239,7 +239,7 @@ const breadcrumbs = computed(() => {
 
 usePageMeta(() => {
 	return {
-		title: __('Quizzes'),
+		title: __('quiz.builder.quizzes'),
 		icon: brand.favicon,
 	}
 })

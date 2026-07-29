@@ -5,13 +5,13 @@
 		<Breadcrumbs :items="breadcrumbs" />
 		<div v-if="!readOnlyMode" class="space-x-2">
 			<Badge v-if="quizDetails.isDirty" theme="orange">
-				{{ __('Not Saved') }}
+				{{ __('quiz.builder.notSaved') }}
 			</Badge>
 			<Button v-if="quizDetails.doc?.name" @click="testQuiz()">
 				<template #prefix>
 					<ListChecks class="size-4 stroke-1.5" />
 				</template>
-				{{ __('Test Quiz') }}
+				{{ __('quiz.builder.testQuiz') }}
 			</Button>
 			<router-link
 				v-if="quizDetails.doc?.name"
@@ -26,41 +26,41 @@
 					<template #prefix>
 						<ClipboardList class="size-4 stroke-1.5" />
 					</template>
-					{{ __('Check Submissions') }}
+					{{ __('quiz.builder.checkSubmissions') }}
 				</Button>
 			</router-link>
 			<Button variant="solid" @click="submitQuiz()">
-				{{ __('Save') }}
+				{{ __('quiz.builder.save') }}
 			</Button>
 		</div>
 	</header>
 	<div v-if="quizDetails.doc" class="py-5">
 		<div class="px-20 pb-5 space-y-5 border-b mb-5">
 			<div class="text-lg text-ink-gray-9 font-semibold mb-4">
-				{{ __('Details') }}
+				{{ __('quiz.builder.details') }}
 			</div>
 			<div class="grid grid-cols-2 gap-5">
 				<div class="space-y-5">
 					<FormControl
 						v-model="quizDetails.doc.title"
-						:label="__('Title')"
+						:label="__('quiz.builder.title')"
 						:required="true"
 					/>
 					<FormControl
 						type="number"
 						v-model="quizDetails.doc.max_attempts"
-						:label="__('Maximum Attempts')"
+						:label="__('quiz.builder.maximumAttempts')"
 					/>
 					<FormControl
 						type="number"
 						v-model="quizDetails.doc.duration"
-						:label="__('Duration (in minutes)')"
+						:label="__('quiz.builder.durationMinutes')"
 					/>
 				</div>
 				<div class="space-y-5">
 					<FormControl
 						v-model="quizDetails.doc.total_marks"
-						:label="__('Total Marks')"
+						:label="__('quiz.builder.totalMarks')"
 						disabled
 					/>
 					<FormControl
@@ -68,7 +68,7 @@
 						:min="0"
 						:max="100"
 						v-model="quizDetails.doc.passing_percentage"
-						:label="__('Passing Percentage')"
+						:label="__('quiz.builder.passingPercentage')"
 						:required="true"
 					/>
 				</div>
@@ -76,43 +76,43 @@
 		</div>
 		<div class="px-20 pb-5 space-y-5 border-b mb-5">
 			<div class="text-lg text-ink-gray-9 font-semibold mb-4">
-				{{ __('Settings') }}
+				{{ __('quiz.builder.settings') }}
 			</div>
 			<div class="grid grid-cols-3 gap-5">
 				<div class="flex flex-col space-y-10">
 					<FormControl
 						v-model="quizDetails.doc.show_answers"
 						type="checkbox"
-						:label="__('Show Answers')"
+						:label="__('quiz.builder.showAnswers')"
 					/>
 					<FormControl
 						v-model="quizDetails.doc.show_submission_history"
 						type="checkbox"
-						:label="__('Show Submission History')"
+						:label="__('quiz.builder.showSubmissionHistory')"
 					/>
 				</div>
 				<div class="flex flex-col space-y-5">
 					<FormControl
 						v-model="quizDetails.doc.shuffle_questions"
 						type="checkbox"
-						:label="__('Shuffle Questions')"
+						:label="__('quiz.builder.shuffleQuestions')"
 					/>
 					<FormControl
 						v-if="quizDetails.doc.shuffle_questions"
 						v-model="quizDetails.doc.limit_questions_to"
-						:label="__('Limit Questions To')"
+						:label="__('quiz.builder.limitQuestionsTo')"
 					/>
 				</div>
 				<div class="flex flex-col space-y-5">
 					<FormControl
 						v-model="quizDetails.doc.enable_negative_marking"
 						type="checkbox"
-						:label="__('Enable Negative Marking')"
+						:label="__('quiz.builder.enableNegativeMarking')"
 					/>
 					<FormControl
 						v-if="quizDetails.doc.enable_negative_marking"
 						v-model="quizDetails.doc.marks_to_cut"
-						:label="__('Marks to Deduct')"
+						:label="__('quiz.builder.marksToDeduct')"
 					/>
 				</div>
 			</div>
@@ -121,13 +121,13 @@
 		<div v-if="!isNew" class="px-20 pb-5 space-y-5 mb-5">
 			<div class="flex items-center justify-between mb-4">
 				<div class="text-lg font-semibold text-ink-gray-9">
-					{{ __('Questions') }}
+					{{ __('quiz.builder.questions') }}
 				</div>
 				<Button v-if="!readOnlyMode" @click="openQuestionModal()">
 					<template #prefix>
 						<Plus class="w-4 h-4" />
 					</template>
-					{{ __('New Question') }}
+					{{ __('quiz.builder.newQuestion') }}
 				</Button>
 			</div>
 			<ListView
@@ -178,7 +178,7 @@
 				</ListSelectBanner>
 			</ListView>
 			<div v-else class="text-ink-gray-6 text-sm">
-				{{ __('No questions added yet') }}
+				{{ __('quiz.builder.noQuestionsAdded') }}
 			</div>
 		</div>
 	</div>
@@ -332,7 +332,7 @@ const createQuiz = () => {
 			onSuccess(data) {
 				quizDetails.name = data.name
 				quizDetails.doc = data
-				toast.success(__('Quiz created successfully'))
+				toast.success(__('quiz.builder.createdSuccess'))
 				router.push({
 					name: 'QuizForm',
 					params: { quizID: data.name },
@@ -359,7 +359,7 @@ const submitQuiz = () => {
 		{
 			onSuccess(data) {
 				quizDetails.doc.total_marks = data.total_marks
-				toast.success(__('Quiz updated successfully'))
+				toast.success(__('quiz.builder.updatedSuccess'))
 			},
 			onError(err) {
 				toast.error(err.messages?.[0] || err)
@@ -371,7 +371,7 @@ const submitQuiz = () => {
 const testQuiz = () => {
 	if (!quizDetails.doc?.questions?.length) {
 		toast.warning(
-			__('Please add at least one question before testing this quiz.')
+			__('quiz.builder.addQuestionBeforeTest')
 		)
 		return
 	}
@@ -403,17 +403,17 @@ const calculateTotalMarks = () => {
 const questionColumns = computed(() => {
 	return [
 		{
-			label: __('ID'),
+			label: __('quiz.builder.id'),
 			key: 'question',
 			width: '10rem',
 		},
 		{
-			label: __('Question'),
-			key: __('question_detail'),
+			label: __('quiz.builder.question'),
+			key: 'question_detail',
 			width: '40rem',
 		},
 		{
-			label: __('Marks'),
+			label: __('quiz.builder.marks'),
 			key: 'marks',
 			width: '5rem',
 		},
@@ -450,7 +450,7 @@ const deleteQuestions = (selections, unselectAll) => {
 		},
 		{
 			onSuccess() {
-				toast.success(__('Questions deleted successfully'))
+				toast.success(__('quiz.builder.questionsDeletedSuccess'))
 				quizDetails.reload()
 				unselectAll()
 			},
@@ -461,7 +461,7 @@ const deleteQuestions = (selections, unselectAll) => {
 const breadcrumbs = computed(() => {
 	let crumbs = [
 		{
-			label: __('Quizzes'),
+			label: __('quiz.builder.quizzes'),
 			route: {
 				name: 'Quizzes',
 			},
@@ -469,7 +469,7 @@ const breadcrumbs = computed(() => {
 	]
 
 	crumbs.push({
-		label: props.quizID == 'new' ? __('New Quiz') : quizDetails.doc?.title,
+		label: props.quizID == 'new' ? __('quiz.builder.newQuiz') : quizDetails.doc?.title,
 		route: { name: 'QuizForm', params: { quizID: props.quizID } },
 	})
 	return crumbs
@@ -477,7 +477,7 @@ const breadcrumbs = computed(() => {
 
 usePageMeta(() => {
 	return {
-		title: props.quizID == 'new' ? __('New Quiz') : quizDetails.doc?.title,
+		title: props.quizID == 'new' ? __('quiz.builder.newQuiz') : quizDetails.doc?.title,
 		icon: brand.favicon,
 	}
 })

@@ -8,7 +8,7 @@
 				<template #prefix>
 					<ArrowLeft class="size-4 stroke-1.5" />
 				</template>
-				{{ __('Back') }}
+				{{ __('quiz.take.back') }}
 			</Button>
 			<Breadcrumbs :items="breadcrumbs" />
 		</div>
@@ -71,7 +71,7 @@ const title = createResource({
 })
 
 const breadcrumbs = computed(() => {
-	return [{ label: __('Quiz') }, { label: title.data?.title }]
+	return [{ label: __('quiz.builder.quiz') }, { label: title.data?.title }]
 })
 
 usePageMeta(() => {

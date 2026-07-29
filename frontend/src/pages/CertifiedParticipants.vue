@@ -8,19 +8,19 @@
 				<template #prefix>
 					<GraduationCap class="h-4 w-4 stroke-1.5" />
 				</template>
-				{{ __('Get Certified') }}
+				{{ __('certification.getCertified') }}
 			</Button>
 		</router-link>
 	</header>
 	<div class="mx-auto w-full max-w-4xl pt-6 pb-10">
 		<div class="flex flex-col md:flex-row justify-between mb-4 px-3">
 			<div class="text-xl font-semibold text-ink-gray-7 mb-4 md:mb-0">
-				{{ memberCount }} {{ __('certified members') }}
+				{{ memberCount }} {{ __('certification.certifiedMembers') }}
 			</div>
 			<div class="grid grid-cols-2 gap-2">
 				<FormControl
 					v-model="nameFilter"
-					:placeholder="__('Search by Name')"
+					:placeholder="__('certification.searchByName')"
 					type="text"
 					class="min-w-40 lg:min-w-0 lg:w-32 xl:w-40"
 					@input="updateParticipants()"
@@ -32,7 +32,7 @@
 					<Autocomplete
 						:value="currentCategory"
 						:options="categories.data"
-						:placeholder="__('Category')"
+						:placeholder="__('certification.category')"
 						@change="(val) => { currentCategory = val?.value || ''; updateParticipants() }"
 					/>
 				</div>
@@ -75,8 +75,8 @@
 									{{ participant.certificate_count }}
 									{{
 										participant.certificate_count > 1
-											? __('certificates')
-											: __('certificate')
+											? __('certification.certificates')
+											: __('certification.certificate')
 									}}
 								</div>
 								<span class="text-ink-gray-4 md:hidden">·</span>
@@ -95,7 +95,7 @@
 			class="flex justify-center mt-5"
 		>
 			<Button @click="participants.next()">
-				{{ __('Load More') }}
+				{{ __('certification.loadMore') }}
 			</Button>
 		</div>
 	</div>
@@ -151,7 +151,7 @@ const categories = createListResource({
 	auto: true,
 	transform(data) {
 		let options = data.map((category) => ({ label: category, value: category }))
-		options.unshift({ label: __('All Categories'), value: '' })
+		options.unshift({ label: __('certification.allCategories'), value: '' })
 		return options
 	},
 })
@@ -181,14 +181,14 @@ const updateFilters = () => {
 
 const breadcrumbs = computed(() => [
 	{
-		label: __('Certified Members'),
+		label: __('certification.certifiedMembersTitle'),
 		route: { name: 'CertifiedParticipants' },
 	},
 ])
 
 usePageMeta(() => {
 	return {
-		title: __('Certified Members'),
+		title: __('certification.certifiedMembersTitle'),
 		icon: brand.favicon,
 	}
 })

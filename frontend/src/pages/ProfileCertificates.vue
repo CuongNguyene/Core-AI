@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-7 mb-10">
 		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
-			{{ __('Certificates') }}
+			{{ __('certification.certificatesHeading') }}
 		</h2>
 		<div
 			v-if="certificates.data?.length"
@@ -17,13 +17,13 @@
 					{{ certificate.course_title || certificate.batch_title }}
 				</div>
 				<div class="text-sm text-ink-gray-7 font-medium mt-auto">
-					<span> {{ __('Issued on') }}: </span>
+					<span> {{ __('certification.issuedOn') }}: </span>
 					{{ dayjs(certificate.issue_date).format('DD MMM YYYY') }}
 				</div>
 			</div>
 		</div>
 		<div v-else class="text-sm italic text-ink-gray-5">
-			{{ __('You have not received any certificates yet.') }}
+			{{ __('certification.noCertificatesYet') }}
 		</div>
 	</div>
 </template>

@@ -6,12 +6,12 @@
 		<div class="space-x-2">
 			<Badge
 				v-if="submissionDetails.isDirty"
-				:label="__('Not Saved')"
+				:label="__('quiz.submission.notSaved')"
 				variant="subtle"
 				theme="orange"
 			/>
 			<Button variant="solid" @click="saveSubmission()">
-				{{ __('Save') }}
+				{{ __('quiz.submission.save') }}
 			</Button>
 		</div>
 	</header>
@@ -23,12 +23,12 @@
 			<div class="grid grid-cols-2 gap-5">
 				<FormControl
 					v-model="submissionDetails.doc.quiz_title"
-					:label="__('Quiz')"
+					:label="__('quiz.submission.quiz')"
 					:disabled="true"
 				/>
 				<FormControl
 					v-model="submissionDetails.doc.member_name"
-					:label="__('Member')"
+					:label="__('quiz.submission.member')"
 					:disabled="true"
 				/>
 			</div>
@@ -36,12 +36,12 @@
 			<div class="grid grid-cols-2 gap-5">
 				<FormControl
 					v-model="submissionDetails.doc.score"
-					:label="__('Score')"
+					:label="__('quiz.submission.score')"
 					:disabled="true"
 				/>
 				<FormControl
 					v-model="submissionDetails.doc.percentage"
-					:label="__('Percentage')"
+					:label="__('quiz.submission.percentage')"
 					:disabled="true"
 				/>
 			</div>
@@ -53,18 +53,18 @@
 				class="py-5 px-10 space-y-4"
 			>
 				<div class="text-ink-gray-9">
-					<span class="font-semibold"> {{ __('Question') }}: </span>
+					<span class="font-semibold"> {{ __('quiz.submission.question') }}: </span>
 					<span class="leading-5" v-html="row.question"> </span>
 				</div>
 				<div class="">
-					<span class="font-semibold"> {{ __('Answer') }} </span>
+					<span class="font-semibold"> {{ __('quiz.submission.answer') }} </span>
 					<span class="leading-5" v-html="row.answer"></span>
 				</div>
 				<div class="grid grid-cols-2 gap-5">
-					<FormControl v-model="row.marks" :label="__('Marks')" />
+					<FormControl v-model="row.marks" :label="__('quiz.submission.marks')" />
 					<FormControl
 						v-model="row.marks_out_of"
-						:label="__('Marks out of')"
+						:label="__('quiz.submission.marksOutOf')"
 						:disabled="true"
 					/>
 				</div>
@@ -128,7 +128,7 @@ const submissionDetails = createDocumentResource({
 const breadcrumbs = computed(() => {
 	return [
 		{
-			label: __('Quizzes'),
+			label: __('quiz.builder.quizzes'),
 			route: { name: 'Quizzes' },
 		},
 		{
@@ -141,7 +141,7 @@ const breadcrumbs = computed(() => {
 			},
 		},
 		{
-			label: __('Submissions'),
+			label: __('quiz.submission.submissions'),
 			route: {
 				name: 'QuizSubmissionList',
 				params: {
