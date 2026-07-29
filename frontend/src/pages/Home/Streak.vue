@@ -2,7 +2,7 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Learning Consistency'),
+			title: __('home.streak.title'),
 		}"
 	>
 		<template #body-content>
@@ -13,15 +13,15 @@
 						<div class="text-ink-gray-5 mb-1">
 							{{
 								streakInfo.data?.current_streak < 1
-									? __('You can do better,')
+									? __('home.streak.low')
 									: streakInfo.data?.current_streak < 10
-									? __('Keep going,')
-									: __('You rock,')
+									? __('home.streak.mid')
+									: __('home.streak.high')
 							}}
-							{{ __(' you are on a') }}
+							{{ __('home.streak.youAreOnA') }}
 						</div>
 						<div class="font-semibold text-xl text-ink-gray-9">
-							{{ streakInfo.data?.current_streak }} {{ __('day streak') }}
+							{{ streakInfo.data?.current_streak }} {{ __('home.streak.dayStreak') }}
 						</div>
 					</div>
 				</div>
@@ -31,18 +31,18 @@
 				>
 					<div class="space-y-1 border-r border-outline-gray-2 mr-4">
 						<div class="text-ink-gray-6">
-							{{ __('Current Streak') }}
+							{{ __('home.streak.current') }}
 						</div>
 						<div class="font-semibold text-lg text-ink-gray-9">
-							{{ streakInfo.data?.current_streak }} {{ __('days') }}
+							{{ streakInfo.data?.current_streak }} {{ __('home.streak.days') }}
 						</div>
 					</div>
 					<div class="space-y-1">
 						<div class="text-ink-gray-6">
-							{{ __('Longest Streak') }}
+							{{ __('home.streak.longest') }}
 						</div>
 						<div class="font-semibold text-lg text-ink-gray-9">
-							{{ streakInfo.data?.longest_streak }} {{ __('days') }}
+							{{ streakInfo.data?.longest_streak }} {{ __('home.streak.days') }}
 						</div>
 					</div>
 				</div>
@@ -50,11 +50,7 @@
 				<div
 					class="text-ink-gray-7 border border-outline-gray-1 px-2.5 py-2 rounded-md text-xs leading-5 mt-5"
 				>
-					{{
-						__(
-							'Your learning streak counts the number of days in a row you’ve kept up your learning, whether it’s a lesson, quiz, or assignment. Don’t worry, weekends don’t break your streak.'
-						)
-					}}
+					{{ __('home.streak.description') }}
 				</div>
 			</div>
 		</template>

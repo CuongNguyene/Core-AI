@@ -1,0 +1,46 @@
+{
+	"home": {
+		"common": {
+			"title": "Home",
+			"greeting": "Hey",
+			"liveClassesPlural": "live classes",
+			"liveClassesSingular": "live class",
+			"upcomingClassesMessage": "You have {0} upcoming {1}.",
+			"manageCoursesAndBatches": "Manage your courses and batches at a glance",
+			"resumeWhereYouLeftOff": "Resume where you left off",
+			"student": "Student",
+			"instructor": "Instructor",
+			"seeAll": "See all",
+			"upcomingLiveClassesTitle": "Upcoming Live Classes",
+			"start": "Start",
+			"join": "Join",
+			"endedTooltip": "This class has ended",
+			"ended": "Ended"
+		},
+		"streak": {
+			"title": "Learning Consistency",
+			"low": "You can do better,",
+			"mid": "Keep going,",
+			"high": "You rock,",
+			"youAreOnA": " you are on a",
+			"dayStreak": "day streak",
+			"current": "Current Streak",
+			"days": "days",
+			"longest": "Longest Streak",
+			"description": "Your learning streak counts the number of days in a row you’ve kept up your learning, whether it’s a lesson, quiz, or assignment. Don’t worry, weekends don’t break your streak."
+		},
+		"student": {
+			"myCourses": "My Courses",
+			"popularCourses": "Our Popular Courses",
+			"myBatches": "My Batches",
+			"upcomingBatches": "Our Upcoming Batches"
+		},
+		"admin": {
+			"coursesCreated": "Courses Created",
+			"upcomingBatches": "Upcoming Batches",
+			"noCoursesCreated": "No courses created",
+			"noCoursesDescription": "There are no courses currently. Create your first course to get started!",
+			"createCourse": "Create Course"
+		}
+	}
+}

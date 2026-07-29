@@ -74,10 +74,14 @@ import { usersStore } from '@/stores/user'
 import { useSettings } from '@/stores/settings'
 import { markRaw, watch, ref, onMounted, computed } from 'vue'
 import { createDialog } from '@/utils/dialogs'
+import { createResource } from 'frappe-ui'
 import SettingsModal from '@/components/Settings/Settings.vue'
 import FrappeCloudIcon from '@/components/Icons/FrappeCloudIcon.vue'
+import translations from '@/translations'
 import {
 	ChevronDown,
+	Check,
+	Languages,
 	LogIn,
 	LogOut,
 	Moon,
@@ -96,6 +100,28 @@ const showSettingsModal = ref(false)
 const theme = ref('light')
 const frappeCloudBaseEndpoint = 'https://frappecloud.com'
 const $dialog = createDialog
+
+const languageNames = {
+	en: 'English',
+	vi: 'Tiếng Việt',
+}
+
+const updateLanguage = createResource({
+	url: 'frappe.client.set_value',
+	onSuccess() {
+		window.location.reload()
+	},
+})
+
+const setLanguage = (code) => {
+	if (code === userResource.data?.language) return
+	updateLanguage.submit({
+		doctype: 'User',
+		name: userResource.data?.name,
+		fieldname: 'language',
+		value: code,
+	})
+}
 
 const props = defineProps({
 	isCollapsed: {
@@ -155,6 +181,18 @@ const userDropdownOptions = computed(() => {
 					},
 					condition: () => {
 						return userResource.data?.is_moderator
+					},
+				},
+				{
+					icon: Languages,
+					label: 'Language',
+					submenu: Object.keys(translations).map((code) => ({
+						icon: userResource.data?.language === code ? Check : undefined,
+						label: languageNames[code] || code,
+						onClick: () => setLanguage(code),
+					})),
+					condition: () => {
+						return isLoggedIn && Object.keys(translations).length > 1
 					},
 				},
 				{

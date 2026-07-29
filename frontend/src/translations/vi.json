@@ -1,0 +1,46 @@
+{
+	"home": {
+		"common": {
+			"title": "Trang chủ",
+			"greeting": "Chào bạn",
+			"liveClassesPlural": "buổi học trực tuyến",
+			"liveClassesSingular": "buổi học trực tuyến",
+			"upcomingClassesMessage": "Bạn có {0} {1} sắp diễn ra.",
+			"manageCoursesAndBatches": "Quản lý khoá học và lớp học của bạn trong nháy mắt",
+			"resumeWhereYouLeftOff": "Tiếp tục từ nơi bạn đã dừng lại",
+			"student": "Học viên",
+			"instructor": "Giảng viên",
+			"seeAll": "Xem tất cả",
+			"upcomingLiveClassesTitle": "Các buổi học trực tuyến sắp tới",
+			"start": "Bắt đầu",
+			"join": "Tham gia",
+			"endedTooltip": "Buổi học này đã kết thúc",
+			"ended": "Đã kết thúc"
+		},
+		"streak": {
+			"title": "Tính nhất quán trong học tập",
+			"low": "Bạn có thể làm tốt hơn,",
+			"mid": "Tiếp tục nhé,",
+			"high": "Bạn tuyệt lắm,",
+			"youAreOnA": " bạn đang có",
+			"dayStreak": "ngày học liên tiếp",
+			"current": "Chuỗi hiện tại",
+			"days": "ngày",
+			"longest": "Chuỗi dài nhất",
+			"description": "Chuỗi học tập của bạn đếm số ngày liên tiếp bạn duy trì việc học, dù là bài học, bài kiểm tra hay bài tập. Đừng lo, cuối tuần không làm đứt chuỗi của bạn."
+		},
+		"student": {
+			"myCourses": "Khoá học của tôi",
+			"popularCourses": "Khoá học phổ biến của chúng tôi",
+			"myBatches": "Lớp học của tôi",
+			"upcomingBatches": "Lớp học sắp diễn ra của chúng tôi"
+		},
+		"admin": {
+			"coursesCreated": "Khoá học đã tạo",
+			"upcomingBatches": "Lớp học sắp tới",
+			"noCoursesCreated": "Chưa có khoá học nào",
+			"noCoursesDescription": "Hiện chưa có khoá học nào. Hãy tạo khoá học đầu tiên để bắt đầu!",
+			"createCourse": "Tạo khoá học"
+		}
+	}
+}
