@@ -11,17 +11,17 @@
 		>
 			{{ seats_left }}
 			<span v-if="seats_left > 1">
-				{{ __('Seats Left') }}
+				{{ __('batches.card.seatsLeft') }}
 			</span>
 			<span v-else-if="seats_left == 1">
-				{{ __('Seat Left') }}
+				{{ __('batches.card.seatLeft') }}
 			</span>
 		</div>
 		<div
 			v-else-if="batch.data.seat_count && seats_left <= 0"
 			class="text-xs bg-red-100 text-red-700 float-right px-2 py-0.5 rounded-md"
 		>
-			{{ __('Sold Out') }}
+			{{ __('batches.card.soldOut') }}
 		</div>
 		<div
 			v-if="batch.data.amount"
@@ -34,7 +34,7 @@
 			class="flex items-center mb-3 text-ink-gray-7"
 		>
 			<BookOpen class="h-4 w-4 stroke-1.5 mr-2" />
-			<span> {{ batch.data.courses.length }} {{ __('Courses') }} </span>
+			<span> {{ batch.data.courses.length }} {{ __('batches.overlay.courses') }} </span>
 		</div>
 		<DateRange
 			:startDate="batch.data.start_date"
@@ -70,7 +70,7 @@
 						<Settings v-else class="size-4 stroke-1.5" />
 					</template>
 					<span>
-						{{ isStudent ? __('Visit Batch') : __('Manage Batch') }}
+						{{ isStudent ? __('batches.overlay.visitBatch') : __('batches.overlay.manageBatch') }}
 					</span>
 				</Button>
 			</router-link>
@@ -93,7 +93,7 @@
 						<CreditCard class="size-4 stroke-1.5" />
 					</template>
 					<span>
-						{{ __('Register Now') }}
+						{{ __('batches.overlay.registerNow') }}
 					</span>
 				</Button>
 			</router-link>
@@ -110,7 +110,7 @@
 				<template #prefix>
 					<GraduationCap class="size-4 stroke-1.5" />
 				</template>
-				{{ __('Enroll Now') }}
+				{{ __('batches.overlay.enrollNow') }}
 			</Button>
 			<router-link
 				v-if="isModerator"
@@ -126,7 +126,7 @@
 						<Pencil class="size-4 stroke-1.5" />
 					</template>
 					<span>
-						{{ __('Edit') }}
+						{{ __('batches.overlay.edit') }}
 					</span>
 				</Button>
 			</router-link>
@@ -178,7 +178,7 @@ const enrollInBatch = () => {
 		{},
 		{
 			onSuccess(data) {
-				toast.success(__('You have been enrolled in this batch'))
+				toast.success(__('batches.overlay.enrolledSuccess'))
 				router.push({
 					name: 'Batch',
 					params: {

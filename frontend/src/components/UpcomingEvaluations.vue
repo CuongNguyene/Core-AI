@@ -2,7 +2,7 @@
 	<div v-if="!forHome || (forHome && upcoming_evals.data?.length)">
 		<div class="flex items-center justify-between mb-4">
 			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('Upcoming Evaluations') }}
+				{{ __('courses.evaluation.upcomingEvaluations') }}
 			</div>
 			<Button
 				v-if="
@@ -10,7 +10,7 @@
 				"
 				@click="openEvalModal"
 			>
-				{{ __('Schedule Evaluation') }}
+				{{ __('courses.evaluation.scheduleEvaluation') }}
 			</Button>
 		</div>
 		<div v-if="upcoming_evals.data?.length">
@@ -56,7 +56,7 @@
 														aria-hidden="true"
 													/>
 												</template>
-												{{ __('Cancel') }}
+												{{ __('courses.evaluation.cancel') }}
 											</Button>
 										</MenuItem>
 									</MenuItems>
@@ -89,7 +89,7 @@
 								<template #prefix>
 									<HeadsetIcon class="w-4 h-4 stroke-1.5" />
 								</template>
-								{{ __('Join Call') }}
+								{{ __('courses.evaluation.joinCall') }}
 							</Button>
 						</div>
 					</div>
@@ -97,7 +97,7 @@
 			</div>
 		</div>
 		<div v-else class="text-ink-gray-5">
-			{{ __('Schedule an evaluation to get certified.') }}
+			{{ __('courses.evaluation.noEvaluationsMessage') }}
 		</div>
 	</div>
 	<EvaluationModal
@@ -172,13 +172,13 @@ const evaluationCourses = computed(() => {
 
 const cancelEvaluation = (evl) => {
 	$dialog({
-		title: __('Cancel this evaluation?'),
+		title: __('courses.evaluation.cancelTitle'),
 		message: __(
-			'Are you sure you want to cancel this evaluation? This action cannot be undone.'
+			'courses.evaluation.cancelMessage'
 		),
 		actions: [
 			{
-				label: __('Cancel'),
+				label: __('courses.evaluation.cancel'),
 				theme: 'red',
 				variant: 'solid',
 				onClick(close) {

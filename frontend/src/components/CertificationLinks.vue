@@ -7,7 +7,7 @@
 		<template #prefix>
 			<GraduationCap class="size-4 stroke-1.5" />
 		</template>
-		{{ __('View Certificate') }}
+		{{ __('courses.certificationLinks.viewCertificate') }}
 	</Button>
 	<div
 		v-else-if="
@@ -31,7 +31,7 @@
 				<template #prefix>
 					<GraduationCap class="size-4 stroke-1.5" />
 				</template>
-				{{ __('Get Certified') }}
+				{{ __('courses.certificationLinks.getCertified') }}
 			</Button>
 		</router-link>
 	</div>

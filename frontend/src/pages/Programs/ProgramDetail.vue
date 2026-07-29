@@ -22,7 +22,7 @@
 				placement="right"
 				:text="
 					__(
-						'Courses must be completed in order. You can only start the next course after completing the previous one.'
+						'programs.detail.courseOrderTooltip'
 					)
 				"
 			>
@@ -57,7 +57,7 @@
 				>
 					<LockKeyhole class="size-5" />
 					<span class="font-medium text-center leading-5 px-10">
-						{{ __('Please complete the previous course to unlock this one.') }}
+						{{ __('programs.detail.lockedCourseMessage') }}
 					</span>
 				</div>
 			</div>
@@ -128,7 +128,7 @@ const openCourse = (course: any, enforceCourseOrder: boolean) => {
 
 const breadcrumbs = computed(() => {
 	return [
-		{ label: __('Programs'), route: { name: 'Programs' } },
+		{ label: __('programs.list.title'), route: { name: 'Programs' } },
 		{
 			label: props.programName,
 			route: {

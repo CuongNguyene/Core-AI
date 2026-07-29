@@ -4,50 +4,50 @@
 			class="bg-surface-blue-2 space-y-2 py-2 px-3 mb-4 rounded-md text-sm text-ink-blue-2 leading-5"
 		>
 			<div v-if="inVideo">
-				{{ __('You will have to complete the quiz to continue the video') }}
+				{{ __('quiz.take.mustCompleteToContinueVideo') }}
 			</div>
 			<div class="leading-5">
 				{{
-					__('This quiz consists of {0} questions.').format(questions.length)
+					__('quiz.take.consistsOfQuestions').format(questions.length)
 				}}
 			</div>
 			<div v-if="quiz.data?.duration" class="leading-5">
 				{{
 					__(
-						'Please ensure that you complete all the questions in {0} minutes.'
+						'quiz.take.completeInMinutes'
 					).format(quiz.data.duration)
 				}}
 			</div>
 			<div v-if="quiz.data?.duration" class="leading-5">
 				{{
 					__(
-						'If you fail to do so, the quiz will be automatically submitted when the timer ends.'
+						'quiz.take.autoSubmitOnTimeout'
 					)
 				}}
 			</div>
 			<div v-if="quiz.data.passing_percentage" class="leading-relaxed">
 				{{
 					__(
-						'You will have to get {0}% correct answers in order to pass the quiz.'
+						'quiz.take.passingRequirement'
 					).format(quiz.data.passing_percentage)
 				}}
 			</div>
 			<div v-if="quiz.data.max_attempts" class="leading-5">
 				{{
-					__('You can attempt this quiz {0}.').format(
+					__('quiz.take.attemptsAllowed').format(
 						quiz.data.max_attempts == 1
-							? '1 time'
-							: `${quiz.data.max_attempts} times`
+							? __('quiz.take.oneTime')
+							: __('quiz.take.nTimes').format(quiz.data.max_attempts)
 					)
 				}}
 			</div>
 			<div v-if="quiz.data.enable_negative_marking" class="leading-5">
 				{{
 					__(
-						'If you answer incorrectly, {0} {1} will be deducted from your score for each incorrect answer.'
+						'quiz.take.negativeMarking'
 					).format(
 						quiz.data.marks_to_cut,
-						quiz.data.marks_to_cut == 1 ? 'mark' : 'marks'
+						quiz.data.marks_to_cut == 1 ? __('quiz.take.mark') : __('quiz.take.marksPlural')
 					)
 				}}
 			</div>
@@ -59,14 +59,14 @@
 		>
 			{{
 				__(
-					'Bạn đã rời khỏi màn hình làm bài. Hành động này đã được ghi nhận (lần {0}).'
+					'quiz.take.leftScreenWarning'
 				).format(violationCount)
 			}}
 		</div>
 
 		<div v-if="quiz.data.duration" class="flex flex-col space-x-1 my-4">
 			<div class="mb-2">
-				<span class=""> {{ __('Time') }}: </span>
+				<span class=""> {{ __('quiz.take.time') }}: </span>
 				<span class="font-semibold">
 					{{ formatTimer(timer) }}
 				</span>
@@ -82,7 +82,7 @@
 				<div v-if="!questions.length" class="leading-5 text-ink-gray-7 mt-4">
 					{{
 						__(
-							'This quiz has no questions yet. Please add at least one question before testing this quiz.'
+							'quiz.take.noQuestionsYet'
 						)
 					}}
 				</div>
@@ -97,11 +97,11 @@
 						@click="startQuiz"
 					>
 						<span>
-							{{ inVideo ? __('Start the Quiz') : __('Start') }}
+							{{ inVideo ? __('quiz.take.startTheQuiz') : __('quiz.take.start') }}
 						</span>
 					</Button>
 					<Button v-if="inVideo" @click="props.backToVideo()">
-						{{ __('Resume Video') }}
+						{{ __('quiz.take.resumeVideo') }}
 					</Button>
 				</div>
 				<div
@@ -113,7 +113,7 @@
 				>
 					{{
 						__(
-							'You have already exceeded the maximum number of attempts allowed for this quiz.'
+							'quiz.take.maxAttemptsExceeded'
 						)
 					}}
 				</div>
@@ -128,7 +128,7 @@
 					<div class="flex justify-between">
 						<div class="text-sm text-ink-gray-5">
 							<span class="mr-2">
-								{{ __('Question {0}').format(activeQuestion) }}:
+								{{ __('quiz.take.questionN').format(activeQuestion) }}:
 							</span>
 							<span>
 								{{ getInstructions(questionDetails.data) }}
@@ -136,7 +136,7 @@
 						</div>
 						<div class="text-ink-gray-9 text-sm font-semibold item-left">
 							{{ question.marks }}
-							{{ question.marks == 1 ? __('Mark') : __('Marks') }}
+							{{ question.marks == 1 ? __('quiz.take.mark') : __('quiz.take.marksPlural') }}
 						</div>
 					</div>
 					<div
@@ -209,12 +209,12 @@
 							class="my-2"
 						/>
 						<div v-if="showAnswers.length">
-							<Badge v-if="showAnswers[0]" :label="__('Correct')" theme="green">
+							<Badge v-if="showAnswers[0]" :label="__('quiz.take.correct')" theme="green">
 								<template #prefix>
 									<CheckCircle class="w-4 h-4 text-ink-green-2 mr-1" />
 								</template>
 							</Badge>
-							<Badge v-else theme="red" :label="__('Incorrect')">
+							<Badge v-else theme="red" :label="__('quiz.take.incorrect')">
 								<template #prefix>
 									<XCircle class="w-4 h-4 text-ink-red-3 mr-1" />
 								</template>
@@ -234,7 +234,7 @@
 					<div class="flex items-center justify-between mt-4">
 						<div class="text-sm text-ink-gray-5">
 							{{
-								__('Question {0} of {1}').format(
+								__('quiz.take.questionNofM').format(
 									activeQuestion,
 									questions.length
 								)
@@ -249,7 +249,7 @@
 							@click="checkAnswer()"
 						>
 							<span>
-								{{ __('Check') }}
+								{{ __('quiz.take.check') }}
 							</span>
 						</Button>
 						<Button
@@ -257,12 +257,12 @@
 							@click="nextQuestion()"
 						>
 							<span>
-								{{ __('Next') }}
+								{{ __('quiz.take.next') }}
 							</span>
 						</Button>
 						<Button v-else @click="submitQuiz()">
 							<span>
-								{{ __('Submit') }}
+								{{ __('quiz.take.submit') }}
 							</span>
 						</Button>
 					</div>
@@ -271,7 +271,7 @@
 		</div>
 		<div v-else class="border rounded-md p-20 text-center space-y-2">
 			<div class="text-lg font-semibold text-ink-gray-9">
-				{{ __('Quiz Summary') }}
+				{{ __('quiz.take.quizSummary') }}
 			</div>
 			<div
 				v-if="quizSubmission.data.is_open_ended"
@@ -279,14 +279,14 @@
 			>
 				{{
 					__(
-						"Your submission has been successfully saved. The instructor will review and grade it shortly, and you'll be notified of your final result."
+						'quiz.take.openEndedSubmitted'
 					)
 				}}
 			</div>
 			<div v-else>
 				{{
 					__(
-						'You got {0}% correct answers with a score of {1} out of {2}'
+						'quiz.take.resultSummary'
 					).format(
 						Math.ceil(quizSubmission.data.percentage),
 						quizSubmission.data.score,
@@ -304,11 +304,11 @@
 					"
 				>
 					<span>
-						{{ __('Try Again') }}
+						{{ __('quiz.take.tryAgain') }}
 					</span>
 				</Button>
 				<Button v-if="inVideo" @click="props.backToVideo()">
-					{{ __('Resume Video') }}
+					{{ __('quiz.take.resumeVideo') }}
 				</Button>
 			</div>
 		</div>
@@ -327,7 +327,7 @@
 				:options="{
 					selectable: false,
 					showTooltip: false,
-					emptyState: { title: __('No Quiz submissions found') },
+					emptyState: { title: __('quiz.take.noSubmissionsFound') },
 				}"
 			>
 			</ListView>
@@ -595,7 +595,7 @@ const getAnswers = () => {
 const checkAnswer = () => {
 	let answers = getAnswers()
 	if (!answers.length) {
-		toast.warning(__('Please select an option'))
+		toast.warning(__('quiz.take.selectOptionRequired'))
 		return Promise.resolve()
 	}
 
@@ -723,9 +723,9 @@ const resetQuiz = () => {
 
 const getInstructions = (question) => {
 	if (question.type == 'Choices')
-		if (question.multiple) return __('Choose all answers that apply')
-		else return __('Choose one answer')
-	else return __('Type your answer')
+		if (question.multiple) return __('quiz.take.chooseAllThatApply')
+		else return __('quiz.take.chooseOneAnswer')
+	else return __('quiz.take.typeYourAnswer')
 }
 
 const markLessonProgress = () => {
@@ -747,25 +747,25 @@ const markLessonProgress = () => {
 const getSubmissionColumns = () => {
 	return [
 		{
-			label: 'No.',
+			label: __('quiz.take.no'),
 			key: 'idx',
 		},
 		{
-			label: 'Date',
+			label: __('quiz.take.date'),
 			key: 'creation',
 		},
 		{
-			label: 'Score',
+			label: __('quiz.take.score'),
 			key: 'score',
 			align: 'center',
 		},
 		{
-			label: 'Score out of',
+			label: __('quiz.take.scoreOutOf'),
 			key: 'score_out_of',
 			align: 'center',
 		},
 		{
-			label: 'Percentage',
+			label: __('quiz.take.percentage'),
 			key: 'percentage',
 			align: 'center',
 		},

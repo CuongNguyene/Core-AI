@@ -21,7 +21,7 @@
 						:is="icons[link.icon]"
 						class="h-4 w-4 stroke-1.5 text-ink-gray-5"
 					/>
-					<div>{{ link.label }}</div>
+					<div>{{ __(link.label) }}</div>
 				</div>
 			</div>
 

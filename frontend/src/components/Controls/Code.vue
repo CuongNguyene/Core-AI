@@ -21,7 +21,7 @@
 			@click="emit('save', code)"
 			class="mt-3 w-full text-base"
 		>
-			{{ __('Save') }}
+			{{ __('controls.save') }}
 		</Button>
 	</div>
 </template>

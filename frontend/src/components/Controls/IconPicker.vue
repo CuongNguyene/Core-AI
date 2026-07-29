@@ -24,7 +24,7 @@
 							{{ selectedIcon }}
 						</span>
 						<span v-else class="text-ink-gray-5">
-							{{ __('Choose an icon') }}
+							{{ __('controls.chooseIcon') }}
 						</span>
 					</button>
 				</template>
@@ -33,7 +33,7 @@
 						<FormControl
 							ref="search"
 							v-model="iconQuery"
-							:placeholder="__('Search for an icon')"
+							:placeholder="__('controls.searchIcon')"
 							autocomplete="off"
 						/>
 						<div class="grid grid-cols-10 gap-4 mt-4">

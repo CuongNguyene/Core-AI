@@ -21,7 +21,7 @@ export class Quiz {
 		app.mount(div)
 
 		return {
-			title: __('Quiz'),
+			title: __('quiz.builder.quiz'),
 			icon: div.innerHTML,
 		}
 	}
@@ -47,7 +47,7 @@ export class Quiz {
 		}
 		this.wrapper.innerHTML = `<div class='border rounded-md p-4 text-center bg-surface-menu-bar mb-4'>
             <span class="font-medium">
-                Quiz: ${quiz}
+                ${__('quiz.builder.quizLabel').format(quiz)}
             </span>
         </div>`
 		return

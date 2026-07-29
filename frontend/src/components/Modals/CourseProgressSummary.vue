@@ -2,7 +2,7 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Course Progress Summary'),
+			title: __('courses.progress.summary'),
 			size: '5xl',
 		}"
 	>
@@ -14,7 +14,7 @@
 					<div class="flex items-center justify-between space-x-5 mb-4">
 						<FormControl
 							v-model="searchFilter"
-							:placeholder="__('Search by Member')"
+							:placeholder="__('courses.progress.searchByMember')"
 							type="text"
 							class="w-full"
 						/>
@@ -83,7 +83,7 @@
 							class="flex justify-center my-5"
 						>
 							<Button @click="progressList.next()">
-								{{ __('Load More') }}
+								{{ __('courses.progress.loadMore') }}
 							</Button>
 						</div>
 					</div>
@@ -95,14 +95,14 @@
 						<NumberChart
 							class="border rounded-md w-full"
 							:config="{
-								title: __('Enrollments'),
+									title: __('courses.progress.enrollments'),
 								value: memberCount || 0,
 							}"
 						/>
 						<NumberChart
 							class="border rounded-md w-full"
 							:config="{
-								title: __('Average Progress %'),
+									title: __('courses.progress.averageProgress'),
 								value: chartDetails.data?.average_progress || 0,
 							}"
 						/>
@@ -110,7 +110,7 @@
 					<DonutChart
 						:config="{
 							data: chartDetails.data?.progress_distribution || [],
-							title: __('Progress Distribution'),
+								title: __('courses.progress.progressDistribution'),
 							categoryColumn: 'category',
 							valueColumn: 'count',
 							colors: [
@@ -215,13 +215,13 @@ watch([searchFilter], () => {
 const progressColumns = computed(() => {
 	return [
 		{
-			label: __('Member'),
+			label: __('courses.progress.member'),
 			key: 'member_name',
 			width: '60%',
 			icon: 'user',
 		},
 		{
-			label: __('Progress'),
+			label: __('courses.progress.progress'),
 			key: 'progress',
 			align: 'right',
 			icon: 'trending-up',

@@ -16,14 +16,14 @@
 			<template #prefix>
 				<Plus class="w-4 h-4" />
 			</template>
-			{{ __('Create') }}
+			{{ __('assignments.create') }}
 		</Button>
 	</header>
 
 	<div class="md:w-3/4 md:mx-auto py-5 mx-5">
 		<div class="flex items-center justify-between mb-5">
 			<div v-if="assignmentCount" class="text-lg font-semibold text-ink-gray-9">
-				{{ __('{0} Assignments').format(assignmentCount) }}
+				{{ __('assignments.nAssignments').format(assignmentCount) }}
 			</div>
 			<div
 				v-if="assignments.data?.length || assignmentCount > 0"
@@ -31,13 +31,13 @@
 			>
 				<FormControl
 					v-model="titleFilter"
-					:placeholder="__('Search by title')"
+					:placeholder="__('assignments.searchByTitle')"
 				/>
 				<Autocomplete
 					:modelValue="typeFilter"
 					@update:modelValue="(opt) => (typeFilter = opt?.value || '')"
 					:options="assignmentTypes"
-					:placeholder="__('Type')"
+					:placeholder="__('assignments.type')"
 					size="sm"
 				/>
 			</div>
@@ -64,7 +64,7 @@
 			class="flex justify-center my-5"
 		>
 			<Button @click="assignments.next()">
-				{{ __('Load More') }}
+				{{ __('assignments.loadMore') }}
 			</Button>
 		</div>
 	</div>
@@ -161,18 +161,18 @@ const assignments = createListResource({
 const assignmentColumns = computed(() => {
 	return [
 		{
-			label: __('Title'),
+			label: __('assignments.title'),
 			key: 'title',
 			width: 2,
 		},
 		{
-			label: __('Type'),
+			label: __('assignments.type'),
 			key: 'type',
 			width: 1,
 			align: 'left',
 		},
 		{
-			label: __('Created'),
+			label: __('assignments.created'),
 			key: 'creation',
 			width: 1,
 			align: 'right',
@@ -188,11 +188,19 @@ const getAssignmentCount = () => {
 	})
 }
 
+const assignmentTypeLabels = {
+	Document: 'assignments.typeDocument',
+	Image: 'assignments.typeImage',
+	PDF: 'assignments.typePdf',
+	URL: 'assignments.typeUrl',
+	Text: 'assignments.typeText',
+}
+
 const assignmentTypes = computed(() => {
 	let types = ['Document', 'Image', 'PDF', 'URL', 'Text']
 	return types.map((type) => {
 		return {
-			label: __(type),
+			label: __(assignmentTypeLabels[type]),
 			value: type,
 		}
 	})
@@ -200,14 +208,14 @@ const assignmentTypes = computed(() => {
 
 const breadcrumbs = computed(() => [
 	{
-		label: 'Assignments',
+		label: __('assignments.assignments'),
 		route: { name: 'Assignments' },
 	},
 ])
 
 usePageMeta(() => {
 	return {
-		title: __('Assignments'),
+		title: __('assignments.assignments'),
 		icon: brand.favicon,
 	}
 })

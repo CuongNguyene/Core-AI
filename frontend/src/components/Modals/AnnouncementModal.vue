@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Make an Announcement'),
+			title: __('batches.announcements.makeAnnouncement'),
 			size: 'xl',
 			actions: [
 				{
-					label: 'Submit',
+					label: __('batches.announcements.submit'),
 					variant: 'solid',
 					onClick: (close) => makeAnnouncement(close),
 				},
@@ -17,21 +17,21 @@
 			<div class="flex flex-col gap-4">
 				<div class="">
 					<div class="mb-1.5 text-sm text-ink-gray-5">
-						{{ __('Subject') }}
+						{{ __('batches.announcements.subject') }}
 						<span class="text-ink-red-3">*</span>
 					</div>
 					<Input type="text" v-model="announcement.subject" />
 				</div>
 				<div class="">
 					<div class="mb-1.5 text-sm text-ink-gray-5">
-						{{ __('Reply To') }}
+						{{ __('batches.announcements.replyTo') }}
 						<span class="text-ink-red-3">*</span>
 					</div>
 					<Input type="text" v-model="announcement.replyTo" />
 				</div>
 				<div class="mb-4">
 					<div class="mb-1.5 text-sm text-ink-gray-5">
-						{{ __('Announcement') }}
+						{{ __('batches.announcements.announcementLabel') }}
 						<span class="text-ink-red-3">*</span>
 					</div>
 					<TextEditor
@@ -88,21 +88,21 @@ const makeAnnouncement = (close) => {
 		{
 			validate() {
 				if (!props.students.length) {
-					return __('No students in this batch')
+					return __('batches.announcements.noStudents')
 				}
 				if (!announcement.subject) {
-					return __('Subject is required')
+					return __('batches.announcements.subjectRequired')
 				}
 				if (!announcement.announcement) {
-					return __('Announcement is required')
+					return __('batches.announcements.announcementRequired')
 				}
 				if (!announcement.replyTo) {
-					return __('Reply To is required')
+					return __('batches.announcements.replyToRequired')
 				}
 			},
 			onSuccess() {
 				close()
-				toast.success(__('Announcement has been sent successfully'))
+				toast.success(__('batches.announcements.sentSuccess'))
 			},
 			onError(err) {
 				toast.error(__(err.messages?.[0] || err))

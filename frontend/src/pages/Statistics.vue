@@ -5,7 +5,7 @@
 		>
 			<Breadcrumbs class="h-7" :items="breadcrumbs" />
 			<Button
-				:label="__('Export')"
+				:label="__('statistics.export')"
 				:icon-left="Download"
 				@click="showExportModal = true"
 			/>
@@ -16,7 +16,7 @@
 				class="grid grid-cols-2 sm:grid-cols-4 gap-3 items-end mb-4"
 			>
 				<div>
-					<div class="text-xs text-ink-gray-5 mb-1">{{ __('Date Range') }}</div>
+					<div class="text-xs text-ink-gray-5 mb-1">{{ __('statistics.dateRange') }}</div>
 					<Dropdown
 						v-if="!showDatePicker"
 						:options="rangeOptions"
@@ -39,7 +39,7 @@
 						ref="datePickerRef"
 						class="w-full"
 						v-model="filters.period"
-						placeholder="Period"
+						:placeholder="__('statistics.period')"
 						:formatter="formatRange"
 						@update:modelValue="onDateRangeUpdate"
 					>
@@ -50,63 +50,63 @@
 				</div>
 				<Link
 					v-model="filters.company"
-					:label="__('Company')"
-					:placeholder="__('All Companies')"
+					:label="__('statistics.company')"
+					:placeholder="__('statistics.allCompanies')"
 					doctype="Company"
 				/>
 				<Link
 					v-model="filters.department"
-					:label="__('Department')"
-					:placeholder="__('All Departments')"
+					:label="__('statistics.department')"
+					:placeholder="__('statistics.allDepartments')"
 					doctype="Department"
 					:filters="departmentFilters"
 				/>
 				<Link
 					v-model="filters.employee"
-					:label="__('Employee')"
-					:placeholder="__('All Employees')"
+					:label="__('statistics.employee')"
+					:placeholder="__('statistics.allEmployees')"
 					doctype="Employee"
 					:filters="employeeFilters"
 				/>
 			</div>
 			<div v-else class="max-w-56 mb-4">
-				<DateRangeFilter v-model="filters.period" :label="__('Date Range')" />
+				<DateRangeFilter v-model="filters.period" :label="__('statistics.dateRange')" />
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-				<Tooltip :text="__('Published Courses')">
+				<Tooltip :text="__('statistics.publishedCourses')">
 					<NumberChart
 						class="border rounded-md"
-						:config="{ title: 'Courses', value: chartDetails.data.courses }"
+						:config="{ title: __('statistics.courses'), value: chartDetails.data.courses }"
 					/>
 				</Tooltip>
-				<Tooltip :text="__('Course Enrollments')">
+				<Tooltip :text="__('statistics.courseEnrollments')">
 					<NumberChart
 						class="border rounded-md"
 						:config="{
-							title: 'Enrollments',
+							title: __('statistics.enrollments'),
 							value: isStaffView
 								? summary?.enrollments ?? chartDetails.data.enrollments
 								: myStats.data?.enrollments ?? 0,
 						}"
 					/>
 				</Tooltip>
-				<Tooltip :text="__('Course Completions')">
+				<Tooltip :text="__('statistics.courseCompletions')">
 					<NumberChart
 						class="border rounded-md"
 						:config="{
-							title: 'Completions',
+							title: __('statistics.completions'),
 							value: isStaffView
 								? summary?.completions ?? chartDetails.data.completions
 								: myStats.data?.completions ?? 0,
 						}"
 					/>
 				</Tooltip>
-				<Tooltip :text="__('Certified Members')">
+				<Tooltip :text="__('statistics.certifiedMembers')">
 					<NumberChart
 						class="border rounded-md"
 						:config="{
-							title: 'Certifications',
+							title: __('statistics.certifications'),
 							value: isStaffView
 								? summary?.certifications ?? chartDetails.data.certifications
 								: myStats.data?.certifications ?? 0,
@@ -155,7 +155,7 @@
 
 		<Dialog
 			v-model="showExportModal"
-			:options="{ title: __('Export Dashboard Report'), size: '5xl' }"
+			:options="{ title: __('statistics.exportDashboardReport'), size: '5xl' }"
 		>
 			<template #body-content>
 				<div class="space-y-4 pb-2 max-h-[70vh] overflow-y-auto">
@@ -214,9 +214,9 @@
 			</template>
 			<template #actions>
 				<div class="flex justify-end gap-2">
-					<Button :label="__('Cancel')" @click="showExportModal = false" />
+					<Button :label="__('statistics.cancel')" @click="showExportModal = false" />
 					<Button
-						:label="__('Export PDF')"
+						:label="__('statistics.exportPdf')"
 						variant="solid"
 						:loading="exporting"
 						@click="exportPdf"
@@ -284,14 +284,20 @@ function formatRange(range) {
 	return `${dayjs(from).format('MMM D')} - ${dayjs(to).format('MMM D, YYYY')}`
 }
 
-const rangePresets = { 0: 'Today', 7: 'Last 7 Days', 30: 'Last 30 Days', 60: 'Last 60 Days', 90: 'Last 90 Days' }
+const rangePresets = {
+	0: () => __('statistics.today'),
+	7: () => __('statistics.last7Days'),
+	30: () => __('statistics.last30Days'),
+	60: () => __('statistics.last60Days'),
+	90: () => __('statistics.last90Days'),
+}
 
 function presetLabelFor(period) {
-	if (!period) return 'Custom Range'
+	if (!period) return __('statistics.customRange')
 	let [from, to] = period.split(',')
 	if (!from || !to) return period
 	let diffDays = dayjs(to).diff(dayjs(from), 'day')
-	return rangePresets[diffDays] || formatRange(period)
+	return rangePresets[diffDays]?.() || formatRange(period)
 }
 
 const filters = reactive({
@@ -340,20 +346,20 @@ function applyPreset(label, period) {
 
 const rangeOptions = computed(() => [
 	{
-		group: 'Presets',
+		group: __('statistics.presets'),
 		hideLabel: true,
 		items: [
-			{ label: __('Today'), onClick: () => applyPreset('Today', getLastXDays(0)) },
-			{ label: __('Last 7 Days'), onClick: () => applyPreset('Last 7 Days', getLastXDays(7)) },
-			{ label: __('Last 30 Days'), onClick: () => applyPreset('Last 30 Days', getLastXDays(30)) },
-			{ label: __('Last 60 Days'), onClick: () => applyPreset('Last 60 Days', getLastXDays(60)) },
-			{ label: __('Last 90 Days'), onClick: () => applyPreset('Last 90 Days', getLastXDays(90)) },
+			{ label: __('statistics.today'), onClick: () => applyPreset(__('statistics.today'), getLastXDays(0)) },
+			{ label: __('statistics.last7Days'), onClick: () => applyPreset(__('statistics.last7Days'), getLastXDays(7)) },
+			{ label: __('statistics.last30Days'), onClick: () => applyPreset(__('statistics.last30Days'), getLastXDays(30)) },
+			{ label: __('statistics.last60Days'), onClick: () => applyPreset(__('statistics.last60Days'), getLastXDays(60)) },
+			{ label: __('statistics.last90Days'), onClick: () => applyPreset(__('statistics.last90Days'), getLastXDays(90)) },
 		],
 	},
 	{
-		label: __('Custom Range'),
+		label: __('statistics.customRange'),
 		onClick: () => {
-			presetLabel.value = 'Custom Range'
+			presetLabel.value = __('statistics.customRange')
 			showDatePicker.value = true
 			setTimeout(() => datePickerRef.value?.open(), 0)
 		},
@@ -403,17 +409,17 @@ const departmentSummary = computed(() => departmentReport.data?.department_summa
 
 const enrollmentXAxis = computed(() => {
 	return canViewDepartmentReport.value
-		? { key: 'period', type: 'category', title: 'Period' }
-		: { key: 'date', type: 'time', title: 'Date', timeGrain: 'day' }
+		? { key: 'period', type: 'category', title: __('statistics.period') }
+		: { key: 'date', type: 'time', title: __('statistics.date'), timeGrain: 'day' }
 })
 
 const progressChartConfig = computed(() => {
 	if (!periodSummary.value) return null
 	return {
 		data: periodSummary.value,
-		title: 'Progress',
-		subtitle: 'Avg progress & completion rate by period',
-		xAxis: { key: 'period', type: 'category', title: 'Period' },
+		title: __('statistics.progress'),
+		subtitle: __('statistics.avgProgressSubtitle'),
+		xAxis: { key: 'period', type: 'category', title: __('statistics.period') },
 		yAxis: { title: '%' },
 		series: [
 			{ name: 'avg_progress', type: 'line', showDataPoints: true },
@@ -426,10 +432,10 @@ const employeesChartConfig = computed(() => {
 	if (!periodSummary.value) return null
 	return {
 		data: periodSummary.value,
-		title: 'Employees',
-		subtitle: 'Employees enrolled by period',
-		xAxis: { key: 'period', type: 'category', title: 'Period' },
-		yAxis: { title: 'Employees' },
+		title: __('statistics.employees'),
+		subtitle: __('statistics.employeesSubtitle'),
+		xAxis: { key: 'period', type: 'category', title: __('statistics.period') },
+		yAxis: { title: __('statistics.employees') },
 		series: [{ name: 'employees', type: 'bar' }],
 	}
 })
@@ -438,10 +444,10 @@ const signupsChartConfig = computed(() => {
 	if (!signupsChart.data) return null
 	return {
 		data: signupsChart.data,
-		title: 'Signups',
-		subtitle: 'Signups per day',
-		xAxis: { key: 'date', type: 'time', title: 'Date', timeGrain: 'day' },
-		yAxis: { title: 'Signups' },
+		title: __('statistics.signups'),
+		subtitle: __('statistics.signupsSubtitle'),
+		xAxis: { key: 'date', type: 'time', title: __('statistics.date'), timeGrain: 'day' },
+		yAxis: { title: __('statistics.signups') },
 		series: [{ name: 'signups', type: 'line', showDataPoints: true }],
 	}
 })
@@ -451,12 +457,12 @@ const enrollmentChartConfig = computed(() => {
 	if (!data) return null
 	return {
 		data,
-		title: 'Enrollments',
+		title: __('statistics.enrollments'),
 		subtitle: canViewDepartmentReport.value
-			? 'Enrollments by period'
-			: 'Enrollments per day',
+			? __('statistics.enrollmentsByPeriod')
+			: __('statistics.enrollmentsPerDay'),
 		xAxis: enrollmentXAxis.value,
-		yAxis: { title: 'Enrollments' },
+		yAxis: { title: __('statistics.enrollments') },
 		series: [{ name: 'enrollments', type: 'line', showDataPoints: true }],
 	}
 })
@@ -466,12 +472,12 @@ const certificationChartConfig = computed(() => {
 	if (!data) return null
 	return {
 		data,
-		title: 'Certifications',
+		title: __('statistics.certifications'),
 		subtitle: canViewDepartmentReport.value
-			? 'Certifications by period'
-			: 'Certifications per day',
+			? __('statistics.certificationsByPeriod')
+			: __('statistics.certificationsPerDay'),
 		xAxis: enrollmentXAxis.value,
-		yAxis: { title: 'Certifications' },
+		yAxis: { title: __('statistics.certifications') },
 		series: [{ name: 'certifications', type: 'line', showDataPoints: true }],
 	}
 })
@@ -480,9 +486,9 @@ const donutChartConfig = computed(() => {
 	let data
 	if (canViewDepartmentReport.value && summary.value) {
 		data = [
-			{ label: 'Completed', value: summary.value.completions },
+			{ label: __('statistics.completed'), value: summary.value.completions },
 			{
-				label: 'In Progress',
+				label: __('statistics.inProgress'),
 				value: summary.value.enrollments - summary.value.completions,
 			},
 		]
@@ -492,8 +498,8 @@ const donutChartConfig = computed(() => {
 	if (!data) return null
 	return {
 		data,
-		title: 'Completions',
-		subtitle: 'Course Completion',
+		title: __('statistics.completions'),
+		subtitle: __('statistics.courseCompletion'),
 		categoryColumn: 'label',
 		valueColumn: 'value',
 	}
@@ -503,8 +509,8 @@ const departmentChartConfig = computed(() => {
 	if (!departmentSummary.value) return null
 	return {
 		data: departmentSummary.value,
-		title: 'Departments',
-		subtitle: 'Enrollments by department',
+		title: __('statistics.departments'),
+		subtitle: __('statistics.enrollmentsByDepartment'),
 		categoryColumn: 'department_name',
 		valueColumn: 'enrollments',
 	}
@@ -542,11 +548,12 @@ async function exportPdf() {
 			pdf.setFontSize(10)
 			pdf.setTextColor(60, 60, 60)
 			pdf.text(
-				`Company: ${filters.company || 'All'}  |  Department: ${
-					filters.department || 'All'
-				}  |  Employee: ${filters.employee || 'All'}  |  Period: ${
+				__('statistics.pdfHeader').format(
+					filters.company || __('statistics.all'),
+					filters.department || __('statistics.all'),
+					filters.employee || __('statistics.all'),
 					formatRange(filters.period) || presetLabel.value
-				}`,
+				),
 				margin,
 				margin + 5
 			)
@@ -601,7 +608,7 @@ async function exportPdf() {
 const breadcrumbs = computed(() => {
 	return [
 		{
-			label: 'Statistics',
+			label: __('statistics.title'),
 			route: {
 				name: 'Statistics',
 			},
@@ -715,19 +722,19 @@ const timeSpentChartConfig = computed(() => {
 	}))
 	return {
 		data,
-		title: 'Time Spent',
+		title: __('statistics.timeSpent'),
 		subtitle: isStaffView.value
-			? 'Total hours studied across all students'
-			: 'Your hours studied',
-		xAxis: { key: 'label', type: 'category', title: 'Period' },
-		yAxis: { title: 'Hours' },
+			? __('statistics.totalHoursStudied')
+			: __('statistics.yourHoursStudied'),
+		xAxis: { key: 'label', type: 'category', title: __('statistics.period') },
+		yAxis: { title: __('statistics.hours') },
 		series: [{ name: 'hours', type: 'bar' }],
 	}
 })
 
 usePageMeta(() => {
 	return {
-		title: __('Statistics'),
+		title: __('statistics.title'),
 		icon: brand.favicon,
 	}
 })

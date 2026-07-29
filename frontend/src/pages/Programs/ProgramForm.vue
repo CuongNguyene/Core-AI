@@ -9,11 +9,11 @@
 			<div class="flex items-center justify-between space-x-2 text-base w-full">
 				<div class="text-xl font-semibold text-ink-gray-9">
 					{{
-						programName === 'new' ? __('Create Program') : __('Edit Program')
+						programName === 'new' ? __('programs.form.createProgram') : __('programs.form.editProgram')
 					}}
 				</div>
 				<Badge theme="orange" v-if="dirty">
-					{{ __('Not Saved') }}
+					{{ __('programs.form.notSaved') }}
 				</Badge>
 			</div>
 		</template>
@@ -22,7 +22,7 @@
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-5 pb-5">
 					<FormControl
 						v-model="program.name"
-						:label="__('Title')"
+						:label="__('programs.form.title')"
 						type="text"
 						:required="true"
 						@change="dirty = true"
@@ -30,13 +30,13 @@
 					<div class="flex flex-col space-y-3">
 						<FormControl
 							v-model="program.published"
-							:label="__('Published')"
+							:label="__('programs.form.published')"
 							type="checkbox"
 							@change="dirty = true"
 						/>
 						<FormControl
 							v-model="program.enforce_course_order"
-							:label="__('Enforce Course Order')"
+							:label="__('programs.form.enforceCourseOrder')"
 							type="checkbox"
 							@change="dirty = true"
 						/>
@@ -46,14 +46,14 @@
 				<div class="pb-5">
 					<div class="flex items-center justify-between mt-5 mb-4">
 						<div class="text-lg font-semibold text-ink-gray-9">
-							{{ __('Courses') }}
+							{{ __('programs.form.courses') }}
 						</div>
 						<Button @click="openForm('course')">
 							<template #prefix>
 								<Plus class="h-4 w-4 stroke-1.5" />
 							</template>
 							<span>
-								{{ __('Add') }}
+								{{ __('programs.form.add') }}
 							</span>
 						</Button>
 					</div>
@@ -100,14 +100,14 @@
 						</ListSelectBanner>
 					</ListView>
 					<div v-else class="text-ink-gray-7">
-						{{ __('No courses added yet.') }}
+						{{ __('programs.form.noCoursesAdded') }}
 					</div>
 				</div>
 
 				<div>
 					<div class="flex items-center justify-between mt-5 mb-4">
 						<div class="text-lg font-semibold text-ink-gray-9">
-							{{ __('Members') }}
+							{{ __('programs.form.members') }}
 						</div>
 
 						<div class="space-x-2">
@@ -122,13 +122,13 @@
 								<template #prefix>
 									<TrendingUp class="size-4 stroke-1.5" />
 								</template>
-								{{ __('Progress Summary') }}
+								{{ __('programs.form.progressSummary') }}
 							</Button>
 							<Button @click="openForm('member')">
 								<template #prefix>
 									<Plus class="h-4 w-4 stroke-1.5" />
 								</template>
-								{{ __('Add') }}
+								{{ __('programs.form.add') }}
 							</Button>
 						</div>
 					</div>
@@ -164,7 +164,7 @@
 						</ListSelectBanner>
 					</ListView>
 					<div v-else class="text-ink-gray-7">
-						{{ __('No members added yet.') }}
+						{{ __('programs.form.noMembersAdded') }}
 					</div>
 				</div>
 			</div>
@@ -173,11 +173,11 @@
 				:options="{
 					title:
 						currentForm == 'course'
-							? __('Add Course to Program')
-							: __('Enroll Member to Program'),
+							? __('programs.form.addCourseTitle')
+							: __('programs.form.enrollMemberTitle'),
 					actions: [
 						{
-							label: __('Add'),
+							label: __('programs.form.add'),
 							variant: 'solid',
 							onClick: ({ close }: { close: () => void }) =>
 								currentForm == 'course'
@@ -193,7 +193,7 @@
 							v-if="currentForm == 'course'"
 							v-model="course"
 							doctype="LMS Course"
-							:label="__('Course')"
+							:label="__('programs.form.course')"
 						/>
 
 						<Link
@@ -227,11 +227,11 @@
 					<template #prefix>
 						<Trash2 class="size-4 stroke-1.5" />
 					</template>
-					{{ __('Delete') }}
+					{{ __('programs.form.delete') }}
 				</Button>
 				<span v-else></span>
 				<Button variant="solid" @click="saveProgram(close)">
-					{{ __('Save') }}
+					{{ __('programs.form.save') }}
 				</Button>
 			</div>
 		</template>
@@ -378,7 +378,7 @@ const createNewProgram = (close: () => void) => {
 			onSuccess() {
 				close()
 				programs.value.reload()
-				toast.success(__('Program created successfully'))
+				toast.success(__('programs.form.createdSuccess'))
 			},
 			onError(err: any) {
 				toast.warning(__(err.messages?.[0] || err))
@@ -397,7 +397,7 @@ const updateProgram = (close: () => void) => {
 			onSuccess() {
 				close()
 				programs.value.reload()
-				toast.success(__('Program updated successfully'))
+				toast.success(__('programs.form.updatedSuccess'))
 			},
 			onError(err: any) {
 				toast.warning(__(err.messages?.[0] || err))
@@ -425,7 +425,7 @@ const createMember = (close: () => void) => {
 
 const addCourse = (close: () => void) => {
 	if (!course.value) {
-		toast.warning(__('Please select a course'))
+		toast.warning(__('programs.form.selectCourseRequired'))
 		return
 	}
 
@@ -441,7 +441,7 @@ const addCourse = (close: () => void) => {
 			onSuccess() {
 				updateCounts('course', 'add')
 				close()
-				toast.success(__('Course added to program successfully'))
+				toast.success(__('programs.form.courseAddedSuccess'))
 			},
 			onError(err: any) {
 				toast.warning(__(err.messages?.[0] || err))
@@ -452,7 +452,7 @@ const addCourse = (close: () => void) => {
 
 const addMember = (close: () => void) => {
 	if (!member.value) {
-		toast.warning(__('Please select a member'))
+		toast.warning(__('programs.form.selectMemberRequired'))
 		return
 	}
 
@@ -467,7 +467,7 @@ const addMember = (close: () => void) => {
 			onSuccess() {
 				updateCounts('member', 'add')
 				close()
-				toast.success(__('Member added to program successfully'))
+				toast.success(__('programs.form.memberAddedSuccess'))
 			},
 			onError(err: any) {
 				toast.warning(__(err.messages?.[0] || err))
@@ -556,7 +556,7 @@ const deleteProgram = (close: () => void) => {
 	if (props.programName == 'new') return
 	programs.value?.delete.submit(props.programName, {
 		onSuccess() {
-			toast.success(__('Program deleted successfully'))
+			toast.success(__('programs.form.deletedSuccess'))
 			close()
 		},
 		onError(err: any) {
@@ -568,7 +568,7 @@ const deleteProgram = (close: () => void) => {
 const courseColumns = computed(() => {
 	return [
 		{
-			label: 'Title',
+			label: __('programs.form.title'),
 			key: 'course_title',
 			width: 1,
 		},
@@ -578,13 +578,13 @@ const courseColumns = computed(() => {
 const memberColumns = computed(() => {
 	return [
 		{
-			label: 'Member',
+			label: __('programs.progressSummary.member'),
 			key: 'member',
 			width: 3,
 			align: 'left',
 		},
 		{
-			label: 'Full Name',
+			label: __('programs.form.fullName'),
 			key: 'full_name',
 			width: 3,
 			align: 'left',

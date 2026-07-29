@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Add a Student'),
+			title: __('batches.studentModal.addStudent'),
 			size: 'sm',
 			actions: [
 				{
-					label: 'Submit',
+					label: __('batches.studentModal.submit'),
 					variant: 'solid',
 					onClick: (close) => addStudent(close),
 				},
@@ -19,7 +19,7 @@
 					doctype="User"
 					v-model="student"
 					:filters="{ ignore_user_type: 1 }"
-					:placeholder="__('Search for a student')"
+					:placeholder="__('batches.studentModal.searchStudent')"
 					:onCreate="
 						(value, close) => {
 							openSettings('Members', close)

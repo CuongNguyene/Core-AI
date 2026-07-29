@@ -22,8 +22,27 @@ import 'plyr/dist/plyr.css'
 
 const readOnlyMode = window.read_only_mode
 
+const timeAgoMessages = {
+	vi: {
+		justNow: 'vừa xong',
+		past: (n) => (/\d/.test(n) ? `${n} trước` : n),
+		future: (n) => (/\d/.test(n) ? `trong ${n}` : n),
+		month: (n, past) =>
+			n === 1 ? (past ? 'tháng trước' : 'tháng tới') : `${n} tháng`,
+		year: (n, past) => (n === 1 ? (past ? 'năm trước' : 'năm tới') : `${n} năm`),
+		day: (n, past) => (n === 1 ? (past ? 'hôm qua' : 'ngày mai') : `${n} ngày`),
+		week: (n, past) =>
+			n === 1 ? (past ? 'tuần trước' : 'tuần tới') : `${n} tuần`,
+		hour: (n) => `${n} giờ`,
+		minute: (n) => `${n} phút`,
+		second: (n) => `${n} giây`,
+		invalid: '',
+	},
+}
+
 export function timeAgo(date) {
-	return useTimeAgo(date).value
+	const messages = timeAgoMessages[window.lmsLanguage]
+	return useTimeAgo(date, messages ? { messages } : {}).value
 }
 
 export function formatTime(timeString) {

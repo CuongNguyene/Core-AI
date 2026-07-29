@@ -16,7 +16,7 @@
 						</Button>
 						<Button variant="solid" @click="submitCourse()" class="ml-2">
 							<span>
-								{{ __('Save') }}
+								{{ __('courses.form.save') }}
 							</span>
 						</Button>
 					</div>
@@ -24,39 +24,39 @@
 				<div class="mt-5 mb-5">
 					<div class="px-5 md:px-10 pb-5 mb-5 space-y-5 border-b">
 						<div class="text-lg font-semibold mb-4">
-							{{ __('Details') }}
+							{{ __('courses.form.details') }}
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 							<FormControl
 								v-model="course.title"
-								:label="__('Title')"
+								:label="__('courses.form.title')"
 								:required="true"
-								:placeholder="__('Enter the course title')"
+								:placeholder="__('courses.form.enterTitle')"
 							/>
 							<Link
 								doctype="LMS Category"
 								v-model="course.category"
-								:label="__('Category')"
+								:label="__('courses.form.category')"
 								:onCreate="(value, close) => openSettings('Categories', close)"
-								:placeholder="__('Select a category')"
+								:placeholder="__('courses.form.selectCategory')"
 							/>
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 							<MultiSelect
 								v-model="instructors"
 								doctype="User"
-								:label="__('Instructors')"
+								:label="__('courses.form.instructors')"
 								:filters="{ ignore_user_type: 1 }"
 								:onCreate="(close) => openSettings('Members', close)"
 								:required="true"
 							/>
 							<div>
 								<div class="text-xs text-ink-gray-5">
-									{{ __('Tags') }}
+									{{ __('courses.form.tags') }}
 								</div>
 								<FormControl
 									v-model="newTag"
-									:placeholder="__('Add a keyword and then press enter')"
+									:placeholder="__('courses.form.addTagPlaceholder')"
 									:class="['w-full', 'flex-1', 'my-1']"
 									@keyup.enter="updateTags()"
 									id="tags"
@@ -81,7 +81,7 @@
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 							<div class="mb-4">
 								<div class="text-xs text-ink-gray-5 mb-2">
-									{{ __('Course Image') }}
+									{{ __('courses.form.courseImage') }}
 								</div>
 								<FileUploader
 									v-if="!course.course_image"
@@ -101,11 +101,11 @@
 											</div>
 											<div class="ml-4">
 												<Button @click="openFileSelector">
-													{{ __('Upload') }}
+													{{ __('courses.form.upload') }}
 												</Button>
 												<div class="mt-1 text-ink-gray-5 text-sm leading-5">
 													{{
-														__('Appears on the course card in the course list')
+														__('courses.form.courseImageDescription')
 													}}
 												</div>
 											</div>
@@ -120,11 +120,11 @@
 										/>
 										<div class="ml-4">
 											<Button @click="removeImage()">
-												{{ __('Remove') }}
+												{{ __('courses.form.remove') }}
 											</Button>
 											<div class="mt-2 text-ink-gray-5 text-sm">
 												{{
-													__('Appears on the course card in the course list')
+												__('courses.form.courseImageHint')
 												}}
 											</div>
 										</div>
@@ -134,8 +134,8 @@
 
 							<ColorSwatches
 								v-model="course.card_gradient"
-								:label="__('Color')"
-								:description="__('Choose a color for the course card')"
+								:label="__('courses.form.color')"
+								:description="__('courses.form.colorDescription')"
 								class="w-full"
 							/>
 						</div>
@@ -143,7 +143,7 @@
 
 					<div class="px-5 md:px-10 pb-5 mb-5 space-y-5 border-b">
 						<div class="text-lg font-semibold">
-							{{ __('Settings') }}
+							{{ __('courses.form.settings') }}
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 							<div
@@ -153,11 +153,11 @@
 								<FormControl
 									type="checkbox"
 									v-model="course.published"
-									:label="__('Published')"
+									:label="__('courses.form.published')"
 								/>
 								<FormControl
 									v-model="course.published_on"
-									:label="__('Published On')"
+									:label="__('courses.form.publishedOn')"
 									type="date"
 								/>
 							</div>
@@ -165,17 +165,17 @@
 								<FormControl
 									type="checkbox"
 									v-model="course.upcoming"
-									:label="__('Upcoming')"
+									:label="__('courses.form.upcoming')"
 								/>
 								<FormControl
 									type="checkbox"
 									v-model="course.featured"
-									:label="__('Featured')"
+									:label="__('courses.form.featured')"
 								/>
 								<FormControl
 									type="checkbox"
 									v-model="course.disable_self_learning"
-									:label="__('Disable Self Enrollment')"
+									:label="__('courses.form.disableSelfEnrollment')"
 								/>
 							</div>
 						</div>
@@ -183,23 +183,19 @@
 
 					<div class="px-5 md:px-10 pb-5 mb-5 space-y-5 border-b">
 						<div class="text-lg font-semibold">
-							{{ __('About the Course') }}
+							{{ __('courses.form.aboutCourse') }}
 						</div>
 						<FormControl
 							v-model="course.short_introduction"
 							type="textarea"
 							:rows="5"
-							:label="__('Short Introduction')"
-							:placeholder="
-								__(
-									'A one line introduction to the course that appears on the course card'
-								)
-							"
+							:label="__('courses.form.shortIntroduction')"
+							:placeholder="__('courses.form.shortIntroductionPlaceholder')"
 							:required="true"
 						/>
 						<div class="">
 							<div class="mb-1.5 text-sm text-ink-gray-5">
-								{{ __('Course Description') }}
+								{{ __('courses.form.courseDescription') }}
 								<span class="text-ink-red-3">*</span>
 							</div>
 							<TextEditor
@@ -208,24 +204,20 @@
 								:editable="true"
 								:fixedMenu="true"
 								editorClass="prose-sm max-w-none border-b border-x bg-surface-gray-2 rounded-b-md py-1 px-2 min-h-[7rem]"
-								:placeholder="__('Write a detailed description of the course')"
+								:placeholder="__('courses.form.courseDescriptionPlaceholder')"
 							/>
 						</div>
 
 						<FormControl
 							v-model="course.video_link"
-							:label="__('Preview Video')"
-							:placeholder="
-								__(
-									'Paste the youtube link of a short video introducing the course'
-								)
-							"
+							:label="__('courses.form.previewVideo')"
+							:placeholder="__('courses.form.previewVideoPlaceholder')"
 						/>
 
 						<MultiSelect
 							v-model="related_courses"
 							doctype="LMS Course"
-							:label="__('Related Courses')"
+							:label="__('courses.form.relatedCourses')"
 							:filters="{ name: ['!=', courseResource.data?.name] }"
 							:onCreate="
 								(close) => {
@@ -241,7 +233,7 @@
 					<div class="px-5 md:px-10 pb-5 space-y-5 border-b">
 						<div class="text-lg font-semibold mt-5">
 							<!-- {{ __('Pricing and Certification') }} -->
-							{{ __('Certification') }}
+							{{ __('courses.form.certification') }}
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 							<!-- <FormControl
@@ -252,7 +244,7 @@
 							<FormControl
 								type="checkbox"
 								v-model="course.enable_certification"
-								:label="__('Completion Certificate')"
+								:label="__('courses.form.completionCertificate')"
 							/>
 							<!-- <FormControl
 								type="checkbox"
@@ -301,21 +293,21 @@
 
 					<div class="px-5 md:px-10 pb-5 space-y-5">
 						<div class="text-lg font-semibold mt-5">
-							{{ __('Meta Tags') }}
+							{{ __('courses.form.metaTags') }}
 						</div>
 						<div class="space-y-5">
 							<FormControl
 								v-model="meta.description"
-								:label="__('Meta Description')"
+								:label="__('courses.form.metaDescription')"
 								type="textarea"
 								:rows="7"
 							/>
 							<FormControl
 								v-model="meta.keywords"
-								:label="__('Meta Keywords')"
+								:label="__('courses.form.metaKeywords')"
 								type="textarea"
 								:rows="7"
-								:placeholder="__('Comma separated keywords for SEO')"
+								:placeholder="__('courses.form.metaKeywordsPlaceholder')"
 							/>
 						</div>
 					</div>
@@ -325,7 +317,7 @@
 				<CourseOutline
 					v-if="courseResource.data"
 					:courseName="courseResource.data.name"
-					:title="__('Course Outline')"
+					:title="__('courses.form.courseOutline')"
 					:allowEdit="true"
 				/>
 			</div>
@@ -563,7 +555,7 @@ const createCourse = () => {
 			}
 
 			capture('course_created')
-			toast.success(__('Course created successfully'))
+			toast.success(__('courses.form.courseCreated'))
 			router.push({
 				name: 'CourseForm',
 				params: { courseName: data.name },
@@ -583,7 +575,7 @@ const editCourse = () => {
 		{
 			onSuccess() {
 				updateMetaInfo('courses', props.courseName, meta)
-				toast.success(__('Course updated successfully'))
+				toast.success(__('courses.form.courseUpdated'))
 			},
 			onError(err) {
 				toast.error(err.messages?.[0] || err)
@@ -600,20 +592,20 @@ const deleteCourse = createResource({
 		}
 	},
 	onSuccess() {
-		toast.success(__('Course deleted successfully'))
+		toast.success(__('courses.form.courseDeleted'))
 		router.push({ name: 'Courses' })
 	},
 })
 
 const trashCourse = () => {
 	$dialog({
-		title: __('Delete Course'),
+		title: __('courses.form.deleteCourse'),
 		message: __(
-			'Deleting the course will also delete all its chapters and lessons. Are you sure you want to delete this course?'
+			'courses.form.deleteCourseMessage'
 		),
 		actions: [
 			{
-				label: __('Delete'),
+				label: __('courses.form.delete'),
 				theme: 'red',
 				variant: 'solid',
 				onClick(close) {
@@ -675,7 +667,7 @@ const check_permission = () => {
 const breadcrumbs = computed(() => {
 	let crumbs = [
 		{
-			label: 'Courses',
+			label: __('courses.list.courses'),
 			route: { name: 'Courses' },
 		},
 	]
@@ -686,7 +678,7 @@ const breadcrumbs = computed(() => {
 		})
 	}
 	crumbs.push({
-		label: props.courseName == 'new' ? 'New Course' : 'Edit Course',
+		label: props.courseName == 'new' ? __('courses.form.newCourse') : __('courses.form.editCourse'),
 		route: { name: 'CourseForm', params: { courseName: props.courseName } },
 	})
 	return crumbs
@@ -694,7 +686,7 @@ const breadcrumbs = computed(() => {
 
 usePageMeta(() => {
 	return {
-		title: courseResource.data?.title || __('New Course'),
+		title: courseResource.data?.title || __('courses.form.newCourse'),
 		icon: brand.favicon,
 	}
 })

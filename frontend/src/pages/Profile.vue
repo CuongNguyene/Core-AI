@@ -33,7 +33,7 @@
 							<template #prefix>
 								<Edit class="w-4 h-4 stroke-1.5 text-ink-gray-7" />
 							</template>
-							{{ __('Edit') }}
+							{{ __('profile.edit') }}
 						</Button>
 					</template>
 				</EditCoverImage>
@@ -69,7 +69,7 @@
 					<template #prefix>
 						<Edit class="w-4 h-4 stroke-1.5 text-ink-gray-7" />
 					</template>
-					{{ __('Edit Profile') }}
+					{{ __('profile.editProfileButton') }}
 				</Button>
 			</div>
 
@@ -193,8 +193,12 @@ const isSessionUser = () => {
 }
 
 const getTabButtons = () => {
-	let buttons = [{ label: 'About' }, { label: 'Certificates' }]
-	if ($user.data?.is_moderator) buttons.push({ label: 'Roles' })
+	let buttons = [
+		{ label: __('profile.tabs.about'), value: 'About' },
+		{ label: __('profile.tabs.certificates'), value: 'Certificates' },
+	]
+	if ($user.data?.is_moderator)
+		buttons.push({ label: __('profile.tabs.roles'), value: 'Roles' })
 
 	return buttons
 }
@@ -202,7 +206,7 @@ const getTabButtons = () => {
 const breadcrumbs = computed(() => {
 	let crumbs = [
 		{
-			label: 'People',
+			label: __('profile.people'),
 		},
 		{
 			label: profile.data?.full_name,

@@ -13,7 +13,7 @@
 					</div>
 
 					<div class="flex flex-col space-y-4 text-sm text-ink-gray-8">
-						<Tooltip :text="__('Email ID')">
+						<Tooltip :text="__('events.emailId')">
 							<div class="flex items-center space-x-2 w-fit">
 								<User class="h-4 w-4 stroke-1.5" />
 								<span>
@@ -21,7 +21,7 @@
 								</span>
 							</div>
 						</Tooltip>
-						<Tooltip :text="__('Course')">
+						<Tooltip :text="__('events.course')">
 							<div class="flex items-center space-x-2 w-fit">
 								<BookOpen class="h-4 w-4 stroke-1.5" />
 								<span>
@@ -29,7 +29,7 @@
 								</span>
 							</div>
 						</Tooltip>
-						<Tooltip v-if="event.batch_title" :text="__('Batch')">
+						<Tooltip v-if="event.batch_title" :text="__('events.batch')">
 							<div class="flex items-center space-x-2 w-fit">
 								<Users class="h-4 w-4 stroke-1.5" />
 								<span>
@@ -37,7 +37,7 @@
 								</span>
 							</div>
 						</Tooltip>
-						<Tooltip :text="__('Date')">
+						<Tooltip :text="__('events.date')">
 							<div class="flex items-center space-x-2 w-fit">
 								<Calendar class="h-4 w-4 stroke-1.5" />
 								<span>
@@ -45,7 +45,7 @@
 								</span>
 							</div>
 						</Tooltip>
-						<Tooltip :text="__('Time')">
+						<Tooltip :text="__('events.time')">
 							<div class="flex items-center space-x-2 w-fit">
 								<Clock class="h-4 w-4 stroke-1.5" />
 								<span>
@@ -64,14 +64,14 @@
 							<template #prefix>
 								<FileText class="h-4 w-4 stroke-1.5" />
 							</template>
-							{{ __('View Certificate') }}
+							{{ __('events.viewCertificate') }}
 						</Button>
 						<Button v-else @click="openCallLink(event.venue)" class="w-full">
 							<template #prefix>
 								<Video class="h-4 w-4 stroke-1.5" />
 							</template>
 							<span>
-								{{ __('Join Meeting') }}
+								{{ __('events.joinMeeting') }}
 							</span>
 						</Button>
 					</div>
@@ -79,37 +79,37 @@
 				<Tabs :tabs="tabs" as="div" v-model="tabIndex" class="border-l w-1/2">
 					<template #tab-panel="{ tab }">
 						<div
-							v-if="tab.label == 'Evaluation'"
+							v-if="tab.id == 'Evaluation'"
 							class="flex flex-col space-y-4 p-5"
 						>
 							<div class="flex items-center justify-between">
-								<Rating v-model="evaluation.rating" :label="__('Rating')" />
+								<Rating v-model="evaluation.rating" :label="__('events.rating')" />
 								<FormControl
 									type="select"
 									:options="statusOptions"
 									v-model="evaluation.status"
-									:label="__('Status')"
+									:label="__('events.status')"
 									class="w-1/2"
 								/>
 							</div>
 							<Textarea
 								v-model="evaluation.summary"
-								:label="__('Summary')"
+								:label="__('events.summary')"
 								:rows="7"
 							/>
 							<Button variant="solid" @click="saveEvaluation()">
-								{{ __('Save') }}
+								{{ __('events.save') }}
 							</Button>
 						</div>
 						<div v-else class="flex flex-col space-y-4 p-5">
 							<FormControl
 								type="checkbox"
 								v-model="certificate.published"
-								:label="__('Published')"
+								:label="__('events.published')"
 							/>
 							<Link
 								v-model="certificate.template"
-								:label="__('Template')"
+								:label="__('events.template')"
 								doctype="Print Format"
 								:filters="{
 									doc_type: 'LMS Certificate',
@@ -118,15 +118,15 @@
 							<FormControl
 								type="date"
 								v-model="certificate.issue_date"
-								:label="__('Issue Date')"
+								:label="__('events.issueDate')"
 							/>
 							<FormControl
 								type="date"
 								v-model="certificate.expiry_date"
-								:label="__('Expiry Date')"
+								:label="__('events.expiryDate')"
 							/>
 							<Button variant="solid" @click="saveCertificate()">
-								{{ __('Save') }}
+								{{ __('events.save') }}
 							</Button>
 						</div>
 					</template>
@@ -253,7 +253,7 @@ const saveEvaluation = () => {
 				} else {
 					show.value = false
 				}
-				toast.success(__('Evaluation saved successfully'))
+				toast.success(__('events.evaluationSaved'))
 			},
 			onError(err) {
 				toast.warning(__(err.messages?.[0] || err))
@@ -314,7 +314,7 @@ const saveCertificate = () => {
 		{},
 		{
 			onSuccess: () => {
-				toast.success(__('Certificate saved successfully'))
+				toast.success(__('events.certificateSaved'))
 			},
 			onError(err) {
 				toast.error(__(err.messages?.[0] || err))
@@ -351,19 +351,19 @@ const statusOptions = computed(() => {
 	return [
 		{
 			value: 'Pending',
-			label: __('Pending'),
+			label: __('events.statusPending'),
 		},
 		{
 			value: 'In Progress',
-			label: __('In Progress'),
+			label: __('events.statusInProgress'),
 		},
 		{
 			value: 'Pass',
-			label: __('Pass'),
+			label: __('events.statusPass'),
 		},
 		{
 			value: 'Fail',
-			label: __('Fail'),
+			label: __('events.statusFail'),
 		},
 	]
 })
@@ -371,14 +371,16 @@ const statusOptions = computed(() => {
 const tabs = computed(() => {
 	const tabsArray = [
 		{
-			label: __('Evaluation'),
+			label: __('events.evaluation'),
+			id: 'Evaluation',
 			icon: ClipboardList,
 		},
 	]
 
 	if (showCertification.value) {
 		tabsArray.push({
-			label: __('Certification'),
+			label: __('events.certification'),
+			id: 'Certification',
 			icon: GraduationCap,
 		})
 	}

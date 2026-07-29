@@ -7,7 +7,7 @@
 	>
 		<template #body-title>
 			<div v-if="program.data" class="text-xl font-semibold text-ink-gray-9">
-				{{ __('Enrollment for Program {0}').format(program.data?.name) }}
+				{{ __('programs.enrollment.title').format(program.data?.name) }}
 			</div>
 		</template>
 		<template #body-content>
@@ -15,7 +15,7 @@
 				<div class="bg-surface-blue-2 text-ink-blue-3 p-2 rounded-md leading-5">
 					<span>
 						{{
-							__('This program consists of {0} courses').format(
+							__('programs.enrollment.consistsOfCourses').format(
 								program.data.courses.length
 							)
 						}}
@@ -23,25 +23,25 @@
 					<span v-if="program.data.enforce_course_order">
 						{{
 							__(
-								' designed as a structured learning path to guide your progress. Courses in this program must be taken in order, and each course will unlock as you complete the previous one. '
+								'programs.enrollment.orderedDescription'
 							)
 						}}
 					</span>
 					<span v-else>
 						{{
 							__(
-								' designed as a learning path to guide your progress. You may take the courses in any order that suits you. '
+								'programs.enrollment.unorderedDescription'
 							)
 						}}
 					</span>
 					<span>
-						{{ __('Are you sure you want to enroll?') }}
+						{{ __('programs.enrollment.confirmEnroll') }}
 					</span>
 				</div>
 
 				<div class="mt-5">
 					<div class="text-sm font-semibold text-ink-gray-5">
-						{{ __('Courses in this Program') }}
+						{{ __('programs.enrollment.coursesInProgram') }}
 					</div>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
 						<div
@@ -59,17 +59,17 @@
 							<div
 								class="flex items-center space-x-5 text-sm text-ink-gray-5 mb-8"
 							>
-								<Tooltip :text="__('Lessons')">
+								<Tooltip :text="__('programs.enrollment.lessons')">
 									<span class="flex items-center space-x-1">
 										<BookOpen class="size-3 stroke-1.5" />
-										<span> {{ course.lessons }} {{ __('lessons') }} </span>
+										<span> {{ course.lessons }} {{ __('programs.enrollment.lessonsCount') }} </span>
 									</span>
 								</Tooltip>
 
-								<Tooltip :text="__('Enrolled Students')">
+								<Tooltip :text="__('programs.enrollment.enrolledStudents')">
 									<span class="flex items-center space-x-1">
 										<User class="size-3 stroke-1.5" />
-										<span> {{ course.enrollments }} {{ __('students') }} </span>
+										<span> {{ course.enrollments }} {{ __('programs.enrollment.studentsCount') }} </span>
 									</span>
 								</Tooltip>
 
@@ -97,7 +97,7 @@
 		<template #actions="{ close }">
 			<div class="flex justify-end space-x-2 group">
 				<Button variant="solid" @click="enrollInProgram(close)">
-					{{ __('Confirm Enrollment') }}
+					{{ __('programs.enrollment.confirmEnrollment') }}
 				</Button>
 			</div>
 		</template>
@@ -142,7 +142,7 @@ const enrollInProgram = (close: () => void) => {
 		program: props.programName,
 	})
 		.then(() => {
-			toast.success(__('Successfully enrolled in program'))
+			toast.success(__('programs.enrollment.enrolledSuccess'))
 			router.push({
 				name: 'ProgramDetail',
 				params: { programName: props.programName },
@@ -150,7 +150,7 @@ const enrollInProgram = (close: () => void) => {
 			close()
 		})
 		.catch((error: any) => {
-			toast.error(__('Failed to enroll in program: {0}').format(error.message))
+			toast.error(__('programs.enrollment.enrollFailed').format(error.message))
 			console.error('Enrollment Error:', error)
 		})
 }

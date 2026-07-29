@@ -11,28 +11,28 @@
 					</template>
 				</Button>
 				<Button variant="solid" @click="saveBatch()">
-					{{ __('Save') }}
+					{{ __('batches.form.save') }}
 				</Button>
 			</div>
 		</header>
 		<div class="py-5">
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
 				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
-					{{ __('Details') }}
+					{{ __('batches.form.details') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 					<div class="space-y-5">
 						<FormControl
 							v-model="batch.title"
-							:label="__('Title')"
+							:label="__('batches.form.title')"
 							:required="true"
 							class="w-full"
-							:placeholder="__('Enter the title of the batch')"
+							:placeholder="__('batches.form.enterTitle')"
 						/>
 						<MultiSelect
 							v-model="instructors"
 							doctype="Course Evaluator"
-							:label="__('Instructors')"
+							:label="__('batches.form.instructors')"
 							:required="true"
 							:onCreate="(close) => openSettings('Evaluators', close)"
 							:filters="{ ignore_user_type: 1 }"
@@ -40,10 +40,10 @@
 					</div>
 					<FormControl
 						v-model="batch.description"
-						:label="__('Short Description')"
+						:label="__('batches.form.shortDescription')"
 						type="textarea"
 						:rows="8"
-						:placeholder="__('Short description of the batch')"
+						:placeholder="__('batches.form.shortDescriptionPlaceholder')"
 						:required="true"
 					/>
 				</div>
@@ -51,43 +51,43 @@
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
 				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
-					{{ __('Settings') }}
+					{{ __('batches.form.settings') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 					<FormControl
 						v-model="batch.published"
 						type="checkbox"
-						:label="__('Published')"
+						:label="__('batches.form.published')"
 					/>
 					<FormControl
 						v-model="batch.allow_self_enrollment"
 						type="checkbox"
-						:label="__('Allow self enrollment')"
+						:label="__('batches.form.allowSelfEnrollment')"
 					/>
 					<FormControl
 						v-model="batch.certification"
 						type="checkbox"
-						:label="__('Certification')"
+						:label="__('batches.form.certification')"
 					/>
 				</div>
 			</div>
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
 				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
-					{{ __('Date and Time') }}
+					{{ __('batches.form.dateAndTime') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 					<div class="space-y-5">
 						<FormControl
 							v-model="batch.start_date"
-							:label="__('Batch Start Date')"
+							:label="__('batches.form.batchStartDate')"
 							type="date"
 							class="mb-4"
 							:required="true"
 						/>
 						<FormControl
 							v-model="batch.end_date"
-							:label="__('Batch End Date')"
+							:label="__('batches.form.batchEndDate')"
 							type="date"
 							class="mb-4"
 							:required="true"
@@ -96,14 +96,14 @@
 					<div class="space-y-5">
 						<FormControl
 							v-model="batch.start_time"
-							:label="__('Session Start Time')"
+							:label="__('batches.form.sessionStartTime')"
 							type="time"
 							class="mb-4"
 							:required="true"
 						/>
 						<FormControl
 							v-model="batch.end_time"
-							:label="__('Session End Time')"
+							:label="__('batches.form.sessionEndTime')"
 							type="time"
 							class="mb-4"
 							:required="true"
@@ -112,15 +112,15 @@
 					<div class="space-y-5">
 						<FormControl
 							v-model="batch.timezone"
-							:label="__('Timezone')"
+							:label="__('batches.form.timezone')"
 							type="text"
-							:placeholder="__('Example: IST (+5:30)')"
+							:placeholder="__('batches.form.timezonePlaceholder')"
 							class="mb-4"
 							:required="true"
 						/>
 						<FormControl
 							v-model="batch.evaluation_end_date"
-							:label="__('Evaluation End Date')"
+							:label="__('batches.form.evaluationEndDate')"
 							type="date"
 							class="mb-4"
 						/>
@@ -131,7 +131,7 @@
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
 				<div>
 					<label class="block text-sm text-ink-gray-5 mb-1">
-						{{ __('Batch Details') }}
+						{{ __('batches.form.batchDetails') }}
 						<span class="text-ink-red-3">*</span>
 					</label>
 					<TextEditor
@@ -140,46 +140,46 @@
 						:editable="true"
 						:fixedMenu="true"
 						editorClass="prose-sm max-w-none border-b border-x bg-surface-gray-2 rounded-b-md py-1 px-2 min-h-[7rem] max-h-[20rem] overflow-y-scroll mb-4"
-						:placeholder="__('Enter the batch details')"
+						:placeholder="__('batches.form.batchDetailsPlaceholder')"
 					/>
 				</div>
 			</div>
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
 				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
-					{{ __('Configurations') }}
+					{{ __('batches.form.configurations') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 					<div class="space-y-5">
 						<FormControl
 							v-model="batch.seat_count"
-							:label="__('Seat Count')"
+							:label="__('batches.form.seatCount')"
 							type="number"
 							class="mb-4"
-							:placeholder="__('Number of seats available')"
+							:placeholder="__('batches.form.seatCountPlaceholder')"
 						/>
 						<Link
 							doctype="Email Template"
 							:filters="{ is_lms_template: 1 }"
-							:label="__('Email Template')"
+							:label="__('batches.form.emailTemplate')"
 							v-model="batch.confirmation_email_template"
 							:onCreate="
 								(value, close) => {
 									openSettings('Email Templates', close)
 								}
 							"
-							:placeholder="__('Select or create an email template')"
+							:placeholder="__('batches.form.emailTemplatePlaceholder')"
 						/>
 						<Link
 							doctype="LMS Zoom Settings"
-							:label="__('Zoom Account')"
+							:label="__('batches.form.zoomAccount')"
 							v-model="batch.zoom_account"
 							:onCreate="
 								(value, close) => {
 									openSettings('Zoom Accounts', close)
 								}
 							"
-							:placeholder="__('Select or create a zoom account')"
+							:placeholder="__('batches.form.zoomAccountPlaceholder')"
 						/>
 					</div>
 					<div class="space-y-5">
@@ -196,21 +196,21 @@
 									value: 'Offline',
 								},
 							]"
-							:label="__('Medium')"
+							:label="__('batches.form.medium')"
 							class="mb-4"
 						/>
 						<Link
 							doctype="LMS Category"
-							:label="__('Category')"
+							:label="__('batches.form.category')"
 							v-model="batch.category"
 							:onCreate="(value, close) => openSettings('Categories', close)"
-							:placeholder="__('Select or create a category')"
+							:placeholder="__('batches.form.categoryPlaceholder')"
 						/>
 					</div>
 					<div class="space-y-5">
 						<div>
 							<div class="text-xs text-ink-gray-5">
-								{{ __('Meta Image') }}
+								{{ __('batches.form.metaImage') }}
 							</div>
 							<FileUploader
 								v-if="!batch.image"
@@ -230,11 +230,11 @@
 										</div>
 										<div class="ml-4">
 											<Button @click="openFileSelector">
-												{{ __('Upload') }}
+												{{ __('batches.form.upload') }}
 											</Button>
 											<div class="mt-1 text-ink-gray-5 text-sm leading-5">
 												{{
-													__('Appears when the batch URL is shared on socials')
+													__('batches.form.metaImageHintUpload')
 												}}
 											</div>
 										</div>
@@ -249,12 +249,12 @@
 									/>
 									<div class="ml-4">
 										<Button @click="removeImage()">
-											{{ __('Remove') }}
+											{{ __('batches.form.remove') }}
 										</Button>
 										<div class="mt-2 text-ink-gray-5 text-sm">
 											{{
 												__(
-													'Appears when the batch URL is shared on any online platform'
+													'batches.form.metaImageHint'
 												)
 											}}
 										</div>
@@ -295,21 +295,21 @@
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b">
 				<div class="text-lg text-ink-gray-9 font-semibold">
-					{{ __('Meta Tags') }}
+					{{ __('batches.form.metaTags') }}
 				</div>
 				<div class="space-y-5">
 					<FormControl
 						v-model="meta.description"
-						:label="__('Meta Description')"
+						:label="__('batches.form.metaDescription')"
 						type="textarea"
 						:rows="7"
 					/>
 					<FormControl
 						v-model="meta.keywords"
-						:label="__('Meta Keywords')"
+						:label="__('batches.form.metaKeywords')"
 						type="textarea"
 						:rows="7"
-						:placeholder="__('Comma separated keywords for SEO')"
+						:placeholder="__('batches.form.metaKeywordsPlaceholder')"
 					/>
 				</div>
 			</div>
@@ -562,13 +562,13 @@ const editBatchDetails = () => {
 
 const deleteBatch = () => {
 	$dialog({
-		title: __('Confirm your action to delete'),
+		title: __('batches.form.confirmDelete'),
 		message: __(
-			'Deleting this batch will also delete all its data including enrolled students, linked courses, assessments, feedback and discussions. Are you sure you want to continue?'
+			'batches.form.deleteMessage'
 		),
 		actions: [
 			{
-				label: __('Delete'),
+				label: __('batches.form.delete'),
 				theme: 'red',
 				variant: 'solid',
 				onClick({ close }) {
@@ -584,7 +584,7 @@ const trashBatch = (close) => {
 	call('lms.lms.api.delete_batch', {
 		batch: props.batchName,
 	}).then(() => {
-		toast.success(__('Batch deleted successfully'))
+		toast.success(__('batches.form.batchDeleted'))
 		close()
 		router.push({
 			name: 'Batches',
@@ -603,7 +603,7 @@ const removeImage = () => {
 const breadcrumbs = computed(() => {
 	let crumbs = [
 		{
-			label: 'Batches',
+			label: __('batches.form.batches'),
 			route: {
 				name: 'Batches',
 			},
@@ -621,7 +621,7 @@ const breadcrumbs = computed(() => {
 		})
 	}
 	crumbs.push({
-		label: props.batchName == 'new' ? 'New Batch' : 'Edit Batch',
+		label: props.batchName == 'new' ? __('batches.form.newBatch') : __('batches.form.editBatch'),
 		route: { name: 'BatchForm', params: { batchName: props.batchName } },
 	})
 	return crumbs
@@ -629,7 +629,7 @@ const breadcrumbs = computed(() => {
 
 usePageMeta(() => {
 	return {
-		title: props.batchName == 'new' ? 'New Batch' : batchDetail.data?.title,
+		title: props.batchName == 'new' ? __('batches.form.newBatch') : batchDetail.data?.title,
 		icon: brand.favicon,
 	}
 })

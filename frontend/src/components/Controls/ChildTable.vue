@@ -53,7 +53,7 @@
 						>
 							<Trash2 class="size-4 stroke-1.5" />
 							<span>
-								{{ __('Delete') }}
+								{{ __('controls.delete') }}
 							</span>
 						</button>
 					</div>
@@ -66,7 +66,7 @@
 				<template #prefix>
 					<Plus class="size-4 text-ink-gray-7" />
 				</template>
-				{{ __('Add Row') }}
+				{{ __('controls.addRow') }}
 			</Button>
 		</div>
 	</div>

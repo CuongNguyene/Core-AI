@@ -21,7 +21,7 @@ export class Assignment {
 		app.mount(div)
 
 		return {
-			title: __('Assignment'),
+			title: __('assignments.assignment'),
 			icon: div.innerHTML,
 		}
 	}
@@ -65,7 +65,7 @@ export class Assignment {
 		}).then((data) => {
 			this.wrapper.innerHTML = `<div class='border rounded-md p-4 text-center bg-surface-menu-bar mb-4'>
 				<span class="font-medium">
-					Assignment: ${data.title}
+					${__('assignments.assignmentLabel').format(data.title)}
 				</span>
 			</div>`
 			return

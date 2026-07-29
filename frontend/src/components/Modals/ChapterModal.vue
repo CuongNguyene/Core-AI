@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: chapterDetail ? __('Edit Chapter') : __('Add Chapter'),
+			title: chapterDetail ? __('courses.chapterModal.editChapter') : __('courses.chapterModal.addChapter'),
 			size: 'lg',
 			actions: [
 				{
-					label: chapterDetail ? __('Edit') : __('Create'),
+					label: chapterDetail ? __('courses.chapterModal.edit') : __('courses.chapterModal.create'),
 					variant: 'solid',
 					onClick: (close) =>
 						chapterDetail ? editChapter(close) : addChapter(close),
@@ -16,13 +16,13 @@
 	>
 		<template #body-content>
 			<div class="space-y-4 text-base">
-				<FormControl label="Title" v-model="chapter.title" :required="true" />
+				<FormControl :label="__('courses.chapterModal.title')" v-model="chapter.title" :required="true" />
 				<Switch
 					size="sm"
-					:label="__('SCORM Package')"
+					:label="__('courses.chapterModal.scormPackage')"
 					:description="
 						__(
-							'Enable this only if you want to upload a SCORM package as a chapter.'
+							'courses.chapterModal.scormDescription'
 						)
 					"
 					v-model="chapter.is_scorm_package"
@@ -38,7 +38,7 @@
 							<div class="mb-4">
 								<Button @click="openFileSelector" :loading="uploading">
 									{{
-										uploading ? `Uploading ${progress}%` : 'Upload an ZIP file'
+										uploading ? __('courses.chapterModal.uploading').format(progress) : __('courses.chapterModal.uploadZip')
 									}}
 								</Button>
 							</div>
@@ -151,7 +151,7 @@ const addChapter = async (close) => {
 						onSuccess(data) {
 							cleanChapter()
 							outline.value.reload()
-							toast.success(__('Chapter added successfully'))
+							toast.success(__('courses.chapterModal.chapterAdded'))
 						},
 						onError(err) {
 							toast.error(err.messages?.[0] || err)
@@ -169,10 +169,10 @@ const addChapter = async (close) => {
 
 const validateChapter = () => {
 	if (!chapter.title) {
-		return __('Title is required')
+		return __('courses.chapterModal.titleRequired')
 	}
 	if (chapter.is_scorm_package && !chapter.scorm_package) {
-		return __('Please upload a SCORM package')
+		return __('courses.chapterModal.scormRequired')
 	}
 }
 
@@ -188,12 +188,12 @@ const editChapter = (close) => {
 		{
 			validate() {
 				if (!chapter.title) {
-					return 'Title is required'
+					return __('courses.chapterModal.titleRequired')
 				}
 			},
 			onSuccess() {
 				outline.value.reload()
-				toast.success(__('Chapter updated successfully'))
+				toast.success(__('courses.chapterModal.chapterUpdated'))
 				close()
 			},
 			onError(err) {
@@ -215,7 +215,7 @@ watch(
 const validateFile = (file) => {
 	let extension = file.name.split('.').pop().toLowerCase()
 	if (extension !== 'zip') {
-		return __('Only zip files are allowed')
+		return __('courses.chapterModal.onlyZipAllowed')
 	}
 }
 </script>

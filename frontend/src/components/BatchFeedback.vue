@@ -3,16 +3,16 @@
 		<div>
 			<div class="leading-5 mb-4">
 				<div v-if="readOnly">
-					{{ __('Thank you for providing your feedback.') }}
+					{{ __('batches.feedback.thankYou') }}
 					<span
 						@click="showFeedbackForm = !showFeedbackForm"
 						class="underline cursor-pointer"
-						>{{ __('Click here') }}</span
+						>{{ __('batches.feedback.clickHere') }}</span
 					>
-					{{ __('to view your feedback.') }}
+					{{ __('batches.feedback.toView') }}
 				</div>
 				<div v-else>
-					{{ __('Help us improve by providing your feedback.') }}
+					{{ __('batches.feedback.helpUsImprove') }}
 				</div>
 			</div>
 			<div class="space-y-4" :class="showFeedbackForm ? 'block' : 'hidden'">
@@ -27,12 +27,12 @@
 				<FormControl
 					v-model="feedback.feedback"
 					type="textarea"
-					:label="__('Feedback')"
+					:label="__('batches.feedback.feedback')"
 					:rows="9"
 					:readonly="readOnly"
 				/>
 				<Button v-if="!readOnly" @click="submitFeedback">
-					{{ __('Submit Feedback') }}
+					{{ __('batches.feedback.submitFeedback') }}
 				</Button>
 			</div>
 		</div>
@@ -40,7 +40,7 @@
 
 	<div v-else-if="feedbackList.data?.length">
 		<div class="leading-5 text-sm mb-2 mt-5">
-			{{ __('Average Feedback Received') }}
+			{{ __('batches.feedback.averageFeedback') }}
 		</div>
 
 		<div class="space-y-4">
@@ -53,11 +53,11 @@
 		</div>
 
 		<Button variant="outline" class="mt-5" @click="showAllFeedback = true">
-			{{ __('View all feedback') }}
+			{{ __('batches.feedback.viewAllFeedback') }}
 		</Button>
 	</div>
 	<div v-else class="text-ink-gray-7 mt-5 leading-5">
-		{{ __('No feedback received yet.') }}
+		{{ __('batches.feedback.noFeedback') }}
 	</div>
 	<FeedbackModal
 		v-if="feedbackList.data?.length"

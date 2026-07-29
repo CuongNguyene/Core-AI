@@ -16,11 +16,11 @@
 					"
 					@click="openCertificateDialog = true"
 				>
-					{{ __('Generate Certificates') }}
+					{{ __('batches.detail.generateCertificates') }}
 				</Button>
 				<Button v-if="canMakeAnnouncement()" @click="openAnnouncementModal()">
 					<span>
-						{{ __('Make an Announcement') }}
+						{{ __('batches.detail.makeAnnouncement') }}
 					</span>
 					<template #suffix>
 						<SendIcon class="h-4 stroke-1.5" />
@@ -50,7 +50,7 @@
 									:is="tab.icon"
 									class="h-4 stroke-1.5"
 								/>
-								{{ __(tab.label) }}
+								{{ tab.label }}
 								<Badge
 									v-if="tab.count"
 									:class="{
@@ -67,32 +67,32 @@
 					</template>
 					<template #tab-panel="{ tab }">
 						<div class="pt-5 px-5 pb-10">
-							<div v-if="tab.label == 'Courses'">
+							<div v-if="tab.id == 'Courses'">
 								<BatchCourses :batch="batch.data.name" />
 							</div>
-							<div v-else-if="tab.label == 'Dashboard' && isStudent">
+							<div v-else-if="tab.id == 'Dashboard' && isStudent">
 								<BatchDashboard :batch="batch" :isStudent="isStudent" />
 							</div>
-							<div v-else-if="tab.label == 'Dashboard'">
+							<div v-else-if="tab.id == 'Dashboard'">
 								<BatchStudents :batch="batch" />
 							</div>
-							<div v-else-if="tab.label == 'Classes'">
+							<div v-else-if="tab.id == 'Classes'">
 								<LiveClass
 									:batch="batch.data.name"
 									:zoomAccount="batch.data.zoom_account"
 								/>
 							</div>
-							<div v-else-if="tab.label == 'Assessments'">
+							<div v-else-if="tab.id == 'Assessments'">
 								<Assessments :batch="batch.data.name" />
 							</div>
-							<div v-else-if="tab.label == 'Announcements'">
+							<div v-else-if="tab.id == 'Announcements'">
 								<Announcements :batch="batch.data.name" />
 							</div>
-							<div v-else-if="tab.label == 'Discussions'">
+							<div v-else-if="tab.id == 'Discussions'">
 								<Discussions
 									doctype="LMS Batch"
 									:docname="batch.data.name"
-									:title="__('Discussions')"
+									:title="__('batches.detail.discussions')"
 									:key="batch.data.name"
 									:singleThread="true"
 									:scrollToBottom="false"
@@ -105,7 +105,7 @@
 			<div class="p-5 border-t md:border-t-0">
 				<div class="mb-10">
 					<div class="text-ink-gray-7 font-semibold mb-2">
-						{{ __('About this batch') }}
+						{{ __('batches.detail.aboutBatch') }}
 					</div>
 					<div
 						v-html="batch.data.description"
@@ -150,7 +150,7 @@
 				</div>
 				<div v-if="dayjs().isSameOrAfter(dayjs(batch.data.start_date))">
 					<div class="text-ink-gray-7 font-semibold mb-2">
-						{{ __('Feedback') }}
+						{{ __('batches.feedback.feedback') }}
 					</div>
 					<BatchFeedback :batch="batch.data?.name" />
 				</div>
@@ -168,18 +168,18 @@
 				<span
 					class="inline-flex items-center before:bg-surface-red-5 before:w-2 before:h-2 before:rounded-md before:mr-2"
 				></span>
-				{{ __('Not Permitted') }}
+				{{ __('batches.detail.notPermitted') }}
 			</div>
 			<div class="px-5 py-3">
 				<div v-if="user.data" class="mb-4 leading-6">
 					{{
 						__(
-							'You are not a member of this batch. Please checkout our upcoming batches.'
+							'batches.detail.notMemberMessage'
 						)
 					}}
 				</div>
 				<div v-else class="mb-4 leading-6">
-					{{ __('Please login to access this page.') }}
+					{{ __('batches.detail.pleaseLogin') }}
 				</div>
 				<router-link
 					v-if="user.data"
@@ -191,7 +191,7 @@
 					}"
 				>
 					<Button variant="solid" class="w-full">
-						{{ __('Upcoming Batches') }}
+						{{ __('batches.detail.upcomingBatches') }}
 					</Button>
 				</router-link>
 				<Button
@@ -200,7 +200,7 @@
 					class="w-full"
 					@click="redirectToLogin()"
 				>
-					{{ __('Login') }}
+					{{ __('batches.detail.login') }}
 				</Button>
 			</div>
 		</div>
@@ -263,34 +263,40 @@ const readOnlyMode = window.read_only_mode
 const tabs = computed(() => {
 	let batchTabs = []
 	batchTabs.push({
-		label: 'Dashboard',
+		label: __('batches.detail.tabs.dashboard'),
+		id: 'Dashboard',
 		icon: LayoutDashboard,
 	})
 
 	batchTabs.push({
-		label: 'Courses',
+		label: __('batches.detail.tabs.courses'),
+		id: 'Courses',
 		icon: BookOpen,
 	})
 
 	batchTabs.push({
-		label: 'Classes',
+		label: __('batches.detail.tabs.classes'),
+		id: 'Classes',
 		icon: Laptop,
 	})
 
 	if (user.data?.is_moderator) {
 		batchTabs.push({
-			label: 'Assessments',
+			label: __('batches.detail.tabs.assessments'),
+			id: 'Assessments',
 			icon: BookOpenCheck,
 		})
 	}
 
 	batchTabs.push({
-		label: 'Announcements',
+		label: __('batches.detail.tabs.announcements'),
+		id: 'Announcements',
 		icon: Mail,
 	})
 
 	batchTabs.push({
-		label: 'Discussions',
+		label: __('batches.detail.tabs.discussions'),
+		id: 'Discussions',
 		icon: MessageCircle,
 	})
 	return batchTabs
@@ -307,7 +313,7 @@ onMounted(() => {
 	const hash = route.hash
 	if (hash) {
 		tabs.value.forEach((tab, index) => {
-			if (tab.label?.toLowerCase() === hash.replace('#', '')) {
+			if (tab.id?.toLowerCase() === hash.replace('#', '')) {
 				tabIndex.value = index
 			}
 		})
@@ -324,10 +330,10 @@ const batch = createResource({
 })
 
 const breadcrumbs = computed(() => {
-	let crumbs = [{ label: 'Batches', route: { name: 'Batches' } }]
+	let crumbs = [{ label: __('batches.detail.batches'), route: { name: 'Batches' } }]
 	if (!isStudent.value) {
 		crumbs.push({
-			label: 'Details',
+			label: __('batches.detail.detailsCrumb'),
 			route: {
 				name: 'BatchDetail',
 				params: {
@@ -361,8 +367,8 @@ const openAnnouncementModal = () => {
 
 watch(tabIndex, () => {
 	const tab = tabs.value[tabIndex.value]
-	if (tab.label != route.hash.replace('#', '')) {
-		router.push({ ...route, hash: `#${tab.label.toLowerCase()}` })
+	if (tab.id != route.hash.replace('#', '')) {
+		router.push({ ...route, hash: `#${tab.id.toLowerCase()}` })
 	}
 })
 

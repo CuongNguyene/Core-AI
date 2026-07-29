@@ -7,13 +7,11 @@
 	<div class="p-5">
 		<div v-if="certificate.data && Object.keys(certificate.data).length">
 			<div class="text-lg text-ink-gray-9 font-semibold mb-1">
-				{{ __('Certification') }}
+				{{ __('courses.certification.title') }}
 			</div>
 			<div class="text-ink-gray-9 text-sm">
 				{{
-					__(
-						'You are already certified for this course. Click on the card below to open your certificate.'
-					)
+					__('courses.certification.alreadyCertified')
 				}}
 			</div>
 			<div
@@ -24,7 +22,7 @@
 					{{ courseTitle }}
 				</div>
 				<div class="text-sm text-ink-gray-7 font-medium">
-					{{ __('Issued On') }}:
+					{{ __('courses.certification.issuedOn') }}:
 					{{ dayjs(certificate.data.issue_date).format('DD MMM YYYY') }}
 				</div>
 			</div>
@@ -124,7 +122,7 @@ const openCertificate = (certificate) => {
 
 const breadcrumbs = computed(() => [
 	{
-		label: __('Courses'),
+		label: __('courses.list.courses'),
 		route: { name: 'Courses' },
 	},
 	{
@@ -132,7 +130,7 @@ const breadcrumbs = computed(() => [
 		route: { name: 'CourseDetail', params: { courseName: props.courseName } },
 	},
 	{
-		label: __('Certification'),
+		label: __('courses.certification.title'),
 	},
 ])
 

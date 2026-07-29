@@ -3,11 +3,11 @@
 		v-model="show"
 		:options="{
 			title:
-				accountID === 'new' ? __('New Zoom Account') : __('Edit Zoom Account'),
+				accountID === 'new' ? __('zoomAccount.newAccount') : __('zoomAccount.editAccount'),
 			size: 'xl',
 			actions: [
 				{
-					label: __('Save'),
+					label: __('zoomAccount.save'),
 					variant: 'solid',
 					onClick: ({ close }) => {
 						saveAccount(close)
@@ -20,39 +20,39 @@
 			<div class="mb-4">
 				<FormControl
 					v-model="account.enabled"
-					:label="__('Enabled')"
+					:label="__('zoomAccount.enabled')"
 					type="checkbox"
 				/>
 			</div>
 			<div class="grid grid-cols-2 gap-5">
 				<FormControl
 					v-model="account.name"
-					:label="__('Account Name')"
+					:label="__('zoomAccount.accountName')"
 					type="text"
 					:required="true"
 				/>
 				<FormControl
 					v-model="account.client_id"
-					:label="__('Client ID')"
+					:label="__('zoomAccount.clientId')"
 					type="text"
 					:required="true"
 				/>
 				<Link
 					v-model="account.member"
-					:label="__('Member')"
+					:label="__('zoomAccount.member')"
 					doctype="Course Evaluator"
 					:onCreate="(value: string, close: () => void) => openSettings('Members', close)"
 					:required="true"
 				/>
 				<FormControl
 					v-model="account.client_secret"
-					:label="__('Client Secret')"
+					:label="__('zoomAccount.clientSecret')"
 					type="password"
 					:required="true"
 				/>
 				<FormControl
 					v-model="account.account_id"
-					:label="__('Account ID')"
+					:label="__('zoomAccount.accountId')"
 					type="text"
 					:required="true"
 				/>
@@ -161,12 +161,12 @@ const createAccount = (close: () => void) => {
 			onSuccess() {
 				zoomAccounts.value?.reload()
 				close()
-				toast.success(__('Zoom Account created successfully'))
+				toast.success(__('zoomAccount.createdSuccess'))
 			},
 			onError(err) {
 				close()
 				toast.error(
-					cleanError(err.messages[0]) || __('Error creating Zoom Account')
+					cleanError(err.messages[0]) || __('zoomAccount.errorCreating')
 				)
 			},
 		}
@@ -199,12 +199,12 @@ const setValue = (close: () => void) => {
 			onSuccess() {
 				zoomAccounts.value?.reload()
 				close()
-				toast.success(__('Zoom Account updated successfully'))
+				toast.success(__('zoomAccount.updatedSuccess'))
 			},
 			onError(err: any) {
 				close()
 				toast.error(
-					cleanError(err.messages[0]) || __('Error updating Zoom Account')
+					cleanError(err.messages[0]) || __('zoomAccount.errorUpdating')
 				)
 			},
 		}

@@ -4,12 +4,12 @@
 		:options="{
 			title:
 				templateID == 'new'
-					? __('New Email Template')
-					: __('Edit Email Template'),
+					? __('emailTemplates.modal.newTemplate')
+					: __('emailTemplates.modal.editTemplate'),
 			size: 'lg',
 			actions: [
 				{
-					label: __('Save'),
+					label: __('emailTemplates.modal.save'),
 					variant: 'solid',
 					onClick: ({ close }) => {
 						saveTemplate(close)
@@ -21,40 +21,40 @@
 		<template #body-content>
 			<div class="space-y-4">
 				<FormControl
-					:label="__('Name')"
+					:label="__('emailTemplates.modal.name')"
 					v-model="template.name"
 					type="text"
 					:required="true"
-					:placeholder="__('Batch Enrollment Confirmation')"
+					:placeholder="__('emailTemplates.modal.namePlaceholder')"
 				/>
 				<FormControl
-					:label="__('Subject')"
+					:label="__('emailTemplates.modal.subject')"
 					v-model="template.subject"
 					type="text"
 					:required="true"
-					:placeholder="__('Your enrollment in {{ batch_name }} is confirmed')"
+					:placeholder="__('emailTemplates.modal.subjectPlaceholder')"
 				/>
 				<FormControl
-					:label="__('Use HTML')"
+					:label="__('emailTemplates.modal.useHtml')"
 					v-model="template.use_html"
 					type="checkbox"
 				/>
 				<FormControl
 					v-if="template.use_html"
-					:label="__('Content')"
+					:label="__('emailTemplates.modal.content')"
 					v-model="template.response_html"
 					type="textarea"
 					:required="true"
 					:rows="10"
 					:placeholder="
 						__(
-							'<p>Dear {{ member_name }},</p>\n\n<p>You have been enrolled in our upcoming batch {{ batch_name }}.</p>\n\n<p>Thanks,</p>\n<p>Frappe Learning</p>'
+							'emailTemplates.modal.htmlContentPlaceholder'
 						)
 					"
 				/>
 				<div v-else>
 					<div class="text-xs text-ink-gray-5 mb-2">
-						{{ __('Content') }}
+						{{ __('emailTemplates.modal.content') }}
 						<span class="text-ink-red-3">*</span>
 					</div>
 					<TextEditor
@@ -64,7 +64,7 @@
 						:fixedMenu="true"
 						:placeholder="
 							__(
-								'Dear {{ member_name }},\n\nYou have been enrolled in our upcoming batch {{ batch_name }}.\n\nThanks,\nFrappe Learning'
+								'emailTemplates.modal.contentPlaceholder'
 							)
 						"
 						editorClass="prose-sm max-w-none border-b border-x bg-surface-gray-2 rounded-b-md py-1 px-2 min-h-[7rem] max-h-[18rem] overflow-y-auto"
@@ -115,12 +115,12 @@ const createNewTemplate = (close) => {
 			onSuccess() {
 				emailTemplates.value.reload()
 				refreshForm(close)
-				toast.success(__('Email Template created successfully'))
+				toast.success(__('emailTemplates.modal.createdSuccess'))
 			},
 			onError(err) {
 				refreshForm(close)
 				toast.error(
-					cleanError(err.messages[0]) || __('Error creating email template')
+					cleanError(err.messages[0]) || __('emailTemplates.modal.errorCreating')
 				)
 			},
 		}
@@ -144,12 +144,12 @@ const setValue = (close) => {
 			onSuccess() {
 				emailTemplates.value.reload()
 				refreshForm(close)
-				toast.success(__('Email Template updated successfully'))
+				toast.success(__('emailTemplates.modal.updatedSuccess'))
 			},
 			onError(err) {
 				refreshForm(close)
 				toast.error(
-					cleanError(err.messages[0]) || __('Error updating email template')
+					cleanError(err.messages[0]) || __('emailTemplates.modal.errorUpdating')
 				)
 			},
 		}

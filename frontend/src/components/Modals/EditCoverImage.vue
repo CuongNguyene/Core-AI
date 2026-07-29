@@ -13,7 +13,7 @@
 					<div class="flex items-center justify-center space-x-2">
 						<TextInput
 							type="text"
-							placeholder="search by keyword"
+							:placeholder="__('profile.coverImage.searchByKeyword')"
 							v-model="search"
 							:debounce="300"
 							class="flex-1"
@@ -28,7 +28,7 @@
 							>
 								<div class="">
 									<Button @click="openFileSelector" :loading="uploading">
-										{{ uploading ? `Uploading ${progress}%` : 'Upload Image' }}
+										{{ uploading ? __('profile.coverImage.uploading').format(progress) : __('profile.coverImage.uploadImage') }}
 									</Button>
 								</div>
 							</template>
@@ -55,9 +55,9 @@
 						v-if="images.data"
 						class="mt-2 text-center text-sm text-ink-gray-4"
 					>
-						{{ __('Image search powered by') }}
+						{{ __('profile.coverImage.poweredBy') }}
 						<a class="underline" target="_blank" href="https://unsplash.com">
-							{{ __('Unsplash') }}
+							Unsplash
 						</a>
 					</div>
 				</div>
@@ -103,7 +103,7 @@ const saveImage = (file) => {
 const validateFile = (file) => {
 	let extension = file.name.split('.').pop().toLowerCase()
 	if (!['jpg', 'jpeg', 'png'].includes(extension)) {
-		return 'Only image file is allowed.'
+		return __('profile.coverImage.onlyImageAllowed')
 	}
 }
 </script>

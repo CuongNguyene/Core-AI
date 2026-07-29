@@ -4,7 +4,7 @@
 			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
 		>
 			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('All Programs') }}
+				{{ __('programs.studentPrograms.allPrograms') }}
 			</div>
 			<div
 				class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
@@ -88,11 +88,11 @@ const openDetails = (programName: any, category: string) => {
 const tabs = computed(() => {
 	return [
 		{
-			label: __('Enrolled'),
+			label: __('programs.studentPrograms.enrolledTab'),
 			value: 'enrolled',
 		},
 		{
-			label: __('Published'),
+			label: __('programs.studentPrograms.publishedTab'),
 			value: 'published',
 		},
 	]

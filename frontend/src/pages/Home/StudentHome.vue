@@ -5,8 +5,8 @@
 				<span class="font-semibold text-lg text-ink-gray-9">
 					{{
 						myCourses.data[0].membership
-							? __('My Courses')
-							: __('Our Popular Courses')
+							? __('home.student.myCourses')
+							: __('home.student.popularCourses')
 					}}
 				</span>
 				<router-link
@@ -16,7 +16,7 @@
 				>
 					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
 						<span>
-							{{ __('See all') }}
+							{{ __('home.common.seeAll') }}
 						</span>
 						<MoveRight class="size-3 stroke-1.5" />
 					</span>
@@ -37,8 +37,8 @@
 				<span class="font-semibold text-lg text-ink-gray-9">
 					{{
 						myBatches.data?.[0].students.includes(user.data?.name)
-							? __('My Batches')
-							: __('Our Upcoming Batches')
+							? __('home.student.myBatches')
+							: __('home.student.upcomingBatches')
 					}}
 				</span>
 				<router-link
@@ -48,7 +48,7 @@
 				>
 					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
 						<span>
-							{{ __('See all') }}
+							{{ __('home.common.seeAll') }}
 						</span>
 						<MoveRight class="size-3 stroke-1.5" />
 					</span>
@@ -67,7 +67,7 @@
 		<div class="grid grid-cols-1 gap-5 mt-10">
 			<div v-if="myLiveClasses.data?.length">
 				<div class="font-semibold text-lg mb-3 text-ink-gray-9">
-					{{ __('Upcoming Live Classes') }}
+					{{ __('home.common.upcomingLiveClassesTitle') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 					<div v-for="cls in myLiveClasses.data" class="border rounded-md p-2">
@@ -103,7 +103,7 @@
 									:class="cls.join_url ? 'w-full' : 'w-1/2'"
 								>
 									<Monitor class="h-4 w-4 stroke-1.5" />
-									{{ __('Start') }}
+									{{ __('home.common.start') }}
 								</a>
 								<a
 									:href="cls.join_url"
@@ -111,18 +111,18 @@
 									class="w-full cursor-pointer inline-flex items-center justify-center gap-2 transition-colors focus:outline-none text-ink-gray-8 bg-surface-gray-2 hover:bg-surface-gray-3 active:bg-surface-gray-4 focus-visible:ring focus-visible:ring-outline-gray-3 h-7 text-base px-2 rounded"
 								>
 									<Video class="h-4 w-4 stroke-1.5" />
-									{{ __('Join') }}
+									{{ __('home.common.join') }}
 								</a>
 							</div>
 							<Tooltip
 								v-else-if="hasClassEnded(cls)"
-								:text="__('This class has ended')"
+								:text="__('home.common.endedTooltip')"
 								placement="right"
 							>
 								<div class="flex items-center space-x-2 text-ink-amber-3 w-fit">
 									<Info class="w-4 h-4 stroke-1.5" />
 									<span>
-										{{ __('Ended') }}
+										{{ __('home.common.ended') }}
 									</span>
 								</div>
 							</Tooltip>

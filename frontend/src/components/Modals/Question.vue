@@ -8,7 +8,7 @@
 		<template #body>
 			<div class="p-5 space-y-5">
 				<div class="text-lg font-semibold text-ink-gray-9 mb-5">
-					{{ __(props.title) }}
+					{{ props.title }}
 				</div>
 				<div
 					v-if="!editMode"
@@ -16,7 +16,7 @@
 				>
 					<Switch
 						size="sm"
-						:label="__('Choose an existing question')"
+						:label="__('quiz.chooseExisting')"
 						v-model="chooseFromExisting"
 						class="!p-0"
 					/>
@@ -24,7 +24,7 @@
 				<div v-if="!chooseFromExisting || editMode">
 					<div>
 						<label class="block text-xs text-ink-gray-5 mb-1">
-							{{ __('Question') }}
+							{{ __('quiz.question') }}
 						</label>
 						<TextEditor
 							:content="question.question"
@@ -37,11 +37,11 @@
 					<div class="grid grid-cols-2 gap-8 mt-4">
 						<FormControl
 							v-model="question.marks"
-							:label="__('Marks')"
+							:label="__('quiz.marks')"
 							type="number"
 						/>
 						<FormControl
-							:label="__('Type')"
+							:label="__('quiz.type')"
 							v-model="question.type"
 							type="select"
 							:options="['Choices', 'User Input', 'Open Ended']"
@@ -53,13 +53,13 @@
 						v-if="question.type == 'Choices'"
 						class="text-base font-semibold text-ink-gray-9 mb-5 mt-10"
 					>
-						{{ __('Options') }}
+						{{ __('quiz.options') }}
 					</div>
 					<div
 						v-else-if="question.type == 'User Input'"
 						class="text-base font-semibold text-ink-gray-9 mb-5 mt-5"
 					>
-						{{ __('Possibilities') }}
+						{{ __('quiz.possibilities') }}
 					</div>
 					<div
 						v-if="question.type == 'Choices'"
@@ -67,16 +67,16 @@
 					>
 						<div v-for="n in 4" class="space-y-4 py-2">
 							<FormControl
-								:label="__('Option') + ' ' + n"
+								:label="__('quiz.option') + ' ' + n"
 								v-model="question[`option_${n}`]"
 								:required="n <= 2 ? true : false"
 							/>
 							<FormControl
-								:label="__('Explanation')"
+								:label="__('quiz.explanation')"
 								v-model="question[`explanation_${n}`]"
 							/>
 							<FormControl
-								:label="__('Correct Answer')"
+								:label="__('quiz.correctAnswer')"
 								v-model="question[`is_correct_${n}`]"
 								type="checkbox"
 							/>
@@ -88,7 +88,7 @@
 					>
 						<div v-for="n in 4">
 							<FormControl
-								:label="__('Possibility') + ' ' + n"
+								:label="__('quiz.possibility') + ' ' + n"
 								v-model="question[`possibility_${n}`]"
 								:required="n == 1 ? true : false"
 							/>
@@ -98,18 +98,18 @@
 				<div v-else-if="chooseFromExisting" class="space-y-2">
 					<Link
 						v-model="existingQuestion.question"
-						:label="__('Select a question')"
+						:label="__('quiz.selectQuestion')"
 						doctype="LMS Question"
 					/>
 					<FormControl
 						v-model="existingQuestion.marks"
-						:label="__('Marks')"
+						:label="__('quiz.marks')"
 						type="number"
 					/>
 				</div>
 				<div class="flex items-center justify-end space-x-2 mt-5">
 					<Button variant="solid" @click="submitQuestion()">
-						{{ __('Save') }}
+						{{ __('quiz.save') }}
 					</Button>
 				</div>
 			</div>
@@ -163,7 +163,7 @@ populateFields()
 const props = defineProps({
 	title: {
 		type: String,
-		default: __('Add a new question'),
+		default: '',
 	},
 	questionDetail: {
 		type: [Object, null],
@@ -281,7 +281,7 @@ const addQuestionRow = (question) => {
 					updateOnboardingStep('create_first_quiz')
 
 				show.value = false
-				toast.success(__('Question added successfully'))
+				toast.success(__('quiz.questionAdded'))
 				quiz.value.reload()
 				show.value = false
 			},
@@ -331,7 +331,7 @@ const updateQuestion = () => {
 					{
 						onSuccess() {
 							show.value = false
-							toast.success(__('Question updated successfully'))
+							toast.success(__('quiz.questionUpdated'))
 							quiz.value.reload()
 						},
 					}

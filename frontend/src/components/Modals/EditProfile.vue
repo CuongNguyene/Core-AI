@@ -1,11 +1,11 @@
 <template>
 	<Dialog
 		:options="{
-			title: 'Edit your profile',
+			title: __('profile.editProfile.title'),
 			size: '3xl',
 			actions: [
 				{
-					label: 'Save',
+					label: __('profile.editProfile.save'),
 					variant: 'solid',
 					onClick: (close) => saveProfile(close),
 				},
@@ -22,7 +22,7 @@
 					/> -->
 					<div>
 						<div class="text-xs text-ink-gray-5 mb-1">
-							{{ __('Profile Image') }}
+							{{ __('profile.editProfile.profileImage') }}
 						</div>
 						<FileUploader
 							v-if="!profile.image"
@@ -37,8 +37,8 @@
 									<Button @click="openFileSelector" :loading="uploading">
 										{{
 											uploading
-												? `Uploading ${progress}%`
-												: 'Upload a profile image'
+												? __('profile.coverImage.uploading').format(progress)
+												: __('profile.editProfile.uploadProfileImage')
 										}}
 									</Button>
 								</div>
@@ -66,11 +66,11 @@
 							</div>
 						</div>
 					</div>
-					<FormControl v-model="profile.first_name" :label="__('First Name')" />
-					<FormControl v-model="profile.last_name" :label="__('Last Name')" />
-					<FormControl v-model="profile.headline" :label="__('Headline')" />
+					<FormControl v-model="profile.first_name" :label="__('profile.editProfile.firstName')" />
+					<FormControl v-model="profile.last_name" :label="__('profile.editProfile.lastName')" />
+					<FormControl v-model="profile.headline" :label="__('profile.editProfile.headline')" />
 					<Link
-						:label="__('Language')"
+						:label="__('profile.editProfile.language')"
 						v-model="profile.language"
 						doctype="Language"
 					/>
@@ -78,7 +78,7 @@
 				<div>
 					<div class="mb-4">
 						<div class="mb-1.5 text-sm text-ink-gray-5">
-							{{ __('Bio') }}
+							{{ __('profile.editProfile.bio') }}
 						</div>
 						<TextEditor
 							:fixedMenu="true"
@@ -194,7 +194,7 @@ const saveProfile = (close) => {
 const validateFile = (file) => {
 	let extension = file.name.split('.').pop().toLowerCase()
 	if (!['jpg', 'jpeg', 'png'].includes(extension)) {
-		return 'Only image file is allowed.'
+		return __('profile.coverImage.onlyImageAllowed')
 	}
 }
 

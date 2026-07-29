@@ -2,7 +2,7 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Attendance for Class - {0}').format(live_class?.title),
+			title: __('batches.liveClass.attendanceTitle').format(live_class?.title),
 			size: '4xl',
 		}"
 	>
@@ -11,17 +11,17 @@
 				class="grid grid-cols-2 gap-12 text-sm font-semibold text-ink-gray-5 pb-2"
 			>
 				<div>
-					{{ __('Member') }}
+					{{ __('batches.liveClass.member') }}
 				</div>
 				<div class="grid grid-cols-3 gap-20">
 					<div>
-						{{ __('Joined at') }}
+						{{ __('batches.liveClass.joinedAt') }}
 					</div>
 					<div class="text-center">
-						{{ __('Left at') }}
+						{{ __('batches.liveClass.leftAt') }}
 					</div>
 					<div>
-						{{ __('Attended for') }}
+						{{ __('batches.liveClass.attendedFor') }}
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 						<div>
 							{{ dayjs(participant.left_at).format('HH:mm a') }}
 						</div>
-						<div>{{ participant.duration }} {{ __('minutes') }}</div>
+						<div>{{ participant.duration }} {{ __('batches.liveClass.minutes') }}</div>
 					</div>
 				</div>
 			</div>

@@ -15,7 +15,6 @@ from frappe import _
 # 	is_fc_site,
 # )
 from frappe.query_builder import DocType
-from frappe.translate import get_all_translations
 from frappe.utils import (
 	add_days,
 	add_months,
@@ -153,7 +152,7 @@ def get_user_info():
 	user = frappe.db.get_value(
 		"User",
 		frappe.session.user,
-		["name", "email", "enabled", "user_image", "full_name", "user_type", "username"],
+		["name", "email", "enabled", "user_image", "full_name", "user_type", "username", "language"],
 		as_dict=1,
 	)
 	user["roles"] = frappe.get_roles(user.name)
@@ -172,15 +171,6 @@ def get_user_info():
 	# if user.is_fc_site and user.is_system_manager:
 	# 	user.site_info = current_site_info()
 	return user
-
-
-@frappe.whitelist(allow_guest=True)
-def get_translations():
-	if frappe.session.user != "Guest":
-		language = frappe.db.get_value("User", frappe.session.user, "language")
-	else:
-		language = frappe.db.get_single_value("System Settings", "language")
-	return get_all_translations(language)
 
 
 @frappe.whitelist()
