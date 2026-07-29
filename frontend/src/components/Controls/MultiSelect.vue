@@ -59,7 +59,7 @@
 										v-if="options.length === 0"
 										class="px-2.5 py-2 text-base text-ink-gray-5"
 									>
-										No results found
+										{{ __('controls.noResultsFound') }}
 									</div>
 								</ComboboxOptions>
 								<div
@@ -69,7 +69,7 @@
 									<Button
 										variant="ghost"
 										class="w-full !justify-start"
-										:label="__('Create New')"
+										:label="__('controls.createNew')"
 										@click="attrs.onCreate(close)"
 									>
 										<template #prefix>

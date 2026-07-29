@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Schedule Evaluation'),
+			title: __('courses.evaluation.scheduleEvaluation'),
 			size: 'xl',
 			actions: [
 				{
-					label: __('Submit'),
+					label: __('courses.evaluation.submit'),
 					variant: 'solid',
 					onClick: (close) => submitEvaluation(close),
 				},
@@ -17,13 +17,13 @@
 			<div class="flex flex-col gap-4">
 				<div>
 					<div class="mb-1.5 text-sm text-ink-gray-5">
-						{{ __('Course') }}
+						{{ __('courses.evaluation.course') }}
 					</div>
 					<Select v-model="evaluation.course" :options="getCourses()" />
 				</div>
 				<div>
 					<div class="mb-1.5 text-sm text-ink-gray-5">
-						{{ __('Date') }}
+						{{ __('courses.evaluation.date') }}
 					</div>
 					<FormControl
 						type="date"
@@ -37,7 +37,7 @@
 				</div>
 				<div v-if="slots.data?.length">
 					<div class="mb-1.5 text-sm text-ink-gray-5">
-						{{ __('Select a slot') }}
+						{{ __('courses.evaluation.selectSlot') }}
 					</div>
 					<div class="grid grid-cols-2 gap-2">
 						<div v-for="slot in slots.data">
@@ -59,7 +59,7 @@
 					v-else-if="evaluation.course && evaluation.date"
 					class="text-sm italic text-ink-red-4"
 				>
-					{{ __('No slots available for this date.') }}
+					{{ __('courses.evaluation.noSlotsAvailable') }}
 				</div>
 			</div>
 		</template>
@@ -117,21 +117,21 @@ function submitEvaluation(close) {
 	createEvaluation.submit(evaluation, {
 		validate() {
 			if (!evaluation.course) {
-				return 'Please select a course.'
+				return __('courses.evaluation.selectCourseRequired')
 			}
 			if (!evaluation.date) {
-				return 'Please select a date.'
+				return __('courses.evaluation.selectDateRequired')
 			}
 			if (!evaluation.start_time) {
-				return 'Please select a slot.'
+				return __('courses.evaluation.selectSlotRequired')
 			}
 			if (dayjs(evaluation.date).isBefore(dayjs(), 'day')) {
-				return 'Please select a future date.'
+				return __('courses.evaluation.futureDateRequired')
 			}
 			if (dayjs(evaluation.date).isAfter(dayjs(props.endDate), 'day')) {
-				return `Please select a date before the end date ${dayjs(
-					props.endDate
-				).format('DD MMMM YYYY')}.`
+				return __('courses.evaluation.dateBeforeEndDate').format(
+					dayjs(props.endDate).format('DD MMMM YYYY')
+				)
 			}
 		},
 		onSuccess() {

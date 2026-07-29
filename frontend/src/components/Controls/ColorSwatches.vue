@@ -10,7 +10,7 @@
 						type="text"
 						autocomplete="off"
 						class="w-full"
-						:placeholder="__('Set Color')"
+						:placeholder="__('controls.setColor')"
 						@focus="togglePopover"
 						:modelValue="modelValue"
 						@update:modelValue="(val: string) => emit('update:modelValue', val)"
@@ -47,7 +47,7 @@
 			<template #body="{ close }">
 				<div class="rounded-lg bg-surface-white p-3 border w-fit mt-2">
 					<div class="text-xs text-ink-gray-5 mb-1.5">
-						{{ __('Swatches') }}
+						{{ __('controls.swatches') }}
 					</div>
 					<div class="grid grid-cols-7 gap-2">
 						<div

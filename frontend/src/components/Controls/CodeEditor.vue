@@ -22,7 +22,7 @@
 			@click="emit('save', aceEditor?.getValue())"
 			class="mt-3"
 		>
-			{{ __('Save') }}
+			{{ __('controls.save') }}
 		</Button>
 	</div>
 </template>

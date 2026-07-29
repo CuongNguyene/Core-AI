@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Add a course'),
+			title: __('courses.batchModal.addCourse'),
 			size: 'sm',
 			actions: [
 				{
-					label: __('Submit'),
+					label: __('courses.batchModal.submit'),
 					variant: 'solid',
 					onClick: (close) => addCourse(close),
 				},
@@ -17,9 +17,9 @@
 			<Link
 				doctype="LMS Course"
 				v-model="course"
-				:label="__('Course')"
+				:label="__('courses.batchModal.course')"
 				:required="true"
-				:placeholder="__('Select a course')"
+				:placeholder="__('courses.batchModal.selectCourse')"
 				:onCreate="
 					(value, close) => {
 						close()

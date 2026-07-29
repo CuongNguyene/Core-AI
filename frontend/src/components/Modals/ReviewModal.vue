@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Write a Review'),
+			title: __('courses.reviews.writeAReview'),
 			size: 'xl',
 			actions: [
 				{
-					label: 'Submit',
+					label: __('courses.reviews.submit'),
 					variant: 'solid',
 					onClick: (close) => submitReview(close),
 				},
@@ -15,9 +15,9 @@
 	>
 		<template #body-content>
 			<div class="flex flex-col gap-4">
-				<Rating v-model="review.rating" :label="__('Rating')" />
+				<Rating v-model="review.rating" :label="__('courses.reviews.rating')" />
 				<FormControl
-					:label="__('Review')"
+					:label="__('courses.reviews.review')"
 					type="textarea"
 					v-model="review.review"
 					:rows="5"
@@ -63,7 +63,7 @@ function submitReview(close) {
 	createReview.submit(review, {
 		validate() {
 			if (!review.rating) {
-				return 'Please enter a rating.'
+				return __('courses.reviews.ratingRequired')
 			}
 		},
 		onSuccess() {

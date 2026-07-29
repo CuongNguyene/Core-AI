@@ -2,13 +2,13 @@
 	<div>
 		<div class="flex items-center justify-between mb-4">
 			<div class="text-lg font-semibold text-ink-gray-9">
-				{{ __('Courses') }}
+				{{ __('courses.batch.courses') }}
 			</div>
 			<Button v-if="canSeeAddButton()" @click="openCourseModal()">
 				<template #prefix>
 					<Plus class="h-4 w-4" />
 				</template>
-				{{ __('Add') }}
+				{{ __('courses.batch.add') }}
 			</Button>
 		</div>
 		<div v-if="courses.data?.length">
@@ -64,7 +64,7 @@
 			</ListView>
 		</div>
 		<div v-else class="text-sm italic text-ink-gray-5">
-			{{ __('No courses added') }}
+			{{ __('courses.batch.noCoursesAdded') }}
 		</div>
 		<BatchCourseModal
 			v-model="showCourseModal"
@@ -116,17 +116,17 @@ const openCourseModal = () => {
 const getCoursesColumns = () => {
 	return [
 		{
-			label: 'Title',
+			label: __('courses.batch.title'),
 			key: 'title',
 			width: 2,
 		},
 		{
-			label: 'Lessons',
+			label: __('courses.batch.lessons'),
 			key: 'lessons',
 			align: 'right',
 		},
 		{
-			label: 'Enrollments',
+			label: __('courses.batch.enrollments'),
 			align: 'right',
 			key: 'enrollments',
 		},
@@ -151,7 +151,7 @@ const removeCourses = (selections, unselectAll) => {
 		{
 			onSuccess(data) {
 				courses.reload()
-				toast.success(__('Courses deleted successfully'))
+				toast.success(__('courses.batch.deletedSuccess'))
 				unselectAll()
 			},
 		}

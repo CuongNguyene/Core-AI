@@ -32,7 +32,7 @@ function translate(message) {
 	let translatedMessages = window.translatedMessages || {}
 	let translatedMessage = getTranslation(translatedMessages, message) || message
 
-	const hasPlaceholders = /{\d+}/.test(message)
+	const hasPlaceholders = /{\d+}/.test(translatedMessage)
 	if (!hasPlaceholders) {
 		return translatedMessage
 	}
