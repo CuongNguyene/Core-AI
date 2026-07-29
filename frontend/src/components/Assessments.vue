@@ -2,13 +2,13 @@
 	<div>
 		<div class="flex items-center justify-between mb-4">
 			<div class="text-lg font-semibold text-ink-gray-9">
-				{{ __('Assessments') }}
+				{{ __('batches.assessments.assessments') }}
 			</div>
 			<Button v-if="canAddAssessments()" @click="showModal = true">
 				<template #prefix>
 					<Plus class="h-4 w-4" />
 				</template>
-				{{ __('Add') }}
+				{{ __('batches.assessments.add') }}
 			</Button>
 		</div>
 		<div v-if="assessments.data?.length" class="text-sm">
@@ -72,7 +72,7 @@
 			</ListView>
 		</div>
 		<div v-else class="text-sm italic text-ink-gray-5">
-			{{ __('No Assessments') }}
+			{{ __('batches.assessments.noAssessments') }}
 		</div>
 	</div>
 	<AssessmentModal
@@ -208,12 +208,12 @@ const canAddAssessments = () => {
 const getAssessmentColumns = () => {
 	let columns = [
 		{
-			label: 'Assessment',
+			label: __('batches.assessments.assessmentColumn'),
 			key: 'title',
 			width: '25rem',
 		},
 		{
-			label: 'Type',
+			label: __('batches.assessments.typeColumn'),
 			key: 'assessment_type',
 			width: '15rem',
 		},
@@ -221,7 +221,7 @@ const getAssessmentColumns = () => {
 
 	if (!user.data?.is_moderator) {
 		columns.push({
-			label: 'Status/Percentage',
+			label: __('batches.assessments.statusColumn'),
 			key: 'status',
 			align: 'left',
 			width: '10rem',
@@ -242,11 +242,11 @@ const getStatusTheme = (status) => {
 
 const getAssessmentTypeLabel = (type) => {
 	if (type == 'LMS Assignment') {
-		return __('Assignment')
+		return __('batches.assessments.assignment')
 	} else if (type == 'LMS Quiz') {
-		return __('Quiz')
+		return __('batches.assessments.quiz')
 	} else if (type == 'LMS Programming Exercise') {
-		return __('Programming Exercise')
+		return __('batches.assessments.programmingExercise')
 	}
 }
 </script>

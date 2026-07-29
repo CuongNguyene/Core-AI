@@ -8,10 +8,10 @@
 			<template #prefix>
 				<Plus class="size-4" />
 			</template>
-			{{ __('New {0}').format(singularize(title)) }}
+			{{ __('batches.discussions.newItem').format(singularize(title)) }}
 		</Button>
 		<div class="text-xl font-semibold text-ink-gray-9">
-			{{ __(title) }}
+			{{ title }}
 		</div>
 	</div>
 	<div v-if="topics.data?.length && !singleThread">
@@ -54,16 +54,16 @@
 		<MessageSquareText class="w-7 h-7 text-ink-gray-4 stroke-1.5 mr-2" />
 		<div class="mt-2">
 			<div v-if="emptyStateTitle" class="font-medium mb-2">
-				{{ __(emptyStateTitle) }}
+				{{ emptyStateTitle }}
 			</div>
 			<div class="text-ink-gray-5">
-				{{ __(emptyStateText) }}
+				{{ emptyStateText || __('batches.discussions.startDiscussion') }}
 			</div>
 		</div>
 	</div>
 	<DiscussionModal
 		v-model="showTopicModal"
-		:title="__('New {0}').format(title)"
+		:title="__('batches.discussions.newItem').format(title)"
 		:doctype="props.doctype"
 		:docname="props.docname"
 		v-model:reloadTopics="topics"
@@ -105,7 +105,7 @@ const props = defineProps({
 	},
 	emptyStateText: {
 		type: String,
-		default: 'Start a Discussion',
+		default: '',
 	},
 	singleThread: {
 		type: Boolean,

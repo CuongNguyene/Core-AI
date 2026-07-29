@@ -22,7 +22,7 @@
 				>
 					<Star class="size-3 stroke-2" />
 					<span>
-						{{ __('Featured') }}
+						{{ __('courses.card.featured') }}
 					</span>
 				</div>
 				<div
@@ -50,7 +50,7 @@
 		<div class="flex flex-col flex-auto p-4 border-x-2 border-b-2 rounded-b-md">
 			<div class="flex items-center justify-between mb-2">
 				<div v-if="course.lessons">
-					<Tooltip :text="__('Lessons')">
+					<Tooltip :text="__('courses.card.lessons')">
 						<span class="flex items-center">
 							<BookOpen class="h-4 w-4 stroke-1.5 mr-1" />
 							{{ course.lessons }}
@@ -59,7 +59,7 @@
 				</div>
 
 				<div v-if="course.enrollments">
-					<Tooltip :text="__('Enrolled Students')">
+					<Tooltip :text="__('courses.card.enrolledStudents')">
 						<span class="flex items-center">
 							<Users class="h-4 w-4 stroke-1.5 mr-1" />
 							{{ formatAmount(course.enrollments) }}
@@ -68,7 +68,7 @@
 				</div>
 
 				<div v-if="course.rating">
-					<Tooltip :text="__('Average Rating')">
+					<Tooltip :text="__('courses.card.averageRating')">
 						<span class="flex items-center">
 							<Star class="h-4 w-4 stroke-1.5 mr-1" />
 							{{ course.rating }}
@@ -76,7 +76,7 @@
 					</Tooltip>
 				</div>
 
-				<Tooltip v-if="course.featured" :text="__('Featured')">
+				<Tooltip v-if="course.featured" :text="__('courses.card.featured')">
 					<Award class="size-4 stroke-2 text-ink-amber-3" />
 				</Tooltip>
 			</div>
@@ -99,7 +99,7 @@
 			/>
 
 			<div v-if="user && course.membership" class="text-sm mt-2 mb-4">
-				{{ Math.ceil(course.membership.progress) }}% {{ __('completed') }}
+				{{ Math.ceil(course.membership.progress) }}% {{ __('courses.card.completed') }}
 			</div>
 
 			<div class="flex items-center justify-between mt-auto">
@@ -123,7 +123,7 @@
 
 					<Tooltip
 						v-if="course.paid_certificate || course.enable_certification"
-						:text="__('Get Certified')"
+						:text="__('courses.card.getCertified')"
 					>
 						<GraduationCap class="size-5 stroke-1.5 text-ink-gray-7" />
 					</Tooltip>

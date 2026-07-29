@@ -21,7 +21,7 @@
 								"
 								:theme="student.progress === 100 ? 'green' : 'red'"
 							>
-								{{ student.progress }}% {{ __('Complete') }}
+								{{ student.progress }}% {{ __('batches.studentProgress.complete') }}
 							</Badge>
 							<Badge v-if="timeSpent.data" theme="gray">
 								{{ formatDuration(timeSpent.data.seconds) }}
@@ -41,10 +41,10 @@
 					>
 						<div class="flex items-center border-b pb-1 font-medium">
 							<span class="flex-1">
-								{{ __('Assessment') }}
+								{{ __('batches.studentProgress.assessment') }}
 							</span>
 							<span>
-								{{ __('Percentage/Status') }}
+								{{ __('batches.studentProgress.percentageStatus') }}
 							</span>
 						</div>
 						<router-link
@@ -91,10 +91,10 @@
 					>
 						<div class="flex items-center border-b pb-1 font-medium">
 							<span class="flex-1">
-								{{ __('Courses') }}
+								{{ __('batches.studentProgress.courses') }}
 							</span>
 							<span>
-								{{ __('Progress') }}
+								{{ __('batches.studentProgress.progress') }}
 							</span>
 						</div>
 						<div
@@ -155,8 +155,8 @@ watch(
 const formatDuration = (seconds) => {
 	let hours = Math.floor(seconds / 3600)
 	let minutes = Math.floor((seconds % 3600) / 60)
-	if (hours) return __('{0}h {1}m spent').format(hours, minutes)
-	return __('{0}m spent').format(minutes)
+	if (hours) return __('batches.studentProgress.hoursMinutesSpent').format(hours, minutes)
+	return __('batches.studentProgress.minutesSpent').format(minutes)
 }
 
 const isAssignment = (value) => {

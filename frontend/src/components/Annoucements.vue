@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<div v-else class="text-sm italic text-ink-gray-5">
-		{{ __('No announcements') }}
+		{{ __('batches.announcements.noAnnouncements') }}
 	</div>
 </template>
 <script setup>

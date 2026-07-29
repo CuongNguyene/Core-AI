@@ -3,11 +3,11 @@
 		v-model="show"
 		class="text-base"
 		:options="{
-			title: __('Add web page to sidebar'),
+			title: __('sidebar.addWebPage'),
 			size: 'lg',
 			actions: [
 				{
-					label: 'Add',
+					label: __('sidebar.add'),
 					variant: 'solid',
 					onClick: (close) => {
 						addWebPage(close)
@@ -20,12 +20,12 @@
 			<Link
 				v-model="page.webpage"
 				doctype="Web Page"
-				:label="__('Web Page')"
+				:label="__('sidebar.webPage')"
 				:filters="{
 					published: 1,
 				}"
 			/>
-			<IconPicker v-model="page.icon" :label="__('Icon')" class="mt-4" />
+			<IconPicker v-model="page.icon" :label="__('sidebar.icon')" class="mt-4" />
 		</template>
 	</Dialog>
 </template>
@@ -77,7 +77,7 @@ const addWebPage = (close) => {
 			onSuccess() {
 				sidebar.value.reload()
 				close()
-				toast.success(__('Web page added to sidebar'))
+				toast.success(__('sidebar.webPageAdded'))
 			},
 			onError(err) {
 				toast.error(err.message[0] || err)

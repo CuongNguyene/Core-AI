@@ -30,13 +30,13 @@
 								<BookText class="size-4 stroke-1.5" />
 							</template>
 							<span>
-								{{ __('Continue Learning') }}
+								{{ __('courses.cardOverlay.continueLearning') }}
 							</span>
 						</Button>
 					</router-link>
 					<CertificationLinks :courseName="course.data.name" class="w-full" />
 					<div v-if="timeSpent.data?.seconds" class="text-sm text-ink-gray-6">
-						{{ __('Time spent on this course: {0}').format(formatTimeSpent(timeSpent.data.seconds)) }}
+						{{ __('courses.cardOverlay.timeSpent').format(formatTimeSpent(timeSpent.data.seconds)) }}
 					</div>
 				</div>
 				<!-- <router-link
@@ -63,7 +63,7 @@
 					theme="blue"
 					size="lg"
 				>
-					{{ __('Contact the Administrator to enroll for this course.') }}
+					{{ __('courses.cardOverlay.contactAdministrator') }}
 				</Badge>
 				<Button
 					v-else-if="!user.data?.is_moderator && !is_instructor()"
@@ -76,7 +76,7 @@
 						<BookText class="size-4 stroke-1.5" />
 					</template>
 					<span>
-						{{ __('Start Learning') }}
+						{{ __('courses.cardOverlay.startLearning') }}
 					</span>
 				</Button>
 				<Button
@@ -89,7 +89,7 @@
 					<template #prefix>
 						<GraduationCap class="size-4 stroke-1.5" />
 					</template>
-					{{ __('Get Certificate') }}
+						{{ __('courses.cardOverlay.getCertificate') }}
 				</Button>
 				<Button
 					v-if="user.data?.is_moderator || is_instructor()"
@@ -99,7 +99,7 @@
 				>
 					<template #prefix>
 						<TrendingUp class="size-4 stroke-1.5" />
-						{{ __('Progress Summary') }}
+						{{ __('courses.cardOverlay.progressSummary') }}
 					</template>
 				</Button>
 				<router-link
@@ -116,7 +116,7 @@
 							<Pencil class="size-4 stroke-1.5" />
 						</template>
 						<span>
-							{{ __('Edit') }}
+							{{ __('courses.cardOverlay.edit') }}
 						</span>
 					</Button>
 				</router-link>
@@ -126,19 +126,19 @@
 					class="font-medium text-ink-gray-9"
 					:class="{ 'mt-8': !readOnlyMode }"
 				>
-					{{ __('This course has:') }}
+					{{ __('courses.cardOverlay.thisCourseHas') }}
 				</div>
 				<div class="flex items-center text-ink-gray-9">
 					<BookOpen class="h-4 w-4 stroke-1.5" />
 					<span class="ml-2">
-						{{ course.data.lessons }} {{ __('Lessons') }}
+						{{ course.data.lessons }} {{ __('courses.cardOverlay.lessons') }}
 					</span>
 				</div>
 				<div class="flex items-center text-ink-gray-9">
 					<Users class="h-4 w-4 stroke-1.5" />
 					<span class="ml-2">
 						{{ formatAmount(course.data.enrollments) }}
-						{{ __('Enrolled Students') }}
+						{{ __('courses.cardOverlay.enrolledStudents') }}
 					</span>
 				</div>
 				<div
@@ -147,7 +147,7 @@
 				>
 					<Star class="size-4 stroke-1.5 fill-yellow-500 text-transparent" />
 					<span class="ml-2">
-						{{ course.data.rating }} {{ __('Rating') }}
+						{{ course.data.rating }} {{ __('courses.cardOverlay.rating') }}
 					</span>
 				</div>
 				<div
@@ -156,7 +156,7 @@
 				>
 					<GraduationCap class="h-4 w-4 stroke-2" />
 					<span class="ml-2">
-						{{ __('Certificate of Completion') }}
+						{{ __('courses.cardOverlay.certificateOfCompletion') }}
 					</span>
 				</div>
 				<!-- <div
@@ -165,7 +165,7 @@
 				>
 					<GraduationCap class="h-4 w-4 stroke-2" />
 					<span class="ml-2">
-						{{ __('Paid Certificate after Evaluation') }}
+						{{ __('courses.cardOverlay.paidCertificateAfterEvaluation') }}
 					</span>
 				</div> -->
 			</div>
@@ -227,13 +227,13 @@ const timeSpent = createResource({
 const formatTimeSpent = (seconds) => {
 	let hours = Math.floor(seconds / 3600)
 	let minutes = Math.floor((seconds % 3600) / 60)
-	if (hours) return __('{0}h {1}m').format(hours, minutes)
-	return __('{0}m').format(minutes)
+	if (hours) return __('courses.cardOverlay.timeFormatHours').format(hours, minutes)
+	return __('courses.cardOverlay.timeFormatMinutes').format(minutes)
 }
 
 function enrollStudent() {
 	if (!user.data) {
-		toast.success(__('You need to login first to enroll for this course'))
+			toast.success(__('courses.cardOverlay.needLoginFirst'))
 		setTimeout(() => {
 			window.location.href = `/login?redirect-to=${window.location.pathname}`
 		}, 500)
@@ -245,7 +245,7 @@ function enrollStudent() {
 				capture('enrolled_in_course', {
 					course: props.course.data.name,
 				})
-				toast.success(__('You have been enrolled in this course'))
+				toast.success(__('courses.cardOverlay.enrolledSuccess'))
 				setTimeout(() => {
 					router.push({
 						name: 'Lesson',

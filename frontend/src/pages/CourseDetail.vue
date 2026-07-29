@@ -17,7 +17,7 @@
 					<div class="flex items-center">
 						<Tooltip
 							v-if="parseInt(course.data.rating) > 0"
-							:text="__('Average Rating')"
+							:text="__('courses.detail.averageRating')"
 							class="flex items-center"
 						>
 							<Star class="size-4 text-transparent fill-yellow-500" />
@@ -30,7 +30,7 @@
 						>
 						<Tooltip
 							v-if="course.data.enrollment_count"
-							:text="__('Enrolled Students')"
+							:text="__('courses.detail.enrolledStudents')"
 							class="flex items-center"
 						>
 							<Users class="h-4 w-4 text-ink-gray-7" />
@@ -75,7 +75,7 @@
 					></div>
 					<div class="mt-10">
 						<CourseOutline
-							:title="__('Course Outline')"
+						:title="__('courses.detail.courseOutline')"
 							:courseName="course.data.name"
 							:showOutline="true"
 							:getProgress="course.data.membership ? true : false"
@@ -167,7 +167,7 @@ const isInstructor = () => {
 }
 
 const breadcrumbs = computed(() => {
-	let items = [{ label: 'Courses', route: { name: 'Courses' } }]
+	let items = [{ label: __('courses.list.courses'), route: { name: 'Courses' } }]
 	items.push({
 		label: course?.data?.title,
 		route: { name: 'CourseDetail', params: { courseName: course?.data?.name } },

@@ -12,17 +12,17 @@
 		>
 			{{ batch.seats_left }}
 			<span v-if="batch.seats_left > 1">
-				{{ __('Seats Left') }}
+				{{ __('batches.card.seatsLeft') }}
 			</span>
 			<span v-else-if="batch.seats_left == 1">
-				{{ __('Seat Left') }}
+				{{ __('batches.card.seatLeft') }}
 			</span>
 		</div>
 		<div
 			v-else-if="batch.seat_count && batch.seats_left <= 0"
 			class="text-xs bg-red-100 text-red-700 self-start px-2 py-0.5 rounded-md"
 		>
-			{{ __('Sold Out') }}
+			{{ __('batches.card.soldOut') }}
 		</div>
 		<div class="short-introduction text-sm text-ink-gray-7">
 			{{ batch.description }}

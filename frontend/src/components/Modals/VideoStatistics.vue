@@ -3,7 +3,7 @@
 		v-model="show"
 		:options="{
 			size: '4xl',
-			title: __('Video Statistics for {0}').format(lessonTitle),
+			title: __('videoStatistics.title').format(lessonTitle),
 		}"
 	>
 		<template #body-content>
@@ -17,7 +17,7 @@
 					/>
 					<!-- <FormControl
 						v-model="searchText"
-						:placeholder="__('Search by Member')"
+						:placeholder="__('videoStatistics.searchByMember')"
 						class="mt-2 mr-5 w-[25%]"
 					/> -->
 				</div>
@@ -28,10 +28,10 @@
 						>
 							<div class="grid grid-cols-[70%,30%] text-sm text-ink-gray-5">
 								<div class="px-4">
-									{{ __('Member') }}
+									{{ __('videoStatistics.member') }}
 								</div>
 								<div class="text-center">
-									{{ __('Watch Time') }}
+									{{ __('videoStatistics.watchTime') }}
 								</div>
 							</div>
 							<div
@@ -71,7 +71,7 @@
 							<NumberChart
 								class="border rounded-md"
 								:config="{
-									title: __('Average Watch Time'),
+									title: __('videoStatistics.averageWatchTime'),
 									value: averageWatchTime,
 								}"
 							/>
@@ -83,7 +83,7 @@
 					</div>
 				</div>
 				<div v-else class="text-sm text-ink-gray-5">
-					{{ __('No statistics available for this video.') }}
+					{{ __('videoStatistics.noStatistics') }}
 				</div>
 			</div>
 		</template>
@@ -218,7 +218,7 @@ const embedURL = computed(() => {
 
 const tabs = computed(() => {
 	return Object.keys(statisticsData.value).map((source, index) => ({
-		label: __(`Video ${index + 1}`),
+		label: __('videoStatistics.videoLabel').format(index + 1),
 		value: source,
 	}))
 })

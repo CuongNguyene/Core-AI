@@ -17,7 +17,7 @@
 					</div>
 					<div class="ml-4">
 						<Button @click="openFileSelector">
-							{{ __('Upload') }}
+							{{ __('controls.upload') }}
 						</Button>
 						<div class="mt-1 text-ink-gray-5 text-sm leading-5">
 							{{ __(description) }}
@@ -31,7 +31,7 @@
 				<img :src="modelValue" class="border rounded-md w-44 h-auto" />
 				<div class="ml-4">
 					<Button @click="removeImage()">
-						{{ __('Remove') }}
+						{{ __('controls.remove') }}
 					</Button>
 					<div
 						v-if="description"

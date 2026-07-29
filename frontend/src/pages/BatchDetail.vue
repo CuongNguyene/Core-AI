@@ -41,7 +41,7 @@
 			<div v-if="batch.data.courses.length">
 				<div class="flex items-center mt-10">
 					<div class="text-2xl font-semibold">
-						{{ __('Courses') }}
+						{{ __('batches.detail.courses') }}
 					</div>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
@@ -120,7 +120,7 @@ const courses = createResource({
 })
 
 const breadcrumbs = computed(() => {
-	let items = [{ label: 'Batches', route: { name: 'Batches' } }]
+	let items = [{ label: __('batches.detail.batches'), route: { name: 'Batches' } }]
 	items.push({
 		label: batch?.data?.title,
 		route: { name: 'BatchDetail', params: { batchName: batch?.data?.name } },

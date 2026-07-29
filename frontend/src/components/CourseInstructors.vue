@@ -19,7 +19,7 @@
 			>
 				{{ instructors[0].first_name }}
 			</router-link>
-			{{ __('and') }}
+			{{ __('courses.instructors.and') }}
 			<router-link
 				:to="{
 					name: 'Profile',
@@ -38,7 +38,7 @@
 			>
 				{{ instructors[0].first_name }}
 			</router-link>
-			{{ __('and') }} {{ instructors?.length - 1 }} {{ __('others') }}
+			{{ __('courses.instructors.and') }} {{ instructors?.length - 1 }} {{ __('courses.instructors.others') }}
 		</span>
 	</div>
 </template>

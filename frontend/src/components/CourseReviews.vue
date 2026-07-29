@@ -5,10 +5,10 @@
 			@click="openReviewModal()"
 			class="float-right"
 		>
-			{{ __('Write a Review') }}
+			{{ __('courses.reviews.writeAReview') }}
 		</Button>
 		<div class="flex items-center font-semibold text-2xl text-ink-gray-9">
-			{{ __('Student Reviews') }}
+			{{ __('courses.reviews.studentReviews') }}
 		</div>
 		<div class="grid gap-8 mt-10">
 			<div v-for="(review, index) in reviews.data">

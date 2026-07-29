@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Add an assessment'),
+			title: __('batches.assessments.addAssessmentTitle'),
 			size: 'sm',
 			actions: [
 				{
-					label: __('Submit'),
+					label: __('batches.assessments.submit'),
 					variant: 'solid',
 					onClick: (close) => addAssessment(close),
 				},
@@ -19,13 +19,13 @@
 					:modelValue="assessmentType"
 					@update:modelValue="(opt) => (assessmentType = opt.value)"
 					:options="assessmentTypes"
-					:label="__('Type')"
+					:label="__('batches.assessments.type')"
 					size="sm"
 				/>
 				<Link
 					v-model="assessment"
 					:doctype="assessmentType"
-					:label="__('Assessment')"
+					:label="__('batches.assessments.assessmentLabel')"
 					:onCreate="
 						(value, close) => {
 							close()
@@ -90,7 +90,7 @@ const addAssessment = (close) => {
 		{
 			onSuccess(data) {
 				assessments.value.reload()
-				toast.success(__('Assessment added successfully'))
+				toast.success(__('batches.assessments.addedSuccess'))
 				close()
 			},
 		}
@@ -99,9 +99,9 @@ const addAssessment = (close) => {
 
 const assessmentTypes = computed(() => {
 	return [
-		{ label: 'Quiz', value: 'LMS Quiz' },
-		{ label: 'Assignment', value: 'LMS Assignment' },
-		{ label: 'Programming Exercise', value: 'LMS Programming Exercise' },
+		{ label: __('batches.assessments.quiz'), value: 'LMS Quiz' },
+		{ label: __('batches.assessments.assignment'), value: 'LMS Assignment' },
+		{ label: __('batches.assessments.programmingExercise'), value: 'LMS Programming Exercise' },
 	]
 })
 </script>

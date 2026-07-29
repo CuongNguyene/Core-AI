@@ -8,7 +8,7 @@
 		<div class="space-y-2">
 			<div class="flex items-center justify-between">
 				<div class="text-xl font-bold text-ink-gray-9">
-					{{ __('Hey') }}, {{ user.data?.full_name }} 👋
+					{{ __('home.common.greeting') }}, {{ user.data?.full_name }} 👋
 				</div>
 				<div>
 					<TabButtons v-if="isAdmin" v-model="currentTab" :buttons="tabs" />
@@ -73,35 +73,39 @@ const streakInfo = createResource({
 const subtitle = computed(() => {
 	if (isAdmin.value) {
 		let liveClassSuffix =
-			adminLiveClasses.data?.length > 1 ? __('live classes') : __('live class')
+				adminLiveClasses.data?.length > 1
+					? __('home.common.liveClassesPlural')
+					: __('home.common.liveClassesSingular')
 		if (adminLiveClasses.data?.length > 0) {
-			return __('You have {0} upcoming {1}.').format(
+				return __('home.common.upcomingClassesMessage').format(
 				adminLiveClasses.data.length,
 				liveClassSuffix
 			)
 		}
-		return __('Manage your courses and batches at a glance')
+			return __('home.common.manageCoursesAndBatches')
 	} else {
 		let liveClassSuffix =
-			myLiveClasses.data?.length > 1 ? __('live classes') : __('live class')
+				myLiveClasses.data?.length > 1
+					? __('home.common.liveClassesPlural')
+					: __('home.common.liveClassesSingular')
 		if (myLiveClasses.data?.length > 0) {
-			return __('You have {0} upcoming {1}.').format(
+				return __('home.common.upcomingClassesMessage').format(
 				myLiveClasses.data.length,
 				liveClassSuffix
 			)
 		}
-		return __('Resume where you left off')
+			return __('home.common.resumeWhereYouLeftOff')
 	}
 })
 
 const tabs = [
-	{ label: __('Student'), value: 'student' },
-	{ label: __('Instructor'), value: 'instructor' },
+		{ label: __('home.common.student'), value: 'student' },
+		{ label: __('home.common.instructor'), value: 'instructor' },
 ]
 
 usePageMeta(() => {
 	return {
-		title: __('Home'),
+			title: __('home.common.title'),
 		icon: brand.favicon,
 	}
 })

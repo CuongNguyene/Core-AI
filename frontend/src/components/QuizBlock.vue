@@ -2,11 +2,11 @@
 	<Quiz v-if="user.data" :quizName="quiz"></Quiz>
 	<div v-else class="border rounded-md text-center py-20">
 		<div>
-			{{ __('Please login to access the quiz.') }}
+			{{ __('quiz.take.pleaseLoginToAccess') }}
 		</div>
 		<Button @click="redirectToLogin()" class="mt-2">
 			<span>
-				{{ __('Login') }}
+				{{ __('quiz.take.login') }}
 			</span>
 		</Button>
 	</div>

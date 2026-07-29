@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-7">
 		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
-			{{ __('Settings') }}
+			{{ __('profile.settings') }}
 		</h2>
 		<div
 			v-if="readOnlyMode"
@@ -9,7 +9,7 @@
 		>
 			<CircleAlert class="size-4 stroke-1.5" />
 			<span>
-				{{ __('You cannot change the roles in read-only mode.') }}
+				{{ __('profile.readOnlyRoles') }}
 			</span>
 		</div>
 		<div
@@ -17,19 +17,19 @@
 			class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between w-3/4 mt-5"
 		>
 			<FormControl
-				:label="__('Moderator')"
+				:label="__('profile.moderator')"
 				v-model="moderator"
 				type="checkbox"
 				@change.stop="changeRole('moderator')"
 			/>
 			<FormControl
-				:label="__('Course Creator')"
+				:label="__('profile.courseCreator')"
 				v-model="course_creator"
 				type="checkbox"
 				@change.stop="changeRole('course_creator')"
 			/>
 			<FormControl
-				:label="__('Student')"
+				:label="__('profile.student')"
 				v-model="lms_student"
 				type="checkbox"
 				@change.stop="changeRole('lms_student')"
@@ -106,7 +106,7 @@ const changeRole = (role) => {
 		},
 		{
 			onSuccess(data) {
-				toast.success(__('Role updated successfully'))
+				toast.success(__('profile.roleUpdatedSuccess'))
 			},
 		}
 	)

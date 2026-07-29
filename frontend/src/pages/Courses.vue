@@ -14,7 +14,7 @@
 				<template #prefix>
 					<Plus class="h-4 w-4 stroke-1.5" />
 				</template>
-				{{ __('Create') }}
+				{{ __('courses.list.create') }}
 			</Button>
 		</router-link>
 	</header>
@@ -23,7 +23,7 @@
 			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
 		>
 			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('All Courses') }}
+				{{ __('courses.list.allCourses') }}
 			</div>
 			<div
 				class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
@@ -33,7 +33,7 @@
 				<div class="grid grid-cols-2 gap-2">
 					<FormControl
 						v-model="title"
-						:placeholder="__('Search by Title')"
+						:placeholder="__('courses.list.searchByTitle')"
 						type="text"
 						class="w-full lg:min-w-0 lg:w-32 xl:w-40"
 						@input="updateCourses()"
@@ -42,7 +42,7 @@
 						<Link
 							doctype="LMS Category"
 							:value="currentCategory"
-							:placeholder="__('Category')"
+							:placeholder="__('courses.list.category')"
 							@change="(val) => { currentCategory = val; updateCourses() }"
 						/>
 					</div>
@@ -50,7 +50,7 @@
 
 				<FormControl
 					v-model="certification"
-					:label="__('Certification')"
+					:label="__('courses.list.certification')"
 					type="checkbox"
 					@change="updateCourses()"
 				/>
@@ -73,7 +73,7 @@
 			class="flex justify-center mt-5"
 		>
 			<Button @click="courses.next()">
-				{{ __('Load More') }}
+				{{ __('courses.list.loadMore') }}
 			</Button>
 		</div>
 	</div>
@@ -274,37 +274,40 @@ watch(currentTab, () => {
 const courseTabs = computed(() => {
 	let tabs = [
 		{
-			label: __('Live'),
+			label: __('courses.list.live'),
+			value: 'Live',
 		},
 		{
-			label: __('New'),
+			label: __('courses.list.new'),
+			value: 'New',
 		},
 		{
-			label: __('Upcoming'),
+			label: __('courses.list.upcoming'),
+			value: 'Upcoming',
 		},
 	]
 	if (
 		user.data?.is_moderator ||
 		user.data?.is_instructor
 	) {
-		tabs.push({ label: __('Created') })
-		tabs.push({ label: __('Unpublished') })
+		tabs.push({ label: __('courses.list.created'), value: 'Created' })
+		tabs.push({ label: __('courses.list.unpublished'), value: 'Unpublished' })
 	} else if (user.data) {
-		tabs.push({ label: __('Enrolled') })
+		tabs.push({ label: __('courses.list.enrolled'), value: 'Enrolled' })
 	}
 	return tabs
 })
 
 const breadcrumbs = computed(() => [
 	{
-		label: __('Courses'),
+		label: __('courses.list.courses'),
 		route: { name: 'Courses' },
 	},
 ])
 
 usePageMeta(() => {
 	return {
-		title: __('Courses'),
+		title: __('courses.list.courses'),
 		icon: brand.favicon,
 	}
 })

@@ -15,7 +15,7 @@
 				{{ __(title) }}
 			</div>
 			<Button size="sm" v-if="allowEdit" @click="openChapterModal()">
-				{{ __('Add Chapter') }}
+				{{ __('courses.outline.addChapter') }}
 			</Button>
 		</div>
 		<div
@@ -57,14 +57,14 @@
 									{{ chapter.title }}
 								</div>
 								<div class="flex ml-auto space-x-4">
-									<Tooltip :text="__('Edit Chapter')" placement="bottom">
+									<Tooltip :text="__('courses.outline.editChapter')" placement="bottom">
 										<FilePenLine
 											v-if="allowEdit"
 											@click.prevent="openChapterModal(chapter)"
 											class="h-4 w-4 text-ink-gray-9 invisible group-hover:visible"
 										/>
 									</Tooltip>
-									<Tooltip :text="__('Delete Chapter')" placement="bottom">
+									<Tooltip :text="__('courses.outline.deleteChapter')" placement="bottom">
 										<Trash2
 											v-if="allowEdit"
 											@click.prevent="trashChapter(chapter.name)"
@@ -140,7 +140,7 @@
 										}"
 									>
 										<Button>
-											{{ __('Add Lesson') }}
+											{{ __('courses.outline.addLesson') }}
 										</Button>
 									</router-link>
 								</div>
@@ -247,7 +247,7 @@ const deleteLesson = createResource({
 	},
 	onSuccess() {
 		outline.reload()
-		toast.success(__('Lesson deleted successfully'))
+			toast.success(__('courses.outline.lessonDeleted'))
 	},
 })
 
@@ -262,7 +262,7 @@ const updateLessonIndex = createResource({
 		}
 	},
 	onSuccess() {
-		toast.success(__('Lesson moved successfully'))
+			toast.success(__('courses.outline.lessonMoved'))
 	},
 })
 
@@ -276,19 +276,19 @@ const updateChapterIndex = createResource({
 		}
 	},
 	onSuccess() {
-		toast.success(__('Chapter moved successfully'))
+			toast.success(__('courses.outline.chapterMoved'))
 	},
 })
 
 const trashLesson = (lessonName, chapterName) => {
 	$dialog({
-		title: __('Delete this lesson?'),
+		title: __('courses.outline.deleteLessonTitle'),
 		message: __(
-			'Deleting this lesson will permanently remove it from the course. This action cannot be undone. Are you sure you want to continue?'
+			'courses.outline.deleteLessonMessage'
 		),
 		actions: [
 			{
-				label: __('Delete'),
+				label: __('courses.outline.delete'),
 				theme: 'red',
 				variant: 'solid',
 				onClick(close) {
@@ -342,19 +342,19 @@ const deleteChapter = createResource({
 	},
 	onSuccess() {
 		outline.reload()
-		toast.success(__('Chapter deleted successfully'))
+			toast.success(__('courses.outline.chapterDeleted'))
 	},
 })
 
 const trashChapter = (chapterName) => {
 	$dialog({
-		title: __('Delete this chapter?'),
+		title: __('courses.outline.deleteChapterTitle'),
 		message: __(
-			'Deleting this chapter will also delete all its lessons and permanently remove it from the course. This action cannot be undone. Are you sure you want to continue?'
+			'courses.outline.deleteChapterMessage'
 		),
 		actions: [
 			{
-				label: __('Delete'),
+				label: __('courses.outline.delete'),
 				theme: 'red',
 				variant: 'solid',
 				onClick(close) {
@@ -371,7 +371,7 @@ const redirectToChapter = (chapter) => {
 	event.preventDefault()
 	if (props.allowEdit) return
 	if (!user.data) {
-		toast.success(__('Please enroll for this course to view this lesson'))
+		toast.success(__('courses.outline.enrollToViewLesson'))
 		return
 	}
 

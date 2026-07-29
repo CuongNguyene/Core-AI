@@ -2,7 +2,7 @@
 	<div class="py-5 px-5 w-full lg:w-3/4 lg:px-0 mx-auto">
 		<div class="flex items-center justify-between mb-5">
 			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('All Programs') }}
+				{{ __('programs.studentPrograms.allPrograms') }}
 			</div>
 			<TabButtons v-model="currentTab" :buttons="tabs" class="w-fit" />
 		</div>
@@ -26,14 +26,14 @@
 								<BookOpen class="size-3 stroke-1.5" />
 								<span>
 									{{ program.course_count }}
-									{{ program.course_count == 1 ? __('course') : __('courses') }}
+									{{ program.course_count == 1 ? __('programs.studentPrograms.course') : __('programs.studentPrograms.courses') }}
 								</span>
 							</div>
 							<div class="flex items-center space-x-1">
 								<User class="size-4 stroke-1.5" />
 								<span>
 									{{ program.member_count || 0 }}
-									{{ program.member_count == 1 ? __('member') : __('members') }}
+									{{ program.member_count == 1 ? __('programs.list.member') : __('programs.list.members') }}
 								</span>
 							</div>
 						</div>
@@ -41,7 +41,7 @@
 						<div v-if="Object.keys(program).includes('progress')" class="mt-5">
 							<ProgressBar :progress="program.progress" />
 							<div class="text-sm mt-1">
-								{{ Math.ceil(program.progress) }}% {{ __('completed') }}
+								{{ Math.ceil(program.progress) }}% {{ __('programs.completed') }}
 							</div>
 						</div>
 					</div>
@@ -93,11 +93,11 @@ const openDetails = (programName: any, category: string) => {
 const tabs = computed(() => {
 	return [
 		{
-			label: __('Enrolled'),
+			label: __('programs.studentPrograms.enrolledTab'),
 			value: 'enrolled',
 		},
 		{
-			label: __('Published'),
+			label: __('programs.studentPrograms.publishedTab'),
 			value: 'published',
 		},
 	]

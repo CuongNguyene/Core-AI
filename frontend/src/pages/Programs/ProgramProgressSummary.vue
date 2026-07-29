@@ -2,7 +2,7 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Progress Summary for {0}').format(programName),
+			title: __('programs.progressSummary.title').format(programName),
 			size: '2xl',
 		}"
 	>
@@ -12,14 +12,14 @@
 					<NumberChart
 						class="border rounded-md w-full"
 						:config="{
-							title: __('Enrollments'),
+							title: __('programs.progressSummary.enrollments'),
 							value: programMembers.length || 0,
 						}"
 					/>
 					<NumberChart
 						class="border rounded-md w-full"
 						:config="{
-							title: __('Average Progress %'),
+							title: __('programs.progressSummary.averageProgress'),
 							value: averageProgress || 0,
 						}"
 					/>
@@ -27,7 +27,7 @@
 				<DonutChart
 					:config="{
 						data: progressDistribution || [],
-						title: __('Progress Distribution'),
+						title: __('programs.progressSummary.progressDistribution'),
 						categoryColumn: 'category',
 						valueColumn: 'count',
 						colors: [
@@ -43,7 +43,7 @@
 				<div class="mt-10">
 					<FormControl
 						v-model="searchFilter"
-						:placeholder="__('Search by Member')"
+						:placeholder="__('programs.progressSummary.searchByMember')"
 						class="mb-4"
 					/>
 					<ListView
@@ -57,7 +57,7 @@
 						}"
 					/>
 					<div v-else class="text-center text-gray-500">
-						{{ __('No members found.') }}
+						{{ __('programs.progressSummary.noMembers') }}
 					</div>
 				</div>
 			</div>
@@ -123,12 +123,12 @@ watch(searchFilter, () => {
 const progressColumns = computed(() => {
 	return [
 		{
-			label: __('Member'),
+			label: __('programs.progressSummary.member'),
 			key: 'full_name',
 			width: '50%',
 		},
 		{
-			label: __('Progress (%)'),
+			label: __('programs.progressSummary.progressPercent'),
 			key: 'progress',
 			align: 'right',
 		},

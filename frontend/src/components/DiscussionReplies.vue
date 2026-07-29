@@ -32,13 +32,13 @@
 						"
 						:options="[
 							{
-								label: __('Edit'),
+								label: __('batches.discussions.edit'),
 								onClick() {
 									reply.editable = true
 								},
 							},
 							{
-								label: __('Delete'),
+								label: __('batches.discussions.delete'),
 								onClick() {
 									deleteReply(reply)
 								},
@@ -51,10 +51,10 @@
 					</Dropdown>
 					<div v-if="reply.editable">
 						<Button variant="ghost" @click="postEdited(reply)">
-							{{ __('Post') }}
+							{{ __('batches.discussions.post') }}
 						</Button>
 						<Button variant="ghost" @click="reply.editable = false">
-							{{ __('Discard') }}
+							{{ __('batches.discussions.discard') }}
 						</Button>
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 			:content="newReply"
 			:mentions="mentionUsers"
 			@change="(val) => (newReply = val)"
-			placeholder="Type your reply here..."
+			:placeholder="__('batches.discussions.replyPlaceholder')"
 			:fixedMenu="true"
 			editorClass="ProseMirror prose prose-table:table-fixed prose-td:p-2 prose-th:p-2 prose-td:border prose-th:border prose-td:border-outline-gray-2 prose-th:border-outline-gray-2 prose-td:relative prose-th:relative prose-th:bg-surface-gray-2 prose-sm max-w-none border border-outline-gray-2 rounded-b-md min-h-[7rem] py-1 px-2"
 		/>
@@ -86,7 +86,7 @@
 			<span> </span>
 			<Button @click="postReply()">
 				<span>
-					{{ __('Post') }}
+					{{ __('batches.discussions.post') }}
 				</span>
 			</Button>
 		</div>
@@ -183,7 +183,7 @@ const postReply = () => {
 		{
 			validate() {
 				if (!newReply.value) {
-					return 'Reply cannot be empty'
+					return __('batches.discussions.replyRequired')
 				}
 			},
 			onSuccess() {
@@ -218,7 +218,7 @@ const postEdited = (reply) => {
 		{
 			validate() {
 				if (!reply.reply) {
-					return 'Reply cannot be empty'
+					return __('batches.discussions.replyRequired')
 				}
 			},
 			onSuccess() {

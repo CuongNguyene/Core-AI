@@ -59,7 +59,7 @@ onMounted(() => {
 const breadcrumbs = computed(() => {
 	let crumbs = [
 		{
-			label: 'Submissions',
+			label: __('assignments.submissions'),
 			route: { name: 'AssignmentSubmissionList' },
 		},
 		{

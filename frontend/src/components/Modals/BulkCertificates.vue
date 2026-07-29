@@ -2,11 +2,11 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Generate Certificates'),
+			title: __('batches.certificates.generateCertificates'),
 			size: 'lg',
 			actions: [
 				{
-					label: 'Create',
+					label: __('batches.certificates.create'),
 					variant: 'solid',
 					onClick: ({ close }) => {
 						generateCertificates(close)
@@ -20,37 +20,37 @@
 				<Autocomplete
 					:modelValue="details.evaluator"
 					@update:modelValue="(opt) => (details.evaluator = opt?.value)"
-					:label="__('Instructor')"
+					:label="__('batches.certificates.instructor')"
 					:options="getInstructors()"
 				/>
 				<FormControl
 					type="date"
 					v-model="details.issue_date"
-					:label="__('Issue Date')"
+					:label="__('batches.certificates.issueDate')"
 				/>
 				<FormControl
 					type="date"
 					v-model="details.expiry_date"
-					:label="__('Expiry Date')"
+					:label="__('batches.certificates.expiryDate')"
 				/>
 				<Autocomplete
 					:modelValue="details.course"
 					@update:modelValue="(opt) => (details.course = opt?.value)"
-					:label="__('Course')"
+					:label="__('batches.certificates.course')"
 					:options="getCourses()"
 				/>
 				<Autocomplete
 					:modelValue="details.template"
 					@update:modelValue="(opt) => (details.template = opt?.value)"
-					:label="__('Template')"
+					:label="__('batches.certificates.template')"
 					:options="templates.data || []"
 				/>
 				<Switch
 					size="sm"
-					:label="__('Published')"
+					:label="__('batches.certificates.published')"
 					:description="
 						__(
-							'Enabling this will publish the certificate on the certified participants page.'
+							'batches.certificates.publishedDescription'
 						)
 					"
 					v-model="details.published"
@@ -173,11 +173,11 @@ const generateCertificates = async (close) => {
 	close()
 
 	if (eligibleStudents.length) {
-		toast.success(__('Certificates generated successfully'))
+		toast.success(__('batches.certificates.generatedSuccess'))
 	}
 	if (alreadyCertified.size) {
 		toast.info(
-			__('{0} student(s) were already certified and were skipped').format(
+			__('batches.certificates.alreadyCertifiedSkipped').format(
 				alreadyCertified.size
 			)
 		)

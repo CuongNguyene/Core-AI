@@ -10,14 +10,14 @@
 		>
 			<div v-if="showTitle" class="text-lg font-semibold mb-5 text-ink-gray-9">
 				<div v-if="submissionName === 'new'">
-					{{ __('Submission by') }} {{ user.data?.full_name }}
+					{{ __('assignments.submissionBy') }} {{ user.data?.full_name }}
 				</div>
 				<div v-else>
-					{{ __('Submission by') }} {{ submissionResource.doc?.member_name }}
+					{{ __('assignments.submissionBy') }} {{ submissionResource.doc?.member_name }}
 				</div>
 			</div>
 			<div class="text-sm text-ink-gray-7 font-medium mb-2">
-				{{ __('Question') }}:
+				{{ __('assignments.questionLabel') }}:
 			</div>
 			<div
 				v-html="assignment.data.question"
@@ -29,11 +29,11 @@
 			<div class="p-5">
 				<div class="flex items-center justify-between mb-4">
 					<div class="font-semibold text-ink-gray-9">
-						{{ __('Submission') }}
+						{{ __('assignments.submission') }}
 					</div>
 					<div class="flex items-center space-x-2">
 						<Badge v-if="isDirty" theme="orange">
-							{{ __('Not Saved') }}
+							{{ __('assignments.notSaved') }}
 						</Badge>
 						<Badge
 							v-else-if="submissionResource.doc?.status"
@@ -43,7 +43,7 @@
 							{{ submissionResource.doc?.status }}
 						</Badge>
 						<Button variant="solid" @click="submitAssignment()">
-							{{ __('Save') }}
+							{{ __('assignments.save') }}
 						</Button>
 					</div>
 				</div>
@@ -55,17 +55,17 @@
 					"
 					class="bg-surface-blue-2 text-ink-blue-2 p-3 rounded-md leading-5 text-sm mb-4"
 				>
-					{{ __("You've successfully submitted the assignment.") }}
+					{{ __('assignments.submittedSuccessMessage') }}
 					{{
 						__(
-							"Once the moderator grades your submission, you'll find the details here."
+							'assignments.gradedMessage'
 						)
 					}}
-					{{ __('Feel free to make edits to your submission if needed.') }}
+					{{ __('assignments.editSubmissionMessage') }}
 				</div>
 				<div v-if="showUploader()">
 					<div class="text-xs text-ink-gray-5 mt-1 mb-2">
-						{{ __('Add your assignment as {0}').format(assignment.data.type) }}
+						{{ __('assignments.addAssignmentAs').format(assignment.data.type) }}
 					</div>
 					<FileUploader
 						v-if="!submissionFile"
@@ -80,8 +80,8 @@
 							<Button @click="openFileSelector" :loading="uploading">
 								{{
 									uploading
-										? __('Uploading {0}%').format(progress)
-										: __('Upload File')
+										? __('profile.coverImage.uploading').format(progress)
+										: __('assignments.uploadFile')
 								}}
 							</Button>
 						</template>
@@ -113,7 +113,7 @@
 				</div>
 				<div v-else-if="assignment.data.type == 'URL'">
 					<div class="text-xs text-ink-gray-5 mb-1">
-						{{ __('Enter a URL') }}
+						{{ __('assignments.enterUrl') }}
 					</div>
 					<FormControl
 						v-model="answer"
@@ -123,7 +123,7 @@
 				</div>
 				<div v-else>
 					<div class="text-sm mb-2 text-ink-gray-7">
-						{{ __('Write your answer here') }}
+						{{ __('assignments.writeAnswerHere') }}
 					</div>
 					<TextEditor
 						:content="answer"
@@ -145,7 +145,7 @@
 					class="mt-8 p-3 bg-surface-blue-2 rounded-md"
 				>
 					<div class="text-sm text-ink-gray-5 font-medium mb-2">
-						{{ __('Comments by Evaluator') }}:
+						{{ __('assignments.commentsByEvaluator') }}:
 					</div>
 					<div
 						class="leading-5 text-ink-gray-9"
@@ -156,18 +156,18 @@
 				<!-- Grading -->
 				<div v-if="canGradeSubmission" class="mt-8 space-y-4">
 					<div class="font-semibold mb-2 text-ink-gray-9">
-						{{ __('Grading') }}
+						{{ __('assignments.grading') }}
 					</div>
 					<FormControl
 						v-if="submissionResource.doc"
 						v-model="submissionResource.doc.status"
-						:label="__('Grade')"
+						:label="__('assignments.grade')"
 						type="select"
 						:options="submissionStatusOptions"
 					/>
 					<div>
 						<div class="text-sm text-ink-gray-5 mb-1">
-							{{ __('Comments') }}
+							{{ __('assignments.comments') }}
 						</div>
 						<TextEditor
 							:content="comments"
@@ -345,7 +345,7 @@ const submitAssignment = () => {
 			},
 			{
 				onSuccess(data) {
-					toast.success(__('Changes saved successfully'))
+					toast.success(__('assignments.changesSavedSuccess'))
 				},
 			}
 		)
@@ -359,7 +359,7 @@ const addNewSubmission = () => {
 		{},
 		{
 			onSuccess(data) {
-				toast.success(__('Assignment submitted successfully'))
+				toast.success(__('assignments.submittedSuccess'))
 				if (router.currentRoute.value.name == 'AssignmentSubmission') {
 					router.push({
 						name: 'AssignmentSubmission',
@@ -423,14 +423,14 @@ const validateFile = (file) => {
 	let type = assignment.data?.type
 	let extension = file.name.split('.').pop().toLowerCase()
 	if (type == 'Image' && !['jpg', 'jpeg', 'png'].includes(extension)) {
-		return 'Only image file is allowed.'
+		return __('assignments.onlyImageAllowed')
 	} else if (
 		type == 'Document' &&
 		!['doc', 'docx', 'xml'].includes(extension)
 	) {
-		return 'Only document file is allowed.'
+		return __('assignments.onlyDocumentAllowed')
 	} else if (type == 'PDF' && !['pdf'].includes(extension)) {
-		return 'Only PDF file is allowed.'
+		return __('assignments.onlyPdfFileAllowed')
 	}
 }
 
@@ -457,9 +457,9 @@ const canModifyAssignment = computed(() => {
 
 const submissionStatusOptions = computed(() => {
 	return [
-		{ label: 'Not Graded', value: 'Not Graded' },
-		{ label: 'Pass', value: 'Pass' },
-		{ label: 'Fail', value: 'Fail' },
+		{ label: __('assignments.notGraded'), value: 'Not Graded' },
+		{ label: __('assignments.pass'), value: 'Pass' },
+		{ label: __('assignments.fail'), value: 'Fail' },
 	]
 })
 

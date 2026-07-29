@@ -2,7 +2,7 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Add quiz to this video'),
+			title: __('quiz.addQuizToVideo'),
 			size: '2xl',
 		}"
 	>
@@ -10,7 +10,7 @@
 			<div class="text-base">
 				<div class="flex items-end gap-4">
 					<FormControl
-						:label="__('Time in Video')"
+						:label="__('quiz.timeInVideo')"
 						v-model="quiz.time"
 						type="text"
 						placeholder="2:15"
@@ -18,7 +18,7 @@
 					/>
 					<Link
 						v-model="quiz.quiz"
-						:label="__('Quiz')"
+						:label="__('quiz.quiz')"
 						doctype="LMS Quiz"
 						class="flex-1"
 					/>
@@ -26,13 +26,13 @@
 						<template #prefix>
 							<Plus class="w-4 h-4 stroke-1.5" />
 						</template>
-						{{ __('Add') }}
+						{{ __('quiz.add') }}
 					</Button>
 				</div>
 
 				<div class="mt-10 mb-5">
 					<div class="font-medium mb-4">
-						{{ __('Quizzes in this video') }}
+						{{ __('quiz.quizzesInVideo') }}
 					</div>
 					<ListView
 						v-if="allQuizzes.length"
@@ -90,7 +90,7 @@
 					</ListView>
 
 					<div v-else class="text-ink-gray-5 italic text-xs">
-						{{ __('No quizzes added yet.') }}
+						{{ __('quiz.noQuizzesAdded') }}
 					</div>
 				</div>
 			</div>
@@ -170,7 +170,7 @@ const getTimeInSeconds = () => {
 
 const isTimeValid = () => {
 	if (parseInt(quiz.time) > props.duration) {
-		toast.error(__('Time in video exceeds the total duration of the video.'))
+		toast.error(__('quiz.timeExceedsDuration'))
 		return false
 	}
 	return true
@@ -178,12 +178,12 @@ const isTimeValid = () => {
 
 const isFormComplete = () => {
 	if (!quiz.time) {
-		toast.error(__('Please enter a valid timestamp'))
+		toast.error(__('quiz.invalidTimestamp'))
 		return false
 	}
 
 	if (!quiz.quiz) {
-		toast.error(__('Please select a quiz'))
+		toast.error(__('quiz.selectQuiz'))
 		return false
 	}
 
@@ -213,11 +213,11 @@ const columns = computed(() => {
 	return [
 		{
 			key: 'quiz',
-			label: __('Quiz'),
+			label: __('quiz.quiz'),
 		},
 		{
 			key: 'time',
-			label: __('Time in Video (minutes)'),
+			label: __('quiz.timeInVideoMinutes'),
 			align: 'center',
 		},
 	]
