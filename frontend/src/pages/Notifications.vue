@@ -9,11 +9,14 @@
 				:loading="markAllAsRead.loading"
 				v-if="activeTab === 'Unread' && unReadNotifications.data?.length > 0"
 			>
-				{{ __('Mark all as read') }}
+				{{ __('notifications.markAllAsRead') }}
 			</Button>
 			<TabButtons
 				class="inline-block"
-				:buttons="[{ label: 'Unread', active: true }, { label: 'Read' }]"
+				:buttons="[
+					{ label: __('notifications.unread'), value: 'Unread', active: true },
+					{ label: __('notifications.read'), value: 'Read' },
+				]"
 				v-model="activeTab"
 			/>
 		</div>
@@ -36,7 +39,7 @@
 					@click="(e) => handleMarkAsRead(e, log.name)"
 					class="text-ink-gray-5 font-medium text-sm hover:text-ink-gray-7"
 				>
-					{{ __('View') }}
+					{{ __('notifications.view') }}
 				</Link>
 				<Button
 					variant="ghost"
@@ -50,7 +53,7 @@
 			</div>
 		</div>
 		<div v-else class="text-ink-gray-5">
-			{{ __('Nothing to see here.') }}
+			{{ __('notifications.nothingToSeeHere') }}
 		</div>
 	</div>
 </template>
@@ -144,7 +147,7 @@ onUnmounted(() => {
 const breadcrumbs = computed(() => {
 	let crumbs = [
 		{
-			label: 'Notifications',
+			label: __('notifications.title'),
 			route: {
 				name: 'Notifications',
 			},
@@ -155,7 +158,7 @@ const breadcrumbs = computed(() => {
 
 usePageMeta(() => {
 	return {
-		title: 'Notifications',
+		title: __('notifications.title'),
 		icon: brand.favicon,
 	}
 })

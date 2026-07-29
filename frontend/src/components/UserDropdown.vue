@@ -175,7 +175,7 @@ const userDropdownOptions = computed(() => {
 				// },
 				{
 					icon: Settings,
-					label: 'Settings',
+					label: __('sidebar.settings'),
 					onClick: () => {
 						settingsStore.isSettingsOpen = true
 					},
@@ -185,7 +185,7 @@ const userDropdownOptions = computed(() => {
 				},
 				{
 					icon: Languages,
-					label: 'Language',
+					label: __('sidebar.language'),
 					submenu: Object.keys(translations).map((code) => ({
 						icon: userResource.data?.language === code ? Check : undefined,
 						label: languageNames[code] || code,
@@ -197,16 +197,16 @@ const userDropdownOptions = computed(() => {
 				},
 				{
 					icon: FrappeCloudIcon,
-					label: 'Login to Frappe Cloud',
+					label: __('sidebar.loginToFrappeCloud'),
 					onClick: () => {
 						$dialog({
-							title: __('Login to Frappe Cloud?'),
+							title: __('sidebar.loginToFrappeCloudTitle'),
 							message: __(
-								'Are you sure you want to login to your Frappe Cloud dashboard?'
+								'sidebar.loginToFrappeCloudMessage'
 							),
 							actions: [
 								{
-									label: __('Confirm'),
+									label: __('sidebar.confirm'),
 									variant: 'solid',
 									onClick(close) {
 										loginToFrappeCloud()
@@ -225,7 +225,7 @@ const userDropdownOptions = computed(() => {
 				},
 				{
 					icon: LogOut,
-					label: 'Log out',
+					label: __('sidebar.logOut'),
 					onClick: () => {
 						logout.submit().then(() => {
 							isLoggedIn = false
@@ -237,7 +237,7 @@ const userDropdownOptions = computed(() => {
 				},
 				{
 					icon: LogIn,
-					label: 'Log in',
+					label: __('sidebar.logIn'),
 					onClick: () => {
 						window.location.href = '/login'
 					},

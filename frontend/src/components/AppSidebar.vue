@@ -353,7 +353,7 @@ const getFirstBatch = async () => {
 const steps = reactive([
 	{
 		name: 'create_first_course',
-		title: __('Create your first course'),
+		title: __('sidebar.onboarding.createFirstCourse'),
 		icon: markRaw(h(BookOpen, iconProps)),
 		completed: false,
 		onClick: () => {
@@ -365,7 +365,7 @@ const steps = reactive([
 	},
 	{
 		name: 'create_first_chapter',
-		title: __('Add your first chapter'),
+		title: __('sidebar.onboarding.addFirstChapter'),
 		icon: markRaw(h(FolderTree, iconProps)),
 		completed: false,
 		dependsOn: 'create_first_course',
@@ -381,7 +381,7 @@ const steps = reactive([
 	},
 	{
 		name: 'create_first_lesson',
-		title: __('Add your first lesson'),
+		title: __('sidebar.onboarding.addFirstLesson'),
 		icon: markRaw(h(FileText, iconProps)),
 		completed: false,
 		dependsOn: 'create_first_chapter',
@@ -400,7 +400,7 @@ const steps = reactive([
 	},
 	{
 		name: 'create_first_quiz',
-		title: __('Create your first quiz'),
+		title: __('sidebar.onboarding.createFirstQuiz'),
 		icon: markRaw(h(CircleHelp, iconProps)),
 		completed: false,
 		dependsOn: 'create_first_course',
@@ -411,7 +411,7 @@ const steps = reactive([
 	},
 	{
 		name: 'invite_students',
-		title: __('Invite your team and students'),
+		title: __('sidebar.onboarding.inviteTeamAndStudents'),
 		icon: markRaw(h(InviteIcon, iconProps)),
 		completed: false,
 		onClick: () => {
@@ -422,7 +422,7 @@ const steps = reactive([
 	},
 	{
 		name: 'create_first_batch',
-		title: __('Create your first batch'),
+		title: __('sidebar.onboarding.createFirstBatch'),
 		icon: markRaw(h(Users, iconProps)),
 		completed: false,
 		onClick: () => {
@@ -432,7 +432,7 @@ const steps = reactive([
 	},
 	{
 		name: 'add_batch_student',
-		title: __('Add students to your batch'),
+		title: __('sidebar.onboarding.addStudentsToBatch'),
 		icon: markRaw(h(UserPlus, iconProps)),
 		completed: false,
 		dependsOn: 'create_first_batch',
@@ -453,7 +453,7 @@ const steps = reactive([
 	},
 	{
 		name: 'add_batch_course',
-		title: __('Add courses to your batch'),
+		title: __('sidebar.onboarding.addCoursesToBatch'),
 		icon: markRaw(h(BookText, iconProps)),
 		completed: false,
 		dependsOn: 'create_first_batch',
@@ -477,68 +477,68 @@ const steps = reactive([
 
 const articles = ref([
 	{
-		title: __('Introduction'),
+		title: __('sidebar.help.introduction'),
 		opened: false,
 		subArticles: [
-			{ name: 'introduction', title: __('Introduction') },
-			{ name: 'setting-up', title: __('Setting up') },
+			{ name: 'introduction', title: __('sidebar.help.introduction') },
+			{ name: 'setting-up', title: __('sidebar.help.settingUp') },
 		],
 	},
 	{
-		title: __('Creating a course'),
+		title: __('sidebar.help.creatingACourse'),
 		opened: false,
 		subArticles: [
-			{ name: 'create-a-course', title: __('Create a course') },
-			{ name: 'add-a-chapter', title: __('Add a chapter') },
-			{ name: 'add-a-lesson', title: __('Add a lesson') },
+			{ name: 'create-a-course', title: __('sidebar.help.createACourse') },
+			{ name: 'add-a-chapter', title: __('sidebar.help.addAChapter') },
+			{ name: 'add-a-lesson', title: __('sidebar.help.addALesson') },
 		],
 	},
 	{
-		title: __('Creating a batch'),
+		title: __('sidebar.help.creatingABatch'),
 		opened: false,
 		subArticles: [
-			{ name: 'create-a-batch', title: __('Create a batch') },
-			{ name: 'create-a-live-class', title: __('Create a live class') },
+			{ name: 'create-a-batch', title: __('sidebar.help.createABatch') },
+			{ name: 'create-a-live-class', title: __('sidebar.help.createALiveClass') },
 		],
 	},
 	{
-		title: __('Learning Paths'),
+		title: __('sidebar.help.learningPaths'),
 		opened: false,
-		subArticles: [{ name: 'add-a-program', title: __('Add a program') }],
+		subArticles: [{ name: 'add-a-program', title: __('sidebar.help.addAProgram') }],
 	},
 	{
-		title: __('Assessments'),
+		title: __('sidebar.help.assessments'),
 		opened: false,
 		subArticles: [
-			{ name: 'quizzes', title: __('Quizzes') },
-			{ name: 'assignments', title: __('Assignments') },
+			{ name: 'quizzes', title: __('quiz.builder.quizzes') },
+			{ name: 'assignments', title: __('assignments.assignments') },
 		],
 	},
 	{
-		title: __('Certification'),
+		title: __('sidebar.help.certification'),
 		opened: false,
 		subArticles: [
-			{ name: 'issue-a-certificate', title: __('Issue a Certificate') },
+			{ name: 'issue-a-certificate', title: __('sidebar.help.issueACertificate') },
 			{
 				name: 'custom-certificate-templates',
-				title: __('Custom Certificate Templates'),
+				title: __('sidebar.help.customCertificateTemplates'),
 			},
 		],
 	},
 	{
-		title: __('Monetization'),
+		title: __('sidebar.help.monetization'),
 		opened: false,
 		subArticles: [
 			{
 				name: 'setting-up-payment-gateway',
-				title: __('Setting up payment gateway'),
+				title: __('sidebar.help.settingUpPaymentGateway'),
 			},
 		],
 	},
 	{
-		title: __('Settings'),
+		title: __('sidebar.settings'),
 		opened: false,
-		subArticles: [{ name: 'roles', title: __('Roles') }],
+		subArticles: [{ name: 'roles', title: __('sidebar.help.roles') }],
 	},
 ])
 
