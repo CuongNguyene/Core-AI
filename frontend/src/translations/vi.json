@@ -148,6 +148,8 @@
 			"upcoming": "Sắp diễn ra",
 			"featured": "Nổi bật",
 			"disableSelfEnrollment": "Tắt tự đăng ký",
+			"enforceSequentialProgress": "Bắt buộc học tuần tự",
+			"enforceSequentialProgressDescription": "Học viên phải hoàn thành từng bài học trước khi mở khoá bài tiếp theo",
 			"aboutCourse": "Giới thiệu khoá học",
 			"shortIntroduction": "Giới thiệu ngắn",
 			"shortIntroductionPlaceholder": "Một giới thiệu ngắn về khoá học",
@@ -197,6 +199,7 @@
 			"deleteChapter": "Xoá chương",
 			"addLesson": "Thêm bài học",
 			"lessonDeleted": "Xoá bài học thành công",
+			"lessonLocked": "Hoàn thành bài học trước để mở khoá bài này",
 			"lessonMoved": "Di chuyển bài học thành công",
 			"chapterMoved": "Di chuyển chương thành công",
 			"deleteLessonTitle": "Xoá bài học",
@@ -562,7 +565,7 @@
 		"settings": "Cài đặt",
 		"readOnlyRoles": "Bạn không thể thay đổi vai trò ở chế độ chỉ đọc.",
 		"moderator": "Quản trị viên",
-		"courseCreator": "Người tạo khoá học",
+		"instructor": "Giảng viên",
 		"student": "Học viên",
 		"roleUpdatedSuccess": "Cập nhật vai trò thành công",
 		"editProfile": {
@@ -853,7 +856,10 @@
 			"courses": "Khoá học",
 			"member": "thành viên",
 			"members": "thành viên",
-			"title": "Chương trình"
+			"title": "Chương trình",
+			"sequentialTooltip": "Các khoá học phải được hoàn thành theo thứ tự",
+			"unpublished": "Chưa xuất bản",
+			"sequential": "Tuần tự"
 		},
 		"studentPrograms": {
 			"allPrograms": "Tất cả chương trình",
@@ -999,6 +1005,7 @@
 		"clear": "Xoá lựa chọn",
 		"noResultsFound": "Không tìm thấy kết quả",
 		"search": "Tìm kiếm",
+		"searchToSelect": "Tìm kiếm để chọn...",
 		"save": "Lưu",
 		"upload": "Tải lên",
 		"remove": "Xoá",

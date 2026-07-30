@@ -115,3 +115,4 @@ lms.patches.v2_0.fix_scorm_lesson_reference_idx #02-09-2025
 lms.patches.v2_0.certified_members_to_certifications #05-10-2025
 lms.patches.v2_0.assign_lms_student_role_to_all_users #23-07-2026
 lms.patches.v2_0.tag_lms_email_templates #24-07-2026
+lms.patches.v2_0.merge_instructor_roles #30-07-2026

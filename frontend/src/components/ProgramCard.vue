@@ -25,14 +25,14 @@
 		</div>
 		<div class="flex flex-col flex-auto p-4 border-x-2 border-b-2 rounded-b-md">
 			<div class="flex items-center justify-between">
-				<Tooltip :text="__('Courses')">
+				<Tooltip :text="__('programs.list.courses')">
 					<span class="flex items-center">
 						<BookOpen class="h-4 w-4 stroke-1.5 mr-1" />
 						{{ program.course_count || 0 }}
 					</span>
 				</Tooltip>
 
-				<Tooltip :text="__('Members')">
+				<Tooltip :text="__('programs.form.members')">
 					<span class="flex items-center">
 						<Users class="h-4 w-4 stroke-1.5 mr-1" />
 						{{ program.member_count || 0 }}
@@ -41,7 +41,7 @@
 
 				<Tooltip
 					v-if="program.enforce_course_order"
-					:text="__('Courses must be completed in order')"
+					:text="__('programs.list.sequentialTooltip')"
 				>
 					<span class="flex items-center text-ink-gray-7">
 						<ListOrdered class="h-4 w-4 stroke-1.5" />
@@ -52,7 +52,7 @@
 			<div v-if="hasProgress" class="mt-4">
 				<ProgressBar :progress="program.progress" />
 				<div class="text-sm text-ink-gray-7 mt-1">
-					{{ Math.ceil(program.progress) }}% {{ __('completed') }}
+					{{ Math.ceil(program.progress) }}% {{ __('programs.completed') }}
 				</div>
 			</div>
 
@@ -61,13 +61,13 @@
 					v-if="'published' in program"
 					:theme="program.published ? 'green' : 'gray'"
 					variant="subtle"
-					:label="program.published ? __('Published') : __('Unpublished')"
+					:label="program.published ? __('programs.form.published') : __('programs.list.unpublished')"
 				/>
 				<Badge
 					v-if="program.enforce_course_order"
 					theme="blue"
 					variant="subtle"
-					:label="__('Sequential')"
+					:label="__('programs.list.sequential')"
 				/>
 			</div>
 		</div>

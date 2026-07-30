@@ -35,27 +35,7 @@
 				@click="openForm(program.name)"
 				class="cursor-pointer"
 			>
-<<<<<<< HEAD
 				<ProgramCard :program="program" />
-=======
-				<div class="text-lg font-semibold">
-					{{ program.name }}
-				</div>
-				<div class="flex items-center space-x-1">
-					<BookOpen class="h-4 w-4 stroke-1.5 mr-1" />
-					<span>
-						{{ program.course_count }}
-						{{ program.course_count == 1 ? __('programs.list.course') : __('programs.list.courses') }}
-					</span>
-				</div>
-				<div class="flex items-center space-x-1">
-					<User class="h-4 w-4 stroke-1.5 mr-1" />
-					<span>
-						{{ program.member_count || 0 }}
-						{{ program.member_count == 1 ? __('programs.list.member') : __('programs.list.members') }}
-					</span>
-				</div>
->>>>>>> 04ef8e1a4c4b88c63f0f47866309c780be6523f5
 			</div>
 		</div>
 		<EmptyState v-else-if="!programs.list?.loading" type="Programs" />
@@ -152,12 +132,8 @@ const isStudent = computed(() => {
 
 const breadcrumbs = computed(() => [
 	{
-<<<<<<< HEAD
 		label: __('Programs'),
 		route: { name: 'Programs' },
-=======
-		label: __('programs.list.title'),
->>>>>>> 04ef8e1a4c4b88c63f0f47866309c780be6523f5
 	},
 ])
 

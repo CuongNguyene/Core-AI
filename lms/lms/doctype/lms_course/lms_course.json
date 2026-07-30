@@ -32,6 +32,7 @@
   "upcoming",
   "featured",
   "disable_self_learning",
+  "enforce_sequential_progress",
   "section_break_18",
   "short_introduction",
   "column_break_viqw",
@@ -99,6 +100,13 @@
    "fieldname": "disable_self_learning",
    "fieldtype": "Check",
    "label": "Disable Self Learning"
+  },
+  {
+   "default": "0",
+   "description": "Students must complete each lesson before the next one unlocks.",
+   "fieldname": "enforce_sequential_progress",
+   "fieldtype": "Check",
+   "label": "Enforce Sequential Progress"
   },
   {
    "fieldname": "image",
@@ -340,11 +348,12 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Course Creator",
+   "role": "Moderator",
    "share": 1,
    "write": 1
   },
   {
+   "role": "Instructor",
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -352,7 +361,6 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Moderator",
    "share": 1,
    "write": 1
   }

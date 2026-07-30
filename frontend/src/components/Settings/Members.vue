@@ -223,9 +223,8 @@ watch(search, () => {
 const getRole = (role: string) => {
 	const map: Record<string, string> = {
 		'LMS Student': 'Student',
-		'Course Creator': 'Instructor',
+		Instructor: 'Instructor',
 		Moderator: 'Moderator',
-		'Batch Evaluator': 'Evaluator',
 	}
 	return map[role]
 }

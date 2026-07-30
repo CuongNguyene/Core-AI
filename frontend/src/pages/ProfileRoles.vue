@@ -23,10 +23,10 @@
 				@change.stop="changeRole('moderator')"
 			/>
 			<FormControl
-				:label="__('profile.courseCreator')"
-				v-model="course_creator"
+				:label="__('profile.instructor')"
+				v-model="instructor"
 				type="checkbox"
-				@change.stop="changeRole('course_creator')"
+				@change.stop="changeRole('instructor')"
 			/>
 			<FormControl
 				:label="__('profile.student')"
@@ -44,7 +44,7 @@ import { convertToTitleCase } from '@/utils'
 import { CircleAlert } from 'lucide-vue-next'
 
 const moderator = ref(false)
-const course_creator = ref(false)
+const instructor = ref(false)
 const lms_student = ref(false)
 const readOnlyMode = window.read_only_mode
 
@@ -65,7 +65,7 @@ const roles = createResource({
 	onSuccess(data) {
 		let roles = [
 			'moderator',
-			'course_creator',
+			'instructor',
 			'lms_student',
 		]
 		for (let role of roles) {

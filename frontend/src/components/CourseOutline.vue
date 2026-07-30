@@ -86,9 +86,10 @@
 									<template #item="{ element: lesson }">
 										<router-link
 											class="block outline-lesson pl-8 py-2 pr-4 text-ink-gray-9 focus:outline-none transition-colors"
-											:class="
-												isActiveLesson(lesson.number) ? 'bg-surface-gray-3 font-medium' : 'hover:bg-surface-gray-2'
-											"
+											:class="[
+												isActiveLesson(lesson.number) ? 'bg-surface-gray-3 font-medium' : 'hover:bg-surface-gray-2',
+												lesson.is_locked ? 'opacity-50 cursor-not-allowed' : '',
+											]"
 											:to="{
 												name: allowEdit ? 'LessonForm' : 'Lesson',
 												params: {
@@ -97,10 +98,22 @@
 													lessonNumber: lesson.number.split('.')[1],
 												},
 											}"
+											@click="
+												(e) => {
+													if (lesson.is_locked) {
+														e.preventDefault()
+														toast.error(__('courses.outline.lessonLocked'))
+													}
+												}
+											"
 										>
 											<div class="flex items-center text-sm leading-5 group">
+												<Lock
+													v-if="lesson.is_locked"
+													class="h-4 w-4 stroke-1 mr-2 shrink-0"
+												/>
 												<MonitorPlay
-													v-if="lesson.icon === 'icon-youtube'"
+													v-else-if="lesson.icon === 'icon-youtube'"
 													class="h-4 w-4 stroke-1 mr-2 shrink-0"
 												/>
 												<HelpCircle
@@ -170,6 +183,7 @@ import {
 	FileText,
 	FilePenLine,
 	HelpCircle,
+	Lock,
 	MonitorPlay,
 	Trash2,
 } from 'lucide-vue-next'

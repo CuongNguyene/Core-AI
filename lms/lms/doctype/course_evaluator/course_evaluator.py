@@ -19,8 +19,8 @@ class CourseEvaluator(Document):
 
 	def validate_evaluator_role(self):
 		roles = frappe.get_roles(self.evaluator)
-		if "Batch Evaluator" not in roles:
-			frappe.get_doc("User", self.evaluator).add_roles("Batch Evaluator")
+		if "Instructor" not in roles:
+			frappe.get_doc("User", self.evaluator).add_roles("Instructor")
 
 	def validate_unavailability(self):
 		if (

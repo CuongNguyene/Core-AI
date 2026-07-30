@@ -106,6 +106,26 @@
 					</Button>
 				</div>
 			</div>
+			<div v-else-if="lesson.data.locked" class="border-r">
+				<div class="shadow rounded-md w-3/4 mt-10 mx-auto text-center p-4">
+					<div class="flex items-center justify-center mt-4 space-x-2">
+						<LockKeyholeIcon class="size-4 stroke-2 text-ink-gray-5" />
+						<div class="text-lg font-semibold text-ink-gray-7">
+							{{ __('This lesson is locked') }}
+						</div>
+					</div>
+					<div class="mt-1 mb-4 text-ink-gray-7">
+						{{
+							__(
+								'Complete the previous lesson to unlock {0}.'
+							).format(lesson.data.title)
+						}}
+					</div>
+					<Button v-if="lesson.data.prev" @click="switchLesson('prev')">
+						{{ __('Go to Previous Lesson') }}
+					</Button>
+				</div>
+			</div>
 			<div
 				v-else
 				ref="lessonContainer"

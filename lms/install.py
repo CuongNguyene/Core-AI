@@ -21,27 +21,26 @@ def before_uninstall():
 
 
 def create_lms_roles():
-	create_course_creator_role()
+	create_instructor_role()
 	create_moderator_role()
-	create_evaluator_role()
 	create_lms_student_role()
 
 
 def delete_lms_roles():
-	roles = ["Course Creator", "Moderator"]
+	roles = ["Instructor", "Moderator"]
 	for role in roles:
 		if frappe.db.exists("Role", role):
 			frappe.db.delete("Role", role)
 
 
-def create_course_creator_role():
-	if frappe.db.exists("Role", "Course Creator"):
-		frappe.db.set_value("Role", "Course Creator", "desk_access", 0)
+def create_instructor_role():
+	if frappe.db.exists("Role", "Instructor"):
+		frappe.db.set_value("Role", "Instructor", "desk_access", 0)
 	else:
 		role = frappe.get_doc(
 			{
 				"doctype": "Role",
-				"role_name": "Course Creator",
+				"role_name": "Instructor",
 				"home_page": "",
 				"desk_access": 0,
 			}
@@ -57,21 +56,6 @@ def create_moderator_role():
 			{
 				"doctype": "Role",
 				"role_name": "Moderator",
-				"home_page": "",
-				"desk_access": 0,
-			}
-		)
-		role.save()
-
-
-def create_evaluator_role():
-	if frappe.db.exists("Role", "Batch Evaluator"):
-		frappe.db.set_value("Role", "Batch Evaluator", "desk_access", 0)
-	else:
-		role = frappe.new_doc("Role")
-		role.update(
-			{
-				"role_name": "Batch Evaluator",
 				"home_page": "",
 				"desk_access": 0,
 			}
@@ -176,7 +160,7 @@ def create_batch_source():
 
 
 def give_lms_roles_to_admin():
-	roles = ["Course Creator", "Moderator", "Batch Evaluator"]
+	roles = ["Instructor", "Moderator"]
 	for role in roles:
 		if not frappe.db.exists("Has Role", {"parent": "Administrator", "role": role}):
 			doc = frappe.new_doc("Has Role")

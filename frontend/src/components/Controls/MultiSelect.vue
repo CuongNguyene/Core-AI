@@ -8,27 +8,52 @@
 			<Combobox v-model="selectedValue" nullable>
 				<Popover class="w-full" v-model:show="showOptions" match-target-width>
 					<template #target="{ togglePopover }">
-						<ComboboxInput
-							ref="search"
-							class="search-input form-input w-full focus-visible:!ring-0"
-							type="text"
-							:value="query"
-							@change="
-								(e) => {
-									query = e.target.value
-									showOptions = true
-								}
-							"
-							autocomplete="off"
-							@focus="() => togglePopover()"
-							@keydown.delete.capture.stop="removeLastValue"
-						/>
+						<button
+							type="button"
+							class="flex h-7 w-full items-center justify-between gap-2 rounded bg-surface-gray-2 px-2 py-1 transition-colors hover:bg-surface-gray-3 border border-transparent focus:border-outline-gray-4 focus:outline-none focus:ring-2 focus:ring-outline-gray-3"
+							:class="{ 'bg-surface-gray-3': showOptions }"
+							@click="() => togglePopover()"
+						>
+							<span
+								class="truncate text-base leading-5"
+								:class="values?.length ? 'text-ink-gray-8' : 'text-ink-gray-4'"
+							>
+								{{
+									values?.length
+										? __('{0} selected').format(values.length)
+										: placeholder
+								}}
+							</span>
+							<ChevronDown class="size-4 text-ink-gray-5 flex-shrink-0" />
+						</button>
 					</template>
 					<template #body="{ isOpen, close }">
 						<div v-show="isOpen" class="w-full">
 							<div
 								class="mt-1 rounded-lg bg-surface-white py-1 text-base border-2 w-full"
 							>
+								<div class="sticky top-0 z-10 px-1.5 pt-1.5 pb-1 bg-surface-white">
+									<div class="relative w-full">
+										<Search
+											class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-ink-gray-5"
+										/>
+										<ComboboxInput
+											ref="search"
+											class="search-input form-input w-full !pl-8 focus-visible:!ring-0"
+											type="text"
+											:value="query"
+											:placeholder="__('controls.search')"
+											@change="
+												(e) => {
+													query = e.target.value
+													showOptions = true
+												}
+											"
+											autocomplete="off"
+											@keydown.delete.capture.stop="removeLastValue"
+										/>
+									</div>
+								</div>
 								<ComboboxOptions
 									class="my-1 min-h-[4rem] max-h-[12rem] overflow-y-auto px-1.5"
 									static
@@ -41,7 +66,7 @@
 									>
 										<li
 											:class="[
-												'flex cursor-pointer items-center rounded px-2 py-1 text-base',
+												'flex cursor-pointer items-center justify-between rounded px-2 py-1 text-base',
 												{ 'bg-surface-gray-2': active },
 											]"
 										>
@@ -53,6 +78,10 @@
 													{{ option.label ? option.description : option.value }}
 												</div>
 											</div>
+											<Check
+												v-if="values?.includes(option.value)"
+												class="size-4 stroke-1.5 text-ink-gray-6 flex-shrink-0 mr-2"
+											/>
 										</li>
 									</ComboboxOption>
 									<div
@@ -112,7 +141,7 @@ import {
 import { createResource, Popover, Button, call } from 'frappe-ui'
 import { ref, computed, nextTick, useAttrs, watch } from 'vue'
 import { watchDebounced } from '@vueuse/core'
-import { X, Plus } from 'lucide-vue-next'
+import { X, Plus, Search, Check, ChevronDown } from 'lucide-vue-next'
 
 const props = defineProps({
 	label: {
@@ -141,6 +170,10 @@ const props = defineProps({
 	required: {
 		type: Boolean,
 	},
+	placeholder: {
+		type: String,
+		default: () => __('controls.searchToSelect'),
+	},
 })
 
 const values = defineModel()
@@ -161,16 +194,20 @@ const selectedValue = computed({
 	get: () => query.value || '',
 	set: (val) => {
 		query.value = ''
-		if (val) {
-			showOptions.value = false
-		}
 		if (val?.value) {
 			if (val.description || val.label) {
 				labelMap.value[val.value] = val.label || val.description
 			}
 			addValue(val.value)
 		}
+		nextTick(() => search.value?.$el.focus())
 	},
+})
+
+watch(showOptions, (isOpen) => {
+	if (isOpen) {
+		nextTick(() => search.value?.$el.focus())
+	}
 })
 
 watchDebounced(
