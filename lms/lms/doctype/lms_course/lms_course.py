@@ -9,7 +9,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import cint, today
 
-from lms.lms.utils import get_chapters
+from lms.lms.utils import ensure_instructor_role, get_chapters
 
 from ...utils import update_payment_record, validate_image
 
@@ -41,6 +41,8 @@ class LMSCourse(Document):
 					"parenttype": "LMS Course",
 				}
 			).save(ignore_permissions=True)
+
+		ensure_instructor_role([row.instructor for row in self.instructors])
 
 	def validate_video_link(self):
 		if self.video_link and "/" in self.video_link:

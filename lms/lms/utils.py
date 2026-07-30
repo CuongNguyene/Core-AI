@@ -209,6 +209,24 @@ def get_tags(course):
 	return tags.split(",") if tags else []
 
 
+def ensure_instructor_role(users):
+	"""Grant the Instructor role to any of the given users who don't already have it."""
+	for user in users:
+		if not user or not frappe.db.exists("User", user):
+			continue
+		if frappe.db.exists("Has Role", {"parent": user, "role": "Instructor"}):
+			continue
+		frappe.get_doc(
+			{
+				"doctype": "Has Role",
+				"parent": user,
+				"parenttype": "User",
+				"parentfield": "roles",
+				"role": "Instructor",
+			}
+		).insert(ignore_permissions=True)
+
+
 def get_instructors(doctype, docname):
 	instructor_details = []
 	instructors = frappe.get_all(
@@ -473,7 +491,7 @@ def first_lesson_exists(course):
 def has_course_instructor_role(member=None):
 	return frappe.db.get_value(
 		"Has Role",
-		{"parent": member or frappe.session.user, "role": "Course Creator"},
+		{"parent": member or frappe.session.user, "role": "Instructor"},
 		"name",
 	)
 
@@ -509,14 +527,6 @@ def has_course_moderator_role(member=None):
 	return frappe.db.get_value(
 		"Has Role",
 		{"parent": member or frappe.session.user, "role": "Moderator"},
-		"name",
-	)
-
-
-def has_course_evaluator_role(member=None):
-	return frappe.db.get_value(
-		"Has Role",
-		{"parent": member or frappe.session.user, "role": "Batch Evaluator"},
 		"name",
 	)
 
@@ -1253,7 +1263,54 @@ def get_course_outline(course, progress=False):
 			)
 
 		outline.append(chapter_details)
+
+	if progress:
+		apply_sequential_lock(course, outline)
+
 	return outline
+
+
+def apply_sequential_lock(course, outline):
+	"""Marks each lesson.is_locked when the course requires lessons to be
+	completed in order. Moderators/instructors always see everything unlocked."""
+	if not frappe.db.get_value("LMS Course", course, "enforce_sequential_progress"):
+		return
+	if has_course_moderator_role() or is_instructor(course):
+		return
+
+	previous_complete = True
+	for chapter in outline:
+		for lesson in chapter.lessons:
+			lesson.is_locked = not previous_complete
+			previous_complete = bool(lesson.get("is_complete"))
+
+
+def is_lesson_locked(course, chapter, lesson):
+	"""Direct-URL equivalent of apply_sequential_lock: blocks fetching a
+	lesson's content if the immediately preceding lesson isn't complete yet,
+	so the lock can't be bypassed by typing/pasting the lesson URL.
+	Returns the "chapter.lesson" number of the previous lesson when locked,
+	so the frontend can link straight back to it, or False otherwise."""
+	if not frappe.db.get_value("LMS Course", course, "enforce_sequential_progress"):
+		return False
+	if has_course_moderator_role() or is_instructor(course):
+		return False
+
+	prev = get_neighbour_lesson(course, chapter, lesson)["prev"]
+	if not prev:
+		return False
+
+	prev_chapter_idx, prev_lesson_idx = prev.split(".")
+	prev_chapter_name = frappe.db.get_value(
+		"Chapter Reference", {"parent": course, "idx": prev_chapter_idx}, "chapter"
+	)
+	prev_lesson_name = frappe.db.get_value(
+		"Lesson Reference", {"parent": prev_chapter_name, "idx": prev_lesson_idx}, "lesson"
+	)
+	if not prev_lesson_name:
+		return False
+
+	return prev if not get_progress(course, prev_lesson_name) else False
 
 
 @frappe.whitelist(allow_guest=False)
@@ -1283,6 +1340,15 @@ def get_lesson(course, chapter, lesson):
 		["title", "paid_certificate", "disable_self_learning"],
 		as_dict=1,
 	)
+
+	locked_prev = is_lesson_locked(course, chapter, lesson)
+	if locked_prev:
+		return {
+			"locked": 1,
+			"title": lesson_details.title,
+			"course_title": course_info.title,
+			"prev": locked_prev,
+		}
 
 	if (
 		not lesson_details.include_in_preview
@@ -1418,10 +1484,20 @@ def get_neighbour_lesson(course, chapter, lesson):
 @frappe.whitelist(allow_guest=False)
 def get_batch_details(batch):
 	batch_students = frappe.get_all("LMS Batch Enrollment", {"batch": batch}, pluck="member")
-	if (
-		not frappe.db.get_value("LMS Batch", batch, "published")
-		and has_student_role()
-		and frappe.session.user not in batch_students
+	published, allow_self_enrollment = frappe.db.get_value(
+		"LMS Batch", batch, ["published", "allow_self_enrollment"]
+	)
+	user = frappe.session.user
+	is_member = user in batch_students
+	is_batch_instructor = user in [
+		instructor.instructor for instructor in frappe.get_all("Course Instructor", {"parent": batch, "parenttype": "LMS Batch"}, "instructor")
+	]
+
+	if not (
+		(published and allow_self_enrollment)
+		or is_member
+		or is_batch_instructor
+		or has_course_moderator_role()
 	):
 		return
 
@@ -1949,8 +2025,7 @@ def get_roles(name):
 	frappe.only_for("Moderator")
 	return {
 		"moderator": has_course_moderator_role(name),
-		"course_creator": has_course_instructor_role(name),
-		"batch_evaluator": has_course_evaluator_role(name),
+		"instructor": has_course_instructor_role(name),
 		"lms_student": has_student_role(name),
 	}
 
@@ -2175,6 +2250,7 @@ def get_batches(filters=None, start=0, order_by="start_date"):
 			"timezone",
 			"published",
 			"category",
+			"allow_self_enrollment",
 		],
 		order_by=order_by,
 		start=start,

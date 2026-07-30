@@ -31,10 +31,10 @@
 						/>
 						<MultiSelect
 							v-model="instructors"
-							doctype="Course Evaluator"
+							doctype="User"
 							:label="__('batches.form.instructors')"
 							:required="true"
-							:onCreate="(close) => openSettings('Evaluators', close)"
+							:onCreate="(close) => openSettings('Members', close)"
 							:filters="{ ignore_user_type: 1 }"
 						/>
 					</div>

@@ -24,6 +24,12 @@
 		>
 			{{ __('batches.card.soldOut') }}
 		</div>
+		<div
+			v-if="!batch.allow_self_enrollment"
+			class="text-xs bg-gray-100 text-ink-gray-7 self-start px-2 py-0.5 rounded-md mb-2"
+		>
+			{{ __('batches.card.private') }}
+		</div>
 		<div class="short-introduction text-sm text-ink-gray-7">
 			{{ batch.description }}
 		</div>

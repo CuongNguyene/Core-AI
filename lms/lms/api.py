@@ -28,6 +28,7 @@ from frappe.utils import (
 	now,
 	now_datetime,
 	nowdate,
+	time_diff_in_seconds,
 )
 from frappe.utils.response import Response
 
@@ -37,6 +38,7 @@ from lms.lms.utils import (
 	get_lesson_count,
 	has_course_moderator_role,
 	is_instructor,
+	lesson_view_start_cache_key,
 )
 
 
@@ -156,9 +158,9 @@ def get_user_info():
 		as_dict=1,
 	)
 	user["roles"] = frappe.get_roles(user.name)
-	user.is_instructor = "Course Creator" in user.roles
+	user.is_instructor = "Instructor" in user.roles
 	user.is_moderator = "Moderator" in user.roles
-	user.is_evaluator = "Batch Evaluator" in user.roles
+	user.is_evaluator = "Instructor" in user.roles
 	user.is_student = not user.is_instructor and not user.is_moderator and not user.is_evaluator
 	#user.is_fc_site = is_fc_site()
 	user.is_system_manager = "System Manager" in user.roles
@@ -539,7 +541,7 @@ def get_unsplash_photos(keyword=None):
 
 @frappe.whitelist()
 def get_evaluator_details(evaluator):
-	frappe.only_for("Batch Evaluator")
+	frappe.only_for("Instructor")
 
 	if not frappe.db.exists("Google Calendar", {"user": evaluator}):
 		calendar = frappe.new_doc("Google Calendar")
@@ -659,7 +661,7 @@ def get_assigned_badges(member):
 
 @frappe.whitelist()
 def get_all_users():
-	frappe.only_for(["Moderator", "Course Creator", "Batch Evaluator"])
+	frappe.only_for(["Moderator", "Instructor"])
 	users = frappe.get_all(
 		"User",
 		{
@@ -889,10 +891,8 @@ def get_members(start=0, search=""):
 		)
 		if "Moderator" in roles:
 			member.role = "Moderator"
-		elif "Course Creator" in roles:
-			member.role = "Course Creator"
-		elif "Batch Evaluator" in roles:
-			member.role = "Batch Evaluator"
+		elif "Instructor" in roles:
+			member.role = "Instructor"
 		elif "LMS Student" in roles:
 			member.role = "LMS Student"
 
@@ -905,7 +905,7 @@ def check_app_permission():
 		return True
 
 	roles = frappe.get_roles()
-	lms_roles = ["Moderator", "Course Creator", "Batch Evaluator", "LMS Student"]
+	lms_roles = ["Moderator", "Instructor", "LMS Student"]
 	if any(role in roles for role in lms_roles):
 		return True
 
@@ -1190,7 +1190,7 @@ def delete_batch_discussions(batch):
 
 def give_discussions_permission():
 	doctypes = ["Discussion Topic", "Discussion Reply"]
-	roles = ["LMS Student", "Course Creator", "Moderator", "Batch Evaluator"]
+	roles = ["LMS Student", "Instructor", "Moderator"]
 	for doctype in doctypes:
 		for role in roles:
 			if not frappe.db.exists("Custom DocPerm", {"parent": doctype, "role": role}):
@@ -1594,7 +1594,7 @@ def add_an_evaluator(email):
 			}
 		)
 		user.insert()
-		user.add_roles("Batch Evaluator")
+		user.add_roles("Instructor")
 
 	evaluator = frappe.new_doc("Course Evaluator")
 	evaluator.evaluator = email
@@ -1609,7 +1609,6 @@ def delete_evaluator(evaluator):
 	if not frappe.db.exists("Course Evaluator", evaluator):
 		frappe.throw(_("Evaluator does not exist."))
 
-	frappe.db.delete("Has Role", {"parent": evaluator, "role": "Batch Evaluator"})
 	frappe.db.delete("Course Evaluator", evaluator)
 
 
@@ -1755,13 +1754,35 @@ def update_test_cases(test_cases, submission):
 		test_case.insert()
 
 
+#: Grace window (seconds) added on top of real elapsed time when capping a
+#: reported watch_time, to absorb network latency / batched timeupdate ticks
+#: without being generous enough to let a single forged API call fake a
+#: full watch.
+WATCH_TIME_GRACE_SECONDS = 15
+
+
 @frappe.whitelist()
 def track_video_watch_duration(lesson, videos):
 	"""
 	Track the watch duration of videos in a lesson.
+
+	watch_time is reported by the client and cannot be trusted at face value
+	(a single API call could otherwise claim any watch_time/duration with zero
+	real playback). It's capped to the real wall-clock time elapsed since the
+	viewer opened this lesson (see mark_lesson_view_started, same cache key
+	used for reading-time enforcement) since a normal single-speed player can
+	never advance more seconds of "watched" position than real seconds have
+	actually passed since the page was opened. Anchoring on lesson-view-start
+	rather than the watch record's own creation time means a legitimate long
+	first watch (e.g. no pause until the video ends) isn't wrongly capped
+	just because it's the first report for that video.
 	"""
 	if not isinstance(videos, list):
 		videos = json.loads(videos)
+
+	started_at = frappe.cache().get_value(lesson_view_start_cache_key(lesson), expires=True)
+	elapsed_since_view = time_diff_in_seconds(now_datetime(), started_at) if started_at else 0
+	watch_time_cap = elapsed_since_view + WATCH_TIME_GRACE_SECONDS
 
 	for video in videos:
 		filters = {
@@ -1772,20 +1793,23 @@ def track_video_watch_duration(lesson, videos):
 		existing_record = frappe.db.get_value(
 			"LMS Video Watch Duration", filters, ["name", "watch_time"], as_dict=True
 		)
-		if existing_record and flt(existing_record.watch_time) < flt(video.get("watch_time")):
-			updates = {"watch_time": video.get("watch_time")}
-			if video.get("duration"):
-				updates["duration"] = video.get("duration")
-			frappe.db.set_value("LMS Video Watch Duration", filters, updates)
-		elif not existing_record:
-			track_new_watch_time(lesson, video)
+		capped_watch_time = min(flt(video.get("watch_time")), watch_time_cap)
+
+		if existing_record:
+			if capped_watch_time > flt(existing_record.watch_time):
+				updates = {"watch_time": capped_watch_time}
+				if video.get("duration"):
+					updates["duration"] = video.get("duration")
+				frappe.db.set_value("LMS Video Watch Duration", filters, updates)
+		else:
+			track_new_watch_time(lesson, video, capped_watch_time)
 
 
-def track_new_watch_time(lesson, video):
+def track_new_watch_time(lesson, video, watch_time):
 	doc = frappe.new_doc("LMS Video Watch Duration")
 	doc.lesson = lesson
 	doc.source = video.get("source")
-	doc.watch_time = video.get("watch_time")
+	doc.watch_time = watch_time
 	if video.get("duration"):
 		doc.duration = video.get("duration")
 	doc.member = frappe.session.user
@@ -1917,7 +1941,7 @@ def record_study_time(course, seconds):
 def can_view_other_members_time(course=None, batch=None):
 	user = frappe.session.user
 	roles = frappe.get_roles(user)
-	if "System Manager" in roles or "Course Creator" in roles or has_course_moderator_role():
+	if "System Manager" in roles or has_course_moderator_role():
 		return True
 	if course and is_instructor(course):
 		return True

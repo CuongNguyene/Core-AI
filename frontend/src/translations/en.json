@@ -148,6 +148,8 @@
 			"upcoming": "Upcoming",
 			"featured": "Featured",
 			"disableSelfEnrollment": "Disable self enrollment",
+			"enforceSequentialProgress": "Enforce sequential progress",
+			"enforceSequentialProgressDescription": "Students must complete each lesson before the next one unlocks",
 			"aboutCourse": "About the Course",
 			"shortIntroduction": "Short Introduction",
 			"shortIntroductionPlaceholder": "A short introduction about the course",
@@ -197,6 +199,7 @@
 			"deleteChapter": "Delete Chapter",
 			"addLesson": "Add Lesson",
 			"lessonDeleted": "Lesson deleted successfully",
+			"lessonLocked": "Complete the previous lesson to unlock this one",
 			"lessonMoved": "Lesson moved successfully",
 			"chapterMoved": "Chapter moved successfully",
 			"deleteLessonTitle": "Delete Lesson",
@@ -562,7 +565,7 @@
 		"settings": "Settings",
 		"readOnlyRoles": "You cannot change the roles in read-only mode.",
 		"moderator": "Moderator",
-		"courseCreator": "Course Creator",
+		"instructor": "Instructor",
 		"student": "Student",
 		"roleUpdatedSuccess": "Role updated successfully",
 		"editProfile": {
@@ -853,7 +856,10 @@
 			"courses": "Courses",
 			"member": "member",
 			"members": "members",
-			"title": "Programs"
+			"title": "Programs",
+			"sequentialTooltip": "Courses must be completed in order",
+			"unpublished": "Unpublished",
+			"sequential": "Sequential"
 		},
 		"studentPrograms": {
 			"allPrograms": "All Programs",
@@ -999,6 +1005,7 @@
 		"clear": "Clear",
 		"noResultsFound": "No results found",
 		"search": "Search",
+		"searchToSelect": "Search to select...",
 		"save": "Save",
 		"upload": "Upload",
 		"remove": "Remove",
