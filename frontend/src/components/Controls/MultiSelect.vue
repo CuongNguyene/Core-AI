@@ -20,7 +20,7 @@
 							>
 								{{
 									values?.length
-										? __('{0} selected').format(values.length)
+										? __('controls.nSelected').format(values.length)
 										: placeholder
 								}}
 							</span>

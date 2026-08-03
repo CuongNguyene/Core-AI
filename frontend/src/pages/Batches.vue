@@ -110,7 +110,7 @@ const title = ref('')
 const certification = ref(false)
 const filters = ref({})
 const is_student = computed(() => user.data?.is_student)
-const currentTab = ref(is_student.value ? 'All' : 'Upcoming')
+const currentTab = ref('All')
 const orderBy = ref('start_date')
 const readOnlyMode = window.read_only_mode
 
