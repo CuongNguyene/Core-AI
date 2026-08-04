@@ -12,8 +12,8 @@
 			</Button>
 		</router-link>
 	</header>
-	<div class="mx-auto w-full max-w-4xl pt-6 pb-10">
-		<div class="flex flex-col md:flex-row justify-between mb-4 px-3">
+	<div class="py-5 mx-5">
+		<div class="flex flex-col md:flex-row justify-between mb-4">
 			<div class="text-xl font-semibold text-ink-gray-7 mb-4 md:mb-0">
 				{{ memberCount }} {{ __('certification.certifiedMembers') }}
 			</div>
@@ -81,7 +81,7 @@
 								</div>
 								<span class="text-ink-gray-4 md:hidden">·</span>
 								<div class="text-ink-gray-5">
-									{{ dayjs(participant.issue_date).format('DD MMM YYYY') }}
+									{{ dayjs(participant.issue_date).format('L') }}
 								</div>
 							</div>
 						</div>

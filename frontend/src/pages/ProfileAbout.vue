@@ -72,7 +72,7 @@
 									<span class="text-xs text-ink-gray-7 font-medium mb-1">
 										{{ __('profile.issuedOn') }}:
 									</span>
-									{{ dayjs(badge.issued_on).format('DD MMM YYYY') }}
+									{{ dayjs(badge.issued_on).format('L') }}
 								</div>
 								<div class="flex flex-col">
 									<span class="text-xs text-ink-gray-7 font-medium mb-1">
@@ -160,7 +160,7 @@ const shareOnSocial = (badge, medium) => {
 	)
 	const summary = `I am happy to announce that I earned the ${
 		badge.badge
-	} badge on ${dayjs(badge.issued_on).format('DD MMM YYYY')} at ${
+	} badge on ${dayjs(badge.issued_on).format('L')} at ${
 		branding.data?.app_name
 	}.`
 

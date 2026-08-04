@@ -4,7 +4,7 @@
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 	</header>
-	<div v-if="submissions.data?.length" class="md:w-3/4 md:mx-auto py-5 mx-5">
+	<div v-if="submissions.data?.length" class="py-5 mx-5">
 		<div class="text-xl font-semibold mb-5">
 			{{ submissions.data[0].quiz_title }}
 		</div>

@@ -49,7 +49,8 @@ export function formatTime(timeString) {
 	if (!timeString) return ''
 	const [hour, minute] = timeString.split(':').map(Number)
 	const dummyDate = new Date(0, 0, 0, hour, minute)
-	const formattedTime = new Intl.DateTimeFormat('en-US', {
+	const locale = window.lmsLanguage === 'vi' ? 'vi-VN' : 'en-US'
+	const formattedTime = new Intl.DateTimeFormat(locale, {
 		hour: 'numeric',
 		minute: 'numeric',
 		hour12: true,
@@ -464,7 +465,7 @@ export function getSidebarLinks() {
 export function getFormattedDateRange(
 	startDate,
 	endDate,
-	format = 'DD MMM YYYY'
+	format = 'L'
 ) {
 	if (startDate === endDate) {
 		return dayjs(startDate).format(format)

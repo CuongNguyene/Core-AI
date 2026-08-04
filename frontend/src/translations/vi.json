@@ -223,6 +223,15 @@
 		"related": {
 			"title": "Khoá học liên quan"
 		},
+		"resources": {
+			"title": "Tài liệu",
+			"upload": "Tải lên",
+			"uploading": "Đang tải lên {0}%",
+			"empty": "Chưa có tài liệu nào.",
+			"fileTooLarge": "Dung lượng file không được vượt quá 25 MB.",
+			"uploadSuccess": "Đã thêm tài liệu thành công",
+			"deleteSuccess": "Đã xoá tài liệu thành công"
+		},
 		"reviews": {
 			"writeAReview": "Viết đánh giá",
 			"studentReviews": "Đánh giá của học viên",
@@ -259,7 +268,8 @@
 		"card": {
 			"seatsLeft": "Chỗ còn lại",
 			"seatLeft": "Chỗ còn lại",
-			"soldOut": "Đã hết chỗ"
+			"soldOut": "Đã hết chỗ",
+			"private": "Riêng tư"
 		},
 		"overlay": {
 			"courses": "Khoá học",
@@ -343,7 +353,8 @@
 				"classes": "Buổi học",
 				"assessments": "Bài đánh giá",
 				"announcements": "Thông báo",
-				"discussions": "Thảo luận"
+				"discussions": "Thảo luận",
+				"resources": "Tài liệu"
 			}
 		},
 		"studentModal": {
@@ -527,9 +538,11 @@
 		"status": "Trạng thái",
 		"noSubmissions": "Không có bài nộp",
 		"noSubmissionsDescription": "Chưa có bài nộp nào cho bài tập này.",
+		"nSubmissions": "{0} bài nộp",
 		"submitted": "Đã nộp",
 		"create": "Tạo",
 		"nAssignments": "{0} bài tập",
+		"noAssignments": "Không có bài tập nào",
 		"searchByTitle": "Tìm kiếm theo tiêu đề",
 		"type": "Loại",
 		"loadMore": "Xem thêm",
@@ -842,7 +855,19 @@
 	"common": {
 		"emptyState": {
 			"noItems": "Không có {0}",
-			"description": "Hiện chưa có {0} nào. Hãy chú ý theo dõi, những trải nghiệm học tập mới sắp ra mắt!"
+			"description": "Hiện chưa có {0} nào. Hãy chú ý theo dõi, những trải nghiệm học tập mới sắp ra mắt!",
+			"type": {
+				"batches": "lớp học",
+				"courses": "khóa học",
+				"quizzes": "bài trắc nghiệm",
+				"assignments": "bài tập",
+				"submissions": "bài nộp",
+				"certifiedMembers": "thành viên đã được chứng nhận",
+				"jobOpenings": "tin tuyển dụng",
+				"programmingExercises": "bài tập lập trình",
+				"programmingExerciseSubmissions": "bài nộp bài tập lập trình",
+				"programs": "chương trình học"
+			}
 		}
 	},
 	"programs": {
@@ -1006,6 +1031,7 @@
 		"noResultsFound": "Không tìm thấy kết quả",
 		"search": "Tìm kiếm",
 		"searchToSelect": "Tìm kiếm để chọn...",
+		"nSelected": "Đã chọn {0}",
 		"save": "Lưu",
 		"upload": "Tải lên",
 		"remove": "Xoá",

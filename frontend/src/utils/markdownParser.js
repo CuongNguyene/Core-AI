@@ -37,6 +37,21 @@ export class Markdown {
 	}
 
 	onPaste(event) {
+		if (event.type === 'tag' && event.detail.data.tagName === 'IMG') {
+			this.convertBlock('image', { url: event.detail.data.src })
+			return
+		}
+
+		if (event.type === 'file') {
+			const { file } = event.detail
+			const reader = new FileReader()
+			reader.onload = (e) => {
+				this.convertBlock('image', { url: e.target.result })
+			}
+			reader.readAsDataURL(file)
+			return
+		}
+
 		const data = {
 			text: event.detail.data.innerHTML,
 		}
@@ -52,7 +67,10 @@ export class Markdown {
 
 	static get pasteConfig() {
 		return {
-			tags: ['P'],
+			tags: ['P', 'IMG'],
+			files: {
+				mimeTypes: ['image/*'],
+			},
 		}
 	}
 

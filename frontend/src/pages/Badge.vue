@@ -13,7 +13,7 @@
 				{{
 					__('This badge has been awarded to {0} on {1}.').format(
 						badge.data.member_name,
-						dayjs(badge.data.issued_on).format('DD MMM YYYY')
+						dayjs(badge.data.issued_on).format('L')
 					)
 				}}
 			</div>

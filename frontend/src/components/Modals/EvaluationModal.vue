@@ -130,7 +130,7 @@ function submitEvaluation(close) {
 			}
 			if (dayjs(evaluation.date).isAfter(dayjs(props.endDate), 'day')) {
 				return __('courses.evaluation.dateBeforeEndDate').format(
-					dayjs(props.endDate).format('DD MMMM YYYY')
+					dayjs(props.endDate).format('L')
 				)
 			}
 		},

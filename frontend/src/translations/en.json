@@ -223,6 +223,15 @@
 		"related": {
 			"title": "Related Courses"
 		},
+		"resources": {
+			"title": "Resources",
+			"upload": "Upload",
+			"uploading": "Uploading {0}%",
+			"empty": "No resources have been added yet.",
+			"fileTooLarge": "File size should not exceed 25 MB.",
+			"uploadSuccess": "Resource added successfully",
+			"deleteSuccess": "Resource deleted successfully"
+		},
 		"reviews": {
 			"writeAReview": "Write a Review",
 			"studentReviews": "Student Reviews",
@@ -259,7 +268,8 @@
 		"card": {
 			"seatsLeft": "Seats Left",
 			"seatLeft": "Seat Left",
-			"soldOut": "Sold Out"
+			"soldOut": "Sold Out",
+			"private": "Private"
 		},
 		"overlay": {
 			"courses": "Courses",
@@ -343,7 +353,8 @@
 				"classes": "Classes",
 				"assessments": "Assessments",
 				"announcements": "Announcements",
-				"discussions": "Discussions"
+				"discussions": "Discussions",
+				"resources": "Resources"
 			}
 		},
 		"studentModal": {
@@ -527,9 +538,11 @@
 		"status": "Status",
 		"noSubmissions": "No submissions",
 		"noSubmissionsDescription": "There are no submissions for this assignment.",
+		"nSubmissions": "{0} Submissions",
 		"submitted": "Submitted",
 		"create": "Create",
 		"nAssignments": "{0} Assignments",
+		"noAssignments": "No Assignments",
 		"searchByTitle": "Search by title",
 		"type": "Type",
 		"loadMore": "Load More",
@@ -842,7 +855,19 @@
 	"common": {
 		"emptyState": {
 			"noItems": "No {0}",
-			"description": "There are no {0} currently. Keep an eye out, fresh learning experiences are on the way!"
+			"description": "There are no {0} currently. Keep an eye out, fresh learning experiences are on the way!",
+			"type": {
+				"batches": "batches",
+				"courses": "courses",
+				"quizzes": "quizzes",
+				"assignments": "assignments",
+				"submissions": "submissions",
+				"certifiedMembers": "certified members",
+				"jobOpenings": "job openings",
+				"programmingExercises": "programming exercises",
+				"programmingExerciseSubmissions": "programming exercise submissions",
+				"programs": "programs"
+			}
 		}
 	},
 	"programs": {
@@ -1006,6 +1031,7 @@
 		"noResultsFound": "No results found",
 		"search": "Search",
 		"searchToSelect": "Search to select...",
+		"nSelected": "{0} selected",
 		"save": "Save",
 		"upload": "Upload",
 		"remove": "Remove",

@@ -48,7 +48,7 @@
 				<div class="flex items-center space-x-2">
 					<Calendar class="w-4 h-4 stroke-1.5" />
 					<span>
-						{{ dayjs(cls.date).format('DD MMMM YYYY') }}
+						{{ dayjs(cls.date).format('L') }}
 					</span>
 				</div>
 				<div class="flex items-center space-x-2">

@@ -1,4 +1,5 @@
 import dayjs from 'dayjs/esm'
+import 'dayjs/esm/locale/vi'
 import relativeTime from 'dayjs/esm/plugin/relativeTime'
 import localizedFormat from 'dayjs/esm/plugin/localizedFormat'
 import updateLocale from 'dayjs/esm/plugin/updateLocale'

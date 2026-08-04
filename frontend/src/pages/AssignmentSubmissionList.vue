@@ -4,7 +4,14 @@
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 	</header>
-	<div class="md:w-3/4 md:mx-auto py-5 mx-5">
+	<div class="py-5 mx-5">
+		<div class="text-lg font-semibold text-ink-gray-7 mb-4">
+			{{
+				submissions.data?.length
+					? __('assignments.nSubmissions').format(submissions.data.length)
+					: __('assignments.noSubmissions')
+			}}
+		</div>
 		<div class="grid grid-cols-3 gap-5 mb-5">
 			<Link
 				doctype="LMS Assignment"
@@ -12,11 +19,12 @@
 				:placeholder="__('assignments.assignment')"
 			/>
 			<Link doctype="User" v-model="member" :placeholder="__('assignments.member')" />
-			<FormControl
-				v-model="status"
-				type="select"
+			<Autocomplete
+				:modelValue="status"
+				@update:modelValue="(opt) => (status = opt?.value || '')"
 				:options="statusOptions"
 				:placeholder="__('assignments.status')"
+				size="sm"
 			/>
 		</div>
 		<ListView
@@ -28,7 +36,11 @@
 			<ListHeader
 				class="mb-2 grid items-center space-x-4 rounded bg-surface-gray-2 p-2"
 			>
-				<ListHeaderItem :item="item" v-for="item in submissionColumns" />
+				<ListHeaderItem :item="item" v-for="item in submissionColumns">
+					<template #prefix="{ item }">
+						<FeatherIcon :name="item.icon?.toString()" class="h-4 w-4" />
+					</template>
+				</ListHeaderItem>
 			</ListHeader>
 			<ListRows>
 				<router-link
@@ -58,18 +70,7 @@
 				</router-link>
 			</ListRows>
 		</ListView>
-		<div
-			v-else
-			class="text-center p-5 text-ink-gray-5 mt-52 w-3/4 md:w-1/2 mx-auto space-y-2"
-		>
-			<Pencil class="size-8 mx-auto stroke-1 text-ink-gray-4" />
-			<div class="text-xl font-medium">
-				{{ __('assignments.noSubmissions') }}
-			</div>
-			<div class="leading-5">
-				{{ __('assignments.noSubmissionsDescription') }}
-			</div>
-		</div>
+		<EmptyState v-else type="Submissions" />
 	</div>
 </template>
 <script setup>
@@ -77,7 +78,7 @@ import {
 	Badge,
 	Breadcrumbs,
 	createListResource,
-	FormControl,
+	FeatherIcon,
 	ListView,
 	ListHeader,
 	ListHeaderItem,
@@ -88,9 +89,10 @@ import {
 } from 'frappe-ui'
 import { computed, inject, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { Pencil } from 'lucide-vue-next'
 import { sessionStore } from '../stores/session'
 import Link from '@/components/Controls/Link.vue'
+import Autocomplete from '@/components/Controls/Autocomplete.vue'
+import EmptyState from '@/components/EmptyState.vue'
 
 const user = inject('$user')
 const dayjs = inject('$dayjs')
@@ -169,30 +171,33 @@ const submissionColumns = computed(() => {
 			label: __('assignments.member'),
 			key: 'member_name',
 			width: 1,
+			icon: 'user',
 		},
 		{
 			label: __('assignments.assignment'),
 			key: 'assignment_title',
 			width: 2,
+			icon: 'file-text',
 		},
 		{
 			label: __('assignments.submitted'),
 			key: 'creation',
 			width: 1,
-			align: 'left',
+			align: 'center',
+			icon: 'clock',
 		},
 		{
 			label: __('assignments.status'),
 			key: 'status',
 			width: 1,
 			align: 'center',
+			icon: 'check-circle',
 		},
 	]
 })
 
 const statusOptions = computed(() => {
 	return [
-		{ label: '', value: '' },
 		{ label: __('assignments.pass'), value: 'Pass' },
 		{ label: __('assignments.fail'), value: 'Fail' },
 		{ label: __('assignments.notGraded'), value: 'Not Graded' },
@@ -211,6 +216,10 @@ const getStatusTheme = (status) => {
 
 const breadcrumbs = computed(() => {
 	return [
+		{
+			label: __('assignments.assignments'),
+			route: { name: 'Assignments' },
+		},
 		{
 			label: __('assignments.assignmentSubmissions'),
 		},

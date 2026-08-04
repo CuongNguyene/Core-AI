@@ -110,10 +110,22 @@ watch(
 					assignment.question = row.question
 				}
 			})
+		} else {
+			assignment.title = ''
+			assignment.type = ''
+			assignment.question = ''
 		}
 	},
 	{ flush: 'post' }
 )
+
+watch(show, (isOpen) => {
+	if (isOpen && props.assignmentID === 'new') {
+		assignment.title = ''
+		assignment.type = ''
+		assignment.question = ''
+	}
+})
 
 const saveAssignment = () => {
 	if (props.assignmentID == 'new') {
