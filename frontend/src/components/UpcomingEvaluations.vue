@@ -66,7 +66,7 @@
 						<div class="flex items-center mb-2">
 							<Calendar class="w-4 h-4 stroke-1.5" />
 							<span class="ml-2">
-								{{ dayjs(evl.date).format('DD MMMM YYYY') }}
+								{{ dayjs(evl.date).format('L') }}
 							</span>
 						</div>
 						<div class="flex items-center mb-2">

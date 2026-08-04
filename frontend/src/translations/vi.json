@@ -223,6 +223,15 @@
 		"related": {
 			"title": "Khoá học liên quan"
 		},
+		"resources": {
+			"title": "Tài liệu",
+			"upload": "Tải lên",
+			"uploading": "Đang tải lên {0}%",
+			"empty": "Chưa có tài liệu nào.",
+			"fileTooLarge": "Dung lượng file không được vượt quá 25 MB.",
+			"uploadSuccess": "Đã thêm tài liệu thành công",
+			"deleteSuccess": "Đã xoá tài liệu thành công"
+		},
 		"reviews": {
 			"writeAReview": "Viết đánh giá",
 			"studentReviews": "Đánh giá của học viên",
@@ -344,7 +353,8 @@
 				"classes": "Buổi học",
 				"assessments": "Bài đánh giá",
 				"announcements": "Thông báo",
-				"discussions": "Thảo luận"
+				"discussions": "Thảo luận",
+				"resources": "Tài liệu"
 			}
 		},
 		"studentModal": {

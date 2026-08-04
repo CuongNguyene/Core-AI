@@ -465,7 +465,7 @@ export function getSidebarLinks() {
 export function getFormattedDateRange(
 	startDate,
 	endDate,
-	format = 'DD MMM YYYY'
+	format = 'L'
 ) {
 	if (startDate === endDate) {
 		return dayjs(startDate).format(format)

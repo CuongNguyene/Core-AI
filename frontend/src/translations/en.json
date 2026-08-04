@@ -223,6 +223,15 @@
 		"related": {
 			"title": "Related Courses"
 		},
+		"resources": {
+			"title": "Resources",
+			"upload": "Upload",
+			"uploading": "Uploading {0}%",
+			"empty": "No resources have been added yet.",
+			"fileTooLarge": "File size should not exceed 25 MB.",
+			"uploadSuccess": "Resource added successfully",
+			"deleteSuccess": "Resource deleted successfully"
+		},
 		"reviews": {
 			"writeAReview": "Write a Review",
 			"studentReviews": "Student Reviews",
@@ -344,7 +353,8 @@
 				"classes": "Classes",
 				"assessments": "Assessments",
 				"announcements": "Announcements",
-				"discussions": "Discussions"
+				"discussions": "Discussions",
+				"resources": "Resources"
 			}
 		},
 		"studentModal": {

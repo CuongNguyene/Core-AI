@@ -81,6 +81,12 @@
 							:getProgress="course.data.membership ? true : false"
 						/>
 					</div>
+					<div class="mt-10">
+						<CourseResources
+							:courseName="course.data.name"
+							:canManage="isInstructor() || user.data?.is_moderator"
+						/>
+					</div>
 					<CourseReviews
 						:courseName="course.data.name"
 						:avg_rating="course.data.rating"
@@ -109,6 +115,7 @@ import { sessionStore } from '@/stores/session'
 import { useRouter } from 'vue-router'
 import CourseCardOverlay from '@/components/CourseCardOverlay.vue'
 import CourseOutline from '@/components/CourseOutline.vue'
+import CourseResources from '@/components/CourseResources.vue'
 import CourseReviews from '@/components/CourseReviews.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
 import CourseInstructors from '@/components/CourseInstructors.vue'

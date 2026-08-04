@@ -1,11 +1,5 @@
-import '../../../frappe/frappe/public/js/lib/posthog.js'
+import posthog from 'posthog-js'
 import { createResource } from 'frappe-ui'
-
-declare global {
-  interface Window {
-    posthog: any
-  }
-}
 
 type PosthogSettings = {
   posthog_project_id: string
@@ -20,8 +14,6 @@ interface CaptureOptions {
     [key: string]: string | number | boolean | object
   }
 }
-
-let posthog: typeof window.posthog = window.posthog
 
 // Posthog Settings
 let posthogSettings = createResource({
@@ -52,8 +44,7 @@ function initPosthog(ps: PosthogSettings) {
     capture_pageleave: true,
     enable_heatmaps: false,
     disable_session_recording: false,
-    loaded: (ph: typeof posthog) => {
-      window.posthog = ph
+    loaded: (ph) => {
       ph.identify(window.location.hostname)
     },
   })
@@ -65,7 +56,7 @@ function capture(
   options: CaptureOptions = { data: { user: '' } },
 ) {
   if (!isTelemetryEnabled()) return
-  window.posthog.capture(`lms_${event}`, options)
+  posthog.capture(`lms_${event}`, options)
 }
 
 function startRecording() {
@@ -77,7 +68,7 @@ function stopRecording() {
 // Posthog Plugin
 function posthogPlugin(app: any) {
     app.config.globalProperties.posthog = posthog
-    if (!window.posthog?.length) posthogSettings.fetch()
+    if (!posthog.__loaded) posthogSettings.fetch()
 }
 
 export {

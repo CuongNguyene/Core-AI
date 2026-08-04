@@ -81,7 +81,7 @@
 								</div>
 								<span class="text-ink-gray-4 md:hidden">·</span>
 								<div class="text-ink-gray-5">
-									{{ dayjs(participant.issue_date).format('DD MMM YYYY') }}
+									{{ dayjs(participant.issue_date).format('L') }}
 								</div>
 							</div>
 						</div>
