@@ -8,11 +8,15 @@ type PosthogSettings = {
   telemetry_site_age: number
 }
 
-interface CaptureOptions {
-  data: {
-    user: string
-    [key: string]: string | number | boolean | object
-  }
+type PulseBootConfig = {
+	enabled?: boolean
+	host?: string
+	client_url?: string
+	key?: string
+	site?: string
+	user?: string
+	team?: string
+	site_age?: number
 }
 
 // Posthog Settings
@@ -22,14 +26,9 @@ let posthogSettings = createResource({
   onSuccess: (ps: PosthogSettings) => initPosthog(ps),
 })
 
-let isTelemetryEnabled = () => {
-  if (!posthogSettings.data) return false
-
-  return (
-    posthogSettings.data.enable_telemetry &&
-    posthogSettings.data.posthog_project_id &&
-    posthogSettings.data.posthog_host
-  )
+const captureEvent = (event_name: string, data: Record<string, any> = {}) => {
+	if (!isEnabled.value || !pulseProvider || !appName.value) return
+	pulseProvider.capture(event_name, appName.value, data)
 }
 
 // Posthog Initialization
@@ -59,10 +58,47 @@ function capture(
   posthog.capture(`lms_${event}`, options)
 }
 
-function startRecording() {
+function applyBootConfig(cfg: PulseBootConfig) {
+	window.frappe ??= {}
+	window.frappe.boot = {
+		...(window.frappe.boot || {}),
+		enable_telemetry: Boolean(cfg.enabled),
+		telemetry_provider: cfg.enabled ? ['pulse'] : [],
+		telemetry: cfg,
+		telemetry_site_age: cfg.site_age,
+	}
 }
 
-function stopRecording() {
+export const telemetryPlugin = {
+	async install(app: App, options: { app_name: string }) {
+		appName.value = options.app_name
+
+		if (!appName.value) {
+			console.warn(
+				`Telemetry plugin installed without app_name.\n` +
+					`To enable telemetry, please provide the app_name while installing the plugin:\n` +
+					`app.use(telemetryPlugin, { app_name: 'your_app_name' })`,
+			)
+			return
+		}
+
+		let cfg: PulseBootConfig = { enabled: false }
+		try {
+			cfg = await call('frappe.utils.telemetry.pulse.client.boot_config')
+		} catch (e) {
+			// Older/misconfigured backends: keep telemetry off.
+			return
+		}
+
+		if (!cfg?.enabled) return
+
+		applyBootConfig(cfg)
+		pulseProvider = await loadPulseProvider()
+		if (!pulseProvider) return
+
+		await pulseProvider.init()
+		isEnabled.value = Boolean(pulseProvider.enabled)
+	},
 }
 
 // Posthog Plugin

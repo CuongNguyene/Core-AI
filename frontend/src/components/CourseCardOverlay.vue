@@ -192,13 +192,14 @@ import {
 import { computed, inject, ref } from 'vue'
 import { Badge, Button, call, createResource, toast } from 'frappe-ui'
 import { formatAmount } from '@/utils/'
-import { capture } from '@/telemetry'
+import { useTelemetry } from '@/telemetry'
 import { useRouter } from 'vue-router'
 import CertificationLinks from '@/components/CertificationLinks.vue'
 import CourseProgressSummary from '@/components/Modals/CourseProgressSummary.vue'
 
 const router = useRouter()
 const user = inject('$user')
+const { capture } = useTelemetry()
 const showProgressModal = ref(false)
 const readOnlyMode = window.read_only_mode
 
