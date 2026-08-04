@@ -340,7 +340,7 @@ import {
 } from 'frappe-ui'
 import { useRouter } from 'vue-router'
 import { Image, Trash2 } from 'lucide-vue-next'
-import { capture } from '@/telemetry'
+import { useTelemetry } from '@/telemetry'
 import { useOnboarding } from '@/utils/onboardingCompat'
 import { sessionStore } from '../stores/session'
 import MultiSelect from '@/components/Controls/MultiSelect.vue'
@@ -355,6 +355,7 @@ import {
 const router = useRouter()
 const user = inject('$user')
 const { brand } = sessionStore()
+const { capture } = useTelemetry()
 const { updateOnboardingStep } = useOnboarding('learning')
 const instructors = ref([])
 const app = getCurrentInstance()

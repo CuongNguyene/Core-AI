@@ -12,7 +12,7 @@ dependencies = [
     "websocket_client~=1.6.4",
     "markdown~=3.5.1",
     "beautifulsoup4~=4.12.2",
-    "lxml~=4.9.3",
+    "lxml~=6.0.2",
     "cairocffi==1.5.1",
     "razorpay~=1.4.1",
     "fuzzywuzzy~=0.18.0",
@@ -29,6 +29,12 @@ force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
 indent = "\t"
+
+[deploy.dependencies.apt]
+packages = [
+    "libxml2-dev",
+    "libxslt1-dev",
+]
 
 [tool.ruff]
 line-length = 110

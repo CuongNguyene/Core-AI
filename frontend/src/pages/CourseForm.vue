@@ -354,7 +354,7 @@ import {
 } from 'vue'
 import { Image, Trash2, X } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
-import { capture, startRecording, stopRecording } from '@/telemetry'
+import { useTelemetry } from '@/telemetry'
 import { useOnboarding } from '@/utils/onboardingCompat'
 import { sessionStore } from '../stores/session'
 import {
@@ -375,6 +375,7 @@ const router = useRouter()
 const instructors = ref([])
 const related_courses = ref([])
 const app = getCurrentInstance()
+const { capture } = useTelemetry()
 const { updateOnboardingStep } = useOnboarding('learning')
 const { $dialog } = app.appContext.config.globalProperties
 
@@ -422,7 +423,6 @@ onMounted(() => {
 		fetchCourseInfo()
 	} else {
 		capture('course_form_opened')
-		startRecording()
 	}
 	window.addEventListener('keydown', keyboardShortcut)
 })
@@ -445,7 +445,6 @@ const keyboardShortcut = (e) => {
 
 onBeforeUnmount(() => {
 	window.removeEventListener('keydown', keyboardShortcut)
-	stopRecording()
 })
 
 const courseCreationResource = createResource({

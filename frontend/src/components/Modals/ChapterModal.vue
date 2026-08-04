@@ -80,13 +80,14 @@ import {
 } from 'frappe-ui'
 import { reactive, watch, inject } from 'vue'
 import { getFileSize } from '@/utils/'
-import { capture } from '@/telemetry'
+import { useTelemetry } from '@/telemetry'
 import { FileText, X } from 'lucide-vue-next'
 import { useOnboarding } from '@/utils/onboardingCompat'
 
 const show = defineModel()
 const outline = defineModel('outline')
 const user = inject('$user')
+const { capture } = useTelemetry()
 const { updateOnboardingStep } = useOnboarding('learning')
 
 const props = defineProps({

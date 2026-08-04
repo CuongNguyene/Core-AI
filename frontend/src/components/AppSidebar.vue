@@ -105,7 +105,7 @@ import { useSidebar } from '@/stores/sidebar'
 import { useSettings } from '@/stores/settings'
 import { call, createResource } from 'frappe-ui'
 import PageModal from '@/components/Modals/PageModal.vue'
-import { capture } from '@/telemetry'
+import { useTelemetry } from '@/telemetry'
 import LMSLogo from '@/components/Icons/LMSLogo.vue'
 import { useRouter } from 'vue-router'
 import InviteIcon from './Icons/InviteIcon.vue'
@@ -132,6 +132,7 @@ import { useOnboarding, isOnboardingSupported } from '@/utils/onboardingCompat'
 
 const { user } = sessionStore()
 const { userResource } = usersStore()
+const { capture } = useTelemetry()
 let sidebarStore = useSidebar()
 const socket = inject('$socket')
 const unreadCount = ref(0)
