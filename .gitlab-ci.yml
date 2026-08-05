@@ -39,4 +39,3 @@ deploy_dev:
       bench build --app lms &&
       sudo supervisorctl restart all
       "
-  when: manual
