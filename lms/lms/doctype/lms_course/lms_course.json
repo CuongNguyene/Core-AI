@@ -33,6 +33,7 @@
   "featured",
   "disable_self_learning",
   "enforce_sequential_progress",
+  "enable_integrity_warnings",
   "section_break_18",
   "short_introduction",
   "column_break_viqw",
@@ -107,6 +108,13 @@
    "fieldname": "enforce_sequential_progress",
    "fieldtype": "Check",
    "label": "Enforce Sequential Progress"
+  },
+  {
+   "default": "0",
+   "description": "Show the tab-switch/copy/right-click/DevTools warning banner on lesson pages, same as during quizzes.",
+   "fieldname": "enable_integrity_warnings",
+   "fieldtype": "Check",
+   "label": "Enable Integrity Warnings on Lessons"
   },
   {
    "fieldname": "image",

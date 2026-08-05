@@ -1,5 +1,6 @@
 <template>
-	<div v-if="user.data?.is_moderator || isStudent || isInstructor" class="">
+	<DetailSkeleton v-if="batch.loading && !batch.data" tabs />
+	<div v-else-if="user.data?.is_moderator || isStudent || isInstructor" class="">
 		<header
 			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
@@ -257,6 +258,7 @@ import AnnouncementModal from '@/components/Modals/AnnouncementModal.vue'
 import Discussions from '@/components/Discussions.vue'
 import DateRange from '@/components/Common/DateRange.vue'
 import BulkCertificates from '@/components/Modals/BulkCertificates.vue'
+import DetailSkeleton from '@/components/DetailSkeleton.vue'
 import BatchFeedback from '@/components/BatchFeedback.vue'
 import CourseResources from '@/components/CourseResources.vue'
 import dayjs from 'dayjs/esm'

@@ -183,6 +183,12 @@
 									:label="__('courses.form.enforceSequentialProgress')"
 									:description="__('courses.form.enforceSequentialProgressDescription')"
 								/>
+								<FormControl
+									type="checkbox"
+									v-model="course.enable_integrity_warnings"
+									:label="__('courses.form.enableIntegrityWarnings')"
+									:description="__('courses.form.enableIntegrityWarningsDescription')"
+								/>
 							</div>
 						</div>
 					</div>
@@ -400,6 +406,7 @@ const course = reactive({
 	upcoming: false,
 	disable_self_learning: false,
 	enforce_sequential_progress: false,
+	enable_integrity_warnings: false,
 	enable_certification: false,
 	paid_course: false,
 	paid_certificate: false,
@@ -515,6 +522,7 @@ const courseResource = createResource({
 			'upcoming',
 			'disable_self_learning',
 			'enforce_sequential_progress',
+			'enable_integrity_warnings',
 			'paid_course',
 			'featured',
 			'enable_certification',

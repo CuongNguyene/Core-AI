@@ -16,12 +16,12 @@
 			v-else
 			class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between w-3/4 mt-5"
 		>
-			<FormControl
+			<!-- <FormControl
 				:label="__('profile.moderator')"
 				v-model="moderator"
 				type="checkbox"
 				@change.stop="changeRole('moderator')"
-			/>
+			/> -->
 			<FormControl
 				:label="__('profile.instructor')"
 				v-model="instructor"
@@ -43,7 +43,7 @@ import { ref, watch } from 'vue'
 import { convertToTitleCase } from '@/utils'
 import { CircleAlert } from 'lucide-vue-next'
 
-const moderator = ref(false)
+// const moderator = ref(false)
 const instructor = ref(false)
 const lms_student = ref(false)
 const readOnlyMode = window.read_only_mode
@@ -64,7 +64,7 @@ const roles = createResource({
 	},
 	onSuccess(data) {
 		let roles = [
-			'moderator',
+			// 'moderator',
 			'instructor',
 			'lms_student',
 		]

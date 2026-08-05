@@ -150,6 +150,8 @@
 			"disableSelfEnrollment": "Disable self enrollment",
 			"enforceSequentialProgress": "Enforce sequential progress",
 			"enforceSequentialProgressDescription": "Students must complete each lesson before the next one unlocks",
+			"enableIntegrityWarnings": "Enable integrity warnings on lessons",
+			"enableIntegrityWarningsDescription": "Show the tab-switch/copy/right-click/DevTools warning banner on lesson pages, same as during quizzes",
 			"aboutCourse": "About the Course",
 			"shortIntroduction": "Short Introduction",
 			"shortIntroductionPlaceholder": "A short introduction about the course",
@@ -698,6 +700,12 @@
 			"roles": "Roles"
 		}
 	},
+	"integrity": {
+		"tabSwitchWarning": "You left the screen while this activity was being monitored. This action has been recorded (time {0}).",
+		"warningTitle": "Suspicious activity detected",
+		"warningTitleCritical": "Multiple violations detected",
+		"violationsLabel": "times"
+	},
 	"quiz": {
 		"chooseExisting": "Choose an existing question",
 		"question": "Question",
@@ -737,7 +745,6 @@
 			"negativeMarking": "If you answer incorrectly, {0} {1} will be deducted from your score for each incorrect answer.",
 			"mark": "mark",
 			"marksPlural": "marks",
-			"leftScreenWarning": "You left the exam screen. This action has been recorded (time {0}).",
 			"time": "Time",
 			"noQuestionsYet": "This quiz has no questions yet. Please add at least one question before testing this quiz.",
 			"startTheQuiz": "Start the Quiz",

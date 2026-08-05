@@ -1337,7 +1337,7 @@ def get_lesson(course, chapter, lesson):
 	course_info = frappe.db.get_value(
 		"LMS Course",
 		course,
-		["title", "paid_certificate", "disable_self_learning"],
+		["title", "paid_certificate", "disable_self_learning", "enable_integrity_warnings"],
 		as_dict=1,
 	)
 
@@ -1402,6 +1402,7 @@ def get_lesson(course, chapter, lesson):
 	lesson_details.course_title = course_info.title
 	lesson_details.paid_certificate = course_info.paid_certificate
 	lesson_details.disable_self_learning = course_info.disable_self_learning
+	lesson_details.enable_integrity_warnings = course_info.enable_integrity_warnings
 	lesson_details.videos = get_video_details(lesson_name)
 
 	if frappe.session.user != "Guest":
@@ -1484,21 +1485,14 @@ def get_neighbour_lesson(course, chapter, lesson):
 @frappe.whitelist(allow_guest=False)
 def get_batch_details(batch):
 	batch_students = frappe.get_all("LMS Batch Enrollment", {"batch": batch}, pluck="member")
-	published, allow_self_enrollment = frappe.db.get_value(
-		"LMS Batch", batch, ["published", "allow_self_enrollment"]
-	)
+	published = frappe.db.get_value("LMS Batch", batch, "published")
 	user = frappe.session.user
 	is_member = user in batch_students
 	is_batch_instructor = user in [
 		instructor.instructor for instructor in frappe.get_all("Course Instructor", {"parent": batch, "parenttype": "LMS Batch"}, "instructor")
 	]
 
-	if not (
-		(published and allow_self_enrollment)
-		or is_member
-		or is_batch_instructor
-		or has_course_moderator_role()
-	):
+	if not (published or is_member or is_batch_instructor or has_course_moderator_role()):
 		return
 
 	batch_details = frappe.db.get_value(

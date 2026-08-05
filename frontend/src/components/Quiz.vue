@@ -53,16 +53,7 @@
 			</div>
 		</div>
 
-		<div
-			v-if="violationCount > 0"
-			class="bg-surface-amber-2 py-2 px-3 mb-4 rounded-md text-sm text-ink-amber-3 leading-5"
-		>
-			{{
-				__(
-					'quiz.take.leftScreenWarning'
-				).format(violationCount)
-			}}
-		</div>
+		<IntegrityWarningBanner :count="violationCount" />
 
 		<div v-if="quiz.data.duration" class="flex flex-col space-x-1 my-4">
 			<div class="mb-2">
@@ -350,6 +341,7 @@ import { CheckCircle, XCircle, MinusCircle } from 'lucide-vue-next'
 import { timeAgo } from '@/utils'
 import { useRouter } from 'vue-router'
 import ProgressBar from '@/components/ProgressBar.vue'
+import IntegrityWarningBanner from '@/components/IntegrityWarningBanner.vue'
 import { useVisibilityLog } from '@/composables/useVisibilityLog'
 import { useExamGuards } from '@/composables/useExamGuards'
 

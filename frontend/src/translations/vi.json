@@ -150,6 +150,8 @@
 			"disableSelfEnrollment": "Tắt tự đăng ký",
 			"enforceSequentialProgress": "Bắt buộc học tuần tự",
 			"enforceSequentialProgressDescription": "Học viên phải hoàn thành từng bài học trước khi mở khoá bài tiếp theo",
+			"enableIntegrityWarnings": "Bật cảnh báo chống gian lận cho bài học",
+			"enableIntegrityWarningsDescription": "Hiện cảnh báo chuyển tab/copy/chuột phải/DevTools trên trang bài học, giống như khi làm bài trắc nghiệm",
 			"aboutCourse": "Giới thiệu khoá học",
 			"shortIntroduction": "Giới thiệu ngắn",
 			"shortIntroductionPlaceholder": "Một giới thiệu ngắn về khoá học",
@@ -698,6 +700,12 @@
 			"roles": "Vai trò"
 		}
 	},
+	"integrity": {
+		"tabSwitchWarning": "Bạn đã rời khỏi màn hình trong khi hoạt động này đang được giám sát. Hành động này đã được ghi nhận (lần {0}).",
+		"warningTitle": "Phát hiện hành vi bất thường",
+		"warningTitleCritical": "Phát hiện nhiều vi phạm",
+		"violationsLabel": "lần"
+	},
 	"quiz": {
 		"chooseExisting": "Chọn một câu hỏi có sẵn",
 		"question": "Câu hỏi",
@@ -737,7 +745,6 @@
 			"negativeMarking": "Nếu bạn trả lời sai, {0} {1} sẽ bị trừ khỏi điểm của bạn cho mỗi câu trả lời sai.",
 			"mark": "điểm",
 			"marksPlural": "điểm",
-			"leftScreenWarning": "Bạn đã rời khỏi màn hình làm bài. Hành động này đã được ghi nhận (lần {0}).",
 			"time": "Thời gian",
 			"noQuestionsYet": "Bài trắc nghiệm này chưa có câu hỏi nào. Vui lòng thêm ít nhất một câu hỏi trước khi thử nghiệm bài trắc nghiệm này.",
 			"startTheQuiz": "Bắt đầu bài trắc nghiệm",

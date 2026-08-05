@@ -61,7 +61,13 @@
 			</div>
 		</div>
 		<div
-			v-if="batches.data?.length"
+			v-if="batches.list.loading && !batches.data?.length"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+		>
+			<CardSkeleton v-for="i in 8" :key="i" />
+		</div>
+		<div
+			v-else-if="batches.data?.length"
 			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
 		>
 			<router-link
@@ -71,7 +77,7 @@
 				<BatchCard :batch="batch" />
 			</router-link>
 		</div>
-		<EmptyState v-else-if="!batches.list.loading" type="Batches" />
+		<EmptyState v-else type="Batches" />
 
 		<div
 			v-if="!batches.list.loading && batches.hasNextPage"
@@ -97,6 +103,7 @@ import { computed, inject, onMounted, ref, watch } from 'vue'
 import { Plus } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import BatchCard from '@/components/BatchCard.vue'
+import CardSkeleton from '@/components/CardSkeleton.vue'
 import EmptyState from '@/components/EmptyState.vue'
 
 const user = inject('$user')
