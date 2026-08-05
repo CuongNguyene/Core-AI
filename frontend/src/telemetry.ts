@@ -1,11 +1,20 @@
-import posthog from 'posthog-js'
-import { createResource } from 'frappe-ui'
+import { call } from 'frappe-ui'
+import { reactive, readonly, ref, type App } from 'vue'
 
-type PosthogSettings = {
-  posthog_project_id: string
-  posthog_host: string
-  enable_telemetry: boolean
-  telemetry_site_age: number
+declare global {
+	interface Window {
+		frappe: any
+	}
+}
+
+type PulseProvider = {
+	enabled: boolean
+	init: () => Promise<void> | void
+	capture: (
+		event_name: string,
+		app_name: string,
+		data: Record<string, any>,
+	) => void
 }
 
 type PulseBootConfig = {
@@ -19,43 +28,39 @@ type PulseBootConfig = {
 	site_age?: number
 }
 
-// Posthog Settings
-let posthogSettings = createResource({
-  url: 'lms.lms.telemetry.get_posthog_settings',
-  cache: 'posthog_settings',
-  onSuccess: (ps: PosthogSettings) => initPosthog(ps),
-})
+let pulseProvider: PulseProvider | null = null
+
+const appName = ref<string>()
+const isEnabled = ref(false)
 
 const captureEvent = (event_name: string, data: Record<string, any> = {}) => {
 	if (!isEnabled.value || !pulseProvider || !appName.value) return
 	pulseProvider.capture(event_name, appName.value, data)
 }
 
-// Posthog Initialization
-function initPosthog(ps: PosthogSettings) {
-  if (!isTelemetryEnabled()) return
-
-  posthog.init(ps.posthog_project_id, {
-    api_host: ps.posthog_host,
-    person_profiles: 'identified_only',
-    autocapture: false,
-    capture_pageview: true,
-    capture_pageleave: true,
-    enable_heatmaps: false,
-    disable_session_recording: false,
-    loaded: (ph) => {
-      ph.identify(window.location.hostname)
-    },
-  })
+export function useTelemetry() {
+	return reactive({
+		isEnabled: readonly(isEnabled),
+		disable: () => {
+			isEnabled.value = false
+		},
+		capture: captureEvent,
+	})
 }
 
-// Posthog Functions
-function capture(
-  event: string,
-  options: CaptureOptions = { data: { user: '' } },
-) {
-  if (!isTelemetryEnabled()) return
-  posthog.capture(`lms_${event}`, options)
+async function loadPulseProvider(): Promise<PulseProvider | null> {
+	try {
+		const module = await import(
+			'../../../frappe/frappe/public/js/telemetry/pulse.js'
+		)
+		return module.pulse_provider as PulseProvider
+	} catch (e) {
+		console.warn(
+			'Telemetry pulse provider could not be loaded. Telemetry will be disabled.',
+			e,
+		)
+		return null
+	}
 }
 
 function applyBootConfig(cfg: PulseBootConfig) {
@@ -101,17 +106,4 @@ export const telemetryPlugin = {
 	},
 }
 
-// Posthog Plugin
-function posthogPlugin(app: any) {
-    app.config.globalProperties.posthog = posthog
-    if (!posthog.__loaded) posthogSettings.fetch()
-}
-
-export {
-  posthog,
-  posthogSettings,
-  posthogPlugin,
-  capture,
-  startRecording,
-  stopRecording,
-}
+export default telemetryPlugin
