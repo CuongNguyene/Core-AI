@@ -1,5 +1,5 @@
 <template>
-	<div v-if="user.data?.is_moderator || isStudent" class="">
+	<div v-if="user.data?.is_moderator || isStudent || isInstructor" class="">
 		<header
 			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
@@ -170,7 +170,7 @@
 			/>
 		</div>
 	</div>
-	<div v-else-if="!user.data?.name" class="">
+	<div v-else class="">
 		<div class="text-base border rounded-md w-1/3 mx-auto my-32">
 			<div class="border-b px-5 py-3 font-medium">
 				<span
@@ -370,6 +370,14 @@ const isStudent = computed(() => {
 		user?.data &&
 		batch.data?.students?.length &&
 		batch.data?.students.includes(user.data.name)
+	)
+})
+
+const isInstructor = computed(() => {
+	return (
+		user?.data &&
+		batch.data?.instructors?.length &&
+		batch.data.instructors.some((instructor) => instructor.name === user.data.name)
 	)
 })
 
