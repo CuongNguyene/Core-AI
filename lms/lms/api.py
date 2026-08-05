@@ -1943,6 +1943,8 @@ def can_view_other_members_time(course=None, batch=None):
 	roles = frappe.get_roles(user)
 	if "System Manager" in roles or has_course_moderator_role():
 		return True
+	if not course and not batch and "Instructor" in roles:
+		return True
 	if course and is_instructor(course):
 		return True
 	if batch:
