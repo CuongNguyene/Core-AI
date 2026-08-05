@@ -813,6 +813,28 @@
 			"deletedSuccess": "Quizzes deleted successfully",
 			"maxAttempts": "Max Attempts",
 			"modified": "Modified"
+		},
+		"io": {
+			"import": "Import Quiz",
+			"export": "Export",
+			"importAction": "Import",
+			"importDescription": "Upload an .xlsx file. Sheet 'Quiz Questions' holds one row per question, sheet 'Quiz Settings' one row per quiz.",
+			"downloadTemplate": "Download template",
+			"uploadFile": "Upload .xlsx file",
+			"uploading": "Uploading {0}%",
+			"onlyXlsx": "Only .xlsx files are supported.",
+			"remove": "Remove",
+			"validating": "Validating the file...",
+			"validationFailed": "Found {0} error(s). Nothing will be imported until they are fixed.",
+			"errorsTruncated": "Only the first errors are shown. Fix these and validate again.",
+			"row": "Row {0}",
+			"readyToImport": "{0} question(s) will be imported.",
+			"new": "New",
+			"existing": "Existing",
+			"quizSummary": "{0} to add, {1} skipped",
+			"skippedNote": "{0} question(s) already exist in their quiz and will be skipped.",
+			"importSuccess": "Imported {0} question(s) into {1} quiz(zes).",
+			"exportEmpty": "This quiz has no questions to export."
 		}
 	},
 	"videoStatistics": {

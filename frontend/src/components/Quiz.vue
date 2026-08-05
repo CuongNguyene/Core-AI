@@ -358,7 +358,7 @@ const activeQuestion = ref(0)
 const currentQuestion = ref('')
 const selectedOptions = reactive([0, 0, 0, 0])
 const showAnswers = reactive([])
-let questions = reactive([])
+const questions = ref([])
 const possibleAnswer = ref(null)
 const timer = ref(0)
 let timerInterval = null
@@ -416,7 +416,7 @@ const quizQuestions = createResource({
 		}
 	},
 	onSuccess(data) {
-		questions = data
+		questions.value = data
 	},
 })
 
@@ -518,7 +518,7 @@ const questionDetails = createResource({
 
 watch(activeQuestion, (value) => {
 	if (value > 0) {
-		const question = questions[value - 1]
+		const question = questions.value[value - 1]
 		if (!question) return
 		currentQuestion.value = question.question
 		questionDetails.reload()
@@ -667,7 +667,7 @@ const nextQuestion = () => {
 }
 
 const resetQuestion = () => {
-	if (activeQuestion.value == questions.length) return
+	if (activeQuestion.value == questions.value.length) return
 	activeQuestion.value = activeQuestion.value + 1
 	selectedOptions.splice(0, selectedOptions.length, ...[0, 0, 0, 0])
 	showAnswers.length = 0

@@ -13,6 +13,12 @@
 				</template>
 				{{ __('quiz.builder.testQuiz') }}
 			</Button>
+			<Button v-if="quizDetails.doc?.name" @click="exportQuiz()">
+				<template #prefix>
+					<Download class="size-4 stroke-1.5" />
+				</template>
+				{{ __('quiz.io.export') }}
+			</Button>
 			<router-link
 				v-if="quizDetails.doc?.name"
 				:to="{
@@ -222,7 +228,7 @@ import {
 	watch,
 } from 'vue'
 import { sessionStore } from '../stores/session'
-import { ClipboardList, ListChecks, Plus, Trash2 } from 'lucide-vue-next'
+import { ClipboardList, Download, ListChecks, Plus, Trash2 } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import Question from '@/components/Modals/Question.vue'
 
@@ -365,6 +371,19 @@ const submitQuiz = () => {
 				toast.error(err.messages?.[0] || err)
 			},
 		}
+	)
+}
+
+const exportQuiz = () => {
+	if (!quizDetails.doc?.questions?.length) {
+		toast.warning(__('quiz.io.exportEmpty'))
+		return
+	}
+
+	window.open(
+		`/api/method/lms.lms.doctype.lms_quiz.quiz_import_export.export_quiz?quiz=${encodeURIComponent(
+			quizDetails.doc.name
+		)}`
 	)
 }
 

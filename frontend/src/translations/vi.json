@@ -813,6 +813,28 @@
 			"deletedSuccess": "Xoá bài trắc nghiệm thành công",
 			"maxAttempts": "Số lần làm tối đa",
 			"modified": "Sửa đổi lần cuối"
+		},
+		"io": {
+			"import": "Nhập Quiz",
+			"export": "Xuất",
+			"importAction": "Nhập",
+			"importDescription": "Tải lên file .xlsx. Sheet 'Quiz Questions' mỗi dòng là một câu hỏi, sheet 'Quiz Settings' mỗi dòng là một quiz.",
+			"downloadTemplate": "Tải file mẫu",
+			"uploadFile": "Tải lên file .xlsx",
+			"uploading": "Đang tải lên {0}%",
+			"onlyXlsx": "Chỉ hỗ trợ file .xlsx.",
+			"remove": "Xoá",
+			"validating": "Đang kiểm tra file...",
+			"validationFailed": "Phát hiện {0} lỗi. Sẽ không nhập gì cho đến khi các lỗi được sửa.",
+			"errorsTruncated": "Chỉ hiển thị các lỗi đầu tiên. Hãy sửa rồi kiểm tra lại.",
+			"row": "Dòng {0}",
+			"readyToImport": "{0} câu hỏi sẽ được nhập.",
+			"new": "Tạo mới",
+			"existing": "Đã có",
+			"quizSummary": "thêm {0}, bỏ qua {1}",
+			"skippedNote": "{0} câu hỏi đã tồn tại trong quiz và sẽ được bỏ qua.",
+			"importSuccess": "Đã nhập {0} câu hỏi vào {1} quiz.",
+			"exportEmpty": "Quiz này chưa có câu hỏi nào để xuất."
 		}
 	},
 	"videoStatistics": {
