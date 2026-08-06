@@ -54,6 +54,13 @@
 			"noCoursesCreated": "No courses created",
 			"noCoursesDescription": "There are no courses currently. Create your first course to get started!",
 			"createCourse": "Create Course"
+		},
+		"schedule": {
+			"myScheduleTitle": "My Schedule",
+			"upcoming": "Upcoming",
+			"loading": "Loading schedule...",
+			"noEvents": "Nothing scheduled",
+			"clearSelection": "Clear selection"
 		}
 	},
 	"courses": {
@@ -152,6 +159,8 @@
 			"enforceSequentialProgressDescription": "Students must complete each lesson before the next one unlocks",
 			"enableIntegrityWarnings": "Enable integrity warnings on lessons",
 			"enableIntegrityWarningsDescription": "Show the tab-switch/copy/right-click/DevTools warning banner on lesson pages, same as during quizzes",
+			"integrityViolationThreshold": "Violation threshold (seconds)",
+			"integrityViolationThresholdDescription": "Minimum time a learner must be away from the tab before it counts as a violation. Shorter absences are ignored.",
 			"aboutCourse": "About the Course",
 			"shortIntroduction": "Short Introduction",
 			"shortIntroductionPlaceholder": "A short introduction about the course",
@@ -701,10 +710,11 @@
 		}
 	},
 	"integrity": {
-		"tabSwitchWarning": "You left the screen while this activity was being monitored. This action has been recorded (time {0}).",
+		"recordingLabel": "Session monitoring active",
+		"tabSwitchWarning": "The system just logged you leaving this screen. Every action in this session is being written to the activity log (occurrence {0}).",
 		"warningTitle": "Suspicious activity detected",
 		"warningTitleCritical": "Multiple violations detected",
-		"violationsLabel": "times"
+		"violationsLabel": "Logged"
 	},
 	"quiz": {
 		"chooseExisting": "Choose an existing question",

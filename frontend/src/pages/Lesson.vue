@@ -1,5 +1,9 @@
 <template>
 	<div v-if="lesson.data" class="">
+		<IntegrityWarningBanner
+			v-if="lesson.data.enable_integrity_warnings"
+			:count="violationCount"
+		/>
 		<header
 			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
@@ -141,10 +145,6 @@
 					}"
 				>
 					<div class="px-5">
-						<IntegrityWarningBanner
-							v-if="lesson.data.enable_integrity_warnings"
-							:count="violationCount"
-						/>
 						<div
 							class="flex flex-col space-y-3 md:space-y-0 md:flex-row md:items-center justify-between"
 						>
@@ -616,7 +616,8 @@ const setupLesson = (data) => {
 	if (data.content) editor.value = renderEditor('editor', data.content)
 	if (
 		data.instructor_content &&
-		JSON.parse(data.instructor_content)?.blocks?.length > 1
+		JSON.parse(data.instructor_content)?.blocks?.length > 1 &&
+		allowInstructorContent()
 	)
 		instructorEditor.value = renderEditor(
 			'instructor-content',
@@ -647,6 +648,7 @@ const setupLesson = (data) => {
 		visibilityLog = useVisibilityLog({
 			referenceDoctype: 'Course Lesson',
 			referenceName: data.name,
+			minDurationSec: data.integrity_violation_threshold_seconds || 2,
 			onLog,
 		})
 		visibilityLog.start()

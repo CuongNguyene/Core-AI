@@ -189,6 +189,14 @@
 									:label="__('courses.form.enableIntegrityWarnings')"
 									:description="__('courses.form.enableIntegrityWarningsDescription')"
 								/>
+								<FormControl
+									v-if="course.enable_integrity_warnings"
+									type="number"
+									:min="0"
+									v-model="course.integrity_violation_threshold_seconds"
+									:label="__('courses.form.integrityViolationThreshold')"
+									:description="__('courses.form.integrityViolationThresholdDescription')"
+								/>
 							</div>
 						</div>
 					</div>
@@ -407,6 +415,7 @@ const course = reactive({
 	disable_self_learning: false,
 	enforce_sequential_progress: false,
 	enable_integrity_warnings: false,
+	integrity_violation_threshold_seconds: 2,
 	enable_certification: false,
 	paid_course: false,
 	paid_certificate: false,

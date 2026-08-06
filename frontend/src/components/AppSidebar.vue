@@ -242,7 +242,11 @@ const addAssignments = () => {
 }
 
 const restrictCertifications = () => {
-	if (!isModerator.value && !userResource.data?.is_system_manager) {
+	if (
+		!isInstructor.value &&
+		!isModerator.value &&
+		!userResource.data?.is_system_manager
+	) {
 		sidebarLinks.value = sidebarLinks.value.filter(
 			(link) => link.label !== 'Certifications'
 		)

@@ -108,6 +108,7 @@ declare module 'vue' {
     ReviewModal: typeof import('./src/components/Modals/ReviewModal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScheduleCalendar: typeof import('./src/components/ScheduleCalendar.vue')['default']
     SettingDetails: typeof import('./src/components/Settings/SettingDetails.vue')['default']
     SettingFields: typeof import('./src/components/Settings/SettingFields.vue')['default']
     Settings: typeof import('./src/components/Settings/Settings.vue')['default']

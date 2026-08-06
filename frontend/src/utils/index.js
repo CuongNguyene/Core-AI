@@ -45,6 +45,11 @@ export function timeAgo(date) {
 	return useTimeAgo(date, messages ? { messages } : {}).value
 }
 
+export function capitalize(text) {
+	if (!text) return text
+	return text.charAt(0).toUpperCase() + text.slice(1)
+}
+
 export function formatTime(timeString) {
 	if (!timeString) return ''
 	const [hour, minute] = timeString.split(':').map(Number)

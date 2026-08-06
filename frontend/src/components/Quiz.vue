@@ -53,7 +53,10 @@
 			</div>
 		</div>
 
-		<IntegrityWarningBanner :count="violationCount" />
+		<IntegrityWarningBanner
+			v-if="!hideIntegrityBanner"
+			:count="violationCount"
+		/>
 
 		<div v-if="quiz.data.duration" class="flex flex-col space-x-1 my-4">
 			<div class="mb-2">
@@ -377,7 +380,13 @@ const props = defineProps({
 		type: Function,
 		default: () => {},
 	},
+	hideIntegrityBanner: {
+		type: Boolean,
+		default: false,
+	},
 })
+
+const emit = defineEmits(['violation-count'])
 
 const quiz = createResource({
 	url: 'lms.lms.doctype.lms_quiz.lms_quiz.get_quiz',
@@ -542,12 +551,14 @@ const startQuiz = async () => {
 		// against) in tracking tab switches there.
 		const onLog = (count) => {
 			violationCount.value = count || 0
+			emit('violation-count', violationCount.value)
 		}
 
 		visibilityLog.stop()
 		visibilityLog = useVisibilityLog({
 			referenceDoctype: 'LMS Quiz Attempt',
 			referenceName: attempt.name,
+			minDurationSec: quiz.data.integrity_violation_threshold_seconds || 2,
 			onLog,
 		})
 		visibilityLog.start()

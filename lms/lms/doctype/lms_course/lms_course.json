@@ -34,6 +34,7 @@
   "disable_self_learning",
   "enforce_sequential_progress",
   "enable_integrity_warnings",
+  "integrity_violation_threshold_seconds",
   "section_break_18",
   "short_introduction",
   "column_break_viqw",
@@ -115,6 +116,15 @@
    "fieldname": "enable_integrity_warnings",
    "fieldtype": "Check",
    "label": "Enable Integrity Warnings on Lessons"
+  },
+  {
+   "default": "2",
+   "depends_on": "eval:doc.enable_integrity_warnings",
+   "description": "Minimum time (in seconds) a learner must be away from the tab before it is logged as a violation. Shorter absences are ignored.",
+   "fieldname": "integrity_violation_threshold_seconds",
+   "fieldtype": "Int",
+   "label": "Violation Threshold (seconds)",
+   "non_negative": 1
   },
   {
    "fieldname": "image",
