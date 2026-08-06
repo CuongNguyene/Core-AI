@@ -71,12 +71,12 @@ import { computed, markRaw, ref, watch } from 'vue'
 import { useSettings } from '@/stores/settings'
 import SettingDetails from '@/components/Settings/SettingDetails.vue'
 import SidebarLink from '@/components/SidebarLink.vue'
-import Members from '@/components/Settings/Members.vue'
+// import Members from '@/components/Settings/Members.vue'
 import Categories from '@/components/Settings/Categories.vue'
 import EmailTemplates from '@/components/Settings/EmailTemplates.vue'
 import BrandSettings from '@/components/Settings/BrandSettings.vue'
 //import PaymentGateways from '@/components/Settings/PaymentGateways.vue'
-import Transactions from '@/components/Settings/Transactions.vue'
+// import Transactions from '@/components/Settings/Transactions.vue'
 import ZoomSettings from '@/components/Settings/ZoomSettings.vue'
 import Badges from '@/components/Settings/Badges.vue'
 
@@ -117,13 +117,13 @@ const tabsStructure = computed(() => {
 							description:
 								'If enabled, users will no able to move forward in a video',
 						},
-						{
-							label: 'Send calendar invite for evaluations',
-							name: 'send_calendar_invite_for_evaluations',
-							description:
-								'If enabled, it sends google calendar invite to the student for evaluations.',
-							type: 'checkbox',
-						},
+						// {
+						// 	label: 'Send calendar invite for evaluations',
+						// 	name: 'send_calendar_invite_for_evaluations',
+						// 	description:
+						// 		'If enabled, it sends google calendar invite to the student for evaluations.',
+						// 	type: 'checkbox',
+						// },
 						{
 							type: 'Column Break',
 						},
@@ -134,14 +134,14 @@ const tabsStructure = computed(() => {
 							description:
 								'Minimum watch percentage (0-100%) required to mark video lessons as completed',
 						},
-						{
-							label: 'Livecode URL',
-							name: 'livecode_url',
-							doctype: 'Livecode URL',
-							type: 'text',
-							description:
-								'https://docs.frappe.io/learning/falcon-self-hosting-guide',
-						},
+						// {
+						// 	label: 'Livecode URL',
+						// 	name: 'livecode_url',
+						// 	doctype: 'Livecode URL',
+						// 	type: 'text',
+						// 	description:
+						// 		'https://docs.frappe.io/learning/falcon-self-hosting-guide',
+						// },
 						{
 							label: 'Batch Confirmation Email Template',
 							name: 'batch_confirmation_template',
@@ -156,35 +156,35 @@ const tabsStructure = computed(() => {
 							filters: { is_lms_template: 1 },
 							type: 'Link',
 						},
-						{
-							label: 'Unsplash Access Key',
-							name: 'unsplash_access_key',
-							description:
-								'Allows users to pick a profile cover image from Unsplash. https://unsplash.com/documentation#getting-started.',
-							type: 'password',
-						},
+						// {
+						// 	label: 'Unsplash Access Key',
+						// 	name: 'unsplash_access_key',
+						// 	description:
+						// 		'Allows users to pick a profile cover image from Unsplash. https://unsplash.com/documentation#getting-started.',
+						// 	type: 'password',
+						// },
 					],
 				},
-				{
-					label: 'Contact Us',
-					icon: 'Phone',
-					fields: [
-						{
-							label: 'Email',
-							name: 'contact_us_email',
-							type: 'text',
-							description:
-								'Users can reach out to this email for support or inquiries.',
-						},
-						{
-							label: 'URL',
-							name: 'contact_us_url',
-							type: 'text',
-							description:
-								'Users can reach out to this URL for support or inquiries.',
-						},
-					],
-				},
+				// {
+				// 	label: 'Contact Us',
+				// 	icon: 'Phone',
+				// 	fields: [
+				// 		{
+				// 			label: 'Email',
+				// 			name: 'contact_us_email',
+				// 			type: 'text',
+				// 			description:
+				// 				'Users can reach out to this email for support or inquiries.',
+				// 		},
+				// 		{
+				// 			label: 'URL',
+				// 			name: 'contact_us_url',
+				// 			type: 'text',
+				// 			description:
+				// 				'Users can reach out to this URL for support or inquiries.',
+				// 		},
+				// 	],
+				// },
 			],
 		},
 		// {
@@ -246,13 +246,13 @@ const tabsStructure = computed(() => {
 			label: 'Lists',
 			hideLabel: false,
 			items: [
-				{
-					label: 'Members',
-					description:
-						'Add new members or manage roles and permissions of existing members',
-					icon: 'UserRoundPlus',
-					template: markRaw(Members),
-				},
+				// {
+				// 	label: 'Members',
+				// 	description:
+				// 		'Add new members or manage roles and permissions of existing members',
+				// 	icon: 'UserRoundPlus',
+				// 	template: markRaw(Members),
+				// },
 				{
 					label: 'Zoom Accounts',
 					description:
@@ -356,36 +356,36 @@ const tabsStructure = computed(() => {
 						},
 					],
 				},
-				{
-					label: 'Signup',
-					icon: 'LogIn',
-					fields: [
-						{
-							label: 'Identify User Category',
-							name: 'user_category',
-							type: 'checkbox',
-							description:
-								'Enable this option to identify the user category during signup.',
-						},
-						{
-							label: 'Disable signup',
-							name: 'disable_signup',
-							type: 'checkbox',
-							description:
-								'New users will have to be manually registered by Admins.',
-						},
-						{
-							type: 'Column Break',
-						},
-						{
-							label: 'Signup Consent HTML',
-							name: 'custom_signup_content',
-							type: 'Code',
-							mode: 'htmlmixed',
-							rows: 10,
-						},
-					],
-				},
+				// {
+				// 	label: 'Signup',
+				// 	icon: 'LogIn',
+				// 	fields: [
+				// 		{
+				// 			label: 'Identify User Category',
+				// 			name: 'user_category',
+				// 			type: 'checkbox',
+				// 			description:
+				// 				'Enable this option to identify the user category during signup.',
+				// 		},
+				// 		{
+				// 			label: 'Disable signup',
+				// 			name: 'disable_signup',
+				// 			type: 'checkbox',
+				// 			description:
+				// 				'New users will have to be manually registered by Admins.',
+				// 		},
+				// 		{
+				// 			type: 'Column Break',
+				// 		},
+				// 		{
+				// 			label: 'Signup Consent HTML',
+				// 			name: 'custom_signup_content',
+				// 			type: 'Code',
+				// 			mode: 'htmlmixed',
+				// 			rows: 10,
+				// 		},
+				// 	],
+				// },
 				{
 					label: 'SEO',
 					icon: 'Search',

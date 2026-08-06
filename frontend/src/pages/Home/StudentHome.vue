@@ -1,5 +1,12 @@
 <template>
 	<div>
+		<div class="mt-10">
+			<div class="font-semibold text-lg mb-3 text-ink-gray-9">
+				{{ __('home.schedule.myScheduleTitle') }}
+			</div>
+			<ScheduleCalendar endpoint="lms.lms.utils.get_my_schedule" />
+		</div>
+
 		<div v-if="myCourses.data?.length" class="mt-10">
 			<div class="flex items-center justify-between mb-3">
 				<span class="font-semibold text-lg text-ink-gray-9">
@@ -147,6 +154,7 @@ import {
 } from 'lucide-vue-next'
 import CourseCard from '@/components/CourseCard.vue'
 import BatchCard from '@/components/BatchCard.vue'
+import ScheduleCalendar from '@/components/ScheduleCalendar.vue'
 
 const dayjs = inject<any>('$dayjs')
 const user = inject<any>('$user')

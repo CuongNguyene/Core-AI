@@ -247,6 +247,7 @@ import { sessionStore } from '../stores/session'
 import { usersStore } from '../stores/user'
 import Link from '@/components/Controls/Link.vue'
 import DateRangeFilter from '@/components/Common/DateRangeFilter.vue'
+import { capitalize } from '@/utils'
 
 const { brand } = sessionStore()
 const { userResource } = usersStore()
@@ -281,7 +282,7 @@ function formatRange(range) {
 	if (!range) return ''
 	let [from, to] = range.split(',')
 	if (!from || !to) return range
-	return `${dayjs(from).format('MMM D')} - ${dayjs(to).format('MMM D, YYYY')}`
+	return `${capitalize(dayjs(from).format('D MMMM'))} - ${capitalize(dayjs(to).format('D MMMM YYYY'))}`
 }
 
 const rangePresets = {

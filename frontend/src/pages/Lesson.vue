@@ -1,5 +1,9 @@
 <template>
 	<div v-if="lesson.data" class="">
+		<IntegrityWarningBanner
+			v-if="lesson.data.enable_integrity_warnings"
+			:count="violationCount"
+		/>
 		<header
 			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
@@ -381,6 +385,7 @@
 			</div>
 		</div>
 	</div>
+	<DetailSkeleton v-else />
 	<InlineLessonMenu
 		v-if="lesson.data"
 		v-model="showInlineMenu"
@@ -430,6 +435,8 @@ import {
 } from 'lucide-vue-next'
 import { getEditorTools, enablePlyr, highlightText } from '@/utils'
 import { useVisibilityLog } from '@/composables/useVisibilityLog'
+import { useExamGuards } from '@/composables/useExamGuards'
+import IntegrityWarningBanner from '@/components/IntegrityWarningBanner.vue'
 import { sessionStore } from '@/stores/session'
 import { useSidebar } from '@/stores/sidebar'
 import { useSettings } from '@/stores/settings'
@@ -445,6 +452,7 @@ import UserAvatar from '@/components/UserAvatar.vue'
 import Notes from '@/components/Notes/Notes.vue'
 import InlineLessonMenu from '@/components/Notes/InlineLessonMenu.vue'
 import QuizBlock from '@/components/QuizBlock.vue'
+import DetailSkeleton from '@/components/DetailSkeleton.vue'
 
 const user = inject('$user')
 const socket = inject('$socket')
@@ -474,6 +482,8 @@ const currentTab = ref('Notes')
 let timerInterval
 let studyTimeInterval
 let visibilityLog = { start: () => {}, stop: () => {} }
+let examGuards = { start: () => {}, stop: () => {} }
+const violationCount = ref(0)
 
 const tabs = ref([
 	{
@@ -511,16 +521,48 @@ onMounted(() => {
 
 const STUDY_TIME_HEARTBEAT_SECONDS = 30
 
+// Tracks actual elapsed wall-clock time since the last flush, rather than
+// blindly recording a fixed 30s per tick, so a partial window (tab hidden,
+// lesson switched, or the page closed before the next tick) is still
+// recorded instead of being silently dropped.
+let studyHeartbeatAt = null
+
+const flushStudyTime = () => {
+	const trackedSince = studyHeartbeatAt
+	const now = Date.now()
+	studyHeartbeatAt = document.visibilityState === 'visible' ? now : null
+
+	if (!trackedSince || !lesson.data?.membership) return
+	const elapsed = Math.round((now - trackedSince) / 1000)
+	if (elapsed <= 0) return
+
+	call('lms.lms.api.record_study_time', {
+		course: props.courseName,
+		seconds: elapsed,
+	})
+}
+
+const onStudyVisibilityChange = () => {
+	if (document.visibilityState === 'visible') {
+		studyHeartbeatAt = Date.now()
+	} else {
+		flushStudyTime()
+	}
+}
+
 const startStudyTimeTracking = () => {
 	clearInterval(studyTimeInterval)
-	studyTimeInterval = setInterval(() => {
-		if (document.visibilityState === 'visible' && lesson.data?.membership) {
-			call('lms.lms.api.record_study_time', {
-				course: props.courseName,
-				seconds: STUDY_TIME_HEARTBEAT_SECONDS,
-			})
-		}
-	}, STUDY_TIME_HEARTBEAT_SECONDS * 1000)
+	studyHeartbeatAt = document.visibilityState === 'visible' ? Date.now() : null
+	document.addEventListener('visibilitychange', onStudyVisibilityChange)
+	window.addEventListener('beforeunload', flushStudyTime)
+	studyTimeInterval = setInterval(flushStudyTime, STUDY_TIME_HEARTBEAT_SECONDS * 1000)
+}
+
+const stopStudyTimeTracking = () => {
+	clearInterval(studyTimeInterval)
+	flushStudyTime()
+	document.removeEventListener('visibilitychange', onStudyVisibilityChange)
+	window.removeEventListener('beforeunload', flushStudyTime)
 }
 
 const attachFullscreenEvent = () => {
@@ -574,7 +616,8 @@ const setupLesson = (data) => {
 	if (data.content) editor.value = renderEditor('editor', data.content)
 	if (
 		data.instructor_content &&
-		JSON.parse(data.instructor_content)?.blocks?.length > 1
+		JSON.parse(data.instructor_content)?.blocks?.length > 1 &&
+		allowInstructorContent()
 	)
 		instructorEditor.value = renderEditor(
 			'instructor-content',
@@ -585,17 +628,39 @@ const setupLesson = (data) => {
 	})
 	checkQuiz()
 
-	// Silent — unlike the quiz-taking warning banner, switching tabs while
-	// reading/watching a lesson is normal (e.g. listening while multitasking).
-	// This is only used server-side to exclude backgrounded time from
-	// min_reading_time (see has_met_reading_time), not to warn the student.
+	// By default this is silent — switching tabs while reading/watching a
+	// lesson is normal (e.g. listening while multitasking). It's only used
+	// server-side to exclude backgrounded time from min_reading_time (see
+	// has_met_reading_time), not to warn the student. Instructors can opt a
+	// course into the same visible warning banner + exam guards used during
+	// quizzes via Course.enable_integrity_warnings.
 	visibilityLog.stop()
+	examGuards.stop()
+	violationCount.value = 0
+
 	if (data.name) {
+		const onLog = data.enable_integrity_warnings
+			? (count) => {
+					violationCount.value = count || 0
+				}
+			: undefined
+
 		visibilityLog = useVisibilityLog({
 			referenceDoctype: 'Course Lesson',
 			referenceName: data.name,
+			minDurationSec: data.integrity_violation_threshold_seconds || 2,
+			onLog,
 		})
 		visibilityLog.start()
+
+		if (data.enable_integrity_warnings) {
+			examGuards = useExamGuards({
+				referenceDoctype: 'Course Lesson',
+				referenceName: data.name,
+				onLog,
+			})
+			examGuards.start(lessonContainer.value)
+		}
 	}
 }
 
@@ -940,8 +1005,9 @@ const startTimer = () => {
 
 onBeforeUnmount(() => {
 	clearInterval(timerInterval)
-	clearInterval(studyTimeInterval)
+	stopStudyTimeTracking()
 	visibilityLog.stop()
+	examGuards.stop()
 })
 
 const checkIfDiscussionsAllowed = () => {

@@ -71,19 +71,21 @@
 			</div>
 		</div>
 	</div>
+	<DetailSkeleton v-else />
 </template>
 <script setup>
 import { computed, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import { BookOpen, Clock } from 'lucide-vue-next'
 import { formatTime } from '@/utils'
-import { Breadcrumbs, createResource, usePageMeta } from 'frappe-ui'
+import { Breadcrumbs, createResource, toast, usePageMeta } from 'frappe-ui'
 import { sessionStore } from '@/stores/session'
 import CourseCard from '@/components/CourseCard.vue'
 import BatchOverlay from '@/components/BatchOverlay.vue'
 import DateRange from '../components/Common/DateRange.vue'
 import CourseInstructors from '@/components/CourseInstructors.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
+import DetailSkeleton from '@/components/DetailSkeleton.vue'
 
 const user = inject('$user')
 const router = useRouter()
@@ -105,6 +107,7 @@ const batch = createResource({
 	auto: true,
 	onSuccess: (data) => {
 		if (!data) {
+			toast.error(__('batches.detail.notMemberMessage'))
 			router.push({ name: 'Batches' })
 		}
 	},

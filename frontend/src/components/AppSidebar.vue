@@ -241,6 +241,18 @@ const addAssignments = () => {
 	}
 }
 
+const restrictCertifications = () => {
+	if (
+		!isInstructor.value &&
+		!isModerator.value &&
+		!userResource.data?.is_system_manager
+	) {
+		sidebarLinks.value = sidebarLinks.value.filter(
+			(link) => link.label !== 'Certifications'
+		)
+	}
+}
+
 // const addProgrammingExercises = () => {
 // 	if (isInstructor.value || isModerator.value) {
 // 		sidebarLinks.value.splice(3, 0, {
@@ -271,17 +283,17 @@ const addPrograms = async () => {
 	})
 }
 
-const addContactUsDetails = () => {
-	if (settingsStore.contactUsEmail?.data || settingsStore.contactUsURL?.data) {
-		sidebarLinks.value.push({
-			label: 'Contact Us',
-			icon: settingsStore.contactUsURL?.data ? 'Headset' : 'Mail',
-			to: settingsStore.contactUsURL?.data
-				? settingsStore.contactUsURL.data
-				: settingsStore.contactUsEmail?.data,
-		})
-	}
-}
+// const addContactUsDetails = () => {
+// 	if (settingsStore.contactUsEmail?.data || settingsStore.contactUsURL?.data) {
+// 		sidebarLinks.value.push({
+// 			label: 'Contact Us',
+// 			icon: settingsStore.contactUsURL?.data ? 'Headset' : 'Mail',
+// 			to: settingsStore.contactUsURL?.data
+// 				? settingsStore.contactUsURL.data
+// 				: settingsStore.contactUsEmail?.data,
+// 		})
+// 	}
+// }
 
 const checkIfCanAddProgram = async () => {
 	if (isModerator.value || isInstructor.value) {
@@ -410,17 +422,17 @@ const steps = reactive([
 			router.push({ name: 'Quizzes' })
 		},
 	},
-	{
-		name: 'invite_students',
-		title: __('sidebar.onboarding.inviteTeamAndStudents'),
-		icon: markRaw(h(InviteIcon, iconProps)),
-		completed: false,
-		onClick: () => {
-			minimize.value = true
-			settingsStore.activeTab = 'Members'
-			settingsStore.isSettingsOpen = true
-		},
-	},
+	// {
+	// 	name: 'invite_students',
+	// 	title: __('sidebar.onboarding.inviteTeamAndStudents'),
+	// 	icon: markRaw(h(InviteIcon, iconProps)),
+	// 	completed: false,
+	// 	onClick: () => {
+	// 		minimize.value = true
+	// 		settingsStore.activeTab = 'Members'
+	// 		settingsStore.isSettingsOpen = true
+	// 	},
+	// },
 	{
 		name: 'create_first_batch',
 		title: __('sidebar.onboarding.createFirstBatch'),
@@ -557,7 +569,7 @@ const setUpOnboarding = () => {
 }
 
 watch(userResource, () => {
-	addContactUsDetails()
+	// addContactUsDetails()
 	if (userResource.data) {
 		isModerator.value = userResource.data.is_moderator
 		isInstructor.value = userResource.data.is_instructor
@@ -566,6 +578,7 @@ watch(userResource, () => {
 		// addProgrammingExercises()
 		addQuizzes()
 		addAssignments()
+		restrictCertifications()
 		setUpOnboarding()
 	}
 })

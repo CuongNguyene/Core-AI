@@ -1,4 +1,5 @@
 <template>
+	<IntegrityWarningBanner v-if="!fromLesson" :count="violationCount" />
 	<header
 		v-if="!fromLesson"
 		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
@@ -17,16 +18,23 @@
 		class="md:w-7/12 md:mx-auto mx-4 py-10"
 		:class="{ 'pt-4 md:w-full': fromLesson }"
 	>
-		<Quiz :quizName="quizID" />
+		<Quiz
+			:quizName="quizID"
+			:hide-integrity-banner="!fromLesson"
+			@violation-count="violationCount = $event"
+		/>
 	</div>
 </template>
 <script setup>
 import Quiz from '@/components/Quiz.vue'
+import IntegrityWarningBanner from '@/components/IntegrityWarningBanner.vue'
 import { createResource, Breadcrumbs, Button, usePageMeta } from 'frappe-ui'
 import { computed, inject, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ArrowLeft } from 'lucide-vue-next'
 import { sessionStore } from '../stores/session'
+
+const violationCount = ref(0)
 
 const { brand } = sessionStore()
 const user = inject('$user')

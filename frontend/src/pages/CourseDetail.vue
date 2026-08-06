@@ -100,6 +100,7 @@
 			<RelatedCourses :courseName="course.data.name" />
 		</div>
 	</div>
+	<DetailSkeleton v-else />
 </template>
 <script setup>
 import {
@@ -120,6 +121,7 @@ import CourseReviews from '@/components/CourseReviews.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
 import CourseInstructors from '@/components/CourseInstructors.vue'
 import RelatedCourses from '@/components/RelatedCourses.vue'
+import DetailSkeleton from '@/components/DetailSkeleton.vue'
 
 const { brand } = sessionStore()
 const router = useRouter()

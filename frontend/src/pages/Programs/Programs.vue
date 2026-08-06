@@ -27,7 +27,13 @@
 			/>
 		</div>
 		<div
-			v-if="programs.data?.length"
+			v-if="programs.list?.loading && !programs.data?.length"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
+		>
+			<CardSkeleton v-for="i in 8" :key="i" />
+		</div>
+		<div
+			v-else-if="programs.data?.length"
 			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
 		>
 			<div
@@ -38,7 +44,7 @@
 				<ProgramCard :program="program" />
 			</div>
 		</div>
-		<EmptyState v-else-if="!programs.list?.loading" type="Programs" />
+		<EmptyState v-else type="Programs" />
 		<div
 			v-if="!programs.list?.loading && programs.hasNextPage"
 			class="flex justify-center mt-5"
@@ -68,6 +74,7 @@ import { Plus } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import ProgramForm from '@/pages/Programs/ProgramForm.vue'
 import ProgramCard from '@/components/ProgramCard.vue'
+import CardSkeleton from '@/components/CardSkeleton.vue'
 import EmptyState from '@/components/EmptyState.vue'
 import StudentPrograms from '@/pages/Programs/StudentPrograms.vue'
 

@@ -57,7 +57,13 @@
 			</div>
 		</div>
 		<div
-			v-if="courses.data?.length"
+			v-if="courses.list.loading && !courses.data?.length"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
+		>
+			<CardSkeleton v-for="i in 8" :key="i" />
+		</div>
+		<div
+			v-else-if="courses.data?.length"
 			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
 		>
 			<router-link
@@ -67,7 +73,7 @@
 				<CourseCard :course="course" />
 			</router-link>
 		</div>
-		<EmptyState v-else-if="!courses.list.loading" type="Courses" />
+		<EmptyState v-else type="Courses" />
 		<div
 			v-if="!courses.list.loading && courses.hasNextPage"
 			class="flex justify-center mt-5"
@@ -95,6 +101,7 @@ import { Plus } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import { canCreateCourse } from '@/utils'
 import CourseCard from '@/components/CourseCard.vue'
+import CardSkeleton from '@/components/CardSkeleton.vue'
 import EmptyState from '@/components/EmptyState.vue'
 import router from '../router'
 
@@ -113,7 +120,7 @@ const courseCount = ref(0)
 onMounted(() => {
 	setFiltersFromQuery()
 	updateCourses()
-	getCourseCount()
+	if (user.data?.is_system_manager) getCourseCount()
 })
 
 const setFiltersFromQuery = () => {

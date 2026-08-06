@@ -38,7 +38,10 @@
 				</div>
 			</div>
 		</div>
-		<div v-if="participants.data?.length" class="divide-y">
+		<div v-if="participants.list.loading && !participants.data?.length" class="divide-y">
+			<ListRowSkeleton v-for="i in 6" :key="i" />
+		</div>
+		<div v-else-if="participants.data?.length" class="divide-y">
 			<template v-for="participant in participants.data">
 				<router-link
 					:to="{
@@ -114,6 +117,7 @@ import { computed, inject, onMounted, ref } from 'vue'
 import { GraduationCap } from 'lucide-vue-next'
 import { sessionStore } from '../stores/session'
 import EmptyState from '@/components/EmptyState.vue'
+import ListRowSkeleton from '@/components/ListRowSkeleton.vue'
 import Autocomplete from '@/components/Controls/Autocomplete.vue'
 
 const currentCategory = ref('')
