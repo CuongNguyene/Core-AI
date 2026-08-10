@@ -1,6 +1,7 @@
 <template>
 	<NoPermission v-if="!$user.data" />
-	<div v-else-if="profile.data">
+	<ProfileSkeleton v-else-if="!profile.data" />
+	<div v-else>
 		<header
 			class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
@@ -103,6 +104,7 @@ import { Edit } from 'lucide-vue-next'
 import UserAvatar from '@/components/UserAvatar.vue'
 import { useRoute, useRouter } from 'vue-router'
 import NoPermission from '@/components/NoPermission.vue'
+import ProfileSkeleton from '@/components/ProfileSkeleton.vue'
 import { convertToTitleCase } from '@/utils'
 import EditProfile from '@/components/Modals/EditProfile.vue'
 import EditCoverImage from '@/components/Modals/EditCoverImage.vue'
@@ -193,10 +195,11 @@ const isSessionUser = () => {
 }
 
 const getTabButtons = () => {
-	let buttons = [
-		{ label: __('profile.tabs.about'), value: 'About' },
-		{ label: __('profile.tabs.certificates'), value: 'Certificates' },
-	]
+	let buttons = [{ label: __('profile.tabs.about'), value: 'About' }]
+
+	if (isSessionUser() || $user.data?.is_moderator || $user.data?.is_system_manager)
+		buttons.push({ label: __('profile.tabs.certificates'), value: 'Certificates' })
+
 	if ($user.data?.is_moderator)
 		buttons.push({ label: __('profile.tabs.roles'), value: 'Roles' })
 
@@ -205,9 +208,14 @@ const getTabButtons = () => {
 
 const breadcrumbs = computed(() => {
 	let crumbs = [
-		{
-			label: __('profile.people'),
-		},
+		activeTab.value === 'Certificates'
+			? {
+					label: __('Certifications'),
+					route: { name: 'CertifiedParticipants' },
+				}
+			: {
+					label: __('profile.people'),
+				},
 		{
 			label: profile.data?.full_name,
 			route: {

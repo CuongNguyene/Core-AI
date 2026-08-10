@@ -41,7 +41,7 @@
 							<div class="flex items-center space-x-2 w-fit">
 								<Calendar class="h-4 w-4 stroke-1.5" />
 								<span>
-									{{ dayjs(event.date).format('DD MMM YYYY') }}
+									{{ dayjs(event.date).format('L') }}
 								</span>
 							</div>
 						</Tooltip>

@@ -1,6 +1,7 @@
 import { watch } from 'vue'
 import { usersStore } from './stores/user'
 import translations from './translations'
+import dayjs from '@/utils/dayjs'
 
 export default function translationPlugin(app) {
 	app.config.globalProperties.__ = translate
@@ -63,6 +64,7 @@ function loadLanguage() {
 	const applyLanguage = (user) => {
 		window.translatedMessages = (user?.language && translations[user.language]) || {}
 		window.lmsLanguage = user?.language || 'en'
+		dayjs.locale(window.lmsLanguage)
 	}
 
 	if (userResource.data) {

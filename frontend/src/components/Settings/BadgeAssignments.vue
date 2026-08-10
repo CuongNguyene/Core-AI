@@ -149,7 +149,7 @@ const assignments = createListResource({
 			return {
 				...item,
 				issued_on: item.issued_on
-					? dayjs(item.issued_on).format('DD MMM YYYY')
+					? dayjs(item.issued_on).format('L')
 					: null,
 			}
 		})

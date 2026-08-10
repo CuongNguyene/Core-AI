@@ -23,7 +23,7 @@
 				</div>
 				<div class="text-sm text-ink-gray-7 font-medium">
 					{{ __('courses.certification.issuedOn') }}:
-					{{ dayjs(certificate.data.issue_date).format('DD MMM YYYY') }}
+					{{ dayjs(certificate.data.issue_date).format('L') }}
 				</div>
 			</div>
 		</div>

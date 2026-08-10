@@ -808,7 +808,7 @@ def get_chart_data(
 
 	data = frappe.db.get_all(
 		doctype,
-		fields=[f"{datefield} as _unit", f"SUM({value_field})", "COUNT(*)"],
+		fields=[f"{datefield} as _unit", {"SUM": value_field}, {"COUNT": "*"}],
 		filters=filters,
 		group_by="_unit",
 		order_by="_unit asc",
@@ -1337,7 +1337,13 @@ def get_lesson(course, chapter, lesson):
 	course_info = frappe.db.get_value(
 		"LMS Course",
 		course,
-		["title", "paid_certificate", "disable_self_learning"],
+		[
+			"title",
+			"paid_certificate",
+			"disable_self_learning",
+			"enable_integrity_warnings",
+			"integrity_violation_threshold_seconds",
+		],
 		as_dict=1,
 	)
 
@@ -1402,6 +1408,10 @@ def get_lesson(course, chapter, lesson):
 	lesson_details.course_title = course_info.title
 	lesson_details.paid_certificate = course_info.paid_certificate
 	lesson_details.disable_self_learning = course_info.disable_self_learning
+	lesson_details.enable_integrity_warnings = course_info.enable_integrity_warnings
+	lesson_details.integrity_violation_threshold_seconds = (
+		course_info.integrity_violation_threshold_seconds or 2
+	)
 	lesson_details.videos = get_video_details(lesson_name)
 
 	if frappe.session.user != "Guest":
@@ -1484,21 +1494,14 @@ def get_neighbour_lesson(course, chapter, lesson):
 @frappe.whitelist(allow_guest=False)
 def get_batch_details(batch):
 	batch_students = frappe.get_all("LMS Batch Enrollment", {"batch": batch}, pluck="member")
-	published, allow_self_enrollment = frappe.db.get_value(
-		"LMS Batch", batch, ["published", "allow_self_enrollment"]
-	)
+	published = frappe.db.get_value("LMS Batch", batch, "published")
 	user = frappe.session.user
 	is_member = user in batch_students
 	is_batch_instructor = user in [
 		instructor.instructor for instructor in frappe.get_all("Course Instructor", {"parent": batch, "parenttype": "LMS Batch"}, "instructor")
 	]
 
-	if not (
-		(published and allow_self_enrollment)
-		or is_member
-		or is_batch_instructor
-		or has_course_moderator_role()
-	):
+	if not (published or is_member or is_batch_instructor or has_course_moderator_role()):
 		return
 
 	batch_details = frappe.db.get_value(
@@ -2612,6 +2615,174 @@ def get_admin_evals():
 		evaluation.course_title = frappe.db.get_value("LMS Course", evaluation.course, "title")
 
 	return evals
+
+
+@frappe.whitelist()
+def get_my_schedule(from_date=None, to_date=None):
+	"""Unified calendar feed for a student: batch sessions/milestones from
+	their enrolled batches' timetables, plus live classes for those batches.
+	"""
+	if frappe.session.user == "Guest":
+		return []
+
+	from_date = getdate(from_date) if from_date else getdate()
+	to_date = getdate(to_date) if to_date else add_months(from_date, 1)
+
+	batches = frappe.get_all(
+		"LMS Batch Enrollment",
+		{"member": frappe.session.user},
+		pluck="batch",
+	)
+
+	events = get_batch_timetable_events(batches, from_date, to_date)
+	events += get_live_class_events(batches, from_date, to_date)
+	events.sort(key=lambda e: (e["date"], e["start_time"] or ""))
+	return events
+
+
+@frappe.whitelist()
+def get_admin_schedule(from_date=None, to_date=None):
+	"""Unified calendar feed for an instructor: sessions/milestones and live
+	classes for the batches they teach, plus their certificate evaluation
+	slots.
+	"""
+	if frappe.session.user == "Guest":
+		return []
+
+	from_date = getdate(from_date) if from_date else getdate()
+	to_date = getdate(to_date) if to_date else add_months(from_date, 1)
+
+	batches = frappe.get_all(
+		"Course Instructor",
+		{"instructor": frappe.session.user, "parenttype": "LMS Batch"},
+		pluck="parent",
+	)
+
+	events = get_batch_timetable_events(batches, from_date, to_date)
+	events += get_live_class_events(batches, from_date, to_date)
+	events += get_evaluation_events(from_date, to_date)
+	events.sort(key=lambda e: (e["date"], e["start_time"] or ""))
+	return events
+
+
+def get_batch_timetable_events(batches, from_date, to_date):
+	if not batches:
+		return []
+
+	rows = frappe.get_all(
+		"LMS Batch Timetable",
+		filters={
+			"parenttype": "LMS Batch",
+			"parent": ["in", batches],
+			"date": ["between", [from_date, to_date]],
+		},
+		fields=[
+			"parent as batch",
+			"date",
+			"start_time",
+			"end_time",
+			"reference_doctype",
+			"reference_docname",
+			"milestone",
+		],
+	)
+
+	if not rows:
+		return []
+
+	batch_titles = {
+		b.name: b.title
+		for b in frappe.get_all(
+			"LMS Batch", filters={"name": ["in", batches]}, fields=["name", "title"]
+		)
+	}
+
+	events = []
+	for row in rows:
+		title = None
+		if row.reference_doctype and row.reference_docname:
+			title = frappe.db.get_value(row.reference_doctype, row.reference_docname, "title")
+
+		events.append(
+			{
+				"date": str(row.date),
+				"start_time": str(row.start_time) if row.start_time else None,
+				"end_time": str(row.end_time) if row.end_time else None,
+				"type": "Milestone" if row.milestone else "Session",
+				"title": title or batch_titles.get(row.batch) or row.batch,
+				"batch": row.batch,
+				"batch_title": batch_titles.get(row.batch),
+				"reference_doctype": row.reference_doctype,
+				"reference_docname": row.reference_docname,
+				"url": f"/lms/batches/details/{row.batch}",
+			}
+		)
+
+	return events
+
+
+def get_live_class_events(batches, from_date, to_date):
+	if not batches:
+		return []
+
+	classes = frappe.get_all(
+		"LMS Live Class",
+		filters={
+			"batch_name": ["in", batches],
+			"date": ["between", [from_date, to_date]],
+		},
+		fields=["name", "title", "date", "time", "duration", "join_url", "start_url", "batch_name"],
+	)
+
+	events = []
+	for c in classes:
+		events.append(
+			{
+				"date": str(c.date),
+				"start_time": str(c.time) if c.time else None,
+				"end_time": None,
+				"type": "Live Class",
+				"title": c.title,
+				"batch": c.batch_name,
+				"batch_title": frappe.db.get_value("LMS Batch", c.batch_name, "title"),
+				"reference_doctype": "LMS Live Class",
+				"reference_docname": c.name,
+				"url": c.join_url,
+				"start_url": c.start_url,
+			}
+		)
+
+	return events
+
+
+def get_evaluation_events(from_date, to_date):
+	evals = frappe.get_all(
+		"LMS Certificate Request",
+		filters={
+			"evaluator": frappe.session.user,
+			"date": ["between", [from_date, to_date]],
+		},
+		fields=["name", "date", "start_time", "end_time", "member_name", "course_title", "batch_name"],
+	)
+
+	events = []
+	for e in evals:
+		events.append(
+			{
+				"date": str(e.date),
+				"start_time": str(e.start_time) if e.start_time else None,
+				"end_time": str(e.end_time) if e.end_time else None,
+				"type": "Evaluation",
+				"title": e.member_name or e.name,
+				"batch": e.batch_name,
+				"batch_title": e.course_title,
+				"reference_doctype": "LMS Certificate Request",
+				"reference_docname": e.name,
+				"url": None,
+			}
+		)
+
+	return events
 
 
 def fetch_activity_dates(user):

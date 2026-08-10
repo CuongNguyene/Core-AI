@@ -12,8 +12,8 @@
 			</Button>
 		</router-link>
 	</header>
-	<div class="mx-auto w-full max-w-4xl pt-6 pb-10">
-		<div class="flex flex-col md:flex-row justify-between mb-4 px-3">
+	<div class="py-5 mx-5">
+		<div class="flex flex-col md:flex-row justify-between mb-4">
 			<div class="text-xl font-semibold text-ink-gray-7 mb-4 md:mb-0">
 				{{ memberCount }} {{ __('certification.certifiedMembers') }}
 			</div>
@@ -38,7 +38,10 @@
 				</div>
 			</div>
 		</div>
-		<div v-if="participants.data?.length" class="divide-y">
+		<div v-if="participants.list.loading && !participants.data?.length" class="divide-y">
+			<ListRowSkeleton v-for="i in 6" :key="i" />
+		</div>
+		<div v-else-if="participants.data?.length" class="divide-y">
 			<template v-for="participant in participants.data">
 				<router-link
 					:to="{
@@ -81,7 +84,7 @@
 								</div>
 								<span class="text-ink-gray-4 md:hidden">·</span>
 								<div class="text-ink-gray-5">
-									{{ dayjs(participant.issue_date).format('DD MMM YYYY') }}
+									{{ dayjs(participant.issue_date).format('L') }}
 								</div>
 							</div>
 						</div>
@@ -114,6 +117,7 @@ import { computed, inject, onMounted, ref } from 'vue'
 import { GraduationCap } from 'lucide-vue-next'
 import { sessionStore } from '../stores/session'
 import EmptyState from '@/components/EmptyState.vue'
+import ListRowSkeleton from '@/components/ListRowSkeleton.vue'
 import Autocomplete from '@/components/Controls/Autocomplete.vue'
 
 const currentCategory = ref('')

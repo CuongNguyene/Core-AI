@@ -81,6 +81,12 @@
 							:getProgress="course.data.membership ? true : false"
 						/>
 					</div>
+					<div class="mt-10">
+						<CourseResources
+							:courseName="course.data.name"
+							:canManage="isInstructor() || user.data?.is_moderator"
+						/>
+					</div>
 					<CourseReviews
 						:courseName="course.data.name"
 						:avg_rating="course.data.rating"
@@ -94,6 +100,7 @@
 			<RelatedCourses :courseName="course.data.name" />
 		</div>
 	</div>
+	<DetailSkeleton v-else />
 </template>
 <script setup>
 import {
@@ -109,10 +116,12 @@ import { sessionStore } from '@/stores/session'
 import { useRouter } from 'vue-router'
 import CourseCardOverlay from '@/components/CourseCardOverlay.vue'
 import CourseOutline from '@/components/CourseOutline.vue'
+import CourseResources from '@/components/CourseResources.vue'
 import CourseReviews from '@/components/CourseReviews.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
 import CourseInstructors from '@/components/CourseInstructors.vue'
 import RelatedCourses from '@/components/RelatedCourses.vue'
+import DetailSkeleton from '@/components/DetailSkeleton.vue'
 
 const { brand } = sessionStore()
 const router = useRouter()

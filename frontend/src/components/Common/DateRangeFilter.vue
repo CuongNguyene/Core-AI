@@ -33,6 +33,7 @@
 import { DateRangePicker, Dropdown, dayjs } from 'frappe-ui'
 import { Calendar, ChevronDown } from 'lucide-vue-next'
 import { ref, watch } from 'vue'
+import { capitalize } from '@/utils'
 
 const props = defineProps({
 	modelValue: {
@@ -59,19 +60,19 @@ function formatRange(range) {
 	if (!range) return ''
 	let [from, to] = range.split(',')
 	if (!from || !to) return range
-	return `${dayjs(from).format('MMM D')} - ${dayjs(to).format('MMM D, YYYY')}`
+	return `${capitalize(dayjs(from).format('D MMMM'))} - ${capitalize(dayjs(to).format('D MMMM YYYY'))}`
 }
 
 const rangePresets = {
-	0: 'Today',
-	7: 'Last 7 Days',
-	30: 'Last 30 Days',
-	60: 'Last 60 Days',
-	90: 'Last 90 Days',
+	0: 'statistics.today',
+	7: 'statistics.last7Days',
+	30: 'statistics.last30Days',
+	60: 'statistics.last60Days',
+	90: 'statistics.last90Days',
 }
 
 function presetLabelFor(period) {
-	if (!period) return __('Custom Range')
+	if (!period) return __('statistics.customRange')
 	let [from, to] = period.split(',')
 	if (!from || !to) return period
 	let diffDays = dayjs(to).diff(dayjs(from), 'day')
@@ -95,32 +96,35 @@ function applyPreset(label, period) {
 
 const rangeOptions = [
 	{
-		group: 'Presets',
+		group: __('statistics.presets'),
 		hideLabel: true,
 		items: [
-			{ label: __('Today'), onClick: () => applyPreset(__('Today'), getLastXDays(0)) },
 			{
-				label: __('Last 7 Days'),
-				onClick: () => applyPreset(__('Last 7 Days'), getLastXDays(7)),
+				label: __('statistics.today'),
+				onClick: () => applyPreset(__('statistics.today'), getLastXDays(0)),
 			},
 			{
-				label: __('Last 30 Days'),
-				onClick: () => applyPreset(__('Last 30 Days'), getLastXDays(30)),
+				label: __('statistics.last7Days'),
+				onClick: () => applyPreset(__('statistics.last7Days'), getLastXDays(7)),
 			},
 			{
-				label: __('Last 60 Days'),
-				onClick: () => applyPreset(__('Last 60 Days'), getLastXDays(60)),
+				label: __('statistics.last30Days'),
+				onClick: () => applyPreset(__('statistics.last30Days'), getLastXDays(30)),
 			},
 			{
-				label: __('Last 90 Days'),
-				onClick: () => applyPreset(__('Last 90 Days'), getLastXDays(90)),
+				label: __('statistics.last60Days'),
+				onClick: () => applyPreset(__('statistics.last60Days'), getLastXDays(60)),
+			},
+			{
+				label: __('statistics.last90Days'),
+				onClick: () => applyPreset(__('statistics.last90Days'), getLastXDays(90)),
 			},
 		],
 	},
 	{
-		label: __('Custom Range'),
+		label: __('statistics.customRange'),
 		onClick: () => {
-			presetLabel.value = __('Custom Range')
+			presetLabel.value = __('statistics.customRange')
 			showDatePicker.value = true
 			setTimeout(() => datePickerRef.value?.open(), 0)
 		},

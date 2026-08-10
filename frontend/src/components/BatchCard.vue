@@ -1,41 +1,54 @@
 <template>
 	<div
-		class="flex flex-col border hover:border-outline-gray-3 rounded-md p-4 h-full"
+		class="flex flex-col border rounded-lg p-4 h-full transition-all duration-150 hover:border-outline-gray-3 hover:shadow-sm"
 		style="min-height: 150px"
 	>
-		<div class="text-lg leading-5 font-semibold mb-2 text-ink-gray-9">
-			{{ batch.title }}
+		<div class="flex items-start justify-between gap-2 mb-1">
+			<div class="line-clamp-2 text-lg leading-5 font-semibold text-ink-gray-9">
+				{{ batch.title }}
+			</div>
+			<div
+				v-if="batch.amount"
+				class="shrink-0 text-sm font-semibold text-ink-gray-9"
+			>
+				{{ batch.price }}
+			</div>
 		</div>
-		<div
-			v-if="batch.seat_count && batch.seats_left > 0"
-			class="text-xs bg-green-100 text-green-700 self-start px-2 py-0.5 rounded-md"
-		>
-			{{ batch.seats_left }}
-			<span v-if="batch.seats_left > 1">
-				{{ __('batches.card.seatsLeft') }}
-			</span>
-			<span v-else-if="batch.seats_left == 1">
-				{{ __('batches.card.seatLeft') }}
-			</span>
+
+		<div class="flex flex-wrap items-center gap-1.5 mb-2">
+			<div
+				v-if="batch.seat_count && batch.seats_left > 0"
+				class="flex items-center gap-1 text-xs font-medium bg-green-100 text-green-700 px-2 py-0.5 rounded-full"
+			>
+				<Users class="h-3 w-3 stroke-2" />
+				{{ batch.seats_left }}
+				<span v-if="batch.seats_left > 1">
+					{{ __('batches.card.seatsLeft') }}
+				</span>
+				<span v-else-if="batch.seats_left == 1">
+					{{ __('batches.card.seatLeft') }}
+				</span>
+			</div>
+			<div
+				v-else-if="batch.seat_count && batch.seats_left <= 0"
+				class="flex items-center gap-1 text-xs font-medium bg-red-100 text-red-700 px-2 py-0.5 rounded-full"
+			>
+				<Users class="h-3 w-3 stroke-2" />
+				{{ __('batches.card.soldOut') }}
+			</div>
+			<div
+				v-if="!batch.published"
+				class="flex items-center gap-1 text-xs font-medium bg-gray-100 text-ink-gray-7 px-2 py-0.5 rounded-full"
+			>
+				<Lock class="h-3 w-3 stroke-2" />
+				{{ __('batches.card.private') }}
+			</div>
 		</div>
-		<div
-			v-else-if="batch.seat_count && batch.seats_left <= 0"
-			class="text-xs bg-red-100 text-red-700 self-start px-2 py-0.5 rounded-md"
-		>
-			{{ __('batches.card.soldOut') }}
-		</div>
-		<div
-			v-if="!batch.allow_self_enrollment"
-			class="text-xs bg-gray-100 text-ink-gray-7 self-start px-2 py-0.5 rounded-md mb-2"
-		>
-			{{ __('batches.card.private') }}
-		</div>
+
 		<div class="short-introduction text-sm text-ink-gray-7">
 			{{ batch.description }}
 		</div>
-		<div v-if="batch.amount" class="font-semibold text-ink-gray-9 mb-4">
-			{{ batch.price }}
-		</div>
+
 		<div class="flex flex-col space-y-2 mt-auto">
 			<DateRange
 				:startDate="batch.start_date"
@@ -43,7 +56,7 @@
 				class="text-sm text-ink-gray-7"
 			/>
 			<div class="flex items-center text-sm text-ink-gray-7">
-				<Clock class="h-4 w-4 stroke-1.5 mr-2 text-ink-gray-7" />
+				<Clock class="h-4 w-4 stroke-1.5 mr-2 text-ink-gray-7 shrink-0" />
 				<span>
 					{{ formatTime(batch.start_time) }} - {{ formatTime(batch.end_time) }}
 				</span>
@@ -60,7 +73,7 @@
 		</div>
 		<div
 			v-if="batch.instructors?.length"
-			class="flex avatar-group overlap mt-4"
+			class="flex avatar-group overlap mt-4 pt-3 border-t"
 		>
 			<div
 				class="h-6 mr-1"
@@ -77,7 +90,7 @@
 </template>
 <script setup>
 import { formatTime } from '@/utils'
-import { Clock, Globe } from 'lucide-vue-next'
+import { Clock, Globe, Lock, Users } from 'lucide-vue-next'
 import DateRange from '@/components/Common/DateRange.vue'
 import CourseInstructors from '@/components/CourseInstructors.vue'
 import UserAvatar from '@/components/UserAvatar.vue'

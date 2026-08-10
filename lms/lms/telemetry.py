@@ -1,4 +1,8 @@
 import frappe
+import frappe.utils.telemetry
+
+POSTHOG_PROJECT_FIELD = "posthog_project_id"
+POSTHOG_HOST_FIELD = "posthog_host"
 
 
 @frappe.whitelist(allow_guest=True)

@@ -123,7 +123,15 @@ def get_quiz(quiz):
 		"lesson",
 		"course",
 	]
-	return {field: quiz_doc.get(field) for field in fields}
+	quiz_details = {field: quiz_doc.get(field) for field in fields}
+	quiz_details["integrity_violation_threshold_seconds"] = (
+		frappe.db.get_value(
+			"LMS Course", quiz_doc.course, "integrity_violation_threshold_seconds"
+		)
+		if quiz_doc.course
+		else None
+	) or 2
+	return quiz_details
 
 
 @frappe.whitelist()

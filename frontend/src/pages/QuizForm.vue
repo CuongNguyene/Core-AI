@@ -250,7 +250,7 @@ const props = defineProps({
 	},
 })
 
-const questions = ref([])
+const questions = computed(() => quizDetails.doc?.questions ?? [])
 
 const isNew = computed(() => props.quizID === 'new')
 
@@ -277,11 +277,7 @@ onMounted(() => {
 	) {
 		router.push({ name: 'Courses' })
 	}
-	if (props.quizID !== 'new') {
-		quizDetails.reload()
-	} else {
-		quizDetails.doc = getBlankQuiz()
-	}
+	loadQuiz()
 	window.addEventListener('keydown', keyboardShortcut)
 })
 
@@ -296,24 +292,22 @@ onBeforeUnmount(() => {
 	window.removeEventListener('keydown', keyboardShortcut)
 })
 
-watch(
-	() => props.quizID !== 'new',
-	(newVal) => {
-		if (newVal) {
-			quizDetails.reload()
-		}
+const loadQuiz = () => {
+	if (props.quizID === 'new') {
+		quizDetails.name = 'new'
+		quizDetails.doc = getBlankQuiz()
+		return
 	}
-)
+	quizDetails.name = props.quizID
+	quizDetails.reload()
+}
+
+watch(() => props.quizID, loadQuiz)
 
 const quizDetails = createDocumentResource({
 	doctype: 'LMS Quiz',
 	name: props.quizID,
 	auto: false,
-	onSuccess(doc) {
-		if (doc.questions && doc.questions.length > 0) {
-			questions.value = doc.questions.map((question) => question)
-		}
-	},
 })
 
 const newQuizResource = createResource({
@@ -405,15 +399,10 @@ const testQuiz = () => {
 
 const calculateTotalMarks = () => {
 	let totalMarks = 0
-	if (
-		quizDetails.doc?.limit_questions_to &&
-		quizDetails.doc?.questions.length > 0
-	)
-		return (
-			quizDetails.doc.questions[0].marks * quizDetails.doc.limit_questions_to
-		)
+	if (quizDetails.doc?.limit_questions_to && questions.value.length > 0)
+		return questions.value[0].marks * quizDetails.doc.limit_questions_to
 
-	quizDetails.doc?.questions.forEach((question) => {
+	questions.value.forEach((question) => {
 		totalMarks += question.marks
 	})
 	return totalMarks

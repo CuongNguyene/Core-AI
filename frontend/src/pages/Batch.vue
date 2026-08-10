@@ -1,5 +1,6 @@
 <template>
-	<div v-if="user.data?.is_moderator || isStudent" class="">
+	<DetailSkeleton v-if="batch.loading && !batch.data" tabs />
+	<div v-else-if="user.data?.is_moderator || isStudent || isInstructor" class="">
 		<header
 			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 		>
@@ -85,6 +86,14 @@
 							<div v-else-if="tab.id == 'Assessments'">
 								<Assessments :batch="batch.data.name" />
 							</div>
+							<div v-else-if="tab.id == 'Resources'">
+								<CourseResources
+									:batchName="batch.data.name"
+									:canManage="
+										user.data?.is_moderator || user.data?.is_instructor
+									"
+								/>
+							</div>
 							<div v-else-if="tab.id == 'Announcements'">
 								<Announcements :batch="batch.data.name" />
 							</div>
@@ -162,7 +171,7 @@
 			/>
 		</div>
 	</div>
-	<div v-else-if="!user.data?.name" class="">
+	<div v-else class="">
 		<div class="text-base border rounded-md w-1/3 mx-auto my-32">
 			<div class="border-b px-5 py-3 font-medium">
 				<span
@@ -233,6 +242,7 @@ import {
 	MessageCircle,
 	Globe,
 	ClipboardPen,
+	Paperclip,
 } from 'lucide-vue-next'
 import { formatTime } from '@/utils'
 import { sessionStore } from '@/stores/session'
@@ -248,7 +258,9 @@ import AnnouncementModal from '@/components/Modals/AnnouncementModal.vue'
 import Discussions from '@/components/Discussions.vue'
 import DateRange from '@/components/Common/DateRange.vue'
 import BulkCertificates from '@/components/Modals/BulkCertificates.vue'
+import DetailSkeleton from '@/components/DetailSkeleton.vue'
 import BatchFeedback from '@/components/BatchFeedback.vue'
+import CourseResources from '@/components/CourseResources.vue'
 import dayjs from 'dayjs/esm'
 
 const user = inject('$user')
@@ -287,6 +299,12 @@ const tabs = computed(() => {
 			icon: BookOpenCheck,
 		})
 	}
+
+	batchTabs.push({
+		label: __('batches.detail.tabs.resources'),
+		id: 'Resources',
+		icon: Paperclip,
+	})
 
 	batchTabs.push({
 		label: __('batches.detail.tabs.announcements'),
@@ -354,6 +372,14 @@ const isStudent = computed(() => {
 		user?.data &&
 		batch.data?.students?.length &&
 		batch.data?.students.includes(user.data.name)
+	)
+})
+
+const isInstructor = computed(() => {
+	return (
+		user?.data &&
+		batch.data?.instructors?.length &&
+		batch.data.instructors.some((instructor) => instructor.name === user.data.name)
 	)
 })
 

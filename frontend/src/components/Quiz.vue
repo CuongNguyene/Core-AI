@@ -53,16 +53,10 @@
 			</div>
 		</div>
 
-		<div
-			v-if="violationCount > 0"
-			class="bg-surface-amber-2 py-2 px-3 mb-4 rounded-md text-sm text-ink-amber-3 leading-5"
-		>
-			{{
-				__(
-					'quiz.take.leftScreenWarning'
-				).format(violationCount)
-			}}
-		</div>
+		<IntegrityWarningBanner
+			v-if="!hideIntegrityBanner"
+			:count="violationCount"
+		/>
 
 		<div v-if="quiz.data.duration" class="flex flex-col space-x-1 my-4">
 			<div class="mb-2">
@@ -350,6 +344,7 @@ import { CheckCircle, XCircle, MinusCircle } from 'lucide-vue-next'
 import { timeAgo } from '@/utils'
 import { useRouter } from 'vue-router'
 import ProgressBar from '@/components/ProgressBar.vue'
+import IntegrityWarningBanner from '@/components/IntegrityWarningBanner.vue'
 import { useVisibilityLog } from '@/composables/useVisibilityLog'
 import { useExamGuards } from '@/composables/useExamGuards'
 
@@ -385,7 +380,13 @@ const props = defineProps({
 		type: Function,
 		default: () => {},
 	},
+	hideIntegrityBanner: {
+		type: Boolean,
+		default: false,
+	},
 })
+
+const emit = defineEmits(['violation-count'])
 
 const quiz = createResource({
 	url: 'lms.lms.doctype.lms_quiz.lms_quiz.get_quiz',
@@ -550,12 +551,14 @@ const startQuiz = async () => {
 		// against) in tracking tab switches there.
 		const onLog = (count) => {
 			violationCount.value = count || 0
+			emit('violation-count', violationCount.value)
 		}
 
 		visibilityLog.stop()
 		visibilityLog = useVisibilityLog({
 			referenceDoctype: 'LMS Quiz Attempt',
 			referenceName: attempt.name,
+			minDurationSec: quiz.data.integrity_violation_threshold_seconds || 2,
 			onLog,
 		})
 		visibilityLog.start()

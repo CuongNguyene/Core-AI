@@ -20,19 +20,25 @@
 		</Button>
 	</header>
 
-	<div class="md:w-3/4 md:mx-auto py-5 mx-5">
-		<div class="flex items-center justify-between mb-5">
-			<div v-if="assignmentCount" class="text-lg font-semibold text-ink-gray-9">
-				{{ __('assignments.nAssignments').format(assignmentCount) }}
+	<div class="py-5 mx-5">
+		<div class="flex items-center justify-between mb-4">
+			<div class="text-lg font-semibold text-ink-gray-7">
+				{{
+					assignments.data?.length
+						? __('assignments.nAssignments').format(assignments.data.length)
+						: __('assignments.noAssignments')
+				}}
 			</div>
-			<div
-				v-if="assignments.data?.length || assignmentCount > 0"
-				class="grid grid-cols-2 gap-5"
-			>
+			<div class="flex items-center space-x-2">
 				<FormControl
 					v-model="titleFilter"
+					type="text"
 					:placeholder="__('assignments.searchByTitle')"
-				/>
+				>
+					<template #prefix>
+						<FeatherIcon name="search" class="size-4 text-ink-gray-5" />
+					</template>
+				</FormControl>
 				<Autocomplete
 					:modelValue="typeFilter"
 					@update:modelValue="(opt) => (typeFilter = opt?.value || '')"
@@ -57,6 +63,32 @@
 				},
 			}"
 		>
+			<ListHeader
+				class="mb-2 grid items-center space-x-4 rounded bg-surface-gray-2 p-2"
+			>
+				<ListHeaderItem :item="item" v-for="item in assignmentColumns">
+					<template #prefix="{ item }">
+						<FeatherIcon :name="item.icon?.toString()" class="h-4 w-4" />
+					</template>
+				</ListHeaderItem>
+			</ListHeader>
+			<ListRows>
+				<ListRow v-for="row in assignments.data" :row="row" :key="row.name">
+					<template #default="{ column, item }">
+						<ListRowItem :item="row[column.key]" :align="column.align">
+							<div
+								v-if="column.key == 'creation'"
+								class="text-xs text-ink-gray-5"
+							>
+								{{ row[column.key] }}
+							</div>
+							<div v-else>
+								{{ row[column.key] }}
+							</div>
+						</ListRowItem>
+					</template>
+				</ListRow>
+			</ListRows>
 		</ListView>
 		<EmptyState v-else type="Assignments" />
 		<div
@@ -78,10 +110,15 @@
 import {
 	Breadcrumbs,
 	Button,
-	call,
 	createListResource,
+	FeatherIcon,
 	FormControl,
 	ListView,
+	ListHeader,
+	ListHeaderItem,
+	ListRows,
+	ListRow,
+	ListRowItem,
 	usePageMeta,
 } from 'frappe-ui'
 import { computed, inject, onMounted, ref, watch } from 'vue'
@@ -98,7 +135,6 @@ const titleFilter = ref('')
 const typeFilter = ref('')
 const showAssignmentForm = ref(false)
 const assignmentID = ref('new')
-const assignmentCount = ref(0)
 const { brand } = sessionStore()
 const router = useRouter()
 const readOnlyMode = window.read_only_mode
@@ -107,7 +143,6 @@ onMounted(() => {
 	if (!user.data?.is_moderator && !user.data?.is_instructor) {
 		router.push({ name: 'Courses' })
 	}
-	getAssignmentCount()
 	titleFilter.value = router.currentRoute.value.query.title
 	typeFilter.value = router.currentRoute.value.query.type
 })
@@ -145,8 +180,10 @@ const assignmentFilter = computed(() => {
 
 const assignments = createListResource({
 	doctype: 'LMS Assignment',
+	filters: assignmentFilter,
 	fields: ['name', 'title', 'type', 'creation', 'question'],
 	orderBy: 'modified desc',
+	auto: true,
 	cache: ['assignments'],
 	transform(data) {
 		return data.map((row) => {
@@ -164,29 +201,24 @@ const assignmentColumns = computed(() => {
 			label: __('assignments.title'),
 			key: 'title',
 			width: 2,
+			icon: 'file-text',
 		},
 		{
 			label: __('assignments.type'),
 			key: 'type',
 			width: 1,
-			align: 'left',
+			align: 'center',
+			icon: 'tag',
 		},
 		{
 			label: __('assignments.created'),
 			key: 'creation',
 			width: 1,
-			align: 'right',
+			align: 'center',
+			icon: 'clock',
 		},
 	]
 })
-
-const getAssignmentCount = () => {
-	call('frappe.client.get_count', {
-		doctype: 'LMS Assignment',
-	}).then((data) => {
-		assignmentCount.value = data
-	})
-}
 
 const assignmentTypeLabels = {
 	Document: 'assignments.typeDocument',
