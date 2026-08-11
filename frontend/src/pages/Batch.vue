@@ -292,7 +292,7 @@ const tabs = computed(() => {
 		icon: Laptop,
 	})
 
-	if (user.data?.is_moderator) {
+	if (user.data?.is_moderator || user.data?.is_instructor) {
 		batchTabs.push({
 			label: __('batches.detail.tabs.assessments'),
 			id: 'Assessments',

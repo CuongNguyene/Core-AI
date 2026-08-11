@@ -102,10 +102,19 @@ const assignmentID = ref('')
 const member = ref('')
 const status = ref('')
 
-onMounted(() => {
-	if (!user.data?.is_instructor && !user.data?.is_moderator) {
-		router.push({ name: 'Courses' })
+const redirectIfNotAllowed = () => {
+	if (user.data && !user.data?.is_instructor && !user.data?.is_moderator) {
+		window.location.href = '/lms/courses'
 	}
+}
+
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(() => {
+	redirectIfNotAllowed()
 	assignmentID.value = router.currentRoute.value.query.assignmentID
 	member.value = router.currentRoute.value.query.member
 	status.value = router.currentRoute.value.query.status

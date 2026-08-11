@@ -263,14 +263,24 @@ const getBlankQuiz = () => ({
 	questions: [],
 })
 
-onMounted(() => {
+const redirectIfNotAllowed = () => {
 	if (
 		props.quizID == 'new' &&
+		user.data &&
 		!user.data?.is_moderator &&
 		!user.data?.is_instructor
 	) {
-		router.push({ name: 'Courses' })
+		window.location.href = '/lms/courses'
 	}
+}
+
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(() => {
+	redirectIfNotAllowed()
 	loadQuiz()
 	window.addEventListener('keydown', keyboardShortcut)
 })

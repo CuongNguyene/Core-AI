@@ -100,7 +100,7 @@
 						v-else-if="lesson.data.disable_self_learning"
 						class="mt-2"
 					>
-						{{ __('Contact the Administrator to enroll for this course.') }}
+						{{ __('Contact the Moderator to enroll for this course.') }}
 					</Badge>
 					<Button v-else @click="redirectToLogin()">
 						<template #prefix>

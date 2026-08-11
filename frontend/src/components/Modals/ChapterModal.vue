@@ -17,6 +17,7 @@
 		<template #body-content>
 			<div class="space-y-4 text-base">
 				<FormControl :label="__('courses.chapterModal.title')" v-model="chapter.title" :required="true" />
+				<!-- SCORM package upload is not currently used, hidden until needed.
 				<Switch
 					size="sm"
 					:label="__('courses.chapterModal.scormPackage')"
@@ -64,6 +65,7 @@
 						</div>
 					</div>
 				</div>
+				-->
 			</div>
 		</template>
 	</Dialog>

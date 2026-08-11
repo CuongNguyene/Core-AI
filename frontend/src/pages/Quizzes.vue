@@ -131,13 +131,19 @@ const search = ref('')
 const readOnlyMode = window.read_only_mode
 const quizFilters = ref({})
 
-onMounted(() => {
+const redirectIfNotAllowed = () => {
+	if (!user.data) return
 	if (!user.data?.is_moderator && !user.data?.is_instructor) {
-		router.push({ name: 'Courses' })
-	} else if (!user.data?.is_moderator) {
-		quizFilters.value['owner'] = user.data?.name
+		window.location.href = '/lms/courses'
 	}
-})
+}
+
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(redirectIfNotAllowed)
 
 watch(search, () => {
 	quizFilters.value['title'] = ['like', `%${search.value}%`]
@@ -171,6 +177,18 @@ const quizzes = createListResource({
 		})
 	},
 })
+
+watch(
+	user,
+	() => {
+		if (user.data && !user.data?.is_moderator && user.data?.is_instructor) {
+			quizFilters.value['owner'] = user.data?.name
+			quizzes.update({ filters: quizFilters.value })
+			quizzes.reload()
+		}
+	},
+	{ immediate: true }
+)
 
 const deleteQuiz = (selections, unselectAll) => {
 	Array.from(selections).forEach(async (quizName) => {

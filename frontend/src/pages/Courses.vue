@@ -281,6 +281,10 @@ watch(currentTab, () => {
 const courseTabs = computed(() => {
 	let tabs = [
 		{
+			label: __('courses.list.all'),
+			value: 'All',
+		},
+		{
 			label: __('courses.list.live'),
 			value: 'Live',
 		},

@@ -18,6 +18,9 @@ class LMSAssignmentSubmission(Document):
 	def on_update(self):
 		self.validate_private_attachments()
 
+	def after_insert(self):
+		self.notify_instructors()
+
 	def validate_duplicates(self):
 		if frappe.db.exists(
 			"LMS Assignment Submission",
@@ -78,6 +81,30 @@ class LMSAssignmentSubmission(Document):
 			}
 		)
 		make_lms_notification_logs(notification, [self.member])
+
+	def notify_instructors(self):
+		instructors = frappe.db.get_all(
+			"Course Instructor", {"parent": self.course}, pluck="instructor"
+		)
+		instructors = [instructor for instructor in instructors if instructor != self.member]
+		if not instructors:
+			return
+
+		notification = frappe._dict(
+			{
+				"subject": _("{0} submitted an assignment for {1} that needs grading").format(
+					self.member_name, self.assignment_title
+				),
+				"email_content": self.answer,
+				"document_type": self.doctype,
+				"document_name": self.name,
+				"for_user": self.owner,
+				"from_user": self.member,
+				"type": "Alert",
+				"link": f"/assignment-submission/{self.assignment}/{self.name}",
+			}
+		)
+		make_lms_notification_logs(notification, instructors)
 
 
 @frappe.whitelist()
