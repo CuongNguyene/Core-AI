@@ -22,6 +22,7 @@ from frappe import _
 from frappe.utils import cint, cstr
 from openpyxl.styles import Alignment, Font
 from openpyxl.utils import get_column_letter
+from openpyxl.worksheet.datavalidation import DataValidation
 
 from lms.lms.utils import has_course_instructor_role, has_course_moderator_role
 
@@ -31,22 +32,14 @@ INSTRUCTIONS_SHEET = "Instructions"
 
 QUESTION_TYPES = ("Choices", "User Input", "Open Ended")
 
-# Several accepted answers / several explanations live in one cell.
-MULTI_SEPARATOR = "|"
-
-# Header labels of the questions sheet, in display order.
+# Header labels of the questions sheet, in display order. Explanation N sits right
+# after Option N because that is where it is shown to the student.
 QUESTION_COLUMNS = (
-	"Quiz Title",
-	"Question",
-	"Question Type",
-	"Marks",
-	"Option 1",
-	"Option 2",
-	"Option 3",
-	"Option 4",
-	"Correct Answer",
-	"Expected Answer",
-	"Explanation",
+	("Quiz Title",)
+	+ ("Question", "Question Type", "Marks")
+	+ tuple(label for num in range(1, 5) for label in (f"Option {num}", f"Explanation {num}"))
+	+ ("Correct Answer",)
+	+ tuple(f"Expected Answer {num}" for num in range(1, 5))
 )
 
 # Header label -> internal key used while parsing.
@@ -55,14 +48,12 @@ QUESTION_KEYS = {
 	"question": "question",
 	"question type": "question_type",
 	"marks": "marks",
-	"option 1": "option_1",
-	"option 2": "option_2",
-	"option 3": "option_3",
-	"option 4": "option_4",
 	"correct answer": "correct_answer",
-	"expected answer": "expected_answer",
-	"explanation": "explanation",
 }
+for _num in range(1, 5):
+	QUESTION_KEYS[f"option {_num}"] = f"option_{_num}"
+	QUESTION_KEYS[f"explanation {_num}"] = f"explanation_{_num}"
+	QUESTION_KEYS[f"expected answer {_num}"] = f"possibility_{_num}"
 
 REQUIRED_QUESTION_COLUMNS = ("Quiz Title", "Question", "Question Type", "Marks")
 
@@ -71,7 +62,7 @@ SETTINGS_COLUMNS = (
 	("Quiz Title", "title"),
 	("Passing Percentage", "passing_percentage"),
 	("Maximum Attempts", "max_attempts"),
-	("Duration", "duration"),
+	("Duration (in minutes)", "duration"),
 	("Show Answers", "show_answers"),
 	("Show Submission History", "show_submission_history"),
 	("Shuffle Questions", "shuffle_questions"),
@@ -80,6 +71,8 @@ SETTINGS_COLUMNS = (
 	("Marks To Cut", "marks_to_cut"),
 )
 SETTINGS_FIELDS = {label.lower(): fieldname for label, fieldname in SETTINGS_COLUMNS}
+# The header carries its unit, but a plain "Duration" is still understood.
+SETTINGS_FIELDS["duration"] = "duration"
 
 SETTINGS_CHECKBOXES = (
 	"show_answers",
@@ -100,13 +93,13 @@ COLUMN_WIDTHS = {
 	"Question Type": 16,
 	"Marks": 8,
 	"Correct Answer": 16,
-	"Expected Answer": 34,
-	"Explanation": 40,
 	"Passing Percentage": 20,
 	"Maximum Attempts": 20,
 	"Show Submission History": 24,
 	"Enable Negative Marking": 24,
 	"Limit Questions To": 20,
+	**{f"Explanation {num}": 32 for num in range(1, 5)},
+	**{f"Expected Answer {num}": 26 for num in range(1, 5)},
 }
 DEFAULT_COLUMN_WIDTH = 22
 
@@ -180,10 +173,6 @@ def cell_value(value):
 	return cstr(value).strip()
 
 
-def split_multi(value):
-	return [part.strip() for part in cstr(value).split(MULTI_SEPARATOR) if part.strip()]
-
-
 def write_sheet(ws, columns, rows):
 	ws.append(list(columns))
 
@@ -199,12 +188,30 @@ def write_sheet(ws, columns, rows):
 	ws.freeze_panes = "A2"
 
 
+def add_question_type_dropdown(ws):
+	"""Turns the Question Type cells into a picker so the type never has to be typed."""
+	column = get_column_letter(QUESTION_COLUMNS.index("Question Type") + 1)
+
+	rule = DataValidation(
+		type="list",
+		formula1='"{0}"'.format(",".join(QUESTION_TYPES)),
+		allow_blank=True,
+	)
+	rule.showErrorMessage = True
+	rule.errorTitle = _("Invalid Question Type")
+	rule.error = _("Pick one of: {0}.").format(", ".join(QUESTION_TYPES))
+
+	ws.add_data_validation(rule)
+	rule.add(f"{column}2:{column}{MAX_ROWS + 1}")
+
+
 def build_workbook(question_rows, settings_rows):
 	wb = openpyxl.Workbook()
 
 	questions = wb.active
 	questions.title = QUESTIONS_SHEET
 	write_sheet(questions, QUESTION_COLUMNS, question_rows)
+	add_question_type_dropdown(questions)
 
 	settings = wb.create_sheet(SETTINGS_SHEET)
 	write_sheet(settings, [label for label, _fieldname in SETTINGS_COLUMNS], settings_rows)
@@ -232,33 +239,32 @@ def get_instructions():
 		"",
 		_("Always required: Quiz Title, Question, Question Type, Marks."),
 		_("Rows with the same Quiz Title are imported into the same quiz."),
-		_("Question Type must be one of: {0}.").format(", ".join(QUESTION_TYPES)),
+		_("Question Type is a drop down. Click the cell and pick one of: {0}.").format(
+			", ".join(QUESTION_TYPES)
+		),
 		_("Marks must be a whole number greater than 0."),
 		"",
 		_("Question Type = Choices"),
 		_("- Fill Option 1 and Option 2. Option 3 and Option 4 are optional."),
 		_("- Options within one question must not repeat."),
 		_("- Correct Answer holds the option numbers that are correct, e.g. 1 or 1,3."),
-		_("- Leave Expected Answer empty."),
-		_("- Explanation is shown under the option it belongs to, so write it as '1: text'."),
-		_("  Use '{0}' between explanations, e.g. '1: Correct {0} 3: Also correct'.").format(
-			MULTI_SEPARATOR
-		),
+		_("- Explanation N is shown under Option N, so fill it only if Option N is filled."),
+		_("- Leave the Expected Answer columns empty."),
 		"",
 		_("Question Type = User Input"),
-		_("- Expected Answer holds the accepted answers. Leave Options and Correct Answer empty."),
-		_("- Separate up to 4 accepted answers with '{0}', e.g. 'CPU {0} Central Processing Unit'.").format(
-			MULTI_SEPARATOR
-		),
+		_("- Fill at least Expected Answer 1. Up to 4 accepted answers are supported."),
+		_("- Each accepted answer goes in its own column, one answer per column."),
 		_("- Answers are matched loosely, so small typing differences still count as correct."),
+		_("- Leave the Option and Correct Answer columns empty."),
 		"",
 		_("Question Type = Open Ended"),
-		_("- Leave Options, Correct Answer and Expected Answer empty. These are graded manually."),
-		_("- Explanation can hold a grading note for the reviewer."),
+		_("- Leave Option, Correct Answer and Expected Answer columns empty. Graded manually."),
+		_("- Explanation 1 can hold a grading note for the reviewer."),
 		_("- A quiz cannot mix Open Ended questions with other question types."),
 		"",
 		_("Sheet '{0}'").format(SETTINGS_SHEET),
 		_("- Quiz Title must match a title used in the questions sheet."),
+		_("- Duration is in minutes. Leave it empty for a quiz with no time limit."),
 		_("- Yes/No columns accept Yes, No, 1 or 0."),
 		_("- Settings are applied only when the quiz is created."),
 		_("- For a quiz that already exists, this sheet is ignored and its settings are kept."),
@@ -292,27 +298,29 @@ def download_template():
 			"Question Type": "Choices",
 			"Marks": 1,
 			"Option 1": "Python",
+			"Explanation 1": _("Python is a programming language."),
 			"Option 2": "HTML",
+			"Explanation 2": _("HTML is a markup language."),
 			"Option 3": "JavaScript",
+			"Explanation 3": _("JavaScript is a programming language."),
 			"Option 4": "CSS",
+			"Explanation 4": _("CSS is a style sheet language."),
 			"Correct Answer": "1,3",
-			"Explanation": _("1: Python is a programming language. {0} 3: So is JavaScript.").format(
-				MULTI_SEPARATOR
-			),
 		},
 		{
 			"Quiz Title": title,
 			"Question": _("What does CPU stand for?"),
 			"Question Type": "User Input",
 			"Marks": 1,
-			"Expected Answer": f"Central Processing Unit {MULTI_SEPARATOR} CPU",
+			"Expected Answer 1": "Central Processing Unit",
+			"Expected Answer 2": "CPU",
 		},
 		{
 			"Quiz Title": title,
 			"Question": _("Explain Object Oriented Programming."),
 			"Question Type": "Open Ended",
 			"Marks": 5,
-			"Explanation": _("Student should mention encapsulation, inheritance and polymorphism."),
+			"Explanation 1": _("Student should mention encapsulation, inheritance and polymorphism."),
 		},
 	]
 
@@ -338,28 +346,8 @@ def format_correct_answer(question):
 	return ",".join(str(num) for num in range(1, 5) if question.get(f"is_correct_{num}"))
 
 
-def format_expected_answer(question):
-	answers = [
-		plain_text(question.get(f"possibility_{num}"))
-		for num in range(1, 5)
-		if question.get(f"possibility_{num}")
-	]
-	return f" {MULTI_SEPARATOR} ".join(answers)
-
-
-def format_explanation(question):
-	"""explanation_N belongs to option N, so the merged cell keeps the option number."""
-	parts = []
-	for num in range(1, 5):
-		text = plain_text(question.get(f"explanation_{num}"))
-		if not text:
-			continue
-		parts.append(f"{num}: {text}" if question.type == "Choices" else text)
-
-	return f" {MULTI_SEPARATOR} ".join(parts)
-
-
-def get_quiz_rows(quiz_name):
+def get_quiz_rows(quiz_name, positions=None):
+	"""`positions` is a set of 1 based question positions, or None for every question."""
 	quiz = frappe.get_doc("LMS Quiz", quiz_name)
 
 	question_names = [row.question for row in quiz.questions]
@@ -373,7 +361,10 @@ def get_quiz_rows(quiz_name):
 			questions[question.name] = question
 
 	rows = []
-	for row in quiz.questions:
+	for position, row in enumerate(quiz.questions, start=1):
+		if positions is not None and position not in positions:
+			continue
+
 		question = questions.get(row.question)
 		if not question:
 			continue
@@ -383,15 +374,18 @@ def get_quiz_rows(quiz_name):
 			"Question": plain_text(question.question),
 			"Question Type": question.type,
 			"Marks": cint(row.marks),
-			"Explanation": format_explanation(question),
 		}
+
+		for num in range(1, 5):
+			data[f"Explanation {num}"] = plain_text(question.get(f"explanation_{num}"))
 
 		if question.type == "Choices":
 			for num in range(1, 5):
 				data[f"Option {num}"] = plain_text(question.get(f"option_{num}"))
 			data["Correct Answer"] = format_correct_answer(question)
 		elif question.type == "User Input":
-			data["Expected Answer"] = format_expected_answer(question)
+			for num in range(1, 5):
+				data[f"Expected Answer {num}"] = plain_text(question.get(f"possibility_{num}"))
 
 		rows.append(data)
 
@@ -418,8 +412,38 @@ def get_settings_row(quiz):
 	return row
 
 
+def parse_row_selection(raw):
+	"""'1,3' or '10-20' or a mix of both, as 1 based question positions."""
+	if raw in (None, ""):
+		return None
+
+	positions = set()
+
+	for part in cstr(raw).split(","):
+		part = part.strip()
+		if not part:
+			continue
+
+		match = re.fullmatch(r"(\d+)(?:-(\d+))?", part)
+		if not match:
+			frappe.throw(_("Invalid question selection: {0}.").format(part))
+
+		start = cint(match.group(1))
+		end = cint(match.group(2)) if match.group(2) else start
+
+		if start < 1 or end < start:
+			frappe.throw(_("Invalid question selection: {0}.").format(part))
+
+		positions.update(range(start, end + 1))
+
+	if not positions:
+		frappe.throw(_("Please select at least one question to export."))
+
+	return positions
+
+
 @frappe.whitelist(methods=["GET"])
-def export_quiz(quiz):
+def export_quiz(quiz, rows=None):
 	check_permission()
 
 	if not frappe.db.exists("LMS Quiz", quiz):
@@ -427,10 +451,16 @@ def export_quiz(quiz):
 
 	check_quiz_permission(quiz)
 
-	quiz_doc, rows, settings = get_quiz_rows(quiz)
+	positions = parse_row_selection(rows)
+
+	quiz_doc, question_rows, settings = get_quiz_rows(quiz, positions)
+
+	if not question_rows:
+		frappe.throw(_("The selected questions were not found in this quiz."))
+
 	filename = re.sub(r"[^A-Za-z0-9_-]+", "_", cstr(quiz_doc.title)).strip("_") or quiz_doc.name
 
-	provide_file(build_workbook(rows, settings), filename)
+	provide_file(build_workbook(question_rows, settings), filename)
 
 
 def read_workbook(file_url):
@@ -635,16 +665,15 @@ def parse_row(values, header, row_number, errors):
 
 def reject_unused_columns(question_type, get, row_number, errors):
 	"""Filling a column that does not apply usually means the row is a mistake."""
-	unused = [("Option {0}", f"option_{num}", num) for num in range(1, 5)]
-	unused.append(("Correct Answer", "correct_answer", None))
+	unused = [(f"Option {num}", f"option_{num}") for num in range(1, 5)]
+	unused.append(("Correct Answer", "correct_answer"))
 
 	if question_type == "Open Ended":
-		unused.append(("Expected Answer", "expected_answer", None))
+		unused += [(f"Expected Answer {num}", f"possibility_{num}") for num in range(1, 5)]
 
 	valid = True
-	for label, key, num in unused:
+	for column, key in unused:
 		if get(key):
-			column = label.format(num) if num else label
 			add_error(
 				errors,
 				row_number,
@@ -668,14 +697,17 @@ def parse_choices(payload, get, row_number, errors):
 		if option:
 			options.append(option)
 
-	if get("expected_answer"):
-		add_error(
-			errors,
-			row_number,
-			"Expected Answer",
-			_("Expected Answer does not apply to a 'Choices' question. Please leave it empty."),
-		)
-		valid = False
+	for num in range(1, 5):
+		if get(f"possibility_{num}"):
+			add_error(
+				errors,
+				row_number,
+				f"Expected Answer {num}",
+				_("{0} does not apply to a 'Choices' question. Please leave it empty.").format(
+					f"Expected Answer {num}"
+				),
+			)
+			valid = False
 
 	if not payload.get("option_1") or not payload.get("option_2"):
 		add_error(
@@ -755,78 +787,40 @@ def parse_correct_answer(payload, get, row_number, errors):
 
 
 def parse_expected_answer(payload, get, row_number, errors):
-	answers = split_multi(get("expected_answer"))
+	"""Each accepted answer keeps its own column, so its position is preserved."""
+	found = False
 
 	for num in range(1, 5):
-		payload[f"possibility_{num}"] = ""
+		answer = get(f"possibility_{num}")
+		payload[f"possibility_{num}"] = answer
+		if answer:
+			found = True
 
-	if not answers:
+	if not found:
 		add_error(
 			errors,
 			row_number,
-			"Expected Answer",
-			_("Expected Answer is required for a 'User Input' question."),
+			"Expected Answer 1",
+			_("Expected Answer 1 is required for a 'User Input' question."),
 		)
 		return False
-
-	if len(answers) > 4:
-		add_error(
-			errors,
-			row_number,
-			"Expected Answer",
-			_("At most 4 accepted answers are supported. Separate them with '{0}'.").format(MULTI_SEPARATOR),
-		)
-		return False
-
-	for index, answer in enumerate(answers, start=1):
-		payload[f"possibility_{index}"] = answer
 
 	return True
 
 
 def parse_explanation(payload, get, question_type, row_number, errors):
-	"""'1: text | 3: text' for Choices, plain text otherwise."""
+	"""Explanation N belongs to Option N and is shown under it."""
 	for num in range(1, 5):
-		payload.setdefault(f"explanation_{num}", "")
+		explanation = get(f"explanation_{num}")
+		payload[f"explanation_{num}"] = explanation
 
-	raw = get("explanation")
-	if not raw:
-		return
-
-	if question_type != "Choices":
-		payload["explanation_1"] = raw
-		return
-
-	parts = split_multi(raw)
-	reported = False
-
-	for part in parts:
-		match = re.match(r"^([1-4])\s*[:.)]\s*(.+)$", part, flags=re.DOTALL)
-		if not match:
-			# No option number given; a single unprefixed explanation belongs to option 1.
-			if len(parts) == 1:
-				payload["explanation_1"] = part
-			elif not reported:
-				reported = True
-				add_error(
-					errors,
-					row_number,
-					"Explanation",
-					_("Write each explanation as '1: text' so it can be shown under the right option."),
-				)
-			continue
-
-		num = cint(match.group(1))
-		if not payload.get(f"option_{num}"):
+		if explanation and question_type == "Choices" and not payload.get(f"option_{num}"):
 			add_error(
 				errors,
 				row_number,
-				"Explanation",
-				_("Explanation refers to Option {0}, but Option {0} is empty.").format(num),
+				f"Explanation {num}",
+				_("Explanation {0} needs Option {0}, but Option {0} is empty.").format(num),
 			)
-			continue
-
-		payload[f"explanation_{num}"] = match.group(2).strip()
 
 
 def get_existing_quiz_state(title):
@@ -1025,6 +1019,9 @@ def import_group(group):
 	else:
 		quiz = frappe.new_doc("LMS Quiz")
 		quiz.title = group["quiz_title"]
+		# passing_percentage is mandatory and has no doctype default. Fall back to the
+		# same value the New Quiz form starts from, so the settings sheet stays optional.
+		quiz.passing_percentage = 0
 		for field, value in group["settings"].items():
 			quiz.set(field, value)
 		quiz.insert()

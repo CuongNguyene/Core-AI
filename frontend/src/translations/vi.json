@@ -817,7 +817,8 @@
 			"quizzes": "Bài trắc nghiệm",
 			"newQuiz": "Bài trắc nghiệm mới",
 			"quiz": "Bài trắc nghiệm",
-			"quizLabel": "Bài trắc nghiệm: {0}"
+			"quizLabel": "Bài trắc nghiệm: {0}",
+			"no": "STT"
 		},
 		"submission": {
 			"notSaved": "Chưa lưu",
@@ -865,6 +866,20 @@
 			"skippedNote": "{0} câu hỏi đã tồn tại trong quiz và sẽ được bỏ qua.",
 			"importSuccess": "Đã nhập {0} câu hỏi vào {1} quiz.",
 			"exportEmpty": "Quiz này chưa có câu hỏi nào để xuất."
+		},
+		"export": {
+			"title": "Xuất câu hỏi",
+			"from": "Từ câu",
+			"to": "Đến câu",
+			"rangeRequired": "Hãy nhập cả câu bắt đầu và câu kết thúc.",
+			"rangeMin": "Số thứ tự câu hỏi bắt đầu từ 1.",
+			"rangeOrder": "'Từ câu' không được lớn hơn 'Đến câu'.",
+			"rangeMax": "Quiz này chỉ có {0} câu hỏi.",
+			"selectedCount": "Đã chọn {0}/{1} câu hỏi.",
+			"selectAll": "Chọn tất cả",
+			"clearAll": "Bỏ chọn tất cả",
+			"noneSelected": "Hãy chọn ít nhất một câu hỏi để xuất.",
+			"selectRange": "Chọn khoảng"
 		}
 	},
 	"videoStatistics": {

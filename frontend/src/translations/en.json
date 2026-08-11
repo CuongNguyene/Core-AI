@@ -817,7 +817,8 @@
 			"quizzes": "Quizzes",
 			"newQuiz": "New Quiz",
 			"quiz": "Quiz",
-			"quizLabel": "Quiz: {0}"
+			"quizLabel": "Quiz: {0}",
+			"no": "No."
 		},
 		"submission": {
 			"notSaved": "Not Saved",
@@ -865,6 +866,20 @@
 			"skippedNote": "{0} question(s) already exist in their quiz and will be skipped.",
 			"importSuccess": "Imported {0} question(s) into {1} quiz(zes).",
 			"exportEmpty": "This quiz has no questions to export."
+		},
+		"export": {
+			"title": "Export Questions",
+			"from": "From question",
+			"to": "To question",
+			"rangeRequired": "Enter both a start and an end question number.",
+			"rangeMin": "Question numbers start from 1.",
+			"rangeOrder": "'From question' cannot be greater than 'To question'.",
+			"rangeMax": "This quiz has only {0} question(s).",
+			"selectedCount": "{0} of {1} question(s) selected.",
+			"selectAll": "Select all",
+			"clearAll": "Clear all",
+			"noneSelected": "Please select at least one question to export.",
+			"selectRange": "Select range"
 		}
 	},
 	"videoStatistics": {

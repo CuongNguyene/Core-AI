@@ -139,7 +139,7 @@
 			<ListView
 				v-if="questions.length"
 				:columns="questionColumns"
-				:rows="questions"
+				:rows="questionRows"
 				row-key="name"
 				:options="{
 					showTooltip: false,
@@ -154,11 +154,11 @@
 					<ListRow
 						:row="row"
 						v-slot="{ idx, column, item }"
-						v-for="row in questions"
+						v-for="row in questionRows"
 						@click="openQuestionModal(row)"
 						class="cursor-pointer"
 					>
-						<ListRowItem :item="item">
+						<ListRowItem :item="item" :align="column.align">
 							<div
 								v-if="column.key == 'question_detail'"
 								class="text-xs truncate h-4"
@@ -188,6 +188,13 @@
 			</div>
 		</div>
 	</div>
+
+	<QuizExportModal
+		v-if="quizDetails.doc?.name"
+		v-model="showExportModal"
+		:quizName="quizDetails.doc.name"
+		:questions="questions"
+	/>
 
 	<Question
 		v-model="showQuestionModal"
@@ -231,9 +238,11 @@ import { sessionStore } from '../stores/session'
 import { ClipboardList, Download, ListChecks, Plus, Trash2 } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import Question from '@/components/Modals/Question.vue'
+import QuizExportModal from '@/components/Modals/QuizExportModal.vue'
 
 const { brand } = sessionStore()
 const showQuestionModal = ref(false)
+const showExportModal = ref(false)
 const currentQuestion = reactive({
 	question: '',
 	marks: 0,
@@ -251,6 +260,11 @@ const props = defineProps({
 })
 
 const questions = computed(() => quizDetails.doc?.questions ?? [])
+
+// Display only: the position of the question in the list, starting from 1.
+const questionRows = computed(() =>
+	questions.value.map((question, index) => ({ ...question, no: index + 1 }))
+)
 
 const isNew = computed(() => props.quizID === 'new')
 
@@ -369,16 +383,12 @@ const submitQuiz = () => {
 }
 
 const exportQuiz = () => {
-	if (!quizDetails.doc?.questions?.length) {
+	if (!questions.value.length) {
 		toast.warning(__('quiz.io.exportEmpty'))
 		return
 	}
 
-	window.open(
-		`/api/method/lms.lms.doctype.lms_quiz.quiz_import_export.export_quiz?quiz=${encodeURIComponent(
-			quizDetails.doc.name
-		)}`
-	)
+	showExportModal.value = true
 }
 
 const testQuiz = () => {
@@ -410,6 +420,12 @@ const calculateTotalMarks = () => {
 
 const questionColumns = computed(() => {
 	return [
+		{
+			label: __('quiz.builder.no'),
+			key: 'no',
+			width: '4rem',
+			align: 'center',
+		},
 		{
 			label: __('quiz.builder.id'),
 			key: 'question',
