@@ -90,7 +90,7 @@
 		"cardOverlay": {
 			"continueLearning": "Continue Learning",
 			"timeSpent": "You've spent {0} on this course",
-			"contactAdministrator": "Contact the administrator to enroll in this course",
+			"contactAdministrator": "Contact the moderator to enroll in this course",
 			"startLearning": "Start Learning",
 			"getCertificate": "Get Certificate",
 			"progressSummary": "Progress Summary",
@@ -196,6 +196,7 @@
 			"category": "Category",
 			"certification": "Certification",
 			"loadMore": "Load More",
+			"all": "All",
 			"live": "Live",
 			"new": "New",
 			"upcoming": "Upcoming",

@@ -50,9 +50,8 @@ export function useTelemetry() {
 
 async function loadPulseProvider(): Promise<PulseProvider | null> {
 	try {
-		const module = await import(
-			'../../../frappe/frappe/public/js/telemetry/pulse.js'
-		)
+		const path = '../../../frappe/frappe/public/js/telemetry/pulse.js'
+		const module = await import(/* @vite-ignore */ path)
 		return module.pulse_provider as PulseProvider
 	} catch (e) {
 		console.warn(

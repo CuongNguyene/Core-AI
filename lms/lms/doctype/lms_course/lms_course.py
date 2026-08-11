@@ -9,6 +9,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import cint, today
 
+from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
 from lms.lms.utils import ensure_instructor_role, get_chapters
 
 from ...utils import update_payment_record, validate_image
@@ -25,6 +26,9 @@ class LMSCourse(Document):
 		self.validate_amount_and_currency()
 		self.image = validate_image(self.image)
 		self.validate_card_gradient()
+
+	def after_insert(self):
+		self.notify_moderators_for_approval()
 
 	def validate_published(self):
 		if self.published and not self.published_on:
@@ -101,6 +105,37 @@ class LMSCourse(Document):
 	def on_update(self):
 		if not self.upcoming and self.has_value_changed("upcoming"):
 			self.send_email_to_interested_users()
+
+	def notify_moderators_for_approval(self):
+		"""A newly created course sits unpublished until a Moderator publishes
+		it (only Moderators can toggle "published" from the UI). Nothing else
+		tells them a course is waiting, so a Moderator has to stumble onto it
+		under Courses > Unpublished."""
+		if self.published:
+			return
+
+		moderators = frappe.get_all("Has Role", {"role": "Moderator"}, pluck="parent")
+		if self.owner in moderators:
+			# The creator can publish it themselves, no approval needed.
+			return
+		if not moderators:
+			return
+
+		notification = frappe._dict(
+			{
+				"subject": _("{0} created a new course {1} that needs your approval").format(
+					frappe.utils.get_fullname(self.owner), self.title
+				),
+				"email_content": self.short_introduction,
+				"document_type": self.doctype,
+				"document_name": self.name,
+				"for_user": self.owner,
+				"from_user": self.owner,
+				"type": "Alert",
+				"link": f"/courses/{self.name}/edit",
+			}
+		)
+		make_lms_notification_logs(notification, moderators)
 
 	def on_payment_authorized(self, payment_status):
 		if payment_status in ["Authorized", "Completed"]:

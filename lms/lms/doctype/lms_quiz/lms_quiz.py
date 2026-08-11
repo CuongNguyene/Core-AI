@@ -197,7 +197,9 @@ def quiz_summary(quiz, results):
 
 	score_out_of = quiz_details.total_marks
 	percentage = (score / score_out_of) * 100 if score_out_of else 0
-	submission = create_submission(quiz, results, score_out_of, quiz_details.passing_percentage)
+	submission = create_submission(
+		quiz, results, score_out_of, quiz_details.passing_percentage, is_open_ended
+	)
 
 	if attempt:
 		frappe.db.set_value("LMS Quiz Attempt", attempt.name, "submission", submission.name)
@@ -437,7 +439,7 @@ def get_corrupted_image_msg():
 	return _("Image: Corrupted Data Stream")
 
 
-def create_submission(quiz, results, score_out_of, passing_percentage):
+def create_submission(quiz, results, score_out_of, passing_percentage, is_open_ended=False):
 	submission = frappe.new_doc("LMS Quiz Submission")
 	# Score and percentage are calculated by the controller function
 	submission.update(
@@ -453,7 +455,41 @@ def create_submission(quiz, results, score_out_of, passing_percentage):
 		}
 	)
 	submission.save(ignore_permissions=True)
+
+	if is_open_ended:
+		notify_instructors_of_open_ended_submission(submission)
+
 	return submission
+
+
+def notify_instructors_of_open_ended_submission(submission):
+	"""Open Ended questions aren't auto-scored (see process_results), so an
+	instructor needs to manually review them. Nothing else in the quiz
+	submission flow tells them a submission is waiting."""
+	from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
+
+	instructors = frappe.db.get_all(
+		"Course Instructor", {"parent": submission.course}, pluck="instructor"
+	)
+	instructors = [instructor for instructor in instructors if instructor != submission.member]
+	if not instructors:
+		return
+
+	notification = frappe._dict(
+		{
+			"subject": _("{0} submitted answers for {1} that need manual grading").format(
+				submission.member_name, submission.quiz_title
+			),
+			"email_content": _("This submission has open-ended answers that need to be graded."),
+			"document_type": submission.doctype,
+			"document_name": submission.name,
+			"for_user": submission.owner,
+			"from_user": submission.member,
+			"type": "Alert",
+			"link": "",
+		}
+	)
+	make_lms_notification_logs(notification, instructors)
 
 
 def save_progress_after_quiz(quiz_details, percentage):

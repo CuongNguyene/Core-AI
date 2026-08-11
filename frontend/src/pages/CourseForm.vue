@@ -430,11 +430,19 @@ const meta = reactive({
 	keywords: '',
 })
 
-onMounted(() => {
-	if (!user.data?.is_moderator && !user.data?.is_instructor) {
-		router.push({ name: 'Courses' })
+const redirectIfNotAllowed = () => {
+	if (user.data && !user.data?.is_moderator && !user.data?.is_instructor) {
+		window.location.href = '/lms/courses'
 	}
+}
 
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(() => {
+	redirectIfNotAllowed()
 	if (props.courseName !== 'new') {
 		fetchCourseInfo()
 	} else {

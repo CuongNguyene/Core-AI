@@ -209,7 +209,10 @@ const addNotifications = () => {
 	}
 }
 
+const hasLink = (label) => sidebarLinks.value.some((link) => link.label === label)
+
 const addQuizzes = () => {
+	if (hasLink('Quizzes')) return
 	if (isInstructor.value || isModerator.value) {
 		sidebarLinks.value.splice(4, 0, {
 			label: 'Quizzes',
@@ -226,6 +229,7 @@ const addQuizzes = () => {
 }
 
 const addAssignments = () => {
+	if (hasLink('Assignments')) return
 	if (isInstructor.value || isModerator.value) {
 		sidebarLinks.value.splice(5, 0, {
 			label: 'Assignments',
@@ -270,6 +274,7 @@ const restrictCertifications = () => {
 // }
 
 const addPrograms = async () => {
+	if (hasLink('Programs')) return
 	let canAddProgram = await checkIfCanAddProgram()
 	if (!canAddProgram) return
 	let activeFor = ['Programs', 'ProgramDetail']
@@ -304,6 +309,7 @@ const checkIfCanAddProgram = async () => {
 }
 
 const addHome = () => {
+	if (hasLink('Home')) return
 	sidebarLinks.value.unshift({
 		label: 'Home',
 		icon: 'Home',
@@ -568,20 +574,24 @@ const setUpOnboarding = () => {
 	}
 }
 
-watch(userResource, () => {
-	// addContactUsDetails()
-	if (userResource.data) {
-		isModerator.value = userResource.data.is_moderator
-		isInstructor.value = userResource.data.is_instructor
-		addHome()
-		addPrograms()
-		// addProgrammingExercises()
-		addQuizzes()
-		addAssignments()
-		restrictCertifications()
-		setUpOnboarding()
-	}
-})
+watch(
+	userResource,
+	() => {
+		// addContactUsDetails()
+		if (userResource.data) {
+			isModerator.value = userResource.data.is_moderator
+			isInstructor.value = userResource.data.is_instructor
+			addHome()
+			addPrograms()
+			// addProgrammingExercises()
+			addQuizzes()
+			addAssignments()
+			restrictCertifications()
+			setUpOnboarding()
+		}
+	},
+	{ immediate: true }
+)
 
 onUnmounted(() => {
 	socket.off('publish_lms_notifications')

@@ -139,10 +139,19 @@ const { brand } = sessionStore()
 const router = useRouter()
 const readOnlyMode = window.read_only_mode
 
-onMounted(() => {
-	if (!user.data?.is_moderator && !user.data?.is_instructor) {
-		router.push({ name: 'Courses' })
+const redirectIfNotAllowed = () => {
+	if (user.data && !user.data?.is_moderator && !user.data?.is_instructor) {
+		window.location.href = '/lms/courses'
 	}
+}
+
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(() => {
+	redirectIfNotAllowed()
 	titleFilter.value = router.currentRoute.value.query.title
 	typeFilter.value = router.currentRoute.value.query.type
 })
@@ -194,6 +203,17 @@ const assignments = createListResource({
 		})
 	},
 })
+
+watch(
+	user,
+	() => {
+		if (user.data) {
+			assignments.update({ filters: assignmentFilter.value })
+			assignments.reload()
+		}
+	},
+	{ immediate: true }
+)
 
 const assignmentColumns = computed(() => {
 	return [

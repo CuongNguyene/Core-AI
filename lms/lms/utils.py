@@ -808,7 +808,7 @@ def get_chart_data(
 
 	data = frappe.db.get_all(
 		doctype,
-		fields=[f"{datefield} as _unit", {"SUM": value_field}, {"COUNT": "*"}],
+		fields=[f"{datefield} as _unit", f"SUM({value_field})", "COUNT(*)"],
 		filters=filters,
 		group_by="_unit",
 		order_by="_unit asc",
@@ -1084,6 +1084,14 @@ def update_course_filters(filters):
 		or_filters.update({"enable_certification": 1})
 		or_filters.update({"paid_certificate": 1})
 		del filters["certification"]
+
+	if filters.get("published") == 0 and not has_course_moderator_role():
+		# Non-moderators can't publish or edit someone else's draft, so
+		# showing it in the Unpublished tab is just a dead-end click.
+		own_courses = frappe.get_all(
+			"Course Instructor", {"instructor": frappe.session.user}, pluck="parent"
+		)
+		filters.update({"name": ["in", own_courses]})
 
 	return filters, or_filters, show_featured
 
@@ -1976,7 +1984,7 @@ def get_order_summary(doctype, docname, country=None):
 		)
 
 		if not details.paid_batch:
-			raise frappe.throw(_("To join this batch, please contact the Administrator."))
+			raise frappe.throw(_("To join this batch, please contact the Moderator."))
 
 	details.amount, details.currency = check_multicurrency(
 		details.amount, details.currency, country, details.amount_usd
@@ -2100,7 +2108,7 @@ def enroll_in_batch(batch, payment_name=None):
 		batch_doc = frappe.db.get_value("LMS Batch", batch, ["name", "seat_count"], as_dict=True)
 		students = frappe.db.count("LMS Batch Enrollment", {"batch": batch})
 		if batch_doc.seat_count and students >= batch_doc.seat_count:
-			frappe.throw(_("The batch is full. Please contact the Administrator."))
+			frappe.throw(_("The batch is full. Please contact the Moderator."))
 
 		new_student = frappe.new_doc("LMS Batch Enrollment")
 		new_student.update(
@@ -2233,6 +2241,14 @@ def get_batches(filters=None, start=0, order_by="start_date"):
 		)
 		filters.update({"name": ["in", enrolled_batches]})
 		del filters["enrolled"]
+
+	if filters.get("published") == 0 and not has_course_moderator_role():
+		# Non-moderators can't publish or manage someone else's draft batch,
+		# so showing it in the Unpublished tab is just a dead-end click.
+		own_batches = frappe.get_all(
+			"Course Instructor", {"instructor": frappe.session.user, "parenttype": "LMS Batch"}, pluck="parent"
+		)
+		filters.update({"name": ["in", own_batches]})
 
 	batches = frappe.get_all(
 		"LMS Batch",
