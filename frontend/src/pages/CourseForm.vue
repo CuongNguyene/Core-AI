@@ -1,6 +1,7 @@
 <template>
 	<div class="h-full">
-		<div class="grid grid-cols-1 md:grid-cols-[70%,30%] h-full">
+		<FormSkeleton v-if="isLoading" />
+		<div v-else class="grid grid-cols-1 md:grid-cols-[70%,30%] h-full">
 			<div>
 				<header
 					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
@@ -381,6 +382,7 @@ import Link from '@/components/Controls/Link.vue'
 import CourseOutline from '@/components/CourseOutline.vue'
 import MultiSelect from '@/components/Controls/MultiSelect.vue'
 import ColorSwatches from '@/components/Controls/ColorSwatches.vue'
+import FormSkeleton from '@/components/FormSkeleton.vue'
 
 const user = inject('$user')
 const newTag = ref('')
@@ -695,6 +697,10 @@ const check_permission = () => {
 		router.push({ name: 'Courses' })
 	}
 }
+
+const isLoading = computed(
+	() => props.courseName !== 'new' && !courseResource.data
+)
 
 const breadcrumbs = computed(() => {
 	let crumbs = [

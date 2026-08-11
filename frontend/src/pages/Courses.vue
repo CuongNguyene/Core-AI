@@ -119,7 +119,7 @@ const courseCount = ref(0)
 
 onMounted(() => {
 	setFiltersFromQuery()
-	updateCourses()
+	fetchCourses()
 	if (user.data?.is_system_manager) getCourseCount()
 })
 
@@ -170,13 +170,15 @@ const getCourseCount = () => {
 	})
 }
 
-const updateCourses = useDebounceFn(() => {
+const fetchCourses = () => {
 	updateFilters()
 	courses.update({
 		filters: filters.value,
 	})
 	courses.reload()
-}, 200)
+}
+
+const updateCourses = useDebounceFn(fetchCourses, 200)
 
 const updateFilters = () => {
 	updateCategoryFilter()

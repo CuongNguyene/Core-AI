@@ -321,12 +321,25 @@
 
 					<!-- Manual completion fallback -->
 					<div v-if="lesson.data.membership && !lesson.data.progress" class="mt-8 px-5">
-						<Button @click="markLessonCompleteManually()">
+						<Button
+							@click="markLessonCompleteManually()"
+							:disabled="videoWatchRequirementPending"
+						>
 							<template #prefix>
 								<CircleCheck class="w-4 h-4 stroke-1.5" />
 							</template>
 							{{ __('Mark as Complete') }}
 						</Button>
+						<div
+							v-if="videoWatchRequirementPending"
+							class="mt-2 text-sm text-ink-gray-5"
+						>
+							{{
+								__(
+									'Watch at least {0}% of the video to mark this lesson complete ({1}% watched so far)'
+								).format(threshold, Math.floor(videoWatchPercent))
+							}}
+						</div>
 					</div>
 
 					<div
@@ -476,6 +489,25 @@ const settingsStore = useSettings()
 const threshold = computed(
 	() => Number(settingsStore.videoCompletionThreshold?.data) || 90
 )
+const videoWatchPercent = ref(0)
+const lessonHasVideo = computed(() => lesson.data?.icon === 'icon-youtube')
+// A prior watch record means the server already has (possibly threshold-
+// meeting) watch_time for this lesson from an earlier session - the <video>
+// element's currentTime resets to 0 on reload, so this session's tracked
+// percentage alone can't tell a genuinely-unwatched video apart from one
+// that was already watched enough before. Defer to the server (via the
+// existing toast on click) rather than risk wrongly disabling the button.
+const hasPriorVideoRecord = computed(() => (lesson.data?.videos?.length || 0) > 0)
+const videoWatchRequirementPending = computed(
+	() =>
+		lessonHasVideo.value &&
+		!hasPriorVideoRecord.value &&
+		videoWatchPercent.value < threshold.value
+)
+
+const trackWatchPercent = (pct) => {
+	if (pct > videoWatchPercent.value) videoWatchPercent.value = pct
+}
 const plyrSources = ref([])
 const showInlineMenu = ref(false)
 const currentTab = ref('Notes')
@@ -547,7 +579,24 @@ const onStudyVisibilityChange = () => {
 		studyHeartbeatAt = Date.now()
 	} else {
 		flushStudyTime()
+		pauseAllVideos()
 	}
+}
+
+// Backgrounding the tab shouldn't let a video keep "playing" toward the
+// watch-time threshold while the student isn't actually watching - browsers
+// don't pause background video/audio on their own, so this has to be done
+// explicitly. Native <video> elements (from the Upload block, mounted in a
+// separate Vue app tree per upload.js) are reached via DOM query since
+// there's no component reference across that boundary; Plyr sources are
+// tracked directly in plyrSources.
+const pauseAllVideos = () => {
+	document.querySelectorAll('video').forEach((video) => {
+		if (!video.paused) video.pause()
+	})
+	plyrSources.value.forEach((source) => {
+		if (source.playing) source.pause()
+	})
 }
 
 const startStudyTimeTracking = () => {
@@ -822,6 +871,7 @@ const resetLessonState = (newChapterNumber, newLessonNumber) => {
 	timer.value = 0
 	readingTimeElapsed.value = 0
 	readingTimeMet.value = false
+	videoWatchPercent.value = 0
 }
 
 const trackVideoWatchDuration = () => {
@@ -841,6 +891,7 @@ const getVideoDetails = () => {
 		videos.forEach((video) => {
 			if (video.duration > 0) {
 				const pct = (video.currentTime / video.duration) * 100
+				trackWatchPercent(pct)
 				if (pct >= threshold.value) markProgress()
 			} else if (video.currentTime == video.duration) {
 				markProgress()
@@ -860,6 +911,7 @@ const getPlyrSourceDetails = () => {
 	plyrSources.value.forEach((source) => {
 		if (source.duration > 0) {
 			const pct = (source.currentTime / source.duration) * 100
+			trackWatchPercent(pct)
 			if (pct >= threshold.value) markProgress()
 		} else if (source.currentTime == source.duration) {
 			markProgress()
@@ -879,6 +931,7 @@ const attachVideoProgressListeners = () => {
 		plyrSource.on('timeupdate', () => {
 			if (plyrSource.duration > 0) {
 				const pct = (plyrSource.currentTime / plyrSource.duration) * 100
+				trackWatchPercent(pct)
 				if (pct >= threshold.value) {
 					trackVideoWatchDuration()
 					markProgress()
@@ -899,6 +952,7 @@ const attachVideoProgressListeners = () => {
 		vid.addEventListener('timeupdate', () => {
 			if (vid.duration > 0) {
 				const pct = (vid.currentTime / vid.duration) * 100
+				trackWatchPercent(pct)
 				if (pct >= threshold.value) {
 					trackVideoWatchDuration()
 					markProgress()

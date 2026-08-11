@@ -55,6 +55,7 @@
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 					<FormControl
+						v-if="user.data?.is_moderator"
 						v-model="batch.published"
 						type="checkbox"
 						:label="__('batches.form.published')"
@@ -110,14 +111,6 @@
 						/>
 					</div>
 					<div class="space-y-5">
-						<FormControl
-							v-model="batch.timezone"
-							:label="__('batches.form.timezone')"
-							type="text"
-							:placeholder="__('batches.form.timezonePlaceholder')"
-							class="mb-4"
-							:required="true"
-						/>
 						<FormControl
 							v-model="batch.evaluation_end_date"
 							:label="__('batches.form.evaluationEndDate')"
@@ -350,6 +343,7 @@ import {
 	getMetaInfo,
 	updateMetaInfo,
 	validateFile,
+	getUserTimezone,
 } from '@/utils'
 
 const router = useRouter()
@@ -377,7 +371,7 @@ const batch = reactive({
 	end_date: '',
 	start_time: '',
 	end_time: '',
-	timezone: '',
+	timezone: getUserTimezone() || 'UTC',
 	evaluation_end_date: '',
 	confirmation_email_template: '',
 	seat_count: '',
