@@ -227,8 +227,10 @@ const updateTabFilter = () => {
 }
 
 const updateStudentFilter = () => {
-	if (!user.data || (is_student.value && currentTab.value != 'Enrolled')) {
+	if (!user.data) {
 		filters.value['start_date'] = ['>=', dayjs().format('YYYY-MM-DD')]
+		filters.value['published'] = 1
+	} else if (is_student.value && currentTab.value != 'Enrolled') {
 		filters.value['published'] = 1
 	}
 }

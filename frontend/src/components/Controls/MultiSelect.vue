@@ -268,7 +268,17 @@ const fetchMissingLabels = (missingValues) => {
 				})
 			}
 		})
-		.catch(() => {})
+		.catch(() => {
+			// Not every doctype has full_name/title fields - frappe.client.get_list
+			// rejects the whole query if any requested field doesn't exist on the
+			// doctype. Fall back to the id itself so the option still gets a label
+			// instead of silently staying blank.
+			missingValues.forEach((value) => {
+				if (!labelMap.value[value]) {
+					labelMap.value[value] = value
+				}
+			})
+		})
 }
 
 watch(

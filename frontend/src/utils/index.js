@@ -135,7 +135,7 @@ export function htmlToText(html) {
 	return div.textContent || div.innerText || ''
 }
 
-export function getEditorTools() {
+export function getEditorTools(courseName) {
 	return {
 		header: {
 			class: Header,
@@ -157,7 +157,12 @@ export function getEditorTools() {
 		quiz: Quiz,
 		assignment: Assignment,
 		program: Program,
-		upload: Upload,
+		upload: {
+			class: Upload,
+			config: {
+				courseName,
+			},
+		},
 		markdown: {
 			class: Markdown,
 			inlineToolbar: true,

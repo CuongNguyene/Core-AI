@@ -105,6 +105,8 @@ class LMSCourse(Document):
 	def on_update(self):
 		if not self.upcoming and self.has_value_changed("upcoming"):
 			self.send_email_to_interested_users()
+		if self.published and self.has_value_changed("published"):
+			self.notify_instructors_of_publish()
 
 	def notify_moderators_for_approval(self):
 		"""A newly created course sits unpublished until a Moderator publishes
@@ -136,6 +138,29 @@ class LMSCourse(Document):
 			}
 		)
 		make_lms_notification_logs(notification, moderators)
+
+	def notify_instructors_of_publish(self):
+		"""Mirrors notify_moderators_for_approval in the other direction: once
+		a Moderator publishes a course, the instructors who created it aren't
+		otherwise told it's now live."""
+		instructors = frappe.get_all("Course Instructor", {"parent": self.name}, pluck="instructor")
+		instructors = [instructor for instructor in instructors if instructor != frappe.session.user]
+		if not instructors:
+			return
+
+		notification = frappe._dict(
+			{
+				"subject": _("Your course {0} has been approved and published").format(self.title),
+				"email_content": self.short_introduction,
+				"document_type": self.doctype,
+				"document_name": self.name,
+				"for_user": self.owner,
+				"from_user": frappe.session.user,
+				"type": "Alert",
+				"link": f"/courses/{self.name}",
+			}
+		)
+		make_lms_notification_logs(notification, instructors)
 
 	def on_payment_authorized(self, payment_status):
 		if payment_status in ["Authorized", "Completed"]:

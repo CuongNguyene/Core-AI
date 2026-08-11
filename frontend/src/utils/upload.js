@@ -1,15 +1,16 @@
 import AudioBlock from '@/components/AudioBlock.vue'
 import VideoBlock from '@/components/VideoBlock.vue'
 import UploadPlugin from '@/components/UploadPlugin.vue'
-import { h, createApp } from 'vue'
+import { h, createApp, nextTick } from 'vue'
 import { Upload as UploadIcon } from 'lucide-vue-next'
 import { createDialog } from '@/utils/dialogs'
 import translationPlugin from '../translation'
 
 export class Upload {
-	constructor({ data, api, readOnly }) {
+	constructor({ data, api, readOnly, config }) {
 		this.data = data
 		this.readOnly = readOnly
+		this.courseName = config?.courseName
 	}
 
 	static get toolbox() {
@@ -43,6 +44,13 @@ export class Upload {
 		return this.wrapper
 	}
 
+	mountApp(app) {
+		this.currentApp?.unmount()
+		this.wrapper.innerHTML = ''
+		app.mount(this.wrapper)
+		this.currentApp = app
+	}
+
 	renderFile(file) {
 		if (this.isVideo(file.file_type)) {
 			const app = createApp(VideoBlock, {
@@ -56,15 +64,17 @@ export class Upload {
 			})
 			app.use(translationPlugin)
 			app.config.globalProperties.$dialog = createDialog
-			app.mount(this.wrapper)
+			this.mountApp(app)
 			return
 		} else if (this.isAudio(file.file_type)) {
 			const app = createApp(AudioBlock, {
 				file: file.file_url,
 			})
-			app.mount(this.wrapper)
+			this.mountApp(app)
 			return
 		} else if (file.file_type == 'PDF') {
+			this.currentApp?.unmount()
+			this.currentApp = null
 			this.wrapper.innerHTML = `<iframe src="${
 				window.location.origin
 			}${encodeURI(
@@ -72,6 +82,8 @@ export class Upload {
 			)}" width='100%' height='700px' class="mb-4" type="application/pdf"></iframe>`
 			return
 		} else {
+			this.currentApp?.unmount()
+			this.currentApp = null
 			this.wrapper.innerHTML = `<img class="mb-4" src=${encodeURI(
 				file.file_url
 			)} width='100%'>`
@@ -81,14 +93,15 @@ export class Upload {
 
 	renderFileUploader() {
 		const app = createApp(UploadPlugin, {
+			courseName: this.courseName,
 			onFileUploaded: (file) => {
 				this.data.file_url = file.file_url
 				this.data.file_type = file.file_type
-				this.renderFile(file)
+				nextTick(() => this.renderFile(file))
 			},
 		})
 		app.use(translationPlugin)
-		app.mount(this.wrapper)
+		this.mountApp(app)
 	}
 
 	validate(savedData) {

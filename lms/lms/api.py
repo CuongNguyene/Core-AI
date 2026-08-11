@@ -1126,17 +1126,31 @@ def get_announcements(batch):
 
 @frappe.whitelist()
 def delete_course(course):
+	# The cascade below deletes most child records via frappe.db.delete, which
+	# bypasses doctype-level permission checks entirely (needed because e.g.
+	# Instructor has delete rights on LMS Course but not on Course Lesson,
+	# which would otherwise block deleting their own course's lessons). That
+	# means this check is the only permission gate for the whole operation -
+	# without it any logged-in user could delete any course via this API.
+	if not frappe.has_permission("LMS Course", "delete", course):
+		frappe.throw(_("You are not permitted to delete this course."), frappe.PermissionError)
+
 	chapters = frappe.get_all("Course Chapter", {"course": course}, pluck="name")
 
-	chapter_references = frappe.get_all("Chapter Reference", {"parent": course}, pluck="name")
+	# These reference specific lessons/chapters (LMS Enrollment.current_lesson,
+	# LMS Course Progress.lesson/chapter, LMS Quiz.lesson, and quiz submissions
+	# reference the quiz) - must be cleared before the chapter/lesson loop
+	# below, not after, or the first lesson/chapter still pointed to by one of
+	# these fails to delete with a LinkExistsError.
+	frappe.db.delete("LMS Enrollment", {"course": course})
+	frappe.db.delete("LMS Course Progress", {"course": course})
+	frappe.db.delete("LMS Quiz Submission", {"course": course})
+	frappe.db.delete("LMS Quiz", {"course": course})
 
 	for chapter in chapters:
 		lessons = frappe.get_all("Course Lesson", {"chapter": chapter}, pluck="name")
 
-		lesson_references = frappe.get_all("Lesson Reference", {"parent": chapter}, pluck="name")
-
-		for lesson in lesson_references:
-			frappe.delete_doc("Lesson Reference", lesson)
+		frappe.db.delete("Lesson Reference", {"parent": chapter})
 
 		for lesson in lessons:
 			topics = frappe.get_all(
@@ -1150,19 +1164,83 @@ def delete_course(course):
 
 				frappe.db.delete("Discussion Topic", topic)
 
-			frappe.delete_doc("Course Lesson", lesson)
+			# Course Lesson is linked from several other doctypes (watch history,
+			# notes, submissions, the older exercise system, the anti-cheat
+			# activity log via a Dynamic Link) - clear those out for hygiene
+			# even though the raw delete below wouldn't itself be blocked.
+			frappe.db.delete("LMS Video Watch Duration", {"lesson": lesson})
+			frappe.db.delete("LMS Lesson Note", {"lesson": lesson})
+			frappe.db.delete("LMS Assignment Submission", {"lesson": lesson})
+			frappe.db.delete("Exercise Submission", {"lesson": lesson})
+			frappe.db.delete("Exercise Latest Submission", {"lesson": lesson})
+			frappe.db.delete("LMS Exercise", {"lesson": lesson})
+			frappe.db.delete("Scheduled Flow", {"lesson": lesson})
+			frappe.db.delete(
+				"LMS Activity Log",
+				{"reference_doctype": "Course Lesson", "reference_name": lesson},
+			)
 
-	for chapter in chapter_references:
-		frappe.delete_doc("Chapter Reference", chapter)
+			frappe.db.delete("Course Lesson", lesson)
 
-	for chapter in chapters:
-		frappe.delete_doc("Course Chapter", chapter)
+	frappe.db.delete("Chapter Reference", {"parent": course})
+	frappe.db.delete("Course Chapter", {"course": course})
 
-	frappe.db.delete("LMS Course Progress", {"course": course})
-	frappe.db.delete("LMS Quiz", {"course": course})
-	frappe.db.delete("LMS Quiz Submission", {"course": course})
-	frappe.db.delete("LMS Enrollment", {"course": course})
-	frappe.delete_doc("LMS Course", course)
+	# Same cleanup one level up - anything still referencing the course itself
+	# (batches it's attached to, reviews, certificates, mentor mappings, the
+	# older cohort system, etc.), for hygiene even though nothing below would
+	# actually be blocked by it.
+	frappe.db.delete("Batch Course", {"course": course})
+	frappe.db.delete("LMS Program Course", {"course": course})
+	# Several of the doctypes cleared per-lesson above also carry their own
+	# independent "course" link (e.g. a record whose "lesson" field was left
+	# blank) - the per-lesson deletes only catch rows that do reference a
+	# lesson, so sweep by course too as a safety net.
+	frappe.db.delete("LMS Lesson Note", {"course": course})
+	frappe.db.delete("LMS Assignment Submission", {"course": course})
+	frappe.db.delete("LMS Video Watch Duration", {"course": course})
+	frappe.db.delete("Exercise Submission", {"course": course})
+	frappe.db.delete("Exercise Latest Submission", {"course": course})
+	frappe.db.delete("LMS Exercise", {"course": course})
+	frappe.db.delete("Related Courses", {"course": course})
+	frappe.db.delete("LMS Course Review", {"course": course})
+	frappe.db.delete("LMS Certificate", {"course": course})
+	frappe.db.delete("LMS Certificate Request", {"course": course})
+	frappe.db.delete("LMS Certificate Evaluation", {"course": course})
+	frappe.db.delete("LMS Course Resource", {"course": course})
+	frappe.db.delete("LMS Course Mentor Mapping", {"course": course})
+	frappe.db.delete("LMS Mentor Request", {"course": course})
+	frappe.db.delete("LMS Course Interest", {"course": course})
+	frappe.db.delete("LMS Course Time Log", {"course": course})
+	frappe.db.delete("Cohort Mentor", {"course": course})
+	frappe.db.delete("Cohort Staff", {"course": course})
+	frappe.db.delete("Cohort Subgroup", {"course": course})
+	# LMS Payment.payment_for_document is a Dynamic Link that can point at a
+	# paid course - same dynamic-link blocker as LMS Activity Log above.
+	frappe.db.delete(
+		"LMS Payment",
+		{"payment_for_document_type": "LMS Course", "payment_for_document": course},
+	)
+	frappe.db.delete("Cohort", {"course": course})
+
+	frappe.db.delete("LMS Course", course)
+
+
+@frappe.whitelist()
+def delete_quiz(quiz):
+	attempts = frappe.get_all("LMS Quiz Attempt", {"quiz": quiz}, pluck="name")
+	for attempt in attempts:
+		# Same dynamic-link blocker as Course Lesson in delete_course - the
+		# anti-cheat activity log can reference a quiz attempt.
+		frappe.db.delete(
+			"LMS Activity Log",
+			{"reference_doctype": "LMS Quiz Attempt", "reference_name": attempt},
+		)
+	frappe.db.delete("LMS Quiz Attempt", {"quiz": quiz})
+	frappe.db.delete("LMS Quiz Submission", {"quiz": quiz})
+	# A lesson can point at this quiz as its mandatory completion quiz -
+	# unlink rather than delete the lesson itself.
+	frappe.db.set_value("Course Lesson", {"completion_quiz": quiz}, "completion_quiz", "")
+	frappe.delete_doc("LMS Quiz", quiz)
 
 
 @frappe.whitelist()
