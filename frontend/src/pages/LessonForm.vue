@@ -102,6 +102,7 @@ import {
 	inject,
 	ref,
 	onBeforeUnmount,
+	watch,
 } from 'vue'
 import { sessionStore } from '../stores/session'
 import EditorJS from '@editorjs/editorjs'
@@ -136,10 +137,19 @@ const props = defineProps({
 	},
 })
 
-onMounted(() => {
-	if (!user.data?.is_moderator && !user.data?.is_instructor) {
+const redirectIfNotAllowed = () => {
+	if (user.data && !user.data?.is_moderator && !user.data?.is_instructor) {
 		window.location.href = '/login'
 	}
+}
+
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(() => {
+	redirectIfNotAllowed()
 	capture('lesson_form_opened')
 	editor.value = renderEditor('content')
 	instructorEditor.value = renderEditor('instructor-notes')
@@ -150,7 +160,7 @@ onMounted(() => {
 const renderEditor = (holder) => {
 	return new EditorJS({
 		holder: holder,
-		tools: getEditorTools(true),
+		tools: getEditorTools(props.courseName),
 		autofocus: true,
 		defaultBlock: 'markdown',
 		onChange: async (api, event) => {

@@ -113,13 +113,13 @@ const currentCategory = ref(null)
 const title = ref('')
 const certification = ref(false)
 const filters = ref({})
-const currentTab = ref('Live')
+const currentTab = ref('All')
 const { brand } = sessionStore()
 const courseCount = ref(0)
 
 onMounted(() => {
 	setFiltersFromQuery()
-	updateCourses()
+	fetchCourses()
 	if (user.data?.is_system_manager) getCourseCount()
 })
 
@@ -170,13 +170,15 @@ const getCourseCount = () => {
 	})
 }
 
-const updateCourses = useDebounceFn(() => {
+const fetchCourses = () => {
 	updateFilters()
 	courses.update({
 		filters: filters.value,
 	})
 	courses.reload()
-}, 200)
+}
+
+const updateCourses = useDebounceFn(fetchCourses, 200)
 
 const updateFilters = () => {
 	updateCategoryFilter()
@@ -280,6 +282,10 @@ watch(currentTab, () => {
 
 const courseTabs = computed(() => {
 	let tabs = [
+		{
+			label: __('courses.list.all'),
+			value: 'All',
+		},
 		{
 			label: __('courses.list.live'),
 			value: 'Live',

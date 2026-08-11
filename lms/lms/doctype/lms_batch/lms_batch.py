@@ -11,6 +11,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import add_days, cint, format_datetime, get_time, nowdate
 
+from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
 from lms.lms.utils import (
 	ensure_instructor_role,
 	get_assignment_details,
@@ -35,8 +36,66 @@ class LMSBatch(Document):
 		self.validate_evaluation_end_date()
 		self.validate_instructors()
 
+	def after_insert(self):
+		self.notify_moderators_for_approval()
+
+	def on_update(self):
+		if self.published and self.has_value_changed("published"):
+			self.notify_instructors_of_publish()
+
 	def validate_instructors(self):
 		ensure_instructor_role([row.instructor for row in self.instructors])
+
+	def notify_moderators_for_approval(self):
+		"""Mirrors LMSCourse.notify_moderators_for_approval - a newly created
+		batch sits unpublished until a Moderator publishes it, but nothing
+		tells them one is waiting for review."""
+		if self.published:
+			return
+
+		moderators = frappe.get_all("Has Role", {"role": "Moderator"}, pluck="parent")
+		if self.owner in moderators:
+			# The creator can publish it themselves, no approval needed.
+			return
+		if not moderators:
+			return
+
+		notification = frappe._dict(
+			{
+				"subject": _("{0} created a new batch {1} that needs your approval").format(
+					frappe.utils.get_fullname(self.owner), self.title
+				),
+				"document_type": self.doctype,
+				"document_name": self.name,
+				"for_user": self.owner,
+				"from_user": self.owner,
+				"type": "Alert",
+				"link": f"/batches/{self.name}/edit",
+			}
+		)
+		make_lms_notification_logs(notification, moderators)
+
+	def notify_instructors_of_publish(self):
+		"""Mirrors LMSCourse.notify_instructors_of_publish - once a Moderator
+		publishes a batch, the instructors who created it aren't otherwise
+		told it's now live."""
+		instructors = frappe.get_all("Course Instructor", {"parent": self.name}, pluck="instructor")
+		instructors = [instructor for instructor in instructors if instructor != frappe.session.user]
+		if not instructors:
+			return
+
+		notification = frappe._dict(
+			{
+				"subject": _("Your batch {0} has been approved and published").format(self.title),
+				"document_type": self.doctype,
+				"document_name": self.name,
+				"for_user": self.owner,
+				"from_user": frappe.session.user,
+				"type": "Alert",
+				"link": f"/batches/details/{self.name}",
+			}
+		)
+		make_lms_notification_logs(notification, instructors)
 
 	def validate_batch_end_date(self):
 		if self.end_date < self.start_date:

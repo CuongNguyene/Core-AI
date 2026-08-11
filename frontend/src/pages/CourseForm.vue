@@ -1,6 +1,7 @@
 <template>
 	<div class="h-full">
-		<div class="grid grid-cols-1 md:grid-cols-[70%,30%] h-full">
+		<FormSkeleton v-if="isLoading" />
+		<div v-else class="grid grid-cols-1 md:grid-cols-[70%,30%] h-full">
 			<div>
 				<header
 					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
@@ -311,7 +312,7 @@
 						</div> -->
 					</div>
 
-					<div class="px-5 md:px-10 pb-5 space-y-5">
+					<!-- <div class="px-5 md:px-10 pb-5 space-y-5">
 						<div class="text-lg font-semibold mt-5">
 							{{ __('courses.form.metaTags') }}
 						</div>
@@ -330,7 +331,7 @@
 								:placeholder="__('courses.form.metaKeywordsPlaceholder')"
 							/>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="border-l">
@@ -381,6 +382,7 @@ import Link from '@/components/Controls/Link.vue'
 import CourseOutline from '@/components/CourseOutline.vue'
 import MultiSelect from '@/components/Controls/MultiSelect.vue'
 import ColorSwatches from '@/components/Controls/ColorSwatches.vue'
+import FormSkeleton from '@/components/FormSkeleton.vue'
 
 const user = inject('$user')
 const newTag = ref('')
@@ -430,11 +432,19 @@ const meta = reactive({
 	keywords: '',
 })
 
-onMounted(() => {
-	if (!user.data?.is_moderator && !user.data?.is_instructor) {
-		router.push({ name: 'Courses' })
+const redirectIfNotAllowed = () => {
+	if (user.data && !user.data?.is_moderator && !user.data?.is_instructor) {
+		window.location.href = '/lms/courses'
 	}
+}
 
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(() => {
+	redirectIfNotAllowed()
 	if (props.courseName !== 'new') {
 		fetchCourseInfo()
 	} else {
@@ -687,6 +697,10 @@ const check_permission = () => {
 		router.push({ name: 'Courses' })
 	}
 }
+
+const isLoading = computed(
+	() => props.courseName !== 'new' && !courseResource.data
+)
 
 const breadcrumbs = computed(() => {
 	let crumbs = [

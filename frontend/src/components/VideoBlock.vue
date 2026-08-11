@@ -23,6 +23,8 @@
 			<video
 				@timeupdate="updateTime"
 				@ended="videoEnded"
+				@play="playing = true"
+				@pause="playing = false"
 				@click="togglePlay"
 				oncontextmenu="return false"
 				class="rounded-md border border-gray-100 cursor-pointer"

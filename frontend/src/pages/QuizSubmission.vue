@@ -82,7 +82,7 @@ import {
 	usePageMeta,
 	toast,
 } from 'frappe-ui'
-import { computed, onBeforeUnmount, onMounted, inject } from 'vue'
+import { computed, onBeforeUnmount, onMounted, inject, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { sessionStore } from '@/stores/session'
 
@@ -90,10 +90,18 @@ const { brand } = sessionStore()
 const router = useRouter()
 const user = inject('$user')
 
-onMounted(() => {
-	if (!user.data?.is_instructor && !user.data?.is_moderator)
-		router.push({ name: 'Courses' })
+const redirectIfNotAllowed = () => {
+	if (user.data && !user.data?.is_instructor && !user.data?.is_moderator)
+		window.location.href = '/lms/courses'
+}
 
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(() => {
+	redirectIfNotAllowed()
 	window.addEventListener('keydown', keyboardShortcut)
 })
 

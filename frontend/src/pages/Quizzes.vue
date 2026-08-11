@@ -112,6 +112,7 @@
 import {
 	Breadcrumbs,
 	Button,
+	call,
 	createListResource,
 	FeatherIcon,
 	FormControl,
@@ -141,13 +142,19 @@ const readOnlyMode = window.read_only_mode
 const quizFilters = ref({})
 const showImportModal = ref(false)
 
-onMounted(() => {
+const redirectIfNotAllowed = () => {
+	if (!user.data) return
 	if (!user.data?.is_moderator && !user.data?.is_instructor) {
-		router.push({ name: 'Courses' })
-	} else if (!user.data?.is_moderator) {
-		quizFilters.value['owner'] = user.data?.name
+		window.location.href = '/lms/courses'
 	}
-})
+}
+
+// user.data can load either before this component mounts (checked in
+// onMounted below) or asynchronously after (caught by this watcher) -
+// a plain onMounted check alone misses the latter case.
+watch(user, redirectIfNotAllowed)
+
+onMounted(redirectIfNotAllowed)
 
 watch(search, () => {
 	quizFilters.value['title'] = ['like', `%${search.value}%`]
@@ -182,12 +189,31 @@ const quizzes = createListResource({
 	},
 })
 
-const deleteQuiz = (selections, unselectAll) => {
-	Array.from(selections).forEach(async (quizName) => {
-		await quizzes.delete.submit(quizName)
-	})
+watch(
+	user,
+	() => {
+		if (user.data && !user.data?.is_moderator && user.data?.is_instructor) {
+			quizFilters.value['owner'] = user.data?.name
+			quizzes.update({ filters: quizFilters.value })
+			quizzes.reload()
+		}
+	},
+	{ immediate: true }
+)
+
+const deleteQuiz = async (selections, unselectAll) => {
+	try {
+		await Promise.all(
+			Array.from(selections).map((quizName) =>
+				call('lms.lms.api.delete_quiz', { quiz: quizName })
+			)
+		)
+		toast.success(__('quiz.list.deletedSuccess'))
+	} catch (err) {
+		toast.error(err.messages?.[0] || err)
+	}
 	unselectAll()
-	toast.success(__('quiz.list.deletedSuccess'))
+	quizzes.reload()
 }
 
 const quizColumns = computed(() => {

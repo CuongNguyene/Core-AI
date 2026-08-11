@@ -68,7 +68,14 @@ def save_progress(lesson, course, scorm_details=None):
 	assignment_completed = get_assignment_progress(lesson)
 	video_completed = get_video_progress(lesson)
 	min_reading_time = frappe.db.get_value("Course Lesson", lesson, "min_reading_time")
-	reading_time_met = has_met_reading_time(lesson, min_reading_time)
+	# For video lessons, watching to the configured completion threshold (video_completed,
+	# above) already proves engagement - watch_time itself is capped server-side to real
+	# elapsed wall-clock time since the lesson was opened (see track_video_watch_duration).
+	# Also requiring min_reading_time on top of that double-counts the same signal, and
+	# unlike video watch tracking, has_met_reading_time subtracts tab-hidden intervals -
+	# which are normal while a video keeps playing in the background - so a fully-watched
+	# video could still fail this gate. So min_reading_time only gates lessons without video.
+	reading_time_met = True if lesson_has_video(lesson) else has_met_reading_time(lesson, min_reading_time)
 
 	if scorm_details:
 		scorm_details = frappe._dict(**scorm_details)
@@ -206,25 +213,30 @@ def get_lesson_info(chapter):
 	return frappe.db.get_value("Course Chapter", chapter, "course")
 
 
-def get_video_progress(lesson):
+def lesson_has_video(lesson):
 	lesson_details = frappe.db.get_value("Course Lesson", lesson, ["body", "content"], as_dict=1)
 	if not lesson_details:
-		return True
+		return False
 
-	has_video = False
 	if lesson_details.content:
 		content = json.loads(lesson_details.content)
 		for block in content.get("blocks", []):
 			if block.get("type") in ["upload", "embed"]:
-				has_video = True
-				break
+				return True
 	elif lesson_details.body:
 		macros = find_macros(lesson_details.body)
 		videos = [value for name, value in macros if name in ["YouTubeVideo", "Video"]]
 		if videos:
-			has_video = True
+			return True
 
-	if not has_video:
+	return False
+
+
+def get_video_progress(lesson):
+	if not frappe.db.exists("Course Lesson", lesson):
+		return True
+
+	if not lesson_has_video(lesson):
 		return True
 
 	threshold = flt(frappe.db.get_single_value("LMS Settings", "video_completion_threshold") or 90)
