@@ -311,7 +311,7 @@
 						</div> -->
 					</div>
 
-					<div class="px-5 md:px-10 pb-5 space-y-5">
+					<!-- <div class="px-5 md:px-10 pb-5 space-y-5">
 						<div class="text-lg font-semibold mt-5">
 							{{ __('courses.form.metaTags') }}
 						</div>
@@ -330,7 +330,7 @@
 								:placeholder="__('courses.form.metaKeywordsPlaceholder')"
 							/>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="border-l">

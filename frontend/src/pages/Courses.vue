@@ -113,7 +113,7 @@ const currentCategory = ref(null)
 const title = ref('')
 const certification = ref(false)
 const filters = ref({})
-const currentTab = ref('Live')
+const currentTab = ref('All')
 const { brand } = sessionStore()
 const courseCount = ref(0)
 

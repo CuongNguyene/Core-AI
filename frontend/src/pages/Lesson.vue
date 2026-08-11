@@ -1,7 +1,7 @@
 <template>
 	<div v-if="lesson.data" class="">
 		<IntegrityWarningBanner
-			v-if="lesson.data.enable_integrity_warnings"
+			v-if="lesson.data.enable_integrity_warnings && !isStaffViewer()"
 			:count="violationCount"
 		/>
 		<header
@@ -639,7 +639,13 @@ const setupLesson = (data) => {
 	violationCount.value = 0
 
 	if (data.name) {
-		const onLog = data.enable_integrity_warnings
+		// Moderators/instructors editing or previewing a lesson aren't students
+		// taking it — the integrity banner and exam guards (copy/right-click
+		// block, DevTools detection) are meant to deter student cheating, not
+		// obstruct staff who legitimately need full access to the content.
+		const showIntegrityWarnings = data.enable_integrity_warnings && !isStaffViewer()
+
+		const onLog = showIntegrityWarnings
 			? (count) => {
 					violationCount.value = count || 0
 				}
@@ -653,7 +659,7 @@ const setupLesson = (data) => {
 		})
 		visibilityLog.start()
 
-		if (data.enable_integrity_warnings) {
+		if (showIntegrityWarnings) {
 			examGuards = useExamGuards({
 				referenceDoctype: 'Course Lesson',
 				referenceName: data.name,
@@ -1040,6 +1046,12 @@ const allowEdit = () => {
 
 const allowInstructorContent = () => {
 	if (user.data?.is_moderator) return true
+	if (lesson.data?.instructors?.includes(user.data?.name)) return true
+	return false
+}
+
+const isStaffViewer = () => {
+	if (user.data?.is_moderator || user.data?.is_instructor) return true
 	if (lesson.data?.instructors?.includes(user.data?.name)) return true
 	return false
 }

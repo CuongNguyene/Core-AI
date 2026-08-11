@@ -104,6 +104,7 @@
 import {
 	Breadcrumbs,
 	Button,
+	call,
 	createListResource,
 	FeatherIcon,
 	FormControl,
@@ -190,12 +191,19 @@ watch(
 	{ immediate: true }
 )
 
-const deleteQuiz = (selections, unselectAll) => {
-	Array.from(selections).forEach(async (quizName) => {
-		await quizzes.delete.submit(quizName)
-	})
+const deleteQuiz = async (selections, unselectAll) => {
+	try {
+		await Promise.all(
+			Array.from(selections).map((quizName) =>
+				call('lms.lms.api.delete_quiz', { quiz: quizName })
+			)
+		)
+		toast.success(__('quiz.list.deletedSuccess'))
+	} catch (err) {
+		toast.error(err.messages?.[0] || err)
+	}
 	unselectAll()
-	toast.success(__('quiz.list.deletedSuccess'))
+	quizzes.reload()
 }
 
 const quizColumns = computed(() => {

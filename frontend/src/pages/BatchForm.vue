@@ -293,7 +293,7 @@
 				</div>
 			</div> -->
 
-			<div class="px-5 md:px-20 pb-5 space-y-5 border-b">
+			<!-- <div class="px-5 md:px-20 pb-5 space-y-5 border-b">
 				<div class="text-lg text-ink-gray-9 font-semibold">
 					{{ __('batches.form.metaTags') }}
 				</div>
@@ -312,7 +312,7 @@
 						:placeholder="__('batches.form.metaKeywordsPlaceholder')"
 					/>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </template>

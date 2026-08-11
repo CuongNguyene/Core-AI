@@ -160,7 +160,7 @@ onMounted(() => {
 const renderEditor = (holder) => {
 	return new EditorJS({
 		holder: holder,
-		tools: getEditorTools(true),
+		tools: getEditorTools(props.courseName),
 		autofocus: true,
 		defaultBlock: 'markdown',
 		onChange: async (api, event) => {
