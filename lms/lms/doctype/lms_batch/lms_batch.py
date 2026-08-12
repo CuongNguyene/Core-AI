@@ -18,6 +18,7 @@ from lms.lms.utils import (
 	get_lesson_index,
 	get_lesson_url,
 	get_quiz_details,
+	render_notification_template,
 	update_payment_record,
 )
 
@@ -60,11 +61,23 @@ class LMSBatch(Document):
 		if not moderators:
 			return
 
+		context = {
+			"member_name": frappe.utils.get_fullname(self.owner),
+			"title": self.title,
+			"description": self.description,
+			"url": frappe.utils.get_url(f"/batches/{self.name}/edit"),
+		}
+		default_subject = _("{0} created a new batch {1} that needs your approval").format(
+			context["member_name"], self.title
+		)
+		subject, email_content = render_notification_template(
+			"batch_approval_template", context, default_subject, self.description
+		)
+
 		notification = frappe._dict(
 			{
-				"subject": _("{0} created a new batch {1} that needs your approval").format(
-					frappe.utils.get_fullname(self.owner), self.title
-				),
+				"subject": subject,
+				"email_content": email_content,
 				"document_type": self.doctype,
 				"document_name": self.name,
 				"for_user": self.owner,
@@ -84,9 +97,21 @@ class LMSBatch(Document):
 		if not instructors:
 			return
 
+		context = {
+			"member_name": frappe.utils.get_fullname(frappe.session.user),
+			"title": self.title,
+			"description": self.description,
+			"url": frappe.utils.get_url(f"/batches/details/{self.name}"),
+		}
+		default_subject = _("Your batch {0} has been approved and published").format(self.title)
+		subject, email_content = render_notification_template(
+			"batch_published_template", context, default_subject, self.description
+		)
+
 		notification = frappe._dict(
 			{
-				"subject": _("Your batch {0} has been approved and published").format(self.title),
+				"subject": subject,
+				"email_content": email_content,
 				"document_type": self.doctype,
 				"document_name": self.name,
 				"for_user": self.owner,

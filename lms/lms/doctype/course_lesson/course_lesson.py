@@ -239,7 +239,13 @@ def get_video_progress(lesson):
 	if not lesson_has_video(lesson):
 		return True
 
-	threshold = flt(frappe.db.get_single_value("LMS Settings", "video_completion_threshold") or 90)
+	override, lesson_threshold = frappe.db.get_value(
+		"Course Lesson", lesson, ["override_video_completion_threshold", "video_completion_threshold"]
+	)
+	if override:
+		threshold = flt(lesson_threshold)
+	else:
+		threshold = flt(frappe.db.get_single_value("LMS Settings", "video_completion_threshold") or 90)
 
 	records = frappe.get_all(
 		"LMS Video Watch Duration",

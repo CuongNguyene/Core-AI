@@ -36,6 +36,22 @@
 							description="Minimum time a student must spend on this lesson before it can be marked complete. 0 means no minimum."
 							class="mt-4"
 						/>
+						<FormControl
+							v-model="lesson.override_video_completion_threshold"
+							type="checkbox"
+							label="Override Video Completion Threshold"
+							description="By default, video lessons use the site-wide Video Completion Threshold from Settings. Enable this to set a different value for this lesson."
+							class="mt-4"
+						/>
+						<FormControl
+							v-if="lesson.override_video_completion_threshold"
+							v-model="lesson.video_completion_threshold"
+							type="number"
+							label="Video Completion Threshold (%)"
+							description="Minimum watch percentage (0-100) required to mark this video lesson as completed."
+							class="mt-4"
+							:required="true"
+						/>
 					</div>
 					<div class="border-t mt-4">
 						<div class="w-5/6 mx-auto pt-4">
@@ -176,6 +192,8 @@ const lesson = reactive({
 	instructor_notes: '',
 	content: '',
 	min_reading_time: 0,
+	override_video_completion_threshold: false,
+	video_completion_threshold: 90,
 })
 
 const lessonDetails = createResource({

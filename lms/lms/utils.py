@@ -1396,6 +1396,8 @@ def get_lesson(course, chapter, lesson):
 			"instructor_content",
 			"min_reading_time",
 			"completion_quiz",
+			"override_video_completion_threshold",
+			"video_completion_threshold",
 		],
 		as_dict=True,
 	)
@@ -2021,6 +2023,8 @@ def get_lesson_creation_details(course, chapter, lesson):
 				"youtube",
 				"quiz_id",
 				"min_reading_time",
+				"override_video_completion_threshold",
+				"video_completion_threshold",
 			],
 			as_dict=1,
 		)
@@ -2870,3 +2874,18 @@ def get_streak_info():
 		"current_streak": current_streak,
 		"longest_streak": longest_streak,
 	}
+
+
+def render_notification_template(setting_fieldname, context, default_subject, default_content=None):
+	"""Renders subject/content for an LMS Notification from the Email Template
+	configured against `setting_fieldname` on LMS Settings, if any. Falls back
+	to the given defaults when no template is configured, so callers keep
+	working unchanged until an admin opts in via Settings."""
+	template_name = frappe.db.get_single_value("LMS Settings", setting_fieldname)
+	if not template_name:
+		return default_subject, default_content
+
+	template = frappe.get_doc("Email Template", template_name)
+	subject = frappe.render_template(template.subject, context) if template.subject else default_subject
+	content = frappe.render_template(template.response, context) if template.response else default_content
+	return subject, content

@@ -62,8 +62,12 @@
   "email_templates_tab",
   "certification_template",
   "batch_confirmation_template",
+  "course_approval_template",
+  "batch_approval_template",
   "column_break_uwsp",
   "payment_reminder_template",
+  "course_published_template",
+  "batch_published_template",
   "seo_tab",
   "meta_description",
   "meta_image",
@@ -187,6 +191,30 @@
    "fieldname": "batch_confirmation_template",
    "fieldtype": "Link",
    "label": "Batch Confirmation Template",
+   "options": "Email Template"
+  },
+  {
+   "fieldname": "course_approval_template",
+   "fieldtype": "Link",
+   "label": "Course Approval Request Template",
+   "options": "Email Template"
+  },
+  {
+   "fieldname": "batch_approval_template",
+   "fieldtype": "Link",
+   "label": "Batch Approval Request Template",
+   "options": "Email Template"
+  },
+  {
+   "fieldname": "course_published_template",
+   "fieldtype": "Link",
+   "label": "Course Published Template",
+   "options": "Email Template"
+  },
+  {
+   "fieldname": "batch_published_template",
+   "fieldtype": "Link",
+   "label": "Batch Published Template",
    "options": "Email Template"
   },
   {
