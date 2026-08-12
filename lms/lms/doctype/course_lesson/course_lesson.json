@@ -26,6 +26,8 @@
   "quiz_id",
   "section_break_reading",
   "min_reading_time",
+  "override_video_completion_threshold",
+  "video_completion_threshold",
   "column_break_reading",
   "completion_quiz",
   "section_break_16",
@@ -119,6 +121,22 @@
    "fieldname": "min_reading_time",
    "fieldtype": "Int",
    "label": "Minimum Reading Time (seconds)"
+  },
+  {
+   "default": "0",
+   "description": "Override the site-wide video completion threshold for this lesson",
+   "fieldname": "override_video_completion_threshold",
+   "fieldtype": "Check",
+   "label": "Override Video Completion Threshold"
+  },
+  {
+   "depends_on": "eval:doc.override_video_completion_threshold",
+   "description": "Minimum watch percentage (0-100%) required to mark this video lesson as completed.",
+   "fieldname": "video_completion_threshold",
+   "fieldtype": "Int",
+   "label": "Video Completion Threshold (%)",
+   "mandatory_depends_on": "eval:doc.override_video_completion_threshold",
+   "non_negative": 1
   },
   {
    "fieldname": "column_break_reading",

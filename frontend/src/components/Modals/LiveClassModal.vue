@@ -67,6 +67,7 @@
 							/>
 						</div>
 						<FormControl
+							v-if="liveClass.provider == 'Zoom'"
 							v-model="liveClass.auto_recording"
 							type="select"
 							:options="getRecordingOptions()"
@@ -74,6 +75,13 @@
 						/>
 					</div>
 				</div>
+				<FormControl
+					v-if="showProviderSelect"
+					v-model="liveClass.provider"
+					type="select"
+					:options="getProviderOptions()"
+					:label="__('batches.liveClass.provider')"
+				/>
 				<FormControl
 					v-model="liveClass.description"
 					type="textarea"
@@ -92,7 +100,7 @@ import {
 	Autocomplete,
 	toast,
 } from 'frappe-ui'
-import { reactive, inject, onMounted } from 'vue'
+import { reactive, inject, onMounted, computed } from 'vue'
 import { getTimezones, getUserTimezone } from '@/utils/'
 
 const liveClasses = defineModel('reloadLiveClasses')
@@ -107,9 +115,15 @@ const props = defineProps({
 	},
 	zoomAccount: {
 		type: String,
-		required: true,
+		default: '',
+	},
+	teamsAccount: {
+		type: String,
+		default: '',
 	},
 })
+
+const showProviderSelect = computed(() => props.zoomAccount && props.teamsAccount)
 
 let liveClass = reactive({
 	title: '',
@@ -119,6 +133,7 @@ let liveClass = reactive({
 	duration: '',
 	timezone: '',
 	auto_recording: 'No Recording',
+	provider: props.zoomAccount ? 'Zoom' : 'Microsoft Teams',
 	batch: props.batch,
 	host: user.data.name,
 })
@@ -153,13 +168,28 @@ const getRecordingOptions = () => {
 	]
 }
 
+const getProviderOptions = () => {
+	return [
+		{
+			label: __('batches.liveClass.zoom'),
+			value: 'Zoom',
+		},
+		{
+			label: __('batches.liveClass.microsoftTeams'),
+			value: 'Microsoft Teams',
+		},
+	]
+}
+
 const createLiveClass = createResource({
 	url: 'lms.lms.doctype.lms_batch.lms_batch.create_live_class',
 	makeParams(values) {
 		return {
 			doctype: 'LMS Live Class',
 			batch_name: values.batch,
-			zoom_account: props.zoomAccount,
+			zoom_account: values.provider == 'Zoom' ? props.zoomAccount : undefined,
+			teams_account:
+				values.provider == 'Microsoft Teams' ? props.teamsAccount : undefined,
 			...values,
 		}
 	},
@@ -236,5 +266,6 @@ const refreshForm = () => {
 	liveClass.duration = ''
 	liveClass.timezone = getUserTimezone()
 	liveClass.auto_recording = 'No Recording'
+	liveClass.provider = props.zoomAccount ? 'Zoom' : 'Microsoft Teams'
 }
 </script>

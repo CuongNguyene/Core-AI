@@ -376,6 +376,10 @@
 		},
 		"liveClass": {
 			"noZoomAccount": "Please add a zoom account to the batch to create live classes.",
+				"noMeetingAccount": "Please add a Zoom or Microsoft Teams account to the batch to create live classes.",
+				"provider": "Provider",
+				"zoom": "Zoom",
+				"microsoftTeams": "Microsoft Teams",
 			"liveClass": "Live Class",
 			"add": "Add",
 			"start": "Start",
@@ -496,6 +500,8 @@
 			"emailTemplatePlaceholder": "Select or create an email template",
 			"zoomAccount": "Zoom Account",
 			"zoomAccountPlaceholder": "Select or create a zoom account",
+			"teamsAccount": "Teams Account",
+			"teamsAccountPlaceholder": "Select or create a Microsoft Teams account",
 			"medium": "Medium",
 			"category": "Category",
 			"categoryPlaceholder": "Select or create a category",
@@ -869,6 +875,21 @@
 		"errorCreating": "Error creating Zoom Account",
 		"updatedSuccess": "Zoom Account updated successfully",
 		"errorUpdating": "Error updating Zoom Account"
+	},
+	"teamsAccount": {
+		"newAccount": "New Teams Account",
+		"editAccount": "Edit Teams Account",
+		"save": "Save",
+		"enabled": "Enabled",
+		"accountName": "Account Name",
+		"clientId": "Client ID",
+		"member": "Member",
+		"clientSecret": "Client Secret",
+		"tenantId": "Tenant ID",
+		"createdSuccess": "Teams Account created successfully",
+		"errorCreating": "Error creating Teams Account",
+		"updatedSuccess": "Teams Account updated successfully",
+		"errorUpdating": "Error updating Teams Account"
 	},
 	"common": {
 		"emptyState": {

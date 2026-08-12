@@ -78,6 +78,7 @@ import BrandSettings from '@/components/Settings/BrandSettings.vue'
 //import PaymentGateways from '@/components/Settings/PaymentGateways.vue'
 // import Transactions from '@/components/Settings/Transactions.vue'
 import ZoomSettings from '@/components/Settings/ZoomSettings.vue'
+import TeamsSettings from '@/components/Settings/TeamsSettings.vue'
 import Badges from '@/components/Settings/Badges.vue'
 
 const show = defineModel()
@@ -155,6 +156,42 @@ const tabsStructure = computed(() => {
 							doctype: 'Email Template',
 							filters: { is_lms_template: 1 },
 							type: 'Link',
+						},
+						{
+							label: 'Course Approval Request Email Template',
+							name: 'course_approval_template',
+							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
+							type: 'Link',
+							description:
+								'Sent to Moderators when an instructor creates a course that needs approval before publishing.',
+						},
+						{
+							label: 'Course Published Email Template',
+							name: 'course_published_template',
+							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
+							type: 'Link',
+							description:
+								'Sent to instructors when their course is approved and published.',
+						},
+						{
+							label: 'Batch Approval Request Email Template',
+							name: 'batch_approval_template',
+							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
+							type: 'Link',
+							description:
+								'Sent to Moderators when an instructor creates a batch that needs approval before publishing.',
+						},
+						{
+							label: 'Batch Published Email Template',
+							name: 'batch_published_template',
+							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
+							type: 'Link',
+							description:
+								'Sent to instructors when their batch is approved and published.',
 						},
 						// {
 						// 	label: 'Unsplash Access Key',
@@ -259,6 +296,13 @@ const tabsStructure = computed(() => {
 						'Manage zoom accounts to conduct live classes from batches',
 					icon: 'Video',
 					template: markRaw(ZoomSettings),
+				},
+				{
+					label: 'Teams Accounts',
+					description:
+						'Manage Microsoft Teams accounts to conduct live classes from batches',
+					icon: 'Video',
+					template: markRaw(TeamsSettings),
 				},
 				{
 					label: 'Badges',

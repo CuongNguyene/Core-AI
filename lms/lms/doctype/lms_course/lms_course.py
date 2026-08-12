@@ -10,7 +10,7 @@ from frappe.model.document import Document
 from frappe.utils import cint, today
 
 from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
-from lms.lms.utils import ensure_instructor_role, get_chapters
+from lms.lms.utils import ensure_instructor_role, get_chapters, render_notification_template
 
 from ...utils import update_payment_record, validate_image
 
@@ -123,12 +123,23 @@ class LMSCourse(Document):
 		if not moderators:
 			return
 
+		context = {
+			"member_name": frappe.utils.get_fullname(self.owner),
+			"title": self.title,
+			"description": self.short_introduction,
+			"url": frappe.utils.get_url(f"/courses/{self.name}/edit"),
+		}
+		default_subject = _("{0} created a new course {1} that needs your approval").format(
+			context["member_name"], self.title
+		)
+		subject, email_content = render_notification_template(
+			"course_approval_template", context, default_subject, self.short_introduction
+		)
+
 		notification = frappe._dict(
 			{
-				"subject": _("{0} created a new course {1} that needs your approval").format(
-					frappe.utils.get_fullname(self.owner), self.title
-				),
-				"email_content": self.short_introduction,
+				"subject": subject,
+				"email_content": email_content,
 				"document_type": self.doctype,
 				"document_name": self.name,
 				"for_user": self.owner,
@@ -148,10 +159,21 @@ class LMSCourse(Document):
 		if not instructors:
 			return
 
+		context = {
+			"member_name": frappe.utils.get_fullname(frappe.session.user),
+			"title": self.title,
+			"description": self.short_introduction,
+			"url": frappe.utils.get_url(f"/courses/{self.name}"),
+		}
+		default_subject = _("Your course {0} has been approved and published").format(self.title)
+		subject, email_content = render_notification_template(
+			"course_published_template", context, default_subject, self.short_introduction
+		)
+
 		notification = frappe._dict(
 			{
-				"subject": _("Your course {0} has been approved and published").format(self.title),
-				"email_content": self.short_introduction,
+				"subject": subject,
+				"email_content": email_content,
 				"document_type": self.doctype,
 				"document_name": self.name,
 				"for_user": self.owner,

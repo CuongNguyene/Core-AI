@@ -376,6 +376,10 @@
 		},
 		"liveClass": {
 			"noZoomAccount": "Vui lòng thêm tài khoản Zoom cho lớp học để tạo buổi học trực tuyến.",
+				"noMeetingAccount": "Vui lòng thêm tài khoản Zoom hoặc Microsoft Teams cho lớp học để tạo buổi học trực tuyến.",
+				"provider": "Nhà cung cấp",
+				"zoom": "Zoom",
+				"microsoftTeams": "Microsoft Teams",
 			"liveClass": "Buổi học trực tuyến",
 			"add": "Thêm",
 			"start": "Bắt đầu",
@@ -496,6 +500,8 @@
 			"emailTemplatePlaceholder": "Chọn hoặc tạo một mẫu email",
 			"zoomAccount": "Tài khoản Zoom",
 			"zoomAccountPlaceholder": "Chọn hoặc tạo một tài khoản Zoom",
+			"teamsAccount": "Tài khoản Teams",
+			"teamsAccountPlaceholder": "Chọn hoặc tạo một tài khoản Microsoft Teams",
 			"medium": "Hình thức",
 			"category": "Danh mục",
 			"categoryPlaceholder": "Chọn hoặc tạo một danh mục",
@@ -869,6 +875,21 @@
 		"errorCreating": "Lỗi khi tạo tài khoản Zoom",
 		"updatedSuccess": "Cập nhật tài khoản Zoom thành công",
 		"errorUpdating": "Lỗi khi cập nhật tài khoản Zoom"
+	},
+	"teamsAccount": {
+		"newAccount": "Tài khoản Teams mới",
+		"editAccount": "Chỉnh sửa tài khoản Teams",
+		"save": "Lưu",
+		"enabled": "Đã bật",
+		"accountName": "Tên tài khoản",
+		"clientId": "Client ID",
+		"member": "Thành viên",
+		"clientSecret": "Client Secret",
+		"tenantId": "Tenant ID",
+		"createdSuccess": "Tạo tài khoản Teams thành công",
+		"errorCreating": "Lỗi khi tạo tài khoản Teams",
+		"updatedSuccess": "Cập nhật tài khoản Teams thành công",
+		"errorUpdating": "Lỗi khi cập nhật tài khoản Teams"
 	},
 	"common": {
 		"emptyState": {

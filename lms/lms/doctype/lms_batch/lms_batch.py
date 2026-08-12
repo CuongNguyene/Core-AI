@@ -9,7 +9,7 @@ import frappe
 import requests
 from frappe import _
 from frappe.model.document import Document
-from frappe.utils import add_days, cint, format_datetime, get_time, nowdate
+from frappe.utils import add_days, cint, format_datetime, get_datetime, get_time, nowdate
 
 from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
 from lms.lms.utils import (
@@ -18,6 +18,7 @@ from lms.lms.utils import (
 	get_lesson_index,
 	get_lesson_url,
 	get_quiz_details,
+	render_notification_template,
 	update_payment_record,
 )
 
@@ -60,11 +61,23 @@ class LMSBatch(Document):
 		if not moderators:
 			return
 
+		context = {
+			"member_name": frappe.utils.get_fullname(self.owner),
+			"title": self.title,
+			"description": self.description,
+			"url": frappe.utils.get_url(f"/batches/{self.name}/edit"),
+		}
+		default_subject = _("{0} created a new batch {1} that needs your approval").format(
+			context["member_name"], self.title
+		)
+		subject, email_content = render_notification_template(
+			"batch_approval_template", context, default_subject, self.description
+		)
+
 		notification = frappe._dict(
 			{
-				"subject": _("{0} created a new batch {1} that needs your approval").format(
-					frappe.utils.get_fullname(self.owner), self.title
-				),
+				"subject": subject,
+				"email_content": email_content,
 				"document_type": self.doctype,
 				"document_name": self.name,
 				"for_user": self.owner,
@@ -84,9 +97,21 @@ class LMSBatch(Document):
 		if not instructors:
 			return
 
+		context = {
+			"member_name": frappe.utils.get_fullname(frappe.session.user),
+			"title": self.title,
+			"description": self.description,
+			"url": frappe.utils.get_url(f"/batches/details/{self.name}"),
+		}
+		default_subject = _("Your batch {0} has been approved and published").format(self.title)
+		subject, email_content = render_notification_template(
+			"batch_published_template", context, default_subject, self.description
+		)
+
 		notification = frappe._dict(
 			{
-				"subject": _("Your batch {0} has been approved and published").format(self.title),
+				"subject": subject,
+				"email_content": email_content,
 				"document_type": self.doctype,
 				"document_name": self.name,
 				"for_user": self.owner,
@@ -196,15 +221,22 @@ class LMSBatch(Document):
 @frappe.whitelist()
 def create_live_class(
 	batch_name,
-	zoom_account,
 	title,
 	duration,
 	date,
 	time,
 	timezone,
 	auto_recording,
+	provider="Zoom",
+	zoom_account=None,
+	teams_account=None,
 	description=None,
 ):
+	if provider == "Microsoft Teams":
+		return create_teams_live_class(
+			teams_account, batch_name, title, duration, date, time, description
+		)
+
 	payload = {
 		"topic": title,
 		"start_time": format_datetime(f"{date} {time}", "yyyy-MM-ddTHH:mm:ssZ"),
@@ -227,6 +259,7 @@ def create_live_class(
 		payload.update(
 			{
 				"doctype": "LMS Live Class",
+				"provider": "Zoom",
 				"start_url": data.get("start_url"),
 				"join_url": data.get("join_url"),
 				"meeting_id": data.get("id"),
@@ -269,6 +302,77 @@ def authenticate(zoom_account):
 	}
 	response = requests.request("POST", authenticate_url, headers=headers)
 	return response.json()["access_token"]
+
+
+def create_teams_live_class(teams_account, batch_name, title, duration, date, time, description=None):
+	data = create_teams_meeting(teams_account, title, date, time, duration)
+
+	class_details = frappe.get_doc(
+		{
+			"doctype": "LMS Live Class",
+			"provider": "Microsoft Teams",
+			"start_url": data.get("joinWebUrl"),
+			"join_url": data.get("joinWebUrl"),
+			"teams_meeting_id": data.get("id"),
+			"title": title,
+			"host": frappe.session.user,
+			"date": date,
+			"time": time,
+			"duration": duration,
+			"batch_name": batch_name,
+			"description": description,
+			"teams_account": teams_account,
+		}
+	)
+	class_details.save()
+	return class_details
+
+
+def authenticate_teams(teams_account):
+	teams = frappe.get_doc("LMS Teams Settings", teams_account)
+	if not teams.enabled:
+		frappe.throw(_("Please enable the Teams account to use this feature."))
+
+	token_url = f"https://login.microsoftonline.com/{teams.tenant_id}/oauth2/v2.0/token"
+	data = {
+		"grant_type": "client_credentials",
+		"client_id": teams.client_id,
+		"client_secret": teams.get_password(fieldname="client_secret", raise_exception=False),
+		"scope": "https://graph.microsoft.com/.default",
+	}
+	response = requests.post(token_url, data=data)
+	if response.status_code != 200:
+		frappe.throw(
+			_("Error authenticating with Microsoft Teams. Please check the account settings.")
+		)
+	return response.json()["access_token"]
+
+
+def create_teams_meeting(teams_account, title, date, time, duration, description=None):
+	teams = frappe.get_doc("LMS Teams Settings", teams_account)
+	start = get_datetime(f"{date} {time}")
+	end = start + timedelta(minutes=cint(duration))
+
+	payload = {
+		"subject": title,
+		"startDateTime": start.isoformat(),
+		"endDateTime": end.isoformat(),
+	}
+	headers = {
+		"Authorization": "Bearer " + authenticate_teams(teams_account),
+		"Content-Type": "application/json",
+	}
+	# Graph API online meetings are created against the organizer's user id;
+	# "member" on LMS Teams Settings must be the organizer's Entra ID user (email/UPN).
+	response = requests.post(
+		f"https://graph.microsoft.com/v1.0/users/{teams.member}/onlineMeetings",
+		headers=headers,
+		data=json.dumps(payload),
+	)
+
+	if response.status_code != 201:
+		frappe.throw(_("Error creating live class. Please try again. {0}").format(response.text))
+	return response.json()
 
 
 @frappe.whitelist()

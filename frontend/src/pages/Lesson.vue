@@ -486,9 +486,12 @@ const readingTimeMet = ref(false)
 const { brand } = sessionStore()
 const sidebarStore = useSidebar()
 const settingsStore = useSettings()
-const threshold = computed(
-	() => Number(settingsStore.videoCompletionThreshold?.data) || 90
-)
+const threshold = computed(() => {
+	if (lesson.data?.override_video_completion_threshold) {
+		return Number(lesson.data.video_completion_threshold) || 0
+	}
+	return Number(settingsStore.videoCompletionThreshold?.data) || 90
+})
 const videoWatchPercent = ref(0)
 const lessonHasVideo = computed(() => lesson.data?.icon === 'icon-youtube')
 // A prior watch record means the server already has (possibly threshold-

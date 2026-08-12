@@ -28,6 +28,7 @@
   "column_break_hlqw",
   "instructors",
   "zoom_account",
+  "teams_account",
   "section_break_rgfj",
   "medium",
   "category",
@@ -362,6 +363,12 @@
    "fieldtype": "Link",
    "label": "Zoom Account",
    "options": "LMS Zoom Settings"
+  },
+  {
+   "fieldname": "teams_account",
+   "fieldtype": "Link",
+   "label": "Teams Account",
+   "options": "LMS Teams Settings"
   }
  ],
  "grid_page_length": 50,

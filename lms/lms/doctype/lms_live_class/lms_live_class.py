@@ -10,7 +10,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import cint, format_date, format_time, get_datetime, nowdate
 
-from lms.lms.doctype.lms_batch.lms_batch import authenticate
+from lms.lms.doctype.lms_batch.lms_batch import authenticate, authenticate_teams
 
 
 class LMSLiveClass(Document):
@@ -115,11 +115,19 @@ def send_mail(live_class, student):
 def update_attendance():
 	past_live_classes = frappe.get_all(
 		"LMS Live Class",
-		{
-			"uuid": ["is", "set"],
-			"attendees": ["is", "not set"],
-		},
-		["name", "uuid", "zoom_account"],
+		filters=[
+			["attendees", "is", "not set"],
+			["uuid", "is", "set"],
+		],
+		fields=["name", "uuid", "zoom_account", "provider"],
+	)
+	past_live_classes += frappe.get_all(
+		"LMS Live Class",
+		filters=[
+			["attendees", "is", "not set"],
+			["teams_meeting_id", "is", "set"],
+		],
+		fields=["name", "teams_meeting_id", "teams_account", "provider"],
 	)
 
 	for live_class in past_live_classes:
@@ -129,6 +137,12 @@ def update_attendance():
 
 
 def get_attendance(live_class):
+	if live_class.provider == "Microsoft Teams":
+		return get_teams_attendance(live_class)
+	return get_zoom_attendance(live_class)
+
+
+def get_zoom_attendance(live_class):
 	headers = {
 		"Authorization": "Bearer " + authenticate(live_class.zoom_account),
 		"content-type": "application/json",
@@ -148,6 +162,60 @@ def get_attendance(live_class):
 
 	data = response.json()
 	return data.get("participants", [])
+
+
+def get_teams_attendance(live_class):
+	teams = frappe.get_doc("LMS Teams Settings", live_class.teams_account)
+	headers = {
+		"Authorization": "Bearer " + authenticate_teams(live_class.teams_account),
+		"content-type": "application/json",
+	}
+
+	response = requests.get(
+		f"https://graph.microsoft.com/v1.0/users/{teams.member}/onlineMeetings/"
+		f"{live_class.teams_meeting_id}/attendanceReports",
+		headers=headers,
+	)
+
+	if response.status_code != 200:
+		frappe.throw(
+			_("Failed to fetch attendance data from Microsoft Teams for class {0}: {1}").format(
+				live_class, response.text
+			)
+		)
+
+	reports = response.json().get("value", [])
+	if not reports:
+		return []
+
+	# Use the most recent attendance report for the meeting.
+	report_id = reports[-1]["id"]
+	records_response = requests.get(
+		f"https://graph.microsoft.com/v1.0/users/{teams.member}/onlineMeetings/"
+		f"{live_class.teams_meeting_id}/attendanceReports/{report_id}/attendanceRecords",
+		headers=headers,
+	)
+
+	if records_response.status_code != 200:
+		frappe.throw(
+			_("Failed to fetch attendance records from Microsoft Teams for class {0}: {1}").format(
+				live_class, records_response.text
+			)
+		)
+
+	participants = []
+	for record in records_response.json().get("value", []):
+		intervals = record.get("attendanceIntervals", [])
+		total_duration = sum(interval.get("durationInSeconds", 0) for interval in intervals)
+		participants.append(
+			{
+				"user_email": record.get("emailAddress"),
+				"join_time": intervals[0].get("joinDateTime") if intervals else None,
+				"leave_time": intervals[-1].get("leaveDateTime") if intervals else None,
+				"duration": total_duration,
+			}
+		)
+	return participants
 
 
 def create_attendance(live_class, data):
