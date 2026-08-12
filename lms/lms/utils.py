@@ -1537,6 +1537,7 @@ def get_batch_details(batch):
 			"timezone",
 			"category",
 			"zoom_account",
+			"teams_account",
 		],
 		as_dict=True,
 	)

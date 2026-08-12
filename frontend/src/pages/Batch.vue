@@ -81,6 +81,7 @@
 								<LiveClass
 									:batch="batch.data.name"
 									:zoomAccount="batch.data.zoom_account"
+									:teamsAccount="batch.data.teams_account"
 								/>
 							</div>
 							<div v-else-if="tab.id == 'Assessments'">

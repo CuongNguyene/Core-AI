@@ -78,6 +78,7 @@ import BrandSettings from '@/components/Settings/BrandSettings.vue'
 //import PaymentGateways from '@/components/Settings/PaymentGateways.vue'
 // import Transactions from '@/components/Settings/Transactions.vue'
 import ZoomSettings from '@/components/Settings/ZoomSettings.vue'
+import TeamsSettings from '@/components/Settings/TeamsSettings.vue'
 import Badges from '@/components/Settings/Badges.vue'
 
 const show = defineModel()
@@ -259,6 +260,13 @@ const tabsStructure = computed(() => {
 						'Manage zoom accounts to conduct live classes from batches',
 					icon: 'Video',
 					template: markRaw(ZoomSettings),
+				},
+				{
+					label: 'Teams Accounts',
+					description:
+						'Manage Microsoft Teams accounts to conduct live classes from batches',
+					icon: 'Video',
+					template: markRaw(TeamsSettings),
 				},
 				{
 					label: 'Badges',

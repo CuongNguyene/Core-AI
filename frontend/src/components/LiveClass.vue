@@ -1,11 +1,11 @@
 <template>
 	<div
-		v-if="hasPermission() && !props.zoomAccount"
+		v-if="hasPermission() && !props.zoomAccount && !props.teamsAccount"
 		class="flex items-center space-x-2 mb-5 bg-surface-amber-1 py-1 px-2 rounded-md text-ink-amber-3"
 	>
 		<AlertCircle class="size-4 stroke-1.5" />
 		<span>
-			{{ __('batches.liveClass.noZoomAccount') }}
+			{{ __('batches.liveClass.noMeetingAccount') }}
 		</span>
 	</div>
 
@@ -103,6 +103,7 @@
 	<LiveClassModal
 		:batch="props.batch"
 		:zoomAccount="props.zoomAccount"
+		:teamsAccount="props.teamsAccount"
 		v-model="showLiveClassModal"
 		v-model:reloadLiveClasses="liveClasses"
 	/>
@@ -138,6 +139,7 @@ const props = defineProps({
 		required: true,
 	},
 	zoomAccount: String,
+	teamsAccount: String,
 })
 
 const liveClasses = createListResource({
@@ -166,7 +168,7 @@ const openLiveClassModal = () => {
 
 const canCreateClass = () => {
 	if (readOnlyMode) return false
-	if (!props.zoomAccount) return false
+	if (!props.zoomAccount && !props.teamsAccount) return false
 	return hasPermission()
 }
 

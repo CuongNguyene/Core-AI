@@ -174,6 +174,17 @@
 							"
 							:placeholder="__('batches.form.zoomAccountPlaceholder')"
 						/>
+						<Link
+							doctype="LMS Teams Settings"
+							:label="__('batches.form.teamsAccount')"
+							v-model="batch.teams_account"
+							:onCreate="
+								(value, close) => {
+									openSettings('Teams Accounts', close)
+								}
+							"
+							:placeholder="__('batches.form.teamsAccountPlaceholder')"
+						/>
 					</div>
 					<div class="space-y-5">
 						<FormControl
@@ -384,6 +395,7 @@ const batch = reactive({
 	currency: '',
 	amount: 0,
 	zoom_account: '',
+	teams_account: '',
 })
 
 const meta = reactive({
