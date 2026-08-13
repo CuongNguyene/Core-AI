@@ -166,8 +166,11 @@ def set_total_marks(questions):
 
 
 @frappe.whitelist()
-def quiz_summary(quiz, results):
-	results = results and json.loads(results)
+def quiz_summary(quiz, results=None):
+	if isinstance(results, str):
+		results = json.loads(results) if results else []
+	elif not results:
+		results = []
 	percentage = 0
 
 	quiz_details = frappe.db.get_value(
@@ -331,6 +334,7 @@ def validate_quiz_duration(quiz_details, user):
 
 
 def process_results(results, quiz_details):
+	results = results or []
 	score = 0
 	is_open_ended = False
 
@@ -347,9 +351,17 @@ def process_results(results, quiz_details):
 		result["marks_out_of"] = question_details.marks
 
 		if question_details.type != "Open Ended":
-			submitted_answers = [
-				answer for answer in cstr(result.get("answer", "")).split(",") if answer
-			]
+			raw_ans = result.get("answer", "")
+			if isinstance(raw_ans, list):
+				submitted_answers = [cstr(a).strip() for a in raw_ans]
+			elif isinstance(raw_ans, str) and raw_ans.startswith("[") and raw_ans.endswith("]"):
+				try:
+					submitted_answers = [cstr(a).strip() for a in json.loads(raw_ans)]
+				except Exception:
+					submitted_answers = [a.strip() for a in cstr(raw_ans).split(",") if a.strip()]
+			else:
+				submitted_answers = [a.strip() for a in cstr(raw_ans).split(",") if a.strip()]
+
 			correct = evaluate_answer(question_details.question, question_details.type, submitted_answers)
 			result["is_correct"] = correct
 
@@ -386,12 +398,16 @@ def evaluate_answer(question, type, submitted_answers):
 			fields.append(f"is_correct_{num}")
 
 		question_details = frappe.db.get_value("LMS Question", question, fields, as_dict=1)
+		if not question_details:
+			return False
+
 		correct_options = {
-			question_details[f"option_{num}"]
+			cstr(question_details.get(f"option_{num}")).strip()
 			for num in range(1, 5)
 			if question_details.get(f"option_{num}") and question_details.get(f"is_correct_{num}")
 		}
-		return set(submitted_answers) == correct_options
+		submitted_set = {cstr(ans).strip() for ans in submitted_answers if cstr(ans).strip()}
+		return submitted_set == correct_options
 
 	return bool(check_input_answers(question, submitted_answers[0] if submitted_answers else ""))
 
@@ -525,11 +541,16 @@ def check_choice_answers(question, answers):
 		fields.append(f"is_correct_{cstr(num)}")
 
 	question_details = frappe.db.get_value("LMS Question", question, fields, as_dict=1)
+	if not question_details:
+		return [0, 0, 0, 0]
+
+	cleaned_answers = {cstr(ans).strip() for ans in answers if cstr(ans).strip()}
 
 	for num in range(1, 5):
-		if question_details[f"option_{num}"] in answers:
-			is_correct.append(question_details[f"is_correct_{num}"])
-		elif question_details[f"is_correct_{num}"]:
+		opt = cstr(question_details.get(f"option_{num}")).strip()
+		if opt and opt in cleaned_answers:
+			is_correct.append(question_details.get(f"is_correct_{num}", 0))
+		elif question_details.get(f"is_correct_{num}"):
 			is_correct.append(2)
 		else:
 			is_correct.append(0)

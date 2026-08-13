@@ -153,13 +153,14 @@
 	</Dialog>
 </template>
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted, computed, watch, inject } from 'vue'
 import { Pause, Maximize, Volume2, VolumeX } from 'lucide-vue-next'
-import { Button, Dialog } from 'frappe-ui'
+import { Button, Dialog, createResource } from 'frappe-ui'
 import { formatSeconds, formatTimestamp } from '@/utils'
 import { useSettings } from '@/stores/settings'
 import Play from '@/components/Icons/Play.vue'
 import QuizInVideo from '@/components/Modals/QuizInVideo.vue'
+import Quiz from '@/components/Quiz.vue'
 
 const videoRef = ref(null)
 const videoContainer = ref(null)
@@ -198,6 +199,29 @@ const props = defineProps({
 	},
 })
 
+const user = inject('$user')
+
+const completedQuizzes = createResource({
+	url: 'frappe.client.get_list',
+	makeParams() {
+		return {
+			doctype: 'LMS Quiz Submission',
+			filters: {
+				member: user?.data?.name,
+			},
+			fields: ['quiz', 'percentage', 'passing_percentage'],
+		}
+	},
+	auto: true,
+})
+
+const isQuizPassed = (quizName) => {
+	if (!completedQuizzes.data || !Array.isArray(completedQuizzes.data)) return false
+	return completedQuizzes.data.some(
+		(sub) => sub.quiz === quizName && Number(sub.percentage || 0) >= Number(sub.passing_percentage || 0)
+	)
+}
+
 onMounted(() => {
 	updateCurrentTime()
 	updateNextQuiz()
@@ -210,10 +234,14 @@ const updateCurrentTime = () => {
 		}
 		videoRef.value.ontimeupdate = () => {
 			currentTime.value = videoRef.value?.currentTime || currentTime.value
-			if (currentTime.value >= nextQuiz.value.time) {
+			if (nextQuiz.value?.time && currentTime.value >= nextQuiz.value.time) {
+				if (isQuizPassed(nextQuiz.value.quiz)) {
+					updateNextQuiz()
+					return
+				}
 				videoRef.value.pause()
 				playing.value = false
-				videoRef.value.onTimeupdate = null
+				videoRef.value.ontimeupdate = null
 				currentQuiz.value = nextQuiz.value.quiz
 				quizLoadTimer.value = 7
 			}
@@ -236,6 +264,7 @@ watch(quizLoadTimer, () => {
 const resumeVideo = (restart = false) => {
 	showQuiz.value = false
 	currentQuiz.value = null
+	completedQuizzes.reload()
 	updateCurrentTime()
 	setTimeout(() => {
 		videoRef.value.currentTime = restart ? 0 : currentTime.value

@@ -81,21 +81,24 @@ def save_progress(lesson, course, scorm_details=None):
 		scorm_details = frappe._dict(**scorm_details)
 
 	if (
-		not progress_already_exists
+		not lesson_already_completed
 		and quiz_completed
 		and assignment_completed
 		and video_completed
 		and reading_time_met
 		and not scorm_details
 	):
-		frappe.get_doc(
-			{
-				"doctype": "LMS Course Progress",
-				"lesson": lesson,
-				"status": "Complete",
-				"member": frappe.session.user,
-			}
-		).save(ignore_permissions=True)
+		if progress_already_exists:
+			frappe.db.set_value("LMS Course Progress", progress_already_exists, "status", "Complete")
+		else:
+			frappe.get_doc(
+				{
+					"doctype": "LMS Course Progress",
+					"lesson": lesson,
+					"status": "Complete",
+					"member": frappe.session.user,
+				}
+			).save(ignore_permissions=True)
 	elif scorm_details and not lesson_already_completed and not progress_already_exists:
 		# Create new SCORM progress
 		frappe.get_doc(
@@ -126,7 +129,7 @@ def save_progress(lesson, course, scorm_details=None):
 	# Had to get doc, as on_change doesn't trigger when you use set_value. The trigger is necessary for badge to get assigned.
 	enrollment = frappe.get_doc("LMS Enrollment", membership)
 	enrollment.progress = progress
-	enrollment.save()
+	enrollment.save(ignore_permissions=True)
 	enrollment.run_method("on_change")
 
 	frappe.publish_realtime(
@@ -136,7 +139,21 @@ def save_progress(lesson, course, scorm_details=None):
 		after_commit=True,
 	)
 
-	return progress
+	lesson_completed = bool(
+		frappe.db.exists(
+			"LMS Course Progress",
+			{"lesson": lesson, "member": frappe.session.user, "status": "Complete"},
+		)
+	)
+
+	return {
+		"progress": progress,
+		"lesson_completed": lesson_completed,
+		"quiz_completed": quiz_completed,
+		"assignment_completed": assignment_completed,
+		"video_completed": video_completed,
+		"reading_time_met": reading_time_met,
+	}
 
 
 def capture_progress_for_analytics(progress, course):

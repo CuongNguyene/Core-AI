@@ -156,7 +156,10 @@ export function getEditorTools(courseName) {
 		},
 		quiz: Quiz,
 		assignment: Assignment,
-		// program: Program,
+		program: {
+			class: Program,
+			toolbox: false,
+		},
 		upload: {
 			class: Upload,
 			config: {
@@ -175,12 +178,13 @@ export function getEditorTools(courseName) {
 				preserveBlank: true,
 			},
 		},
-		// codeBox: {
-		// 	class: CodeBox,
-		// 	config: {
-		// 		useDefaultTheme: 'dark',
-		// 	},
-		// },
+		codeBox: {
+			class: CodeBox,
+			config: {
+				useDefaultTheme: 'dark',
+			},
+			toolbox: false,
+		},
 		inlineCode: {
 			class: InlineCode,
 			shortcut: 'CMD+SHIFT+M',

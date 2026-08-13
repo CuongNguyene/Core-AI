@@ -120,6 +120,8 @@ declare module 'vue' {
     StudentHeatmap: typeof import('./src/components/StudentHeatmap.vue')['default']
     StudentModal: typeof import('./src/components/Modals/StudentModal.vue')['default']
     Tags: typeof import('./src/components/Tags.vue')['default']
+    TeamsAccountModal: typeof import('./src/components/Modals/TeamsAccountModal.vue')['default']
+    TeamsSettings: typeof import('./src/components/Settings/TeamsSettings.vue')['default']
     TransactionDetails: typeof import('./src/components/Settings/TransactionDetails.vue')['default']
     Transactions: typeof import('./src/components/Settings/Transactions.vue')['default']
     UnsplashImageBrowser: typeof import('./src/components/UnsplashImageBrowser.vue')['default']

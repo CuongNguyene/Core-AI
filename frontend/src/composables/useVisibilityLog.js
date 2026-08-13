@@ -9,6 +9,7 @@ import { call } from 'frappe-ui'
 // through that window.
 export function useVisibilityLog({ referenceDoctype, referenceName, minDurationSec = 2, onLog }) {
 	let hiddenAt = null
+	let localCount = 0
 
 	const onVisibilityChange = () => {
 		if (document.hidden) {
@@ -21,12 +22,18 @@ export function useVisibilityLog({ referenceDoctype, referenceName, minDurationS
 		hiddenAt = null
 		if (duration < minDurationSec) return
 
+		localCount++
+		if (onLog) onLog(localCount, duration)
+
 		call('lms.lms.api.log_activity_event', {
 			reference_doctype: referenceDoctype,
 			reference_name: referenceName,
 			duration_seconds: duration,
 		}).then((data) => {
-			if (onLog) onLog(data?.count, duration)
+			if (data?.count !== undefined) {
+				localCount = Math.max(localCount, data.count)
+				if (onLog) onLog(localCount, duration)
+			}
 		})
 	}
 

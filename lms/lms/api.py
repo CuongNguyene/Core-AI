@@ -1858,7 +1858,9 @@ def track_video_watch_duration(lesson, videos):
 	if not isinstance(videos, list):
 		videos = json.loads(videos)
 
-	started_at = frappe.cache().get_value(lesson_view_start_cache_key(lesson), expires=True)
+	started_at = frappe.cache().get_value(lesson_view_start_cache_key(lesson))
+	if isinstance(started_at, (tuple, list)):
+		started_at = started_at[0]
 	elapsed_since_view = time_diff_in_seconds(now_datetime(), started_at) if started_at else 0
 	watch_time_cap = elapsed_since_view + WATCH_TIME_GRACE_SECONDS
 
@@ -1891,7 +1893,7 @@ def track_new_watch_time(lesson, video, watch_time):
 	if video.get("duration"):
 		doc.duration = video.get("duration")
 	doc.member = frappe.session.user
-	doc.save()
+	doc.insert(ignore_permissions=True)
 
 
 @frappe.whitelist()
@@ -1902,7 +1904,7 @@ def log_activity_event(reference_doctype, reference_name, duration_seconds, even
 	Tab-hidden duration is also used to correct server-side reading-time
 	calculations (see has_met_reading_time); every event type feeds the
 	visible violation count shown while taking a timed quiz."""
-	if reference_doctype not in ("LMS Quiz Attempt", "Course Lesson"):
+	if reference_doctype not in ("LMS Quiz Attempt", "Course Lesson", "LMS Quiz"):
 		frappe.throw(_("Invalid reference doctype."))
 
 	if not frappe.db.exists(reference_doctype, reference_name):
@@ -1934,7 +1936,7 @@ def _insert_activity_log(count_filters, event_type, duration_seconds):
 			{
 				**count_filters,
 				"event_type": event_type,
-				"timestamp": [">", add_to_date(now_datetime(), seconds=-10)],
+				"timestamp": [">", add_to_date(now_datetime(), seconds=-1)],
 			},
 		)
 		if recently_logged:
@@ -1958,7 +1960,7 @@ def check_concurrent_sessions(reference_doctype, reference_name):
 	device) gets its own sid, while multiple tabs in the same logged-in
 	browser share one sid, so this doesn't false-positive on someone just
 	having the quiz open in two tabs."""
-	if reference_doctype not in ("LMS Quiz Attempt", "Course Lesson"):
+	if reference_doctype not in ("LMS Quiz Attempt", "Course Lesson", "LMS Quiz"):
 		frappe.throw(_("Invalid reference doctype."))
 
 	if not frappe.db.exists(reference_doctype, reference_name):
@@ -2014,6 +2016,29 @@ def record_study_time(course, seconds):
 				"seconds_spent": seconds,
 			}
 		).insert(ignore_permissions=True)
+
+
+@frappe.whitelist()
+def get_course_study_time(course):
+	"""
+	Returns the total accumulated seconds spent studying this course by the current user.
+	"""
+	member = frappe.session.user
+	if not member or member == "Guest" or not course:
+		return {"seconds_spent": 0}
+
+	total_seconds = (
+		frappe.db.sql(
+			"""
+			select sum(seconds_spent)
+			from `tabLMS Course Time Log`
+			where member = %s and course = %s
+			""",
+			(member, course),
+		)[0][0]
+		or 0
+	)
+	return {"seconds_spent": cint(total_seconds)}
 
 
 def can_view_other_members_time(course=None, batch=None):

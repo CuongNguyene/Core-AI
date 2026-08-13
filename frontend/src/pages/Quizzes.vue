@@ -154,7 +154,14 @@ const redirectIfNotAllowed = () => {
 // a plain onMounted check alone misses the latter case.
 watch(user, redirectIfNotAllowed)
 
-onMounted(redirectIfNotAllowed)
+onMounted(() => {
+	redirectIfNotAllowed()
+	// If user data already loaded before mount (e.g. cached session), kick off
+	// the quiz fetch now — the watcher below won't fire for an already-resolved value.
+	if (user.data) {
+		applyUserFilter()
+	}
+})
 
 watch(search, () => {
 	quizFilters.value['title'] = ['like', `%${search.value}%`]
@@ -176,8 +183,7 @@ const quizzes = createListResource({
 		'max_attempts',
 		'modified',
 	],
-	auto: true,
-	cache: ['quizzes', user.data?.name],
+	auto: false,
 	orderBy: 'modified desc',
 	transform(data) {
 		return data.map((quiz) => {
@@ -189,17 +195,12 @@ const quizzes = createListResource({
 	},
 })
 
-watch(
-	user,
-	() => {
-		if (user.data && !user.data?.is_moderator && user.data?.is_instructor) {
-			quizFilters.value['owner'] = user.data?.name
-			quizzes.update({ filters: quizFilters.value })
-			quizzes.reload()
-		}
-	},
-	{ immediate: true }
-)
+const applyUserFilter = () => {
+	if (!user.data) return
+	quizzes.reload()
+}
+
+watch(user, applyUserFilter)
 
 const deleteQuiz = async (selections, unselectAll) => {
 	try {

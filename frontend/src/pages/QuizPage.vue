@@ -20,7 +20,7 @@
 	>
 		<Quiz
 			:quizName="quizID"
-			:hide-integrity-banner="!fromLesson"
+			:hide-integrity-banner="fromLesson"
 			@violation-count="violationCount = $event"
 		/>
 	</div>
@@ -67,13 +67,9 @@ const goBack = () => {
 }
 
 const title = createResource({
-	url: 'frappe.client.get_value',
+	url: 'lms.lms.doctype.lms_quiz.lms_quiz.get_quiz',
 	params: {
-		doctype: 'LMS Quiz',
-		fieldname: 'title',
-		filters: {
-			name: props.quizID,
-		},
+		quiz: props.quizID,
 	},
 	auto: true,
 })

@@ -3,6 +3,7 @@
 
 import frappe
 from frappe import _
+from frappe.email.doctype.email_template.email_template import get_email_template
 from frappe.model.document import Document
 
 
@@ -26,68 +27,67 @@ class LMSMentorRequest(Document):
 		mapping.save()
 
 	def send_creation_email(self):
-		email_template = self.get_email_template("mentor_request_creation")
-		if not email_template:
-			return
-
 		course_details = frappe.db.get_value(
 			"LMS Course", self.course, ["owner", "slug", "title"], as_dict=True
 		)
-		message = frappe.render_template(
-			email_template.response,
-			{
-				"member_name": frappe.db.get_value("User", frappe.session.user, "full_name"),
-				"course_url": "/lms/courses/" + course_details.slug,
-				"course": course_details.title,
-			},
-		)
+		args = {
+			"member_name": frappe.db.get_value("User", frappe.session.user, "full_name"),
+			"course_url": "/lms/courses/" + course_details.slug,
+			"course": course_details.title,
+		}
+
+		subject = _("Request for Mentorship")
+		template = "mentor_request_creation_email"
+		content = None
+		custom_template = frappe.db.get_single_value("LMS Settings", "mentor_request_creation")
+		if custom_template:
+			email_template = get_email_template(custom_template, args)
+			subject = email_template.get("subject")
+			content = email_template.get("message")
 
 		email_args = {
 			"recipients": [frappe.session.user, course_details.owner],
-			"subject": email_template.subject,
-			"header": email_template.subject,
-			"message": message,
+			"subject": subject,
+			"header": subject,
+			"template": template if not custom_template else None,
+			"content": content if custom_template else None,
+			"args": args,
 		}
 		frappe.enqueue(method=frappe.sendmail, queue="short", timeout=300, is_async=True, **email_args)
 
 	def send_status_change_email(self):
-		email_template = self.get_email_template("mentor_request_status_update")
-		if not email_template:
-			return
-
 		course_details = frappe.db.get_value("LMS Course", self.course, ["owner", "title"], as_dict=True)
-		message = frappe.render_template(
-			email_template.response,
-			{
-				"member_name": self.member_name,
-				"status": self.status,
-				"course": course_details.title,
-			},
-		)
+		args = {
+			"member_name": self.member_name,
+			"status": self.status,
+			"course": course_details.title,
+		}
+
+		subject = _("The status of your application has changed.")
+		template = "mentor_request_status_update_email"
+		content = None
+		custom_template = frappe.db.get_single_value("LMS Settings", "mentor_request_status_update")
+		if custom_template:
+			email_template = get_email_template(custom_template, args)
+			subject = email_template.get("subject")
+			content = email_template.get("message")
+
+		email_args = {
+			"subject": subject,
+			"header": subject,
+			"template": template if not custom_template else None,
+			"content": content if custom_template else None,
+			"args": args,
+		}
 
 		if self.status == "Approved" or self.status == "Rejected":
-			email_args = {
-				"recipients": self.member,
-				"cc": [course_details.owner, self.reviewed_by],
-				"subject": email_template.subject,
-				"header": email_template.subject,
-				"message": message,
-			}
+			email_args["recipients"] = self.member
+			email_args["cc"] = [course_details.owner, self.reviewed_by]
 			frappe.enqueue(method=frappe.sendmail, queue="short", timeout=300, is_async=True, **email_args)
 
 		elif self.status == "Withdrawn":
-			email_args = {
-				"recipients": [self.member, course_details.owner],
-				"subject": email_template.subject,
-				"header": email_template.subject,
-				"message": message,
-			}
+			email_args["recipients"] = [self.member, course_details.owner]
 			frappe.enqueue(method=frappe.sendmail, queue="short", timeout=300, is_async=True, **email_args)
-
-	def get_email_template(self, template_name):
-		template = frappe.db.get_single_value("LMS Settings", template_name)
-		if template:
-			return frappe.get_doc("Email Template", template)
 
 
 @frappe.whitelist()
