@@ -73,47 +73,82 @@
 				<DateRangeFilter v-model="filters.period" :label="__('statistics.dateRange')" />
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-				<Tooltip :text="__('statistics.publishedCourses')">
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 gap-4"
+				:class="isStaffView ? 'lg:grid-cols-5' : 'lg:grid-cols-4'"
+			>
+				<Tooltip v-if="isStaffView" :text="__('statistics.tapForDetails')">
 					<NumberChart
-						class="border rounded-md"
-						:config="{ title: __('statistics.courses'), value: chartDetails.data.courses }"
+						class="border rounded-md cursor-pointer hover:border-outline-gray-3"
+						:config="{
+							title: __('statistics.courses'),
+							value: summary?.courses ?? chartDetails.data.courses,
+						}"
+						@click="openDetail('courses', __('statistics.courses'))"
 					/>
 				</Tooltip>
-				<Tooltip :text="__('statistics.courseEnrollments')">
+				<Tooltip :text="__('statistics.tapForDetails')">
 					<NumberChart
-						class="border rounded-md"
+						class="border rounded-md cursor-pointer hover:border-outline-gray-3"
 						:config="{
 							title: __('statistics.enrollments'),
 							value: isStaffView
 								? summary?.enrollments ?? chartDetails.data.enrollments
 								: myStats.data?.enrollments ?? 0,
 						}"
+						@click="openDetail('enrollments', __('statistics.enrollments'))"
 					/>
 				</Tooltip>
-				<Tooltip :text="__('statistics.courseCompletions')">
+				<Tooltip :text="__('statistics.tapForDetails')">
 					<NumberChart
-						class="border rounded-md"
+						class="border rounded-md cursor-pointer hover:border-outline-gray-3"
 						:config="{
 							title: __('statistics.completions'),
 							value: isStaffView
 								? summary?.completions ?? chartDetails.data.completions
 								: myStats.data?.completions ?? 0,
 						}"
+						@click="openDetail('completions', __('statistics.completions'))"
 					/>
 				</Tooltip>
-				<Tooltip :text="__('statistics.certifiedMembers')">
+				<Tooltip :text="__('statistics.tapForDetails')">
 					<NumberChart
-						class="border rounded-md"
+						class="border rounded-md cursor-pointer hover:border-outline-gray-3"
 						:config="{
 							title: __('statistics.certifications'),
 							value: isStaffView
 								? summary?.certifications ?? chartDetails.data.certifications
 								: myStats.data?.certifications ?? 0,
 						}"
+						@click="openDetail('certifications', __('statistics.certifications'))"
+					/>
+				</Tooltip>
+				<Tooltip :text="__('statistics.tapForDetails')">
+					<NumberChart
+						class="border rounded-md cursor-pointer hover:border-outline-gray-3"
+						:config="{
+							title: __('statistics.timeSpentLearning'),
+							value: isStaffView
+								? summary?.time_spent_hours ?? chartDetails.data.time_spent_hours
+								: totalTimeSpentHours,
+							suffix: __('statistics.hoursSuffix'),
+						}"
+						@click="openDetail('time_spent', __('statistics.timeSpentLearning'))"
 					/>
 				</Tooltip>
 			</div>
+
+			<StatDetailModal
+				v-model="showDetailModal"
+				:metric="selectedMetric"
+				:title="selectedTitle"
+				:scope="detailScope"
+				:department="filters.department"
+				:employee="filters.employee"
+				:company="filters.company"
+				:from-date="detailFromDate"
+				:to-date="detailToDate"
+			/>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
 				<template v-if="canViewDepartmentReport">
 					<div class="border rounded-md min-h-72">
@@ -247,6 +282,7 @@ import { sessionStore } from '../stores/session'
 import { usersStore } from '../stores/user'
 import Link from '@/components/Controls/Link.vue'
 import DateRangeFilter from '@/components/Common/DateRangeFilter.vue'
+import StatDetailModal from '@/components/Modals/StatDetailModal.vue'
 import { capitalize } from '@/utils'
 
 const { brand } = sessionStore()
@@ -714,6 +750,36 @@ watch(
 	},
 	{ immediate: true }
 )
+
+const showDetailModal = ref(false)
+const selectedMetric = ref('courses')
+const selectedTitle = ref('')
+
+// Mirrors the same three-way split already used for the tile values
+// themselves (summary vs chartDetails vs myStats) so the drill-down modal
+// always matches what the tile it was opened from is showing.
+const detailScope = computed(() => {
+	if (!isStaffView.value) return 'mine'
+	return canViewDepartmentReport.value ? 'department' : 'global'
+})
+
+const detailFromDate = computed(() => (filters.period || '').split(',')[0] || '')
+const detailToDate = computed(() => (filters.period || '').split(',')[1] || '')
+
+function openDetail(metric, title) {
+	selectedMetric.value = metric
+	selectedTitle.value = title
+	showDetailModal.value = true
+}
+
+// Derived from the same time-log data as the chart below, rather than a
+// separate API call, so the number tile always agrees with what the chart
+// shows for the current filters/date range.
+const totalTimeSpentHours = computed(() => {
+	if (!timeSpent.data) return 0
+	let totalSeconds = timeSpent.data.reduce((sum, row) => sum + row.seconds, 0)
+	return +(totalSeconds / 3600).toFixed(1)
+})
 
 const timeSpentChartConfig = computed(() => {
 	if (!timeSpent.data) return null

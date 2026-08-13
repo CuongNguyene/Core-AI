@@ -337,8 +337,13 @@ def get_chart_details():
 		},
 	)
 	details.users = frappe.db.count("User", {"enabled": 1, "name": ["not in", ("Administrator", "Guest")]})
-	details.completions = frappe.db.count("LMS Enrollment", {"progress": ["like", "%100%"]})
+	# Exact match, not a LIKE - "progress LIKE '%100%'" also matches e.g. a
+	# progress of 73.91 (the digits land on "...9100..."), overcounting.
+	details.completions = frappe.db.count("LMS Enrollment", {"progress": 100})
 	details.certifications = frappe.db.count("LMS Certificate", {"published": 1})
+	details.time_spent_hours = flt(
+		(frappe.db.sql("SELECT SUM(seconds_spent) FROM `tabLMS Course Time Log`")[0][0] or 0) / 3600, 1
+	)
 	return details
 
 
@@ -486,6 +491,73 @@ def build_department_summary_query(
 	)
 
 
+def build_course_summary_query(department=None, employee=None, company=None):
+	"""Returns the count of active (published, not upcoming) courses whose
+	instructor(s) fall within the given department/employee/company scope -
+	via Course Instructor, the same link used elsewhere to tie a course to
+	the person who created/teaches it. Unlike the other summary numbers this
+	isn't date-bounded: a course "belongs" to its instructor's
+	department/company right now, not within a period."""
+	f = get_department_report_filters(department, employee, company)
+	departments, employee, company = f.departments, f.employee, f.company
+
+	# Always required, even with no department/employee/company picked ("All
+	# Departments" etc.) - department-report scope is inherently
+	# employee-scoped, same as the enrollments/completions/certifications/
+	# time_spent summaries above, which all unconditionally INNER JOIN
+	# Employee regardless of whether a specific filter is set.
+	values = {}
+	conditions = []
+	if departments:
+		conditions.append("emp.department in %(departments)s")
+		values["departments"] = departments
+	if employee:
+		conditions.append("emp.name = %(employee)s")
+		values["employee"] = employee
+	if company:
+		conditions.append("emp.company = %(company)s")
+		values["company"] = company
+
+	where = " and ".join(["c.published = 1", "c.upcoming = 0", *conditions])
+	total = frappe.db.sql(
+		f"""
+		SELECT COUNT(DISTINCT c.name) AS courses
+		FROM `tabLMS Course` c
+		INNER JOIN `tabCourse Instructor` ci ON ci.parent = c.name AND ci.parenttype = 'LMS Course'
+		INNER JOIN `tabEmployee` emp ON emp.user_id = ci.instructor
+		WHERE {where}
+		""",
+		values,
+		as_dict=True,
+	)
+	return cint(total[0].courses) if total else 0
+
+
+def build_time_spent_summary_query(
+	department=None, employee=None, company=None, from_date=None, to_date=None
+):
+	"""Returns total time spent (in seconds), scoped to the same
+	department/employee/company/date-range filters as the rest of the
+	department report."""
+	f = get_department_report_filters(department, employee, company, from_date, to_date)
+	departments, employee, company, values = f.departments, f.employee, f.company, f.params
+
+	total = frappe.db.sql(
+		f"""
+		SELECT SUM(t.seconds_spent) AS seconds
+		FROM `tabLMS Course Time Log` t
+		INNER JOIN `tabEmployee` emp ON emp.user_id = t.member
+		WHERE t.date >= %(from_date)s AND t.date <= %(to_date)s
+		{"AND emp.department in %(departments)s" if departments else ""}
+		{"AND emp.name = %(employee)s" if employee else ""}
+		{"AND emp.company = %(company)s" if company else ""}
+		""",
+		values,
+		as_dict=True,
+	)
+	return cint(total[0].seconds) if total else 0
+
+
 @frappe.whitelist()
 def get_department_report(
 	department=None, employee=None, company=None, from_date=None, to_date=None, granularity="Monthly"
@@ -493,15 +565,225 @@ def get_department_report(
 	"""Multi-dimensional (department/employee/time) enrollment report."""
 	period_summary = build_period_summary_query(department, employee, company, from_date, to_date, granularity)
 	department_summary = build_department_summary_query(department, employee, company, from_date, to_date, granularity)
+	time_spent_seconds = build_time_spent_summary_query(department, employee, company, from_date, to_date)
+	courses = build_course_summary_query(department, employee, company)
 
 	summary = frappe._dict(
 		enrollments=sum(row.enrollments for row in period_summary),
 		completions=sum(row.completions for row in period_summary),
 		certifications=sum(row.certifications for row in period_summary),
+		time_spent_hours=flt(time_spent_seconds / 3600, 1),
+		courses=courses,
 	)
 	summary.completion_rate = flt(summary.enrollments and summary.completions / summary.enrollments * 100, 2)
 
 	return {"summary": summary, "period_summary": period_summary, "department_summary": department_summary}
+
+
+def get_employee_join_clause(
+	force_join, departments=None, employee=None, company=None, member_column="member"
+):
+	"""Shared 'scope to a department/employee/company via Employee.user_id' join +
+	WHERE fragments, used by every detail-row query below alongside the
+	department report queries above - kept as one place so the join condition
+	can't drift between them.
+
+	force_join must be True whenever scope == "department", even with no
+	department/employee/company filter picked ("All Departments" etc.) -
+	department-report scope inherently means "counted among employees", the
+	same unconditional INNER JOIN the summary numbers in get_department_report
+	use. Without it, records for members with no linked Employee (e.g. a
+	certificate issued to a non-employee account) would show up in this
+	detail list but not in the tile's own count.
+	"""
+	if not force_join:
+		return "", [], {}
+
+	conditions = []
+	values = {}
+	if departments:
+		conditions.append("emp.department in %(departments)s")
+		values["departments"] = departments
+	if employee:
+		conditions.append("emp.name = %(employee)s")
+		values["employee"] = employee
+	if company:
+		conditions.append("emp.company = %(company)s")
+		values["company"] = company
+
+	return f"INNER JOIN `tabEmployee` emp ON emp.user_id = {member_column}", conditions, values
+
+
+@frappe.whitelist()
+def get_statistic_details(
+	metric, scope="mine", department=None, employee=None, company=None, from_date=None, to_date=None
+):
+	"""
+	Row data for the drill-down modal opened by tapping a Statistics page tile.
+	Deliberately capped at 200 rows per query (LIMIT below) rather than paginated -
+	this is meant as a quick look at what's behind a number, not a full report.
+
+	metric: "courses" | "enrollments" | "completions" | "certifications" | "time_spent"
+	scope:
+	  "mine" - the current user's own records only.
+	  "department" - department-report scope, permission-checked the same way
+	                 as get_department_report (throws PermissionError if the
+	                 user has no department-report access).
+	  "global" - site-wide, staff-only (Moderator/Instructor/System Manager).
+	"""
+	if metric == "courses":
+		# No date bound (a course "belongs" to its instructor's department/
+		# company right now, not within a period) - mirrors
+		# build_course_summary_query, the tile's own source of truth.
+		departments = emp_employee = emp_company = None
+		if scope == "department":
+			f = get_department_report_filters(department, employee, company)
+			departments, emp_employee, emp_company = f.departments, f.employee, f.company
+		elif scope == "global" and not {"Moderator", "Instructor", "System Manager"} & set(
+			frappe.get_roles()
+		):
+			frappe.throw(_("You are not permitted to view this data"), frappe.PermissionError)
+
+		joins, emp_conditions, emp_values = get_employee_join_clause(
+			scope == "department", departments, emp_employee, emp_company, "ci.instructor"
+		)
+		instructor_join = (
+			"INNER JOIN `tabCourse Instructor` ci ON ci.parent = c.name AND ci.parenttype = 'LMS Course'"
+			if joins
+			else ""
+		)
+		conditions = ["c.published = 1", "c.upcoming = 0", *emp_conditions]
+
+		return frappe.db.sql(
+			f"""
+			SELECT DISTINCT c.name, c.title
+			FROM `tabLMS Course` c
+			{instructor_join}
+			{joins}
+			WHERE {" and ".join(conditions)}
+			ORDER BY c.title
+			LIMIT 200
+			""",
+			emp_values,
+			as_dict=True,
+		)
+
+	member = departments = emp_employee = emp_company = None
+	# Whether to date-bound the query at all, and whether certifications need
+	# an extra published=1 filter - these track the exact source each tile
+	# value comes from, not a blanket rule, since the three don't behave the
+	# same:
+	#  - department scope (get_department_report's summary): always
+	#    date-bounded, no published filter.
+	#  - global scope (get_chart_details' sitewide counts, used as the
+	#    fallback for staff without department-report access): unbounded -
+	#    all-time counts - and certifications there are published=1 only.
+	#  - mine scope (get_my_learning_stats): unbounded for
+	#    enrollments/completions/certifications, but time_spent mirrors the
+	#    existing "Time Spent" chart, which IS scoped to the selected period.
+	date_bound = True
+	certifications_published_only = False
+
+	if scope == "department":
+		f = get_department_report_filters(department, employee, company, from_date, to_date)
+		departments, emp_employee, emp_company = f.departments, f.employee, f.company
+		from_date, to_date = f.params["from_date"], f.params["to_date"]
+	elif scope == "global":
+		if not {"Moderator", "Instructor", "System Manager"} & set(frappe.get_roles()):
+			frappe.throw(_("You are not permitted to view this data"), frappe.PermissionError)
+		date_bound = False
+		certifications_published_only = True
+	else:
+		member = frappe.session.user
+		date_bound = metric == "time_spent"
+
+	def date_condition(date_field):
+		if not date_bound:
+			return []
+		return [f"{date_field} >= %(from_date)s", f"{date_field} <= %(to_date)s"]
+
+	date_values = {"from_date": from_date, "to_date": to_date} if date_bound else {}
+
+	if metric == "time_spent":
+		joins, emp_conditions, emp_values = get_employee_join_clause(
+			scope == "department", departments, emp_employee, emp_company, "t.member"
+		)
+		conditions = [*date_condition("t.date"), *emp_conditions]
+		values = {**date_values, **emp_values}
+		if member:
+			conditions.append("t.member = %(member)s")
+			values["member"] = member
+
+		rows = frappe.db.sql(
+			f"""
+			SELECT t.member_name, c.title AS course_title, SUM(t.seconds_spent) AS seconds
+			FROM `tabLMS Course Time Log` t
+			INNER JOIN `tabLMS Course` c ON c.name = t.course
+			{joins}
+			{"WHERE " + " and ".join(conditions) if conditions else ""}
+			GROUP BY t.member, t.course
+			ORDER BY seconds DESC
+			LIMIT 200
+			""",
+			values,
+			as_dict=True,
+		)
+		for row in rows:
+			row.hours = flt(row.seconds / 3600, 1)
+		return rows
+
+	if metric in ("enrollments", "completions"):
+		joins, emp_conditions, emp_values = get_employee_join_clause(
+			scope == "department", departments, emp_employee, emp_company, "e.member"
+		)
+		conditions = [*date_condition("e.creation"), *emp_conditions]
+		values = {**date_values, **emp_values}
+		if member:
+			conditions.append("e.member = %(member)s")
+			values["member"] = member
+		if metric == "completions":
+			conditions.append("e.progress = 100")
+
+		return frappe.db.sql(
+			f"""
+			SELECT e.member_name, c.title AS course_title, e.progress, e.creation AS date
+			FROM `tabLMS Enrollment` e
+			INNER JOIN `tabLMS Course` c ON c.name = e.course
+			{joins}
+			{"WHERE " + " and ".join(conditions) if conditions else ""}
+			ORDER BY e.creation DESC
+			LIMIT 200
+			""",
+			values,
+			as_dict=True,
+		)
+
+	if metric == "certifications":
+		joins, emp_conditions, emp_values = get_employee_join_clause(
+			scope == "department", departments, emp_employee, emp_company, "c.member"
+		)
+		conditions = [*date_condition("c.issue_date"), *emp_conditions]
+		values = {**date_values, **emp_values}
+		if member:
+			conditions.append("c.member = %(member)s")
+			values["member"] = member
+		if certifications_published_only:
+			conditions.append("c.published = 1")
+
+		return frappe.db.sql(
+			f"""
+			SELECT c.member_name, c.course_title, c.issue_date AS date
+			FROM `tabLMS Certificate` c
+			{joins}
+			{"WHERE " + " and ".join(conditions) if conditions else ""}
+			ORDER BY c.issue_date DESC
+			LIMIT 200
+			""",
+			values,
+			as_dict=True,
+		)
+
+	frappe.throw(_("Invalid metric: {0}").format(metric))
 
 
 @frappe.whitelist()
