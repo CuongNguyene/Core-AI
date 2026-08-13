@@ -86,5 +86,14 @@ def set_country_from_ip(login_manager=None, user=None):
 
 
 def on_login(login_manager):
+	# after_insert (below) only fires for users created through the normal
+	# User.insert() lifecycle - accounts provisioned another way (bulk import,
+	# sync from another app, migration) can reach LMS without ever getting the
+	# LMS Student role, and then get an opaque PermissionError on their first
+	# write (e.g. submitting a course review). Self-heal it here instead, since
+	# every user hits on_login regardless of how their account was created.
+	user = login_manager.user
+	if user not in ("Administrator", "Guest") and "LMS Student" not in frappe.get_roles(user):
+		frappe.get_doc("User", user).add_roles("LMS Student")
 
 	frappe.local.response["home_page"] = "/apps"
