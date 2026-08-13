@@ -180,12 +180,13 @@ def get_lesson_icon(body, content):
 			]:
 				return "icon-youtube"
 
-			if block.get("type") == "embed" and block.get("data").get("service") in [
-				"youtube",
-				"vimeo",
-				"cloudflareStream",
-				"bunnyStream",
-			]:
+			# Any embed block is treated as a video for the completion-threshold
+			# gate in lesson_has_video/get_video_progress (course_lesson.py), so
+			# the icon needs to match that regardless of embed service - a
+			# narrower service allowlist here left some embedded videos (e.g.
+			# a SharePoint/other embed) without the watch-percentage UI even
+			# though the server still required watch-time to complete the lesson.
+			if block.get("type") == "embed":
 				return "icon-youtube"
 
 			if block.get("type") == "quiz":
@@ -1456,7 +1457,9 @@ def has_met_reading_time(lesson, min_reading_time):
 	if not min_reading_time:
 		return True
 
-	started_at = frappe.cache().get_value(lesson_view_start_cache_key(lesson), expires=True)
+	started_at = frappe.cache().get_value(lesson_view_start_cache_key(lesson))
+	if isinstance(started_at, (tuple, list)):
+		started_at = started_at[0]
 	if not started_at:
 		return False
 

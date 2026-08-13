@@ -54,8 +54,9 @@
 		</div>
 
 		<IntegrityWarningBanner
-			v-if="!hideIntegrityBanner"
+			v-if="!hideIntegrityBanner && !isInsideLesson"
 			:count="violationCount"
+			:studyTime="quiz.data.duration ? (quiz.data.duration * 60) - timer : undefined"
 		/>
 
 		<div v-if="quiz.data.duration" class="flex flex-col space-x-1 my-4">
@@ -69,9 +70,19 @@
 		</div>
 
 		<div v-if="activeQuestion == 0">
-			<div class="border text-center p-20 rounded-md">
+			<div class="border text-center p-12 rounded-md">
 				<div class="font-semibold text-lg text-ink-gray-9">
 					{{ quiz.data.title }}
+				</div>
+				<div v-if="hasPassedQuiz" class="mt-3 flex items-center justify-center gap-2">
+					<Badge theme="green" size="lg" :label="__('Completed / Passed')">
+						<template #prefix>
+							<CheckCircle class="w-4 h-4 text-ink-green-2 mr-1" />
+						</template>
+					</Badge>
+					<span class="text-sm text-ink-gray-6" v-if="latestAttempt">
+						({{ __('Score: {0}%').format(Math.round(latestAttempt.percentage)) }})
+					</span>
 				</div>
 				<div v-if="!questions.length" class="leading-5 text-ink-gray-7 mt-4">
 					{{
@@ -339,16 +350,25 @@ import {
 	FormControl,
 	toast,
 } from 'frappe-ui'
-import { ref, watch, reactive, inject, computed, onBeforeUnmount } from 'vue'
+import { ref, watch, reactive, inject, computed, onBeforeUnmount, onMounted } from 'vue'
 import { CheckCircle, XCircle, MinusCircle } from 'lucide-vue-next'
 import { timeAgo } from '@/utils'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import ProgressBar from '@/components/ProgressBar.vue'
 import IntegrityWarningBanner from '@/components/IntegrityWarningBanner.vue'
 import { useVisibilityLog } from '@/composables/useVisibilityLog'
 import { useExamGuards } from '@/composables/useExamGuards'
 
 const user = inject('$user')
+const route = useRoute()
+const isInsideLesson = computed(() => {
+	if (route?.query?.fromLesson === '1') return true
+	if (typeof window !== 'undefined') {
+		const searchParams = new URLSearchParams(window.location.search)
+		return searchParams.get('fromLesson') === '1'
+	}
+	return false
+})
 const activeQuestion = ref(0)
 const currentQuestion = ref('')
 const selectedOptions = reactive([0, 0, 0, 0])
@@ -365,6 +385,16 @@ let examGuards = { start: () => {}, stop: () => {} }
 onBeforeUnmount(() => {
 	visibilityLog.stop()
 	examGuards.stop()
+})
+
+onMounted(() => {
+	if (isInsideLesson.value && props.quizName) {
+		examGuards = useExamGuards({
+			referenceDoctype: 'LMS Quiz',
+			referenceName: props.quizName,
+		})
+		examGuards.start()
+	}
 })
 
 const props = defineProps({
@@ -462,8 +492,8 @@ const attempts = createResource({
 		return {
 			doctype: 'LMS Quiz Submission',
 			filters: {
-				member: user.data?.name,
-				quiz: quiz.data?.name,
+				member: user?.data?.name,
+				quiz: quiz?.data?.name,
 			},
 			fields: [
 				'name',
@@ -477,11 +507,21 @@ const attempts = createResource({
 		}
 	},
 	transform(data) {
-		data.forEach((submission, index) => {
-			submission.creation = timeAgo(submission.creation)
-			submission.idx = index + 1
-		})
+		if (Array.isArray(data)) {
+			data.forEach((submission, index) => {
+				submission.creation = timeAgo(submission.creation)
+				submission.idx = index + 1
+			})
+		}
 	},
+})
+
+const latestAttempt = computed(() => attempts.data?.[0])
+
+const hasPassedQuiz = computed(() => {
+	if (!attempts.data?.length) return false
+	const passing = quiz.data?.passing_percentage || 0
+	return attempts.data.some((att) => Number(att.percentage || 0) >= passing)
 })
 
 watch(
@@ -489,9 +529,9 @@ watch(
 	() => {
 		if (quiz.data) {
 			populateQuestions()
+			attempts.reload()
 		}
 		if (quiz.data && quiz.data.max_attempts) {
-			attempts.reload()
 			resetQuiz()
 		}
 	}
@@ -538,21 +578,18 @@ watch(
 const startQuiz = async () => {
 	activeQuestion.value = 1
 	localStorage.removeItem(quiz.data.title)
+
+	const onLog = (count) => {
+		violationCount.value = count || 0
+		emit('violation-count', violationCount.value)
+	}
+
 	if (quiz.data.duration) {
 		const attempt = await call('lms.lms.doctype.lms_quiz.lms_quiz.start_quiz_attempt', {
 			quiz: quiz.data.name,
 		})
 		timer.value = attempt.remaining_seconds
 		startTimer()
-
-		// Only timed quizzes get a tracked attempt to log against — an
-		// untimed quiz has no time pressure pushing someone to look answers
-		// up elsewhere, so there's little value (and no attempt name to log
-		// against) in tracking tab switches there.
-		const onLog = (count) => {
-			violationCount.value = count || 0
-			emit('violation-count', violationCount.value)
-		}
 
 		visibilityLog.stop()
 		visibilityLog = useVisibilityLog({
@@ -569,7 +606,15 @@ const startQuiz = async () => {
 			referenceName: attempt.name,
 			onLog,
 		})
-		examGuards.start(quizRoot.value)
+		examGuards.start()
+	} else {
+		examGuards.stop()
+		examGuards = useExamGuards({
+			referenceDoctype: 'Course Lesson',
+			referenceName: quiz.data.name,
+			onLog,
+		})
+		examGuards.start()
 	}
 }
 
@@ -602,38 +647,42 @@ const checkAnswer = () => {
 		return Promise.resolve()
 	}
 
-	createResource({
-		url: 'lms.lms.doctype.lms_quiz.lms_quiz.check_answer',
-		params: {
-			question: currentQuestion.value,
-			type: questionDetails.data.type,
-			answers: JSON.stringify(answers),
-			quiz: quiz.data.name,
-		},
-		auto: true,
-		onSuccess(data) {
-			// The server only returns per-option correctness when the quiz has
-			// show_answers enabled, so it never leaks the answer key for quizzes
-			// that are meant to hide it until (or unless) grading is shown.
-			let type = questionDetails.data.type
-			if (data && type == 'Choices') {
-				selectedOptions.forEach((option, index) => {
-					if (option) {
-						showAnswers[index] = option && data[index]
-					} else if (data[index] == 2) {
-						showAnswers[index] = 2
-					} else {
-						showAnswers[index] = undefined
-					}
-				})
-			} else if (data) {
-				showAnswers.push(data)
-			}
-			addToLocalStorage()
-			if (!quiz.data.show_answers) {
-				resetQuestion()
-			}
-		},
+	return new Promise((resolve) => {
+		createResource({
+			url: 'lms.lms.doctype.lms_quiz.lms_quiz.check_answer',
+			params: {
+				question: currentQuestion.value,
+				type: questionDetails.data.type,
+				answers: JSON.stringify(answers),
+				quiz: quiz.data.name,
+			},
+			auto: true,
+			onSuccess(data) {
+				let type = questionDetails.data.type
+				if (data && type == 'Choices') {
+					selectedOptions.forEach((option, index) => {
+						if (option) {
+							showAnswers[index] = option && data[index]
+						} else if (data[index] == 2) {
+							showAnswers[index] = 2
+						} else {
+							showAnswers[index] = undefined
+						}
+					})
+				} else if (data) {
+					showAnswers.push(data)
+				}
+				addToLocalStorage()
+				if (!quiz.data.show_answers) {
+					resetQuestion()
+				}
+				resolve()
+			},
+			onError() {
+				addToLocalStorage()
+				resolve()
+			},
+		})
 	})
 }
 
@@ -641,7 +690,7 @@ const addToLocalStorage = () => {
 	let quizData = JSON.parse(localStorage.getItem(quiz.data.title))
 	let questionData = {
 		question_name: currentQuestion.value,
-		answer: getAnswers().join(),
+		answer: JSON.stringify(getAnswers()),
 		is_correct: showAnswers.filter((answer) => {
 			return answer != undefined
 		}),

@@ -128,6 +128,19 @@ watch(show, (isOpen) => {
 })
 
 const saveAssignment = () => {
+	if (!assignment.title?.trim()) {
+		toast.warning(__('assignments.title') + ' is required')
+		return
+	}
+	if (!assignment.type) {
+		toast.warning(__('assignments.submissionType') + ' is required')
+		return
+	}
+	if (!assignment.question?.trim()) {
+		toast.warning(__('assignments.question') + ' is required')
+		return
+	}
+
 	if (props.assignmentID == 'new') {
 		assignments.value.insert.submit(
 			{
@@ -137,6 +150,9 @@ const saveAssignment = () => {
 				onSuccess() {
 					show.value = false
 					toast.success(__('assignments.createdSuccess'))
+				},
+				onError(err: any) {
+					toast.warning(__(err.messages?.[0] || err))
 				},
 			}
 		)
@@ -150,6 +166,9 @@ const saveAssignment = () => {
 				onSuccess() {
 					show.value = false
 					toast.success(__('assignments.updatedSuccess'))
+				},
+				onError(err: any) {
+					toast.warning(__(err.messages?.[0] || err))
 				},
 			}
 		)

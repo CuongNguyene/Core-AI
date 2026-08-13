@@ -15,14 +15,22 @@ export function useExamGuards({ referenceDoctype, referenceName, onLog }) {
 	let devtoolsOpen = false
 	const DEVTOOLS_THRESHOLD = 160
 
+	let currentCount = 0
+
 	const log = (eventType, durationSeconds = 0) => {
+		currentCount++
+		if (onLog) onLog(currentCount)
+
 		call('lms.lms.api.log_activity_event', {
 			reference_doctype: referenceDoctype,
 			reference_name: referenceName,
 			duration_seconds: durationSeconds,
 			event_type: eventType,
 		}).then((data) => {
-			if (onLog) onLog(data?.count)
+			if (data?.count !== undefined) {
+				currentCount = data.count
+				if (onLog) onLog(currentCount)
+			}
 		})
 	}
 
@@ -57,7 +65,10 @@ export function useExamGuards({ referenceDoctype, referenceName, onLog }) {
 			reference_doctype: referenceDoctype,
 			reference_name: referenceName,
 		}).then((data) => {
-			if (onLog) onLog(data?.count)
+			if (data?.count !== undefined) {
+				currentCount = Math.max(currentCount, data.count)
+				if (onLog) onLog(currentCount)
+			}
 		})
 	}
 

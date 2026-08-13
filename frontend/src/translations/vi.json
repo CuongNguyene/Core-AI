@@ -1014,7 +1014,9 @@
 			"selectMemberRequired": "Vui lòng chọn một thành viên",
 			"memberAddedSuccess": "Thêm thành viên vào chương trình thành công",
 			"deletedSuccess": "Xoá chương trình thành công",
-			"fullName": "Họ và tên"
+			"fullName": "Họ và tên",
+			"createdPendingReview": "Chương trình đã được tạo. Người kiểm duyệt sẽ xem xét và xuất bản.",
+			"publishedByModerator": "Chỉ người kiểm duyệt mới có thể xuất bản chương trình"
 		},
 		"progressSummary": {
 			"title": "Tổng quan tiến độ cho {0}",

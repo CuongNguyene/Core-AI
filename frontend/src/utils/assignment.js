@@ -1,9 +1,11 @@
 import { Pencil } from 'lucide-vue-next'
 import { createApp, h } from 'vue'
 import AssessmentPlugin from '@/components/AssessmentPlugin.vue'
+import AssignmentSubmission from '@/components/Assignment.vue'
 import translationPlugin from '../translation'
 import { usersStore } from '@/stores/user'
 import { call } from 'frappe-ui'
+import router from '@/router'
 
 export class Assignment {
 	constructor({ data, api, readOnly }) {
@@ -52,7 +54,21 @@ export class Assignment {
 				fieldname: ['name'],
 			}).then((data) => {
 				let submission = data.name || 'new'
-				this.wrapper.innerHTML = `<iframe src="/lms/assignment-submission/${assignment}/${submission}?fromLesson=1" class="w-full h-[500px]"></iframe>`
+				// Mounted directly instead of via an <iframe> pointing at the
+				// AssignmentSubmission page - that iframe was its own separate
+				// document/JS realm, so frappe-ui's toast (a page-fixed
+				// singleton) rendered clipped to the small iframe box instead
+				// of the real page's bottom-right corner.
+				this.wrapper.classList.add('w-full', 'h-[500px]', 'mb-4')
+				const app = createApp(AssignmentSubmission, {
+					assignmentID: assignment,
+					submissionName: submission,
+					showTitle: false,
+				})
+				app.provide('$user', userResource)
+				app.use(translationPlugin)
+				app.use(router)
+				app.mount(this.wrapper)
 			})
 			return
 		}

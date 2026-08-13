@@ -370,6 +370,10 @@ const createQuiz = () => {
 }
 
 const submitQuiz = () => {
+	if (!quizDetails.doc?.title?.trim()) {
+		toast.error(__('quiz.builder.title') + ' is required')
+		return
+	}
 	if (isNew.value) {
 		createQuiz()
 		return

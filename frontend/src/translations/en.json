@@ -1014,7 +1014,9 @@
 			"selectMemberRequired": "Please select a member",
 			"memberAddedSuccess": "Member added to program successfully",
 			"deletedSuccess": "Program deleted successfully",
-			"fullName": "Full Name"
+			"fullName": "Full Name",
+			"createdPendingReview": "Program created. A moderator will review and publish it.",
+			"publishedByModerator": "Only moderators can publish programs"
 		},
 		"progressSummary": {
 			"title": "Progress Summary for {0}",

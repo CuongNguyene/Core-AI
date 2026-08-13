@@ -3,6 +3,7 @@
 		<IntegrityWarningBanner
 			v-if="lesson.data.enable_integrity_warnings && !isStaffViewer()"
 			:count="violationCount"
+			:studyTime="timer"
 		/>
 		<header
 			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
@@ -302,6 +303,23 @@
 							<div
 								class="h-full bg-blue-500 rounded-full transition-all duration-1000"
 								:style="{ width: (readingTimeElapsed / lesson.data.min_reading_time * 100) + '%' }"
+							></div>
+						</div>
+					</div>
+
+					<!-- Video Watch Progress Bar -->
+					<div
+						v-if="lesson.data.membership && lessonHasVideo && !lesson.data.progress"
+						class="mt-6 px-5"
+					>
+						<div class="flex items-center justify-between mb-1 text-sm text-ink-gray-5">
+							<span>{{ __('Video watch required') }}</span>
+							<span>{{ Math.floor(videoWatchPercent) }}% / {{ threshold }}%</span>
+						</div>
+						<div class="w-full h-1.5 bg-surface-gray-3 rounded-full overflow-hidden">
+							<div
+								class="h-full bg-blue-500 rounded-full transition-all duration-500"
+								:style="{ width: Math.min(100, (videoWatchPercent / threshold) * 100) + '%' }"
 							></div>
 						</div>
 					</div>
@@ -647,6 +665,8 @@ const lesson = createResource({
 	auto: true,
 })
 
+const currentLessonName = ref(null)
+
 const setupLesson = (data) => {
 	if (Object.keys(data).length === 0) {
 		router.push({
@@ -665,60 +685,55 @@ const setupLesson = (data) => {
 		})
 	}
 	lessonProgress.value = data.membership?.progress
-	if (data.content) editor.value = renderEditor('editor', data.content)
-	if (
-		data.instructor_content &&
-		JSON.parse(data.instructor_content)?.blocks?.length > 1 &&
-		allowInstructorContent()
-	)
-		instructorEditor.value = renderEditor(
-			'instructor-content',
-			data.instructor_content
+
+	if (currentLessonName.value !== data.name) {
+		if (data.content) editor.value = renderEditor('editor', data.content)
+		if (
+			data.instructor_content &&
+			JSON.parse(data.instructor_content)?.blocks?.length > 1 &&
+			allowInstructorContent()
 		)
-	editor.value?.isReady.then(() => {
-		checkIfDiscussionsAllowed()
-	})
-	checkQuiz()
-
-	// By default this is silent — switching tabs while reading/watching a
-	// lesson is normal (e.g. listening while multitasking). It's only used
-	// server-side to exclude backgrounded time from min_reading_time (see
-	// has_met_reading_time), not to warn the student. Instructors can opt a
-	// course into the same visible warning banner + exam guards used during
-	// quizzes via Course.enable_integrity_warnings.
-	visibilityLog.stop()
-	examGuards.stop()
-	violationCount.value = 0
-
-	if (data.name) {
-		// Moderators/instructors editing or previewing a lesson aren't students
-		// taking it — the integrity banner and exam guards (copy/right-click
-		// block, DevTools detection) are meant to deter student cheating, not
-		// obstruct staff who legitimately need full access to the content.
-		const showIntegrityWarnings = data.enable_integrity_warnings && !isStaffViewer()
-
-		const onLog = showIntegrityWarnings
-			? (count) => {
-					violationCount.value = count || 0
-				}
-			: undefined
-
-		visibilityLog = useVisibilityLog({
-			referenceDoctype: 'Course Lesson',
-			referenceName: data.name,
-			minDurationSec: data.integrity_violation_threshold_seconds || 2,
-			onLog,
+			instructorEditor.value = renderEditor(
+				'instructor-content',
+				data.instructor_content
+			)
+		editor.value?.isReady.then(() => {
+			checkIfDiscussionsAllowed()
 		})
-		visibilityLog.start()
+		checkQuiz()
 
-		if (showIntegrityWarnings) {
-			examGuards = useExamGuards({
+		visibilityLog.stop()
+		examGuards.stop()
+		violationCount.value = 0
+
+		if (data.name) {
+			const showIntegrityWarnings = data.enable_integrity_warnings && !isStaffViewer()
+
+			const onLog = showIntegrityWarnings
+				? (count) => {
+						violationCount.value = count || 0
+					}
+				: undefined
+
+			visibilityLog = useVisibilityLog({
 				referenceDoctype: 'Course Lesson',
 				referenceName: data.name,
+				minDurationSec: data.integrity_violation_threshold_seconds || 2,
 				onLog,
 			})
-			examGuards.start(lessonContainer.value)
+			visibilityLog.start()
+
+			if (showIntegrityWarnings) {
+				examGuards = useExamGuards({
+					referenceDoctype: 'Course Lesson',
+					referenceName: data.name,
+					onLog,
+				})
+				examGuards.start()
+			}
 		}
+
+		currentLessonName.value = data.name
 	}
 }
 
@@ -758,22 +773,40 @@ const markLessonCompleteManually = () => {
 	progress.submit(
 		{},
 		{
-			async onSuccess() {
-				await lesson.reload({
-					chapter: props.chapterNumber,
-					lesson: props.lessonNumber,
-				})
-				if (lesson.data?.progress) {
+			async onSuccess(data) {
+				const isComplete = typeof data === 'object' ? data?.lesson_completed : false
+				if (isComplete) {
+					await lesson.reload({
+						chapter: props.chapterNumber,
+						lesson: props.lessonNumber,
+					})
 					toast.success(__('Lesson marked as complete'))
 				} else {
-					toast.info(
-						__(
-							'Please finish the quiz, video or assignment above before this lesson can be marked complete'
-						)
-					)
+					toast.info(getPendingRequirementsMessage(data))
 				}
 			},
 		}
+	)
+}
+
+// The server independently checks the quiz/assignment/video/reading-time
+// gates and returns which ones are still unmet - naming them here instead of
+// a single generic message, since a blanket "finish the quiz, video or
+// assignment" doesn't tell the student which of those actually needs work.
+const getPendingRequirementsMessage = (data) => {
+	const pending = []
+	if (data?.quiz_completed === false) pending.push(__('the quiz'))
+	if (data?.assignment_completed === false) pending.push(__('the assignment'))
+	if (data?.video_completed === false) pending.push(__('watching the video'))
+	if (data?.reading_time_met === false) pending.push(__('the required reading time'))
+
+	if (!pending.length) {
+		return __(
+			'Please finish the quiz, video or assignment above before this lesson can be marked complete'
+		)
+	}
+	return __('Please finish {0} before this lesson can be marked complete').format(
+		pending.join(', ')
 	)
 }
 
@@ -786,7 +819,7 @@ const progress = createResource({
 		}
 	},
 	onSuccess(data) {
-		lessonProgress.value = data
+		lessonProgress.value = typeof data === 'object' ? data?.progress : data
 	},
 })
 
@@ -985,7 +1018,6 @@ watch(
 		setupLesson(data)
 		getPlyrSource()
 		updateNotes()
-		if (data.icon == 'icon-youtube') clearInterval(timerInterval)
 	}
 )
 
@@ -1043,25 +1075,48 @@ const updateVideoTime = (video) => {
 	}
 }
 
+const getStorageKey = () => `lms_lesson_time_${props.courseName}_${props.chapterNumber}_${props.lessonNumber}`
+
 const startTimer = () => {
-	readingTimeElapsed.value = 0
+	const key = getStorageKey()
+	const savedTime = parseInt(localStorage.getItem(key) || '0', 10)
+	timer.value = isNaN(savedTime) ? 0 : savedTime
+	readingTimeElapsed.value = timer.value
+
+	if (props.courseName) {
+		call('lms.lms.api.get_course_study_time', { course: props.courseName }).then((res) => {
+			if (res?.seconds_spent) {
+				const backendSeconds = Number(res.seconds_spent) || 0
+				if (backendSeconds > timer.value) {
+					timer.value = backendSeconds
+					readingTimeElapsed.value = timer.value
+					localStorage.setItem(key, timer.value)
+				}
+			}
+		})
+	}
+
 	clearInterval(timerInterval)
 
 	const minTime = lesson.data?.min_reading_time || 0
-	if (minTime <= 0) {
+	if (minTime <= 0 || timer.value >= minTime) {
 		readingTimeMet.value = true
-		markProgress()
-		return
+		if (minTime <= 0) markProgress()
+	} else {
+		readingTimeMet.value = false
 	}
 
-	readingTimeMet.value = false
 	timerInterval = setInterval(() => {
-		timer.value++
-		readingTimeElapsed.value = Math.min(timer.value, minTime)
-		if (timer.value >= minTime) {
-			readingTimeMet.value = true
-			clearInterval(timerInterval)
-			markProgress()
+		if (document.visibilityState === 'visible') {
+			timer.value++
+			localStorage.setItem(key, timer.value)
+			if (minTime > 0 && !readingTimeMet.value) {
+				readingTimeElapsed.value = Math.min(timer.value, minTime)
+				if (timer.value >= minTime) {
+					readingTimeMet.value = true
+					markProgress()
+				}
+			}
 		}
 	}, 1000)
 }

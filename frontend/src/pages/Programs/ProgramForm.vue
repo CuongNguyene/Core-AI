@@ -29,11 +29,16 @@
 					/>
 					<div class="flex flex-col space-y-3">
 						<FormControl
+							v-if="isModerator"
 							v-model="program.published"
 							:label="__('programs.form.published')"
 							type="checkbox"
 							@change="dirty = true"
 						/>
+						<div v-else class="text-sm text-ink-gray-6 flex items-center gap-1.5">
+							<Info class="size-4 shrink-0" />
+							{{ __('programs.form.publishedByModerator') }}
+						</div>
 						<FormControl
 							v-model="program.enforce_course_order"
 							:label="__('programs.form.enforceCourseOrder')"
@@ -252,8 +257,8 @@ import {
 	ListRow,
 	toast,
 } from 'frappe-ui'
-import { computed, ref, watch } from 'vue'
-import { Plus, Trash2, TrendingUp } from 'lucide-vue-next'
+import { computed, inject, ref, watch } from 'vue'
+import { Info, Plus, Trash2, TrendingUp } from 'lucide-vue-next'
 import { Programs, Program } from '@/types/programs'
 import { openSettings } from '@/utils'
 import Link from '@/components/Controls/Link.vue'
@@ -268,6 +273,8 @@ const course = ref<string>('')
 const member = ref<string>('')
 const showProgressDialog = ref(false)
 const dirty = ref(false)
+const user = inject<any>('$user')
+const isModerator = computed(() => user?.data?.is_moderator || false)
 
 const props = withDefaults(
 	defineProps<{
@@ -378,7 +385,11 @@ const createNewProgram = (close: () => void) => {
 			onSuccess() {
 				close()
 				programs.value.reload()
-				toast.success(__('programs.form.createdSuccess'))
+				if (isModerator.value) {
+					toast.success(__('programs.form.createdSuccess'))
+				} else {
+					toast.success(__('programs.form.createdPendingReview'))
+				}
 			},
 			onError(err: any) {
 				toast.warning(__(err.messages?.[0] || err))

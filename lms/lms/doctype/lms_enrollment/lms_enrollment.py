@@ -105,7 +105,7 @@ def create_membership(course, batch=None, member=None, member_type="Student", ro
 			"member": member or frappe.session.user,
 		}
 	)
-	enrollment.insert()
+	enrollment.insert(ignore_permissions=True)
 
 	from lms.lms.worksuite_integration import create_learning_task
 

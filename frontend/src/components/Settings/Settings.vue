@@ -143,6 +143,21 @@ const tabsStructure = computed(() => {
 						// 	description:
 						// 		'https://docs.frappe.io/learning/falcon-self-hosting-guide',
 						// },
+						// {
+						// 	label: 'Unsplash Access Key',
+						// 	name: 'unsplash_access_key',
+						// 	description:
+						// 		'Allows users to pick a profile cover image from Unsplash. https://unsplash.com/documentation#getting-started.',
+						// 	type: 'password',
+						// },
+					],
+				},
+				{
+					label: 'Notifications',
+					icon: 'Mail',
+					description:
+						'Choose which email template is used for each automated notification',
+					fields: [
 						{
 							label: 'Batch Confirmation Email Template',
 							name: 'batch_confirmation_template',
@@ -193,13 +208,33 @@ const tabsStructure = computed(() => {
 							description:
 								'Sent to instructors when their batch is approved and published.',
 						},
-						// {
-						// 	label: 'Unsplash Access Key',
-						// 	name: 'unsplash_access_key',
-						// 	description:
-						// 		'Allows users to pick a profile cover image from Unsplash. https://unsplash.com/documentation#getting-started.',
-						// 	type: 'password',
-						// },
+						{
+							label: 'Payment Reminder Email Template',
+							name: 'payment_reminder_template',
+							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
+							type: 'Link',
+							description:
+								'Sent to remind a student to complete payment for a paid course/batch/certificate.',
+						},
+						{
+							label: 'Mentor Request Creation Email Template',
+							name: 'mentor_request_creation',
+							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
+							type: 'Link',
+							description:
+								'Sent when a student applies to become a mentor for a course.',
+						},
+						{
+							label: 'Mentor Request Status Update Email Template',
+							name: 'mentor_request_status_update',
+							doctype: 'Email Template',
+							filters: { is_lms_template: 1 },
+							type: 'Link',
+							description:
+								'Sent when a mentor request is approved, rejected, or withdrawn.',
+						},
 					],
 				},
 				// {
