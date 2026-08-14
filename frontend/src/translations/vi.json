@@ -1108,7 +1108,13 @@
 		"yourHoursStudied": "Số giờ học của bạn",
 		"hours": "Giờ",
 		"pdfHeader": "Công ty: {0}  |  Phòng ban: {1}  |  Nhân viên: {2}  |  Kỳ: {3}",
-		"all": "Tất cả"
+		"all": "Tất cả",
+		"recognition": "Tôn vinh học tập",
+		"topLearners": "Học viên tiêu biểu",
+		"topLearnersSubtitle": "Học viên tích cực nhất trong kỳ, theo số lượt hoàn thành, chứng chỉ và số giờ học",
+		"departmentRanking": "Xếp hạng phòng ban",
+		"departmentRankingSubtitle": "Phòng ban xếp hạng theo số giờ học trung bình mỗi nhân viên",
+		"noDataForPeriod": "Chưa có dữ liệu cho kỳ này"
 	},
 	"notifications": {
 		"title": "Thông báo",

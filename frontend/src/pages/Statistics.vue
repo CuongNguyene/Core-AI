@@ -186,6 +186,16 @@
 					<AxisChart v-if="timeSpentChartConfig" :config="timeSpentChartConfig" />
 				</div>
 			</div>
+
+			<div v-if="canViewDepartmentReport" class="mt-4">
+				<div class="text-base font-medium text-ink-gray-8 mb-2">
+					{{ __('statistics.recognition') }}
+				</div>
+				<RecognitionPanel
+					:top-learners="topLearners"
+					:department-ranking="departmentRanking"
+				/>
+			</div>
 		</div>
 
 		<Dialog
@@ -244,6 +254,15 @@
 								/>
 							</div>
 						</div>
+						<div v-if="canViewDepartmentReport" class="mt-4">
+							<div class="text-base font-medium text-ink-gray-8 mb-2">
+								{{ __('statistics.recognition') }}
+							</div>
+							<RecognitionPanel
+								:top-learners="topLearners"
+								:department-ranking="departmentRanking"
+							/>
+						</div>
 					</div>
 				</div>
 			</template>
@@ -283,6 +302,7 @@ import { usersStore } from '../stores/user'
 import Link from '@/components/Controls/Link.vue'
 import DateRangeFilter from '@/components/Common/DateRangeFilter.vue'
 import StatDetailModal from '@/components/Modals/StatDetailModal.vue'
+import RecognitionPanel from '@/components/RecognitionPanel.vue'
 import { capitalize } from '@/utils'
 
 const { brand } = sessionStore()
@@ -416,6 +436,11 @@ const departmentReport = createResource({
 	auto: false,
 })
 
+const recognitionReport = createResource({
+	url: 'lms.lms.api.get_learning_recognition',
+	auto: false,
+})
+
 watch(
 	canViewDepartmentReport,
 	(canView) => {
@@ -438,11 +463,20 @@ function reload() {
 		to_date,
 		granularity: filters.granularity,
 	})
+	recognitionReport.submit({
+		company: filters.company,
+		department: filters.department,
+		employee: filters.employee,
+		from_date,
+		to_date,
+	})
 }
 
 const summary = computed(() => departmentReport.data?.summary)
 const periodSummary = computed(() => departmentReport.data?.period_summary)
 const departmentSummary = computed(() => departmentReport.data?.department_summary)
+const topLearners = computed(() => recognitionReport.data?.top_learners || [])
+const departmentRanking = computed(() => recognitionReport.data?.department_ranking || [])
 
 const enrollmentXAxis = computed(() => {
 	return canViewDepartmentReport.value
