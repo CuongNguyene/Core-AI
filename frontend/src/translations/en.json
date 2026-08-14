@@ -1108,7 +1108,13 @@
 		"yourHoursStudied": "Your hours studied",
 		"hours": "Hours",
 		"pdfHeader": "Company: {0}  |  Department: {1}  |  Employee: {2}  |  Period: {3}",
-		"all": "All"
+		"all": "All",
+		"recognition": "Recognition",
+		"topLearners": "Top Learners",
+		"topLearnersSubtitle": "Most engaged learners this period, by completions, certifications and hours",
+		"departmentRanking": "Department Ranking",
+		"departmentRankingSubtitle": "Departments ranked by average hours learned per employee",
+		"noDataForPeriod": "No data for this period yet"
 	},
 	"notifications": {
 		"title": "Notifications",

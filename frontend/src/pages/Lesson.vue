@@ -511,6 +511,13 @@ const threshold = computed(() => {
 	return Number(settingsStore.videoCompletionThreshold?.data) || 90
 })
 const videoWatchPercent = ref(0)
+// markProgress()'s own "already completed" guard (lesson.data.progress) only
+// updates via the manual-completion path's full lesson.reload() - the
+// automatic timeupdate/ended path never refreshes it, so without this flag
+// every timeupdate tick above threshold (several per second) would fire a
+// new trackVideoWatchDuration+save_progress pair, racing concurrent writes
+// against the same LMS Enrollment row.
+const videoCompletionTriggered = ref(false)
 const lessonHasVideo = computed(() => lesson.data?.icon === 'icon-youtube')
 // A prior watch record means the server already has (possibly threshold-
 // meeting) watch_time for this lesson from an earlier session - the <video>
@@ -651,6 +658,7 @@ onBeforeUnmount(() => {
 	document.removeEventListener('fullscreenchange', attachFullscreenEvent)
 	sidebarStore.isSidebarCollapsed = false
 	trackVideoWatchDuration()
+	destroyPlyrSources()
 })
 
 const lesson = createResource({
@@ -767,9 +775,13 @@ const markProgress = () => {
 	}
 }
 
-const markLessonCompleteManually = () => {
+const markLessonCompleteManually = async () => {
 	clearInterval(timerInterval)
 	readingTimeMet.value = true
+	// push the latest watch position first - otherwise this re-checks
+	// whatever was last persisted, which may be stale/short of the threshold
+	// even though the player already shows the video as watched
+	await trackVideoWatchDuration()
 	progress.submit(
 		{},
 		{
@@ -877,6 +889,16 @@ const switchLesson = (direction) => {
 	})
 }
 
+// plyrSources.value = [] alone only drops our reference - the underlying
+// Plyr players (and their YouTube iframes) keep running in the background
+// otherwise, so their 'timeupdate' listeners from the previous lesson can
+// still fire after navigating away and push videoWatchPercent back up past
+// the reset-to-0 below with a stale percentage from the old video.
+const destroyPlyrSources = () => {
+	plyrSources.value.forEach((source) => source.destroy?.())
+	plyrSources.value = []
+}
+
 watch(
 	[() => route.params.chapterNumber, () => route.params.lessonNumber],
 	async (
@@ -884,7 +906,7 @@ watch(
 		[oldChapterNumber, oldLessonNumber]
 	) => {
 		if (newChapterNumber || newLessonNumber) {
-			plyrSources.value = []
+			destroyPlyrSources()
 			await nextTick()
 			resetLessonState(newChapterNumber, newLessonNumber)
 			startTimer()
@@ -908,13 +930,14 @@ const resetLessonState = (newChapterNumber, newLessonNumber) => {
 	readingTimeElapsed.value = 0
 	readingTimeMet.value = false
 	videoWatchPercent.value = 0
+	videoCompletionTriggered.value = false
 }
 
 const trackVideoWatchDuration = () => {
-	if (!lesson.data.membership) return
+	if (!lesson.data.membership) return Promise.resolve()
 	let videoDetails = getVideoDetails()
 	videoDetails = videoDetails.concat(getPlyrSourceDetails())
-	call('lms.lms.api.track_video_watch_duration', {
+	return call('lms.lms.api.track_video_watch_duration', {
 		lesson: lesson.data.name,
 		videos: videoDetails,
 	})
@@ -928,7 +951,10 @@ const getVideoDetails = () => {
 			if (video.duration > 0) {
 				const pct = (video.currentTime / video.duration) * 100
 				trackWatchPercent(pct)
-				if (pct >= threshold.value) markProgress()
+				// completion is triggered by the timeupdate/ended listeners below
+				// (after trackVideoWatchDuration's write completes) - calling
+				// markProgress() here too would fire a second, concurrent
+				// save_progress for the same event and race on LMS Enrollment
 			} else if (video.currentTime == video.duration) {
 				markProgress()
 			}
@@ -936,6 +962,7 @@ const getVideoDetails = () => {
 				source: video.src,
 				watch_time: video.currentTime,
 				duration: video.duration || 0,
+				playback_rate: video.playbackRate || 1,
 			})
 		})
 	}
@@ -948,7 +975,7 @@ const getPlyrSourceDetails = () => {
 		if (source.duration > 0) {
 			const pct = (source.currentTime / source.duration) * 100
 			trackWatchPercent(pct)
-			if (pct >= threshold.value) markProgress()
+			// see getVideoDetails - completion is handled by the caller, not here
 		} else if (source.currentTime == source.duration) {
 			markProgress()
 		}
@@ -957,9 +984,21 @@ const getPlyrSourceDetails = () => {
 			source: src,
 			watch_time: source.currentTime,
 			duration: source.duration || 0,
+			playback_rate: source.speed || 1,
 		})
 	})
 	return details
+}
+
+// timeupdate fires several times a second, so once the threshold is crossed
+// every remaining tick (and then "ended" on top) would re-fire this pair of
+// requests without the videoCompletionTriggered guard - do it once per
+// lesson view (reset in resetLessonState) and let the manual "Mark as
+// Complete" fallback button handle retries if this attempt fails.
+const triggerVideoCompletion = () => {
+	if (videoCompletionTriggered.value) return
+	videoCompletionTriggered.value = true
+	trackVideoWatchDuration().then(() => markProgress())
 }
 
 const attachVideoProgressListeners = () => {
@@ -968,18 +1007,14 @@ const attachVideoProgressListeners = () => {
 			if (plyrSource.duration > 0) {
 				const pct = (plyrSource.currentTime / plyrSource.duration) * 100
 				trackWatchPercent(pct)
-				if (pct >= threshold.value) {
-					trackVideoWatchDuration()
-					markProgress()
-				}
+				if (pct >= threshold.value) triggerVideoCompletion()
 			}
 		})
 		plyrSource.on('pause', () => {
 			trackVideoWatchDuration()
 		})
 		plyrSource.on('ended', () => {
-			trackVideoWatchDuration()
-			markProgress()
+			triggerVideoCompletion()
 		})
 	})
 
@@ -989,18 +1024,14 @@ const attachVideoProgressListeners = () => {
 			if (vid.duration > 0) {
 				const pct = (vid.currentTime / vid.duration) * 100
 				trackWatchPercent(pct)
-				if (pct >= threshold.value) {
-					trackVideoWatchDuration()
-					markProgress()
-				}
+				if (pct >= threshold.value) triggerVideoCompletion()
 			}
 		})
 		vid.addEventListener('pause', () => {
 			trackVideoWatchDuration()
 		})
 		vid.addEventListener('ended', () => {
-			trackVideoWatchDuration()
-			markProgress()
+			triggerVideoCompletion()
 		})
 	})
 }

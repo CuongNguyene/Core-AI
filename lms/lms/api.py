@@ -580,6 +580,123 @@ def get_department_report(
 	return {"summary": summary, "period_summary": period_summary, "department_summary": department_summary}
 
 
+#: Recognition is meant to celebrate engagement, not just raw hours logged -
+#: completions and certifications are weighted higher than time spent so
+#: someone who finishes courses/earns certs outranks someone who merely left
+#: a lesson open. Deliberately simple/transparent (not a black-box score)
+#: since this feeds a "why was this person recognized" conversation.
+RECOGNITION_COMPLETION_WEIGHT = 10
+RECOGNITION_CERTIFICATION_WEIGHT = 15
+RECOGNITION_HOUR_WEIGHT = 1
+
+
+def _build_employee_metrics_cte(f):
+	"""Shared per-employee (hours/completions/certifications) metrics for the
+	given department-report filter scope and period, used as a CTE by both
+	get_learning_recognition queries below so the top-learner and
+	department-ranking views are computed from identical numbers."""
+	departments, employee, company = f.departments, f.employee, f.company
+
+	return (
+		f"""
+		WITH emp_metrics AS (
+			SELECT
+				emp.name AS employee,
+				emp.employee_name AS employee_name,
+				emp.department AS department,
+				dept.department_name AS department_name,
+				COALESCE(time_spent.hours, 0) AS time_spent_hours,
+				COALESCE(completions.count, 0) AS completions,
+				COALESCE(certs.count, 0) AS certifications
+			FROM `tabEmployee` emp
+			LEFT JOIN `tabDepartment` dept ON dept.name = emp.department
+			LEFT JOIN (
+				SELECT member, SUM(seconds_spent) / 3600 AS hours
+				FROM `tabLMS Course Time Log`
+				WHERE date >= %(from_date)s AND date <= %(to_date)s
+				GROUP BY member
+			) time_spent ON time_spent.member = emp.user_id
+			LEFT JOIN (
+				SELECT member, COUNT(*) AS count
+				FROM `tabLMS Enrollment`
+				WHERE progress = 100 AND creation >= %(from_date)s AND creation <= %(to_date)s
+				GROUP BY member
+			) completions ON completions.member = emp.user_id
+			LEFT JOIN (
+				SELECT member, COUNT(*) AS count
+				FROM `tabLMS Certificate`
+				WHERE issue_date >= %(from_date)s AND issue_date <= %(to_date)s
+				GROUP BY member
+			) certs ON certs.member = emp.user_id
+			WHERE emp.user_id IS NOT NULL
+			{"AND emp.department in %(departments)s" if departments else ""}
+			{"AND emp.name = %(employee)s" if employee else ""}
+			{"AND emp.company = %(company)s" if company else ""}
+		)
+		"""
+	)
+
+
+@frappe.whitelist()
+def get_learning_recognition(
+	department=None, employee=None, company=None, from_date=None, to_date=None, limit=5
+):
+	"""Recognition view for the department report: the top individual
+	learners and a department ranking for the selected period, so a manager
+	has concrete names/units to call out each month instead of only a raw
+	hours/completions total - this is what feeds "tôn vinh văn hóa học tập"
+	(recognizing learning culture) in the monthly KPI report."""
+	f = get_department_report_filters(department, employee, company, from_date, to_date)
+	cte = _build_employee_metrics_cte(f)
+	limit = cint(limit) or 5
+
+	top_learners = frappe.db.sql(
+		f"""
+		{cte}
+		SELECT
+			employee, employee_name, department, department_name,
+			time_spent_hours, completions, certifications,
+			(completions * {RECOGNITION_COMPLETION_WEIGHT}
+				+ certifications * {RECOGNITION_CERTIFICATION_WEIGHT}
+				+ time_spent_hours * {RECOGNITION_HOUR_WEIGHT}) AS recognition_score
+		FROM emp_metrics
+		WHERE time_spent_hours > 0 OR completions > 0 OR certifications > 0
+		ORDER BY recognition_score DESC
+		LIMIT %(limit)s
+		""",
+		{**f.params, "limit": limit},
+		as_dict=True,
+	)
+	for row in top_learners:
+		row.time_spent_hours = flt(row.time_spent_hours, 1)
+		row.recognition_score = flt(row.recognition_score, 1)
+
+	department_ranking = frappe.db.sql(
+		f"""
+		{cte}
+		SELECT
+			department, department_name,
+			COUNT(*) AS employees,
+			SUM(time_spent_hours) AS time_spent_hours,
+			SUM(completions) AS completions,
+			SUM(certifications) AS certifications,
+			SUM(time_spent_hours) / COUNT(*) AS avg_hours_per_employee
+		FROM emp_metrics
+		WHERE department IS NOT NULL
+		GROUP BY department, department_name
+		HAVING SUM(time_spent_hours) > 0 OR SUM(completions) > 0 OR SUM(certifications) > 0
+		ORDER BY avg_hours_per_employee DESC
+		""",
+		f.params,
+		as_dict=True,
+	)
+	for row in department_ranking:
+		row.time_spent_hours = flt(row.time_spent_hours, 1)
+		row.avg_hours_per_employee = flt(row.avg_hours_per_employee, 1)
+
+	return {"top_learners": top_learners, "department_ranking": department_ranking}
+
+
 def get_employee_join_clause(
 	force_join, departments=None, employee=None, company=None, member_column="member"
 ):
@@ -2120,6 +2237,12 @@ def update_test_cases(test_cases, submission):
 #: full watch.
 WATCH_TIME_GRACE_SECONDS = 15
 
+#: playback_rate is client-reported and used only to widen the wall-clock cap
+#: below, never to shrink it - clamped so a forged rate can't fake an
+#: arbitrarily large chunk of "watched" time in one call.
+MIN_TRUSTED_PLAYBACK_RATE = 1
+MAX_TRUSTED_PLAYBACK_RATE = 4
+
 
 @frappe.whitelist()
 def track_video_watch_duration(lesson, videos):
@@ -2136,6 +2259,12 @@ def track_video_watch_duration(lesson, videos):
 	rather than the watch record's own creation time means a legitimate long
 	first watch (e.g. no pause until the video ends) isn't wrongly capped
 	just because it's the first report for that video.
+
+	The cap is scaled by the client-reported playback_rate so a viewer who
+	watches at 1.5x/2x speed isn't permanently capped below the completion
+	threshold - without this, watch_time would forever trail behind the
+	player's own currentTime/duration once wall-clock time falls behind
+	sped-up playback.
 	"""
 	if not isinstance(videos, list):
 		videos = json.loads(videos)
@@ -2144,7 +2273,6 @@ def track_video_watch_duration(lesson, videos):
 	if isinstance(started_at, (tuple, list)):
 		started_at = started_at[0]
 	elapsed_since_view = time_diff_in_seconds(now_datetime(), started_at) if started_at else 0
-	watch_time_cap = elapsed_since_view + WATCH_TIME_GRACE_SECONDS
 
 	for video in videos:
 		filters = {
@@ -2153,15 +2281,21 @@ def track_video_watch_duration(lesson, videos):
 			"member": frappe.session.user,
 		}
 		existing_record = frappe.db.get_value(
-			"LMS Video Watch Duration", filters, ["name", "watch_time"], as_dict=True
+			"LMS Video Watch Duration", filters, ["name", "watch_time", "duration"], as_dict=True
 		)
+
+		playback_rate = flt(video.get("playback_rate")) or 1
+		playback_rate = min(max(playback_rate, MIN_TRUSTED_PLAYBACK_RATE), MAX_TRUSTED_PLAYBACK_RATE)
+		watch_time_cap = elapsed_since_view * playback_rate + WATCH_TIME_GRACE_SECONDS
 		capped_watch_time = min(flt(video.get("watch_time")), watch_time_cap)
 
 		if existing_record:
+			updates = {}
 			if capped_watch_time > flt(existing_record.watch_time):
-				updates = {"watch_time": capped_watch_time}
-				if video.get("duration"):
-					updates["duration"] = video.get("duration")
+				updates["watch_time"] = capped_watch_time
+			if video.get("duration") and not flt(existing_record.duration):
+				updates["duration"] = video.get("duration")
+			if updates:
 				frappe.db.set_value("LMS Video Watch Duration", filters, updates)
 		else:
 			track_new_watch_time(lesson, video, capped_watch_time)
