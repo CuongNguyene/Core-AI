@@ -3,6 +3,7 @@
 		<IntegrityWarningBanner
 			v-if="lesson.data.enable_integrity_warnings && !isStaffViewer()"
 			:count="violationCount"
+			:lastEventType="lastViolationType"
 			:studyTime="timer"
 		/>
 		<header
@@ -544,6 +545,7 @@ let studyTimeInterval
 let visibilityLog = { start: () => {}, stop: () => {} }
 let examGuards = { start: () => {}, stop: () => {} }
 const violationCount = ref(0)
+const lastViolationType = ref(undefined)
 
 const tabs = ref([
 	{
@@ -713,13 +715,15 @@ const setupLesson = (data) => {
 		visibilityLog.stop()
 		examGuards.stop()
 		violationCount.value = 0
+		lastViolationType.value = undefined
 
 		if (data.name) {
 			const showIntegrityWarnings = data.enable_integrity_warnings && !isStaffViewer()
 
 			const onLog = showIntegrityWarnings
-				? (count) => {
+				? (count, eventType) => {
 						violationCount.value = count || 0
+						if (eventType) lastViolationType.value = eventType
 					}
 				: undefined
 

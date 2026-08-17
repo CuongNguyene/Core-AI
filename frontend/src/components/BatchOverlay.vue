@@ -102,7 +102,7 @@
 				class="w-full mt-2"
 				v-else-if="
 					batch.data.allow_self_enrollment &&
-					batch.data.seats_left &&
+					(!batch.data.seat_count || batch.data.seats_left > 0) &&
 					batch.data.accept_enrollments
 				"
 				@click="enrollInBatch()"

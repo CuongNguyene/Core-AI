@@ -719,10 +719,18 @@
 	},
 	"integrity": {
 		"recordingLabel": "Đang giám sát phiên học",
-		"tabSwitchWarning": "Hệ thống vừa ghi nhận bạn rời khỏi màn hình. Mọi thao tác trong phiên học này đều được lưu vào nhật ký hoạt động (lần {0}).",
+		"violationWarning": "Hệ thống vừa ghi nhận bạn {0} (lần {1}). Mọi thao tác trong phiên học này đều được lưu vào nhật ký hoạt động.",
 		"warningTitle": "Phát hiện hành vi bất thường",
 		"warningTitleCritical": "Phát hiện nhiều vi phạm",
-		"violationsLabel": "Số lần ghi nhận"
+		"violationsLabel": "Số lần ghi nhận",
+		"events": {
+			"tabHidden": "rời khỏi màn hình",
+			"copyAttempt": "sao chép nội dung",
+			"rightClick": "bấm chuột phải",
+			"printScreen": "chụp màn hình",
+			"devTools": "mở công cụ lập trình viên (DevTools)",
+			"concurrentSession": "đăng nhập ở thiết bị/trình duyệt khác"
+		}
 	},
 	"quiz": {
 		"chooseExisting": "Chọn một câu hỏi có sẵn",
