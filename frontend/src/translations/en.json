@@ -719,10 +719,18 @@
 	},
 	"integrity": {
 		"recordingLabel": "Session monitoring active",
-		"tabSwitchWarning": "The system just logged you leaving this screen. Every action in this session is being written to the activity log (occurrence {0}).",
+		"violationWarning": "The system just logged you {0} (occurrence {1}). Every action in this session is being written to the activity log.",
 		"warningTitle": "Suspicious activity detected",
 		"warningTitleCritical": "Multiple violations detected",
-		"violationsLabel": "Logged"
+		"violationsLabel": "Logged",
+		"events": {
+			"tabHidden": "leaving this screen",
+			"copyAttempt": "copying content",
+			"rightClick": "right-clicking",
+			"printScreen": "taking a screenshot",
+			"devTools": "opening developer tools",
+			"concurrentSession": "signing in from another device/browser"
+		}
 	},
 	"quiz": {
 		"chooseExisting": "Choose an existing question",

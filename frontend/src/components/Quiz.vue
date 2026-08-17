@@ -56,6 +56,7 @@
 		<IntegrityWarningBanner
 			v-if="!hideIntegrityBanner && !isInsideLesson"
 			:count="violationCount"
+			:lastEventType="lastViolationType"
 			:studyTime="quiz.data.duration ? (quiz.data.duration * 60) - timer : undefined"
 		/>
 
@@ -378,6 +379,7 @@ const possibleAnswer = ref(null)
 const timer = ref(0)
 let timerInterval = null
 const violationCount = ref(0)
+const lastViolationType = ref(undefined)
 const quizRoot = ref(null)
 let visibilityLog = { start: () => {}, stop: () => {} }
 let examGuards = { start: () => {}, stop: () => {} }
@@ -416,7 +418,7 @@ const props = defineProps({
 	},
 })
 
-const emit = defineEmits(['violation-count'])
+const emit = defineEmits(['violation-count', 'violation-event'])
 
 const quiz = createResource({
 	url: 'lms.lms.doctype.lms_quiz.lms_quiz.get_quiz',
@@ -579,8 +581,12 @@ const startQuiz = async () => {
 	activeQuestion.value = 1
 	localStorage.removeItem(quiz.data.title)
 
-	const onLog = (count) => {
+	const onLog = (count, eventType) => {
 		violationCount.value = count || 0
+		if (eventType) {
+			lastViolationType.value = eventType
+			emit('violation-event', eventType)
+		}
 		emit('violation-count', violationCount.value)
 	}
 
@@ -771,6 +777,7 @@ const resetQuiz = () => {
 	visibilityLog.stop()
 	examGuards.stop()
 	violationCount.value = 0
+	lastViolationType.value = undefined
 }
 
 const getInstructions = (question) => {

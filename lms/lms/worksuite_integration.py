@@ -41,11 +41,21 @@ def create_learning_task(enrollment):
 	# and those guards reference a custom_task_workflow_mode column that
 	# isn't present in every deployment. Leaving `project` unset keeps
 	# creation on the plain, ungated path.
+	#
+	# custom_assignee (Employee) alone does NOT make the task show up as
+	# "assigned to me" anywhere in Worksuite - its personal task views,
+	# notifications, overdue-accountability reminders, and the dashboard's
+	# "prioritized tasks" widget all key off custom_assign_to (User) instead
+	# (see todo/api/task.py get_prioritized_tasks, todo/notifications/*,
+	# todo/overdue_accountability/send_plan.py). Without it, the task exists
+	# in the database and reports correctly at the department level, but the
+	# enrolled member themselves never sees it as their own.
 	task = frappe.get_doc(
 		{
 			"doctype": "Task",
 			"subject": f"Complete course: {course_title}",
 			"custom_assignee": employee,
+			"custom_assign_to": enrollment.member,
 			"status": "Open",
 			"exp_end_date": add_days(getdate(), 30),
 		}

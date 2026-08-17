@@ -1,5 +1,9 @@
 <template>
-	<IntegrityWarningBanner v-if="!fromLesson" :count="violationCount" />
+	<IntegrityWarningBanner
+		v-if="!fromLesson"
+		:count="violationCount"
+		:lastEventType="lastViolationType"
+	/>
 	<header
 		v-if="!fromLesson"
 		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
@@ -22,6 +26,7 @@
 			:quizName="quizID"
 			:hide-integrity-banner="fromLesson"
 			@violation-count="violationCount = $event"
+			@violation-event="lastViolationType = $event"
 		/>
 	</div>
 </template>
@@ -35,6 +40,7 @@ import { ArrowLeft } from 'lucide-vue-next'
 import { sessionStore } from '../stores/session'
 
 const violationCount = ref(0)
+const lastViolationType = ref(undefined)
 
 const { brand } = sessionStore()
 const user = inject('$user')

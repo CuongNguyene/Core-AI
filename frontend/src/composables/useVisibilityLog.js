@@ -23,7 +23,7 @@ export function useVisibilityLog({ referenceDoctype, referenceName, minDurationS
 		if (duration < minDurationSec) return
 
 		localCount++
-		if (onLog) onLog(localCount, duration)
+		if (onLog) onLog(localCount, 'Tab Hidden', duration)
 
 		call('lms.lms.api.log_activity_event', {
 			reference_doctype: referenceDoctype,
@@ -32,7 +32,7 @@ export function useVisibilityLog({ referenceDoctype, referenceName, minDurationS
 		}).then((data) => {
 			if (data?.count !== undefined) {
 				localCount = Math.max(localCount, data.count)
-				if (onLog) onLog(localCount, duration)
+				if (onLog) onLog(localCount, 'Tab Hidden', duration)
 			}
 		})
 	}

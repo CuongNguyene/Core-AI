@@ -5,9 +5,11 @@ import { call } from 'frappe-ui'
 // Print Screen can only be detected, not blocked — there is no browser API
 // that intercepts an OS-level screenshot, and blocking F12 via keydown is
 // trivially bypassed through the browser menu, so neither is attempted.
-// Every signal feeds the same onLog(count) callback as useVisibilityLog, so
-// Quiz.vue shows one combined violation count rather than one banner per
-// signal type (the exact event_type is still visible to staff in the log).
+// Every signal feeds the same onLog(count, eventType) callback as
+// useVisibilityLog, so Quiz.vue shows one combined violation count with the
+// specific action of the latest violation, rather than one banner per
+// signal type (the full breakdown by event_type is still visible to staff
+// in the log).
 export function useExamGuards({ referenceDoctype, referenceName, onLog }) {
 	let target = null
 	let devtoolsInterval = null
@@ -19,7 +21,7 @@ export function useExamGuards({ referenceDoctype, referenceName, onLog }) {
 
 	const log = (eventType, durationSeconds = 0) => {
 		currentCount++
-		if (onLog) onLog(currentCount)
+		if (onLog) onLog(currentCount, eventType)
 
 		call('lms.lms.api.log_activity_event', {
 			reference_doctype: referenceDoctype,
@@ -29,7 +31,7 @@ export function useExamGuards({ referenceDoctype, referenceName, onLog }) {
 		}).then((data) => {
 			if (data?.count !== undefined) {
 				currentCount = data.count
-				if (onLog) onLog(currentCount)
+				if (onLog) onLog(currentCount, eventType)
 			}
 		})
 	}
@@ -65,10 +67,14 @@ export function useExamGuards({ referenceDoctype, referenceName, onLog }) {
 			reference_doctype: referenceDoctype,
 			reference_name: referenceName,
 		}).then((data) => {
-			if (data?.count !== undefined) {
-				currentCount = Math.max(currentCount, data.count)
-				if (onLog) onLog(currentCount)
-			}
+			if (data?.count === undefined) return
+			// Only attribute the "Concurrent Session" label when this poll is
+			// what actually pushed the count up - otherwise a routine poll with
+			// no new session would keep overwriting the banner's last-shown
+			// action with "Concurrent Session" even though nothing just happened.
+			const increased = data.count > currentCount
+			currentCount = Math.max(currentCount, data.count)
+			if (onLog) onLog(currentCount, increased ? 'Concurrent Session' : undefined)
 		})
 	}
 

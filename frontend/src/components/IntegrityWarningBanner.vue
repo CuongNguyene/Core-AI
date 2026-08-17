@@ -1,6 +1,7 @@
 <template>
 	<div
-		class="flex items-center gap-3 px-3 py-2 sm:px-5 bg-surface-gray-7"
+		class="flex items-center gap-3 px-3 py-2 sm:px-5 bg-surface-gray-7 transition-colors duration-300"
+		:class="justFlagged ? 'bg-ink-red-4' : 'bg-surface-gray-7'"
 	>
 		<span class="relative flex items-center justify-center size-2.5 shrink-0">
 			<span
@@ -14,8 +15,13 @@
 			>
 				{{ __('integrity.recordingLabel') }}
 			</span>
-			<span v-if="count > 0" class="text-sm text-ink-gray-4 truncate">
-				{{ __('integrity.tabSwitchWarning').format(count) }}
+			<span
+				v-if="count > 0"
+				:key="count"
+				class="text-sm truncate"
+				:class="justFlagged ? 'text-ink-white font-medium' : 'text-ink-gray-4'"
+			>
+				{{ __('integrity.violationWarning').format(eventLabel, count) }}
 			</span>
 		</div>
 		<div
@@ -38,7 +44,9 @@
 	</div>
 </template>
 <script setup>
-defineProps({
+import { computed, ref, watch } from 'vue'
+
+const props = defineProps({
 	count: {
 		type: Number,
 		default: 0,
@@ -47,7 +55,48 @@ defineProps({
 		type: Number,
 		default: undefined,
 	},
+	// One of LMS Activity Log's event_type options (Tab Hidden, Copy Attempt,
+	// Right Click, Print Screen Attempt, DevTools Opened, Concurrent Session).
+	// Drives which specific action the banner names on the latest violation -
+	// previously this always said "left the screen" regardless of what was
+	// actually flagged (e.g. a copy attempt showed the tab-switch message).
+	lastEventType: {
+		type: String,
+		default: undefined,
+	},
 })
+
+// Vietnamese/English phrase per event_type; falls back to the generic
+// tab-hidden phrasing for anything unrecognized (defensive, not expected).
+const EVENT_LABEL_KEYS = {
+	'Tab Hidden': 'integrity.events.tabHidden',
+	'Copy Attempt': 'integrity.events.copyAttempt',
+	'Right Click': 'integrity.events.rightClick',
+	'Print Screen Attempt': 'integrity.events.printScreen',
+	'DevTools Opened': 'integrity.events.devTools',
+	'Concurrent Session': 'integrity.events.concurrentSession',
+}
+
+const eventLabel = computed(() => {
+	const key = EVENT_LABEL_KEYS[props.lastEventType] || EVENT_LABEL_KEYS['Tab Hidden']
+	return __(key)
+})
+
+// Brief flash on every new violation so it reads as a startling, in-the-
+// moment notice rather than a number that quietly changed in a corner.
+const justFlagged = ref(false)
+let flashTimeout = null
+watch(
+	() => props.count,
+	(newCount, oldCount) => {
+		if (newCount <= (oldCount || 0)) return
+		justFlagged.value = true
+		clearTimeout(flashTimeout)
+		flashTimeout = setTimeout(() => {
+			justFlagged.value = false
+		}, 1500)
+	}
+)
 
 const formatTimer = (seconds) => {
 	const hrs = Math.floor(seconds / 3600)
@@ -60,4 +109,3 @@ const formatTimer = (seconds) => {
 	return hrs != '00' ? `${hrs}:${mins}:${secs}` : `${mins}:${secs}`
 }
 </script>
-

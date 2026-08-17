@@ -1548,12 +1548,15 @@ def get_batch_details(batch):
 	)
 
 	batch_details.instructors = get_instructors("LMS Batch", batch)
-	batch_details.accept_enrollments = batch_details.start_date > getdate()
+	# Self-enrollment stays open for the whole run of the batch, not just before
+	# it starts - joining an in-progress batch (start_date already passed) is
+	# fine as long as it hasn't ended yet.
+	batch_details.accept_enrollments = batch_details.end_date > getdate()
 
 	if (
 		not batch_details.accept_enrollments
-		and batch_details.start_date == getdate()
-		and get_time_str(batch_details.start_time) > nowtime()
+		and batch_details.end_date == getdate()
+		and get_time_str(batch_details.end_time) > nowtime()
 	):
 		batch_details.accept_enrollments = True
 
