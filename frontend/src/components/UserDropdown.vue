@@ -156,16 +156,16 @@ const userDropdownOptions = computed(() => {
 		{
 			group: '',
 			items: [
-				// {
-				// 	icon: User,
-				// 	label: 'My Profile',
-				// 	onClick: () => {
-				// 		router.push(`/user/${userResource.data?.username}`)
-				// 	},
-				// 	condition: () => {
-				// 		return isLoggedIn
-				// 	},
-				// },
+				{
+					icon: User,
+					label: __('sidebar.myProfile'),
+					onClick: () => {
+						router.push(`/user/${userResource.data?.username}`)
+					},
+					condition: () => {
+						return isLoggedIn
+					},
+				},
 				// {
 				// 	icon: theme.value === 'light' ? Moon : Sun,
 				// 	label: 'Toggle Theme',

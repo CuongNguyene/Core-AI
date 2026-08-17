@@ -62,7 +62,7 @@
 						{{ profile.data.headline }}
 					</div>
 				</div>
-				<Button
+				<!-- <Button
 					v-if="isSessionUser() && !readOnlyMode"
 					class="mt-3 sm:mt-0 md:ml-auto"
 					@click="editProfile()"
@@ -71,7 +71,7 @@
 						<Edit class="w-4 h-4 stroke-1.5 text-ink-gray-7" />
 					</template>
 					{{ __('profile.editProfileButton') }}
-				</Button>
+				</Button> -->
 			</div>
 
 			<div class="mb-4 mt-6">
