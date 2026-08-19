@@ -293,7 +293,7 @@
 
 					<!-- Reading Timer Bar -->
 					<div
-						v-if="lesson.data.membership && lesson.data.min_reading_time > 0 && !readingTimeMet"
+						v-if="lesson.data.membership && lesson.data.min_reading_time > 0 && !readingTimeMet && !lesson.data.progress"
 						class="mt-6 px-5"
 					>
 						<div class="flex items-center justify-between mb-1 text-sm text-ink-gray-5">
@@ -512,20 +512,8 @@ const threshold = computed(() => {
 	return Number(settingsStore.videoCompletionThreshold?.data) || 90
 })
 const videoWatchPercent = ref(0)
-// markProgress()'s own "already completed" guard (lesson.data.progress) only
-// updates via the manual-completion path's full lesson.reload() - the
-// automatic timeupdate/ended path never refreshes it, so without this flag
-// every timeupdate tick above threshold (several per second) would fire a
-// new trackVideoWatchDuration+save_progress pair, racing concurrent writes
-// against the same LMS Enrollment row.
 const videoCompletionTriggered = ref(false)
 const lessonHasVideo = computed(() => lesson.data?.icon === 'icon-youtube')
-// A prior watch record means the server already has (possibly threshold-
-// meeting) watch_time for this lesson from an earlier session - the <video>
-// element's currentTime resets to 0 on reload, so this session's tracked
-// percentage alone can't tell a genuinely-unwatched video apart from one
-// that was already watched enough before. Defer to the server (via the
-// existing toast on click) rather than risk wrongly disabling the button.
 const hasPriorVideoRecord = computed(() => (lesson.data?.videos?.length || 0) > 0)
 const videoWatchRequirementPending = computed(
 	() =>
@@ -570,7 +558,6 @@ const props = defineProps({
 })
 
 onMounted(() => {
-	startTimer()
 	startStudyTimeTracking()
 	sidebarStore.isSidebarCollapsed = true
 	document.addEventListener('fullscreenchange', attachFullscreenEvent)
@@ -583,10 +570,6 @@ onMounted(() => {
 
 const STUDY_TIME_HEARTBEAT_SECONDS = 30
 
-// Tracks actual elapsed wall-clock time since the last flush, rather than
-// blindly recording a fixed 30s per tick, so a partial window (tab hidden,
-// lesson switched, or the page closed before the next tick) is still
-// recorded instead of being silently dropped.
 let studyHeartbeatAt = null
 
 const flushStudyTime = () => {
@@ -613,13 +596,6 @@ const onStudyVisibilityChange = () => {
 	}
 }
 
-// Backgrounding the tab shouldn't let a video keep "playing" toward the
-// watch-time threshold while the student isn't actually watching - browsers
-// don't pause background video/audio on their own, so this has to be done
-// explicitly. Native <video> elements (from the Upload block, mounted in a
-// separate Vue app tree per upload.js) are reached via DOM query since
-// there's no component reference across that boundary; Plyr sources are
-// tracked directly in plyrSources.
 const pauseAllVideos = () => {
 	document.querySelectorAll('video').forEach((video) => {
 		if (!video.paused) video.pause()
@@ -782,9 +758,6 @@ const markProgress = () => {
 const markLessonCompleteManually = async () => {
 	clearInterval(timerInterval)
 	readingTimeMet.value = true
-	// push the latest watch position first - otherwise this re-checks
-	// whatever was last persisted, which may be stale/short of the threshold
-	// even though the player already shows the video as watched
 	await trackVideoWatchDuration()
 	progress.submit(
 		{},
@@ -805,10 +778,6 @@ const markLessonCompleteManually = async () => {
 	)
 }
 
-// The server independently checks the quiz/assignment/video/reading-time
-// gates and returns which ones are still unmet - naming them here instead of
-// a single generic message, since a blanket "finish the quiz, video or
-// assignment" doesn't tell the student which of those actually needs work.
 const getPendingRequirementsMessage = (data) => {
 	const pending = []
 	if (data?.quiz_completed === false) pending.push(__('the quiz'))
@@ -893,11 +862,6 @@ const switchLesson = (direction) => {
 	})
 }
 
-// plyrSources.value = [] alone only drops our reference - the underlying
-// Plyr players (and their YouTube iframes) keep running in the background
-// otherwise, so their 'timeupdate' listeners from the previous lesson can
-// still fire after navigating away and push videoWatchPercent back up past
-// the reset-to-0 below with a stale percentage from the old video.
 const destroyPlyrSources = () => {
 	plyrSources.value.forEach((source) => source.destroy?.())
 	plyrSources.value = []
@@ -913,7 +877,6 @@ watch(
 			destroyPlyrSources()
 			await nextTick()
 			resetLessonState(newChapterNumber, newLessonNumber)
-			startTimer()
 			updateNotes()
 			checkIfDiscussionsAllowed()
 			checkQuiz()
@@ -955,10 +918,6 @@ const getVideoDetails = () => {
 			if (video.duration > 0) {
 				const pct = (video.currentTime / video.duration) * 100
 				trackWatchPercent(pct)
-				// completion is triggered by the timeupdate/ended listeners below
-				// (after trackVideoWatchDuration's write completes) - calling
-				// markProgress() here too would fire a second, concurrent
-				// save_progress for the same event and race on LMS Enrollment
 			} else if (video.currentTime == video.duration) {
 				markProgress()
 			}
@@ -994,11 +953,6 @@ const getPlyrSourceDetails = () => {
 	return details
 }
 
-// timeupdate fires several times a second, so once the threshold is crossed
-// every remaining tick (and then "ended" on top) would re-fire this pair of
-// requests without the videoCompletionTriggered guard - do it once per
-// lesson view (reset in resetLessonState) and let the manual "Mark as
-// Complete" fallback button handle retries if this attempt fails.
 const triggerVideoCompletion = () => {
 	if (videoCompletionTriggered.value) return
 	videoCompletionTriggered.value = true
@@ -1053,6 +1007,13 @@ watch(
 		setupLesson(data)
 		getPlyrSource()
 		updateNotes()
+		// locked/no_preview/scorm/empty payloads have no `name` - starting the
+		// timer for those calls markProgress() -> progress.submit(), whose
+		// makeParams() reads lesson.data.name and sends a request with no
+		// `lesson` param, which the server rejects as a missing argument.
+		if (data?.name) {
+			startTimer()
+		}
 	}
 )
 
@@ -1115,8 +1076,8 @@ const getStorageKey = () => `lms_lesson_time_${props.courseName}_${props.chapter
 const startTimer = () => {
 	const key = getStorageKey()
 	const savedTime = parseInt(localStorage.getItem(key) || '0', 10)
-	timer.value = isNaN(savedTime) ? 0 : savedTime
-	readingTimeElapsed.value = timer.value
+	readingTimeElapsed.value = isNaN(savedTime) ? 0 : savedTime
+	timer.value = readingTimeElapsed.value
 
 	if (props.courseName) {
 		call('lms.lms.api.get_course_study_time', { course: props.courseName }).then((res) => {
@@ -1124,8 +1085,6 @@ const startTimer = () => {
 				const backendSeconds = Number(res.seconds_spent) || 0
 				if (backendSeconds > timer.value) {
 					timer.value = backendSeconds
-					readingTimeElapsed.value = timer.value
-					localStorage.setItem(key, timer.value)
 				}
 			}
 		})
@@ -1134,7 +1093,7 @@ const startTimer = () => {
 	clearInterval(timerInterval)
 
 	const minTime = lesson.data?.min_reading_time || 0
-	if (minTime <= 0 || timer.value >= minTime) {
+	if (minTime <= 0 || readingTimeElapsed.value >= minTime) {
 		readingTimeMet.value = true
 		if (minTime <= 0) markProgress()
 	} else {
@@ -1144,10 +1103,10 @@ const startTimer = () => {
 	timerInterval = setInterval(() => {
 		if (document.visibilityState === 'visible') {
 			timer.value++
-			localStorage.setItem(key, timer.value)
 			if (minTime > 0 && !readingTimeMet.value) {
-				readingTimeElapsed.value = Math.min(timer.value, minTime)
-				if (timer.value >= minTime) {
+				readingTimeElapsed.value++
+				localStorage.setItem(key, readingTimeElapsed.value)
+				if (readingTimeElapsed.value >= minTime) {
 					readingTimeMet.value = true
 					markProgress()
 				}
