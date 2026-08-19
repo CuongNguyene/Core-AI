@@ -238,7 +238,11 @@ def lesson_has_video(lesson):
 	if lesson_details.content:
 		content = json.loads(lesson_details.content)
 		for block in content.get("blocks", []):
-			if block.get("type") in ["upload", "embed"]:
+			if block.get("type") == "upload" and block.get("data", {}).get(
+				"file_type", ""
+			).lower() in ["mp4", "webm", "ogg", "mov"]:
+				return True
+			if block.get("type") == "embed":
 				return True
 	elif lesson_details.body:
 		macros = find_macros(lesson_details.body)
