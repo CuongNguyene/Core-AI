@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<header
-			class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+			class="sticky top-0 z-10 flex items-center justify-between border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 		>
 			<Breadcrumbs class="h-7" :items="breadcrumbs" />
 			<Button
@@ -188,7 +188,7 @@
 			</div>
 
 			<div v-if="canViewDepartmentReport" class="mt-4">
-				<div class="text-base font-medium text-ink-gray-8 mb-2">
+				<div class="lms-statistics__serif text-base text-ink-gray-9 mb-2">
 					{{ __('statistics.recognition') }}
 				</div>
 				<RecognitionPanel
@@ -255,7 +255,7 @@
 							</div>
 						</div>
 						<div v-if="canViewDepartmentReport" class="mt-4">
-							<div class="text-base font-medium text-ink-gray-8 mb-2">
+							<div class="lms-statistics__serif text-base text-ink-gray-9 mb-2">
 								{{ __('statistics.recognition') }}
 							</div>
 							<RecognitionPanel
@@ -840,3 +840,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-statistics__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

@@ -1,5 +1,10 @@
 <template>
-	<Dialog v-model="show" :options="{ title, size: '2xl' }">
+	<Dialog v-model="show" :options="{ size: '2xl' }">
+		<template #body-title>
+			<h3 class="lms-stat-detail__serif text-2xl leading-6 text-ink-gray-9">
+				{{ title }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div v-if="details.loading" class="py-10 text-center text-ink-gray-5 text-sm">
 				{{ __('Loading...') }}
@@ -144,3 +149,16 @@ watch(
 	reload
 )
 </script>
+<style scoped>
+.lms-stat-detail__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
