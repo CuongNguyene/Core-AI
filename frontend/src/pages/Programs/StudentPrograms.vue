@@ -1,21 +1,30 @@
 <template>
 	<div class="p-5 pb-10">
-		<div
-			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
-		>
-			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('programs.studentPrograms.allPrograms') }}
-			</div>
+		<div class="mb-6 border-b border-outline-gray-2 pb-4">
 			<div
-				class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
+				class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-end justify-between"
 			>
-				<TabButtons v-model="currentTab" :buttons="tabs" class="w-fit" />
-				<FormControl
-					v-model="searchQuery"
-					:placeholder="__('Search by Title')"
-					type="text"
-					class="w-full lg:w-40"
-				/>
+				<div>
+					<div
+						class="lms-programs__mono mb-1 text-[11px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
+						{{ __('programs.list.title') }}
+					</div>
+					<div class="lms-programs__serif text-[1.75rem] leading-none text-ink-gray-9">
+						{{ __('programs.studentPrograms.allPrograms') }}
+					</div>
+				</div>
+				<div
+					class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
+				>
+					<TabButtons v-model="currentTab" :buttons="tabs" class="w-fit" />
+					<FormControl
+						v-model="searchQuery"
+						:placeholder="__('Search by Title')"
+						type="text"
+						class="w-full lg:w-40"
+					/>
+				</div>
 			</div>
 		</div>
 		<div v-for="(data, category) in programs.data">
@@ -98,3 +107,26 @@ const tabs = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-programs__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-programs__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

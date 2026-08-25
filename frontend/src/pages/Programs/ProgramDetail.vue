@@ -5,8 +5,8 @@
 		<Breadcrumbs :items="breadcrumbs" />
 	</header>
 	<div v-if="program.data" class="pt-5 px-5 pb-10 w-full">
-		<div class="flex items-center space-x-2 mb-5">
-			<div class="text-lg font-semibold text-ink-gray-9">
+		<div class="flex items-center space-x-2 border-b border-outline-gray-2 pb-4 mb-5">
+			<div class="lms-program-detail__serif text-2xl text-ink-gray-9">
 				{{ program.data.name }}
 			</div>
 
@@ -14,7 +14,9 @@
 				v-if="program.data.progress != null"
 				:theme="program.data.progress < 100 ? 'orange' : 'green'"
 			>
-				{{ program.data.progress }}% {{ __('completed') }}
+				<span class="lms-program-detail__mono">
+					{{ program.data.progress }}% {{ __('completed') }}
+				</span>
 			</Badge>
 
 			<Tooltip
@@ -146,3 +148,26 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-program-detail__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-program-detail__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

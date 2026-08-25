@@ -12,19 +12,28 @@
 	</header>
 	<StudentPrograms v-if="isStudent" />
 	<div v-else class="p-5 pb-10">
-		<div
-			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
-		>
-			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('All Programs') }}
+		<div class="mb-6 border-b border-outline-gray-2 pb-4">
+			<div
+				class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-end justify-between"
+			>
+				<div>
+					<div
+						class="lms-programs__mono mb-1 text-[11px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
+						{{ __('programs.list.title') }}
+					</div>
+					<div class="lms-programs__serif text-[1.75rem] leading-none text-ink-gray-9">
+						{{ __('All Programs') }}
+					</div>
+				</div>
+				<FormControl
+					v-model="title"
+					:placeholder="__('Search by Title')"
+					type="text"
+					class="w-full lg:w-40"
+					@input="updatePrograms()"
+				/>
 			</div>
-			<FormControl
-				v-model="title"
-				:placeholder="__('Search by Title')"
-				type="text"
-				class="w-full lg:w-40"
-				@input="updatePrograms()"
-			/>
 		</div>
 		<div
 			v-if="programs.list?.loading && !programs.data?.length"
@@ -151,3 +160,26 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-programs__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-programs__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>
