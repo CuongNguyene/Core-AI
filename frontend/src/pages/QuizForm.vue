@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+		class="sticky top-0 z-10 flex items-center justify-between border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 		<div v-if="!readOnlyMode" class="space-x-2">
@@ -42,7 +42,7 @@
 	</header>
 	<div v-if="quizDetails.doc" class="py-5">
 		<div class="px-20 pb-5 space-y-5 border-b mb-5">
-			<div class="text-lg text-ink-gray-9 font-semibold mb-4">
+			<div class="lms-quiz-form__serif text-lg text-ink-gray-9 mb-4">
 				{{ __('quiz.builder.details') }}
 			</div>
 			<div class="grid grid-cols-2 gap-5">
@@ -81,7 +81,7 @@
 			</div>
 		</div>
 		<div class="px-20 pb-5 space-y-5 border-b mb-5">
-			<div class="text-lg text-ink-gray-9 font-semibold mb-4">
+			<div class="lms-quiz-form__serif text-lg text-ink-gray-9 mb-4">
 				{{ __('quiz.builder.settings') }}
 			</div>
 			<div class="grid grid-cols-3 gap-5">
@@ -126,7 +126,7 @@
 
 		<div v-if="!isNew" class="px-20 pb-5 space-y-5 mb-5">
 			<div class="flex items-center justify-between mb-4">
-				<div class="text-lg font-semibold text-ink-gray-9">
+				<div class="lms-quiz-form__serif text-lg text-ink-gray-9">
 					{{ __('quiz.builder.questions') }}
 				</div>
 				<Button v-if="!readOnlyMode" @click="openQuestionModal()">
@@ -520,3 +520,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-quiz-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

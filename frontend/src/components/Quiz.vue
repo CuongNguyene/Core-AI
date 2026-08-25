@@ -63,7 +63,7 @@
 		<div v-if="quiz.data.duration" class="flex flex-col space-x-1 my-4">
 			<div class="mb-2">
 				<span class=""> {{ __('quiz.take.time') }}: </span>
-				<span class="font-semibold">
+				<span class="lms-quiz__mono font-medium">
 					{{ formatTimer(timer) }}
 				</span>
 			</div>
@@ -71,8 +71,8 @@
 		</div>
 
 		<div v-if="activeQuestion == 0">
-			<div class="border text-center p-12 rounded-md">
-				<div class="font-semibold text-lg text-ink-gray-9">
+			<div class="border border-outline-gray-2 text-center p-12 rounded-md">
+				<div class="lms-quiz__serif text-2xl leading-tight text-ink-gray-9">
 					{{ quiz.data.title }}
 				</div>
 				<div v-if="hasPassedQuiz" class="mt-3 flex items-center justify-center gap-2">
@@ -129,7 +129,7 @@
 			<div v-for="(question, qtidx) in questions">
 				<div
 					v-if="qtidx == activeQuestion - 1 && questionDetails.data"
-					class="border rounded-md p-5"
+					class="border border-outline-gray-2 rounded-md p-5"
 				>
 					<div class="flex justify-between">
 						<div class="text-sm text-ink-gray-5">
@@ -140,7 +140,7 @@
 								{{ getInstructions(questionDetails.data) }}
 							</span>
 						</div>
-						<div class="text-ink-gray-9 text-sm font-semibold item-left">
+						<div class="lms-quiz__mono text-ink-gray-9 text-sm item-left">
 							{{ question.marks }}
 							{{ question.marks == 1 ? __('quiz.take.mark') : __('quiz.take.marksPlural') }}
 						</div>
@@ -238,7 +238,7 @@
 						/>
 					</div>
 					<div class="flex items-center justify-between mt-4">
-						<div class="text-sm text-ink-gray-5">
+						<div class="lms-quiz__mono text-sm text-ink-gray-5">
 							{{
 								__('quiz.take.questionNofM').format(
 									activeQuestion,
@@ -275,8 +275,11 @@
 				</div>
 			</div>
 		</div>
-		<div v-else class="border rounded-md p-20 text-center space-y-2">
-			<div class="text-lg font-semibold text-ink-gray-9">
+		<div
+			v-else
+			class="border border-outline-gray-2 rounded-md p-20 text-center space-y-2"
+		>
+			<div class="lms-quiz__serif text-2xl text-ink-gray-9">
 				{{ __('quiz.take.quizSummary') }}
 			</div>
 			<div
@@ -289,7 +292,7 @@
 					)
 				}}
 			</div>
-			<div v-else>
+			<div v-else class="lms-quiz__mono text-ink-gray-7">
 				{{
 					__(
 						'quiz.take.resultSummary'
@@ -831,6 +834,30 @@ const getSubmissionColumns = () => {
 	]
 }
 </script>
+<style scoped>
+.lms-quiz__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-quiz__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+	font-variant-numeric: tabular-nums;
+}
+</style>
 <style>
 p {
 	line-height: 1.5rem;

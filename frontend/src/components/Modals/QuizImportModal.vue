@@ -1,5 +1,10 @@
 <template>
 	<Dialog v-model="show" :options="dialogOptions">
+		<template #body-title>
+			<h3 class="lms-quiz-import__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('quiz.io.import') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="flex flex-col gap-4 text-base">
 				<div class="flex items-start justify-between gap-4">
@@ -191,7 +196,6 @@ const startImport = (close) => {
 
 const dialogOptions = computed(() => {
 	return {
-		title: __('quiz.io.import'),
 		size: '2xl',
 		actions: canImport.value
 			? [
@@ -206,3 +210,16 @@ const dialogOptions = computed(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-quiz-import__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
