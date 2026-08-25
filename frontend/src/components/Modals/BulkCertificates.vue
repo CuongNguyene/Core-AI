@@ -2,7 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('batches.certificates.generateCertificates'),
 			size: 'lg',
 			actions: [
 				{
@@ -15,6 +14,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-bulk-certificates__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('batches.certificates.generateCertificates') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="space-y-4">
 				<Autocomplete
@@ -202,3 +206,16 @@ const getInstructors = () => {
 	})
 }
 </script>
+<style scoped>
+.lms-bulk-certificates__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
