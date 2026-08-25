@@ -90,7 +90,7 @@
 				</Button>
 			</div>
 			<div class="my-10">
-				<h2 class="mb-4 text-lg font-semibold text-ink-gray-9">
+				<h2 class="lms-profile-evaluator__serif mb-4 text-lg text-ink-gray-9">
 					{{ __('I am unavailable') }}
 				</h2>
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -123,7 +123,7 @@
 				</div>
 			</div>
 			<div>
-				<h2 class="mb-4 text-lg font-semibold text-ink-gray-9">
+				<h2 class="lms-profile-evaluator__serif mb-4 text-lg text-ink-gray-9">
 					{{ __('My calendar') }}
 				</h2>
 				<div
@@ -337,3 +337,16 @@ const days = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-profile-evaluator__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

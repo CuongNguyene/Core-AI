@@ -1,6 +1,6 @@
 <template>
 	<div class="mt-7 mb-10">
-		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
+		<h2 class="lms-profile-certificates__serif mb-3 text-lg text-ink-gray-9">
 			{{ __('certification.certificatesHeading') }}
 		</h2>
 		<div
@@ -10,15 +10,22 @@
 			<div
 				v-for="certificate in certificates.data"
 				:key="certificate.name"
-				class="flex flex-col bg-surface-white border rounded-lg p-3 cursor-pointer hover:bg-surface-menu-bar"
+				class="flex items-start gap-3 rounded-md border border-outline-gray-2 bg-surface-white p-3 cursor-pointer hover:shadow-sm transition-shadow"
 				@click="openCertificate(certificate)"
 			>
-				<div class="font-medium leading-5 mb-2 text-ink-gray-9">
-					{{ certificate.course_title || certificate.batch_title }}
+				<div
+					class="lms-profile-certificates__seal flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+				>
+					<GraduationCap class="h-4 w-4 stroke-2" />
 				</div>
-				<div class="text-sm text-ink-gray-7 font-medium mt-auto">
-					<span> {{ __('certification.issuedOn') }}: </span>
-					{{ dayjs(certificate.issue_date).format('L') }}
+				<div class="min-w-0 flex-1">
+					<div class="lms-profile-certificates__serif leading-5 mb-2 text-ink-gray-9">
+						{{ certificate.course_title || certificate.batch_title }}
+					</div>
+					<div class="lms-profile-certificates__mono text-sm text-ink-gray-6">
+						{{ __('certification.issuedOn') }}
+						{{ dayjs(certificate.issue_date).format('L') }}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -29,6 +36,7 @@
 </template>
 <script setup>
 import { createListResource } from 'frappe-ui'
+import { GraduationCap } from 'lucide-vue-next'
 import { inject, onMounted } from 'vue'
 
 const dayjs = inject('$dayjs')
@@ -62,3 +70,31 @@ const openCertificate = (certificate) => {
 	)
 }
 </script>
+<style scoped>
+.lms-profile-certificates__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-profile-certificates__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+
+.lms-profile-certificates__seal {
+	background: #efe8d8;
+	color: #8a6a22;
+}
+</style>

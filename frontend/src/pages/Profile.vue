@@ -3,7 +3,7 @@
 	<ProfileSkeleton v-else-if="!profile.data" />
 	<div v-else>
 		<header
-			class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+			class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 		>
 			<Breadcrumbs class="h-7" :items="breadcrumbs" />
 		</header>
@@ -42,7 +42,11 @@
 		</div>
 		<div class="mx-auto -mt-10 md:-mt-4 max-w-4xl translate-x-0 px-5">
 			<div class="flex flex-col md:flex-row items-center">
-				<div>
+				<div
+					class="group relative h-[100px] w-[100px] shrink-0 rounded-full"
+					:class="{ 'cursor-pointer': isSessionUser() && !readOnlyMode }"
+					@click="isSessionUser() && !readOnlyMode && editProfile()"
+				>
 					<img
 						v-if="profile.data.user_image"
 						:src="profile.data.user_image"
@@ -53,9 +57,15 @@
 						:user="profile.data"
 						class="object-cover h-[100px] w-[100px] rounded-full border-4 border-white object-cover"
 					/>
+					<div
+						v-if="isSessionUser() && !readOnlyMode"
+						class="absolute inset-0 flex items-center justify-center rounded-full bg-black/40 opacity-0 transition-opacity group-hover:opacity-100"
+					>
+						<Camera class="h-5 w-5 text-white" />
+					</div>
 				</div>
 				<div class="ml-6">
-					<h2 class="mt-2 text-3xl font-semibold text-ink-gray-9">
+					<h2 class="lms-profile__serif mt-2 text-3xl leading-tight text-ink-gray-9">
 						{{ profile.data.full_name }}
 					</h2>
 					<div class="mt-2 text-base text-ink-gray-7">
@@ -100,7 +110,7 @@ import {
 } from 'frappe-ui'
 import { computed, inject, watch, ref, onMounted, watchEffect } from 'vue'
 import { sessionStore } from '@/stores/session'
-import { Edit } from 'lucide-vue-next'
+import { Edit, Camera } from 'lucide-vue-next'
 import UserAvatar from '@/components/UserAvatar.vue'
 import { useRoute, useRouter } from 'vue-router'
 import NoPermission from '@/components/NoPermission.vue'
@@ -236,3 +246,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-profile__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
