@@ -2,7 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('courses.batchModal.addCourse'),
 			size: 'sm',
 			actions: [
 				{
@@ -13,6 +12,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-batch-course-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('courses.batchModal.addCourse') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<Link
 				doctype="LMS Course"
@@ -90,3 +94,16 @@ const addCourse = (close) => {
 	)
 }
 </script>
+<style scoped>
+.lms-batch-course-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

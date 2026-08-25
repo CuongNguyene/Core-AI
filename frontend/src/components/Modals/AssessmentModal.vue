@@ -2,7 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('batches.assessments.addAssessmentTitle'),
 			size: 'sm',
 			actions: [
 				{
@@ -13,6 +12,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-assessment-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('batches.assessments.addAssessmentTitle') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="space-y-4">
 				<Autocomplete
@@ -105,3 +109,16 @@ const assessmentTypes = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-assessment-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

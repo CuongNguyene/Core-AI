@@ -2,7 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('batches.liveClass.createLiveClass'),
 			size: 'xl',
 			actions: [
 				{
@@ -13,6 +12,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-live-class-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('batches.liveClass.createLiveClass') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<div class="grid grid-cols-2 gap-4">
@@ -269,3 +273,16 @@ const refreshForm = () => {
 	liveClass.provider = props.zoomAccount ? 'Zoom' : 'Microsoft Teams'
 }
 </script>
+<style scoped>
+.lms-live-class-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

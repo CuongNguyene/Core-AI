@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="flex items-center justify-between mb-4">
-			<div class="text-lg font-semibold text-ink-gray-9">
+			<div class="lms-assessments__serif text-lg text-ink-gray-9">
 				{{ __('batches.assessments.assessments') }}
 			</div>
 			<Button v-if="canAddAssessments()" @click="showModal = true">
@@ -250,3 +250,16 @@ const getAssessmentTypeLabel = (type) => {
 	}
 }
 </script>
+<style scoped>
+.lms-assessments__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

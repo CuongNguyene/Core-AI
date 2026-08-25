@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="flex items-center justify-between">
-		<div class="text-lg font-semibold text-ink-gray-9">
+		<div class="lms-live-class__serif text-lg text-ink-gray-9">
 			{{ __('batches.liveClass.liveClass') }}
 		</div>
 		<Button v-if="canCreateClass()" @click="openLiveClassModal">
@@ -38,7 +38,7 @@
 				}
 			"
 		>
-			<div class="font-semibold text-ink-gray-9 text-lg mb-1">
+			<div class="lms-live-class__serif text-ink-gray-9 text-lg mb-1">
 				{{ cls.title }}
 			</div>
 			<div class="short-introduction">
@@ -205,6 +205,19 @@ const openAttendanceModal = (cls) => {
 	attendanceFor.value = cls
 }
 </script>
+<style scoped>
+.lms-live-class__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
 <style>
 .short-introduction {
 	display: -webkit-box;

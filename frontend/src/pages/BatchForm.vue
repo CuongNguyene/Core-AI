@@ -17,7 +17,7 @@
 		</header>
 		<div class="py-5">
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
-				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
+				<div class="lms-batch-form__serif text-lg text-ink-gray-9 mb-4">
 					{{ __('batches.form.details') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
-				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
+				<div class="lms-batch-form__serif text-lg text-ink-gray-9 mb-4">
 					{{ __('batches.form.settings') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -74,7 +74,7 @@
 			</div>
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
-				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
+				<div class="lms-batch-form__serif text-lg text-ink-gray-9 mb-4">
 					{{ __('batches.form.dateAndTime') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -139,7 +139,7 @@
 			</div>
 
 			<div class="px-5 md:px-20 pb-5 space-y-5 border-b mb-5">
-				<div class="text-lg text-ink-gray-9 font-semibold mb-4">
+				<div class="lms-batch-form__serif text-lg text-ink-gray-9 mb-4">
 					{{ __('batches.form.configurations') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -641,3 +641,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-batch-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

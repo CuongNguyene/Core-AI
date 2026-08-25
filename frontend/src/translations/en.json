@@ -316,7 +316,9 @@
 			"seatsLeft": "Seats Left",
 			"seatLeft": "Seat Left",
 			"soldOut": "Sold Out",
-			"private": "Private"
+			"private": "Private",
+			"online": "Online",
+			"offline": "Offline"
 		},
 		"overlay": {
 			"courses": "Courses",
@@ -536,7 +538,7 @@
 			"zoomAccount": "Zoom Account",
 			"zoomAccountPlaceholder": "Select or create a zoom account",
 			"teamsAccount": "Teams Account",
-			"teamsAccountPlaceholder": "Select or create a Microsoft Teams account",
+			"teamsAccountPlaceholder": "Select or create a MS Teams account",
 			"medium": "Medium",
 			"category": "Category",
 			"categoryPlaceholder": "Select or create a category",
