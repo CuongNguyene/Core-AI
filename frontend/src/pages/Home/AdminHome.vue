@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="mt-10">
-			<div class="font-semibold text-lg mb-3">
+			<div class="lms-admin-home__serif text-lg mb-3 text-ink-gray-9">
 				{{ __('home.schedule.myScheduleTitle') }}
 			</div>
 			<ScheduleCalendar endpoint="lms.lms.utils.get_admin_schedule" />
@@ -9,7 +9,7 @@
 
 		<div v-if="createdCourses.data?.length" class="mt-10">
 			<div class="flex items-center justify-between mb-3">
-				<span class="font-semibold text-lg">
+				<span class="lms-admin-home__serif text-lg text-ink-gray-9">
 					{{ __('home.admin.coursesCreated') }}
 				</span>
 				<router-link
@@ -37,7 +37,7 @@
 
 		<div v-if="createdBatches.data?.length" class="mt-10">
 			<div class="flex items-center justify-between mb-3">
-				<span class="font-semibold text-lg">
+				<span class="lms-admin-home__serif text-lg text-ink-gray-9">
 					{{ __('home.admin.upcomingBatches') }}
 				</span>
 				<router-link
@@ -68,7 +68,7 @@
 			class="flex flex-col items-center justify-center mt-60"
 		>
 			<GraduationCap class="size-10 mx-auto stroke-1 text-ink-gray-5" />
-			<div class="text-lg font-semibold text-ink-gray-7 mb-1.5">
+			<div class="lms-admin-home__serif text-lg text-ink-gray-7 mb-1.5">
 				{{ __('home.admin.noCoursesCreated') }}
 			</div>
 			<div
@@ -91,7 +91,7 @@
 
 		<div class="grid grid-cols-2 gap-5 mt-10">
 			<div v-if="liveClasses?.data?.length">
-				<div class="font-semibold text-lg mb-3">
+				<div class="lms-admin-home__serif text-lg mb-3 text-ink-gray-9">
 					{{ __('home.common.upcomingLiveClassesTitle') }}
 				</div>
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -220,3 +220,16 @@ const hasClassEnded = (cls: {
 }
 
 </script>
+<style scoped>
+.lms-admin-home__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

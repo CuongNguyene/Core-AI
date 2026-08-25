@@ -7,7 +7,7 @@
 	<div class="w-full px-5 pt-5 pb-10">
 		<div class="space-y-2">
 			<div class="flex items-center justify-between">
-				<div class="text-xl font-bold text-ink-gray-9">
+				<div class="lms-home__serif text-2xl text-ink-gray-9">
 					{{ __('home.common.greeting') }}, {{ user.data?.full_name }} 👋
 				</div>
 				<div>
@@ -30,21 +30,94 @@
 			</div>
 		</div>
 
+		<div
+			v-if="homeSettings.data?.announcement_content"
+			class="lms-home__announcement mt-6 rounded-md border-l-4 bg-surface-gray-2 px-4 py-3"
+		>
+			<div
+				class="lms-home__mono mb-1 text-[10px] uppercase tracking-[0.14em] text-ink-gray-6"
+			>
+				{{ __('home.announcement.label') }}
+			</div>
+			<div class="whitespace-pre-wrap text-sm leading-6 text-ink-gray-8">
+				{{ homeSettings.data.announcement_content }}
+			</div>
+		</div>
+
 		<AdminHome
 			v-if="isAdmin && currentTab === 'instructor'"
 			:liveClasses="adminLiveClasses"
 		/>
 		<StudentHome v-else :myLiveClasses="myLiveClasses" />
+
+		<Leaderboard />
+
+		<div
+			v-if="homeSettings.data?.guidelines_url"
+			class="mt-10 flex items-center justify-between gap-4 rounded-md border border-outline-gray-2 p-4"
+		>
+			<div class="flex items-center gap-3">
+				<div
+					class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-surface-gray-2 text-ink-gray-7"
+				>
+					<BookMarked class="h-4 w-4 stroke-1.5" />
+				</div>
+				<div>
+					<div class="lms-home__serif text-base text-ink-gray-9">
+						{{ __('home.guidelines.title') }}
+					</div>
+					<div class="text-sm text-ink-gray-6">
+						{{ __('home.guidelines.description') }}
+					</div>
+				</div>
+			</div>
+			<a :href="homeSettings.data.guidelines_url" target="_blank" rel="noopener">
+				<Button variant="subtle">
+					{{ homeSettings.data.guidelines_label || __('home.guidelines.linkLabel') }}
+				</Button>
+			</a>
+		</div>
+
+		<div
+			v-if="
+				homeSettings.data?.it_department_contact ||
+				homeSettings.data?.training_department_contact
+			"
+			class="mt-10 grid grid-cols-1 gap-5 border-t border-outline-gray-2 pt-6 sm:grid-cols-2"
+		>
+			<div v-if="homeSettings.data?.it_department_contact">
+				<div
+					class="lms-home__mono mb-1 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
+				>
+					{{ __('home.footer.itDepartment') }}
+				</div>
+				<div class="whitespace-pre-wrap text-sm leading-6 text-ink-gray-7">
+					{{ homeSettings.data.it_department_contact }}
+				</div>
+			</div>
+			<div v-if="homeSettings.data?.training_department_contact">
+				<div
+					class="lms-home__mono mb-1 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
+				>
+					{{ __('home.footer.trainingDepartment') }}
+				</div>
+				<div class="whitespace-pre-wrap text-sm leading-6 text-ink-gray-7">
+					{{ homeSettings.data.training_department_contact }}
+				</div>
+			</div>
+		</div>
 	</div>
 	<Streak v-model="showStreakModal" :streakInfo="streakInfo" />
 </template>
 <script setup lang="ts">
 import { computed, inject, ref } from 'vue'
-import { createResource, TabButtons, usePageMeta } from 'frappe-ui'
+import { Button, createResource, TabButtons, usePageMeta } from 'frappe-ui'
+import { BookMarked } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import StudentHome from '@/pages/Home/StudentHome.vue'
 import AdminHome from '@/pages/Home/AdminHome.vue'
 import Streak from '@/pages/Home/Streak.vue'
+import Leaderboard from '@/components/Leaderboard.vue'
 
 const user = inject<any>('$user')
 const { brand } = sessionStore()
@@ -67,6 +140,11 @@ const adminLiveClasses = createResource({
 
 const streakInfo = createResource({
 	url: 'lms.lms.utils.get_streak_info',
+	auto: true,
+})
+
+const homeSettings = createResource({
+	url: 'lms.lms.api.get_home_page_settings',
 	auto: true,
 })
 
@@ -110,3 +188,30 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-home__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-home__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+
+.lms-home__announcement {
+	border-left-color: #16222e;
+}
+</style>

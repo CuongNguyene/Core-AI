@@ -9,7 +9,7 @@ import frappe
 import requests
 from frappe import _
 from frappe.model.document import Document
-from frappe.utils import add_days, cint, format_datetime, get_datetime, get_time, nowdate
+from frappe.utils import add_days, cint, format_datetime, get_datetime, get_time, getdate, nowdate
 
 from lms.lms.doctype.lms_notification.lms_notification import make_lms_notification_logs
 from lms.lms.utils import (
@@ -123,7 +123,7 @@ class LMSBatch(Document):
 		make_lms_notification_logs(notification, instructors)
 
 	def validate_batch_end_date(self):
-		if self.end_date < self.start_date:
+		if getdate(self.end_date) < getdate(self.start_date):
 			frappe.throw(_("Batch end date cannot be before the batch start date"))
 
 	def validate_batch_time(self):
@@ -163,7 +163,7 @@ class LMSBatch(Document):
 				)
 
 	def validate_evaluation_end_date(self):
-		if self.evaluation_end_date and self.evaluation_end_date < self.end_date:
+		if self.evaluation_end_date and getdate(self.evaluation_end_date) < getdate(self.end_date):
 			frappe.throw(_("Evaluation end date cannot be less than the batch end date."))
 
 	def validate_membership(self):
@@ -210,7 +210,9 @@ class LMSBatch(Document):
 						_("Row #{0} End time cannot be outside the batch duration.").format(schedule.idx)
 					)
 
-			if schedule.date < self.start_date or schedule.date > self.end_date:
+			if getdate(schedule.date) < getdate(self.start_date) or getdate(schedule.date) > getdate(
+				self.end_date
+			):
 				frappe.throw(_("Row #{0} Date cannot be outside the batch duration.").format(schedule.idx))
 
 	def on_payment_authorized(self, payment_status):

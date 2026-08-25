@@ -45,6 +45,9 @@
 		"student": {
 			"myCourses": "My Courses",
 			"popularCourses": "Our Popular Courses",
+			"coursesInProgress": "Courses in Progress",
+			"coursesToBeCompleted": "Courses to Be Completed",
+			"bookmarkedCourses": "Bookmarked Courses",
 			"myBatches": "My Batches",
 			"upcomingBatches": "Our Upcoming Batches"
 		},
@@ -61,6 +64,27 @@
 			"loading": "Loading schedule...",
 			"noEvents": "Nothing scheduled",
 			"clearSelection": "Clear selection"
+		},
+		"leaderboard": {
+			"title": "Leaderboard",
+			"month": "This month",
+			"year": "This year",
+			"allTime": "All-time",
+			"hoursSuffix": "h",
+			"loading": "Loading leaderboard...",
+			"empty": "No learning activity yet for this period"
+		},
+		"announcement": {
+			"label": "Announcement"
+		},
+		"guidelines": {
+			"title": "Guidelines",
+			"description": "Platform usage guidelines and instructions",
+			"linkLabel": "View guidelines"
+		},
+		"footer": {
+			"itDepartment": "IT Department",
+			"trainingDepartment": "Training Department (PĐT)"
 		}
 	},
 	"courses": {
@@ -81,11 +105,15 @@
 		},
 		"card": {
 			"featured": "Featured",
+			"duration": "Duration",
 			"lessons": "Lessons",
 			"enrolledStudents": "Enrolled Students",
 			"averageRating": "Average Rating",
 			"completed": "completed",
-			"getCertified": "Get certified on completion"
+			"getCertified": "Get certified on completion",
+			"addBookmark": "Save course",
+			"removeBookmark": "Remove from saved",
+			"bookmarkFailed": "Couldn't update bookmark"
 		},
 		"cardOverlay": {
 			"continueLearning": "Continue Learning",
@@ -104,7 +132,11 @@
 			"timeFormatHours": "{0} hr {1} min",
 			"timeFormatMinutes": "{0} min",
 			"needLoginFirst": "Please login to enroll in this course",
-			"enrolledSuccess": "Enrolled successfully"
+			"enrolledSuccess": "Enrolled successfully",
+			"duration": "Duration",
+			"saveForLater": "Save for later",
+			"saved": "Saved",
+			"bookmarkFailed": "Couldn't update bookmark"
 		},
 		"certification": {
 			"title": "Certification",
@@ -139,6 +171,8 @@
 			"enterTitle": "Enter title",
 			"category": "Category",
 			"selectCategory": "Select a category",
+			"duration": "Duration (minutes)",
+			"durationDescription": "Estimated total time to complete, in minutes",
 			"instructors": "Instructors",
 			"tags": "Tags",
 			"addTagPlaceholder": "Add a tag and press enter",
@@ -203,6 +237,7 @@
 			"created": "Created",
 			"unpublished": "Unpublished",
 			"enrolled": "Enrolled",
+			"bookmarked": "Bookmarked",
 			"courses": "Courses"
 		},
 		"outline": {
@@ -591,6 +626,7 @@
 		},
 		"noIntroduction": "No introduction",
 		"achievements": "Achievements",
+		"bookmarkedCourses": "Bookmarked Courses",
 		"issuedOn": "Issued on",
 		"shareOn": "Share on",
 		"settings": "Settings",

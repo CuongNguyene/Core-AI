@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="mt-10">
-			<div class="font-semibold text-lg mb-3 text-ink-gray-9">
+			<div class="lms-student-home__serif text-lg mb-3 text-ink-gray-9">
 				{{ __('home.schedule.myScheduleTitle') }}
 			</div>
 			<ScheduleCalendar endpoint="lms.lms.utils.get_my_schedule" />
@@ -9,7 +9,7 @@
 
 		<div v-if="myCourses.data?.length" class="mt-10">
 			<div class="flex items-center justify-between mb-3">
-				<span class="font-semibold text-lg text-ink-gray-9">
+				<span class="lms-student-home__serif text-lg text-ink-gray-9">
 					{{
 						myCourses.data[0].membership
 							? __('home.student.myCourses')
@@ -39,9 +39,93 @@
 			</div>
 		</div>
 
+		<div v-if="coursesInProgress.data?.length" class="mt-10">
+			<div class="flex items-center justify-between mb-3">
+				<span class="lms-student-home__serif text-lg text-ink-gray-9">
+					{{ __('home.student.coursesInProgress') }}
+				</span>
+				<router-link
+					:to="{
+						name: 'Courses',
+					}"
+				>
+					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+						<span>
+							{{ __('home.common.seeAll') }}
+						</span>
+						<MoveRight class="size-3 stroke-1.5" />
+					</span>
+				</router-link>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<router-link
+					v-for="course in coursesInProgress.data"
+					:to="{ name: 'CourseDetail', params: { courseName: course.name } }"
+				>
+					<CourseCard :course="course" />
+				</router-link>
+			</div>
+		</div>
+
+		<div v-if="coursesNotStarted.data?.length" class="mt-10">
+			<div class="flex items-center justify-between mb-3">
+				<span class="lms-student-home__serif text-lg text-ink-gray-9">
+					{{ __('home.student.coursesToBeCompleted') }}
+				</span>
+				<router-link
+					:to="{
+						name: 'Courses',
+					}"
+				>
+					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+						<span>
+							{{ __('home.common.seeAll') }}
+						</span>
+						<MoveRight class="size-3 stroke-1.5" />
+					</span>
+				</router-link>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<router-link
+					v-for="course in coursesNotStarted.data"
+					:to="{ name: 'CourseDetail', params: { courseName: course.name } }"
+				>
+					<CourseCard :course="course" />
+				</router-link>
+			</div>
+		</div>
+
+		<div v-if="bookmarkedCourses.data?.length" class="mt-10">
+			<div class="flex items-center justify-between mb-3">
+				<span class="lms-student-home__serif text-lg text-ink-gray-9">
+					{{ __('home.student.bookmarkedCourses') }}
+				</span>
+				<router-link
+					:to="{
+						name: 'Courses',
+					}"
+				>
+					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+						<span>
+							{{ __('home.common.seeAll') }}
+						</span>
+						<MoveRight class="size-3 stroke-1.5" />
+					</span>
+				</router-link>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<router-link
+					v-for="course in bookmarkedCourses.data"
+					:to="{ name: 'CourseDetail', params: { courseName: course.name } }"
+				>
+					<CourseCard :course="course" />
+				</router-link>
+			</div>
+		</div>
+
 		<div v-if="myBatches.data?.length" class="mt-10">
 			<div class="flex items-center justify-between mb-3">
-				<span class="font-semibold text-lg text-ink-gray-9">
+				<span class="lms-student-home__serif text-lg text-ink-gray-9">
 					{{
 						myBatches.data?.[0].students.includes(user.data?.name)
 							? __('home.student.myBatches')
@@ -73,7 +157,7 @@
 
 		<div class="grid grid-cols-1 gap-5 mt-10">
 			<div v-if="myLiveClasses.data?.length">
-				<div class="font-semibold text-lg mb-3 text-ink-gray-9">
+				<div class="lms-student-home__serif text-lg mb-3 text-ink-gray-9">
 					{{ __('home.common.upcomingLiveClassesTitle') }}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -168,6 +252,21 @@ const myCourses = createResource({
 	auto: true,
 })
 
+const bookmarkedCourses = createResource({
+	url: 'lms.lms.utils.get_my_bookmarked_courses',
+	auto: true,
+})
+
+const coursesInProgress = createResource({
+	url: 'lms.lms.utils.get_courses_in_progress',
+	auto: true,
+})
+
+const coursesNotStarted = createResource({
+	url: 'lms.lms.utils.get_courses_not_started',
+	auto: true,
+})
+
 const myBatches = createResource({
 	url: 'lms.lms.utils.get_my_batches',
 	auto: true,
@@ -199,3 +298,16 @@ const hasClassEnded = (cls: {
 	return now > classEnd
 }
 </script>
+<style scoped>
+.lms-student-home__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

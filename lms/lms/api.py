@@ -24,6 +24,7 @@ from frappe.utils import (
 	flt,
 	format_date,
 	get_datetime,
+	get_first_day,
 	getdate,
 	now,
 	now_datetime,
@@ -695,6 +696,77 @@ def get_learning_recognition(
 		row.avg_hours_per_employee = flt(row.avg_hours_per_employee, 1)
 
 	return {"top_learners": top_learners, "department_ranking": department_ranking}
+
+
+LEADERBOARD_PERIODS = ("month", "year", "all")
+
+
+def get_leaderboard_date_range(period):
+	"""Start/end date for a leaderboard period, or (None, None) for "all" -
+	deliberately three fixed, named periods rather than an arbitrary
+	client-supplied range, since this is a public learner-facing ranking,
+	not an admin report."""
+	today = getdate()
+	if period == "month":
+		return get_first_day(today), today
+	if period == "year":
+		return getdate(f"{today.year}-01-01"), today
+	return None, None
+
+
+@frappe.whitelist(allow_guest=False)
+def get_leaderboard(period="all", limit=20):
+	"""Learner-facing leaderboard: real hours (from LMS Course Time Log) and
+	real published-certificate counts, shown side by side rather than
+	blended into one opaque score - get_learning_recognition's weighted
+	formula above was tuned for a different, HR-manager-facing report and
+	its weights aren't something to silently reuse here. Sort is fully
+	deterministic: hours desc, then certificates desc, then name asc."""
+	if period not in LEADERBOARD_PERIODS:
+		frappe.throw(_("Invalid period"))
+
+	from_date, to_date = get_leaderboard_date_range(period)
+	params = {"limit": cint(limit) or 20}
+	time_log_condition = ""
+	certificate_condition = ""
+	if from_date:
+		params["from_date"] = from_date
+		params["to_date"] = to_date
+		time_log_condition = "AND date BETWEEN %(from_date)s AND %(to_date)s"
+		certificate_condition = "AND issue_date BETWEEN %(from_date)s AND %(to_date)s"
+
+	leaderboard = frappe.db.sql(
+		f"""
+		SELECT
+			u.name AS user,
+			u.full_name,
+			u.user_image,
+			hours.total_hours AS hours,
+			COALESCE(certs.cert_count, 0) AS certificates
+		FROM `tabUser` u
+		INNER JOIN (
+			SELECT member, SUM(seconds_spent) / 3600 AS total_hours
+			FROM `tabLMS Course Time Log`
+			WHERE 1=1 {time_log_condition}
+			GROUP BY member
+		) hours ON hours.member = u.name
+		LEFT JOIN (
+			SELECT member, COUNT(*) AS cert_count
+			FROM `tabLMS Certificate`
+			WHERE published = 1 {certificate_condition}
+			GROUP BY member
+		) certs ON certs.member = u.name
+		WHERE hours.total_hours > 0
+		ORDER BY hours DESC, certificates DESC, u.full_name ASC
+		LIMIT %(limit)s
+		""",
+		params,
+		as_dict=True,
+	)
+	for row in leaderboard:
+		row.hours = flt(row.hours, 1)
+
+	return leaderboard
 
 
 def get_employee_join_clause(
@@ -1976,6 +2048,22 @@ def get_unread_notification_count():
 @frappe.whitelist(allow_guest=True)
 def get_lms_setting(field):
 	return frappe.get_cached_value("LMS Settings", None, field)
+
+
+@frappe.whitelist(allow_guest=True)
+def get_home_page_settings():
+	return frappe.db.get_value(
+		"LMS Settings",
+		None,
+		[
+			"announcement_content",
+			"guidelines_url",
+			"guidelines_label",
+			"it_department_contact",
+			"training_department_contact",
+		],
+		as_dict=1,
+	)
 
 
 @frappe.whitelist()

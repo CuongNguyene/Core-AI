@@ -76,7 +76,17 @@
   "contact_us_tab",
   "contact_us_email",
   "column_break_gcgv",
-  "contact_us_url"
+  "contact_us_url",
+  "home_page_tab",
+  "announcement_content",
+  "section_break_hpgl",
+  "guidelines_url",
+  "column_break_hpgl",
+  "guidelines_label",
+  "section_break_hpct",
+  "it_department_contact",
+  "column_break_hpct",
+  "training_department_contact"
  ],
  "fields": [
   {
@@ -474,6 +484,59 @@
    "fieldname": "certifications",
    "fieldtype": "Check",
    "label": "Certifications"
+  },
+  {
+   "fieldname": "home_page_tab",
+   "fieldtype": "Tab Break",
+   "label": "Home Page"
+  },
+  {
+   "description": "Shown as a banner on the Home page when set. Cleared = no banner.",
+   "fieldname": "announcement_content",
+   "fieldtype": "Small Text",
+   "label": "Announcement"
+  },
+  {
+   "fieldname": "section_break_hpgl",
+   "fieldtype": "Section Break",
+   "label": "Guidelines"
+  },
+  {
+   "description": "Link to your guidelines/usage document. Leave blank to hide the Guidelines card on Home.",
+   "fieldname": "guidelines_url",
+   "fieldtype": "Data",
+   "label": "Guidelines URL"
+  },
+  {
+   "fieldname": "column_break_hpgl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Optional - defaults to a generic label if left blank",
+   "fieldname": "guidelines_label",
+   "fieldtype": "Data",
+   "label": "Guidelines Link Label"
+  },
+  {
+   "fieldname": "section_break_hpct",
+   "fieldtype": "Section Break",
+   "label": "Footer Contacts"
+  },
+  {
+   "description": "Shown in the Home page footer. Leave blank to hide.",
+   "fieldname": "it_department_contact",
+   "fieldtype": "Small Text",
+   "label": "IT Department Contact"
+  },
+  {
+   "fieldname": "column_break_hpct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Shown in the Home page footer. Leave blank to hide.",
+   "fieldname": "training_department_contact",
+   "fieldtype": "Small Text",
+   "label": "Training Department (PĐT) Contact"
   }
  ],
  "grid_page_length": 50,

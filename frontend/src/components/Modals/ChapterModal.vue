@@ -14,6 +14,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-chapter-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ chapterDetail ? __('courses.chapterModal.editChapter') : __('courses.chapterModal.addChapter') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="space-y-4 text-base">
 				<FormControl :label="__('courses.chapterModal.title')" v-model="chapter.title" :required="true" />
@@ -222,3 +227,16 @@ const validateFile = (file) => {
 	}
 }
 </script>
+<style scoped>
+.lms-chapter-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

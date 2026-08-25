@@ -7,7 +7,7 @@
 		>
 			{{ __('courses.reviews.writeAReview') }}
 		</Button>
-		<div class="flex items-center font-semibold text-2xl text-ink-gray-9">
+		<div class="lms-course-reviews__serif flex items-center text-2xl text-ink-gray-9">
 			{{ __('courses.reviews.studentReviews') }}
 		</div>
 		<div class="grid gap-8 mt-10">
@@ -32,7 +32,7 @@
 								{{ review.owner_details.full_name }}
 							</span>
 						</router-link>
-						<span class="text-ink-gray-7">
+						<span class="lms-course-reviews__mono text-xs text-ink-gray-6">
 							{{ review.creation }}
 						</span>
 						<div class="flex mt-2 space-x-1">
@@ -122,3 +122,26 @@ function openReviewModal() {
 	showReviewModal.value = true
 }
 </script>
+<style scoped>
+.lms-course-reviews__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-course-reviews__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

@@ -1,96 +1,111 @@
 <template>
 	<div
 		v-if="course.title"
-		class="flex flex-col h-full rounded-md overflow-auto text-ink-gray-9"
+		class="group flex h-full flex-col overflow-hidden rounded-md border border-outline-gray-2 bg-surface-white transition-shadow duration-300 hover:shadow-md motion-reduce:transition-none"
 		style="min-height: 350px"
 	>
+		<!-- Register strip: the course's real category (LMS Category) as a ledger
+		heading, plus a brass mark when this course carries a certificate — the
+		one accent color reused for anything "officially recognised" on the card. -->
 		<div
-			class="w-[100%] h-[168px] bg-cover bg-center bg-no-repeat border-t border-x rounded-t-md"
-			:style="
-				course.image
-					? { backgroundImage: `url('${encodeURI(course.image)}')` }
-					: {
-							backgroundImage: getGradientColor(),
-							backgroundBlendMode: 'screen',
-					  }
-			"
+			v-if="course.category || isCertified"
+			class="flex items-center justify-between border-b border-outline-gray-2 px-3 py-1.5"
 		>
-			<!-- <div class="flex items-center flex-wrap relative top-4 px-2 w-fit">
-				<div
-					v-if="course.featured"
-					class="flex items-center space-x-1 text-xs text-ink-amber-3 bg-surface-white border border-outline-amber-1 px-2 py-0.5 rounded-md mr-1 mb-1"
-				>
-					<Star class="size-3 stroke-2" />
-					<span>
-						{{ __('courses.card.featured') }}
-					</span>
-				</div>
-				<div
-					v-if="course.tags"
-					v-for="tag in course.tags?.split(', ')"
-					class="text-xs border bg-surface-white text-ink-gray-9 px-2 py-0.5 rounded-md mb-1 mr-1"
-				>
-					{{ tag }}
-				</div>
-			</div> -->
+			<span class="lms-course-card__mono text-[10px] uppercase tracking-[0.12em] text-ink-gray-6">
+				{{ course.category }}
+			</span>
+			<GraduationCap
+				v-if="isCertified"
+				class="lms-course-card__brass h-3 w-3 shrink-0 stroke-2"
+			/>
+		</div>
+
+		<div class="relative h-[160px] w-full overflow-hidden">
+			<div
+				class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 ease-out group-hover:scale-[1.05] motion-reduce:transition-none"
+				:style="heroStyle"
+			></div>
+
 			<div
 				v-if="!course.image"
-				class="flex items-center justify-center text-white flex-1 font-extrabold my-auto px-5 text-center leading-6 h-full"
-				:class="
-					course.title.length > 32
-						? 'text-lg'
-						: course.title.length > 20
-						? 'text-xl'
-						: 'text-2xl'
-				"
+				class="relative flex h-full items-center justify-center px-6 text-center text-white"
 			>
-				{{ course.title }}
-			</div>
-		</div>
-		<div class="flex flex-col flex-auto p-4 border-x-2 border-b-2 rounded-b-md">
-			<div class="flex items-center justify-between mb-2">
-				<div v-if="course.lessons">
-					<Tooltip :text="__('courses.card.lessons')">
-						<span class="flex items-center">
-							<BookOpen class="h-4 w-4 stroke-1.5 mr-1" />
-							{{ course.lessons }}
-						</span>
-					</Tooltip>
-				</div>
-
-				<div v-if="course.enrollments">
-					<Tooltip :text="__('courses.card.enrolledStudents')">
-						<span class="flex items-center">
-							<Users class="h-4 w-4 stroke-1.5 mr-1" />
-							{{ formatAmount(course.enrollments) }}
-						</span>
-					</Tooltip>
-				</div>
-
-				<div v-if="course.rating">
-					<Tooltip :text="__('courses.card.averageRating')">
-						<span class="flex items-center">
-							<Star class="h-4 w-4 stroke-1.5 mr-1" />
-							{{ course.rating }}
-						</span>
-					</Tooltip>
-				</div>
-
-				<Tooltip v-if="course.featured" :text="__('courses.card.featured')">
-					<Award class="size-4 stroke-2 text-ink-amber-3" />
-				</Tooltip>
+				<span class="lms-course-card__serif leading-tight" :class="titleSizeOnHero">
+					{{ course.title }}
+				</span>
 			</div>
 
 			<div
+				v-if="course.featured"
+				:title="__('courses.card.featured')"
+				class="lms-course-card__seal absolute right-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-full shadow-sm"
+			>
+				<Award class="size-3.5 stroke-2" />
+			</div>
+
+			<button
+				v-if="user"
+				type="button"
+				:title="
+					isBookmarked
+						? __('courses.card.removeBookmark')
+						: __('courses.card.addBookmark')
+				"
+				class="absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-full bg-surface-white text-ink-gray-8 shadow-sm transition-colors hover:bg-surface-gray-2"
+				@click.stop.prevent="onToggleBookmark"
+			>
+				<BookmarkCheck v-if="isBookmarked" class="size-3.5 stroke-2" />
+				<Bookmark v-else class="size-3.5 stroke-2" />
+			</button>
+		</div>
+
+		<div class="flex flex-1 flex-col p-4">
+			<div
 				v-if="course.image"
-				class="font-semibold leading-6"
-				:class="course.title.length > 32 ? 'text-lg' : 'text-xl'"
+				class="lms-course-card__serif leading-6"
+				:class="titleSizeInBody"
 			>
 				{{ course.title }}
 			</div>
 
-			<div class="short-introduction text-sm">
+			<div class="short-introduction text-sm text-ink-gray-6">
 				{{ course.short_introduction }}
+			</div>
+
+			<div
+				v-if="course.duration_display || course.lessons || course.enrollments || course.rating"
+				class="lms-course-card__mono mb-1 mt-3 flex items-center gap-4 border-y border-outline-gray-1 py-2 text-[11px] text-ink-gray-6"
+			>
+				<Tooltip v-if="course.duration_display" :text="__('courses.card.duration')">
+					<span class="flex items-center gap-1">
+						<Clock class="h-3.5 w-3.5 stroke-1.5" />
+						{{ course.duration_display }}
+					</span>
+				</Tooltip>
+
+				<Tooltip v-if="course.lessons" :text="__('courses.card.lessons')">
+					<span class="flex items-center gap-1">
+						<BookOpen class="h-3.5 w-3.5 stroke-1.5" />
+						{{ course.lessons }}
+					</span>
+				</Tooltip>
+
+				<Tooltip
+					v-if="course.enrollments"
+					:text="__('courses.card.enrolledStudents')"
+				>
+					<span class="flex items-center gap-1">
+						<Users class="h-3.5 w-3.5 stroke-1.5" />
+						{{ formatAmount(course.enrollments) }}
+					</span>
+				</Tooltip>
+
+				<Tooltip v-if="course.rating" :text="__('courses.card.averageRating')">
+					<span class="flex items-center gap-1">
+						<Star class="h-3.5 w-3.5 stroke-1.5" />
+						{{ course.rating }}
+					</span>
+				</Tooltip>
 			</div>
 
 			<ProgressBar
@@ -98,11 +113,15 @@
 				:progress="course.membership.progress"
 			/>
 
-			<div v-if="user && course.membership" class="text-sm mt-2 mb-4">
-				{{ Math.ceil(course.membership.progress) }}% {{ __('courses.card.completed') }}
+			<div
+				v-if="user && course.membership"
+				class="lms-course-card__mono mb-4 mt-2 text-[11px] text-ink-gray-6"
+			>
+				{{ Math.ceil(course.membership.progress) }}%
+				{{ __('courses.card.completed') }}
 			</div>
 
-			<div class="flex items-center justify-between mt-auto">
+			<div class="mt-auto flex items-center justify-between pt-3">
 				<div class="flex avatar-group overlap">
 					<div
 						class="h-6 mr-1"
@@ -116,26 +135,30 @@
 					<CourseInstructors :instructors="course.instructors" />
 				</div>
 
-				<div class="flex items-center space-x-2">
-					<div v-if="course.paid_course" class="font-semibold">
-						{{ course.price }}
-					</div>
-
-					<Tooltip
-						v-if="course.paid_certificate || course.enable_certification"
-						:text="__('courses.card.getCertified')"
-					>
-						<GraduationCap class="size-5 stroke-1.5 text-ink-gray-7" />
-					</Tooltip>
+				<div
+					v-if="course.paid_course"
+					class="lms-course-card__mono text-sm font-medium text-ink-gray-8"
+				>
+					{{ course.price }}
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 <script setup>
-import { Award, BookOpen, GraduationCap, Star, Users } from 'lucide-vue-next'
+import {
+	Award,
+	Bookmark,
+	BookmarkCheck,
+	BookOpen,
+	Clock,
+	GraduationCap,
+	Star,
+	Users,
+} from 'lucide-vue-next'
+import { computed, ref, watch } from 'vue'
 import { sessionStore } from '@/stores/session'
-import { Tooltip } from 'frappe-ui'
+import { call, Tooltip, toast } from 'frappe-ui'
 import { theme } from '@/utils/theme'
 import { formatAmount } from '@/utils'
 import CourseInstructors from '@/components/CourseInstructors.vue'
@@ -151,36 +174,90 @@ const props = defineProps({
 	},
 })
 
+const isCertified = computed(
+	() => !!(props.course.paid_certificate || props.course.enable_certification),
+)
+
+const isBookmarked = ref(!!props.course?.is_bookmarked)
+
+// The v-for in Courses.vue has no :key, so Vue may reuse this component
+// instance for a different course when the list reloads (e.g. switching
+// tabs) — re-sync local state whenever the underlying course actually
+// changes, rather than only ever reading the prop once at setup.
+watch(
+	() => props.course?.name,
+	() => {
+		isBookmarked.value = !!props.course?.is_bookmarked
+	},
+)
+
+const onToggleBookmark = () => {
+	isBookmarked.value = !isBookmarked.value
+	call('lms.lms.doctype.lms_course_bookmark.lms_course_bookmark.toggle_bookmark', {
+		course: props.course.name,
+	}).catch(() => {
+		isBookmarked.value = !isBookmarked.value
+		toast.error(__('courses.card.bookmarkFailed'))
+	})
+}
+
+const titleSizeOnHero = computed(() => {
+	if (props.course.title.length > 32) return 'text-lg'
+	if (props.course.title.length > 20) return 'text-xl'
+	return 'text-2xl'
+})
+
+const titleSizeInBody = computed(() =>
+	props.course.title.length > 32 ? 'text-lg' : 'text-xl',
+)
+
 const getGradientColor = () => {
 	let color = props.course.card_gradient?.toLowerCase() || 'blue'
 	let colorMap = theme.backgroundColor[color]
-	return `linear-gradient(to top right, black, ${colorMap[400]})`
-	/* return `bg-gradient-to-br from-${color}-100 via-${color}-200 to-${color}-400` */
-	/* return `linear-gradient(to bottom right, ${colorMap[100]}, ${colorMap[400]})` */
-	/* return `radial-gradient(ellipse at 80% 20%, black 20%, ${colorMap[500]} 100%)` */
-	/* return `radial-gradient(ellipse at 30% 70%, black 50%, ${colorMap[500]} 100%)` */
-	/* return `radial-gradient(ellipse at 80% 20%, ${colorMap[100]} 0%, ${colorMap[300]} 50%, ${colorMap[500]} 100%)` */
-	/* return `conic-gradient(from 180deg at 50% 50%, ${colorMap[100]} 0%, ${colorMap[200]} 50%, ${colorMap[400]} 100%)` */
-	/* return `linear-gradient(135deg, ${colorMap[100]}, ${colorMap[300]}), linear-gradient(120deg, rgba(255,255,255,0.4) 0%, transparent 60%) ` */
-	/* return `radial-gradient(circle at 20% 30%, ${colorMap[100]} 0%, transparent 40%),
-		radial-gradient(circle at 80% 40%, ${colorMap[200]} 0%, transparent 50%),
-		linear-gradient(135deg, ${colorMap[300]} 0%, ${colorMap[400]} 100%);` */
-}
-</script>
-<style>
-.course-card-pills {
-	background: #ffffff;
-	margin-left: 0;
-	margin-right: 0.5rem;
-	padding: 3.5px 8px;
-	font-size: 11px;
-	text-align: center;
-	letter-spacing: 0.011em;
-	text-transform: uppercase;
-	font-weight: 600;
-	width: fit-content;
+	return `radial-gradient(ellipse 140% 100% at 100% 0%, ${colorMap[300]} 0%, ${colorMap[600]} 45%, #16222e 100%)`
 }
 
+const heroStyle = computed(() => {
+	if (props.course.image) {
+		return { backgroundImage: `url('${encodeURI(props.course.image)}')` }
+	}
+	return { backgroundImage: getGradientColor() }
+})
+</script>
+<style scoped>
+.lms-course-card__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-course-card__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+	font-variant-numeric: tabular-nums;
+}
+
+.lms-course-card__seal {
+	background: #efe8d8;
+	color: #8a6a22;
+}
+
+.lms-course-card__brass {
+	color: #9c7a3c;
+}
+</style>
+<style>
 .avatar-group {
 	display: inline-flex;
 	align-items: center;

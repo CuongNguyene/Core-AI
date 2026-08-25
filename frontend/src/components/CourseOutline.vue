@@ -9,8 +9,12 @@
 			}"
 		>
 			<div
-				class="font-semibold text-lg leading-5 text-ink-gray-9"
-				:class="{ 'font-medium text-p-base': allowEdit }"
+				class="leading-5 text-ink-gray-9"
+				:class="
+					allowEdit
+						? 'font-medium text-p-base'
+						: 'lms-course-outline__serif text-lg'
+				"
 			>
 				{{ __(title) }}
 			</div>
@@ -405,3 +409,16 @@ const isActiveLesson = (lessonNumber) => {
 	)
 }
 </script>
+<style scoped>
+.lms-course-outline__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
 	<div v-if="resources.data?.length || canManage">
 		<div class="flex items-center justify-between mb-4">
-			<div class="text-lg font-semibold text-ink-gray-9">
+			<div class="lms-course-resources__serif text-lg text-ink-gray-9">
 				{{ title || __('courses.resources.title') }}
 			</div>
 			<FileUploader v-if="canManage" :validateFile="validateFile" @success="onUploaded">
@@ -138,3 +138,16 @@ const deleteResource = (name) => {
 	)
 }
 </script>
+<style scoped>
+.lms-course-resources__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

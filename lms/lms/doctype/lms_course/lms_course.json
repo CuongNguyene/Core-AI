@@ -21,6 +21,7 @@
   "column_break_3",
   "instructors",
   "category",
+  "duration",
   "status",
   "column_break_htgn",
   "image",
@@ -259,6 +260,12 @@
    "fieldtype": "Link",
    "label": "Category",
    "options": "LMS Category"
+  },
+  {
+   "description": "Estimated total time to complete, in minutes",
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration (minutes)"
   },
   {
    "fieldname": "tab_4_tab",

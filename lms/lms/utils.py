@@ -1030,6 +1030,7 @@ def get_courses(filters=None, start=0):
 		courses = get_featured_courses(filters, or_filters, fields) + courses
 
 	courses = get_enrollment_details(courses)
+	courses = get_bookmark_details(courses)
 	courses = get_course_card_details(courses)
 	return courses
 
@@ -1037,6 +1038,7 @@ def get_courses(filters=None, start=0):
 def get_course_card_details(courses):
 	for course in courses:
 		course.instructors = get_instructors("LMS Course", course.name)
+		course.duration_display = format_duration(course.get("duration"))
 
 		if course.paid_course and course.published == 1:
 			course.amount, course.currency = check_multicurrency(
@@ -1045,6 +1047,18 @@ def get_course_card_details(courses):
 			course.price = fmt_money(course.amount, 0, course.currency)
 
 	return courses
+
+
+def format_duration(minutes):
+	if not minutes:
+		return None
+
+	hours, minutes = divmod(int(minutes), 60)
+	if hours and minutes:
+		return _("{0}h {1}m").format(hours, minutes)
+	if hours:
+		return _("{0}h").format(hours)
+	return _("{0}m").format(minutes)
 
 
 def get_course_or_filters(filters):
@@ -1075,6 +1089,13 @@ def update_course_filters(filters):
 		)
 		filters.update({"name": ["in", created_courses]})
 		del filters["created"]
+
+	if filters.get("bookmarked"):
+		bookmarked_courses = frappe.get_all(
+			"LMS Course Bookmark", {"member": frappe.session.user}, pluck="course"
+		)
+		filters.update({"name": ["in", bookmarked_courses]})
+		del filters["bookmarked"]
 
 	if filters.get("live"):
 		filters.update({"featured": 0})
@@ -1115,6 +1136,19 @@ def get_enrollment_details(courses):
 	return courses
 
 
+def get_bookmark_details(courses):
+	if frappe.session.user == "Guest":
+		return courses
+
+	bookmarked_courses = frappe.get_all(
+		"LMS Course Bookmark", {"member": frappe.session.user}, pluck="course"
+	)
+	for course in courses:
+		course.is_bookmarked = course.name in bookmarked_courses
+
+	return courses
+
+
 def get_featured_courses(filters, or_filters, fields):
 	filters.update({"featured": 1})
 	featured_courses = frappe.get_all(
@@ -1141,6 +1175,7 @@ def get_course_fields():
 		"disable_self_learning",
 		"published_on",
 		"category",
+		"duration",
 		"status",
 		"paid_course",
 		"paid_certificate",
@@ -1173,6 +1208,7 @@ def get_course_details(course):
 			"disable_self_learning",
 			"published_on",
 			"category",
+			"duration",
 			"status",
 			"paid_course",
 			"paid_certificate",
@@ -1189,6 +1225,7 @@ def get_course_details(course):
 	)
 
 	course_details.instructors = get_instructors("LMS Course", course_details.name)
+	course_details.duration_display = format_duration(course_details.get("duration"))
 	# course_details.is_instructor = is_instructor(course_details.name)
 	if course_details.paid_course or course_details.paid_certificate:
 		"""course_details.course_price, course_details.currency = check_multicurrency(
@@ -1199,12 +1236,19 @@ def get_course_details(course):
 	if frappe.session.user == "Guest":
 		course_details.membership = None
 		course_details.is_instructor = False
+		course_details.is_bookmarked = False
 	else:
 		course_details.membership = frappe.db.get_value(
 			"LMS Enrollment",
 			{"member": frappe.session.user, "course": course_details.name},
 			["name", "course", "current_lesson", "progress", "member"],
 			as_dict=1,
+		)
+		course_details.is_bookmarked = bool(
+			frappe.db.exists(
+				"LMS Course Bookmark",
+				{"member": frappe.session.user, "course": course_details.name},
+			)
 		)
 
 	if course_details.membership and course_details.membership.current_lesson:
@@ -2429,6 +2473,51 @@ def get_popular_courses():
 		limit=3,
 		pluck="name",
 	)
+
+
+@frappe.whitelist()
+def get_my_bookmarked_courses():
+	if frappe.session.user == "Guest":
+		return []
+
+	courses = frappe.get_all(
+		"LMS Course Bookmark",
+		{"member": frappe.session.user},
+		order_by="modified desc",
+		pluck="course",
+	)
+	return [get_course_details(course) for course in courses]
+
+
+@frappe.whitelist()
+def get_courses_in_progress():
+	if frappe.session.user == "Guest":
+		return []
+
+	courses = frappe.get_all(
+		"LMS Enrollment",
+		{"member": frappe.session.user, "progress": [">", 0]},
+		or_filters={"progress": ["<", 100]},
+		order_by="modified desc",
+		limit=6,
+		pluck="course",
+	)
+	return [get_course_details(course) for course in courses]
+
+
+@frappe.whitelist()
+def get_courses_not_started():
+	if frappe.session.user == "Guest":
+		return []
+
+	courses = frappe.get_all(
+		"LMS Enrollment",
+		{"member": frappe.session.user, "progress": 0},
+		order_by="modified desc",
+		limit=6,
+		pluck="course",
+	)
+	return [get_course_details(course) for course in courses]
 
 
 @frappe.whitelist()

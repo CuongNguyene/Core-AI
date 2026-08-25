@@ -45,6 +45,9 @@
 		"student": {
 			"myCourses": "Khoá học của tôi",
 			"popularCourses": "Khoá học phổ biến của chúng tôi",
+			"coursesInProgress": "Khoá học đang học",
+			"coursesToBeCompleted": "Khoá học cần hoàn thành",
+			"bookmarkedCourses": "Khoá học đã lưu",
 			"myBatches": "Lớp học của tôi",
 			"upcomingBatches": "Lớp học sắp diễn ra của chúng tôi"
 		},
@@ -61,6 +64,27 @@
 			"loading": "Đang tải lịch...",
 			"noEvents": "Không có lịch trình",
 			"clearSelection": "Bỏ chọn"
+		},
+		"leaderboard": {
+			"title": "Bảng xếp hạng",
+			"month": "Tháng này",
+			"year": "Năm nay",
+			"allTime": "Toàn thời gian",
+			"hoursSuffix": "h",
+			"loading": "Đang tải bảng xếp hạng...",
+			"empty": "Chưa có hoạt động học tập nào trong giai đoạn này"
+		},
+		"announcement": {
+			"label": "Thông báo"
+		},
+		"guidelines": {
+			"title": "Hướng dẫn",
+			"description": "Hướng dẫn sử dụng nền tảng",
+			"linkLabel": "Xem hướng dẫn"
+		},
+		"footer": {
+			"itDepartment": "Phòng IT",
+			"trainingDepartment": "Phòng Đào tạo (PĐT)"
 		}
 	},
 	"courses": {
@@ -81,11 +105,15 @@
 		},
 		"card": {
 			"featured": "Nổi bật",
+			"duration": "Thời lượng",
 			"lessons": "Bài học",
 			"enrolledStudents": "Học viên đã đăng ký",
 			"averageRating": "Đánh giá trung bình",
 			"completed": "hoàn thành",
-			"getCertified": "Nhận chứng chỉ khi hoàn thành"
+			"getCertified": "Nhận chứng chỉ khi hoàn thành",
+			"addBookmark": "Lưu khoá học",
+			"removeBookmark": "Bỏ lưu",
+			"bookmarkFailed": "Không thể cập nhật lưu khoá học"
 		},
 		"cardOverlay": {
 			"continueLearning": "Tiếp tục học",
@@ -104,7 +132,11 @@
 			"timeFormatHours": "{0} giờ {1} phút",
 			"timeFormatMinutes": "{0} phút",
 			"needLoginFirst": "Vui lòng đăng nhập để đăng ký khoá học này",
-			"enrolledSuccess": "Đăng ký thành công"
+			"enrolledSuccess": "Đăng ký thành công",
+			"duration": "Thời lượng",
+			"saveForLater": "Lưu để học sau",
+			"saved": "Đã lưu",
+			"bookmarkFailed": "Không thể cập nhật lưu khoá học"
 		},
 		"certification": {
 			"title": "Chứng chỉ",
@@ -138,6 +170,8 @@
 			"title": "Tiêu đề",
 			"enterTitle": "Nhập tiêu đề",
 			"category": "Danh mục",
+			"duration": "Thời lượng (phút)",
+			"durationDescription": "Thời gian ước tính để hoàn thành, tính bằng phút",
 			"selectCategory": "Chọn danh mục",
 			"instructors": "Giảng viên",
 			"tags": "Thẻ",
@@ -203,6 +237,7 @@
 			"created": "Đã tạo",
 			"unpublished": "Chưa xuất bản",
 			"enrolled": "Đã đăng ký",
+			"bookmarked": "Đã lưu",
 			"courses": "Khoá học"
 		},
 		"outline": {
@@ -591,6 +626,7 @@
 		},
 		"noIntroduction": "Chưa có giới thiệu",
 		"achievements": "Thành tích",
+		"bookmarkedCourses": "Khoá học đã lưu",
 		"issuedOn": "Cấp ngày",
 		"shareOn": "Chia sẻ trên",
 		"settings": "Cài đặt",

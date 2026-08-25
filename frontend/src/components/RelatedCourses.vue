@@ -1,7 +1,7 @@
 <template>
 	<div v-if="relatedCourses.data?.length" class="mt-10">
 		<div class="flex items-center justify-between mb-6">
-			<div class="text-2xl font-semibold text-ink-gray-9">
+			<div class="lms-related-courses__serif text-2xl text-ink-gray-9">
 				{{ __('courses.related.title') }}
 			</div>
 		</div>
@@ -50,3 +50,16 @@ watch(
 	}
 )
 </script>
+<style scoped>
+.lms-related-courses__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
