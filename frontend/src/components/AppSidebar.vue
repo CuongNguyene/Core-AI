@@ -4,7 +4,7 @@
 		:class="sidebarStore.isSidebarCollapsed ? 'w-14' : 'w-56'"
 	>
 		<button
-			class="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-40 items-center justify-center bg-white border border-gray-200 shadow-md p-1 rounded-full hover:bg-gray-50 text-gray-600 transition-all hover:scale-110 active:scale-95"
+			class="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-40 items-center justify-center bg-surface-white border border-outline-gray-2 shadow-sm p-1 rounded-full hover:bg-surface-gray-1 text-ink-gray-6 transition-all hover:scale-110 active:scale-95"
 			@click="toggleSidebar()"
 		>
 			<ChevronLeft v-if="!sidebarStore.isSidebarCollapsed" class="h-3.5 w-3.5" />

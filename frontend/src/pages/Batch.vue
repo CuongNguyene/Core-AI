@@ -2,7 +2,7 @@
 	<DetailSkeleton v-if="batch.loading && !batch.data" tabs />
 	<div v-else-if="user.data?.is_moderator || isStudent || isInstructor" class="">
 		<header
-			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
+			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 		>
 			<div class="min-w-0 flex-1 overflow-hidden">
 				<Breadcrumbs class="h-7" :items="breadcrumbs" />

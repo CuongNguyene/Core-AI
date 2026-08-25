@@ -26,7 +26,7 @@
 								: 'opacity-100 ml-2 w-auto'
 						"
 					>
-						<div class="text-base font-medium text-ink-gray-9 leading-none">
+						<div class="lms-sidebar__serif text-base leading-none text-ink-gray-9">
 							<span
 								v-if="
 									branding.data?.app_name && branding.data?.app_name != 'Frappe'
@@ -38,7 +38,7 @@
 						</div>
 						<div
 							v-if="userResource.data"
-							class="mt-1 text-sm text-ink-gray-7 leading-none"
+							class="mt-1.5 text-sm text-ink-gray-7 leading-none"
 						>
 							{{ convertToTitleCase(userResource.data?.full_name) }}
 						</div>
@@ -257,3 +257,16 @@ const loginToFrappeCloud = () => {
 	window.open(`${frappeCloudBaseEndpoint}${redirect_to}`, '_blank')
 }
 </script>
+<style scoped>
+.lms-sidebar__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
