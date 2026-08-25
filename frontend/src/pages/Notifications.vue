@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+		class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 		<div class="flex items-center space-x-2">
@@ -21,7 +21,22 @@
 			/>
 		</div>
 	</header>
-	<div class="w-full md:w-3/4 mx-auto px-5 pt-6 divide-y">
+	<div class="w-full md:w-3/4 mx-auto px-5 pt-6">
+		<div class="mb-4 border-b border-outline-gray-2 pb-4">
+			<div
+				class="lms-notifications__mono mb-1 text-[11px] uppercase tracking-[0.14em] text-ink-gray-5"
+			>
+				{{ __('notifications.title') }}
+			</div>
+			<div class="lms-notifications__serif text-[1.75rem] leading-none text-ink-gray-9">
+				{{
+					activeTab === 'Unread'
+						? __('notifications.unread')
+						: __('notifications.read')
+				}}
+			</div>
+		</div>
+		<div class="divide-y">
 		<div
 			v-if="notifications?.length"
 			v-for="log in notifications"
@@ -54,6 +69,7 @@
 		</div>
 		<div v-else class="text-ink-gray-5">
 			{{ __('notifications.nothingToSeeHere') }}
+		</div>
 		</div>
 	</div>
 </template>
@@ -163,6 +179,29 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-notifications__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-notifications__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>
 <style>
 .notification strong {
 	font-weight: 400;
