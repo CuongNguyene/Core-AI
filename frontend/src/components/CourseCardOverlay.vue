@@ -120,6 +120,25 @@
 						</span>
 					</Button>
 				</router-link>
+				<Button
+					v-if="user.data"
+					variant="subtle"
+					size="md"
+					class="w-full mt-2"
+					@click="onToggleBookmark"
+				>
+					<template #prefix>
+						<BookmarkCheck v-if="isBookmarked" class="size-4 stroke-1.5" />
+						<Bookmark v-else class="size-4 stroke-1.5" />
+					</template>
+					<span>
+						{{
+							isBookmarked
+								? __('courses.cardOverlay.saved')
+								: __('courses.cardOverlay.saveForLater')
+						}}
+					</span>
+				</Button>
 			</div>
 			<div class="space-y-4">
 				<div
@@ -127,6 +146,12 @@
 					:class="{ 'mt-8': !readOnlyMode }"
 				>
 					{{ __('courses.cardOverlay.thisCourseHas') }}
+				</div>
+				<div v-if="course.data.duration_display" class="flex items-center text-ink-gray-9">
+					<Clock class="h-4 w-4 stroke-1.5" />
+					<span class="ml-2">
+						{{ course.data.duration_display }} {{ __('courses.cardOverlay.duration') }}
+					</span>
 				</div>
 				<div class="flex items-center text-ink-gray-9">
 					<BookOpen class="h-4 w-4 stroke-1.5" />
@@ -180,8 +205,11 @@
 </template>
 <script setup>
 import {
+	Bookmark,
+	BookmarkCheck,
 	BookOpen,
 	BookText,
+	Clock,
 	CreditCard,
 	GraduationCap,
 	Pencil,
@@ -189,7 +217,7 @@ import {
 	TrendingUp,
 	Users,
 } from 'lucide-vue-next'
-import { computed, inject, ref } from 'vue'
+import { computed, inject, ref, watch } from 'vue'
 import { Badge, Button, call, createResource, toast } from 'frappe-ui'
 import { formatAmount } from '@/utils/'
 import { useTelemetry } from '@/telemetry'
@@ -311,5 +339,24 @@ const fetchCertificate = () => {
 
 const showProgressSummary = () => {
 	showProgressModal.value = true
+}
+
+const isBookmarked = ref(!!props.course.data?.is_bookmarked)
+
+watch(
+	() => props.course.data?.name,
+	() => {
+		isBookmarked.value = !!props.course.data?.is_bookmarked
+	},
+)
+
+const onToggleBookmark = () => {
+	isBookmarked.value = !isBookmarked.value
+	call('lms.lms.doctype.lms_course_bookmark.lms_course_bookmark.toggle_bookmark', {
+		course: props.course.data.name,
+	}).catch(() => {
+		isBookmarked.value = !isBookmarked.value
+		toast.error(__('courses.card.bookmarkFailed'))
+	})
 }
 </script>

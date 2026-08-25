@@ -19,16 +19,24 @@
 		</router-link>
 	</header>
 	<div class="p-5 pb-10">
-		<div
-			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
-		>
-			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('courses.list.allCourses') }}
-			</div>
+		<div class="mb-6 border-b border-outline-gray-2 pb-4">
 			<div
-				class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
+				class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-end justify-between"
 			>
-				<TabButtons :buttons="courseTabs" v-model="currentTab" class="w-fit" />
+				<div>
+					<div
+						class="lms-courses__mono mb-1 text-[11px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
+						{{ __('courses.list.courses') }}
+					</div>
+					<div class="lms-courses__serif text-[1.75rem] leading-none text-ink-gray-9">
+						{{ __('courses.list.allCourses') }}
+					</div>
+				</div>
+				<div
+					class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
+				>
+					<TabButtons :buttons="courseTabs" v-model="currentTab" class="w-fit" />
 
 				<div class="grid grid-cols-2 gap-2">
 					<FormControl
@@ -56,6 +64,7 @@
 				/>
 			</div>
 		</div>
+	</div>
 		<div
 			v-if="courses.list.loading && !courses.data?.length"
 			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
@@ -221,10 +230,16 @@ const updateTabFilter = () => {
 
 	if (currentTab.value == 'Enrolled' && user.data?.is_student) {
 		filters.value['enrolled'] = 1
+		delete filters.value['bookmarked']
+		delete filters.value['published']
+	} else if (currentTab.value == 'Bookmarked' && user.data) {
+		filters.value['bookmarked'] = 1
+		delete filters.value['enrolled']
 		delete filters.value['published']
 	} else {
 		delete filters.value['published']
 		delete filters.value['enrolled']
+		delete filters.value['bookmarked']
 
 		if (currentTab.value == 'Live') {
 			filters.value['published'] = 1
@@ -247,7 +262,12 @@ const updateTabFilter = () => {
 }
 
 const updateStudentFilter = () => {
-	if (!user.data || (user.data?.is_student && currentTab.value != 'Enrolled')) {
+	if (
+		!user.data ||
+		(user.data?.is_student &&
+			currentTab.value != 'Enrolled' &&
+			currentTab.value != 'Bookmarked')
+	) {
 		filters.value['published'] = 1
 	}
 }
@@ -308,6 +328,9 @@ const courseTabs = computed(() => {
 	} else if (user.data) {
 		tabs.push({ label: __('courses.list.enrolled'), value: 'Enrolled' })
 	}
+	if (user.data) {
+		tabs.push({ label: __('courses.list.bookmarked'), value: 'Bookmarked' })
+	}
 	return tabs
 })
 
@@ -325,3 +348,26 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-courses__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-courses__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

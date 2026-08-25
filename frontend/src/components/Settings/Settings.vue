@@ -391,6 +391,52 @@ const tabsStructure = computed(() => {
 					],
 				},
 				{
+					label: 'Home Page',
+					icon: 'Home',
+					description:
+						'Manage the announcement banner, guidelines link, and footer contact details shown on the Home page',
+					fields: [
+						{
+							label: 'Announcement',
+							name: 'announcement_content',
+							type: 'textarea',
+							rows: 3,
+							description:
+								'Shown as a banner on the Home page when set. Clear it to hide the banner.',
+						},
+						{
+							label: 'Guidelines URL',
+							name: 'guidelines_url',
+							type: 'text',
+							description:
+								'Link to your guidelines/usage document. Leave blank to hide the Guidelines card.',
+						},
+						{
+							label: 'Guidelines Link Label',
+							name: 'guidelines_label',
+							type: 'text',
+							description: 'Optional - defaults to a generic label if left blank',
+						},
+						{
+							type: 'Column Break',
+						},
+						{
+							label: 'IT Department Contact',
+							name: 'it_department_contact',
+							type: 'textarea',
+							rows: 3,
+							description: 'Shown in the Home page footer. Leave blank to hide.',
+						},
+						{
+							label: 'Training Department (PĐT) Contact',
+							name: 'training_department_contact',
+							type: 'textarea',
+							rows: 3,
+							description: 'Shown in the Home page footer. Leave blank to hide.',
+						},
+					],
+				},
+				{
 					label: 'Sidebar',
 					icon: 'PanelLeftIcon',
 					description: 'Choose the items you want to show in the sidebar',

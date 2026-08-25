@@ -6,6 +6,11 @@
 			size: '5xl',
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-progress-summary__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('courses.progress.summary') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div
 				class="flex flex-col-reverse md:flex-row justify-between md:space-x-10 text-base mt-10"
@@ -69,8 +74,15 @@
 														/>
 													</div>
 												</template>
-												<div>
-													{{ row[column.key].toString() }}
+												<div
+													:class="
+														column.key === 'progress'
+															? 'lms-progress-summary__mono'
+															: ''
+													"
+												>
+													{{ row[column.key].toString()
+													}}{{ column.key === 'progress' ? '%' : '' }}
 												</div>
 											</ListRowItem>
 										</template>
@@ -229,3 +241,27 @@ const progressColumns = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-progress-summary__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-progress-summary__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+	font-variant-numeric: tabular-nums;
+}
+</style>

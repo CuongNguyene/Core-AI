@@ -24,16 +24,26 @@
 				</header>
 				<div class="mt-5 mb-5">
 					<div class="px-5 md:px-10 pb-5 mb-5 space-y-5 border-b">
-						<div class="text-lg font-semibold mb-4">
+						<div class="lms-course-form__serif text-lg mb-4">
 							{{ __('courses.form.details') }}
 						</div>
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+						<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 							<FormControl
 								v-model="course.title"
 								:label="__('courses.form.title')"
 								:required="true"
 								:placeholder="__('courses.form.enterTitle')"
+								class="md:col-span-2"
 							/>
+							<FormControl
+								type="number"
+								:min="0"
+								v-model="course.duration"
+								:label="__('courses.form.duration')"
+								:description="__('courses.form.durationDescription')"
+							/>
+						</div>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 							<Link
 								doctype="LMS Category"
 								v-model="course.category"
@@ -143,7 +153,7 @@
 					</div>
 
 					<div class="px-5 md:px-10 pb-5 mb-5 space-y-5 border-b">
-						<div class="text-lg font-semibold">
+						<div class="lms-course-form__serif text-lg">
 							{{ __('courses.form.settings') }}
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -203,7 +213,7 @@
 					</div>
 
 					<div class="px-5 md:px-10 pb-5 mb-5 space-y-5 border-b">
-						<div class="text-lg font-semibold">
+						<div class="lms-course-form__serif text-lg">
 							{{ __('courses.form.aboutCourse') }}
 						</div>
 						<FormControl
@@ -252,7 +262,7 @@
 					</div>
 
 					<div class="px-5 md:px-10 pb-5 space-y-5 border-b">
-						<div class="text-lg font-semibold mt-5">
+						<div class="lms-course-form__serif text-lg mt-5">
 							<!-- {{ __('Pricing and Certification') }} -->
 							{{ __('courses.form.certification') }}
 						</div>
@@ -410,6 +420,7 @@ const course = reactive({
 	card_gradient: '',
 	tags: '',
 	category: '',
+	duration: '',
 	published: false,
 	published_on: '',
 	featured: false,
@@ -729,3 +740,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-course-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

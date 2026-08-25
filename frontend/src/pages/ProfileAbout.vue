@@ -29,6 +29,19 @@
 			{{ __('profile.noIntroduction') }}
 		</div>
 	</div>
+	<div class="mt-7 mb-10" v-if="isSessionUser() && bookmarkedCourses.data?.length">
+		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
+			{{ __('profile.bookmarkedCourses') }}
+		</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+			<router-link
+				v-for="course in bookmarkedCourses.data"
+				:to="{ name: 'CourseDetail', params: { courseName: course.name } }"
+			>
+				<CourseCard :course="course" />
+			</router-link>
+		</div>
+	</div>
 	<div class="mt-7 mb-10" v-if="badges.data?.length">
 		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
 			{{ __('profile.achievements') }}
@@ -114,14 +127,16 @@
 	</div>
 </template>
 <script setup>
-import { inject } from 'vue'
+import { inject, watch } from 'vue'
 import { createResource, Popover, Button } from 'frappe-ui'
 import { X, LinkedinIcon, Twitter } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import { decodeEntities } from '@/utils'
 import DOMPurify from 'dompurify'
+import CourseCard from '@/components/CourseCard.vue'
 
 const dayjs = inject('$dayjs')
+const $user = inject('$user')
 const { branding } = sessionStore()
 
 const props = defineProps({
@@ -130,6 +145,29 @@ const props = defineProps({
 		required: true,
 	},
 })
+
+// Bookmarks are a private "save for later" list, so only ever show this
+// section to the profile's own owner, never to visitors viewing someone
+// else's profile.
+const isSessionUser = () => {
+	return $user.data?.email === props.profile.data?.email
+}
+
+const bookmarkedCourses = createResource({
+	url: 'lms.lms.utils.get_my_bookmarked_courses',
+	auto: false,
+})
+
+// props.profile is the same reactive resource the parent Profile.vue is
+// still loading asynchronously, so isSessionUser() isn't reliable until
+// its data actually arrives - re-check once it does, rather than only at
+// this component's own setup time.
+watch(
+	() => props.profile.data,
+	() => {
+		if (isSessionUser()) bookmarkedCourses.reload()
+	},
+)
 
 const badges = createResource({
 	url: 'frappe.client.get_list',
