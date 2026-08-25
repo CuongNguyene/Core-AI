@@ -305,7 +305,9 @@ router.beforeEach(async (to, from, next) => {
 
 		await allowGuestAccess.promise
 		if (!allowGuestAccess.data) {
-			window.location.href = '/login'
+			window.location.href = `/login?redirect-to=${encodeURIComponent(
+				'/lms' + to.fullPath,
+			)}`
 			return
 		}
 	}

@@ -239,7 +239,9 @@ const userDropdownOptions = computed(() => {
 					icon: LogIn,
 					label: __('sidebar.logIn'),
 					onClick: () => {
-						window.location.href = '/login'
+						window.location.href = `/login?redirect-to=${encodeURIComponent(
+							window.location.pathname + window.location.search,
+						)}`
 					},
 					condition: () => {
 						return !isLoggedIn
