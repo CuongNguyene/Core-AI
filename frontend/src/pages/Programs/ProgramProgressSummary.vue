@@ -2,10 +2,14 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('programs.progressSummary.title').format(programName),
 			size: '2xl',
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-program-progress__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('programs.progressSummary.title').format(programName) }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="text-base">
 				<div class="flex items-center justify-between space-x-4 mb-4">
@@ -135,3 +139,16 @@ const progressColumns = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-program-progress__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

@@ -993,6 +993,11 @@
 	},
 	"programs": {
 		"completed": "hoàn thành",
+		"card": {
+			"sequentialTrack": "Lộ trình tuần tự",
+			"openTrack": "Lộ trình tự do",
+			"draft": "Bản nháp"
+		},
 		"list": {
 			"new": "Mới",
 			"countLabel": "{0} {1}",

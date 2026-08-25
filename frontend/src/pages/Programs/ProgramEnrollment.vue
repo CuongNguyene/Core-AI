@@ -6,7 +6,10 @@
 		}"
 	>
 		<template #body-title>
-			<div v-if="program.data" class="text-xl font-semibold text-ink-gray-9">
+			<div
+				v-if="program.data"
+				class="lms-program-enrollment__serif text-xl text-ink-gray-9"
+			>
 				{{ __('programs.enrollment.title').format(program.data?.name) }}
 			</div>
 		</template>
@@ -48,7 +51,7 @@
 							v-for="course in program.data.courses"
 							class="flex flex-col border p-2 rounded-md h-full"
 						>
-							<div class="font-semibold leading-5 mb-2">
+							<div class="lms-program-enrollment__serif leading-5 mb-2">
 								{{ course.title }}
 							</div>
 
@@ -57,7 +60,7 @@
                             </div> -->
 
 							<div
-								class="flex items-center space-x-5 text-sm text-ink-gray-5 mb-8"
+								class="lms-program-enrollment__mono flex items-center space-x-5 text-sm text-ink-gray-5 mb-8"
 							>
 								<Tooltip :text="__('programs.enrollment.lessons')">
 									<span class="flex items-center space-x-1">
@@ -155,3 +158,27 @@ const enrollInProgram = (close: () => void) => {
 		})
 }
 </script>
+<style scoped>
+.lms-program-enrollment__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-program-enrollment__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+	font-variant-numeric: tabular-nums;
+}
+</style>

@@ -993,6 +993,11 @@
 	},
 	"programs": {
 		"completed": "completed",
+		"card": {
+			"sequentialTrack": "Sequential Track",
+			"openTrack": "Open Track",
+			"draft": "Draft"
+		},
 		"list": {
 			"new": "New",
 			"countLabel": "{0} {1}",

@@ -7,7 +7,7 @@
 	>
 		<template #body-title>
 			<div class="flex items-center justify-between space-x-2 text-base w-full">
-				<div class="text-xl font-semibold text-ink-gray-9">
+				<div class="lms-program-form__serif text-xl text-ink-gray-9">
 					{{
 						programName === 'new' ? __('programs.form.createProgram') : __('programs.form.editProgram')
 					}}
@@ -50,7 +50,7 @@
 
 				<div class="pb-5">
 					<div class="flex items-center justify-between mt-5 mb-4">
-						<div class="text-lg font-semibold text-ink-gray-9">
+						<div class="lms-program-form__serif text-lg text-ink-gray-9">
 							{{ __('programs.form.courses') }}
 						</div>
 						<Button @click="openForm('course')">
@@ -111,7 +111,7 @@
 
 				<div>
 					<div class="flex items-center justify-between mt-5 mb-4">
-						<div class="text-lg font-semibold text-ink-gray-9">
+						<div class="lms-program-form__serif text-lg text-ink-gray-9">
 							{{ __('programs.form.members') }}
 						</div>
 
@@ -603,3 +603,16 @@ const memberColumns = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-program-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
