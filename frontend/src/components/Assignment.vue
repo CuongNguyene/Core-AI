@@ -8,7 +8,7 @@
 			class="border-r p-5 overflow-y-auto h-[calc(100vh-3.2rem)]"
 			:class="{ 'h-full': !showTitle }"
 		>
-			<div v-if="showTitle" class="text-lg font-semibold mb-5 text-ink-gray-9">
+			<div v-if="showTitle" class="lms-assignment__serif text-lg mb-5 text-ink-gray-9">
 				<div v-if="submissionName === 'new'">
 					{{ __('assignments.submissionBy') }} {{ user.data?.full_name }}
 				</div>
@@ -16,8 +16,10 @@
 					{{ __('assignments.submissionBy') }} {{ submissionResource.doc?.member_name }}
 				</div>
 			</div>
-			<div class="text-sm text-ink-gray-7 font-medium mb-2">
-				{{ __('assignments.questionLabel') }}:
+			<div
+				class="lms-assignment__mono mb-2 border-b border-outline-gray-2 pb-2 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
+			>
+				{{ __('assignments.questionLabel') }}
 			</div>
 			<div
 				v-html="assignment.data.question"
@@ -27,8 +29,12 @@
 
 		<div class="flex flex-col">
 			<div class="p-5">
-				<div class="flex items-center justify-between mb-4">
-					<div class="font-semibold text-ink-gray-9">
+				<div
+					class="mb-4 flex items-center justify-between border-b border-outline-gray-2 pb-2"
+				>
+					<div
+						class="lms-assignment__mono text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
 						{{ __('assignments.submission') }}
 					</div>
 					<div class="flex items-center space-x-2">
@@ -144,8 +150,10 @@
 					"
 					class="mt-8 p-3 bg-surface-blue-2 rounded-md"
 				>
-					<div class="text-sm text-ink-gray-5 font-medium mb-2">
-						{{ __('assignments.commentsByEvaluator') }}:
+					<div
+						class="lms-assignment__mono mb-2 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
+						{{ __('assignments.commentsByEvaluator') }}
 					</div>
 					<div
 						class="leading-5 text-ink-gray-9"
@@ -155,7 +163,9 @@
 
 				<!-- Grading -->
 				<div v-if="canGradeSubmission" class="mt-8 space-y-4">
-					<div class="font-semibold mb-2 text-ink-gray-9">
+					<div
+						class="lms-assignment__mono border-b border-outline-gray-2 pb-2 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
 						{{ __('assignments.grading') }}
 					</div>
 					<FormControl
@@ -479,3 +489,26 @@ const showUploader = () => {
 	return ['PDF', 'Image', 'Document'].includes(assignment.data?.type)
 }
 </script>
+<style scoped>
+.lms-assignment__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-assignment__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

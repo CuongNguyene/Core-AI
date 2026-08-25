@@ -2,7 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('batches.studentModal.addStudent'),
 			size: 'sm',
 			actions: [
 				{
@@ -13,6 +12,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-student-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('batches.studentModal.addStudent') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<Link
@@ -84,3 +88,16 @@ const addStudent = (close) => {
 	)
 }
 </script>
+<style scoped>
+.lms-student-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

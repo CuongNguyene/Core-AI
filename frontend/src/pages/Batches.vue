@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="sticky flex items-center justify-between top-0 z-10 border-b bg-surface-white px-3 py-2.5 sm:px-5"
+		class="sticky flex items-center justify-between top-0 z-10 border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 		<router-link
@@ -19,16 +19,24 @@
 		</router-link>
 	</header>
 	<div class="p-5 pb-10">
-		<div
-			class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center justify-between mb-5"
-		>
-			<div class="text-lg text-ink-gray-9 font-semibold">
-				{{ __('batches.list.allBatches') }}
-			</div>
+		<div class="mb-6 border-b border-outline-gray-2 pb-4">
 			<div
-				class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
+				class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-end justify-between"
 			>
-				<TabButtons
+				<div>
+					<div
+						class="lms-batches__mono mb-1 text-[11px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
+						{{ __('batches.list.batches') }}
+					</div>
+					<div class="lms-batches__serif text-[1.75rem] leading-none text-ink-gray-9">
+						{{ __('batches.list.allBatches') }}
+					</div>
+				</div>
+				<div
+					class="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4"
+				>
+					<TabButtons
 					v-if="user.data"
 					:buttons="batchTabs"
 					v-model="currentTab"
@@ -60,6 +68,7 @@
 				/>
 			</div>
 		</div>
+	</div>
 		<div
 			v-if="batches.list.loading && !batches.data?.length"
 			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
@@ -321,3 +330,26 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-batches__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-batches__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

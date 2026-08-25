@@ -316,7 +316,9 @@
 			"seatsLeft": "Chỗ còn lại",
 			"seatLeft": "Chỗ còn lại",
 			"soldOut": "Đã hết chỗ",
-			"private": "Riêng tư"
+			"private": "Riêng tư",
+			"online": "Trực tuyến",
+			"offline": "Trực tiếp"
 		},
 		"overlay": {
 			"courses": "Khoá học",
@@ -536,7 +538,7 @@
 			"zoomAccount": "Tài khoản Zoom",
 			"zoomAccountPlaceholder": "Chọn hoặc tạo một tài khoản Zoom",
 			"teamsAccount": "Tài khoản Teams",
-			"teamsAccountPlaceholder": "Chọn hoặc tạo một tài khoản Microsoft Teams",
+			"teamsAccountPlaceholder": "Chọn hoặc tạo một tài khoản MS Teams",
 			"medium": "Hình thức",
 			"category": "Danh mục",
 			"categoryPlaceholder": "Chọn hoặc tạo một danh mục",

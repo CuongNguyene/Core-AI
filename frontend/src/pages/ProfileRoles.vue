@@ -1,6 +1,6 @@
 <template>
 	<div class="mt-7">
-		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
+		<h2 class="lms-profile-roles__serif mb-3 text-lg text-ink-gray-9">
 			{{ __('profile.settings') }}
 		</h2>
 		<div
@@ -112,3 +112,16 @@ const changeRole = (role) => {
 	)
 }
 </script>
+<style scoped>
+.lms-profile-roles__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

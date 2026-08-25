@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+		class="sticky top-0 z-10 flex items-center justify-between border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 		<div v-if="!readOnlyMode" class="flex items-center space-x-2">
@@ -23,7 +23,7 @@
 	</header>
 	<div class="py-5 mx-5">
 		<div class="flex items-center justify-between mb-4">
-			<div class="text-lg font-semibold text-ink-gray-7">
+			<div class="lms-quizzes__serif text-lg text-ink-gray-9">
 				{{
 					quizzes.data?.length
 						? __('quiz.list.nQuizzes').format(quizzes.data.length)
@@ -281,3 +281,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-quizzes__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

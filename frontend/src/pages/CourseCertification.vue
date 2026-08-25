@@ -1,12 +1,12 @@
 <template>
 	<header
-		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+		class="sticky top-0 z-10 flex items-center justify-between border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs class="h-7" :items="breadcrumbs" />
 	</header>
 	<div class="p-5">
 		<div v-if="certificate.data && Object.keys(certificate.data).length">
-			<div class="text-lg text-ink-gray-9 font-semibold mb-1">
+			<div class="lms-course-certification__serif text-lg text-ink-gray-9 mb-1">
 				{{ __('courses.certification.title') }}
 			</div>
 			<div class="text-ink-gray-9 text-sm">
@@ -15,15 +15,22 @@
 				}}
 			</div>
 			<div
-				class="border p-3 w-fit min-w-60 rounded-md space-y-2 hover:bg-surface-gray-1 cursor-pointer mt-5"
+				class="flex w-fit min-w-60 items-start gap-3 rounded-md border border-outline-gray-2 p-3 mt-5 cursor-pointer hover:bg-surface-gray-1"
 				@click="openCertificate(certificate.data)"
 			>
-				<div class="text-ink-gray-9 font-semibold">
-					{{ courseTitle }}
+				<div
+					class="lms-course-certification__seal flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+				>
+					<GraduationCap class="h-4 w-4 stroke-2" />
 				</div>
-				<div class="text-sm text-ink-gray-7 font-medium">
-					{{ __('courses.certification.issuedOn') }}:
-					{{ dayjs(certificate.data.issue_date).format('L') }}
+				<div class="space-y-1">
+					<div class="lms-course-certification__serif text-ink-gray-9">
+						{{ courseTitle }}
+					</div>
+					<div class="lms-course-certification__mono text-sm text-ink-gray-6">
+						{{ __('courses.certification.issuedOn') }}
+						{{ dayjs(certificate.data.issue_date).format('L') }}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -35,6 +42,7 @@
 <script setup>
 import { computed, inject, onMounted, ref } from 'vue'
 import { Breadcrumbs, call, createResource, usePageMeta } from 'frappe-ui'
+import { GraduationCap } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import { sessionStore } from '../stores/session'
 import UpcomingEvaluations from '@/components/UpcomingEvaluations.vue'
@@ -141,3 +149,31 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-course-certification__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-course-certification__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+
+.lms-course-certification__seal {
+	background: #efe8d8;
+	color: #8a6a22;
+}
+</style>

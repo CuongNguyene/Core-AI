@@ -46,7 +46,7 @@ export class Quiz {
 			return
 		}
 		this.wrapper.innerHTML = `<div class='border rounded-md p-4 text-center bg-surface-menu-bar mb-4'>
-            <span class="font-medium">
+            <span class="font-medium" style="font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;">
                 ${__('quiz.builder.quizLabel').format(quiz)}
             </span>
         </div>`

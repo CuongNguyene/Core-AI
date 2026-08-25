@@ -2,10 +2,14 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('batches.liveClass.attendanceTitle').format(live_class?.title),
 			size: '4xl',
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-attendance-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('batches.liveClass.attendanceTitle').format(live_class?.title) }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div
 				class="grid grid-cols-2 gap-12 text-sm font-semibold text-ink-gray-5 pb-2"
@@ -104,3 +108,16 @@ const redirectToProfile = (username: string) => {
 	})
 }
 </script>
+<style scoped>
+.lms-attendance-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

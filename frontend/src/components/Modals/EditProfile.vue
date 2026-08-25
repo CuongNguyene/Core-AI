@@ -2,7 +2,7 @@
 	<Dialog
 		:options="{
 			title: __('profile.editProfile.title'),
-			size: '3xl',
+			size: 'xl',
 			actions: [
 				{
 					label: __('profile.editProfile.save'),
@@ -13,80 +13,63 @@
 		}"
 	>
 		<template #body-content>
-			<div class="grid grid-cols-2 gap-5">
-				<div class="space-y-4">
-					<!-- <Uploader
-						v-model="profile.image.file_url"
-						label="Profile Image"
-						description="Your profile image to help others recognize you."
-					/> -->
-					<div>
-						<div class="text-xs text-ink-gray-5 mb-1">
-							{{ __('profile.editProfile.profileImage') }}
-						</div>
-						<FileUploader
-							v-if="!profile.image"
-							:fileTypes="['image/*']"
-							:validateFile="validateFile"
-							@success="(file) => saveImage(file)"
+			<div class="space-y-5">
+				<div>
+					<div class="text-xs text-ink-gray-5 mb-1">
+						{{ __('profile.editProfile.profileImage') }}
+					</div>
+					<FileUploader
+						v-if="!profile.image"
+						:fileTypes="['image/*']"
+						:validateFile="validateFile"
+						@success="(file) => saveImage(file)"
+					>
+						<template
+							v-slot="{ file, progress, uploading, openFileSelector }"
 						>
-							<template
-								v-slot="{ file, progress, uploading, openFileSelector }"
-							>
-								<div class="mb-4">
-									<Button @click="openFileSelector" :loading="uploading">
-										{{
-											uploading
-												? __('profile.coverImage.uploading').format(progress)
-												: __('profile.editProfile.uploadProfileImage')
-										}}
-									</Button>
-								</div>
-							</template>
-						</FileUploader>
-						<div v-else class="mb-4">
-							<div class="flex items-center">
-								<img
-									:src="profile.image.file_url"
-									class="object-cover h-[50px] w-[50px] rounded-full border-4 border-white object-cover"
-								/>
-
-								<div class="text-base flex flex-col ml-2">
-									<span>
-										{{ profile.image.file_name }}
-									</span>
-									<span class="text-sm text-ink-gray-4 mt-1">
-										{{ getFileSize(profile.image.file_size) }}
-									</span>
-								</div>
-								<X
-									@click="removeImage()"
-									class="bg-surface-gray-3 rounded-md cursor-pointer stroke-1.5 w-5 h-5 p-1 ml-4"
-								/>
+							<div class="mb-4">
+								<Button @click="openFileSelector" :loading="uploading">
+									{{
+										uploading
+											? __('profile.coverImage.uploading').format(progress)
+											: __('profile.editProfile.uploadProfileImage')
+									}}
+								</Button>
 							</div>
+						</template>
+					</FileUploader>
+					<div v-else class="mb-4">
+						<div class="flex items-center">
+							<img
+								:src="profile.image.file_url"
+								class="object-cover h-[50px] w-[50px] rounded-full border-4 border-white object-cover"
+							/>
+
+							<div class="text-base flex flex-col ml-2">
+								<span>
+									{{ profile.image.file_name }}
+								</span>
+								<span class="text-sm text-ink-gray-4 mt-1">
+									{{ getFileSize(profile.image.file_size) }}
+								</span>
+							</div>
+							<X
+								@click="removeImage()"
+								class="bg-surface-gray-3 rounded-md cursor-pointer stroke-1.5 w-5 h-5 p-1 ml-4"
+							/>
 						</div>
 					</div>
-					<FormControl v-model="profile.first_name" :label="__('profile.editProfile.firstName')" />
-					<FormControl v-model="profile.last_name" :label="__('profile.editProfile.lastName')" />
-					<FormControl v-model="profile.headline" :label="__('profile.editProfile.headline')" />
-					<Link
-						:label="__('profile.editProfile.language')"
-						v-model="profile.language"
-						doctype="Language"
-					/>
 				</div>
 				<div>
-					<div class="mb-4">
-						<div class="mb-1.5 text-sm text-ink-gray-5">
-							{{ __('profile.editProfile.bio') }}
-						</div>
-						<TextEditor
-							:fixedMenu="true"
-							@change="(val) => (profile.bio = val)"
-							:content="profile.bio"
-							editorClass="prose-sm py-2 px-2 min-h-[200px] border-outline-gray-2 hover:border-outline-gray-3 rounded-b-md bg-surface-gray-3"
-						/>
+					<div class="mb-1.5 text-sm text-ink-gray-5">
+						{{ __('profile.editProfile.bio') }}
 					</div>
+					<TextEditor
+						:fixedMenu="true"
+						@change="(val) => (profile.bio = val)"
+						:content="profile.bio"
+						editorClass="prose-sm py-2 px-2 min-h-[200px] border-outline-gray-2 hover:border-outline-gray-3 rounded-b-md bg-surface-gray-3"
+					/>
 				</div>
 			</div>
 		</template>
@@ -95,21 +78,18 @@
 <script setup>
 import {
 	Dialog,
-	FormControl,
 	FileUploader,
 	Button,
 	createResource,
 	TextEditor,
 	toast,
 } from 'frappe-ui'
-import { ref, reactive, watch } from 'vue'
+import { reactive, watch } from 'vue'
 import { X } from 'lucide-vue-next'
 import { getFileSize, decodeEntities } from '@/utils'
-import Link from '@/components/Controls/Link.vue'
 import DOMPurify from 'dompurify'
 
 const reloadProfile = defineModel('reloadProfile')
-const hasLanguageChanged = ref(false)
 
 const props = defineProps({
 	profile: {
@@ -119,9 +99,6 @@ const props = defineProps({
 })
 
 const profile = reactive({
-	first_name: '',
-	last_name: '',
-	headline: '',
 	bio: '',
 	image: '',
 })
@@ -179,10 +156,6 @@ const saveProfile = (close) => {
 			onSuccess() {
 				close()
 				reloadProfile.value.reload()
-				if (hasLanguageChanged.value) {
-					hasLanguageChanged.value = false
-					window.location.reload()
-				}
 			},
 			onError(err) {
 				toast.error(err.messages?.[0] || err)
@@ -210,21 +183,8 @@ watch(
 	() => props.profile.data,
 	(newVal) => {
 		if (newVal) {
-			profile.first_name = newVal.first_name
-			profile.last_name = newVal.last_name
-			profile.headline = newVal.headline
-			profile.language = newVal.language
 			profile.bio = newVal.bio
 			if (newVal.user_image) imageResource.submit({ image: newVal.user_image })
-		}
-	}
-)
-
-watch(
-	() => profile.language,
-	(newVal, oldVal) => {
-		if (newVal !== oldVal) {
-			hasLanguageChanged.value = true
 		}
 	}
 )

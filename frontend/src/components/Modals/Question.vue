@@ -7,7 +7,7 @@
 	>
 		<template #body>
 			<div class="p-5 space-y-5">
-				<div class="text-lg font-semibold text-ink-gray-9 mb-5">
+				<div class="lms-question-modal__serif text-2xl text-ink-gray-9 mb-5">
 					{{ props.title }}
 				</div>
 				<div
@@ -51,13 +51,13 @@
 					</div>
 					<div
 						v-if="question.type == 'Choices'"
-						class="text-base font-semibold text-ink-gray-9 mb-5 mt-10"
+						class="lms-question-modal__mono mb-5 mt-10 border-b border-outline-gray-2 pb-2 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
 					>
 						{{ __('quiz.options') }}
 					</div>
 					<div
 						v-else-if="question.type == 'User Input'"
-						class="text-base font-semibold text-ink-gray-9 mb-5 mt-5"
+						class="lms-question-modal__mono mb-5 mt-5 border-b border-outline-gray-2 pb-2 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
 					>
 						{{ __('quiz.possibilities') }}
 					</div>
@@ -344,6 +344,29 @@ const updateQuestion = () => {
 	)
 }
 </script>
+<style scoped>
+.lms-question-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-question-modal__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>
 <style>
 input[type='radio']:checked {
 	background-color: theme('colors.gray.900') !important;

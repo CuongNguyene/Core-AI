@@ -3,7 +3,7 @@
 		<div class="grid md:grid-cols-[75%,25%] h-screen">
 			<div class="border-r">
 				<header
-					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
+					class="sticky top-0 z-10 flex flex-col md:flex-row md:items-center justify-between gap-x-3 border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 				>
 					<div class="min-w-0 flex-1 overflow-hidden">
 						<Breadcrumbs :items="breadcrumbs" />

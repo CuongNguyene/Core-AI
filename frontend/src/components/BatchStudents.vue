@@ -1,7 +1,7 @@
 <template>
 	<div v-if="batch.data" class="">
 		<div class="w-full flex items-center justify-between pb-4">
-			<div class="font-medium text-ink-gray-7">
+			<div class="lms-batch-students__serif text-lg text-ink-gray-9">
 				{{ __('batches.students.statistics') }}
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 
 	<div>
 		<div class="flex items-center justify-between mb-4">
-			<div class="text-ink-gray-7 font-medium">
+			<div class="lms-batch-students__serif text-lg text-ink-gray-9">
 				{{ __('batches.students.students') }}
 			</div>
 			<Button v-if="!readOnlyMode" @click="openStudentModal()">
@@ -353,3 +353,16 @@ const certificationCount = createResource({
 	auto: true,
 })
 </script>
+<style scoped>
+.lms-batch-students__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="sticky flex items-center justify-between top-0 z-10 border-b bg-surface-white px-3 py-2.5 sm:px-5"
+		class="sticky flex items-center justify-between top-0 z-10 border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 		<router-link :to="{ name: 'Batches', query: { certification: true } }">
@@ -14,7 +14,7 @@
 	</header>
 	<div class="py-5 mx-5">
 		<div class="flex flex-col md:flex-row justify-between mb-4">
-			<div class="text-xl font-semibold text-ink-gray-7 mb-4 md:mb-0">
+			<div class="lms-certified-participants__serif text-xl text-ink-gray-9 mb-4 md:mb-0">
 				{{ memberCount }} {{ __('certification.certifiedMembers') }}
 			</div>
 			<div class="grid grid-cols-2 gap-2">
@@ -72,7 +72,7 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center space-x-3 md:space-x-24 text-sm md:text-base mt-1.5"
+								class="lms-certified-participants__mono flex items-center space-x-3 md:space-x-24 text-sm md:text-base mt-1.5"
 							>
 								<div class="text-ink-gray-5">
 									{{ participant.certificate_count }}
@@ -197,6 +197,29 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-certified-participants__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-certified-participants__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>
 <style>
 .headline {
 	display: -webkit-box;

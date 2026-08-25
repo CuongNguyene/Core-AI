@@ -7,7 +7,7 @@
 	>
 		<template #body>
 			<div class="p-5 text-base">
-				<div class="text-lg text-ink-gray-9 font-semibold mb-5">
+				<div class="lms-assignment-form__serif text-2xl text-ink-gray-9 mb-5">
 					{{
 						assignmentID === 'new'
 							? __('assignments.createAssignment')
@@ -185,3 +185,16 @@ const assignmentOptions = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-assignment-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

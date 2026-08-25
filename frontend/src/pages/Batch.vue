@@ -2,7 +2,7 @@
 	<DetailSkeleton v-if="batch.loading && !batch.data" tabs />
 	<div v-else-if="user.data?.is_moderator || isStudent || isInstructor" class="">
 		<header
-			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
+			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 		>
 			<div class="min-w-0 flex-1 overflow-hidden">
 				<Breadcrumbs class="h-7" :items="breadcrumbs" />
@@ -54,6 +54,7 @@
 								{{ tab.label }}
 								<Badge
 									v-if="tab.count"
+									class="lms-batch__mono"
 									:class="{
 										'text-ink-gray-9 border border-gray-900': selected,
 									}"
@@ -114,7 +115,7 @@
 			</div>
 			<div class="p-5 border-t md:border-t-0">
 				<div class="mb-10">
-					<div class="text-ink-gray-7 font-semibold mb-2">
+					<div class="lms-batch__serif text-base text-ink-gray-7 mb-2">
 						{{ __('batches.detail.aboutBatch') }}
 					</div>
 					<div
@@ -159,7 +160,7 @@
 					</div> -->
 				</div>
 				<div v-if="dayjs().isSameOrAfter(dayjs(batch.data.start_date))">
-					<div class="text-ink-gray-7 font-semibold mb-2">
+					<div class="lms-batch__serif text-base text-ink-gray-7 mb-2">
 						{{ __('batches.feedback.feedback') }}
 					</div>
 					<BatchFeedback :batch="batch.data?.name" />
@@ -173,10 +174,14 @@
 		</div>
 	</div>
 	<div v-else class="">
-		<div class="text-base border rounded-md w-1/3 mx-auto my-32">
-			<div class="border-b px-5 py-3 font-medium">
+		<div
+			class="text-base border border-outline-gray-2 rounded-md w-1/3 mx-auto my-32"
+		>
+			<div
+				class="lms-batch__mono flex items-center border-b border-outline-gray-2 px-5 py-3 text-[11px] uppercase tracking-[0.12em] text-ink-gray-6"
+			>
 				<span
-					class="inline-flex items-center before:bg-surface-red-5 before:w-2 before:h-2 before:rounded-md before:mr-2"
+					class="inline-flex items-center before:bg-surface-red-5 before:w-2 before:h-2 before:rounded-full before:mr-2"
 				></span>
 				{{ __('batches.detail.notPermitted') }}
 			</div>
@@ -414,3 +419,26 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-batch__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-batch__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

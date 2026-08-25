@@ -80,7 +80,7 @@ export class Assignment {
 			fieldname: ['title'],
 		}).then((data) => {
 			this.wrapper.innerHTML = `<div class='border rounded-md p-4 text-center bg-surface-menu-bar mb-4'>
-				<span class="font-medium">
+				<span class="font-medium" style="font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;">
 					${__('assignments.assignmentLabel').format(data.title)}
 				</span>
 			</div>`

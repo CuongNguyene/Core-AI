@@ -11,7 +11,7 @@
 					<Avatar :image="student.user_image" size="3xl" />
 					<div class="space-y-1">
 						<div class="flex items-center space-x-2">
-							<div class="text-xl font-semibold">
+							<div class="lms-student-progress__serif text-xl">
 								{{ student.full_name }}
 							</div>
 							<Badge
@@ -21,10 +21,14 @@
 								"
 								:theme="student.progress === 100 ? 'green' : 'red'"
 							>
-								{{ student.progress }}% {{ __('batches.studentProgress.complete') }}
+								<span class="lms-student-progress__mono">
+									{{ student.progress }}% {{ __('batches.studentProgress.complete') }}
+								</span>
 							</Badge>
 							<Badge v-if="timeSpent.data" theme="gray">
-								{{ formatDuration(timeSpent.data.seconds) }}
+								<span class="lms-student-progress__mono">
+									{{ formatDuration(timeSpent.data.seconds) }}
+								</span>
 							</Badge>
 						</div>
 						<div class="text-sm text-ink-gray-7">
@@ -173,3 +177,26 @@ const getStatusTheme = (status) => {
 	}
 }
 </script>
+<style scoped>
+.lms-student-progress__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-student-progress__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

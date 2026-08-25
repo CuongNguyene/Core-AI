@@ -1,6 +1,6 @@
 <template>
 	<div class="mt-7 mb-10">
-		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
+		<h2 class="lms-profile-about__serif mb-3 text-lg text-ink-gray-9">
 			{{ __('profile.tabs.about') }}
 		</h2>
 		<div
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 	<div class="mt-7 mb-10" v-if="isSessionUser() && bookmarkedCourses.data?.length">
-		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
+		<h2 class="lms-profile-about__serif mb-3 text-lg text-ink-gray-9">
 			{{ __('profile.bookmarkedCourses') }}
 		</h2>
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -43,7 +43,7 @@
 		</div>
 	</div>
 	<div class="mt-7 mb-10" v-if="badges.data?.length">
-		<h2 class="mb-3 text-lg font-semibold text-ink-gray-9">
+		<h2 class="lms-profile-about__serif mb-3 text-lg text-ink-gray-9">
 			{{ __('profile.achievements') }}
 		</h2>
 		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -75,7 +75,7 @@
 								class="bg-surface-gray-2 rounded-t-md h-[200px] mx-auto"
 							/>
 							<div class="p-5">
-								<div class="text-2xl font-semibold mb-2">
+								<div class="lms-profile-about__serif text-2xl mb-2">
 									{{ badge.badge }}
 								</div>
 								<div class="leading-5 mb-4">
@@ -210,3 +210,16 @@ const shareOnSocial = (badge, medium) => {
 	window.open(shareUrl, '_blank')
 }
 </script>
+<style scoped>
+.lms-profile-about__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

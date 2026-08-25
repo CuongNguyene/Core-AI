@@ -7,7 +7,7 @@
 			:studyTime="timer"
 		/>
 		<header
-			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b bg-surface-white px-3 py-2.5 sm:px-5"
+			class="sticky top-0 z-10 flex items-center justify-between gap-x-3 border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 		>
 			<div class="min-w-0 flex-1 overflow-hidden">
 				<Breadcrumbs class="h-7" :items="breadcrumbs" />
@@ -332,7 +332,7 @@
 					>
 						<div class="flex items-center gap-2 mb-4 pb-3 border-b">
 							<MessageCircleQuestion class="w-5 h-5 text-blue-500" />
-							<span class="font-semibold text-ink-gray-9">{{ __('Lesson Quiz') }}</span>
+							<span class="lms-lesson__serif text-ink-gray-9">{{ __('Lesson Quiz') }}</span>
 							<span class="text-sm text-ink-gray-5">{{ __('(required to complete this lesson)') }}</span>
 						</div>
 						<QuizBlock :quiz="lesson.data.completion_quiz" />
@@ -1289,6 +1289,19 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-lesson__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
 <style>
 .avatar-group {
 	display: inline-flex;

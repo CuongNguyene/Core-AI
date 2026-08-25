@@ -1,11 +1,11 @@
 <template>
 	<header
-		class="sticky top-0 z-10 flex items-center justify-between border-b bg-surface-white px-3 py-2.5 sm:px-5"
+		class="sticky top-0 z-10 flex items-center justify-between border-b border-outline-gray-2 bg-surface-white/90 backdrop-blur-md px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 	</header>
 	<div v-if="submissions.data?.length" class="py-5 mx-5">
-		<div class="text-xl font-semibold mb-5">
+		<div class="lms-quiz-submission-list__serif text-xl text-ink-gray-9 mb-5">
 			{{ submissions.data[0].quiz_title }}
 		</div>
 		<ListView
@@ -137,3 +137,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-quiz-submission-list__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

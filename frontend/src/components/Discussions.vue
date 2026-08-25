@@ -10,7 +10,7 @@
 			</template>
 			{{ __('batches.discussions.newItem').format(singularize(title)) }}
 		</Button>
-		<div class="text-xl font-semibold text-ink-gray-9">
+		<div class="lms-discussions__serif text-xl text-ink-gray-9">
 			{{ title }}
 		</div>
 	</div>
@@ -23,7 +23,7 @@
 			>
 				<UserAvatar :user="topic.user" size="2xl" class="mr-4" />
 				<div>
-					<div class="text-lg font-semibold mb-1 text-ink-gray-7">
+					<div class="lms-discussions__serif text-lg mb-1 text-ink-gray-7">
 						{{ topic.title }}
 					</div>
 					<div class="flex items-center text-ink-gray-5">
@@ -161,3 +161,16 @@ onUnmounted(() => {
 	socket.off('new_discussion_topic')
 })
 </script>
+<style scoped>
+.lms-discussions__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

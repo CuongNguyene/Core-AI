@@ -2,10 +2,14 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('quiz.addQuizToVideo'),
 			size: '2xl',
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-quiz-in-video__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('quiz.addQuizToVideo') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="text-base">
 				<div class="flex items-end gap-4">
@@ -31,7 +35,9 @@
 				</div>
 
 				<div class="mt-10 mb-5">
-					<div class="font-medium mb-4">
+					<div
+						class="lms-quiz-in-video__mono mb-4 border-b border-outline-gray-2 pb-2 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
+					>
 						{{ __('quiz.quizzesInVideo') }}
 					</div>
 					<ListView
@@ -223,3 +229,26 @@ const columns = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-quiz-in-video__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+
+.lms-quiz-in-video__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="flex items-center justify-between mb-4">
-			<div class="text-lg font-semibold text-ink-gray-9">
+			<div class="lms-batch-courses__serif text-lg text-ink-gray-9">
 				{{ __('courses.batch.courses') }}
 			</div>
 			<Button v-if="canSeeAddButton()" @click="openCourseModal()">
@@ -165,3 +165,16 @@ const canSeeAddButton = () => {
 	return user.data?.is_moderator || user.data?.is_instructor
 }
 </script>
+<style scoped>
+.lms-batch-courses__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

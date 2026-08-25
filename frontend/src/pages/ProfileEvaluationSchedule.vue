@@ -14,7 +14,7 @@
 			>
 				<template #header="{ currentMonthYear, decrement, increment }">
 					<div class="mb-2 flex justify-between">
-						<span class="text-lg text-ink-gray-9 font-semibold">
+						<span class="lms-profile-eval-schedule__serif text-lg text-ink-gray-9">
 							{{ currentMonthYear }}
 						</span>
 						<div class="flex gap-x-1">
@@ -103,3 +103,16 @@ const openEvent = (event) => {
 	showEvent.value = true
 }
 </script>
+<style scoped>
+.lms-profile-eval-schedule__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
