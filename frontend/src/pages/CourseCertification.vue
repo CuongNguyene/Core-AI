@@ -24,7 +24,7 @@
 					<GraduationCap class="h-4 w-4 stroke-2" />
 				</div>
 				<div class="space-y-1">
-					<div class="lms-course-certification__serif text-ink-gray-9">
+					<div class="lms-course-certification__serif text-lg text-ink-gray-9">
 						{{ courseTitle }}
 					</div>
 					<div class="lms-course-certification__mono text-sm text-ink-gray-6">

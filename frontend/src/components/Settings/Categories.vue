@@ -2,7 +2,7 @@
 	<div class="flex flex-col min-h-0 text-base">
 		<div class="flex items-center justify-between mb-5">
 			<div class="flex flex-col space-y-2">
-				<div class="text-xl font-semibold text-ink-gray-9">
+				<div class="lms-categories__serif text-2xl leading-6 text-ink-gray-9">
 					{{ label }}
 				</div>
 				<div class="text-xs text-ink-gray-5">
@@ -214,3 +214,16 @@ const allowEdit = (cat, index) => {
 	}, 0)
 }
 </script>
+<style scoped>
+.lms-categories__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

@@ -2,7 +2,7 @@
 	<div class="flex flex-col justify-between h-full text-base">
 		<div>
 			<div class="flex items-center justify-between">
-				<div class="text-xl font-semibold leading-none mb-2 text-ink-gray-9">
+				<div class="lms-setting-details__serif text-2xl leading-6 mb-2 text-ink-gray-9">
 					{{ __(label) }}
 				</div>
 				<Badge
@@ -69,6 +69,20 @@ const update = () => {
 	)
 }
 </script>
+
+<style scoped>
+.lms-setting-details__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
 
 <style>
 .CodeMirror pre.CodeMirror-line,

@@ -3,7 +3,6 @@
 		v-model="show"
 		class="text-base"
 		:options="{
-			title: __('sidebar.addWebPage'),
 			size: 'lg',
 			actions: [
 				{
@@ -16,6 +15,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-page-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('sidebar.addWebPage') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<Link
 				v-model="page.webpage"
@@ -87,3 +91,16 @@ const addWebPage = (close) => {
 	)
 }
 </script>
+<style scoped>
+.lms-page-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

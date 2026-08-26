@@ -7,7 +7,7 @@
 	>
 		<template #body>
 			<div class="p-5 min-h-[300px]">
-				<div class="text-lg font-semibold mb-4">
+				<div class="lms-feedback-modal__serif text-2xl leading-6 mb-4 text-ink-gray-9">
 					{{ __('batches.feedback.trainingFeedback') }}
 				</div>
 				<ListView
@@ -113,3 +113,16 @@ const feedbackColumns = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-feedback-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

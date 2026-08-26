@@ -151,7 +151,7 @@
 							class="flex flex-col space-y-3 md:space-y-0 md:flex-row md:items-center justify-between"
 						>
 							<div class="flex flex-col">
-								<div class="text-3xl font-semibold text-ink-gray-9">
+								<div class="lms-lesson__serif text-3xl leading-tight text-ink-gray-9">
 									{{ lesson.data.title }}
 								</div>
 
@@ -393,7 +393,7 @@
 			</div>
 			<div class="sticky top-10">
 				<div class="bg-surface-menu-bar py-5 px-2 border-b">
-					<div class="text-lg font-semibold text-ink-gray-9">
+					<div class="lms-lesson__serif text-lg text-ink-gray-9">
 						{{ lesson.data.course_title }}
 					</div>
 					<div
@@ -406,6 +406,8 @@
 					<ProgressBar
 						v-if="user && lesson.data.membership"
 						:progress="lessonProgress"
+						size="md"
+						completionColor
 					/>
 				</div>
 				<CourseOutline

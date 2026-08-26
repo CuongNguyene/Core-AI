@@ -21,7 +21,7 @@
 						name: 'Courses',
 					}"
 				>
-					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+					<span class="flex items-center space-x-1 text-ink-gray-6 text-xs hover:text-ink-gray-8">
 						<span>
 							{{ __('home.common.seeAll') }}
 						</span>
@@ -49,7 +49,7 @@
 						name: 'Courses',
 					}"
 				>
-					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+					<span class="flex items-center space-x-1 text-ink-gray-6 text-xs hover:text-ink-gray-8">
 						<span>
 							{{ __('home.common.seeAll') }}
 						</span>
@@ -77,7 +77,7 @@
 						name: 'Courses',
 					}"
 				>
-					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+					<span class="flex items-center space-x-1 text-ink-gray-6 text-xs hover:text-ink-gray-8">
 						<span>
 							{{ __('home.common.seeAll') }}
 						</span>
@@ -105,7 +105,7 @@
 						name: 'Courses',
 					}"
 				>
-					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+					<span class="flex items-center space-x-1 text-ink-gray-6 text-xs hover:text-ink-gray-8">
 						<span>
 							{{ __('home.common.seeAll') }}
 						</span>
@@ -137,7 +137,7 @@
 						name: 'Batches',
 					}"
 				>
-					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+					<span class="flex items-center space-x-1 text-ink-gray-6 text-xs hover:text-ink-gray-8">
 						<span>
 							{{ __('home.common.seeAll') }}
 						</span>
@@ -162,7 +162,7 @@
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 					<div v-for="cls in myLiveClasses.data" class="border rounded-md p-2">
-						<div class="font-semibold text-ink-gray-9 text-lg mb-1">
+						<div class="lms-student-home__serif text-lg text-ink-gray-9 mb-1">
 							{{ cls.title }}
 						</div>
 						<div class="text-ink-gray-7 text-sm leading-5 mb-4">

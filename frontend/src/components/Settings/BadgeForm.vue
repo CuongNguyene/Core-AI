@@ -2,10 +2,14 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: badge ? __('Edit Badge') : __('Create a new Badge'),
 			size: '3xl',
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-badge-form__serif text-2xl leading-6 text-ink-gray-9">
+				{{ badge ? __('Edit Badge') : __('Create a new Badge') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="grid grid-cols-2 gap-x-5">
 				<div class="space-y-4">
@@ -217,3 +221,16 @@ const userFieldOptions = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-badge-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

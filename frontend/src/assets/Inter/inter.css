@@ -1,3 +1,24 @@
+/* frappe-ui's ECharts-based charts (AxisChart/DonutChart/FunnelChart) hardcode
+   fontFamily: ['InterVar', 'sans-serif'] with no override hook. Register the
+   same Inter files under that name so chart text renders in Inter instead of
+   silently falling back to the OS default sans-serif. */
+@font-face {
+  font-family: 'InterVar';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("Inter-Regular.woff2?v=3.12") format("woff2"),
+       url("Inter-Regular.woff?v=3.12") format("woff");
+}
+@font-face {
+  font-family: 'InterVar';
+  font-style:  normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("Inter-Medium.woff2?v=3.12") format("woff2"),
+       url("Inter-Medium.woff?v=3.12") format("woff");
+}
+
 @font-face {
   font-family: 'Inter';
   font-style:  normal;

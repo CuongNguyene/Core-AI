@@ -8,7 +8,7 @@
 		<template #body>
 			<div class="flex text-base">
 				<div class="flex flex-col w-1/2 p-5">
-					<div class="text-lg font-semibold mb-4">
+					<div class="lms-event-modal__serif text-2xl leading-6 mb-4 text-ink-gray-9">
 						{{ event.title }}
 					</div>
 
@@ -388,3 +388,16 @@ const tabs = computed(() => {
 	return tabsArray
 })
 </script>
+<style scoped>
+.lms-event-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

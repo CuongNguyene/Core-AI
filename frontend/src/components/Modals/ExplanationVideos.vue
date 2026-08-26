@@ -3,9 +3,13 @@
 		v-model="show"
 		:options="{
 			size: '4xl',
-			title: title,
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-explanation-videos__serif text-2xl leading-6 text-ink-gray-9">
+				{{ title }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div>
 				<VideoBlock :file="file" />
@@ -38,3 +42,16 @@ const file = computed(() => {
 	if (props.type == 'remove') return '/assets/lms/frontend/Remove.mp4'
 })
 </script>
+<style scoped>
+.lms-explanation-videos__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

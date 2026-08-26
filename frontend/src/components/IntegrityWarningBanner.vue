@@ -26,7 +26,7 @@
 		</div>
 		<div
 			v-if="studyTime !== undefined"
-			class="flex items-center gap-1.5 shrink-0 font-mono text-xs text-ink-gray-4 border border-outline-gray-3 rounded px-2 py-1"
+			class="lms-integrity-banner__mono flex items-center gap-1.5 shrink-0 text-xs text-ink-gray-4 border border-outline-gray-3 rounded px-2 py-1"
 		>
 			<span>{{ __('Time') }}</span>
 			<span class="font-semibold text-ink-white">{{
@@ -34,7 +34,7 @@
 			}}</span>
 		</div>
 		<div
-			class="flex items-center gap-1.5 shrink-0 font-mono text-xs text-ink-gray-4 border border-outline-gray-3 rounded px-2 py-1"
+			class="lms-integrity-banner__mono flex items-center gap-1.5 shrink-0 text-xs text-ink-gray-4 border border-outline-gray-3 rounded px-2 py-1"
 		>
 			<span>{{ __('integrity.violationsLabel') }}</span>
 			<span class="font-semibold text-ink-white">{{
@@ -109,3 +109,15 @@ const formatTimer = (seconds) => {
 	return hrs != '00' ? `${hrs}:${mins}:${secs}` : `${mins}:${secs}`
 }
 </script>
+<style scoped>
+.lms-integrity-banner__mono {
+	font-family:
+		'IBM Plex Mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+	font-variant-numeric: tabular-nums;
+}
+</style>

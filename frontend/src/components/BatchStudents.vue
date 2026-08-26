@@ -127,7 +127,7 @@
 									v-if="column.key == 'progress'"
 									class="flex items-center space-x-4 w-full"
 								>
-									<ProgressBar :progress="row[column.key]" size="sm" />
+									<ProgressBar :progress="row[column.key]" size="sm" completionColor />
 									<div class="text-xs">{{ row[column.key] }}%</div>
 								</div>
 								<div v-else>

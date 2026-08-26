@@ -8,7 +8,7 @@
 		<template #body-title>
 			<div
 				v-if="program.data"
-				class="lms-program-enrollment__serif text-xl text-ink-gray-9"
+				class="lms-program-enrollment__serif text-2xl leading-6 text-ink-gray-9"
 			>
 				{{ __('programs.enrollment.title').format(program.data?.name) }}
 			</div>

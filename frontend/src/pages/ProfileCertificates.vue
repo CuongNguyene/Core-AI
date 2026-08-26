@@ -19,7 +19,7 @@
 					<GraduationCap class="h-4 w-4 stroke-2" />
 				</div>
 				<div class="min-w-0 flex-1">
-					<div class="lms-profile-certificates__serif leading-5 mb-2 text-ink-gray-9">
+					<div class="lms-profile-certificates__serif text-lg leading-5 mb-2 text-ink-gray-9">
 						{{ certificate.course_title || certificate.batch_title }}
 					</div>
 					<div class="lms-profile-certificates__mono text-sm text-ink-gray-6">

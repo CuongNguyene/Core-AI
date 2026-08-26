@@ -198,10 +198,12 @@
 			</div>
 		</div>
 
-		<Dialog
-			v-model="showExportModal"
-			:options="{ title: __('statistics.exportDashboardReport'), size: '5xl' }"
-		>
+		<Dialog v-model="showExportModal" :options="{ size: '5xl' }">
+			<template #body-title>
+				<h3 class="lms-statistics__serif text-2xl leading-6 text-ink-gray-9">
+					{{ __('statistics.exportDashboardReport') }}
+				</h3>
+			</template>
 			<template #body-content>
 				<div class="space-y-4 pb-2 max-h-[70vh] overflow-y-auto">
 					<div

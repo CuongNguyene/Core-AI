@@ -2,10 +2,14 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('Contact Us'),
 			size: 'md',
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-contact-us-email__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('Contact Us') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<FormControl
@@ -65,3 +69,16 @@ const sendMail = (close: Function) => {
 		})
 }
 </script>
+<style scoped>
+.lms-contact-us-email__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

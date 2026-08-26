@@ -2,8 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title:
-				accountID === 'new' ? __('teamsAccount.newAccount') : __('teamsAccount.editAccount'),
 			size: 'xl',
 			actions: [
 				{
@@ -16,6 +14,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-teams-account-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ accountID === 'new' ? __('teamsAccount.newAccount') : __('teamsAccount.editAccount') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="mb-4">
 				<FormControl
@@ -211,3 +214,16 @@ const setValue = (close: () => void) => {
 	)
 }
 </script>
+<style scoped>
+.lms-teams-account-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

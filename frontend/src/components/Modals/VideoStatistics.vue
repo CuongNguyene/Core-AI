@@ -3,9 +3,13 @@
 		v-model="show"
 		:options="{
 			size: '4xl',
-			title: __('videoStatistics.title').format(lessonTitle),
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-video-statistics__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('videoStatistics.title').format(lessonTitle) }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="text-base">
 				<div class="flex items-center justify-between">
@@ -223,6 +227,19 @@ const tabs = computed(() => {
 	}))
 })
 </script>
+<style scoped>
+.lms-video-statistics__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
 <style>
 .plyr__volume input[type='range'] {
 	display: none;

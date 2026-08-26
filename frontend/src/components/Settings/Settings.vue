@@ -5,7 +5,7 @@
 				<div
 					class="flex w-52 shrink-0 flex-col bg-surface-gray-2 p-2 overflow-y-auto"
 				>
-					<h1 class="mb-3 px-2 pt-2 text-lg font-semibold text-ink-gray-9">
+					<h1 class="lms-settings__serif mb-3 px-2 pt-2 text-lg text-ink-gray-9">
 						{{ __('Settings') }}
 					</h1>
 					<div v-for="tab in tabs" :key="tab.label">
@@ -570,3 +570,16 @@ watch(show, async () => {
 	}
 })
 </script>
+<style scoped>
+.lms-settings__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

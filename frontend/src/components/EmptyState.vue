@@ -1,12 +1,14 @@
 <template>
-	<div class="flex flex-col items-center justify-center mt-60">
-		<GraduationCap class="size-10 mx-auto stroke-1 text-ink-gray-5" />
+	<div class="flex flex-col items-center justify-center py-24 text-center">
+		<div
+			class="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-surface-gray-2"
+		>
+			<GraduationCap class="size-6 stroke-1.5 text-ink-gray-6" />
+		</div>
 		<div class="text-lg font-semibold text-ink-gray-7 mb-2.5">
 			{{ __('common.emptyState.noItems').format(translatedType) }}
 		</div>
-		<div
-			class="leading-5 text-base w-full md:w-2/5 text-base text-center text-ink-gray-7"
-		>
+		<div class="leading-5 text-base w-full md:w-2/5 text-ink-gray-6">
 			{{ __('common.emptyState.description').format(translatedType) }}
 		</div>
 	</div>
