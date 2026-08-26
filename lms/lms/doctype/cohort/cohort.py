@@ -31,7 +31,7 @@ class Cohort(Document):
 		rows = frappe.get_all(
 			doctype,
 			filters={"cohort": self.name, **kw},
-			fields=["subgroup", "count(*) as count"],
+			fields=["subgroup", {"COUNT": "*", "as": "count"}],
 			group_by="subgroup",
 		)
 		return {row["subgroup"]: row["count"] for row in rows}

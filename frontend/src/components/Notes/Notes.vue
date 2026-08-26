@@ -1,5 +1,5 @@
 <template>
-	<div class="text-lg font-semibold mb-4 text-ink-gray-9">
+	<div class="lms-notes__serif text-lg mb-4 text-ink-gray-9">
 		{{ __('My Notes') }}
 	</div>
 	<TextEditor
@@ -113,3 +113,16 @@ const updateNote = () => {
 	)
 }
 </script>
+<style scoped>
+.lms-notes__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

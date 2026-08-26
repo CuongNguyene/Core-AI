@@ -2,7 +2,7 @@
 	<div class="flex flex-col justify-between h-full">
 		<div>
 			<div class="flex items-center justify-between">
-				<div class="font-semibold mb-1 text-ink-gray-9">
+				<div class="lms-brand-settings__serif text-2xl leading-6 mb-1 text-ink-gray-9">
 					{{ __(label) }}
 				</div>
 				<Badge
@@ -123,3 +123,16 @@ watch(branding, (updatedDoc) => {
 	})
 })
 </script>
+<style scoped>
+.lms-brand-settings__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

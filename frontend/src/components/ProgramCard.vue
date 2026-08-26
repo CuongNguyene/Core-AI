@@ -20,7 +20,7 @@
 			</span>
 			<span
 				v-if="'published' in program && !program.published"
-				class="lms-program-card__mono text-[10px] uppercase tracking-[0.12em] text-ink-gray-5"
+				class="lms-program-card__mono text-[10px] uppercase tracking-[0.12em] text-ink-gray-6"
 			>
 				{{ __('programs.card.draft') }}
 			</span>
@@ -60,7 +60,7 @@
 			</div>
 
 			<div v-if="hasProgress" class="mt-3">
-				<ProgressBar :progress="program.progress" />
+				<ProgressBar :progress="program.progress" size="md" completionColor />
 				<div class="lms-program-card__mono mt-2 text-[11px] text-ink-gray-6">
 					{{ Math.ceil(program.progress) }}% {{ __('programs.completed') }}
 				</div>

@@ -2,10 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title:
-				templateID == 'new'
-					? __('emailTemplates.modal.newTemplate')
-					: __('emailTemplates.modal.editTemplate'),
 			size: 'lg',
 			actions: [
 				{
@@ -18,6 +14,15 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-email-template-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{
+					templateID == 'new'
+						? __('emailTemplates.modal.newTemplate')
+						: __('emailTemplates.modal.editTemplate')
+				}}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="space-y-4">
 				<FormControl
@@ -191,3 +196,16 @@ const refreshForm = (close) => {
 	template.response_html = ''
 }
 </script>
+<style scoped>
+.lms-email-template-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

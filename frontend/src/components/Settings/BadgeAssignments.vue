@@ -10,7 +10,7 @@
 						}
 					"
 				/>
-				<div class="text-xl font-semibold text-ink-gray-9">
+				<div class="lms-badge-assignments__serif text-2xl leading-6 text-ink-gray-9">
 					{{ props.badgeName }}
 				</div>
 			</div>
@@ -81,14 +81,16 @@
 				</ListSelectBanner>
 			</ListView>
 		</div>
-		<div v-else class="flex flex-col items-center justify-center mt-44">
-			<GraduationCap class="size-10 mx-auto stroke-1 text-ink-gray-5" />
+		<div v-else class="flex flex-col items-center justify-center py-24 text-center">
+			<div
+				class="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-surface-gray-2"
+			>
+				<GraduationCap class="size-6 stroke-1.5 text-ink-gray-6" />
+			</div>
 			<div class="text-lg font-semibold text-ink-gray-7 mb-2.5">
 				{{ __('No Assignments') }}
 			</div>
-			<div
-				class="leading-5 text-base w-2/5 text-base text-center text-ink-gray-7"
-			>
+			<div class="leading-5 text-base w-2/5 text-ink-gray-6">
 				{{ __('This badge has not been assigned to any students yet') }}
 			</div>
 		</div>
@@ -190,3 +192,16 @@ const columns = computed(() => {
 	]
 })
 </script>
+<style scoped>
+.lms-badge-assignments__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

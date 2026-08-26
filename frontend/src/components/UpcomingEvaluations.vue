@@ -18,7 +18,7 @@
 				<div v-for="evl in upcoming_evals.data">
 					<div class="border text-ink-gray-7 rounded-md p-3">
 						<div class="flex justify-between mb-3">
-							<span class="text-lg font-semibold text-ink-gray-9 leading-5">
+							<span class="lms-upcoming-evaluations__serif text-lg leading-5 text-ink-gray-9">
 								{{ evl.course_title }}
 							</span>
 							<Menu
@@ -194,3 +194,16 @@ const cancelEvaluation = (evl) => {
 	})
 }
 </script>
+<style scoped>
+.lms-upcoming-evaluations__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

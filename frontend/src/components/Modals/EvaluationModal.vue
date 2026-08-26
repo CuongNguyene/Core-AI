@@ -2,7 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: __('courses.evaluation.scheduleEvaluation'),
 			size: 'xl',
 			actions: [
 				{
@@ -13,6 +12,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-evaluation-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('courses.evaluation.scheduleEvaluation') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<div>
@@ -198,3 +202,16 @@ const saveSlot = (slot) => {
 	evaluation.day = slot.day
 }
 </script>
+<style scoped>
+.lms-evaluation-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

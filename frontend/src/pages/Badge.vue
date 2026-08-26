@@ -1,7 +1,7 @@
 <template>
 	<div v-if="badge.data">
 		<div class="p-5 flex flex-col items-center mt-40">
-			<div class="text-3xl font-semibold">
+			<div class="lms-badge__serif text-3xl leading-tight text-ink-gray-9">
 				{{ badge.data.badge }}
 			</div>
 			<img
@@ -80,3 +80,16 @@ usePageMeta(() => {
 	}
 })
 </script>
+<style scoped>
+.lms-badge__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

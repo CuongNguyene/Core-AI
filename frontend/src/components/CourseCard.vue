@@ -111,6 +111,8 @@
 			<ProgressBar
 				v-if="user && course.membership"
 				:progress="course.membership.progress"
+				size="md"
+				completionColor
 			/>
 
 			<div

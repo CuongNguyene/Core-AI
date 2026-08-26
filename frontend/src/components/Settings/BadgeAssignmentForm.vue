@@ -2,10 +2,6 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title:
-				props.badgeAssignmentID === 'new'
-					? __('Assign a Badge')
-					: __('Edit Badge Assignment'),
 			size: 'sm',
 			actions: [
 				{
@@ -18,6 +14,15 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-badge-assignment-form__serif text-2xl leading-6 text-ink-gray-9">
+				{{
+					props.badgeAssignmentID === 'new'
+						? __('Assign a Badge')
+						: __('Edit Badge Assignment')
+				}}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="space-y-4">
 				<Link
@@ -140,3 +145,16 @@ const createBadgeAssignment = (close: () => void) => {
 	)
 }
 </script>
+<style scoped>
+.lms-badge-assignment-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

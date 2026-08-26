@@ -6,7 +6,7 @@
 					<ChevronLeft class="w-5 h-5 stroke-1.5 text-ink-gray-7" />
 				</template>
 			</Button>
-			<span class="text-lg font-semibold ml-2 text-ink-gray-9">
+			<span class="lms-discussion-replies__serif text-lg ml-2 text-ink-gray-9">
 				{{ topic.title }}
 			</span>
 		</div>
@@ -258,3 +258,16 @@ onUnmounted(() => {
 	socket.off('delete_message')
 })
 </script>
+<style scoped>
+.lms-discussion-replies__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

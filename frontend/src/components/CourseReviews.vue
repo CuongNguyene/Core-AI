@@ -28,7 +28,7 @@
 								params: { username: review.owner_details.username },
 							}"
 						>
-							<span class="text-lg font-medium mr-4 text-ink-gray-7">
+							<span class="lms-course-reviews__serif text-lg mr-4 text-ink-gray-7">
 								{{ review.owner_details.full_name }}
 							</span>
 						</router-link>

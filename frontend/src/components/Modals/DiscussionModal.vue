@@ -1,7 +1,6 @@
 <template>
 	<Dialog
 		:options="{
-			title: singularize(props.title),
 			size: '2xl',
 			actions: [
 				{
@@ -12,6 +11,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-discussion-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ singularize(props.title) }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<div>
@@ -127,3 +131,16 @@ const submitTopic = (close) => {
 	)
 }
 </script>
+<style scoped>
+.lms-discussion-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

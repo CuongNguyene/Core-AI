@@ -17,7 +17,7 @@
 						name: 'Courses',
 					}"
 				>
-					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+					<span class="flex items-center space-x-1 text-ink-gray-6 text-xs hover:text-ink-gray-8">
 						<span>
 							{{ __('home.common.seeAll') }}
 						</span>
@@ -45,7 +45,7 @@
 						name: 'Batches',
 					}"
 				>
-					<span class="flex items-center space-x-1 text-ink-gray-5 text-xs">
+					<span class="flex items-center space-x-1 text-ink-gray-6 text-xs hover:text-ink-gray-8">
 						<span>
 							{{ __('home.common.seeAll') }}
 						</span>
@@ -65,15 +65,17 @@
 
 		<div
 			v-if="!createdCourses.data?.length && !createdBatches.data?.length"
-			class="flex flex-col items-center justify-center mt-60"
+			class="flex flex-col items-center justify-center py-24 text-center"
 		>
-			<GraduationCap class="size-10 mx-auto stroke-1 text-ink-gray-5" />
+			<div
+				class="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-surface-gray-2"
+			>
+				<GraduationCap class="size-6 stroke-1.5 text-ink-gray-6" />
+			</div>
 			<div class="lms-admin-home__serif text-lg text-ink-gray-7 mb-1.5">
 				{{ __('home.admin.noCoursesCreated') }}
 			</div>
-			<div
-				class="leading-5 text-base w-full md:w-2/5 text-base text-center text-ink-gray-7"
-			>
+			<div class="leading-5 text-base w-full md:w-2/5 text-ink-gray-6">
 				{{ __('home.admin.noCoursesDescription') }}
 			</div>
 			<router-link
@@ -96,7 +98,7 @@
 				</div>
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
 					<div v-for="cls in liveClasses?.data" class="border rounded-md p-3">
-						<div class="font-semibold text-ink-gray-9 text-lg mb-1">
+						<div class="lms-admin-home__serif text-lg text-ink-gray-9 mb-1">
 							{{ cls.title }}
 						</div>
 						<div class="text-ink-gray-7 text-sm leading-5 mb-4">

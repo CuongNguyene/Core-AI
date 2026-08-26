@@ -1,7 +1,7 @@
 <template>
 	<Dialog v-model="show" :options="{ size: '5xl' }">
 		<template #body-title>
-			<div class="text-xl font-semibold text-ink-gray-9">
+			<div class="lms-programming-exercise-form__serif text-2xl leading-6 text-ink-gray-9">
 				{{
 					props.exerciseID === 'new'
 						? __('Create Programming Exercise')
@@ -253,3 +253,16 @@ const deleteExercise = (close: () => void) => {
 	})
 }
 </script>
+<style scoped>
+.lms-programming-exercise-form__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

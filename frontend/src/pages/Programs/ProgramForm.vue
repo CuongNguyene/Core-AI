@@ -7,7 +7,7 @@
 	>
 		<template #body-title>
 			<div class="flex items-center justify-between space-x-2 text-base w-full">
-				<div class="lms-program-form__serif text-xl text-ink-gray-9">
+				<div class="lms-program-form__serif text-2xl leading-6 text-ink-gray-9">
 					{{
 						programName === 'new' ? __('programs.form.createProgram') : __('programs.form.editProgram')
 					}}
@@ -176,10 +176,6 @@
 			<Dialog
 				v-model="showFormDialog"
 				:options="{
-					title:
-						currentForm == 'course'
-							? __('programs.form.addCourseTitle')
-							: __('programs.form.enrollMemberTitle'),
 					actions: [
 						{
 							label: __('programs.form.add'),
@@ -192,6 +188,15 @@
 					],
 				}"
 			>
+				<template #body-title>
+					<h3 class="lms-program-form__serif text-2xl leading-6 text-ink-gray-9">
+						{{
+							currentForm == 'course'
+								? __('programs.form.addCourseTitle')
+								: __('programs.form.enrollMemberTitle')
+						}}
+					</h3>
+				</template>
 				<template #body-content>
 					<div @click.stop>
 						<Link

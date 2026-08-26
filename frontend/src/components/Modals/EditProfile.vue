@@ -1,7 +1,6 @@
 <template>
 	<Dialog
 		:options="{
-			title: __('profile.editProfile.title'),
 			size: 'xl',
 			actions: [
 				{
@@ -12,6 +11,11 @@
 			],
 		}"
 	>
+		<template #body-title>
+			<h3 class="lms-edit-profile__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('profile.editProfile.title') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="space-y-5">
 				<div>
@@ -189,3 +193,16 @@ watch(
 	}
 )
 </script>
+<style scoped>
+.lms-edit-profile__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>

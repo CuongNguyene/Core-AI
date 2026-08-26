@@ -12,16 +12,20 @@
 				</div>
 				<div>
 					<TabButtons v-if="isAdmin" v-model="currentTab" :buttons="tabs" />
-					<div
+					<button
 						v-else
+						type="button"
 						@click="showStreakModal = true"
-						class="bg-surface-amber-2 px-2 py-1 rounded-md cursor-pointer"
+						class="flex items-center gap-2 rounded-md border border-outline-gray-2 bg-surface-white px-3 py-1.5 transition-colors hover:bg-surface-gray-1"
 					>
-						<span> 🔥 </span>
-						<span class="text-ink-gray-9">
+						<Flame class="h-3.5 w-3.5 shrink-0 stroke-2 text-ink-amber-3" />
+						<span class="lms-home__mono text-[10px] uppercase tracking-[0.12em] text-ink-gray-6">
+							{{ __('home.streak.dayStreak') }}
+						</span>
+						<span class="lms-home__serif text-base leading-none text-ink-gray-9">
 							{{ streakInfo.data?.current_streak }}
 						</span>
-					</div>
+					</button>
 				</div>
 			</div>
 
@@ -35,7 +39,7 @@
 			class="lms-home__announcement mt-6 rounded-md border-l-4 bg-surface-gray-2 px-4 py-3"
 		>
 			<div
-				class="lms-home__mono mb-1 text-[10px] uppercase tracking-[0.14em] text-ink-gray-6"
+				class="lms-home__mono mb-1 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
 			>
 				{{ __('home.announcement.label') }}
 			</div>
@@ -63,7 +67,7 @@
 					<BookMarked class="h-4 w-4 stroke-1.5" />
 				</div>
 				<div>
-					<div class="lms-home__serif text-base text-ink-gray-9">
+					<div class="lms-home__serif text-lg text-ink-gray-9">
 						{{ __('home.guidelines.title') }}
 					</div>
 					<div class="text-sm text-ink-gray-6">
@@ -112,7 +116,7 @@
 <script setup lang="ts">
 import { computed, inject, ref } from 'vue'
 import { Button, createResource, TabButtons, usePageMeta } from 'frappe-ui'
-import { BookMarked } from 'lucide-vue-next'
+import { BookMarked, Flame } from 'lucide-vue-next'
 import { sessionStore } from '@/stores/session'
 import StudentHome from '@/pages/Home/StudentHome.vue'
 import AdminHome from '@/pages/Home/AdminHome.vue'

@@ -115,7 +115,7 @@
 			</div>
 			<div class="p-5 border-t md:border-t-0">
 				<div class="mb-10">
-					<div class="lms-batch__serif text-base text-ink-gray-7 mb-2">
+					<div class="lms-batch__serif text-lg text-ink-gray-9 mb-2">
 						{{ __('batches.detail.aboutBatch') }}
 					</div>
 					<div
@@ -160,7 +160,7 @@
 					</div> -->
 				</div>
 				<div v-if="dayjs().isSameOrAfter(dayjs(batch.data.start_date))">
-					<div class="lms-batch__serif text-base text-ink-gray-7 mb-2">
+					<div class="lms-batch__serif text-lg text-ink-gray-9 mb-2">
 						{{ __('batches.feedback.feedback') }}
 					</div>
 					<BatchFeedback :batch="batch.data?.name" />
@@ -178,7 +178,7 @@
 			class="text-base border border-outline-gray-2 rounded-md w-1/3 mx-auto my-32"
 		>
 			<div
-				class="lms-batch__mono flex items-center border-b border-outline-gray-2 px-5 py-3 text-[11px] uppercase tracking-[0.12em] text-ink-gray-6"
+				class="lms-batch__mono flex items-center border-b border-outline-gray-2 px-5 py-3 text-[10px] uppercase tracking-[0.14em] text-ink-gray-5"
 			>
 				<span
 					class="inline-flex items-center before:bg-surface-red-5 before:w-2 before:h-2 before:rounded-full before:mr-2"

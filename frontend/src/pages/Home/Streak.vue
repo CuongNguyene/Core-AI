@@ -1,10 +1,10 @@
 <template>
-	<Dialog
-		v-model="show"
-		:options="{
-			title: __('home.streak.title'),
-		}"
-	>
+	<Dialog v-model="show">
+		<template #body-title>
+			<h3 class="lms-streak__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('home.streak.title') }}
+			</h3>
+		</template>
 		<template #body-content>
 			<div class="text-base">
 				<div class="text-center">
@@ -20,7 +20,7 @@
 							}}
 							{{ __('home.streak.youAreOnA') }}
 						</div>
-						<div class="font-semibold text-xl text-ink-gray-9">
+						<div class="lms-streak__serif text-xl text-ink-gray-9">
 							{{ streakInfo.data?.current_streak }} {{ __('home.streak.dayStreak') }}
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 						<div class="text-ink-gray-6">
 							{{ __('home.streak.current') }}
 						</div>
-						<div class="font-semibold text-lg text-ink-gray-9">
+						<div class="lms-streak__serif text-lg text-ink-gray-9">
 							{{ streakInfo.data?.current_streak }} {{ __('home.streak.days') }}
 						</div>
 					</div>
@@ -41,7 +41,7 @@
 						<div class="text-ink-gray-6">
 							{{ __('home.streak.longest') }}
 						</div>
-						<div class="font-semibold text-lg text-ink-gray-9">
+						<div class="lms-streak__serif text-lg text-ink-gray-9">
 							{{ streakInfo.data?.longest_streak }} {{ __('home.streak.days') }}
 						</div>
 					</div>
@@ -72,3 +72,16 @@ const props = defineProps<{
 	}
 }>()
 </script>
+<style scoped>
+.lms-streak__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
