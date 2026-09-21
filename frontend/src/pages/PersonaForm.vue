@@ -1,23 +1,23 @@
 <template>
-	<div class="flex h-screen overflow-hidden sm:bg-gray-50">
+	<div class="flex h-screen overflow-hidden bg-surface-white">
 		<div class="relative h-full z-10 mx-auto sm:w-max pt-40">
 			<div class="mx-auto flex items-center justify-center space-x-2">
 				<LMSLogo class="size-7" />
 				<span
-					class="select-none text-xl font-semibold tracking-tight text-gray-900"
+				class="select-none text-xl font-semibold tracking-tight text-ink-gray-9"
 				>
 					Learning
 				</span>
 			</div>
 			<div
-				class="mx-auto w-full h-fit bg-white py-8 sm:mt-6 sm:w-96 sm:rounded-lg sm:px-8 sm:shadow-xl"
+				class="mx-auto w-full h-fit bg-surface-white py-8 sm:mt-6 sm:w-96 sm:rounded-lg sm:px-8 sm:shadow-xl"
 			>
 				<div class="font-medium text-center mb-8">
 					{{ __('Help us understand your needs') }}
 				</div>
 
 				<div class="mb-5">
-					<div class="text-sm text-gray-700 mb-2">
+					<div class="text-sm text-ink-gray-7 mb-2">
 						{{ __('What is your use case for Frappe Learning?') }}
 					</div>
 					<FormControl
@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="mb-5">
-					<div class="text-sm text-gray-700 mb-2">
+					<div class="text-sm text-ink-gray-7 mb-2">
 						{{ __('What best describes your role?') }}
 					</div>
 					<FormControl

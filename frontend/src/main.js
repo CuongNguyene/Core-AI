@@ -11,6 +11,11 @@ import { initSocket } from './socket'
 import { FrappeUI, setConfig, frappeRequest, pageMetaPlugin } from 'frappe-ui'
 import { telemetryPlugin } from '@/telemetry'
 
+const savedTheme = localStorage.getItem('theme')
+const initialTheme = ['light', 'dark'].includes(savedTheme) ? savedTheme : 'light'
+
+document.documentElement.setAttribute('data-theme', initialTheme)
+
 let pinia = createPinia()
 let app = createApp(App)
 setConfig('resourceFetcher', frappeRequest)

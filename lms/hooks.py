@@ -152,6 +152,7 @@ override_whitelisted_methods = {
 
 # Add all simple route rules here
 website_route_rules = [
+	{"from_route": "/lms", "to_route": "lms"},
 	{"from_route": "/lms/<path:app_path>", "to_route": "lms"},
 	{
 		"from_route": "/courses/<course_name>/<certificate_id>",
