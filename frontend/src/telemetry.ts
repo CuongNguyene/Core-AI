@@ -88,6 +88,14 @@ export const telemetryPlugin = {
 
 		let cfg: PulseBootConfig = { enabled: false }
 		try {
+			// Backends newer than this app's baseline expose boot_config. Gate on
+			// is_enabled (present across versions) first so older Frappe backends
+			// don't 417 on a missing endpoint just to discover telemetry is off.
+			const enabled = await call(
+				'frappe.utils.telemetry.pulse.client.is_enabled',
+			)
+			if (!enabled) return
+
 			cfg = await call('frappe.utils.telemetry.pulse.client.boot_config')
 		} catch (e) {
 			// Older/misconfigured backends: keep telemetry off.

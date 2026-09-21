@@ -62,8 +62,12 @@ function loadLanguage() {
 	const { userResource } = usersStore()
 
 	const applyLanguage = (user) => {
-		window.translatedMessages = (user?.language && translations[user.language]) || {}
-		window.lmsLanguage = user?.language || 'en'
+		let language = user?.language
+		if (language && !translations[language]) {
+			language = translations[language.split('-')[0]] ? language.split('-')[0] : 'en'
+		}
+		window.translatedMessages = (language && translations[language]) || translations['en'] || {}
+		window.lmsLanguage = language || 'en'
 		dayjs.locale(window.lmsLanguage)
 	}
 
