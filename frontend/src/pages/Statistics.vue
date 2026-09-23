@@ -16,7 +16,9 @@
 				class="grid grid-cols-2 sm:grid-cols-4 gap-3 items-end mb-4"
 			>
 				<div>
-					<div class="text-xs text-ink-gray-5 mb-1">{{ __('statistics.dateRange') }}</div>
+					<div class="text-xs text-ink-gray-5 mb-1">
+						{{ __('statistics.dateRange') }}
+					</div>
 					<Dropdown
 						v-if="!showDatePicker"
 						:options="rangeOptions"
@@ -70,7 +72,10 @@
 				/>
 			</div>
 			<div v-else class="max-w-56 mb-4">
-				<DateRangeFilter v-model="filters.period" :label="__('statistics.dateRange')" />
+				<DateRangeFilter
+					v-model="filters.period"
+					:label="__('statistics.dateRange')"
+				/>
 			</div>
 
 			<div
@@ -93,8 +98,8 @@
 						:config="{
 							title: __('statistics.enrollments'),
 							value: isStaffView
-								? summary?.enrollments ?? chartDetails.data.enrollments
-								: myStats.data?.enrollments ?? 0,
+								? (summary?.enrollments ?? chartDetails.data.enrollments)
+								: (myStats.data?.enrollments ?? 0),
 						}"
 						@click="openDetail('enrollments', __('statistics.enrollments'))"
 					/>
@@ -105,8 +110,8 @@
 						:config="{
 							title: __('statistics.completions'),
 							value: isStaffView
-								? summary?.completions ?? chartDetails.data.completions
-								: myStats.data?.completions ?? 0,
+								? (summary?.completions ?? chartDetails.data.completions)
+								: (myStats.data?.completions ?? 0),
 						}"
 						@click="openDetail('completions', __('statistics.completions'))"
 					/>
@@ -117,10 +122,12 @@
 						:config="{
 							title: __('statistics.certifications'),
 							value: isStaffView
-								? summary?.certifications ?? chartDetails.data.certifications
-								: myStats.data?.certifications ?? 0,
+								? (summary?.certifications ?? chartDetails.data.certifications)
+								: (myStats.data?.certifications ?? 0),
 						}"
-						@click="openDetail('certifications', __('statistics.certifications'))"
+						@click="
+							openDetail('certifications', __('statistics.certifications'))
+						"
 					/>
 				</Tooltip>
 				<Tooltip :text="__('statistics.tapForDetails')">
@@ -129,11 +136,14 @@
 						:config="{
 							title: __('statistics.timeSpentLearning'),
 							value: isStaffView
-								? summary?.time_spent_hours ?? chartDetails.data.time_spent_hours
+								? (summary?.time_spent_hours ??
+									chartDetails.data.time_spent_hours)
 								: totalTimeSpentHours,
 							suffix: __('statistics.hoursSuffix'),
 						}"
-						@click="openDetail('time_spent', __('statistics.timeSpentLearning'))"
+						@click="
+							openDetail('time_spent', __('statistics.timeSpentLearning'))
+						"
 					/>
 				</Tooltip>
 			</div>
@@ -152,17 +162,26 @@
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
 				<template v-if="canViewDepartmentReport">
 					<div class="border rounded-md min-h-72">
-						<AxisChart v-if="progressChartConfig" :config="progressChartConfig" />
+						<AxisChart
+							v-if="progressChartConfig"
+							:config="progressChartConfig"
+						/>
 					</div>
 					<div class="border rounded-md min-h-72">
-						<AxisChart v-if="employeesChartConfig" :config="employeesChartConfig" />
+						<AxisChart
+							v-if="employeesChartConfig"
+							:config="employeesChartConfig"
+						/>
 					</div>
 				</template>
 				<div v-else-if="isStaffView" class="border rounded-md min-h-72">
 					<AxisChart v-if="signupsChartConfig" :config="signupsChartConfig" />
 				</div>
 				<div class="border rounded-md min-h-72">
-					<AxisChart v-if="enrollmentChartConfig" :config="enrollmentChartConfig" />
+					<AxisChart
+						v-if="enrollmentChartConfig"
+						:config="enrollmentChartConfig"
+					/>
 				</div>
 				<div class="border rounded-md">
 					<AxisChart
@@ -183,7 +202,10 @@
 
 			<div class="mt-4">
 				<div class="border rounded-md min-h-72">
-					<AxisChart v-if="timeSpentChartConfig" :config="timeSpentChartConfig" />
+					<AxisChart
+						v-if="timeSpentChartConfig"
+						:config="timeSpentChartConfig"
+					/>
 				</div>
 			</div>
 
@@ -226,7 +248,10 @@
 								</div>
 							</template>
 							<div v-else-if="isStaffView" class="border rounded-md min-h-72">
-								<AxisChart v-if="signupsChartConfig" :config="signupsChartConfig" />
+								<AxisChart
+									v-if="signupsChartConfig"
+									:config="signupsChartConfig"
+								/>
 							</div>
 							<div class="border rounded-md min-h-72">
 								<AxisChart
@@ -241,7 +266,10 @@
 								/>
 							</div>
 							<div class="border rounded-md">
-								<DonutChart v-if="donutChartConfig" :config="donutChartConfig" />
+								<DonutChart
+									v-if="donutChartConfig"
+									:config="donutChartConfig"
+								/>
 							</div>
 							<div v-if="canViewDepartmentReport" class="border rounded-md">
 								<DonutChart
@@ -270,7 +298,10 @@
 			</template>
 			<template #actions>
 				<div class="flex justify-end gap-2">
-					<Button :label="__('statistics.cancel')" @click="showExportModal = false" />
+					<Button
+						:label="__('statistics.cancel')"
+						@click="showExportModal = false"
+					/>
 					<Button
 						:label="__('statistics.exportPdf')"
 						variant="solid"
@@ -311,18 +342,18 @@ const { brand } = sessionStore()
 const { userResource } = usersStore()
 
 const canViewDepartmentReport = computed(
-	() => !!userResource.data?.can_view_department_report
+	() => !!userResource.data?.can_view_department_report,
 )
 
 const canViewTimeSpent = computed(
 	() =>
 		userResource.data?.is_moderator ||
 		userResource.data?.is_instructor ||
-		userResource.data?.is_system_manager
+		userResource.data?.is_system_manager,
 )
 
 const isStaffView = computed(
-	() => canViewTimeSpent.value || canViewDepartmentReport.value
+	() => canViewTimeSpent.value || canViewDepartmentReport.value,
 )
 
 const myStats = createResource({
@@ -383,14 +414,14 @@ watch(
 	() => {
 		filters.department = ''
 		filters.employee = ''
-	}
+	},
 )
 
 watch(
 	() => filters.department,
 	() => {
 		filters.employee = ''
-	}
+	},
 )
 
 const showDatePicker = ref(false)
@@ -408,11 +439,29 @@ const rangeOptions = computed(() => [
 		group: __('statistics.presets'),
 		hideLabel: true,
 		items: [
-			{ label: __('statistics.today'), onClick: () => applyPreset(__('statistics.today'), getLastXDays(0)) },
-			{ label: __('statistics.last7Days'), onClick: () => applyPreset(__('statistics.last7Days'), getLastXDays(7)) },
-			{ label: __('statistics.last30Days'), onClick: () => applyPreset(__('statistics.last30Days'), getLastXDays(30)) },
-			{ label: __('statistics.last60Days'), onClick: () => applyPreset(__('statistics.last60Days'), getLastXDays(60)) },
-			{ label: __('statistics.last90Days'), onClick: () => applyPreset(__('statistics.last90Days'), getLastXDays(90)) },
+			{
+				label: __('statistics.today'),
+				onClick: () => applyPreset(__('statistics.today'), getLastXDays(0)),
+			},
+			{
+				label: __('statistics.last7Days'),
+				onClick: () => applyPreset(__('statistics.last7Days'), getLastXDays(7)),
+			},
+			{
+				label: __('statistics.last30Days'),
+				onClick: () =>
+					applyPreset(__('statistics.last30Days'), getLastXDays(30)),
+			},
+			{
+				label: __('statistics.last60Days'),
+				onClick: () =>
+					applyPreset(__('statistics.last60Days'), getLastXDays(60)),
+			},
+			{
+				label: __('statistics.last90Days'),
+				onClick: () =>
+					applyPreset(__('statistics.last90Days'), getLastXDays(90)),
+			},
 		],
 	},
 	{
@@ -448,7 +497,7 @@ watch(
 	(canView) => {
 		if (canView) reload()
 	},
-	{ immediate: true }
+	{ immediate: true },
 )
 
 watch(filters, () => {
@@ -476,14 +525,23 @@ function reload() {
 
 const summary = computed(() => departmentReport.data?.summary)
 const periodSummary = computed(() => departmentReport.data?.period_summary)
-const departmentSummary = computed(() => departmentReport.data?.department_summary)
+const departmentSummary = computed(
+	() => departmentReport.data?.department_summary,
+)
 const topLearners = computed(() => recognitionReport.data?.top_learners || [])
-const departmentRanking = computed(() => recognitionReport.data?.department_ranking || [])
+const departmentRanking = computed(
+	() => recognitionReport.data?.department_ranking || [],
+)
 
 const enrollmentXAxis = computed(() => {
 	return canViewDepartmentReport.value
 		? { key: 'period', type: 'category', title: __('statistics.period') }
-		: { key: 'date', type: 'time', title: __('statistics.date'), timeGrain: 'day' }
+		: {
+				key: 'date',
+				type: 'time',
+				title: __('statistics.date'),
+				timeGrain: 'day',
+			}
 })
 
 const progressChartConfig = computed(() => {
@@ -519,14 +577,21 @@ const signupsChartConfig = computed(() => {
 		data: signupsChart.data,
 		title: __('statistics.signups'),
 		subtitle: __('statistics.signupsSubtitle'),
-		xAxis: { key: 'date', type: 'time', title: __('statistics.date'), timeGrain: 'day' },
+		xAxis: {
+			key: 'date',
+			type: 'time',
+			title: __('statistics.date'),
+			timeGrain: 'day',
+		},
 		yAxis: { title: __('statistics.signups') },
 		series: [{ name: 'signups', type: 'line', showDataPoints: true }],
 	}
 })
 
 const enrollmentChartConfig = computed(() => {
-	let data = canViewDepartmentReport.value ? periodSummary.value : enrollmentChart.data
+	let data = canViewDepartmentReport.value
+		? periodSummary.value
+		: enrollmentChart.data
 	if (!data) return null
 	return {
 		data,
@@ -541,7 +606,9 @@ const enrollmentChartConfig = computed(() => {
 })
 
 const certificationChartConfig = computed(() => {
-	let data = canViewDepartmentReport.value ? periodSummary.value : certification.data
+	let data = canViewDepartmentReport.value
+		? periodSummary.value
+		: certification.data
 	if (!data) return null
 	return {
 		data,
@@ -589,76 +656,193 @@ const departmentChartConfig = computed(() => {
 	}
 })
 
+async function chartSvgToCanvas(svg) {
+	const { width, height } = svg.getBoundingClientRect()
+	if (!width || !height) throw new Error('Chart has no visible size')
+
+	const svgMarkup = new XMLSerializer().serializeToString(svg)
+	const svgBlob = new Blob([svgMarkup], { type: 'image/svg+xml;charset=utf-8' })
+	const svgUrl = URL.createObjectURL(svgBlob)
+
+	try {
+		const image = await new Promise((resolve, reject) => {
+			const chartImage = new Image()
+			chartImage.onload = () => resolve(chartImage)
+			chartImage.onerror = () => reject(new Error('Could not render chart image'))
+			chartImage.src = svgUrl
+		})
+
+		const scale = 2
+		const canvas = document.createElement('canvas')
+		canvas.width = Math.ceil(width * scale)
+		canvas.height = Math.ceil(height * scale)
+		const context = canvas.getContext('2d')
+		if (!context) throw new Error('Could not create export canvas')
+
+		context.fillStyle = '#ffffff'
+		context.fillRect(0, 0, canvas.width, canvas.height)
+		context.drawImage(image, 0, 0, canvas.width, canvas.height)
+		return canvas
+	} finally {
+		URL.revokeObjectURL(svgUrl)
+	}
+}
+
 async function exportPdf() {
 	exporting.value = true
 	try {
-		const { default: html2canvas } = await import('html2canvas')
 		const { jsPDF } = await import('jspdf')
 
 		const container = document.querySelector('.js-charts-export-container')
 		if (!container) throw new Error('Export container not found')
+		const chartSvgs = container.querySelectorAll('.grid > .border.rounded-md svg')
+		if (!chartSvgs.length) throw new Error('No charts are ready to export')
 
-		const clone = container.cloneNode(true)
-		Object.assign(clone.style, {
-			position: 'fixed',
-			top: '-9999px',
-			left: '-9999px',
-			width: `${container.clientWidth}px`,
-			background: '#fff',
+		const pdf = new jsPDF({
+			orientation: 'landscape',
+			unit: 'mm',
+			format: 'a4',
 		})
-		document.body.appendChild(clone)
-		await new Promise((resolve) => setTimeout(resolve, 600))
-
-		const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' })
 		const pdfW = pdf.internal.pageSize.getWidth()
 		const pdfH = pdf.internal.pageSize.getHeight()
 		const margin = 10
 		const gap = 6
-		const headerH = 15
 		const colW = (pdfW - margin * 2 - gap) / 2
+		const reportTitle = brand.name || 'LMS'
+		const reportPeriod = formatRange(filters.period) || presetLabel.value
+		const reportScope = canViewDepartmentReport.value
+			? [filters.company || __('statistics.all'), filters.department || __('statistics.all')].join(
+					' / '
+				)
+			: __('statistics.all')
+		const metrics = [
+			...(isStaffView.value
+				? [
+						{
+							label: __('statistics.courses'),
+							value: summary.value?.courses ?? chartDetails.data.courses,
+						},
+					]
+				: []),
+			{
+				label: __('statistics.enrollments'),
+				value: isStaffView.value
+					? (summary.value?.enrollments ?? chartDetails.data.enrollments)
+					: (myStats.data?.enrollments ?? 0),
+			},
+			{
+				label: __('statistics.completions'),
+				value: isStaffView.value
+					? (summary.value?.completions ?? chartDetails.data.completions)
+					: (myStats.data?.completions ?? 0),
+			},
+			{
+				label: __('statistics.certifications'),
+				value: isStaffView.value
+					? (summary.value?.certifications ?? chartDetails.data.certifications)
+					: (myStats.data?.certifications ?? 0),
+			},
+			{
+				label: __('statistics.timeSpentLearning'),
+				value: `${
+					isStaffView.value
+						? (summary.value?.time_spent_hours ?? chartDetails.data.time_spent_hours)
+						: totalTimeSpentHours.value
+				}${__('statistics.hoursSuffix')}`,
+			},
+		]
+		const chartMetadata = [
+			...(canViewDepartmentReport.value
+				? [
+						{ title: progressChartConfig.value?.title, config: progressChartConfig.value },
+						{ title: employeesChartConfig.value?.title, config: employeesChartConfig.value },
+					]
+				: isStaffView.value
+					? [{ title: signupsChartConfig.value?.title, config: signupsChartConfig.value }]
+					: []),
+			{ title: enrollmentChartConfig.value?.title, config: enrollmentChartConfig.value },
+			{ title: certificationChartConfig.value?.title, config: certificationChartConfig.value },
+			{ title: donutChartConfig.value?.title, config: donutChartConfig.value },
+			...(canViewDepartmentReport.value
+				? [{ title: departmentChartConfig.value?.title, config: departmentChartConfig.value }]
+				: []),
+			{ title: __('statistics.timeSpentLearning'), config: timeSpentChartConfig.value },
+		].filter((chart) => chart.config)
 
-		const drawHeader = () => {
-			pdf.setFontSize(10)
-			pdf.setTextColor(60, 60, 60)
-			pdf.text(
-				__('statistics.pdfHeader').format(
-					filters.company || __('statistics.all'),
-					filters.department || __('statistics.all'),
-					filters.employee || __('statistics.all'),
-					formatRange(filters.period) || presetLabel.value
-				),
-				margin,
-				margin + 5
-			)
-			pdf.setDrawColor(220, 220, 220)
-			pdf.line(margin, margin + headerH - 2, pdfW - margin, margin + headerH - 2)
+		const drawHeader = (includeSummary = false) => {
+			pdf.setFillColor(24, 44, 75)
+			pdf.rect(0, 0, pdfW, includeSummary ? 48 : 26, 'F')
+			pdf.setTextColor(255, 255, 255)
+			pdf.setFontSize(16)
+			pdf.text(reportTitle, margin, 12)
+			pdf.setFontSize(9)
+			pdf.text(__('statistics.exportDashboardReport'), margin, 19)
+			pdf.setTextColor(52, 68, 91)
+			pdf.setFillColor(241, 245, 249)
+			pdf.roundedRect(margin, includeSummary ? 31 : 31, pdfW - margin * 2, 12, 2, 2, 'F')
+			pdf.setFontSize(8)
+			pdf.text(`${__('statistics.dateRange')}: ${reportPeriod}`, margin + 4, includeSummary ? 38 : 38)
+			pdf.text(`${__('statistics.department')}: ${reportScope}`, pdfW / 2, includeSummary ? 38 : 38)
+			return includeSummary ? 52 : 48
 		}
 
-		drawHeader()
+		let currentY = drawHeader(true)
+		const metricGap = 4
+		const metricW = (pdfW - margin * 2 - metricGap * (metrics.length - 1)) / metrics.length
+		metrics.forEach((metric, index) => {
+			const x = margin + index * (metricW + metricGap)
+			pdf.setFillColor(248, 250, 252)
+			pdf.setDrawColor(226, 232, 240)
+			pdf.roundedRect(x, currentY, metricW, 22, 2, 2, 'FD')
+			pdf.setTextColor(100, 116, 139)
+			pdf.setFontSize(7)
+			pdf.text(metric.label, x + 3, currentY + 7)
+			pdf.setTextColor(15, 23, 42)
+			pdf.setFontSize(14)
+			pdf.text(String(metric.value ?? 0), x + 3, currentY + 17)
+		})
+		currentY += 31
+		pdf.setTextColor(15, 23, 42)
+		pdf.setFontSize(11)
+		pdf.text(__('statistics.title'), margin, currentY)
+		currentY += 5
+
 		let currentX = margin
-		let currentY = margin + headerH
 		let maxRowH = 0
+		const panelH = 92
 
-		const chartElements = clone.querySelectorAll('.grid > .border.rounded-md')
-		for (const el of Array.from(chartElements)) {
-			const canvas = await html2canvas(el, {
-				scale: 2.5,
-				backgroundColor: '#ffffff',
-				useCORS: true,
-				logging: false,
-			})
-			const imgH = colW * (canvas.height / canvas.width)
+		for (const [index, svg] of Array.from(chartSvgs).entries()) {
+			const canvas = await chartSvgToCanvas(svg)
+			const chart = chartMetadata[index]
 
-			if (currentY + imgH > pdfH - margin) {
+			if (currentY + panelH > pdfH - margin - 8) {
 				pdf.addPage()
-				drawHeader()
+				currentY = drawHeader()
 				currentX = margin
-				currentY = margin + headerH
 				maxRowH = 0
 			}
 
-			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', currentX, currentY, colW, imgH)
-			maxRowH = Math.max(maxRowH, imgH)
+			pdf.setFillColor(255, 255, 255)
+			pdf.setDrawColor(203, 213, 225)
+			pdf.roundedRect(currentX, currentY, colW, panelH, 2, 2, 'FD')
+			pdf.setTextColor(30, 41, 59)
+			pdf.setFontSize(9)
+			pdf.text(chart?.title || __('statistics.title'), currentX + 4, currentY + 7)
+
+			const maxImageW = colW - 8
+			const maxImageH = panelH - 14
+			const scale = Math.min(maxImageW / canvas.width, maxImageH / canvas.height)
+			const imgW = canvas.width * scale
+			const imgH = canvas.height * scale
+			pdf.addImage(
+				canvas.toDataURL('image/png'),
+				'PNG',
+				currentX + (colW - imgW) / 2,
+				currentY + 10 + (maxImageH - imgH) / 2,
+				imgW,
+				imgH,
+			)
+			maxRowH = Math.max(maxRowH, panelH)
 			currentX += colW + gap
 
 			if (currentX + colW > pdfW) {
@@ -668,7 +852,18 @@ async function exportPdf() {
 			}
 		}
 
-		document.body.removeChild(clone)
+		const pageCount = pdf.getNumberOfPages()
+		for (let page = 1; page <= pageCount; page++) {
+			pdf.setPage(page)
+			pdf.setTextColor(100, 116, 139)
+			pdf.setFontSize(7)
+			pdf.text(
+				`${reportTitle} | ${dayjs().format('YYYY-MM-DD HH:mm')} | ${page}/${pageCount}`,
+				margin,
+				pdfH - 5,
+			)
+		}
+
 		pdf.save(`Department_Report_${dayjs().format('YYYY-MM-DD_HHmm')}.pdf`)
 	} catch (err) {
 		console.error('PDF Export Error:', err)
@@ -745,17 +940,27 @@ watch(
 		if (!data) return
 		let member = isStaffView.value ? undefined : data.name
 		let [from_date, to_date] = (filters.period || '').split(',')
-		signupsChart.reload({ chart_name: 'New Signups', member, from_date, to_date })
+		signupsChart.reload({
+			chart_name: 'New Signups',
+			member,
+			from_date,
+			to_date,
+		})
 		enrollmentChart.reload({
 			chart_name: 'Course Enrollments',
 			member,
 			from_date,
 			to_date,
 		})
-		certification.reload({ chart_name: 'Certification', member, from_date, to_date })
+		certification.reload({
+			chart_name: 'Certification',
+			member,
+			from_date,
+			to_date,
+		})
 		courseCompletion.reload({ member })
 	},
-	{ immediate: true }
+	{ immediate: true },
 )
 
 const timeSpentGranularity = computed(() => {
@@ -784,7 +989,7 @@ watch(
 			member: isStaffView.value ? undefined : userResource.data.name,
 		})
 	},
-	{ immediate: true }
+	{ immediate: true },
 )
 
 const showDetailModal = ref(false)
@@ -799,7 +1004,9 @@ const detailScope = computed(() => {
 	return canViewDepartmentReport.value ? 'department' : 'global'
 })
 
-const detailFromDate = computed(() => (filters.period || '').split(',')[0] || '')
+const detailFromDate = computed(
+	() => (filters.period || '').split(',')[0] || '',
+)
 const detailToDate = computed(() => (filters.period || '').split(',')[1] || '')
 
 function openDetail(metric, title) {
@@ -845,13 +1052,8 @@ usePageMeta(() => {
 <style scoped>
 .lms-statistics__serif {
 	font-family:
-		'Source Serif 4',
-		Georgia,
-		'Iowan Old Style',
-		'Palatino Linotype',
-		'Book Antiqua',
-		Palatino,
-		serif;
+		'Source Serif 4', Georgia, 'Iowan Old Style', 'Palatino Linotype',
+		'Book Antiqua', Palatino, serif;
 	letter-spacing: -0.01em;
 }
 </style>

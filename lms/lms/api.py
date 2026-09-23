@@ -168,7 +168,12 @@ def get_user_info():
 
 	from lms.lms.utils import get_report_department_scope
 
-	user.can_view_department_report = get_report_department_scope(user.name) != []
+	user.has_hr_reporting_data = all(
+		frappe.db.exists("DocType", doctype) for doctype in ("Employee", "Department", "Company")
+	)
+	user.can_view_department_report = (
+		user.has_hr_reporting_data and get_report_department_scope(user.name) != []
+	)
 	user.sitename = frappe.local.site
 	user.developer_mode = frappe.conf.developer_mode
 	# if user.is_fc_site and user.is_system_manager:

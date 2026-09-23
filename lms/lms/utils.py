@@ -794,9 +794,9 @@ def get_chart_data(
 	chart = frappe.get_doc("Dashboard Chart", chart_name)
 	doctype = chart.document_type
 	datefield = chart.based_on
-	value_field = chart.value_based_on or "1"
+	value_field = chart.value_based_on
 
-	filters = [([chart.document_type, "docstatus", "<", 2, False])]
+	filters = [[chart.document_type, "docstatus", "<", 2, False]]
 	filters = filters + json.loads(chart.filters_json)
 	filters.append([doctype, datefield, ">=", from_date, False])
 	filters.append([doctype, datefield, "<=", to_date, False])
@@ -807,9 +807,16 @@ def get_chart_data(
 		member_field = "name" if doctype == "User" else "member"
 		filters.append([doctype, member_field, "=", member, False])
 
+	if value_field:
+		value_expression = f"SUM(`{value_field}`) as _value"
+		count_expression = f"COUNT(`{value_field}`) as _count"
+	else:
+		value_expression = "COUNT(*) as _value"
+		count_expression = "COUNT(*) as _count"
+
 	data = frappe.db.get_all(
 		doctype,
-		fields=[f"{datefield} as _unit", {"SUM": value_field}, {"COUNT": "*"}],
+		fields=[f"`{datefield}` as _unit", value_expression, count_expression],
 		filters=filters,
 		group_by="_unit",
 		order_by="_unit asc",
