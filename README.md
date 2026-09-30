@@ -1,43 +1,48 @@
 # Core AI
 
-One development workspace for LMS and PAI. The runtimes stay isolated: Frappe owns LMS delivery and
-the `pai_frappe` bridge; the FastAPI service owns AI workflows, its database, workers, and raw
-document storage.
+`Core-AI` is the independently deployable PAI service. It deliberately does **not** contain a
+copy of LMS. LMS remains in its own repository and connects to PAI through the versioned, signed
+API exposed by this repository.
 
 ## Layout
 
-- `apps/lms`: LMS Vue/Frappe application, imported from `feat/ai-skills`.
-- `apps/pai_frappe`: Frappe bridge app for signed LMS-to-PAI calls.
-- `services/pai-backend`: FastAPI API, workers, Alembic migrations, and PAI Docker services.
-- `infra/frappe-init.sh`: bootstraps a development Frappe bench with both apps installed.
+- `apps/pai_frappe`: Frappe bridge app installed into an existing LMS Bench.
+- `services/pai-backend`: FastAPI API, asynchronous workers, Alembic migrations and Docker stack.
+- `scripts/attach-lms.sh`: installs the bridge app into an existing LMS site without changing LMS
+  Docker or CI/CD configuration.
 
-## Start locally
+## Local development with an existing LMS checkout
 
-1. Copy the environment examples without committing the resulting files:
-
-   ```bash
-   cp .env.example .env
-   cp services/pai-backend/devops/compose/.env.example services/pai-backend/devops/compose/.env
-   cp services/pai-backend/backend/.env.example services/pai-backend/backend/.env
-   ```
-
-2. Replace every `replace-with-...` value. Generate an Ed25519 key pair for the signed actor
-   context, place only the public key in the PAI backend environment, and store the private key in
-   the `PAI Settings` DocType after Frappe starts.
-
-3. Run:
+1. Clone this repository alongside (or anywhere accessible to) the existing Frappe Bench/LMS
+   checkout.
+2. Start PAI. The commands and required local secrets are documented in
+   [`services/pai-backend/docs/local-development.md`](services/pai-backend/docs/local-development.md):
 
    ```bash
-   docker compose up --build
+   cd services/pai-backend
+   cp backend/.env.example backend/.env
+   cp devops/compose/.env.example devops/compose/.env
+   docker compose --env-file devops/compose/.env \
+     -f devops/compose/docker-compose.local.yml up -d --build
    ```
 
-Frappe becomes available on `http://localhost:8000`; inside the Compose network, configure `PAI
-Settings.service_url` as `http://backend:8000`. The first boot creates the site, installs `lms` and
-`pai_frappe`, and may take several minutes.
+3. Attach the Frappe bridge to the existing LMS site. This does not edit the LMS source code,
+   Compose configuration or CI/CD pipeline:
 
-## Safety boundaries
+   ```bash
+   ./scripts/attach-lms.sh --bench /path/to/frappe-bench --site your-site-name
+   ```
 
-- Do not commit any `.env`, private signing key, integration API key, CV/JD, or object-store data.
-- Frappe never calls model providers directly; all AI calls go through `pai-backend`.
-- Run database migrations independently: Frappe migrations through Bench and PAI migrations through
-  Alembic. Do not share either database or migration runner.
+4. In the LMS Desk, complete **PAI Settings**: for local development set the service URL to
+   `http://127.0.0.1:18000`, enable **Allow Insecure Local PAI URL**, then add the organisation,
+   integration key and Ed25519 signing key that match `backend/.env`. Create a **PAI User Identity**
+   for each LMS user who will use PAI.
+
+The PAI readiness endpoint is `http://127.0.0.1:18000/health/ready`.
+
+## Production boundary
+
+Build and deploy LMS and PAI as separate versioned images. Deploy configuration must pin the LMS
+image and the `pai-backend` image independently, provide secrets through the deployment platform,
+and configure LMS with the PAI HTTPS endpoint. Do not deploy by cloning either repository and do
+not commit `.env`, private signing keys, integration keys, documents or object-store data.
