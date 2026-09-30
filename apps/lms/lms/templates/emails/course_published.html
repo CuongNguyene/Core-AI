@@ -1,0 +1,12 @@
+<div>
+  <p>{{ _("Hi") }},</p>
+  <br>
+  <p>{{ _("Your course") }} <strong>{{ title }}</strong> {{ _("has been approved and published.") }}</p>
+  {% if description %}
+  <p>{{ description }}</p>
+  {% endif %}
+  <p><a href="{{ url }}">{{ _("View your course") }}</a></p>
+  <br>
+  <p>{{ _("Thanks and Regards") }},</p>
+  <p>{{ _("Team School") }}.</p>
+</div>

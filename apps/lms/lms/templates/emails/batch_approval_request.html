@@ -1,0 +1,12 @@
+<div>
+  <p>{{ _("Hi") }},</p>
+  <br>
+  <p>{{ member_name }} {{ _("created a new batch") }} <strong>{{ title }}</strong> {{ _("that needs your approval.") }}</p>
+  {% if description %}
+  <p>{{ description }}</p>
+  {% endif %}
+  <p><a href="{{ url }}">{{ _("Review and publish") }}</a></p>
+  <br>
+  <p>{{ _("Thanks and Regards") }},</p>
+  <p>{{ _("Team School") }}.</p>
+</div>

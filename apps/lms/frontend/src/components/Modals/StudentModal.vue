@@ -1,0 +1,103 @@
+<template>
+	<Dialog
+		v-model="show"
+		:options="{
+			size: 'sm',
+			actions: [
+				{
+					label: __('batches.studentModal.submit'),
+					variant: 'solid',
+					onClick: (close) => addStudent(close),
+				},
+			],
+		}"
+	>
+		<template #body-title>
+			<h3 class="lms-student-modal__serif text-2xl leading-6 text-ink-gray-9">
+				{{ __('batches.studentModal.addStudent') }}
+			</h3>
+		</template>
+		<template #body-content>
+			<div class="flex flex-col gap-4">
+				<Link
+					doctype="User"
+					v-model="student"
+					:filters="{ ignore_user_type: 1 }"
+					:placeholder="__('batches.studentModal.searchStudent')"
+					:onCreate="
+						(value, close) => {
+							openSettings('Members', close)
+						}
+					"
+				/>
+			</div>
+		</template>
+	</Dialog>
+</template>
+<script setup>
+import { Dialog, createResource, toast } from 'frappe-ui'
+import { ref, inject } from 'vue'
+import Link from '@/components/Controls/Link.vue'
+import { useOnboarding } from '@/utils/onboardingCompat'
+import { openSettings } from '@/utils'
+
+const students = defineModel('reloadStudents')
+const batchModal = defineModel('batchModal')
+const student = ref()
+const user = inject('$user')
+const { updateOnboardingStep } = useOnboarding('learning')
+const show = defineModel()
+
+const props = defineProps({
+	batch: {
+		type: String,
+		default: null,
+	},
+})
+
+const studentResource = createResource({
+	url: 'frappe.client.insert',
+	makeParams(values) {
+		return {
+			doc: {
+				doctype: 'LMS Batch Enrollment',
+				batch: props.batch,
+				member: student.value,
+			},
+		}
+	},
+})
+
+const addStudent = (close) => {
+	studentResource.submit(
+		{},
+		{
+			onSuccess() {
+				if (user.data?.is_system_manager)
+					updateOnboardingStep('add_batch_student')
+
+				students.value.reload()
+				batchModal.value.reload()
+				student.value = null
+				close()
+			},
+			onError(err) {
+				toast.error(err.messages?.[0] || err)
+			},
+		}
+	)
+}
+</script>
+<style scoped>
+.lms-student-modal__serif {
+	font-family:
+		'Source Serif 4',
+		Georgia,
+		'Iowan Old Style',
+		'Palatino Linotype',
+		'Book Antiqua',
+		Palatino,
+		serif;
+	letter-spacing: -0.01em;
+}
+</style>
