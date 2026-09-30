@@ -1,0 +1,87 @@
+{
+  "review_id": "review-005",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-14T15:16:35+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "clean",
+    "issues": [],
+    "notes": "Schema validation flags related to required capabilities are noted, but all internal objectives, modules, and lessons map correctly[cite: 25]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "YES. A very strong, highly integrated technical curriculum that respects operational dependencies.",
+      "notes": "The design excellently maps the physical reality of construction (reading plans -> sequencing work -> ensuring safety) into a coherent learning path[cite: 25]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 5,
+        "rationale": "Criteria like 'identifies at least four distinct drawing element categories' and 'states at least two safety considerations' are highly objective and measurable[cite: 25]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The integrated written performance task requires learners to execute all three objectives simultaneously, mirroring the brief[cite: 25]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 5,
+        "rationale": "Working directly from a basic construction drawing set ensures authentic, high-fidelity assessment evidence[cite: 25]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The progression from 'understand' (interpreting elements) to 'apply' (sequencing methods and identifying safety) is perfectly calibrated[cite: 25]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 5,
+        "rationale": "Recognizing that basic drawing conventions must be a prerequisite ensures the 60 minutes are spent on interpretation and method planning, not basic symbol literacy[cite: 25]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The instructional sequence (Read -> Sequence -> Safety) is logically air-tight and reflects standard industry practice[cite: 25]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "The use of worked examples and an integrated scenario effectively prepares the learner for the summative submission[cite: 25]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Fast-paced, but possible within 60 minutes if the sample drawing is kept extremely simple and focused[cite: 25]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Strictly limited to the scope of the drawing set; explicitly excludes general site safety to prevent scope creep[cite: 25]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Only minor effort required to calibrate the complexity of the drawing fixture to ensure it fits the time limit."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-cdmb-01"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisite is well-defined and essential[cite: 25]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 0,
+      "notes": "No structural edits required. The researcher must carefully select an appropriately simple construction drawing fixture[cite: 25]."
+    },
+    "overall_notes": "A rigorous, authentic, and highly logical instructional design that beautifully integrates three distinct construction competencies into a single unified performance task[cite: 25]."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "milestone": "INTEGRATION-01B.1",
+  "status": "COMPLETE",
+  "scope": "documentation_only",
+  "canonical_contract_version": "v1",
+  "deprecated_contracts_marked": true,
+  "evidence_persistence_boundary_documented": true
+}

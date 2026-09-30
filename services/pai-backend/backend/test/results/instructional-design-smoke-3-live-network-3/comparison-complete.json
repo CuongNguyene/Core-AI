@@ -1,0 +1,42 @@
+{
+  "comparison_version": "0.2",
+  "smoke_2_results": "../instructional-design-smoke-2-live-3/results.json",
+  "smoke_3_results": "results-complete.json",
+  "fair_comparison": true,
+  "winner_declared": false,
+  "structured": {
+    "smoke_2_condition": "structured",
+    "smoke_2": {
+      "run_count": 3,
+      "completed_count": 3,
+      "failed_count": 0,
+      "quality_gate_pass_rate": 0.3333333333333333,
+      "finding_counts_by_code": {
+        "assessment_dependency_not_covered": 4,
+        "orphan_lesson": 4,
+        "orphan_module": 1
+      },
+      "unresolved_prerequisite_mean": 5.666666666666667
+    },
+    "smoke_3_condition": "structured_v0.3",
+    "smoke_3": {
+      "run_count": 3,
+      "completed_count": 3,
+      "failed_count": 0,
+      "quality_gate_pass_rate": 0.3333333333333333,
+      "finding_counts_by_code": {
+        "assessment_dependency_not_covered": 4
+      },
+      "unresolved_prerequisite_mean": 3.0,
+      "stage_failures": {}
+    }
+  },
+  "reliability": {
+    "smoke_2_structured_completed": "3/3",
+    "smoke_3_structured_completed": "3/3",
+    "recovery_runs": 1,
+    "recovery_failure_class": "malformed_json",
+    "recovery_used_existing_bounded_gateway_repair": true
+  },
+  "interpretation": "Descriptive diagnostics only; no winner or statistical conclusion. The finding mix changed after v0.3, while assessment scope creep remains and needs human review/upstream iteration."
+}

@@ -1,0 +1,34 @@
+{
+  "source_base": "FastAPI routes are included without a global /api prefix in backend/app/main.py",
+  "target_base": "NestJS global prefix /api in backend/src/main.ts",
+  "source_routes": [
+    "/health, /health/live, /health/ready",
+    "/documents",
+    "/extraction-jobs, /extraction-jobs/{id}, /extraction-profiles/{id} and review actions",
+    "/assessment-templates, /assessment-submissions",
+    "/preliminary-matches and review",
+    "/role-profiles and draft actions",
+    "/competencies and assessment-decision actions",
+    "/semantic-policies and role-profile policy binding",
+    "/capability-analysis",
+    "/learning-paths and supersede",
+    "/credential-requests and credentials"
+  ],
+  "target_routes": [
+    "/api/auth/*, /api/users/*",
+    "/api/courses/*, /api/courses/{courseId}/modules, /api/modules/*, /api/modules/{moduleId}/lessons, /api/lessons/*",
+    "/api/documents/*, /api/uploads/*",
+    "/api/learning-paths/*, /api/enrollments/*, /api/progress/*",
+    "/api/quizzes/*, /api/attempts/*",
+    "/api/certificates/*, /api/certificate-templates/*",
+    "/api/notifications/*, /api/dashboard, /api/reports, /api/learners"
+  ],
+  "overlaps": [
+    {"path":"POST /documents","source_semantics":"multipart CV/JD/evidence document upload; quarantine, hash, retention, organization and object-store metadata","target_semantics":"authenticated training resource creation; content/file metadata attached optionally to Course","conflict":"same resource name and path, different semantics","severity":"high","recommendation":"keep distinct internal services and expose an explicit /evidence-documents or /extraction-documents adapter"},
+    {"path":"POST /learning-paths","source_semantics":"creates a path only from approved match, verified competency, approved gap and target profile","target_semantics":"creates an LMS path containing Courses and assignments","conflict":"same path, different invariants and response shape","severity":"high","recommendation":"do not merge handlers; add a source-derived development-plan endpoint or explicit adapter"},
+    {"path":"GET /learning-paths/{id}","source_semantics":"subject/org-authorized generated path","target_semantics":"staff/learner LMS path visibility and content","conflict":"same path, different authorization and entity graph","severity":"high","recommendation":"namespace source capability plan or map through a read-only projection"},
+    {"path":"assessment/quiz","source_semantics":"evidence-backed rubric/SME competency decision","target_semantics":"quiz attempt score/pass and course progress","conflict":"same domain word, different semantics","severity":"high","recommendation":"retain separate assessment types and never infer VERIFIED from QuizAttempt"}
+  ],
+  "missing_target_endpoints": ["CV/JD upload and extraction jobs", "extraction review actions", "role profile authoring", "preliminary matching", "capability analysis", "semantic policy governance", "competency verification", "evidence graph", "source credential policy workflow"],
+  "adapter_candidates": ["source learning-path blueprint to target Course/LearningPath draft", "source instructional-design output to target Course/Module/Lesson authoring DTO", "source assessment design output to target Quiz draft, with evidence/rubric fields preserved outside target Quiz"]
+}

@@ -1,0 +1,976 @@
+{
+  "manifest": {
+    "experiment_id": "ID-04F",
+    "experiment_version": "0.1",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "legal_contract_review_basic"
+    ],
+    "conditions": [
+      "structured"
+    ],
+    "runs_per_fixture_per_condition": 1,
+    "model_provider": "vilao",
+    "model_name": "claude-sonnet-5",
+    "model_revision": null,
+    "generation_config": {
+      "temperature": 0.0,
+      "top_p": null,
+      "max_output_tokens": 8192,
+      "seed": null,
+      "unsupported_fields": [
+        "top_p",
+        "seed"
+      ]
+    },
+    "policy_id": "pai_instructional_design",
+    "policy_version": "0.1",
+    "dependency_normalizer_version": "id02d.2@0.1",
+    "prompt_schema_versions": [
+      {
+        "prompt_id": "instructional_objective_design",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_objective_design",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_assessment_design",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_assessment_design",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_prerequisite_proposal",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_prerequisite_proposal",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_course_planning",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_course_planning",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_lesson_planning",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_lesson_planning",
+        "schema_version": "0.3.4"
+      }
+    ],
+    "estimated_model_call_count": 5,
+    "source": "ID-04D final rerun",
+    "intervention": "deterministic_provenance_alias_boundary",
+    "prerequisite_policy_version": "prerequisite_minimality_policy@0.1",
+    "historical_artifacts_modified": false,
+    "worktree": "/Users/mac/Developers/work/PAI Learning/Pai-learning/.worktrees/pr-012-instructional-design-core/backend"
+  },
+  "results": [
+    {
+      "run": {
+        "run_id": "ID-04F:legal_contract_review_basic:structured:1",
+        "experiment_id": "ID-04F",
+        "experiment_version": "0.1",
+        "fixture_id": "legal_contract_review_basic",
+        "condition": "structured",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3.4"
+          }
+        ],
+        "started_at": "2026-08-18T03:21:36.367953Z"
+      },
+      "status": "completed",
+      "snapshot": {
+        "snapshot_version": "instructional-design-research-snapshot@0.1",
+        "brief": {
+          "id": "brief-legal_contract_review_basic",
+          "capability": {
+            "id": null,
+            "name": "basic commercial contract review",
+            "target_context": "cross-domain research fixture"
+          },
+          "learner_state": {
+            "known": [],
+            "unknown": [],
+            "evidence_refs": [
+              "cross-domain-fixture:legal_contract_review_basic:learner-state"
+            ]
+          },
+          "desired_performances": [
+            "Given a commercial contract clause, identify potential risks and explain the reasoning without issuing a final legal judgment."
+          ],
+          "constraints": {
+            "estimated_total_minutes": 60,
+            "language": "en",
+            "audience_notes": []
+          },
+          "provenance": {
+            "type": "research_fixture",
+            "authored_by": "instructional-design-research",
+            "created_at": null
+          }
+        },
+        "objectives": [
+          {
+            "id": "lo-legal_contract_review_basic-01",
+            "brief_id": "brief-legal_contract_review_basic",
+            "performance": "Identify potential risk points in a given commercial contract clause",
+            "cognitive_process": "analyze",
+            "knowledge_dimension": "conceptual",
+            "conditions": [
+              "Given a single commercial contract clause presented as text, with no additional deal context supplied"
+            ],
+            "success_criteria": [
+              "Names at least one plausible risk area present in the clause",
+              "Quotes or points to the specific clause language that gives rise to each named risk"
+            ],
+            "prerequisite_refs": [],
+            "capability_refs": [],
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "This objective is a model-proposed minimal decomposition of the brief's single desired performance statement, not a researcher-authored objective.",
+                "No target learner role level or prior-knowledge evidence was supplied, so scope is limited to surface-level risk spotting rather than any certified competency."
+              ]
+            }
+          },
+          {
+            "id": "lo-legal_contract_review_basic-02",
+            "brief_id": "brief-legal_contract_review_basic",
+            "performance": "Explain the reasoning behind an identified contract risk while explicitly framing the output as an observation rather than a legal determination",
+            "cognitive_process": "understand",
+            "knowledge_dimension": "metacognitive",
+            "conditions": [
+              "Given a contract clause and a previously identified risk point"
+            ],
+            "success_criteria": [
+              "States a rationale connecting the clause language to the identified risk",
+              "Explicitly labels the response as a risk observation rather than a final legal judgment",
+              "Avoids definitive legal-conclusion phrasing (e.g., stating the clause 'is enforceable' or 'is illegal')"
+            ],
+            "prerequisite_refs": [
+              "lo-legal_contract_review_basic-01"
+            ],
+            "capability_refs": [],
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "This objective operationalizes the brief's explicit constraint against issuing a final legal judgment as an assessable boundary-awareness behavior; the boundary itself is treated as model-proposed scoping, not a verified competency standard.",
+                "Sequencing after the risk-identification objective is a model-proposed ordering, not a confirmed prerequisite relationship."
+              ]
+            }
+          }
+        ],
+        "assessments": [
+          {
+            "id": "assess-legal_contract_review_basic-01-formative",
+            "objective_ids": [
+              "lo-legal_contract_review_basic-01"
+            ],
+            "capability_claim": "Learner can identify potential risk points in a commercial contract clause by naming plausible risk areas and pointing to the specific language that creates those risks",
+            "required_evidence": [
+              {
+                "id": "ev-01-risk-identification",
+                "criterion": "Names at least one plausible risk area present in the clause",
+                "rationale": "Directly maps to the first success criterion of lo-legal_contract_review_basic-01"
+              },
+              {
+                "id": "ev-01-clause-reference",
+                "criterion": "Quotes or points to the specific clause language that gives rise to each named risk",
+                "rationale": "Directly maps to the second success criterion of lo-legal_contract_review_basic-01"
+              }
+            ],
+            "task": {
+              "task_type": "structured response",
+              "description": "Learner is presented with a single commercial contract clause as text. Learner must identify at least one risk point and reference the specific language in the clause that creates that risk.",
+              "conditions": [
+                "Single commercial contract clause presented as text",
+                "No additional deal context supplied",
+                "No time limit specified"
+              ]
+            },
+            "cognitive_process": "analyze",
+            "scoring": {
+              "rubric_dimensions": [
+                {
+                  "id": "dim-risk-plausibility",
+                  "criterion": "Plausibility of identified risk area",
+                  "performance_levels": [
+                    "No risk identified or risk is implausible given the clause",
+                    "Risk area is plausible and relevant to the clause language"
+                  ]
+                },
+                {
+                  "id": "dim-clause-grounding",
+                  "criterion": "Grounding in clause language",
+                  "performance_levels": [
+                    "No reference to clause language",
+                    "General reference to clause topic but no specific language quoted or pointed to",
+                    "Specific clause language quoted or clearly pointed to for each identified risk"
+                  ]
+                }
+              ],
+              "mastery_rule": "Both evidence criteria must be met: at least one plausible risk named and specific clause language referenced"
+            },
+            "role": "formative",
+            "required_capabilities": [
+              {
+                "name": "recognize commercial contract risk categories",
+                "objective_ids": [
+                  "lo-legal_contract_review_basic-01"
+                ],
+                "rationale": "Learner must have working knowledge of common risk types in commercial contracts (e.g., payment terms, indemnification, limitation of liability, termination rights) to identify plausible risks"
+              },
+              {
+                "name": "parse legal clause structure and language",
+                "objective_ids": [
+                  "lo-legal_contract_review_basic-01"
+                ],
+                "rationale": "Learner must be able to read and interpret clause language sufficiently to locate the specific text that creates a risk"
+              }
+            ],
+            "is_summative": false,
+            "required_capability_refs": [
+              "recognize commercial contract risk categories",
+              "parse legal clause structure and language"
+            ],
+            "estimated_minutes": 20,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Assessment is formative because lo-legal_contract_review_basic-01 is a foundational analysis skill that feeds into the subsequent objective; formative feedback on risk identification supports the learner before they practice the boundary-awareness behavior in lo-legal_contract_review_basic-02.",
+                "No specific clause examples or risk taxonomy were supplied, so the assessment assumes the evaluator will select representative commercial clauses and apply domain judgment to determine risk plausibility.",
+                "The 20-minute estimate assumes a single clause of moderate complexity and written response; no timing constraint was specified in the brief."
+              ]
+            }
+          },
+          {
+            "id": "assess-legal_contract_review_basic-02-summative",
+            "objective_ids": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "capability_claim": "Learner can explain the reasoning behind an identified contract risk while explicitly framing the output as an observation rather than a final legal judgment",
+            "required_evidence": [
+              {
+                "id": "ev-02-rationale",
+                "criterion": "States a rationale connecting the clause language to the identified risk",
+                "rationale": "Directly maps to the first success criterion of lo-legal_contract_review_basic-02"
+              },
+              {
+                "id": "ev-02-boundary-label",
+                "criterion": "Explicitly labels the response as a risk observation rather than a final legal judgment",
+                "rationale": "Directly maps to the second success criterion of lo-legal_contract_review_basic-02"
+              },
+              {
+                "id": "ev-02-language-boundary",
+                "criterion": "Avoids definitive legal-conclusion phrasing (e.g., stating the clause 'is enforceable' or 'is illegal')",
+                "rationale": "Directly maps to the third success criterion of lo-legal_contract_review_basic-02"
+              }
+            ],
+            "task": {
+              "task_type": "structured explanation",
+              "description": "Learner is presented with a contract clause and a previously identified risk point (either one they identified or one supplied by the prompt). Learner must explain why the clause language creates that risk, explicitly label their response as an observation, and avoid definitive legal-conclusion language.",
+              "conditions": [
+                "Contract clause and a previously identified risk point are supplied",
+                "No additional deal context supplied",
+                "No time limit specified"
+              ]
+            },
+            "cognitive_process": "understand",
+            "scoring": {
+              "rubric_dimensions": [
+                {
+                  "id": "dim-rationale-quality",
+                  "criterion": "Quality of rationale connecting clause language to risk",
+                  "performance_levels": [
+                    "No rationale provided or rationale does not connect clause language to the risk",
+                    "Rationale present but vague or incomplete",
+                    "Clear rationale that explicitly connects specific clause language to the identified risk"
+                  ]
+                },
+                {
+                  "id": "dim-boundary-awareness",
+                  "criterion": "Boundary awareness and labeling",
+                  "performance_levels": [
+                    "Response uses definitive legal-conclusion phrasing or does not label output as observation",
+                    "Response avoids definitive phrasing but does not explicitly label the output as an observation",
+                    "Response explicitly labels output as an observation and consistently avoids definitive legal-conclusion phrasing"
+                  ]
+                }
+              ],
+              "mastery_rule": "All three evidence criteria must be met: rationale stated, response explicitly labeled as observation, and definitive legal-conclusion phrasing avoided"
+            },
+            "role": "summative",
+            "required_capabilities": [
+              {
+                "name": "articulate cause-effect reasoning in contract language",
+                "objective_ids": [
+                  "lo-legal_contract_review_basic-02"
+                ],
+                "rationale": "Learner must be able to construct and communicate a logical chain from clause language to risk outcome"
+              },
+              {
+                "name": "distinguish observation from legal determination",
+                "objective_ids": [
+                  "lo-legal_contract_review_basic-02"
+                ],
+                "rationale": "Learner must understand the boundary between identifying and explaining a risk versus rendering a binding legal judgment, and must be able to signal that boundary explicitly in their response"
+              }
+            ],
+            "is_summative": true,
+            "required_capability_refs": [
+              "articulate cause-effect reasoning in contract language",
+              "distinguish observation from legal determination"
+            ],
+            "estimated_minutes": 25,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Assessment is summative because lo-legal_contract_review_basic-02 is the terminal objective in the brief and integrates both the explanation skill and the boundary-awareness behavior required by the brief's single desired performance statement.",
+                "The boundary-awareness behavior (explicitly framing output as observation, avoiding legal-conclusion language) is treated as a required capability to be demonstrated, not as a professional role competency or ethical standard; no verified role level or competency framework was supplied.",
+                "The 25-minute estimate assumes a single clause, a supplied or self-identified risk point, and a written explanation of moderate length; no timing constraint was specified in the brief.",
+                "The task may supply the risk point to the learner or allow them to identify it first; the objective and success criteria are silent on this sequencing detail."
+              ]
+            }
+          }
+        ],
+        "dependency_candidates": [
+          {
+            "capability": "foundational legal terminology and contract structure",
+            "reason": "Both objectives assume the learner can parse contract clauses and recognize risk categories, which presupposes familiarity with basic legal terminology (e.g., indemnification, liability, termination) and the structure of commercial agreements. This foundational knowledge was not explicitly stated in the brief or objectives.",
+            "required_for_refs": [
+              "lo-legal_contract_review_basic-01",
+              "lo-legal_contract_review_basic-02"
+            ]
+          },
+          {
+            "capability": "written communication at a professional level",
+            "reason": "lo-legal_contract_review_basic-02 requires the learner to explain reasoning and frame output appropriately, which assumes baseline written communication skill. No prior evidence of writing ability was supplied in the learner state.",
+            "required_for_refs": [
+              "lo-legal_contract_review_basic-02"
+            ]
+          }
+        ],
+        "prerequisites": [
+          {
+            "id": "prereq-legal_terminology_contract_structure",
+            "capability": "foundational legal terminology and contract structure",
+            "status": "candidate",
+            "basis": "model_proposed",
+            "classification": "required_prerequisite",
+            "rationale": "Learner cannot identify risks in contract clauses without recognizing basic legal terms (e.g., indemnification, liability, termination) and clause structure. Without this capability, the learner would be unable to parse the clause text presented in assess-legal_contract_review_basic-01-formative or distinguish legal language from general prose.",
+            "required_for_refs": [
+              "lo-legal_contract_review_basic-01",
+              "assess-legal_contract_review_basic-01-formative"
+            ],
+            "requires_prerequisite_refs": [],
+            "teaching_objective_id": null,
+            "disposition": "entry_prerequisite",
+            "source_dependency_refs": [
+              "foundational legal terminology and contract structure"
+            ]
+          },
+          {
+            "id": "prereq-written_communication_professional",
+            "capability": "written communication at a professional level",
+            "status": "candidate",
+            "basis": "model_proposed",
+            "classification": "helpful_background",
+            "rationale": "Explaining reasoning and framing output appropriately in lo-legal_contract_review_basic-02 benefits from professional writing skill, but the cognitive task of constructing a rationale and labeling it correctly can be scaffolded and practiced within the course. Written communication quality does not prevent entry-level engagement with the risk-explanation task.",
+            "required_for_refs": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "requires_prerequisite_refs": [],
+            "teaching_objective_id": null,
+            "disposition": "in_course_support",
+            "source_dependency_refs": [
+              "written communication at a professional level"
+            ]
+          }
+        ],
+        "canonical_dependencies": [
+          {
+            "capability_ref": "recognize commercial contract risk categories",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-01-formative",
+                  "original_value": "recognize commercial contract risk categories"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-01-formative",
+                  "original_value": "recognize commercial contract risk categories"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-legal_contract_review_basic-01"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "parse legal clause structure and language",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-01-formative",
+                  "original_value": "parse legal clause structure and language"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-01-formative",
+                  "original_value": "parse legal clause structure and language"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-legal_contract_review_basic-01"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "foundational legal terminology and contract structure",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-legal_contract_review_basic-01-formative",
+                  "original_value": "foundational legal terminology and contract structure"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-legal_contract_review_basic-01"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "articulate cause-effect reasoning in contract language",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-02-summative",
+                  "original_value": "articulate cause-effect reasoning in contract language"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-02-summative",
+                  "original_value": "articulate cause-effect reasoning in contract language"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "distinguish observation from legal determination",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-02-summative",
+                  "original_value": "distinguish observation from legal determination"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-02-summative",
+                  "original_value": "distinguish observation from legal determination"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "foundational legal terminology and contract structure",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-legal_contract_review_basic-02-summative",
+                  "original_value": "foundational legal terminology and contract structure"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "written communication at a professional level",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-legal_contract_review_basic-02-summative",
+                  "original_value": "written communication at a professional level"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          }
+        ],
+        "course_outline": {
+          "id": "course-legal_contract_review_basic-01",
+          "brief_id": "brief-legal_contract_review_basic",
+          "objective_ids": [
+            "lo-legal_contract_review_basic-01",
+            "lo-legal_contract_review_basic-02"
+          ],
+          "modules": [
+            {
+              "id": "module-legal_contract_review_basic-01",
+              "title": "Identifying Contract Risks",
+              "objective_ids": [
+                "lo-legal_contract_review_basic-01"
+              ],
+              "prerequisite_refs": [
+                "prereq-legal_terminology_contract_structure"
+              ],
+              "lesson_ids": [
+                "lesson-legal_contract_review_basic-01-explanation",
+                "lesson-legal_contract_review_basic-01-guided-practice"
+              ],
+              "estimated_minutes": 30
+            },
+            {
+              "id": "module-legal_contract_review_basic-02",
+              "title": "Explaining Risk Observations",
+              "objective_ids": [
+                "lo-legal_contract_review_basic-02"
+              ],
+              "prerequisite_refs": [
+                "prereq-written_communication_professional"
+              ],
+              "lesson_ids": [
+                "lesson-legal_contract_review_basic-02-explanation",
+                "lesson-legal_contract_review_basic-02-guided-practice"
+              ],
+              "estimated_minutes": 30
+            }
+          ],
+          "prerequisite_refs": [
+            "prereq-legal_terminology_contract_structure",
+            "prereq-written_communication_professional"
+          ],
+          "estimated_minutes": 60,
+          "planning_warnings": [],
+          "sequencing_rationale": [
+            "Module 1 addresses lo-legal_contract_review_basic-01 (risk identification), which is a stated prerequisite for lo-legal_contract_review_basic-02 (risk explanation).",
+            "Module 2 addresses lo-legal_contract_review_basic-02, which requires the learner to work with a previously identified risk point, building on the identification skill from Module 1.",
+            "The 60-minute total budget is allocated evenly: 30 minutes per module including instruction, practice, and assessment, matching the declared workload budget."
+          ],
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "Module time estimates assume 10 minutes instruction + guided practice per objective, with the remaining 20-25 minutes per module allocated to the formative and summative assessments as specified.",
+              "No lesson IDs are generated; lesson_ids arrays are left empty for orchestration to populate after lesson generation.",
+              "The two-module structure follows the two-objective decomposition supplied in the input data; no alternative sequencing was explored.",
+              "Prerequisite prereq-legal_terminology_contract_structure is treated as an entry prerequisite for Module 1; prereq-written_communication_professional is treated as helpful background for Module 2 per the supplied disposition."
+            ]
+          }
+        },
+        "lessons": [
+          {
+            "id": "lesson-legal_contract_review_basic-01-explanation",
+            "module_id": "module-legal_contract_review_basic-01",
+            "objective_ids": [
+              "lo-legal_contract_review_basic-01"
+            ],
+            "prerequisite_refs": [
+              "prereq-legal_terminology_contract_structure"
+            ],
+            "lesson_goal": "Introduce common risk categories in commercial contracts and demonstrate how to locate specific clause language that creates each risk type",
+            "instructional_pattern": "explanation",
+            "expected_learner_activity": "Review examples of commercial contract clauses with annotated risk points, observing how specific language triggers payment, indemnification, liability, or termination risks",
+            "formative_assessment_ids": [],
+            "summative_assessment_ids": [],
+            "estimated_minutes": 5,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Explanation precedes guided practice to establish the risk taxonomy and clause-analysis method required by assess-legal_contract_review_basic-01-formative",
+                "5-minute allocation assumes concise introduction of 3-4 risk categories with minimal worked examples; remaining module time reserved for practice and formative assessment"
+              ]
+            }
+          },
+          {
+            "id": "lesson-legal_contract_review_basic-01-guided-practice",
+            "module_id": "module-legal_contract_review_basic-01",
+            "objective_ids": [
+              "lo-legal_contract_review_basic-01"
+            ],
+            "prerequisite_refs": [
+              "prereq-legal_terminology_contract_structure"
+            ],
+            "lesson_goal": "Practice identifying risk points and quoting specific clause language with scaffolded guidance before independent assessment",
+            "instructional_pattern": "guided_practice",
+            "expected_learner_activity": "Analyze sample contract clauses with prompts that guide attention to specific risk indicators, then practice naming risk areas and quoting the relevant language with immediate feedback",
+            "formative_assessment_ids": [],
+            "summative_assessment_ids": [],
+            "estimated_minutes": 5,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Guided practice placed after explanation and before formative assessment per ID-04C practice coverage requirement",
+                "5-minute allocation assumes 2-3 scaffolded clause examples with targeted prompts; combined lesson time (10 minutes) leaves 20 minutes for formative assessment within the 30-minute module budget"
+              ]
+            }
+          },
+          {
+            "id": "lesson-legal_contract_review_basic-02-explanation",
+            "module_id": "module-legal_contract_review_basic-02",
+            "objective_ids": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "prerequisite_refs": [
+              "prereq-written_communication_professional"
+            ],
+            "lesson_goal": "Introduce the boundary between risk observation and legal determination, and demonstrate how to construct rationales that connect clause language to risk outcomes while using appropriate framing language",
+            "instructional_pattern": "explanation",
+            "expected_learner_activity": "Review contrasting examples of risk explanations, observing which statements inappropriately claim legal conclusions versus which appropriately frame observations, and noting the rationale structure used in each",
+            "formative_assessment_ids": [],
+            "summative_assessment_ids": [],
+            "estimated_minutes": 3,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Explanation introduces the boundary-awareness behavior and rationale-construction method required by assess-legal_contract_review_basic-02-summative",
+                "3-minute allocation assumes brief conceptual introduction with 2-3 contrasting example pairs; remaining module time reserved for integrated practice and summative assessment"
+              ]
+            }
+          },
+          {
+            "id": "lesson-legal_contract_review_basic-02-guided-practice",
+            "module_id": "module-legal_contract_review_basic-02",
+            "objective_ids": [
+              "lo-legal_contract_review_basic-02"
+            ],
+            "prerequisite_refs": [
+              "prereq-written_communication_professional"
+            ],
+            "lesson_goal": "Practice constructing rationales and framing risk explanations as observations, addressing both required capabilities before summative assessment",
+            "instructional_pattern": "guided_practice",
+            "expected_learner_activity": "Given clause-risk pairs, draft rationales connecting language to risk and practice using observation framing; receive scaffolded feedback on rationale clarity and boundary-appropriate language before independent summative task",
+            "formative_assessment_ids": [],
+            "summative_assessment_ids": [],
+            "estimated_minutes": 2,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Guided practice placed after explanation and before summative assessment per ID-04C requirement to provide practice for apply/analyze/evaluate/create objectives; lo-legal_contract_review_basic-02 is classified understand but integrates two capabilities tested summatively",
+                "2-minute allocation assumes one scaffolded practice item with immediate feedback on rationale structure and framing language; combined lesson time (5 minutes) leaves 25 minutes for summative assessment within the 30-minute module budget",
+                "Practice addresses both required capabilities from assess-legal_contract_review_basic-02-summative: articulate cause-effect reasoning and distinguish observation from legal determination"
+              ]
+            }
+          }
+        ],
+        "quality_report": {
+          "passed": false,
+          "findings": [
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-legal_contract_review_basic-01-formative",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-legal_contract_review_basic-01-formative",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-legal_contract_review_basic-02-summative",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-legal_contract_review_basic-02-summative",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            }
+          ],
+          "objective_coverage": 1.0,
+          "assessment_coverage": 1.0,
+          "unresolved_prerequisites": [
+            "prereq-legal_terminology_contract_structure",
+            "prereq-written_communication_professional"
+          ],
+          "policy_id": "pai_instructional_design",
+          "policy_version": "0.1",
+          "practice_coverage": [
+            {
+              "assessment_id": "assess-legal_contract_review_basic-02-summative",
+              "assessment_role": "summative",
+              "objective_refs": [
+                "lo-legal_contract_review_basic-02"
+              ],
+              "capability_ref": "articulate cause-effect reasoning in contract language",
+              "source_requirement_ref": "assess-legal_contract_review_basic-02-summative:required_capabilities:0",
+              "instruction_refs": [
+                "lesson-legal_contract_review_basic-02-explanation"
+              ],
+              "guided_practice_refs": [
+                "lesson-legal_contract_review_basic-02-guided-practice"
+              ],
+              "independent_practice_refs": [],
+              "formative_refs": [],
+              "status": "covered"
+            },
+            {
+              "assessment_id": "assess-legal_contract_review_basic-02-summative",
+              "assessment_role": "summative",
+              "objective_refs": [
+                "lo-legal_contract_review_basic-02"
+              ],
+              "capability_ref": "distinguish observation from legal determination",
+              "source_requirement_ref": "assess-legal_contract_review_basic-02-summative:required_capabilities:1",
+              "instruction_refs": [
+                "lesson-legal_contract_review_basic-02-explanation"
+              ],
+              "guided_practice_refs": [
+                "lesson-legal_contract_review_basic-02-guided-practice"
+              ],
+              "independent_practice_refs": [],
+              "formative_refs": [],
+              "status": "covered"
+            }
+          ]
+        },
+        "generation_provenance": {
+          "research_brief_id": "brief-legal_contract_review_basic",
+          "instructional_design_policy_id": "pai_instructional_design",
+          "instructional_design_policy_version": "0.1",
+          "prompt_versions": {
+            "instructional_objective_design": "0.3.4",
+            "instructional_assessment_design": "0.3.4",
+            "instructional_prerequisite_proposal": "0.3.4",
+            "instructional_course_planning": "0.3.4",
+            "instructional_lesson_planning": "0.3.4"
+          },
+          "output_schema_versions": {
+            "instructional_objective_design": "0.3.4",
+            "instructional_assessment_design": "0.3.4",
+            "instructional_prerequisite_proposal": "0.3.4",
+            "instructional_course_planning": "0.3.4",
+            "instructional_lesson_planning": "0.3.4"
+          },
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": null,
+          "generated_at": "2026-08-18T03:21:36.367953Z"
+        }
+      },
+      "partial_artifacts": null,
+      "stage_failure": null,
+      "model_audits": [
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_objective_design",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_objective_design",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_objective_design",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 37677,
+          "usage": {
+            "input_tokens": 1311,
+            "output_tokens": 799
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_assessment_design",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_assessment_design",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_assessment_design",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 47238,
+          "usage": {
+            "input_tokens": 6113,
+            "output_tokens": 5337
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_prerequisite_proposal",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_prerequisite_proposal",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_prerequisite_proposal",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 17447,
+          "usage": {
+            "input_tokens": 8097,
+            "output_tokens": 1549
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_course_planning",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_course_planning",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_course_planning",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 18350,
+          "usage": {
+            "input_tokens": 10382,
+            "output_tokens": 1875
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_lesson_planning",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_lesson_planning",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_lesson_planning",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 30122,
+          "usage": {
+            "input_tokens": 11176,
+            "output_tokens": 3382
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        }
+      ],
+      "completed_at": "2026-08-18T03:24:07.214285Z"
+    }
+  ]
+}

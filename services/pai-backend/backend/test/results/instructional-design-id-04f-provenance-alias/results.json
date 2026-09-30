@@ -1,0 +1,1226 @@
+{
+  "manifest": {
+    "experiment_id": "ID-04F",
+    "experiment_version": "0.1",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "legal_contract_review_basic"
+    ],
+    "conditions": [
+      "structured"
+    ],
+    "runs_per_fixture_per_condition": 1,
+    "model_provider": "vilao",
+    "model_name": "claude-sonnet-5",
+    "model_revision": null,
+    "generation_config": {
+      "temperature": 0.0,
+      "top_p": null,
+      "max_output_tokens": 8192,
+      "seed": null,
+      "unsupported_fields": [
+        "top_p",
+        "seed"
+      ]
+    },
+    "policy_id": "pai_instructional_design",
+    "policy_version": "0.1",
+    "dependency_normalizer_version": "id02d.2@0.1",
+    "prompt_schema_versions": [
+      {
+        "prompt_id": "instructional_objective_design",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_objective_design",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_assessment_design",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_assessment_design",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_prerequisite_proposal",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_prerequisite_proposal",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_course_planning",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_course_planning",
+        "schema_version": "0.3.4"
+      },
+      {
+        "prompt_id": "instructional_lesson_planning",
+        "prompt_version": "0.3.4",
+        "schema_id": "instructional_lesson_planning",
+        "schema_version": "0.3.4"
+      }
+    ],
+    "estimated_model_call_count": 5,
+    "source": "ID-04D final rerun",
+    "intervention": "deterministic_provenance_alias_boundary",
+    "prerequisite_policy_version": "prerequisite_minimality_policy@0.1",
+    "historical_artifacts_modified": false,
+    "worktree": "/Users/mac/Developers/work/PAI Learning/Pai-learning/.worktrees/pr-012-instructional-design-core/backend"
+  },
+  "results": [
+    {
+      "run": {
+        "run_id": "ID-04F:legal_contract_review_basic:structured:1",
+        "experiment_id": "ID-04F",
+        "experiment_version": "0.1",
+        "fixture_id": "legal_contract_review_basic",
+        "condition": "structured",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3.4"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3.4",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3.4"
+          }
+        ],
+        "started_at": "2026-08-17T07:53:37.065439Z"
+      },
+      "status": "completed",
+      "snapshot": {
+        "snapshot_version": "instructional-design-research-snapshot@0.1",
+        "brief": {
+          "id": "brief-legal_contract_review_basic",
+          "capability": {
+            "id": null,
+            "name": "basic commercial contract review",
+            "target_context": "cross-domain research fixture"
+          },
+          "learner_state": {
+            "known": [],
+            "unknown": [],
+            "evidence_refs": [
+              "cross-domain-fixture:legal_contract_review_basic:learner-state"
+            ]
+          },
+          "desired_performances": [
+            "Given a commercial contract clause, identify potential risks and explain the reasoning without issuing a final legal judgment."
+          ],
+          "constraints": {
+            "estimated_total_minutes": 60,
+            "language": "en",
+            "audience_notes": []
+          },
+          "provenance": {
+            "type": "research_fixture",
+            "authored_by": "instructional-design-research",
+            "created_at": null
+          }
+        },
+        "objectives": [
+          {
+            "id": "lo-lcr-01",
+            "brief_id": "brief-legal_contract_review_basic",
+            "performance": "Given a commercial contract clause, describe its structural components and the function each serves.",
+            "cognitive_process": "understand",
+            "knowledge_dimension": "conceptual",
+            "conditions": [
+              "a sample commercial contract clause is provided",
+              "no external legal reference materials required"
+            ],
+            "success_criteria": [
+              "correctly labels at least three structural components (e.g., party identification, obligation, condition, remedy) with reference to specific clause text",
+              "states the functional purpose of each labeled component without evaluating legal enforceability"
+            ],
+            "prerequisite_refs": [],
+            "capability_refs": [],
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Assumes learners have no prior contract-reading experience; researcher should adjust if audience evidence indicates otherwise.",
+                "Structural component taxonomy used here is a candidate only; researcher must verify against the target domain vocabulary before use."
+              ]
+            }
+          },
+          {
+            "id": "lo-lcr-02",
+            "brief_id": "brief-legal_contract_review_basic",
+            "performance": "Given a commercial contract clause, identify language patterns that signal potential commercial risk.",
+            "cognitive_process": "analyze",
+            "knowledge_dimension": "procedural",
+            "conditions": [
+              "a single unfamiliar commercial contract clause is provided",
+              "learner may reference a researcher-supplied risk-indicator checklist and risk taxonomy"
+            ],
+            "success_criteria": [
+              "flags at least one risk-relevant language pattern per clause with a specific textual citation",
+              "categorizes each flagged pattern by risk type using a researcher-supplied taxonomy (e.g., liability exposure, ambiguity, obligation scope)",
+              "produces no risk assertions that are unsupported by clause text"
+            ],
+            "prerequisite_refs": [
+              "lo-lcr-01"
+            ],
+            "capability_refs": [],
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "A researcher-supplied risk-indicator checklist and risk taxonomy are assumed necessary; this objective cannot be reliably assessed without them.",
+                "Performance is scoped to a single clause; cross-clause or whole-contract synthesis is out of scope for this brief."
+              ]
+            }
+          },
+          {
+            "id": "lo-lcr-03",
+            "brief_id": "brief-legal_contract_review_basic",
+            "performance": "Given identified risks in a contract clause, construct a written explanation of the reasoning that explicitly stops short of a legal judgment.",
+            "cognitive_process": "evaluate",
+            "knowledge_dimension": "metacognitive",
+            "conditions": [
+              "learner has a completed set of flagged risk patterns from lo-lcr-02",
+              "explanation is written to permit assessor review against observable criteria"
+            ],
+            "success_criteria": [
+              "explanation cites specific clause language for every stated risk",
+              "explanation includes at least one explicit scope boundary that distinguishes commercial risk observation from legal conclusion (e.g., 'this language may warrant legal review' rather than 'this clause is unenforceable')",
+              "no statement in the explanation constitutes or implies a final legal determination"
+            ],
+            "prerequisite_refs": [
+              "lo-lcr-02"
+            ],
+            "capability_refs": [],
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "The operational boundary between 'risk observation' and 'legal judgment' requires researcher-defined criteria to make the third success criterion assessable.",
+                "Metacognitive knowledge dimension is assigned because the performance requires self-monitoring of scope limits; researcher should validate this classification."
+              ]
+            }
+          }
+        ],
+        "assessments": [
+          {
+            "id": "assess-lo-lcr-01-structural-labeling",
+            "objective_ids": [
+              "lo-lcr-01"
+            ],
+            "capability_claim": "Learner can describe the structural components of a commercial contract clause and the function each serves.",
+            "required_evidence": [
+              {
+                "id": "ev-01a",
+                "criterion": "Learner labels at least three structural components of the clause (e.g., party identification, obligation, condition, remedy) with reference to specific clause text.",
+                "rationale": "Mirrors lo-lcr-01's first success criterion."
+              },
+              {
+                "id": "ev-01b",
+                "criterion": "Learner states the functional purpose of each labeled component without evaluating legal enforceability.",
+                "rationale": "Mirrors lo-lcr-01's second success criterion; enforceability evaluation is explicitly out of scope for this objective."
+              }
+            ],
+            "task": {
+              "task_type": "structural component labeling task",
+              "description": "Learner is given a single sample commercial contract clause and produces a labeled breakdown identifying at least three structural components, stating the function each serves, without commenting on legal enforceability.",
+              "conditions": [
+                "a sample commercial contract clause is provided",
+                "no external legal reference materials required"
+              ]
+            },
+            "cognitive_process": "understand",
+            "scoring": null,
+            "role": "formative",
+            "required_capabilities": [
+              {
+                "name": "structural component identification in contract clause text",
+                "objective_ids": [
+                  "lo-lcr-01"
+                ],
+                "rationale": "Directly demonstrated by the labeling task, grounded in lo-lcr-01 performance."
+              },
+              {
+                "name": "functional role explanation of clause components",
+                "objective_ids": [
+                  "lo-lcr-01"
+                ],
+                "rationale": "Directly demonstrated by stating the function of each labeled component per lo-lcr-01 success criteria."
+              }
+            ],
+            "is_summative": false,
+            "required_capability_refs": [
+              "structural component identification in contract clause text",
+              "functional role explanation of clause components"
+            ],
+            "estimated_minutes": 15,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "Task design and time estimate are provisional and should be validated by the researcher against representative clause samples.",
+                "No prerequisite capability was folded into required evidence; lo-lcr-01 has no prerequisite_refs in the supplied objectives."
+              ]
+            }
+          },
+          {
+            "id": "assess-lo-lcr-02-risk-pattern-flagging",
+            "objective_ids": [
+              "lo-lcr-02"
+            ],
+            "capability_claim": "Learner can identify and categorize risk-relevant language patterns in a commercial contract clause using a supplied risk taxonomy.",
+            "required_evidence": [
+              {
+                "id": "ev-02a",
+                "criterion": "Learner flags at least one risk-relevant language pattern in the clause with a specific textual citation.",
+                "rationale": "Mirrors lo-lcr-02's first success criterion."
+              },
+              {
+                "id": "ev-02b",
+                "criterion": "Learner categorizes each flaged pattern by risk type using the researcher-supplied taxonomy (e.g., liability exposure, ambiguity, obligation scope).",
+                "rationale": "Mirrors lo-lcr-02's second success criterion."
+              },
+              {
+                "id": "ev-02c",
+                "criterion": "Learner produces no risk assertions that are unsupported by clause text.",
+                "rationale": "Mirrors lo-lcr-02's third success criterion."
+              }
+            ],
+            "task": {
+              "task_type": "risk-pattern flagging and categorization task",
+              "description": "Learner is given a single unfamiliar commercial contract clause and, using a researcher-supplied risk-indicator checklist and risk taxonomy, flags risk-relevant language patterns with textual citations and assigns each a risk category.",
+              "conditions": [
+                "a single unfamiliar commercial contract clause is provided",
+                "learner may reference a researcher-supplied risk-indicator checklist and risk taxonomy"
+              ]
+            },
+            "cognitive_process": "analyze",
+            "scoring": null,
+            "role": "formative",
+            "required_capabilities": [
+              {
+                "name": "risk-relevant language pattern identification in contract clause text",
+                "objective_ids": [
+                  "lo-lcr-02"
+                ],
+                "rationale": "Directly demonstrated by the flagging task, grounded in lo-lcr-02 performance."
+              },
+              {
+                "name": "risk categorization using a supplied taxonomy",
+                "objective_ids": [
+                  "lo-lcr-02"
+                ],
+                "rationale": "Directly demonstrated by categorizing flagged patterns per lo-lcr-02 success criteria."
+              },
+              {
+                "name": "textual grounding of risk assertions",
+                "objective_ids": [
+                  "lo-lcr-02"
+                ],
+                "rationale": "Directly demonstrated by the requirement that no risk assertion be unsupported by clause text."
+              }
+            ],
+            "is_summative": false,
+            "required_capability_refs": [
+              "risk-relevant language pattern identification in contract clause text",
+              "risk categorization using a supplied taxonomy",
+              "textual grounding of risk assertions"
+            ],
+            "estimated_minutes": 20,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "This assessment presumes availability of a researcher-suplied risk-indicator checklist and taxonomy; per lo-lcr-02's own provenance notes, the objective cannot be reliably assessed without these materials.",
+                "Dependence on prior completion of lo-lcr-01 is tracked as a dependency candidate, not folded into required evidence."
+              ]
+            }
+          },
+          {
+            "id": "assess-lo-lcr-03-risk-reasoning-explanation",
+            "objective_ids": [
+              "lo-lcr-03"
+            ],
+            "capability_claim": "Learner can construct a written explanation of contract clause risk reasoning that explicitly stops short of a legal judgment.",
+            "required_evidence": [
+              {
+                "id": "ev-03a",
+                "criterion": "Explanation cites specific clause language for every stated risk.",
+                "rationale": "Mirors lo-lcr-03's first success criterion."
+              },
+              {
+                "id": "ev-03b",
+                "criterion": "Explanation includes at least one explicit scope boundary that distinguishes commercial risk observation from legal conclusion.",
+                "rationale": "Mirors lo-lcr-03's second success criterion."
+              },
+              {
+                "id": "ev-03c",
+                "criterion": "No statement in the explanation constitutes or implies a final legal determination.",
+                "rationale": "Mirrors lo-lcr-03's third success criterion."
+              }
+            ],
+            "task": {
+              "task_type": "bounded risk-reasoning explanation task",
+              "description": "Learner is given a completed set of flagged risk paterns for a contract clause and writes an explanation of the reasoning behind each flagged risk, explicitly marking the boundary between risk observation and legal judgment, in a form suitable for assessor review against observable criteria.",
+              "conditions": [
+                "learner has a completed set of flagged risk paterns from lo-lcr-02",
+                "explanation is written to permit assessor review against observable criteria"
+              ]
+            },
+            "cognitive_process": "evaluate",
+            "scoring": null,
+            "role": "summative",
+            "required_capabilities": [
+              {
+                "name": "written explanation of risk reasoning grounded in clause text",
+                "objective_ids": [
+                  "lo-lcr-03"
+                ],
+                "rationale": "Directly demonstrated by the explanation task's requirement to cite clause language for every stated risk."
+              },
+              {
+                "name": "explicit scope-boundary articulation between risk observation and legal judgment",
+                "objective_ids": [
+                  "lo-lcr-03"
+                ],
+                "rationale": "Directly demonstrated by the requirement to state an explicit scope boundary and avoid legal determinations."
+              }
+            ],
+            "is_summative": true,
+            "required_capability_refs": [
+              "written explanation of risk reasoning grounded in clause text",
+              "explicit scope-boundary articulation between risk observation and legal judgment"
+            ],
+            "estimated_minutes": 25,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "The operational boundary between risk observation and legal judgment requires researcher-defined criteria to make the third evidence criterion reliably scorable; treated here as provisional.",
+                "This assessment assumes lo-lcr-02 output is available as input; that dependency is tracked as a candidate rather than folded into required capabilities."
+              ]
+            }
+          }
+        ],
+        "dependency_candidates": [
+          {
+            "capability": "researcher-supplied risk-indicator checklist and risk taxonomy",
+            "reason": "lo-lcr-02's objective provenance states the objective cannot be reliably assessed without a researcher-supplied checklist and taxonomy; this is supporting material, not a learner capability demonstrated by the assessment itself.",
+            "required_for_refs": [
+              "lo-lcr-02",
+              "assess-lo-lcr-02-risk-pattern-flagging"
+            ]
+          },
+          {
+            "capability": "prior completion of structural component identification (lo-lcr-01)",
+            "reason": "lo-lcr-02 lists lo-lcr-01 as a prerequisite_ref; treated as a candidate suporting skill rather than required evidence for the lo-lcr-02 assessment.",
+            "required_for_refs": [
+              "lo-lcr-02"
+            ]
+          },
+          {
+            "capability": "prior completion of risk-pattern flagging (lo-lcr-02)",
+            "reason": "lo-lcr-03 lists lo-lcr-02 as a prerequisite_ref and its conditions require a completed set of flagged risk patterns from lo-lcr-02; treated as a candidate input dependency rather than a capability required by the lo-lcr-03 assessment itself.",
+            "required_for_refs": [
+              "lo-lcr-03",
+              "assess-lo-lcr-03-risk-reasoning-explanation"
+            ]
+          },
+          {
+            "capability": "researcher-defined operational boundary criteria distinguishing risk observation from legal judgment",
+            "reason": "lo-lcr-03's provenance notes that this boundary requires researcher-defined criteria to make the third success criterion assessable; not yet supplied in this input, so it remains a candidate dependency.",
+            "required_for_refs": [
+              "lo-lcr-03"
+            ]
+          }
+        ],
+        "prerequisites": [
+          {
+            "id": "prereq-lo-lcr-01-completion",
+            "capability": "Identify and describe structural components of a commercial contract clause (lo-lcr-01)",
+            "status": "candidate",
+            "basis": "model_proposed",
+            "classification": "helpful_background",
+            "rationale": "lo-lcr-01 is listed as a prerequisite_ref for lo-lcr-02 in the supplied objectives, but lo-lcr-01 is itself the first objective in this course. A learner lacking this capability at entry can acquire it through lo-lcr-01 before proceeding to lo-lcr-02. This is an in-course sequencing dependency; no instruction failure results from a learner lacking it at course entry, so it does not qualify as an entry prerequisite.",
+            "required_for_refs": [
+              "lo-lcr-02"
+            ],
+            "requires_prerequisite_refs": [],
+            "teaching_objective_id": "lo-lcr-01",
+            "disposition": "in_course_support",
+            "source_dependency_refs": [
+              "lo-lcr-02"
+            ]
+          },
+          {
+            "id": "prereq-lo-lcr-02-completion",
+            "capability": "Flag and categorize risk-relevant language patterns in a contract clause using a supplied taxonomy (lo-lcr-02)",
+            "status": "candidate",
+            "basis": "model_proposed",
+            "classification": "helpful_background",
+            "rationale": "lo-lcr-02 is listed as a prerequisite_ref for lo-lcr-03, and assess-lo-lcr-03-risk-reasoning-explanation conditions require a completed set of flagged risk patterns produced by lo-lcr-02 work. Because lo-lcr-02 is an objective within this course, the input artifact for lo-lcr-03 is generated in-course. This is a sequencing dependency, not an entry prerequisite.",
+            "required_for_refs": [
+              "lo-lcr-03",
+              "assess-lo-lcr-03-risk-reasoning-explanation"
+            ],
+            "requires_prerequisite_refs": [
+              "prereq-lo-lcr-01-completion"
+            ],
+            "teaching_objective_id": "lo-lcr-02",
+            "disposition": "in_course_support",
+            "source_dependency_refs": [
+              "lo-lcr-03",
+              "assess-lo-lcr-03-risk-reasoning-explanation"
+            ]
+          },
+          {
+            "id": "prereq-researcher-checklist-taxonomy",
+            "capability": "Researcher-supplied risk-indicator checklist and risk taxonomy (instructional material, not a learner-held capability)",
+            "status": "candidate",
+            "basis": "model_proposed",
+            "classification": "not_required",
+            "rationale": "This is an instructional material dependency, not a learner-held capability. The checklist and taxonomy must be provided by the researcher as supporting resources during instruction and assessment of lo-lcr-02. Their absence affects assessment deployability, not learner entry eligibility. Not classifiable as a learner entry prerequisite.",
+            "required_for_refs": [
+              "lo-lcr-02",
+              "assess-lo-lcr-02-risk-pattern-flagging"
+            ],
+            "requires_prerequisite_refs": [],
+            "teaching_objective_id": null,
+            "disposition": "not_required",
+            "source_dependency_refs": [
+              "lo-lcr-02",
+              "assess-lo-lcr-02-risk-pattern-flagging"
+            ]
+          },
+          {
+            "id": "prereq-boundary-criteria",
+            "capability": "Researcher-defined scoring criteria distinguishing commercial risk observation from legal judgment (design artifact, not a learner-held capability)",
+            "status": "candidate",
+            "basis": "model_proposed",
+            "classification": "not_required",
+            "rationale": "This is a researcher design gap, not a learner-held prerequisite. Operational criteria distinguishing risk observation from legal judgment are required to make lo-lcr-03 success criterion ev-03c reliably scorable. This must be resolved as a researcher deliverable before the summative assessment is deployed; it is not a capability the learner must demonstrate at or before course entry.",
+            "required_for_refs": [
+              "lo-lcr-03"
+            ],
+            "requires_prerequisite_refs": [],
+            "teaching_objective_id": null,
+            "disposition": "not_required",
+            "source_dependency_refs": [
+              "lo-lcr-03"
+            ]
+          }
+        ],
+        "canonical_dependencies": [
+          {
+            "capability_ref": "structural component identification in contract clause text",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-lo-lcr-01-structural-labeling",
+                  "original_value": "structural component identification in contract clause text"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-lo-lcr-01-structural-labeling",
+                  "original_value": "structural component identification in contract clause text"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-01"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "functional role explanation of clause components",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-lo-lcr-01-structural-labeling",
+                  "original_value": "functional role explanation of clause components"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-lo-lcr-01-structural-labeling",
+                  "original_value": "functional role explanation of clause components"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-01"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "risk-relevant language pattern identification in contract clause text",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "risk-relevant language pattern identification in contract clause text"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "risk-relevant language pattern identification in contract clause text"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-02"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "risk categorization using a supplied taxonomy",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "risk categorization using a supplied taxonomy"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "risk categorization using a supplied taxonomy"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-02"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "textual grounding of risk assertions",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "textual grounding of risk assertions"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "textual grounding of risk assertions"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-02"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "researcher-supplied risk-indicator checklist and risk taxonomy",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "researcher-supplied risk-indicator checklist and risk taxonomy"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-02"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "prior completion of structural component identification (lo-lcr-01)",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-lo-lcr-02-risk-pattern-flagging",
+                  "original_value": "prior completion of structural component identification (lo-lcr-01)"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-02"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "written explanation of risk reasoning grounded in clause text",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-lo-lcr-03-risk-reasoning-explanation",
+                  "original_value": "written explanation of risk reasoning grounded in clause text"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-lo-lcr-03-risk-reasoning-explanation",
+                  "original_value": "written explanation of risk reasoning grounded in clause text"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-03"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "explicit scope-boundary articulation between risk observation and legal judgment",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-lo-lcr-03-risk-reasoning-explanation",
+                  "original_value": "explicit scope-boundary articulation between risk observation and legal judgment"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-lo-lcr-03-risk-reasoning-explanation",
+                  "original_value": "explicit scope-boundary articulation between risk observation and legal judgment"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-03"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "prior completion of risk-pattern flagging (lo-lcr-02)",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-lo-lcr-03-risk-reasoning-explanation",
+                  "original_value": "prior completion of risk-pattern flagging (lo-lcr-02)"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-03"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "researcher-defined operational boundary criteria distinguishing risk observation from legal judgment",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-lo-lcr-03-risk-reasoning-explanation",
+                  "original_value": "researcher-defined operational boundary criteria distinguishing risk observation from legal judgment"
+                }
+              ]
+            },
+            "objective_ids": [
+              "lo-lcr-03"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          }
+        ],
+        "course_outline": {
+          "id": "outline-brief-legal_contract_review_basic",
+          "brief_id": "brief-legal_contract_review_basic",
+          "objective_ids": [
+            "lo-lcr-01",
+            "lo-lcr-02",
+            "lo-lcr-03"
+          ],
+          "modules": [
+            {
+              "id": "mod-lcr-01",
+              "title": "Structural Components of Commercial Contract Clauses",
+              "objective_ids": [
+                "lo-lcr-01"
+              ],
+              "prerequisite_refs": [],
+              "lesson_ids": [
+                "lesson-lcr-01-structural-components"
+              ],
+              "estimated_minutes": 15
+            },
+            {
+              "id": "mod-lcr-02",
+              "title": "Risk Pattern Identification in Contract Clauses",
+              "objective_ids": [
+                "lo-lcr-02"
+              ],
+              "prerequisite_refs": [
+                "prereq-lo-lcr-01-completion",
+                "prereq-researcher-checklist-taxonomy"
+              ],
+              "lesson_ids": [
+                "lesson-lcr-02-risk-pattern-identification"
+              ],
+              "estimated_minutes": 20
+            },
+            {
+              "id": "mod-lcr-03",
+              "title": "Risk Reasoning and Scope Boundaries",
+              "objective_ids": [
+                "lo-lcr-03"
+              ],
+              "prerequisite_refs": [
+                "prereq-lo-lcr-02-completion",
+                "prereq-boundary-criteria"
+              ],
+              "lesson_ids": [
+                "lesson-lcr-03-risk-reasoning-explanation"
+              ],
+              "estimated_minutes": 25
+            }
+          ],
+          "prerequisite_refs": [],
+          "estimated_minutes": 60,
+          "planning_warnings": [
+            {
+              "type": "scope_time_conflict",
+              "decision": "prioritized_core_objectives",
+              "rationale": "Assessment time alone exhausts the full declared budget: assess-lo-lcr-01 (15 min) + assess-lo-lcr-02 (20 min) + assess-lo-lcr-03 (25 min) = 60 min. Zero minutes remain for instruction, guided practice, independent practice, and feedback/revision as required by workload semantics (ID-04A). Practice coverage for both lo-lcr-03 summative required capabilities ('written explanation of risk reasoning grounded in clause text' and 'explicit scope-boundary articulation between risk observation and legal judgment') cannot be satisfied within budget (ID-04C). All three objectives are retained as core scope; no optional scope exists in this brief to reduce. Researcher must either expand the declared budget or explicitly exclude one or more workload categories."
+            }
+          ],
+          "sequencing_rationale": [
+            "mod-lcr-01 precedes mod-lcr-02 because lo-lcr-02 lists lo-lcr-01 as a prerequisite_ref; structural component identification is a candidate supporting skill for risk pattern analysis.",
+            "mod-lcr-02 precedes mod-lcr-03 because lo-lcr-03 lists lo-lcr-02 as a prerequisite_ref and the lo-lcr-03 summative task conditions require a completed set of flagged risk patterns produced by lo-lcr-02 work.",
+            "The resulting chain lo-lcr-01 → lo-lcr-02 → lo-lcr-03 is consistent with the cognitive progression from understand (conceptual) through analyze (procedural) to evaluate (metacognitive) as declared in the supplied objectives."
+          ],
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "One-objective-per-module structure is a candidate sequencing design; researcher should validate whether objectives warrant combined or split modules.",
+              "Module estimated_minutes are set equal to the per-objective assessment time as a planning floor because assessment time alone exhausts the 60-minute budget; no instruction or practice allocation is possible without budget expansion or explicit category exclusion.",
+              "prereq-researcher-checklist-taxonomy is referenced in mod-lcr-02 prerequisite_refs as a candidate signal that this instructional material dependency must be resolved before that module is deployed; it is not a learner-held entry capability.",
+              "prereq-boundary-criteria is referenced in mod-lcr-03 prerequisite_refs as a candidate signal that researcher-defined scoring criteria distinguishing risk observation from legal judgment must exist before the summative assessment is deployed; it is not a learner-held entry capability.",
+              "All four supplied prerequisite IDs carry disposition in_course_support or not_required; no entry prerequisites are assigned at course level."
+            ]
+          }
+        },
+        "lessons": [
+          {
+            "id": "lesson-lcr-01-structural-components",
+            "module_id": "mod-lcr-01",
+            "objective_ids": [
+              "lo-lcr-01"
+            ],
+            "prerequisite_refs": [],
+            "lesson_goal": "Learner can describe the structural components of a commercial contract clause and the function each serves.",
+            "instructional_pattern": "explanation",
+            "expected_learner_activity": "Read an annotated sample contract clause; label structural components (e.g., party identification, obligation, condition, remedy) with reference to specific clause text; state the functional purpose of each labeled component without evaluating legal enforceability.",
+            "formative_assessment_ids": [
+              "assess-lo-lcr-01-structural-labeling"
+            ],
+            "summative_assessment_ids": [],
+            "estimated_minutes": null,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "estimated_minutes is null: the module's full 15-minute allocation is consumed by assess-lo-lcr-01-structural-labeling (15 min); zero minutes remain for instruction within the declared 60-minute budget (ID-04A scope_time_conflict inherited from course outline planning_warnings).",
+                "instructional_pattern 'explanation' is a candidate design choice for an understand/conceptual objective; researcher should validate against intended delivery format.",
+                "If budget is expanded, an explanation segment must precede the formative assessment to satisfy instructional sequencing intent."
+              ]
+            }
+          },
+          {
+            "id": "lesson-lcr-02-risk-pattern-identification",
+            "module_id": "mod-lcr-02",
+            "objective_ids": [
+              "lo-lcr-02"
+            ],
+            "prerequisite_refs": [
+              "prereq-lo-lcr-01-completion",
+              "prereq-researcher-checklist-taxonomy"
+            ],
+            "lesson_goal": "Learner can identify and categorize risk-relevant language patterns in a commercial contract clause using a supplied risk taxonomy.",
+            "instructional_pattern": "worked_example",
+            "expected_learner_activity": "Using a researcher-supplied risk-indicator checklist and risk taxonomy, review a sample clause; flag risk-relevant language patterns with specific textual citations; assign each flagged pattern a risk category from the taxonomy (e.g., liability exposure, ambiguity, obligation scope); confirm that no risk assertion lacks clause-text support.",
+            "formative_assessment_ids": [
+              "assess-lo-lcr-02-risk-pattern-flagging"
+            ],
+            "summative_assessment_ids": [],
+            "estimated_minutes": null,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "estimated_minutes is null: the module's full 20-minute allocation is consumed by assess-lo-lcr-02-risk-pattern-flagging (20 min); zero minutes remain for instruction within the declared 60-minute budget (ID-04A scope_time_conflict).",
+                "instructional_pattern 'worked_example' is a candidate design choice for an analyze/procedural objective; researcher should validate.",
+                "prereq-researcher-checklist-taxonomy is an instructional material dependency, not a learner-held capability; it must be resolved by the researcher before this lesson can be deployed.",
+                "prereq-lo-lcr-01-completion is an in-course sequencing dependency; learner acquires this capability through mod-lcr-01."
+              ]
+            }
+          },
+          {
+            "id": "lesson-lcr-03-risk-reasoning-explanation",
+            "module_id": "mod-lcr-03",
+            "objective_ids": [
+              "lo-lcr-03"
+            ],
+            "prerequisite_refs": [
+              "prereq-lo-lcr-02-completion",
+              "prereq-boundary-criteria"
+            ],
+            "lesson_goal": "Learner can construct a written explanation of contract clause risk reasoning that explicitly stops short of a legal judgment.",
+            "instructional_pattern": "guided_practice",
+            "expected_learner_activity": "Using a completed set of flagged risk patterns produced during lo-lcr-02 work, write an explanation of the reasoning behind each flagged risk; include at least one explicit scope boundary distinguishing commercial risk observation from legal conclusion; ensure no statement in the explanation constitutes or implies a final legal determination.",
+            "formative_assessment_ids": [],
+            "summative_assessment_ids": [
+              "assess-lo-lcr-03-risk-reasoning-explanation"
+            ],
+            "estimated_minutes": null,
+            "provenance": {
+              "source": "model_proposed",
+              "provisional": true,
+              "assumption_notes": [
+                "estimated_minutes is null: the module's full 25-minute allocation is consumed by assess-lo-lcr-03-risk-reasoning-explanation (25 min); zero minutes remain for instruction or practice within the declared 60-minute budget (ID-04A scope_time_conflict).",
+                "ID-04C practice coverage gap: lo-lcr-03 is an evaluate objective; practice for 'written explanation of risk reasoning grounded in clause text' (practice_coverage_requirements source_requirement_ref: assess-lo-lcr-03-risk-reasoning-explanation:required_capabilities:0) and 'explicit scope-boundary articulation between risk observation and legal judgment' (source_requirement_ref: assess-lo-lcr-03-risk-reasoning-explanation:required_capabilities:1) must precede the summative assessment but cannot be accommodated within the current budget. No formative assessment ID for lo-lcr-03 is present in the supplied allow-list; formative_assessment_ids is therefore empty and practice coverage for lo-lcr-03 remains unresolved.",
+                "prereq-boundary-criteria (researcher-defined scoring criteria distinguishing risk observation from legal judgment) must be resolved as a researcher deliverable before the summative assessment in this lesson can be deployed.",
+                "prereq-lo-lcr-02-completion is an in-course sequencing dependency; learner acquires this capability through mod-lcr-02.",
+                "instructional_pattern 'guided_practice' reflects the candidate design intent for an evaluate/metacognitive objective contingent on budget expansion; researcher must decide whether to expand the declared budget or explicitly exclude workload categories before deployment can proceed with instruction and practice intact."
+              ]
+            }
+          }
+        ],
+        "quality_report": {
+          "passed": false,
+          "findings": [
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-01-structural-labeling",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-01-structural-labeling",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-02-risk-pattern-flagging",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-02-risk-pattern-flagging",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-02-risk-pattern-flagging",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_dependency_not_covered",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+              "field": "required_capabilities",
+              "message": "Assessment dependency is not known, confirmed, or taught by the course."
+            },
+            {
+              "code": "assessment_requirement_not_taught",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+              "field": "practice_coverage",
+              "message": "Summative requirement has no prior explicit instruction."
+            },
+            {
+              "code": "assessment_requirement_not_taught",
+              "severity": "error",
+              "entity_type": "assessment",
+              "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+              "field": "practice_coverage",
+              "message": "Summative requirement has no prior explicit instruction."
+            },
+            {
+              "code": "prerequisite_disposition_conflict",
+              "severity": "error",
+              "entity_type": "dependency_candidate",
+              "entity_id": "lo-lcr-02",
+              "field": "disposition",
+              "message": "A source dependency has contradictory prerequisite dispositions."
+            },
+            {
+              "code": "prerequisite_disposition_conflict",
+              "severity": "error",
+              "entity_type": "dependency_candidate",
+              "entity_id": "lo-lcr-03",
+              "field": "disposition",
+              "message": "A source dependency has contradictory prerequisite dispositions."
+            }
+          ],
+          "objective_coverage": 1.0,
+          "assessment_coverage": 1.0,
+          "unresolved_prerequisites": [
+            "prereq-lo-lcr-01-completion",
+            "prereq-lo-lcr-02-completion",
+            "prereq-researcher-checklist-taxonomy",
+            "prereq-boundary-criteria"
+          ],
+          "policy_id": "pai_instructional_design",
+          "policy_version": "0.1",
+          "practice_coverage": [
+            {
+              "assessment_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+              "assessment_role": "summative",
+              "objective_refs": [
+                "lo-lcr-03"
+              ],
+              "capability_ref": "written explanation of risk reasoning grounded in clause text",
+              "source_requirement_ref": "assess-lo-lcr-03-risk-reasoning-explanation:required_capabilities:0",
+              "instruction_refs": [],
+              "guided_practice_refs": [],
+              "independent_practice_refs": [],
+              "formative_refs": [],
+              "status": "not_covered"
+            },
+            {
+              "assessment_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+              "assessment_role": "summative",
+              "objective_refs": [
+                "lo-lcr-03"
+              ],
+              "capability_ref": "explicit scope-boundary articulation between risk observation and legal judgment",
+              "source_requirement_ref": "assess-lo-lcr-03-risk-reasoning-explanation:required_capabilities:1",
+              "instruction_refs": [],
+              "guided_practice_refs": [],
+              "independent_practice_refs": [],
+              "formative_refs": [],
+              "status": "not_covered"
+            }
+          ]
+        },
+        "generation_provenance": {
+          "research_brief_id": "brief-legal_contract_review_basic",
+          "instructional_design_policy_id": "pai_instructional_design",
+          "instructional_design_policy_version": "0.1",
+          "prompt_versions": {
+            "instructional_objective_design": "0.3.4",
+            "instructional_assessment_design": "0.3.4",
+            "instructional_prerequisite_proposal": "0.3.4",
+            "instructional_course_planning": "0.3.4",
+            "instructional_lesson_planning": "0.3.4"
+          },
+          "output_schema_versions": {
+            "instructional_objective_design": "0.3.4",
+            "instructional_assessment_design": "0.3.4",
+            "instructional_prerequisite_proposal": "0.3.4",
+            "instructional_course_planning": "0.3.4",
+            "instructional_lesson_planning": "0.3.4"
+          },
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": null,
+          "generated_at": "2026-08-17T07:53:37.065439Z"
+        }
+      },
+      "partial_artifacts": null,
+      "stage_failure": null,
+      "model_audits": [
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_objective_design",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_objective_design",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_objective_design",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 49515,
+          "usage": {
+            "input_tokens": 1463,
+            "output_tokens": 3195
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_assessment_design",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_assessment_design",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_assessment_design",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 223616,
+          "usage": {
+            "input_tokens": 26489,
+            "output_tokens": 3175
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_prerequisite_proposal",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_prerequisite_proposal",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_prerequisite_proposal",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 73621,
+          "usage": {
+            "input_tokens": 5341,
+            "output_tokens": 5172
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_course_planning",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_course_planning",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_course_planning",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 117636,
+          "usage": {
+            "input_tokens": 7481,
+            "output_tokens": 3868
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        },
+        {
+          "provider": "vilao",
+          "model": "claude-sonnet-5",
+          "model_revision": "claude-sonnet-5",
+          "prompt_template_id": "instructional_lesson_planning",
+          "prompt_template_version": "0.3.4",
+          "output_schema_id": "instructional_lesson_planning",
+          "output_schema_version": "0.3.4",
+          "policy_version": "privacy-v1",
+          "correlation_id": "ID-04F:legal_contract_review_basic:instructional_lesson_planning",
+          "routing_decision": "approved_external_sanitized",
+          "attempt_count": 1,
+          "latency_ms": 94170,
+          "usage": {
+            "input_tokens": 8369,
+            "output_tokens": 5786
+          },
+          "outcome": "succeeded",
+          "protocol": "openai_compatible",
+          "deployment_type": "external",
+          "endpoint_origin": "https://api.vilao.ai",
+          "data_boundary": "external_provider"
+        }
+      ],
+      "completed_at": "2026-08-17T08:02:55.633470Z"
+    }
+  ]
+}

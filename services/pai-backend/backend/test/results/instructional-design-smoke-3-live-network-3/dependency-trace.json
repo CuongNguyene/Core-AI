@@ -1,0 +1,71 @@
+{
+  "trace_version": "0.1",
+  "source_results": "results.json",
+  "findings": [
+    {
+      "finding_code": "assessment_dependency_not_covered",
+      "fixture": "model_monitoring",
+      "assessment_ref": "assess-model-monitoring-002",
+      "dependency": "assess-model-monitoring-001",
+      "objective_refs": ["obj-model-monitoring-002"],
+      "dependency_candidates": [],
+      "prerequisite_refs": ["prereq-003"],
+      "course_module_refs": ["module-cause-differentiation"],
+      "lesson_refs": ["lesson-003", "lesson-004"],
+      "root_cause": "assessment_scope_creep",
+      "validator_correct": true,
+      "producer_stage": "AssessmentDesigner",
+      "required_change": "prompt",
+      "evidence": "required_capability_refs contains another assessment ID; no dependency candidate was emitted and no dependency was lost during prerequisite/course/lesson projection"
+    },
+    {
+      "finding_code": "assessment_dependency_not_covered",
+      "fixture": "model_monitoring",
+      "assessment_ref": "assess-model-monitoring-003",
+      "dependency": "assess-model-monitoring-001",
+      "objective_refs": ["obj-model-monitoring-003"],
+      "dependency_candidates": [],
+      "prerequisite_refs": ["prereq-004"],
+      "course_module_refs": ["module-response-action"],
+      "lesson_refs": ["lesson-005", "lesson-006"],
+      "root_cause": "assessment_scope_creep",
+      "validator_correct": true,
+      "producer_stage": "AssessmentDesigner",
+      "required_change": "prompt",
+      "evidence": "required_capability_refs contains assessment IDs rather than capability names or dependency_candidates"
+    },
+    {
+      "finding_code": "assessment_dependency_not_covered",
+      "fixture": "model_monitoring",
+      "assessment_ref": "assess-model-monitoring-003",
+      "dependency": "assess-model-monitoring-002",
+      "objective_refs": ["obj-model-monitoring-003"],
+      "dependency_candidates": [],
+      "prerequisite_refs": ["prereq-004"],
+      "course_module_refs": ["module-response-action"],
+      "lesson_refs": ["lesson-005", "lesson-006"],
+      "root_cause": "assessment_scope_creep",
+      "validator_correct": true,
+      "producer_stage": "AssessmentDesigner",
+      "required_change": "prompt",
+      "evidence": "required_capability_refs contains assessment IDs rather than capability names or dependency_candidates"
+    },
+    {
+      "finding_code": "assessment_dependency_not_covered",
+      "fixture": "python_data_processing",
+      "assessment_ref": "assess-python-data-processing-002",
+      "dependency": "assess-python-data-processing-001",
+      "objective_refs": ["obj-python-data-processing-002"],
+      "dependency_candidates": [],
+      "prerequisite_refs": ["prereq-001", "prereq-002"],
+      "course_module_refs": ["module-justify-transformation-choices"],
+      "lesson_refs": ["lesson-004", "lesson-005", "lesson-006"],
+      "root_cause": "assessment_scope_creep",
+      "validator_correct": true,
+      "producer_stage": "AssessmentDesigner",
+      "required_change": "prompt",
+      "evidence": "required_capability_refs contains an assessment ID; dependency_candidates is empty"
+    }
+  ],
+  "conclusion": "All four findings originate at AssessmentDesigner scope typing. The downstream prerequisite/course/lesson graph preserves its own references; no propagation-loss fix is justified. The deterministic validator is correct."
+}

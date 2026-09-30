@@ -1,0 +1,23 @@
+{
+  "repo_path": "/Users/mac/Developers/work/CT_Brain_Hub/ct_brain_hub/5. SOURCE/ndt-training-management-system-main",
+  "git_root": "/Users/mac/Developers/work/CT_Brain_Hub/ct_brain_hub",
+  "git": {
+    "branch": "khanhtruong",
+    "commit": "40104dfd9e01b915534422f1cf97c30bff0e3b26",
+    "status": "parent worktree dirty: tracked sibling 5. SOURCE/source_code/ndt-training-management-system-main is reported deleted; supplied target subtree itself is tracked and was not changed by this scan"
+  },
+  "architecture": {
+    "backend": "NestJS 11 REST API with global /api prefix",
+    "language": "TypeScript 5.7, Node.js 20.x target",
+    "database": "PostgreSQL via Prisma 5.22",
+    "migrations": "Prisma migrations, 24 migration directories through 20260816161000_add_content_ownership",
+    "frontend": "React 19 + Vite 8 + TypeScript + MobX + TanStack Query",
+    "runtime": "JWT/Passport, CASL/RBAC, Redis/BullMQ, Socket.IO, local uploads served at /uploads"
+  },
+  "entrypoints": ["backend/src/main.ts", "backend/src/app.module.ts", "backend/package.json", "frontend/package.json", "docker-compose.yml"],
+  "dependencies": ["backend/package.json", "frontend/package.json", "qa-tools/package.json"],
+  "test_framework": "Jest, ts-jest, Supertest; frontend test framework not present in package.json",
+  "modules": ["auth", "users", "abilities", "courses", "modules", "lessons", "documents", "learning-paths", "enrollments", "progress", "quizzes", "certificates", "notifications", "analytics", "uploads", "jobs", "prisma", "redis"],
+  "prisma_models": ["User", "Course", "LearningPath", "Document", "LearningPathCourse", "LearningPathAssignment", "CourseModule", "Lesson", "Enrollment", "Progress", "Quiz", "Question", "Answer", "QuizAttempt", "QuizAttemptAnswer", "CertificateTemplate", "Certificate", "Notification"],
+  "enums": ["Role", "QuestionType", "LessonType", "CourseDepartment", "CourseCategory", "CourseLevel", "CourseStatus", "EnrollmentStatus", "EnrollmentSource"]
+}

@@ -1,0 +1,88 @@
+{
+  "review_id": "review-005",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-13T09:56:24+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "clean",
+    "issues": [],
+    "notes": "No clear unknown IDs or broken objective/module/lesson/assessment references were observed within the packet. Pedagogical concerns are recorded separately below."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring technical concerns, the design is pedagogically reasonable: it teaches audience awareness, explanation structure, terminology adaptation, and revision/evaluation in a coherent understand-apply-evaluate progression."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives use observable performances and criteria such as naming two audience characteristics, producing opening/body/closing structure, adapting terms, and identifying two improvements. Some quality thresholds need more precise examples and audience-specific standards."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "Formative assessments align to audience classification and terminology adaptation, and the summative task aligns to structuring, terminology adaptation, and self-evaluation. The summative lists obj-tc-01 but does not require separate explicit evidence for audience-characteristic identification."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "A written explanation plus terminology adaptation and self-evaluation provides defensible evidence for technical communication skills. Validity would improve with a concrete issue prompt, audience profile, and more calibrated rubric levels."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "The course moves from understand to apply to evaluate, and the instructional patterns generally match those levels. The evaluative self-review objective is somewhat beyond the brief but useful for transfer."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "The two prerequisites are relevant, minimal, and candidate-marked. Information organization may overlap with the taught structure objective and should be qualified as basic outlining readiness rather than a fully developed skill."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "Audience analysis precedes structuring and terminology adaptation, followed by evaluation/refinement. The progression is sensible and supports the desired performance."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Lessons prepare learners through explanation, worked example, guided practice, and reflection. The alignment is weakened only by lack of concrete examples and by making the final self-evaluation a separate objective."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 2,
+        "rationale": "Under-teaching risk is low to moderate. The design includes core supports, though it needs actual examples, criteria, and practice prompts for a complex technical issue."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 3,
+        "rationale": "There is moderate over-teaching risk from adding audience classification and self-evaluation beyond the brief focus on structuring and terminology adaptation, though both are instructionally defensible supports."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Moderate editing would be needed to sharpen criteria, add concrete materials, and decide whether the self-evaluation objective remains in scope."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-basic-communication",
+        "prereq-information-organisation"
+      ],
+      "rejected_refs": [],
+      "notes": "Both prerequisites are acceptable as candidates. Revise prereq-information-organisation to emphasize basic outlining/readiness so it does not duplicate the course objective on structuring explanations."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 2,
+      "assessments_changed": 1,
+      "prerequisites_changed": 1,
+      "modules_changed": 1,
+      "lessons_changed": 2,
+      "notes": "Estimated edits include tightening two objective criteria, revising the summative assessment to include explicit audience-analysis evidence or remove obj-tc-01 from it, qualifying one prerequisite, and adding concrete issue/audience examples to two lessons."
+    },
+    "overall_notes": "A coherent technical-communication design with useful scaffolding. The main approval question is scope: whether self-evaluation and audience classification should remain explicit objectives or supporting activities."
+  }
+}

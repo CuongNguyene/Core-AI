@@ -1,0 +1,8 @@
+{
+  "id04a_workload_unchanged": true,
+  "id04b_disposition_governance_unchanged": true,
+  "id04c_practice_coverage_unchanged": true,
+  "dependency_normalizer_unchanged": true,
+  "prompt_version": "0.3.4",
+  "quality_gate_severity_unchanged": true
+}

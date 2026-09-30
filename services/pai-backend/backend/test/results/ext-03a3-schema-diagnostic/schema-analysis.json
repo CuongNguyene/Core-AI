@@ -1,0 +1,24 @@
+{
+  "capability_required_fields": [
+    "raw_name",
+    "canonical_name",
+    "evidence_strength",
+    "evidence[]"
+  ],
+  "capability_repeated_fields": [
+    "source_excerpt",
+    "source_locator",
+    "evidence_strength",
+    "confidence"
+  ],
+  "post_model_candidates": [
+    "canonical_name",
+    "document_id",
+    "MULTIPLE_SUPPORTING_EXPERIENCES",
+    "dedupe"
+  ],
+  "duplication_path": "experience[].evidence[] -> capabilities[].evidence[].source_excerpt/locator",
+  "hypothesis": "capability evidence repetition may make each capability expensive and suppress recall",
+  "v22_capability_count": 2,
+  "v22_output_tokens": 5891
+}

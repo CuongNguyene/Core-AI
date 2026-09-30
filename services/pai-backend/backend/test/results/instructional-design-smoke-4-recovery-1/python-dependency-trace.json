@@ -1,0 +1,191 @@
+{
+  "schema_version": "smoke4-dependency-trace@0.1",
+  "experiment_id": "instructional-design-id-02d-smoke-4",
+  "fixture_id": "python_data_processing",
+  "source": "results-recovered.json",
+  "entries": [
+    {
+      "finding": "assessment_dependency_not_covered",
+      "severity": "error",
+      "quality_gate_fields": [
+        "required_capabilities",
+        "required_capability_refs"
+      ],
+      "objective": [
+        {
+          "id": "brief-python-data-processing-obj-1",
+          "performance": "Given a tabular dataset containing missing or invalid values, transform those values using an appropriate data cleaning operation (e.g., imputation, removal, or correction)."
+        }
+      ],
+      "assessment": {
+        "id": "assess-brief-python-data-processing-obj-1",
+        "role": "formative"
+      },
+      "required_capability": {
+        "values": [
+          "basic Python programming"
+        ],
+        "brief_known": [
+          "basic Python"
+        ]
+      },
+      "dependency_candidate": {
+        "persisted": false,
+        "status": "not_available_in_snapshot",
+        "reason": "AssessmentDesignOutput dependency_candidates are not retained in ExperimentRunResult snapshots."
+      },
+      "prerequisite": [
+        {
+          "id": "prereq-basic-python-syntax",
+          "status": "candidate",
+          "basis": "model_proposed",
+          "required_for_refs": [
+            "brief-python-data-processing-obj-1",
+            "assess-brief-python-data-processing-obj-1"
+          ]
+        },
+        {
+          "id": "prereq-tabular-data-literacy",
+          "status": "candidate",
+          "basis": "model_proposed",
+          "required_for_refs": [
+            "brief-python-data-processing-obj-1",
+            "assess-brief-python-data-processing-obj-1"
+          ]
+        }
+      ],
+      "course_module": [
+        {
+          "id": "module-brief-python-data-processing-obj-1",
+          "objective_ids": [
+            "brief-python-data-processing-obj-1"
+          ]
+        }
+      ],
+      "lessons": [
+        {
+          "id": "lesson-brief-python-data-processing-obj-1-explain",
+          "module_id": "module-brief-python-data-processing-obj-1",
+          "objective_ids": [
+            "brief-python-data-processing-obj-1"
+          ]
+        },
+        {
+          "id": "lesson-brief-python-data-processing-obj-1-guided",
+          "module_id": "module-brief-python-data-processing-obj-1",
+          "objective_ids": [
+            "brief-python-data-processing-obj-1"
+          ]
+        },
+        {
+          "id": "lesson-brief-python-data-processing-obj-1-independent",
+          "module_id": "module-brief-python-data-processing-obj-1",
+          "objective_ids": [
+            "brief-python-data-processing-obj-1"
+          ]
+        }
+      ],
+      "root_cause": "assessment_scope_creep",
+      "secondary_observation": "missing_dependency_propagation",
+      "validator_correct": true,
+      "rationale": "The assessment requires capability strings not exactly covered by the brief learner-known set; corresponding prerequisites remain model_proposed/candidate, and no dependency candidate is available in the persisted snapshot."
+    },
+    {
+      "finding": "assessment_dependency_not_covered",
+      "severity": "error",
+      "quality_gate_fields": [
+        "required_capabilities",
+        "required_capability_refs"
+      ],
+      "objective": [
+        {
+          "id": "brief-python-data-processing-obj-2",
+          "performance": "Given a set of transformations applied to missing or invalid values in a tabular dataset, justify each transformation choice."
+        }
+      ],
+      "assessment": {
+        "id": "assess-brief-python-data-processing-obj-2",
+        "role": "summative"
+      },
+      "required_capability": {
+        "values": [
+          "written justification and reasoning communication"
+        ],
+        "brief_known": [
+          "basic Python"
+        ]
+      },
+      "dependency_candidate": {
+        "persisted": false,
+        "status": "not_available_in_snapshot",
+        "reason": "AssessmentDesignOutput dependency_candidates are not retained in ExperimentRunResult snapshots."
+      },
+      "prerequisite": [
+        {
+          "id": "prereq-obj1-transformations-complete",
+          "status": "candidate",
+          "basis": "model_proposed",
+          "required_for_refs": [
+            "brief-python-data-processing-obj-2",
+            "assess-brief-python-data-processing-obj-2"
+          ]
+        },
+        {
+          "id": "prereq-written-justification-communication",
+          "status": "candidate",
+          "basis": "model_proposed",
+          "required_for_refs": [
+            "brief-python-data-processing-obj-2",
+            "assess-brief-python-data-processing-obj-2"
+          ]
+        }
+      ],
+      "course_module": [
+        {
+          "id": "module-brief-python-data-processing-obj-2",
+          "objective_ids": [
+            "brief-python-data-processing-obj-2"
+          ]
+        }
+      ],
+      "lessons": [
+        {
+          "id": "lesson-brief-python-data-processing-obj-2-explain",
+          "module_id": "module-brief-python-data-processing-obj-2",
+          "objective_ids": [
+            "brief-python-data-processing-obj-2"
+          ]
+        },
+        {
+          "id": "lesson-brief-python-data-processing-obj-2-guided",
+          "module_id": "module-brief-python-data-processing-obj-2",
+          "objective_ids": [
+            "brief-python-data-processing-obj-2"
+          ]
+        },
+        {
+          "id": "lesson-brief-python-data-processing-obj-2-independent",
+          "module_id": "module-brief-python-data-processing-obj-2",
+          "objective_ids": [
+            "brief-python-data-processing-obj-2"
+          ]
+        }
+      ],
+      "root_cause": "assessment_scope_creep",
+      "secondary_observation": "missing_dependency_propagation",
+      "validator_correct": true,
+      "rationale": "The assessment requires capability strings not exactly covered by the brief learner-known set; corresponding prerequisites remain model_proposed/candidate, and no dependency candidate is available in the persisted snapshot."
+    }
+  ],
+  "summary": {
+    "finding_count": 4,
+    "unique_requirement_count": 2,
+    "duplicate_projection_count": 2,
+    "root_causes": {
+      "assessment_scope_creep": 2,
+      "missing_dependency_propagation": 2,
+      "lesson_under_generation": 0,
+      "validator_false_positive": 0
+    }
+  }
+}

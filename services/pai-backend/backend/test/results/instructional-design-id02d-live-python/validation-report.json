@@ -1,0 +1,81 @@
+{
+  "schema_version": "id02d-live-python-validation@0.1",
+  "experiment_id": "instructional-design-id-02d-live-python",
+  "fixture": "python_data_processing",
+  "condition": "structured_v0.3.1",
+  "planned_model_calls": 5,
+  "manifest_metadata": {
+    "dependency_normalizer_version": "id02d.2@0.1",
+    "pre_execution_manifest_written": true,
+    "normalizer_version_present_pre_execution": false,
+    "normalizer_version_added_post_execution": true,
+    "note": "Static metadata was completed after execution; model results were not reconstructed or patched."
+  },
+  "stage_completion": {
+    "run_completed": true,
+    "status": "completed",
+    "model_audit_count": 5,
+    "stages_expected": [
+      "instructional_objective_design",
+      "instructional_assessment_design",
+      "instructional_prerequisite_proposal",
+      "instructional_course_planning",
+      "instructional_lesson_planning"
+    ],
+    "stages_observed": [
+      "instructional_objective_design",
+      "instructional_assessment_design",
+      "instructional_prerequisite_proposal",
+      "instructional_course_planning",
+      "instructional_lesson_planning"
+    ]
+  },
+  "dependency_normalizer": {
+    "version": "id02d.2@0.1",
+    "executed": true,
+    "legacy_dependency_count": 6,
+    "typed_dependency_count": 6,
+    "canonical_dependency_count": 6,
+    "merged_duplicate_count": 6,
+    "provenance_entry_count": 13
+  },
+  "quality_gate": {
+    "passed": false,
+    "findings": [
+      {
+        "code": "assessment_dependency_not_covered",
+        "severity": "error",
+        "entity_type": "assessment",
+        "entity_id": "asmnt-bpdp-02-formative",
+        "field": "required_capabilities",
+        "message": "Assessment dependency is not known, confirmed, or taught by the course."
+      },
+      {
+        "code": "assessment_dependency_not_covered",
+        "severity": "error",
+        "entity_type": "assessment",
+        "entity_id": "asmnt-bpdp-summative",
+        "field": "required_capabilities",
+        "message": "Assessment dependency is not known, confirmed, or taught by the course."
+      },
+      {
+        "code": "assessment_dependency_not_covered",
+        "severity": "error",
+        "entity_type": "assessment",
+        "entity_id": "asmnt-bpdp-summative",
+        "field": "required_capabilities",
+        "message": "Assessment dependency is not known, confirmed, or taught by the course."
+      }
+    ],
+    "findings_by_code": {
+      "assessment_dependency_not_covered": 3
+    },
+    "findings_by_severity": {
+      "error": 3
+    },
+    "scope_creep_finding_present": true
+  },
+  "runtime_failure": null,
+  "decision": "ID-02D.2 NEEDS_ITERATION",
+  "note": "No model output was patched."
+}

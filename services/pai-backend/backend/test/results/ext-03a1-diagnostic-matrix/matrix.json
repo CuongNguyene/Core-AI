@@ -1,0 +1,202 @@
+{
+  "milestone": "EXT-03A.1-DIAG",
+  "generated_at": "2026-09-08T07:31:52.345509+00:00",
+  "reference_fixture": "Nguyen Vu Minh Thien CV PDF",
+  "document_id": "2adf179f-a798-4cb7-ac29-c9c48a06f5ed",
+  "configuration": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_id": "cv_full_extraction",
+    "prompt_version": "2.0",
+    "output_token_budget": 65536,
+    "structured_repair_retries": 0
+  },
+  "runs": [
+    {
+      "run_id": "b5c290c3-fba2-4627-9fac-aff9e8ce0b5c",
+      "input_mode": "native_pdf",
+      "thinking": "high",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_id": "cv_full_extraction",
+      "prompt_version": "2.0",
+      "success": true,
+      "failure_stage": null,
+      "failure_code": null,
+      "latency_ms": 16636,
+      "token_usage": {
+        "input_tokens": 2510,
+        "thinking_tokens": null,
+        "output_tokens": 1038,
+        "total_tokens": 3548
+      },
+      "finish_reason": "STOP",
+      "counts": {
+        "experience": 2,
+        "capabilities": 2,
+        "tools_platforms": 2,
+        "education": 1
+      },
+      "quality": {
+        "grounded_capabilities": 2,
+        "grounded_capability_rate": 1.0,
+        "unsupported_capability_count": 0,
+        "duplicate_capability_count": 0
+      },
+      "capability_names": [
+        "Ultrasonic Testing",
+        "Team Leadership"
+      ],
+      "tool_names": [
+        "Microsoft Office",
+        "AutoCAD"
+      ],
+      "education_summary": [
+        "B.Eng. Mechanical Engineering"
+      ],
+      "capability_coverage": {
+        "Project Management": "NOT_FOUND",
+        "Product Management": "NOT_FOUND",
+        "eCommerce": "NOT_FOUND",
+        "Omnichannel Commerce": "NOT_FOUND",
+        "Order Management": "NOT_FOUND",
+        "Warehouse Management": "NOT_FOUND",
+        "Delivery / Logistics Management": "NOT_FOUND",
+        "Operations Planning": "NOT_FOUND",
+        "Digital Platform Development": "NOT_FOUND",
+        "Team Leadership": "FOUND",
+        "Process Optimization": "NOT_FOUND"
+      },
+      "experience_recall": "LOW",
+      "education_recall": "1/2",
+      "candidate_profile_created": true
+    },
+    {
+      "run_id": "f1a65dd0-9c09-4b93-9091-e038c488c3d2",
+      "input_mode": "native_pdf",
+      "thinking": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_id": "cv_full_extraction",
+      "prompt_version": "2.0",
+      "success": true,
+      "failure_stage": null,
+      "failure_code": null,
+      "latency_ms": 6817,
+      "token_usage": {
+        "input_tokens": 2510,
+        "thinking_tokens": null,
+        "output_tokens": 2229,
+        "total_tokens": 4739
+      },
+      "finish_reason": "STOP",
+      "counts": {
+        "experience": 2,
+        "capabilities": 6,
+        "tools_platforms": 2,
+        "education": 1
+      },
+      "quality": {
+        "grounded_capabilities": 6,
+        "grounded_capability_rate": 1.0,
+        "unsupported_capability_count": 0,
+        "duplicate_capability_count": 0
+      },
+      "capability_names": [
+        "Ultrasonic Testing",
+        "Radiographic Testing",
+        "Magnetic Particle Testing",
+        "Team Leadership",
+        "Procedure Development",
+        "Training and Coaching"
+      ],
+      "tool_names": [
+        "Microsoft Office",
+        "AutoCAD basics"
+      ],
+      "education_summary": [
+        "B.Eng."
+      ],
+      "capability_coverage": {
+        "Project Management": "NOT_FOUND",
+        "Product Management": "NOT_FOUND",
+        "eCommerce": "NOT_FOUND",
+        "Omnichannel Commerce": "NOT_FOUND",
+        "Order Management": "NOT_FOUND",
+        "Warehouse Management": "NOT_FOUND",
+        "Delivery / Logistics Management": "NOT_FOUND",
+        "Operations Planning": "NOT_FOUND",
+        "Digital Platform Development": "NOT_FOUND",
+        "Team Leadership": "FOUND",
+        "Process Optimization": "NOT_FOUND"
+      },
+      "experience_recall": "LOW",
+      "education_recall": "1/2",
+      "candidate_profile_created": true
+    },
+    {
+      "run_id": "9f8a99b2-d7a1-40ca-95d2-b58da1b08833",
+      "input_mode": "whole_parsed_text",
+      "thinking": "high",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_id": "cv_full_extraction",
+      "prompt_version": "2.0",
+      "success": false,
+      "failure_stage": "grounding_validation",
+      "failure_code": "V2 evidence locator does not resolve to the exact source excerpt",
+      "latency_ms": 0,
+      "token_usage": {
+        "input_tokens": null,
+        "thinking_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "finish_reason": null,
+      "counts": {},
+      "quality": {},
+      "capability_names": [],
+      "tool_names": [],
+      "education_summary": [],
+      "capability_coverage": {},
+      "experience_recall": null,
+      "education_recall": null,
+      "candidate_profile_created": false
+    },
+    {
+      "run_id": "c6a1b38f-6627-429e-b448-87d644bf8b04",
+      "input_mode": "whole_parsed_text",
+      "thinking": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_id": "cv_full_extraction",
+      "prompt_version": "2.0",
+      "success": false,
+      "failure_stage": "grounding_validation",
+      "failure_code": "V2 evidence locator does not resolve to the exact source excerpt",
+      "latency_ms": 0,
+      "token_usage": {
+        "input_tokens": null,
+        "thinking_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "finish_reason": null,
+      "counts": {},
+      "quality": {},
+      "capability_names": [],
+      "tool_names": [],
+      "education_summary": [],
+      "capability_coverage": {},
+      "experience_recall": null,
+      "education_recall": null,
+      "candidate_profile_created": false
+    }
+  ],
+  "decision": {
+    "best_input_mode": "native_pdf",
+    "best_thinking": "medium",
+    "primary_blocker": "PROMPT_SCHEMA_RECALL",
+    "next_action": "PROCEED_TO_EXT_03A_2_PROMPT_COVERAGE_CALIBRATION"
+  }
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "fixture": "brief-python_data_processing",
+    "declared_minutes": 60,
+    "planned_minutes": 115,
+    "assessment_minutes": 55,
+    "over_budget_minutes": 55,
+    "status": "over_budget",
+    "missing_allocations": [],
+    "double_count_detected": false,
+    "findings": [
+      {
+        "code": "workload_time_budget_exceeded",
+        "severity": "warning",
+        "declared_minutes": 60,
+        "planned_minutes": 115,
+        "over_budget_minutes": 55,
+        "message": "Planned workload exceeds the declared learning-time budget."
+      }
+    ],
+    "course_declared_minutes": 60
+  },
+  {
+    "fixture": "brief-accounting_financial_reporting_basic",
+    "declared_minutes": 60,
+    "planned_minutes": 60,
+    "assessment_minutes": 60,
+    "over_budget_minutes": 0,
+    "status": "within_budget",
+    "missing_allocations": [],
+    "double_count_detected": false,
+    "findings": [],
+    "course_declared_minutes": 60
+  },
+  {
+    "fixture": "brief-legal_contract_review_basic",
+    "declared_minutes": 60,
+    "planned_minutes": null,
+    "assessment_minutes": 60,
+    "over_budget_minutes": null,
+    "status": "unresolved",
+    "missing_allocations": [],
+    "double_count_detected": false,
+    "findings": [
+      {
+        "code": "workload_time_allocation_missing",
+        "severity": "error",
+        "field": "guided_practice,independent_practice,instruction",
+        "message": "Required workload allocation is unresolved; missing time is not zero."
+      }
+    ],
+    "course_declared_minutes": 60
+  },
+  {
+    "fixture": "brief-hr_recruitment_planning_basic",
+    "declared_minutes": 60,
+    "planned_minutes": 120,
+    "assessment_minutes": 60,
+    "over_budget_minutes": 60,
+    "status": "over_budget",
+    "missing_allocations": [],
+    "double_count_detected": false,
+    "findings": [
+      {
+        "code": "workload_time_budget_exceeded",
+        "severity": "warning",
+        "declared_minutes": 60,
+        "planned_minutes": 120,
+        "over_budget_minutes": 60,
+        "message": "Planned workload exceeds the declared learning-time budget."
+      }
+    ],
+    "course_declared_minutes": 60
+  },
+  {
+    "fixture": "brief-construction_drawing_and_method_basic",
+    "declared_minutes": 60,
+    "planned_minutes": null,
+    "assessment_minutes": 60,
+    "over_budget_minutes": null,
+    "status": "unresolved",
+    "missing_allocations": [],
+    "double_count_detected": false,
+    "findings": [
+      {
+        "code": "workload_time_allocation_missing",
+        "severity": "error",
+        "field": "guided_practice,independent_practice,instruction",
+        "message": "Required workload allocation is unresolved; missing time is not zero."
+      }
+    ],
+    "course_declared_minutes": 60
+  }
+]

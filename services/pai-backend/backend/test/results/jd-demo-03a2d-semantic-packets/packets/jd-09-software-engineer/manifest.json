@@ -1,0 +1,45 @@
+{
+  "packet_id": "jd-09-software-engineer",
+  "source": {
+    "filename": "JD-09 — Software Engineer.docx",
+    "sha256": "8fd587de6f9e102f6db14f62d8657508a82a59055c7b6b65560aaca1daf45c37"
+  },
+  "runtime": {
+    "profile_id": "b191d260-e1c1-4b5b-b576-d16099e1f94c",
+    "document_id": "5f519fa7-1508-4de6-8e6e-d1951ab7a83c",
+    "job_id": "14e70b65-1456-4ed6-9616-98c89b51822c",
+    "review_state": "pending_review",
+    "profile_version": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.2",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.2",
+    "input_mode": "whole_parsed_text",
+    "jd_extraction_mode": "requirement_v2",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 29,
+    "supported_requirement_count": 29,
+    "text_span_locator_count": 29,
+    "pdf_page_locator_count": 0,
+    "dimensions": {
+      "skill": 3,
+      "experience": 9,
+      "education": 1,
+      "credential": 0,
+      "qualification": 0,
+      "null": 16
+    },
+    "modalities": {
+      "must": 8,
+      "preferred": 5,
+      "responsibility": 14,
+      "unspecified": 2
+    }
+  }
+}

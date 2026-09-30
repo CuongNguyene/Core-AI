@@ -1,0 +1,75 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-002",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 4,
+      "evidence_validity": 4,
+      "cognitive_alignment": 4,
+      "prerequisite_quality": 3,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4,
+      "scope_balance": 2,
+      "workload_time_realism": 1,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "The objectives are observable and include thresholds: classify 4 of 5 components, prepare a report from 8-12 ledger entries with correct totals, and identify 2 of 3 discrepancies. The unspecified report type and discrepancy taxonomy limit precision.",
+      "objective_assessment_alignment": "Formative and summative assessments map directly to the three objectives, including component recognition, ledger transfer/summarization, and discrepancy analysis. The integrated task preserves the main success criteria.",
+      "evidence_validity": "Classifications, completed reports, arithmetic totals, and ledger-referenced discrepancy rationales would support a defensible judgement. Validity depends on well-authored ledgers, report templates, and seeded discrepancy keys.",
+      "cognitive_alignment": "Understand, apply, and analyze levels are appropriate for recognizing components, preparing a report, and finding discrepancies. Worked examples and guided practice match the procedural and analytic demands.",
+      "prerequisite_quality": "Basic arithmetic and ledger familiarity are relevant candidate prerequisites, but ledger familiarity may be near the target capability and should be specified narrowly or refreshed in instruction.",
+      "course_sequence_coherence": "The progression is highly coherent: component recognition precedes report preparation, and report preparation precedes discrepancy review. The summative module integrates the same sequence.",
+      "instruction_assessment_alignment": "Each objective has aligned explanation/worked-example/guided-practice support and formative checks before the summative. The weak point is feasibility, not the basic alignment.",
+      "scope_balance": "The objectives and assessments are logically connected, but the design asks novices to learn report components, prepare a report, and diagnose discrepancies in one short sequence. That creates a significant under-teaching imbalance even though the content itself is relevant.",
+      "workload_time_realism": "The workload is not realistic for 60 minutes: report preparation from a ledger plus discrepancy analysis and an integrated summative would require more explanation, practice, feedback, and task time than the design allows.",
+      "domain_appropriateness": "The design is highly appropriate for accounting because it uses ledger-based report preparation, arithmetic accuracy, and discrepancy detection, all of which reflect authentic financial reporting performance."
+    },
+    "machine_validity_observations": [
+      {
+        "code": "id_reference_drift",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "assessments[*].required_capability_refs",
+        "field": "required_capability_refs",
+        "message": "All assessments use textual capability names such as recognition of standard financial report components or arithmetic computation rather than resolvable supplied IDs; the packet reports these assessment dependencies as not covered."
+      },
+      {
+        "code": "other",
+        "severity": "info",
+        "entity_type": null,
+        "entity_id": "course_outline.planning_warnings",
+        "field": "planning_warnings",
+        "message": "The course warning notes that three instructional modules, three formative checkpoints, and an integrated summative are compressed into 60 minutes, with unvalidated timing."
+      }
+    ],
+    "prerequisites_acceptable": false,
+    "edit_effort": "moderate",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "Ignoring machine traceability issues, the design is pedagogically reasonable: it progresses from recognizing financial report components to preparing a report from a ledger and then identifying discrepancies against the ledger."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-002.json",
+    "source_submission_sha256": "233a2dec6b00a777e53e5d1540acfe70ea5ea6d70c2dff4f204bde6acce53bc3",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_02.json",
+    "completion_submission_sha256": "9b84d52252e392192e66d8807437896bea2b5e0d637253b3c169ea8afafaee83",
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

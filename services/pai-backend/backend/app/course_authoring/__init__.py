@@ -1,0 +1,2 @@
+"""Course authoring contract domain."""
+

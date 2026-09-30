@@ -1,0 +1,23 @@
+name: pai-redis
+
+services:
+  redis:
+    image: redis:8-alpine
+    container_name: pai-redis
+    command: >-
+      redis-server --appendonly yes --requirepass
+      ${REDIS_PASSWORD:?set in devops/redis/.env}
+    ports:
+      - "${REDIS_PORT:?set in devops/redis/.env}:6379"
+    volumes:
+      - pai_redis_data:/data
+    networks:
+      - pai-proxy
+
+volumes:
+  pai_redis_data:
+    name: pai_redis_data
+
+networks:
+  pai-proxy:
+    external: true

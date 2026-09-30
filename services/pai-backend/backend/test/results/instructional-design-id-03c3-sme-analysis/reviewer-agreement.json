@@ -1,0 +1,813 @@
+{
+  "at_least_two_difference_count": 3,
+  "at_most_one_difference_count": 47,
+  "dimensions_with_highest_disagreement": [
+    "prerequisite_quality"
+  ],
+  "exact_agreement_count": 22,
+  "fixtures_with_highest_disagreement": [
+    "construction_drawing_and_method_basic"
+  ],
+  "pairs": [
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "cognitive_alignment",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "course_sequence_coherence",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "domain_appropriateness",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "evidence_validity",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "instruction_assessment_alignment",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "objective_assessment_alignment",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "objective_measurability",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "prerequisite_quality",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "scope_balance",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          2
+        ],
+        [
+          "gemini-sme-01",
+          3
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "workload_time_realism",
+      "fixture": "accounting_financial_reporting_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          1
+        ],
+        [
+          "gemini-sme-01",
+          1
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 2,
+      "classification": "meaningful_disagreement",
+      "dimension": "cognitive_alignment",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "course_sequence_coherence",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "domain_appropriateness",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "evidence_validity",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "instruction_assessment_alignment",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "objective_assessment_alignment",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "objective_measurability",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 3,
+      "classification": "major_disagreement",
+      "dimension": "prerequisite_quality",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          2
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "scope_balance",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "workload_time_realism",
+      "fixture": "construction_drawing_and_method_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          3
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "cognitive_alignment",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "course_sequence_coherence",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "domain_appropriateness",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "evidence_validity",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "instruction_assessment_alignment",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          3
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "objective_assessment_alignment",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "objective_measurability",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "prerequisite_quality",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "scope_balance",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "workload_time_realism",
+      "fixture": "hr_recruitment_planning_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          2
+        ],
+        [
+          "gemini-sme-01",
+          2
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "cognitive_alignment",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "course_sequence_coherence",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "domain_appropriateness",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "evidence_validity",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "instruction_assessment_alignment",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "objective_assessment_alignment",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "objective_measurability",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 2,
+      "classification": "meaningful_disagreement",
+      "dimension": "prerequisite_quality",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "scope_balance",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "workload_time_realism",
+      "fixture": "legal_contract_review_basic",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "cognitive_alignment",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "course_sequence_coherence",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "domain_appropriateness",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          5
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "evidence_validity",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "instruction_assessment_alignment",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "objective_assessment_alignment",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "objective_measurability",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "prerequisite_quality",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          4
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 1,
+      "classification": "minor_disagreement",
+      "dimension": "scope_balance",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          4
+        ],
+        [
+          "gemini-sme-01",
+          5
+        ]
+      ]
+    },
+    {
+      "absolute_difference": 0,
+      "classification": "exact_agreement",
+      "dimension": "workload_time_realism",
+      "fixture": "python_data_processing",
+      "reviewer_scores": [
+        [
+          "codex-sme-reviewer",
+          3
+        ],
+        [
+          "gemini-sme-01",
+          3
+        ]
+      ]
+    }
+  ]
+}

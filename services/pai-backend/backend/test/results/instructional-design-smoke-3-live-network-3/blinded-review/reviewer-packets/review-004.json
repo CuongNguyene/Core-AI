@@ -1,0 +1,503 @@
+{
+  "review_id": "review-004",
+  "artifact": {
+    "brief": {
+      "id": "brief-python-data-processing",
+      "capability": {
+        "id": null,
+        "name": "python data processing",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [
+          "basic Python"
+        ],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:python-data-processing:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a tabular dataset, transform missing or invalid values and justify the transformation choices."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-python-data-processing-001",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Transform missing or invalid values in a tabular dataset using appropriate strategies",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a tabular dataset with missing or invalid values",
+          "Access to Python data processing libraries"
+        ],
+        "success_criteria": [
+          "Missing values are identified and handled using at least one strategy (removal, imputation, or marking)",
+          "Invalid values are detected and transformed appropriately",
+          "Transformed dataset is usable for subsequent analysis"
+        ],
+        "prerequisite_refs": [],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner has access to pandas or similar tabular data library",
+            "Assumes basic Python knowledge includes variable assignment and function calls"
+          ]
+        }
+      },
+      {
+        "id": "obj-python-data-processing-002",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Justify transformation choices for missing or invalid data based on data characteristics and analysis goals",
+        "cognitive_process": "evaluate",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "Given a tabular dataset with missing or invalid values",
+          "Context about the intended use or analysis goals"
+        ],
+        "success_criteria": [
+          "Explanation connects transformation choice to data characteristics (e.g., missingness pattern, data type)",
+          "Justification addresses potential impact on downstream analysis",
+          "Reasoning demonstrates understanding of tradeoffs between different strategies"
+        ],
+        "prerequisite_refs": [
+          "obj-python-data-processing-001"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner can articulate reasoning in written or verbal form",
+            "Assumes exposure to the concept that different strategies have different consequences"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-python-data-processing-001",
+        "objective_ids": [
+          "obj-python-data-processing-001"
+        ],
+        "capability_claim": "Transform missing or invalid values in a tabular dataset using appropriate strategies",
+        "required_evidence": [
+          {
+            "id": "ev-001-a",
+            "criterion": "Learner identifies missing values in the provided dataset",
+            "rationale": "Direct evidence of the first success criterion component"
+          },
+          {
+            "id": "ev-001-b",
+            "criterion": "Learner applies at least one missing value handling strategy (removal, imputation, or marking)",
+            "rationale": "Direct evidence of applying transformation strategy from success criteria"
+          },
+          {
+            "id": "ev-001-c",
+            "criterion": "Learner detects and transforms at least one type of invalid value",
+            "rationale": "Direct evidence of second success criterion"
+          },
+          {
+            "id": "ev-001-d",
+            "criterion": "Transformed dataset can be loaded and inspected without errors",
+            "rationale": "Operational evidence of third success criterion (usability)"
+          }
+        ],
+        "task": {
+          "task_type": "hands-on data transformation",
+          "description": "Given a CSV file containing customer records with missing ages, null email addresses, and invalid date formats, write Python code to: (1) identify all missing and invalid values, (2) transform the data using appropriate strategies, and (3) produce a cleaned dataset.",
+          "conditions": [
+            "Access to Python environment with pandas or similar library",
+            "Provided CSV file with known missing and invalid data patterns",
+            "20-30 minutes to complete"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "dim-001-missing",
+              "criterion": "Missing value identification and handling",
+              "performance_levels": [
+                "Does not identify or handle missing values",
+                "Identifies missing values but does not transform them",
+                "Applies one appropriate strategy to handle missing values",
+                "Applies multiple appropriate strategies tailored to different columns or contexts"
+              ]
+            },
+            {
+              "id": "dim-001-invalid",
+              "criterion": "Invalid value detection and transformation",
+              "performance_levels": [
+                "Does not detect or transform invalid values",
+                "Detects invalid values but transformation is incorrect or incomplete",
+                "Detects and correctly transforms invalid values"
+              ]
+            },
+            {
+              "id": "dim-001-usability",
+              "criterion": "Output dataset usability",
+              "performance_levels": [
+                "Output cannot be loaded or contains errors",
+                "Output loads but retains problematic data patterns",
+                "Output is clean and usable for subsequent analysis"
+              ]
+            }
+          ],
+          "mastery_rule": "Learner must achieve at least level 2 on dim-001-missing and dim-001-invalid, and level 2 on dim-001-usability"
+        },
+        "is_summative": true,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes pandas or equivalent library is the expected tool",
+            "Assumes learner can execute Python code in their environment",
+            "Task complexity calibrated to 60-minute total constraint"
+          ]
+        }
+      },
+      {
+        "id": "assess-python-data-processing-002",
+        "objective_ids": [
+          "obj-python-data-processing-002"
+        ],
+        "capability_claim": "Justify transformation choices for missing or invalid data based on data characteristics and analysis goals",
+        "required_evidence": [
+          {
+            "id": "ev-002-a",
+            "criterion": "Justification connects transformation choice to at least one data characteristic",
+            "rationale": "Direct evidence of first success criterion"
+          },
+          {
+            "id": "ev-002-b",
+            "criterion": "Justification addresses potential impact on downstream analysis or use case",
+            "rationale": "Direct evidence of second success criterion"
+          },
+          {
+            "id": "ev-002-c",
+            "criterion": "Reasoning demonstrates awareness of tradeoffs between at least two strategies",
+            "rationale": "Direct evidence of third success criterion"
+          }
+        ],
+        "task": {
+          "task_type": "written justification",
+          "description": "After completing the transformation task, write a brief explanation (200-300 words) justifying your choices. Address: (1) why you chose your specific strategy for missing values, (2) how your approach to invalid data fits the dataset characteristics, and (3) what tradeoffs you considered.",
+          "conditions": [
+            "Completed transformation from assess-python-data-processing-001",
+            "Context provided about dataset use case (e.g., predictive modeling, reporting)",
+            "10-15 minutes to write justification"
+          ]
+        },
+        "cognitive_process": "evaluate",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "dim-002-characteristics",
+              "criterion": "Connection to data characteristics",
+              "performance_levels": [
+                "No connection to data characteristics",
+                "Mentions data characteristics but connection to choice is unclear",
+                "Clearly connects transformation choice to specific data characteristics (e.g., missingness rate, data type, distribution)"
+              ]
+            },
+            {
+              "id": "dim-002-impact",
+              "criterion": "Downstream analysis impact",
+              "performance_levels": [
+                "Does not address downstream impact",
+                "Mentions downstream use but impact reasoning is vague",
+                "Articulates specific consequences of transformation choice for stated analysis goals"
+              ]
+            },
+            {
+              "id": "dim-002-tradeoffs",
+              "criterion": "Tradeoff reasoning",
+              "performance_levels": [
+                "No discussion of alternative strategies or tradeoffs",
+                "Mentions alternatives but does not compare tradeoffs",
+                "Compares at least two strategies and articulates meaningful tradeoffs"
+              ]
+            }
+          ],
+          "mastery_rule": "Learner must achieve level 2 on all three dimensions"
+        },
+        "is_summative": true,
+        "required_capability_refs": [
+          "obj-python-data-processing-001"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes written justification is acceptable evidence format",
+            "Assumes use case context will be provided as part of assessment setup",
+            "Word count is approximate and adjustable based on learner proficiency"
+          ]
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-001",
+        "capability": "Write and execute basic Python statements including variable assignment, function calls, and library imports",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Without ability to write Python statements, learner cannot complete the transformation code required in obj-python-data-processing-001 and assess-python-data-processing-001",
+        "required_for_refs": [
+          "obj-python-data-processing-001",
+          "assess-python-data-processing-001"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-002",
+        "capability": "Load and inspect tabular data from a file using Python",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Learner must be able to read the provided CSV and examine its contents before identifying missing or invalid values as required by obj-python-data-processing-001 success criteria",
+        "required_for_refs": [
+          "obj-python-data-processing-001",
+          "assess-python-data-processing-001"
+        ],
+        "requires_prerequisite_refs": [
+          "prereq-001"
+        ],
+        "teaching_objective_id": null
+      }
+    ],
+    "course_outline": {
+      "id": "course-python-data-processing-001",
+      "brief_id": "brief-python-data-processing",
+      "objective_ids": [
+        "obj-python-data-processing-001",
+        "obj-python-data-processing-002"
+      ],
+      "modules": [
+        {
+          "id": "module-transform-missing-invalid",
+          "title": "Transforming Missing and Invalid Data",
+          "objective_ids": [
+            "obj-python-data-processing-001"
+          ],
+          "prerequisite_refs": [
+            "prereq-001",
+            "prereq-002"
+          ],
+          "lesson_ids": [
+            "lesson-001",
+            "lesson-002",
+            "lesson-003"
+          ],
+          "estimated_minutes": 35
+        },
+        {
+          "id": "module-justify-transformation-choices",
+          "title": "Justifying Data Transformation Decisions",
+          "objective_ids": [
+            "obj-python-data-processing-002"
+          ],
+          "prerequisite_refs": [
+            "prereq-001",
+            "prereq-002"
+          ],
+          "lesson_ids": [
+            "lesson-004",
+            "lesson-005",
+            "lesson-006"
+          ],
+          "estimated_minutes": 25
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-001",
+        "prereq-002"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "obj-python-data-processing-001 teaches procedural application of transformation strategies before obj-python-data-processing-002 asks learners to evaluate and justify those choices",
+        "Assessment tasks confirm this dependency: assess-python-data-processing-002 requires completion of the transformation from assess-python-data-processing-001",
+        "Module 1 time allocation includes hands-on practice; Module 2 fits evaluation and written justification within remaining budget"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Time split assumes 35 minutes for hands-on transformation practice and 25 minutes for justification instruction and practice",
+          "Module sequence follows objective dependency and assessment task flow",
+          "Lesson generation will derive specific lesson_ids during orchestration"
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-001",
+        "module_id": "module-transform-missing-invalid",
+        "objective_ids": [
+          "obj-python-data-processing-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Learn to identify and handle missing values in tabular datasets using removal, imputation, or marking strategies",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Observe code demonstrations for detecting missing values with pandas methods (isnull, isna) and applying three strategies: dropping rows/columns, filling with mean/median/mode, and marking with sentinel values",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes pandas is the primary library for demonstration",
+            "Assumes learner benefits from seeing multiple strategies before practicing"
+          ]
+        }
+      },
+      {
+        "id": "lesson-002",
+        "module_id": "module-transform-missing-invalid",
+        "objective_ids": [
+          "obj-python-data-processing-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Learn to detect and transform invalid values in tabular datasets",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Observe code demonstrations for detecting invalid values using data type checks, range validation, and pattern matching, then applying transformations such as type conversion, replacement, or removal",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes common invalid value patterns include type mismatches, out-of-range values, and malformed strings",
+            "Assumes demonstration includes both detection and transformation steps"
+          ]
+        }
+      },
+      {
+        "id": "lesson-003",
+        "module_id": "module-transform-missing-invalid",
+        "objective_ids": [
+          "obj-python-data-processing-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Practice applying missing and invalid value transformation strategies to sample datasets",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Work through scaffolded exercises transforming datasets with missing and invalid values, receiving feedback on strategy selection and code correctness",
+        "formative_assessment_ids": [
+          "assess-python-data-processing-001"
+        ],
+        "estimated_minutes": 17,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes formative practice occurs before summative assessment",
+            "Assumes guided practice provides partial code or step-by-step prompts",
+            "Time allocation accommodates the summative assessment task within this module"
+          ]
+        }
+      },
+      {
+        "id": "lesson-004",
+        "module_id": "module-justify-transformation-choices",
+        "objective_ids": [
+          "obj-python-data-processing-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Understand how data characteristics and analysis goals influence transformation strategy selection",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Read and reflect on explanations of how missingness patterns, data distribution, sample size, and intended use cases affect the appropriateness of different transformation strategies",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learners need conceptual foundation before evaluating tradeoffs",
+            "Assumes explanation covers key decision factors: MCAR/MAR/MNAR patterns, distribution preservation, bias introduction"
+          ]
+        }
+      },
+      {
+        "id": "lesson-005",
+        "module_id": "module-justify-transformation-choices",
+        "objective_ids": [
+          "obj-python-data-processing-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Analyze tradeoffs between transformation strategies through worked examples",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Study worked examples comparing transformation strategies for specific datasets and use cases, observing how experts reason about tradeoffs and justify decisions",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 7,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes worked examples model the reasoning structure expected in assess-python-data-processing-002",
+            "Assumes examples cover contrasting scenarios where different strategies are appropriate"
+          ]
+        }
+      },
+      {
+        "id": "lesson-006",
+        "module_id": "module-justify-transformation-choices",
+        "objective_ids": [
+          "obj-python-data-processing-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Practice evaluating and justifying transformation choices for given datasets and analysis contexts",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Complete practice justification tasks where learners evaluate transformation strategies for sample datasets, write brief explanations, and compare their reasoning to model justifications",
+        "formative_assessment_ids": [
+          "assess-python-data-processing-002"
+        ],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes independent practice prepares learners for summative written justification",
+            "Time allocation accommodates the summative assessment task within this module"
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

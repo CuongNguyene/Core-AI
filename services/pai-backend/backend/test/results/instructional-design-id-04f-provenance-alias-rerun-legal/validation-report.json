@@ -1,0 +1,47 @@
+{
+  "experiment": "ID-04F",
+  "fixture": "legal_contract_review_basic",
+  "model_calls": 5,
+  "snapshot": true,
+  "graph_integrity": true,
+  "provenance_preserved": true,
+  "governance_preserved": true,
+  "no_auto_confirmation": true,
+  "workload_generated": true,
+  "practice_coverage_generated": true,
+  "findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-01-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-01-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-02-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-02-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    }
+  ],
+  "status": "COMPLETE"
+}

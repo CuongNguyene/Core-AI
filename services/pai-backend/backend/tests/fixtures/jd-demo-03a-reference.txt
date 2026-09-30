@@ -1,0 +1,16 @@
+Senior Data Analyst
+
+Responsibilities
+- Build and maintain analytical dashboards for business stakeholders.
+- Analyze customer and operational data and communicate actionable findings.
+- Partner with product and operations teams to define measurable questions.
+
+Required qualifications
+- At least 3 years of experience in data analysis or business intelligence.
+- Strong SQL skills and practical Python experience for data analysis.
+- Experience designing dashboards with a visualization tool.
+- Bachelor's degree in statistics, mathematics, computer science, or a related field.
+
+Preferred qualifications
+- Experience with experimentation or A/B testing.
+- Familiarity with dbt is a plus.

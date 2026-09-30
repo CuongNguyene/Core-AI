@@ -1,0 +1,65 @@
+{
+  "fixture_id": "legal-candidate",
+  "domain": "legal",
+  "fingerprint": {
+    "fixture_name": "legal-candidate",
+    "document_id": "4686877f-6021-43d0-80d4-936df730a55f",
+    "storage_key": "transient/4686877f-6021-43d0-80d4-936df730a55f",
+    "filename": "cv-candidate-pham-phuong-thao-pdf_1697033219.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 220704,
+    "sha256": "aa028fcae63ebaded2ac77a2b35990b9f67b7d991ed2b245b24864ea437c1eed",
+    "page_count": 4,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 8,
+    "education_count": 2,
+    "statement_count": 34,
+    "reference_validation": "PASS"
+  },
+  "stage2": {
+    "selected_count": 2,
+    "supported_selected_count": 1,
+    "unsupported_selected_count": 1,
+    "selection_precision": 0.5,
+    "bounded_recall": 0.5,
+    "demonstrated_capability_count": 4,
+    "represented_capability_count": 2,
+    "taxonomy_gap_count": 2,
+    "taxonomy_coverage": 0.5,
+    "selected_capability_ids": [
+      "team_leadership",
+      "project_management"
+    ],
+    "selected_names": [
+      "Team Leadership",
+      "Project Management"
+    ],
+    "unknown_taxonomy_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "grounding_rate": 1.0
+  },
+  "taxonomy_gaps": [
+    {
+      "proposed_name": "Legal Research",
+      "domain": "legal",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "legal-candidate"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    },
+    {
+      "proposed_name": "Contract Review",
+      "domain": "legal",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "legal-candidate"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    }
+  ],
+  "candidate_profile_compatibility": "PASS"
+}

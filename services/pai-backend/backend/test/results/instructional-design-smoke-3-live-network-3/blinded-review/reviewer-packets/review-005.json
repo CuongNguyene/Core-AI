@@ -1,0 +1,436 @@
+{
+  "review_id": "review-005",
+  "artifact": {
+    "brief": {
+      "id": "brief-technical-communication",
+      "capability": {
+        "id": null,
+        "name": "technical communication",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:technical-communication:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a complex technical issue and a non-specialist audience, structure an explanation and adapt terminology to the audience."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-tc-001",
+        "brief_id": "brief-technical-communication",
+        "performance": "Structure a technical explanation by identifying core concepts, selecting appropriate terminology, and organizing content logically for a non-specialist audience",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a complex technical issue",
+          "Given a defined non-specialist audience"
+        ],
+        "success_criteria": [
+          "Explanation follows a logical structure (problem-context-solution or general-to-specific)",
+          "Technical terms are either replaced with plain language or defined clearly",
+          "Content is organized with clear signposting and transitions"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-001",
+          "prereq-tc-002"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes 'structure an explanation' implies organizing content with audience-appropriate scaffolding",
+            "Assumes 'adapt terminology' means both substitution and definition strategies"
+          ]
+        }
+      },
+      {
+        "id": "obj-tc-002",
+        "brief_id": "brief-technical-communication",
+        "performance": "Analyze audience knowledge level and adjust explanation depth, abstraction, and examples accordingly",
+        "cognitive_process": "analyze",
+        "knowledge_dimension": "metacognitive",
+        "conditions": [
+          "Given audience descriptors or context clues",
+          "Before drafting technical explanation"
+        ],
+        "success_criteria": [
+          "Identifies likely knowledge gaps or misconceptions",
+          "Selects appropriate abstraction level for audience",
+          "Justifies terminology and example choices based on audience analysis"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-002",
+          "prereq-tc-003"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes 'adapt terminology to the audience' requires explicit audience analysis as a skill",
+            "Treats audience adaptation as a distinct metacognitive objective"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-tc-001",
+        "objective_ids": [
+          "obj-tc-001",
+          "obj-tc-002"
+        ],
+        "capability_claim": "Learner can structure and adapt a technical explanation for a specified non-specialist audience",
+        "required_evidence": [
+          {
+            "id": "evidence-tc-001-a",
+            "criterion": "Produces a written explanation with clear structure (introduction, body, conclusion or equivalent)",
+            "rationale": "Demonstrates ability to organize technical content"
+          },
+          {
+            "id": "evidence-tc-001-b",
+            "criterion": "Replaces or defines at least 3 technical terms appropriately for the audience",
+            "rationale": "Shows terminology adaptation skill"
+          },
+          {
+            "id": "evidence-tc-001-c",
+            "criterion": "Justifies audience analysis and adaptation choices in a brief reflection",
+            "rationale": "Reveals metacognitive awareness of audience needs"
+          }
+        ],
+        "task": {
+          "task_type": "performance_task",
+          "description": "You are given a technical issue (e.g., API rate limiting, memory leak, database indexing problem). Write a 300-400 word explanation for a specified non-specialist audience (e.g., product managers, customer support team, end users). Then write a 100-word rationale explaining your audience analysis and adaptation decisions.",
+          "conditions": [
+            "Technical issue provided by instructor",
+            "Audience role specified",
+            "No collaboration; individual work"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rubric-structure",
+              "criterion": "Logical structure and flow",
+              "performance_levels": [
+                "No clear structure; disorganized",
+                "Basic structure present but transitions unclear",
+                "Clear structure with effective signposting"
+              ]
+            },
+            {
+              "id": "rubric-terminology",
+              "criterion": "Terminology adaptation",
+              "performance_levels": [
+                "Technical jargon used without definition",
+                "Some terms adapted but inconsistently",
+                "Consistently audience-appropriate language with definitions where needed"
+              ]
+            },
+            {
+              "id": "rubric-audience-analysis",
+              "criterion": "Audience analysis justification",
+              "performance_levels": [
+                "No rationale or generic statements",
+                "Basic rationale with some audience awareness",
+                "Explicit analysis linking audience characteristics to adaptation choices"
+              ]
+            }
+          ],
+          "mastery_rule": "All dimensions at level 2 or higher, with at least two dimensions at level 3"
+        },
+        "is_summative": true,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes written explanation is appropriate evidence for the brief's desired performance",
+            "Assumes metacognitive reflection is valuable for demonstrating audience adaptation reasoning"
+          ]
+        }
+      },
+      {
+        "id": "assess-tc-002",
+        "objective_ids": [
+          "obj-tc-001"
+        ],
+        "capability_claim": "Learner can identify structure and terminology issues in technical explanations",
+        "required_evidence": [
+          {
+            "id": "evidence-tc-002-a",
+            "criterion": "Identifies at least 2 structural weaknesses in a sample explanation",
+            "rationale": null
+          },
+          {
+            "id": "evidence-tc-002-b",
+            "criterion": "Identifies at least 2 terminology problems (undefined jargon or inappropriate abstraction)",
+            "rationale": null
+          }
+        ],
+        "task": {
+          "task_type": "critique_task",
+          "description": "Review a flawed technical explanation and list specific structural and terminology problems, with brief suggestions for improvement.",
+          "conditions": [
+            "Sample explanation provided",
+            "10-15 minutes"
+          ]
+        },
+        "cognitive_process": "analyze",
+        "scoring": null,
+        "is_summative": false,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Formative assessment to prepare for summative performance task",
+            "Assumes critique helps internalize quality criteria"
+          ]
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-tc-001",
+        "capability": "Write coherent explanatory prose in English",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Technical communication requires baseline writing competence to structure and convey ideas",
+        "required_for_refs": [
+          "obj-tc-001"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-tc-002",
+        "capability": "Understand the technical domain being explained (at practitioner level)",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Cannot adapt explanation without understanding the technical content; assumes learners have domain expertise",
+        "required_for_refs": [
+          "obj-tc-001",
+          "obj-tc-002"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-tc-003",
+        "capability": "Recognize different audience roles and typical knowledge profiles",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "helpful_background",
+        "rationale": "Familiarity with audience archetypes accelerates audience analysis but can be taught during the course",
+        "required_for_refs": [
+          "obj-tc-002"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      }
+    ],
+    "course_outline": {
+      "id": "outline-tc-001",
+      "brief_id": "brief-technical-communication",
+      "objective_ids": [
+        "obj-tc-001",
+        "obj-tc-002"
+      ],
+      "modules": [
+        {
+          "id": "module-tc-001",
+          "title": "Audience Analysis for Technical Communication",
+          "objective_ids": [
+            "obj-tc-002"
+          ],
+          "prerequisite_refs": [
+            "prereq-tc-002"
+          ],
+          "lesson_ids": [
+            "lesson-tc-001",
+            "lesson-tc-002"
+          ],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "module-tc-002",
+          "title": "Structuring and Adapting Technical Explanations",
+          "objective_ids": [
+            "obj-tc-001"
+          ],
+          "prerequisite_refs": [
+            "prereq-tc-001",
+            "prereq-tc-002"
+          ],
+          "lesson_ids": [
+            "lesson-tc-003",
+            "lesson-tc-004"
+          ],
+          "estimated_minutes": 30
+        },
+        {
+          "id": "module-tc-003",
+          "title": "Practice and Assessment",
+          "objective_ids": [
+            "obj-tc-001",
+            "obj-tc-002"
+          ],
+          "prerequisite_refs": [],
+          "lesson_ids": [
+            "lesson-tc-005"
+          ],
+          "estimated_minutes": 10
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-tc-001",
+        "prereq-tc-002"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "Audience analysis precedes structuring because adaptation decisions depend on understanding audience needs",
+        "Structuring and terminology lessons follow audience analysis so learners can apply audience insights immediately",
+        "Practice module consolidates both objectives in an integrated task"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "60-minute constraint suggests brief treatment; assumed 3 modules with focus on application rather than theory",
+          "Assumes synchronous or asynchronous self-paced delivery"
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-tc-001",
+        "module_id": "module-tc-001",
+        "objective_ids": [
+          "obj-tc-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-002"
+        ],
+        "lesson_goal": "Identify audience knowledge level and likely gaps when given audience descriptors",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Review audience analysis framework (knowledge level, role, goals, constraints) and examine 2 worked examples of audience profiles with gap analysis",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Explanation pattern chosen to introduce framework efficiently within time constraint"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-002",
+        "module_id": "module-tc-001",
+        "objective_ids": [
+          "obj-tc-002"
+        ],
+        "prerequisite_refs": [],
+        "lesson_goal": "Apply audience analysis to select appropriate abstraction level and examples",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Given 3 brief audience scenarios, identify knowledge level and propose 2-3 adaptation strategies for each (e.g., use analogy, define term, omit detail)",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Guided practice allows learners to apply framework with scaffolding before independent use"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-003",
+        "module_id": "module-tc-002",
+        "objective_ids": [
+          "obj-tc-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-001"
+        ],
+        "lesson_goal": "Recognize effective structural patterns for technical explanations",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Analyze 2 contrasting examples (one well-structured, one poorly structured) of the same technical explanation; identify structural differences and their impact on clarity",
+        "formative_assessment_ids": [
+          "assess-tc-002"
+        ],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Worked example with contrast supports schema acquisition for structure patterns"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-004",
+        "module_id": "module-tc-002",
+        "objective_ids": [
+          "obj-tc-001"
+        ],
+        "prerequisite_refs": [],
+        "lesson_goal": "Apply terminology adaptation strategies to technical content",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Watch instructor demonstrate live editing of a technical paragraph, replacing jargon with plain language and adding definitions; observe decision-making process",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Demonstration chosen to model the thinking process behind terminology choices"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-005",
+        "module_id": "module-tc-003",
+        "objective_ids": [
+          "obj-tc-001",
+          "obj-tc-002"
+        ],
+        "prerequisite_refs": [],
+        "lesson_goal": "Integrate audience analysis and explanation structuring in a short technical communication task",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Complete a brief version of the summative assessment (150-200 words instead of 300-400) with immediate peer or self-review against checklist",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Independent practice provides low-stakes rehearsal before summative assessment"
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

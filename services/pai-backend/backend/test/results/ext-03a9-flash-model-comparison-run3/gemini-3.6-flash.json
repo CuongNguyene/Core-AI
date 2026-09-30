@@ -1,0 +1,508 @@
+[
+  {
+    "model": "gemini-3.6-flash",
+    "fixture_id": "devops-engineer",
+    "selected_count": 2,
+    "supported_count": 2,
+    "unsupported_count": 0,
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1": 0.8,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "selected_capability_ids": [
+      "digital_platform_development",
+      "process_optimization"
+    ],
+    "supporting_statement_ids": {
+      "digital_platform_development": [
+        "stmt-10",
+        "stmt-20"
+      ],
+      "process_optimization": [
+        "stmt-24"
+      ]
+    },
+    "domain": "technical",
+    "fingerprint": {
+      "fixture_name": "devops-engineer",
+      "document_id": "evaluation-document:devops-engineer",
+      "storage_key": "evaluation/devops-engineer",
+      "filename": "Devops_Engineer_BuI_VaN_THIeU_37528F1A_1778212136.pdf",
+      "mime_type": "application/pdf",
+      "file_size": 633348,
+      "sha256": "93ad6e8b3841f4094251717e15f42d11d2d80123639887e5322d343986feab4d",
+      "page_count": 3,
+      "input_mode": "native_pdf"
+    },
+    "selected_names": [
+      "Digital Platform Development",
+      "Process Optimization"
+    ],
+    "audit": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "model_revision": "gemini-3.6-flash",
+      "prompt_template_id": "cv_capability_selection_criteria",
+      "prompt_template_version": "1.0",
+      "output_schema_id": "cv_capability_selection_criteria",
+      "output_schema_version": "1.0",
+      "policy_version": "privacy-v1",
+      "correlation_id": "5efe546d-dcb8-485e-90c1-877dbb807013",
+      "routing_decision": "approved_external_restricted",
+      "attempt_count": 1,
+      "latency_ms": 10220,
+      "usage": {
+        "input_tokens": 3605,
+        "output_tokens": 67
+      },
+      "outcome": "succeeded",
+      "finish_reason": "STOP",
+      "protocol": "gemini_generate_content",
+      "deployment_type": "external",
+      "endpoint_origin": "https://generativelanguage.googleapis.com",
+      "data_boundary": "external_provider"
+    },
+    "false_positive_categories": {},
+    "false_negative_categories": {
+      "project_management": "MODEL_MISS"
+    }
+  },
+  {
+    "model": "gemini-3.6-flash",
+    "fixture_id": "data-analyst",
+    "selected_count": 1,
+    "supported_count": 1,
+    "unsupported_count": 0,
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "selected_capability_ids": [
+      "process_optimization"
+    ],
+    "supporting_statement_ids": {
+      "process_optimization": [
+        "stmt-1",
+        "stmt-2",
+        "stmt-5"
+      ]
+    },
+    "domain": "technical",
+    "fingerprint": {
+      "fixture_name": "data-analyst",
+      "document_id": "evaluation-document:data-analyst",
+      "storage_key": "evaluation/data-analyst",
+      "filename": "DATA_ANALYST_Phan_Nguyen_Lam_Ha_3750CA74_1778171201.pdf",
+      "mime_type": "application/pdf",
+      "file_size": 79098,
+      "sha256": "9ff69245a9795a175c4a9f5baddf96a4658518b5ef09befd96803b4ad01efa12",
+      "page_count": 1,
+      "input_mode": "native_pdf"
+    },
+    "selected_names": [
+      "Process Optimization"
+    ],
+    "audit": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "model_revision": "gemini-3.6-flash",
+      "prompt_template_id": "cv_capability_selection_criteria",
+      "prompt_template_version": "1.0",
+      "output_schema_id": "cv_capability_selection_criteria",
+      "output_schema_version": "1.0",
+      "policy_version": "privacy-v1",
+      "correlation_id": "e24c15d6-19a9-457c-b5a2-fba8756baa9c",
+      "routing_decision": "approved_external_restricted",
+      "attempt_count": 1,
+      "latency_ms": 7203,
+      "usage": {
+        "input_tokens": 2117,
+        "output_tokens": 48
+      },
+      "outcome": "succeeded",
+      "finish_reason": "STOP",
+      "protocol": "gemini_generate_content",
+      "deployment_type": "external",
+      "endpoint_origin": "https://generativelanguage.googleapis.com",
+      "data_boundary": "external_provider"
+    },
+    "false_positive_categories": {},
+    "false_negative_categories": {
+      "digital_platform_development": "MODEL_MISS"
+    }
+  },
+  {
+    "model": "gemini-3.6-flash",
+    "fixture_id": "accounting-manager",
+    "selected_count": 2,
+    "supported_count": 2,
+    "unsupported_count": 0,
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1": 0.8,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "selected_capability_ids": [
+      "team_leadership",
+      "process_optimization"
+    ],
+    "supporting_statement_ids": {
+      "team_leadership": [
+        "stmt_35",
+        "stmt_44",
+        "stmt_52"
+      ],
+      "process_optimization": [
+        "stmt_50"
+      ]
+    },
+    "domain": "accounting_finance",
+    "fingerprint": {
+      "fixture_name": "accounting-manager",
+      "document_id": "evaluation-document:accounting-manager",
+      "storage_key": "evaluation/accounting-manager",
+      "filename": "bui_ngoc_sang_cv_ke-toan-truong-pdf_1750301670.pdf",
+      "mime_type": "application/pdf",
+      "file_size": 746530,
+      "sha256": "ce3de39df7d5a0db913d928840f1f9c550604aca9ccccfe904758b4e0c7a131c",
+      "page_count": 6,
+      "input_mode": "native_pdf"
+    },
+    "selected_names": [
+      "Team Leadership",
+      "Process Optimization"
+    ],
+    "audit": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "model_revision": "gemini-3.6-flash",
+      "prompt_template_id": "cv_capability_selection_criteria",
+      "prompt_template_version": "1.0",
+      "output_schema_id": "cv_capability_selection_criteria",
+      "output_schema_version": "1.0",
+      "policy_version": "privacy-v1",
+      "correlation_id": "2c97e6bf-2884-43bc-ae69-e63112c948b0",
+      "routing_decision": "approved_external_restricted",
+      "attempt_count": 1,
+      "latency_ms": 11378,
+      "usage": {
+        "input_tokens": 7998,
+        "output_tokens": 70
+      },
+      "outcome": "succeeded",
+      "finish_reason": "STOP",
+      "protocol": "gemini_generate_content",
+      "deployment_type": "external",
+      "endpoint_origin": "https://generativelanguage.googleapis.com",
+      "data_boundary": "external_provider"
+    },
+    "false_positive_categories": {},
+    "false_negative_categories": {
+      "operations_planning": "MODEL_MISS"
+    }
+  },
+  {
+    "model": "gemini-3.6-flash",
+    "fixture_id": "legal-candidate",
+    "selected_count": 1,
+    "supported_count": 0,
+    "unsupported_count": 1,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "selected_capability_ids": [
+      "team_leadership"
+    ],
+    "supporting_statement_ids": {
+      "team_leadership": [
+        "stmt-27"
+      ]
+    },
+    "domain": "legal",
+    "fingerprint": {
+      "fixture_name": "legal-candidate",
+      "document_id": "evaluation-document:legal-candidate",
+      "storage_key": "evaluation/legal-candidate",
+      "filename": "cv-candidate-pham-phuong-thao-pdf_1697033219.pdf",
+      "mime_type": "application/pdf",
+      "file_size": 220704,
+      "sha256": "aa028fcae63ebaded2ac77a2b35990b9f67b7d991ed2b245b24864ea437c1eed",
+      "page_count": 4,
+      "input_mode": "native_pdf"
+    },
+    "selected_names": [
+      "Team Leadership"
+    ],
+    "audit": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "model_revision": "gemini-3.6-flash",
+      "prompt_template_id": "cv_capability_selection_criteria",
+      "prompt_template_version": "1.0",
+      "output_schema_id": "cv_capability_selection_criteria",
+      "output_schema_version": "1.0",
+      "policy_version": "privacy-v1",
+      "correlation_id": "b187c85b-d948-4de6-93bb-0d37f4202c46",
+      "routing_decision": "approved_external_restricted",
+      "attempt_count": 1,
+      "latency_ms": 8301,
+      "usage": {
+        "input_tokens": 4736,
+        "output_tokens": 41
+      },
+      "outcome": "succeeded",
+      "finish_reason": "STOP",
+      "protocol": "gemini_generate_content",
+      "deployment_type": "external",
+      "endpoint_origin": "https://generativelanguage.googleapis.com",
+      "data_boundary": "external_provider"
+    },
+    "false_positive_categories": {
+      "team_leadership": "OTHER"
+    },
+    "false_negative_categories": {
+      "project_management": "MODEL_MISS",
+      "process_optimization": "MODEL_MISS"
+    }
+  },
+  {
+    "model": "gemini-3.6-flash",
+    "fixture_id": "ta-manager",
+    "selected_count": 2,
+    "supported_count": 2,
+    "unsupported_count": 0,
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1": 0.8,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "selected_capability_ids": [
+      "team_leadership",
+      "process_optimization"
+    ],
+    "supporting_statement_ids": {
+      "team_leadership": [
+        "st-15"
+      ],
+      "process_optimization": [
+        "st-13",
+        "st-21"
+      ]
+    },
+    "domain": "hr_management",
+    "fingerprint": {
+      "fixture_name": "ta-manager",
+      "document_id": "evaluation-document:ta-manager",
+      "storage_key": "evaluation/ta-manager",
+      "filename": "1_ta-manager-nguyen-ngoc-dung-pdf_1751257908.pdf",
+      "mime_type": "application/pdf",
+      "file_size": 890873,
+      "sha256": "bcfa9067a80ca70a0b528a3eae052073b280961528452c8ce94f1a7fc26820c1",
+      "page_count": 5,
+      "input_mode": "native_pdf"
+    },
+    "selected_names": [
+      "Team Leadership",
+      "Process Optimization"
+    ],
+    "audit": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "model_revision": "gemini-3.6-flash",
+      "prompt_template_id": "cv_capability_selection_criteria",
+      "prompt_template_version": "1.0",
+      "output_schema_id": "cv_capability_selection_criteria",
+      "output_schema_version": "1.0",
+      "policy_version": "privacy-v1",
+      "correlation_id": "afbdb7f7-8470-404f-984f-76c82e76e5a5",
+      "routing_decision": "approved_external_restricted",
+      "attempt_count": 1,
+      "latency_ms": 9229,
+      "usage": {
+        "input_tokens": 5211,
+        "output_tokens": 124
+      },
+      "outcome": "succeeded",
+      "finish_reason": "STOP",
+      "protocol": "gemini_generate_content",
+      "deployment_type": "external",
+      "endpoint_origin": "https://generativelanguage.googleapis.com",
+      "data_boundary": "external_provider"
+    },
+    "false_positive_categories": {},
+    "false_negative_categories": {
+      "operations_planning": "MODEL_MISS"
+    }
+  },
+  {
+    "model": "gemini-3.6-flash",
+    "fixture_id": "assistant-sales-manager",
+    "selected_count": 2,
+    "supported_count": 1,
+    "unsupported_count": 1,
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "f1": 0.4,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "selected_capability_ids": [
+      "warehouse_management",
+      "team_leadership"
+    ],
+    "supporting_statement_ids": {
+      "warehouse_management": [
+        "stmt_27"
+      ],
+      "team_leadership": [
+        "stmt_37"
+      ]
+    },
+    "domain": "sales",
+    "fingerprint": {
+      "fixture_name": "assistant-sales-manager",
+      "document_id": "evaluation-document:assistant-sales-manager",
+      "storage_key": "evaluation/assistant-sales-manager",
+      "filename": "cv_assistant-sales-manager_quynh-mai-ms-pdf_1695531568.pdf",
+      "mime_type": "application/pdf",
+      "file_size": 389794,
+      "sha256": "27efec8dc117c8121039136feb8f93ffaeddcc259932ba3c0ae3d77bf82411af",
+      "page_count": 1,
+      "input_mode": "native_pdf"
+    },
+    "selected_names": [
+      "Warehouse Management",
+      "Team Leadership"
+    ],
+    "audit": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "model_revision": "gemini-3.6-flash",
+      "prompt_template_id": "cv_capability_selection_criteria",
+      "prompt_template_version": "1.0",
+      "output_schema_id": "cv_capability_selection_criteria",
+      "output_schema_version": "1.0",
+      "policy_version": "privacy-v1",
+      "correlation_id": "2ef0c80e-5a21-4c5d-beda-c44dac9e0391",
+      "routing_decision": "approved_external_restricted",
+      "attempt_count": 1,
+      "latency_ms": 9060,
+      "usage": {
+        "input_tokens": 4873,
+        "output_tokens": 116
+      },
+      "outcome": "succeeded",
+      "finish_reason": "STOP",
+      "protocol": "gemini_generate_content",
+      "deployment_type": "external",
+      "endpoint_origin": "https://generativelanguage.googleapis.com",
+      "data_boundary": "external_provider"
+    },
+    "false_positive_categories": {
+      "warehouse_management": "OTHER"
+    },
+    "false_negative_categories": {
+      "product_management": "MODEL_MISS",
+      "project_management": "MODEL_MISS"
+    }
+  },
+  {
+    "model": "gemini-3.6-flash",
+    "fixture_id": "construction-project-manager",
+    "selected_count": 3,
+    "supported_count": 3,
+    "unsupported_count": 0,
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571428571428571,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "selected_capability_ids": [
+      "project_management",
+      "team_leadership",
+      "process_optimization"
+    ],
+    "supporting_statement_ids": {
+      "project_management": [
+        "stmt-1",
+        "stmt-7",
+        "stmt-9",
+        "stmt-20",
+        "stmt-24"
+      ],
+      "team_leadership": [
+        "stmt-3",
+        "stmt-13",
+        "stmt-22",
+        "stmt-25"
+      ],
+      "process_optimization": [
+        "stmt-3",
+        "stmt-4",
+        "stmt-21"
+      ]
+    },
+    "domain": "operations_project",
+    "fingerprint": {
+      "fixture_name": "construction-project-manager",
+      "document_id": "evaluation-document:construction-project-manager",
+      "storage_key": "evaluation/construction-project-manager",
+      "filename": "Chi_Huy_Truong_QLDA_Truong_phong_Tran_Van_Ngoc_3620A1D3_1781499378.pdf",
+      "mime_type": "application/pdf",
+      "file_size": 363676,
+      "sha256": "bfbccd0e9f36d3b5049ebb7d3d053cf90d14672da12ee6a7a836273a3b2428e0",
+      "page_count": 4,
+      "input_mode": "native_pdf"
+    },
+    "selected_names": [
+      "Project Management",
+      "Team Leadership",
+      "Process Optimization"
+    ],
+    "audit": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "model_revision": "gemini-3.6-flash",
+      "prompt_template_id": "cv_capability_selection_criteria",
+      "prompt_template_version": "1.0",
+      "output_schema_id": "cv_capability_selection_criteria",
+      "output_schema_version": "1.0",
+      "policy_version": "privacy-v1",
+      "correlation_id": "1d7bb022-be42-474a-84a7-c50e53bd92b0",
+      "routing_decision": "approved_external_restricted",
+      "attempt_count": 1,
+      "latency_ms": 10261,
+      "usage": {
+        "input_tokens": 4841,
+        "output_tokens": 221
+      },
+      "outcome": "succeeded",
+      "finish_reason": "STOP",
+      "protocol": "gemini_generate_content",
+      "deployment_type": "external",
+      "endpoint_origin": "https://generativelanguage.googleapis.com",
+      "data_boundary": "external_provider"
+    },
+    "false_positive_categories": {},
+    "false_negative_categories": {
+      "operations_planning": "MODEL_MISS"
+    }
+  }
+]

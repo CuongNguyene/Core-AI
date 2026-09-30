@@ -1,0 +1,26 @@
+{
+  "readiness": "BLOCKED_BY_SEMANTIC_UNKNOWN",
+  "decision": "Do not begin porting code yet.",
+  "basis": [
+    "Target has no Organization/Tenant, Evidence, CV/JD, CandidateProfile, RoleProfile, Competency, CapabilityGapPortfolio or SemanticPolicy equivalents.",
+    "Target Document, LearningPath, Quiz and Certificate models have materially different meanings from source models with the same or adjacent names.",
+    "Source and target authorization models differ at the trust, organization and delegation boundaries.",
+    "Source and target use separate runtime languages, ORMs, migration engines, queue patterns and response contracts.",
+    "The supplied target subtree is inside a parent Git repository whose worktree reports deletions under a sibling source_code subtree."
+  ],
+  "can_port_as_is": [],
+  "can_port_with_adapter": [
+    "versioned instructional-design/evidence contracts after TypeScript schema translation",
+    "deterministic normalizers, quality gates and semantic rules after golden-fixture translation",
+    "approved learning-plan/course projection through a namespaced adapter"
+  ],
+  "keep_source_only_initially": ["research artifacts", "review packets/submissions", "source migrations", "raw traces", "source FastAPI routes", "source ORM repositories"],
+  "required_clarifications": [
+    "Which target path/subtree is authoritative: supplied 5. SOURCE/ndt-training-management-system-main or sibling 5. SOURCE/source_code/ndt-training-management-system-main?",
+    "Is the MVP single-tenant or multi-tenant, and what is the authoritative actor/employee identity?",
+    "Should PAI evidence/capability remain a separate Python service or be reimplemented in NestJS?",
+    "Are target course certificates intentionally separate from PAI competency credentials?",
+    "Which source concepts are in MVP scope: CV/JD extraction, evidence review, role profiles, capability gaps and assessment?"
+  ],
+  "scan_scope": "read-only repository inventory; no tests, installs, migrations, merges or integration implementation"
+}

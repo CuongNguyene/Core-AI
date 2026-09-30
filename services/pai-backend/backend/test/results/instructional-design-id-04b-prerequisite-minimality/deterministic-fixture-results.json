@@ -1,0 +1,182 @@
+[
+  {
+    "findings": [],
+    "fixture": "python_data_processing",
+    "proposals": [
+      {
+        "basis": "model_proposed",
+        "capability": "basic Python syntax",
+        "classification": "required_prerequisite",
+        "disposition": "entry_prerequisite",
+        "id": "prereq-1",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-1"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      },
+      {
+        "basis": "model_proposed",
+        "capability": "data-quality criteria",
+        "classification": "required_prerequisite",
+        "disposition": "in_course_support",
+        "id": "prereq-2",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-2"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      }
+    ]
+  },
+  {
+    "findings": [],
+    "fixture": "accounting_financial_reporting_basic",
+    "proposals": [
+      {
+        "basis": "model_proposed",
+        "capability": "spreadsheet navigation",
+        "classification": "required_prerequisite",
+        "disposition": "entry_prerequisite",
+        "id": "prereq-1",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-1"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      },
+      {
+        "basis": "model_proposed",
+        "capability": "advanced derivative pricing",
+        "classification": "required_prerequisite",
+        "disposition": "not_required",
+        "id": "prereq-2",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-2"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      }
+    ]
+  },
+  {
+    "findings": [],
+    "fixture": "legal_contract_review_basic",
+    "proposals": [
+      {
+        "basis": "model_proposed",
+        "capability": "contract terminology",
+        "classification": "required_prerequisite",
+        "disposition": "entry_prerequisite",
+        "id": "prereq-1",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-1"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      },
+      {
+        "basis": "model_proposed",
+        "capability": "risk-analysis framework",
+        "classification": "required_prerequisite",
+        "disposition": "in_course_support",
+        "id": "prereq-2",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-2"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      }
+    ]
+  },
+  {
+    "findings": [],
+    "fixture": "hr_recruitment_planning_basic",
+    "proposals": [
+      {
+        "basis": "model_proposed",
+        "capability": "role context awareness",
+        "classification": "required_prerequisite",
+        "disposition": "entry_prerequisite",
+        "id": "prereq-1",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-1"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      },
+      {
+        "basis": "model_proposed",
+        "capability": "planning rubric",
+        "classification": "required_prerequisite",
+        "disposition": "in_course_support",
+        "id": "prereq-2",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-2"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      }
+    ]
+  },
+  {
+    "findings": [],
+    "fixture": "construction_drawing_and_method_basic",
+    "proposals": [
+      {
+        "basis": "model_proposed",
+        "capability": "basic drawing symbols",
+        "classification": "required_prerequisite",
+        "disposition": "entry_prerequisite",
+        "id": "prereq-1",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-1"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      },
+      {
+        "basis": "model_proposed",
+        "capability": "task-specific method reasoning",
+        "classification": "required_prerequisite",
+        "disposition": "in_course_support",
+        "id": "prereq-2",
+        "rationale": "Explicit planning disposition from source dependency.",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "source_dependency_refs": [
+          "dependency-2"
+        ],
+        "status": "candidate",
+        "teaching_objective_id": null
+      }
+    ]
+  }
+]

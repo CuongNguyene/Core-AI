@@ -1,0 +1,34 @@
+{
+  "flows": [
+    {
+      "id": "A",
+      "name": "generate_course_blueprint",
+      "direction": "LMS_TO_PAI",
+      "trigger": "authorized LMS admin/trainer requests learning design",
+      "request": "LearningBriefContract plus ActorReference",
+      "response": "blueprint request reference, then approved CourseBlueprintContract",
+      "ownership": {"requester": "LMS", "generation": "PAI", "blueprint": "PAI"},
+      "failure_codes": ["invalid_learning_brief", "actor_not_authorized", "tenant_scope_mismatch", "quality_gate_rejected", "generation_unavailable"]
+    },
+    {
+      "id": "B",
+      "name": "publish_blueprint_to_lms",
+      "direction": "PAI_TO_LMS_PROJECTION",
+      "trigger": "LMS accepts an approved immutable blueprint version",
+      "request": "CourseBlueprintContract and AssessmentBlueprintContract references",
+      "response": "LMS Course Draft plus projection acknowledgement",
+      "ownership": {"blueprint": "PAI", "course_draft": "LMS", "publication": "LMS"},
+      "not_copied": ["competency_refs", "evidence_rules", "Bloom_levels", "rubrics", "policy_versions", "provenance", "raw_prompts"]
+    },
+    {
+      "id": "C",
+      "name": "learning_result_feedback",
+      "direction": "LMS_TO_PAI_EVENT",
+      "trigger": "delivery milestone, completion, or quiz attempt outcome",
+      "request": "LearningResultEvent",
+      "response": "PAI receipt and optional CompetencyResult",
+      "ownership": {"delivery_facts": "LMS", "evidence_evaluation": "PAI", "competency_decision": "PAI"},
+      "guardrail": "LMS completion, pass, or certificate cannot automatically verify a PAI competency."
+    }
+  ]
+}

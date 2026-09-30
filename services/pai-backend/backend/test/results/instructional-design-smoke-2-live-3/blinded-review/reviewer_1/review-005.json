@@ -1,0 +1,88 @@
+{
+  "review_id": "review-005",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T09:42:23+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "clean",
+    "issues": [],
+    "notes": "All objectives, assessments, modules, and lessons are correctly linked with no orphaned entities [cite: 5]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Yes. The design is highly coherent and well-scaffolded.",
+      "notes": "Breaking technical communication into audience analysis, structuring, terminology adaptation, and self-evaluation is an excellent pedagogical approach [cite: 5]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 5,
+        "rationale": "Criteria like 'identifiable opening context' and 'each technical term is addressed' are highly objective and measurable [cite: 5]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The summative assessment explicitly covers all four objectives in a realistic, integrated writing task [cite: 5]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Producing a drafted explanation and a self-evaluation is a highly valid way to assess communication skills [cite: 5]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The progression from understand -> apply -> evaluate is perfectly mapped to the instructional patterns [cite: 5]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Basic communication and information organization are the exact right baseline prerequisites [cite: 5]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The separation of structural organization from terminology adaptation before combining them is a masterful scaffolding technique [cite: 5]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Guided practice for terminology and worked examples for structure align well with the expected final output [cite: 5]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 2,
+        "rationale": "Very balanced, though 15 minutes for evaluating and refining might be slightly brief for deep metacognition [cite: 5]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Highly focused on the specific communication parameters [cite: 5]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 1,
+        "rationale": "Trivial edits required. This is a very strong, ready-to-use instructional design."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-basic-communication",
+        "prereq-information-organisation"
+      ],
+      "rejected_refs": [],
+      "notes": "Prerequisites are minimal, relevant, and accurately describe the needed entry state [cite: 5]."
+    },
+    "edit_effort": {
+      "level": "none",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 0,
+      "notes": "No significant structural or pedagogical edits required."
+    },
+    "overall_notes": "An excellent artifact. The separation of structural logic from terminology adaptation shows a deep understanding of how to teach communication skills [cite: 5]."
+  }
+}

@@ -1,0 +1,659 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req_01",
+      "statement": "The Senior Data Analyst will support business teams by transforming operational and customer data into actionable insights.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "support business teams",
+        "transforming operational and customer data"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 88,
+        "end_offset": 211
+      },
+      "source_excerpt": "The Senior Data Analyst will support business teams by transforming operational and customer data into actionable insights.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_02",
+      "statement": "You will analyze business performance, customer behavior, operational trends, and campaign effectiveness.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "analyze business performance",
+        "customer behavior"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 229,
+        "end_offset": 334
+      },
+      "source_excerpt": "You will analyze business performance, customer behavior, operational trends, and campaign effectiveness.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_03",
+      "statement": "You will work with stakeholders to define metrics and build dashboards used for management decision-making.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "work with stakeholders",
+        "define metrics",
+        "build dashboards"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 335,
+        "end_offset": 442
+      },
+      "source_excerpt": "You will work with stakeholders to define metrics and build dashboards used for management decision-making.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_04",
+      "statement": "Write SQL queries to extract and transform data from multiple sources.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Write SQL queries"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 467,
+        "end_offset": 537
+      },
+      "source_excerpt": "Write SQL queries to extract and transform data from multiple sources.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_05",
+      "statement": "Design dashboards and management reports using Power BI.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Design dashboards",
+        "Power BI"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 538,
+        "end_offset": 594
+      },
+      "source_excerpt": "Design dashboards and management reports using Power BI.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_06",
+      "statement": "Define KPIs together with business stakeholders.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Define KPIs"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 595,
+        "end_offset": 643
+      },
+      "source_excerpt": "Define KPIs together with business stakeholders.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_07",
+      "statement": "Analyze trends, anomalies, and business performance.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Analyze trends"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 644,
+        "end_offset": 696
+      },
+      "source_excerpt": "Analyze trends, anomalies, and business performance.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_08",
+      "statement": "Perform ad hoc analysis to support strategic and operational decisions.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "ad hoc analysis"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 697,
+        "end_offset": 768
+      },
+      "source_excerpt": "Perform ad hoc analysis to support strategic and operational decisions.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_09",
+      "statement": "Validate data quality before publishing reports.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Validate data quality"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 769,
+        "end_offset": 817
+      },
+      "source_excerpt": "Validate data quality before publishing reports.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_10",
+      "statement": "Develop reusable datasets and reporting logic.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Develop reusable datasets"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 818,
+        "end_offset": 864
+      },
+      "source_excerpt": "Develop reusable datasets and reporting logic.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_11",
+      "statement": "Communicate analytical findings to non-technical stakeholders.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Communicate analytical findings"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 865,
+        "end_offset": 927
+      },
+      "source_excerpt": "Communicate analytical findings to non-technical stakeholders.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_12",
+      "statement": "Work with engineering teams to improve data availability and reliability.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Work with engineering teams"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 928,
+        "end_offset": 1001
+      },
+      "source_excerpt": "Work with engineering teams to improve data availability and reliability.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_13",
+      "statement": "Support junior analysts through review and knowledge sharing.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Support junior analysts"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "responsibilities",
+        "start_offset": 1002,
+        "end_offset": 1063
+      },
+      "source_excerpt": "Support junior analysts through review and knowledge sharing.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_14",
+      "statement": "Bachelor's degree in Statistics, Economics, Computer Science, Business Analytics, or a related field.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "Bachelor's degree"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "requirements",
+        "start_offset": 1085,
+        "end_offset": 1186
+      },
+      "source_excerpt": "Bachelor's degree in Statistics, Economics, Computer Science, Business Analytics, or a related field.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_15",
+      "statement": "At least 4 years of experience in data analytics or business intelligence.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "4 years of experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "requirements",
+        "start_offset": 1187,
+        "end_offset": 1261
+      },
+      "source_excerpt": "At least 4 years of experience in data analytics or business intelligence.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_16",
+      "statement": "Advanced SQL.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Advanced SQL"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "requirements",
+        "start_offset": 1262,
+        "end_offset": 1275
+      },
+      "source_excerpt": "Advanced SQL.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_17",
+      "statement": "Strong experience with Excel.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "experience with Excel"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "requirements",
+        "start_offset": 1276,
+        "end_offset": 1305
+      },
+      "source_excerpt": "Strong experience with Excel.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_18",
+      "statement": "Experience building dashboards with Power BI or Tableau.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "Power BI or Tableau"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "requirements",
+        "start_offset": 1306,
+        "end_offset": 1362
+      },
+      "source_excerpt": "Experience building dashboards with Power BI or Tableau.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_19",
+      "statement": "Good understanding of descriptive statistics.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "understanding of descriptive statistics"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "requirements",
+        "start_offset": 1363,
+        "end_offset": 1408
+      },
+      "source_excerpt": "Good understanding of descriptive statistics.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_20",
+      "statement": "Strong analytical and problem-solving ability.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "analytical and problem-solving ability"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "requirements",
+        "start_offset": 1409,
+        "end_offset": 1455
+      },
+      "source_excerpt": "Strong analytical and problem-solving ability.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_21",
+      "statement": "Python experience is preferred but not mandatory.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Python experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "nice_to_have",
+        "start_offset": 1469,
+        "end_offset": 1518
+      },
+      "source_excerpt": "Python experience is preferred but not mandatory.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_22",
+      "statement": "BigQuery experience would be considered an advantage.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "BigQuery"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "nice_to_have",
+        "start_offset": 1536,
+        "end_offset": 1544
+      },
+      "source_excerpt": "BigQuery",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_23",
+      "statement": "dbt experience would be considered an advantage.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "dbt"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "nice_to_have",
+        "start_offset": 1546,
+        "end_offset": 1549
+      },
+      "source_excerpt": "dbt",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_24",
+      "statement": "Customer analytics experience would be considered an advantage.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "customer analytics"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "nice_to_have",
+        "start_offset": 1551,
+        "end_offset": 1569
+      },
+      "source_excerpt": "customer analytics",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req_25",
+      "statement": "Experimentation or A/B testing experience would be considered an advantage.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "experimentation or A/B testing"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "section": "nice_to_have",
+        "start_offset": 1571,
+        "end_offset": 1601
+      },
+      "source_excerpt": "experimentation or A/B testing",
+      "provenance": {}
+    }
+  ]
+}

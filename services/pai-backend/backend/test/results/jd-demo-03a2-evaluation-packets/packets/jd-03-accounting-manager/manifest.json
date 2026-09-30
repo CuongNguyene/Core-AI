@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-03-accounting-manager",
+  "source": {
+    "filename": "JD-03 — Accounting Manager.docx",
+    "sha256": "de87dd76532780e22cddc13fdaae899f20403fc44bd0f0b4eddc2e15268d506f"
+  },
+  "runtime": {
+    "document_id": "274aa8d9-4f0a-4490-85cb-ce468710a2cf",
+    "job_id": "7e41bd86-f965-43fd-9458-8aabc3779ae1",
+    "profile_id": "778b52ca-b1be-4d1f-b1f9-a7040562bb68",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 4,
+    "supported_requirement_count": 4,
+    "text_span_locator_count": 4,
+    "pdf_page_locator_count": 0
+  }
+}

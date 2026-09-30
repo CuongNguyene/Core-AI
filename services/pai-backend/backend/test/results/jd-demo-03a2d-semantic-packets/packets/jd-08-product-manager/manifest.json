@@ -1,0 +1,45 @@
+{
+  "packet_id": "jd-08-product-manager",
+  "source": {
+    "filename": "JD-08 — Product Manager.docx",
+    "sha256": "8398fde7dee02b1a6d7b77ba9544e6387c967c97efddad946bc99e635c18615f"
+  },
+  "runtime": {
+    "profile_id": "703d6870-0cc8-425b-99db-28110fa982aa",
+    "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+    "job_id": "5e0ae5d3-bcfa-43d9-adf2-805004d05a52",
+    "review_state": "pending_review",
+    "profile_version": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.2",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.2",
+    "input_mode": "whole_parsed_text",
+    "jd_extraction_mode": "requirement_v2",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 24,
+    "supported_requirement_count": 24,
+    "text_span_locator_count": 24,
+    "pdf_page_locator_count": 0,
+    "dimensions": {
+      "skill": 4,
+      "experience": 6,
+      "education": 0,
+      "credential": 0,
+      "qualification": 0,
+      "null": 14
+    },
+    "modalities": {
+      "must": 6,
+      "preferred": 4,
+      "responsibility": 12,
+      "unspecified": 2
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "fixture_id": "assistant-sales-manager",
+  "domain": "sales",
+  "fingerprint": {
+    "fixture_name": "assistant-sales-manager",
+    "document_id": "5ff068e5-51ed-4017-932e-f3ce08345a3f",
+    "storage_key": "transient/5ff068e5-51ed-4017-932e-f3ce08345a3f",
+    "filename": "cv_assistant-sales-manager_quynh-mai-ms-pdf_1695531568.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 389794,
+    "sha256": "27efec8dc117c8121039136feb8f93ffaeddcc259932ba3c0ae3d77bf82411af",
+    "page_count": 1,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 3,
+    "education_count": 3,
+    "statement_count": 44,
+    "reference_validation": "PASS"
+  },
+  "B_strict": {
+    "selected": 5,
+    "supported": 1,
+    "unsupported": 4,
+    "precision": 0.2,
+    "recall": 0.3333333333333333,
+    "f1": 0.25,
+    "taxonomy_coverage": 0.6,
+    "selected_capability_ids": [
+      "order_management",
+      "warehouse_management",
+      "delivery_logistics_management",
+      "team_leadership",
+      "process_optimization"
+    ],
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "grounding_rate": 1.0
+  },
+  "C_criteria": {
+    "selected": 4,
+    "supported": 1,
+    "unsupported": 3,
+    "precision": 0.25,
+    "recall": 0.3333333333333333,
+    "f1": 0.28571428571428575,
+    "taxonomy_coverage": 0.6,
+    "selected_capability_ids": [
+      "order_management",
+      "warehouse_management",
+      "delivery_logistics_management",
+      "team_leadership"
+    ],
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "grounding_rate": 1.0
+  }
+}

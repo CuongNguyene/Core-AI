@@ -1,0 +1,42 @@
+[
+  {
+    "fixture": "python_data_processing",
+    "assessment_reference_ownership": true,
+    "objective_graph_ownership": true,
+    "dependency_normalization": true,
+    "candidate_governance": true,
+    "historical_prompt_replay": true
+  },
+  {
+    "fixture": "accounting_financial_reporting_basic",
+    "assessment_reference_ownership": true,
+    "objective_graph_ownership": true,
+    "dependency_normalization": true,
+    "candidate_governance": true,
+    "historical_prompt_replay": true
+  },
+  {
+    "fixture": "legal_contract_review_basic",
+    "assessment_reference_ownership": true,
+    "objective_graph_ownership": true,
+    "dependency_normalization": true,
+    "candidate_governance": true,
+    "historical_prompt_replay": true
+  },
+  {
+    "fixture": "hr_recruitment_planning_basic",
+    "assessment_reference_ownership": true,
+    "objective_graph_ownership": true,
+    "dependency_normalization": true,
+    "candidate_governance": true,
+    "historical_prompt_replay": true
+  },
+  {
+    "fixture": "construction_drawing_and_method_basic",
+    "assessment_reference_ownership": true,
+    "objective_graph_ownership": true,
+    "dependency_normalization": true,
+    "candidate_governance": true,
+    "historical_prompt_replay": true
+  }
+]

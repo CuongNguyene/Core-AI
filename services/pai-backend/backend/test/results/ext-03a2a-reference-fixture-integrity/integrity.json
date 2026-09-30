@@ -1,0 +1,84 @@
+{
+  "milestone": "EXT-03A.2A",
+  "generated_at": "2026-09-08T07:54:29.159817+00:00",
+  "reference_expected": {
+    "fixture_name": "sample-cv-nguyen-van-an.pdf",
+    "filename": "sample-cv-nguyen-van-an.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 2528,
+    "sha256": "788f6424f995430bccdfe62970ed0a80d4c10fbadd3ba2660b782e78cf7a04b8",
+    "page_count": 1
+  },
+  "stored_document": {
+    "document_id": "2adf179f-a798-4cb7-ac29-c9c48a06f5ed",
+    "storage_key": "documents/2adf179f-a798-4cb7-ac29-c9c48a06f5ed/3bde25cdeeb880975efde2128b344056",
+    "filename": null,
+    "mime_type": "application/pdf",
+    "file_size": 2528,
+    "sha256": "788f6424f995430bccdfe62970ed0a80d4c10fbadd3ba2660b782e78cf7a04b8",
+    "page_count": 1
+  },
+  "blob_fingerprint": {
+    "fixture_name": "sample-cv-nguyen-van-an.pdf",
+    "document_id": "2adf179f-a798-4cb7-ac29-c9c48a06f5ed",
+    "storage_key": "documents/2adf179f-a798-4cb7-ac29-c9c48a06f5ed/3bde25cdeeb880975efde2128b344056",
+    "filename": "sample-cv-nguyen-van-an.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 2528,
+    "sha256": "788f6424f995430bccdfe62970ed0a80d4c10fbadd3ba2660b782e78cf7a04b8",
+    "page_count": 1,
+    "input_mode": "native_pdf"
+  },
+  "gemini_request_fingerprint": {
+    "fixture_name": "sample-cv-nguyen-van-an.pdf",
+    "document_id": "2adf179f-a798-4cb7-ac29-c9c48a06f5ed",
+    "storage_key": "documents/2adf179f-a798-4cb7-ac29-c9c48a06f5ed/3bde25cdeeb880975efde2128b344056",
+    "filename": "2adf179f-a798-4cb7-ac29-c9c48a06f5ed.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 2528,
+    "sha256": "788f6424f995430bccdfe62970ed0a80d4c10fbadd3ba2660b782e78cf7a04b8",
+    "page_count": 1,
+    "input_mode": "native_pdf"
+  },
+  "checks": {
+    "document_id_matches_reference_run": true,
+    "stored_metadata_matches_blob": true,
+    "reference_matches_blob": true,
+    "request_document_matches_blob": true,
+    "request_input_mode": "native_pdf",
+    "request_prompt_version": "2.1",
+    "expected_labels_bound_to_checksum": false
+  },
+  "expected_labels": [
+    "MBA of eCommerce",
+    "Bachelor"
+  ],
+  "content_sentinel_checks": {
+    "expected_education_terms_present": false,
+    "expected_domain_terms_present": false,
+    "mechanical_testing_terms_present": true
+  },
+  "expected_labels_binding_note": "The V2.1 artifact has no reference_sha256 field; labels are not machine-bound to a checksum.",
+  "runtime_history": {
+    "job_count": 1,
+    "profile_count": 1,
+    "jobs": [
+      {
+        "id": "1bceeecd-589c-429f-afa1-25fb1b576402",
+        "status": "succeeded",
+        "profile_id": "e31be59a-e3ed-4e8f-ba30-e8dee30cfb91"
+      }
+    ],
+    "profiles": [
+      {
+        "id": "e31be59a-e3ed-4e8f-ba30-e8dee30cfb91",
+        "job_id": "1bceeecd-589c-429f-afa1-25fb1b576402",
+        "version": 1,
+        "prompt_version": "2.0",
+        "input_mode": "native_pdf"
+      }
+    ],
+    "v21_calibration_persisted": false,
+    "cross_fixture_reuse_detected": false
+  }
+}

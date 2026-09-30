@@ -1,0 +1,151 @@
+{
+  "state": "NEEDS_REVIEWER_COMPLETION",
+  "draft": {
+    "review_id": "review-004",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 4,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 4,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 3
+    },
+    "rationales": {
+      "objective_measurability": "Clear success criteria, particularly regarding the inclusion of specific constraints (role, headcount, timeline)[cite: 24].",
+      "objective_assessment_alignment": "The tasks perfectly mirror the objectives, advancing from component recall to plan creation to written/verbal justification[cite: 24].",
+      "evidence_validity": "Generating a plan and defending its sequencing yields valid evidence of recruitment planning capability[cite: 24].",
+      "cognitive_alignment": "Understand -> Create -> Evaluate is a robust cognitive progression for planning tasks[cite: 24].",
+      "prerequisite_quality": "Identifying 'step-dependency reasoning' as a prerequisite is an insightful way to ensure learners have the logic skills needed for sequencing[cite: 24].",
+      "course_sequence_coherence": "The module ordering is strictly dictated by the logical prerequisites of the task (components -> synthesis -> evaluation)[cite: 24].",
+      "instruction_assessment_alignment": "The null time estimates make it impossible to determine if the instructional events are adequately weighted to prepare learners for the assessments[cite: 24]."
+    },
+    "machine_validity_observations": [
+      {
+        "code": "schema_or_shape",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "les-hrp-02-we",
+        "field": "estimated_minutes",
+        "message": "estimated_minutes is explicitly null."
+      },
+      {
+        "code": "schema_or_shape",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "les-hrp-02-gp",
+        "field": "estimated_minutes",
+        "message": "estimated_minutes is explicitly null."
+      },
+      {
+        "code": "schema_or_shape",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "les-hrp-03",
+        "field": "estimated_minutes",
+        "message": "estimated_minutes is explicitly null."
+      }
+    ],
+    "prerequisites_acceptable": true,
+    "edit_effort": "moderate",
+    "special_question": null,
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-004.json",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recovery_mode": "deterministic",
+    "source_sections": [
+      "technical_review",
+      "pedagogical_review"
+    ],
+    "mapped_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "unresolved_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "raw_legacy_fields_preserved": true,
+    "legacy_rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Clear success criteria, particularly regarding the inclusion of specific constraints (role, headcount, timeline)[cite: 24]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The tasks perfectly mirror the objectives, advancing from component recall to plan creation to written/verbal justification[cite: 24]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Generating a plan and defending its sequencing yields valid evidence of recruitment planning capability[cite: 24]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "Understand -> Create -> Evaluate is a robust cognitive progression for planning tasks[cite: 24]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Identifying 'step-dependency reasoning' as a prerequisite is an insightful way to ensure learners have the logic skills needed for sequencing[cite: 24]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The module ordering is strictly dictated by the logical prerequisites of the task (components -> synthesis -> evaluation)[cite: 24]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "The null time estimates make it impossible to determine if the instructional events are adequately weighted to prepare learners for the assessments[cite: 24]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 4,
+        "rationale": "There is a high risk of under-teaching. Expecting a learner to create a coherent HR plan and evaluate its dependencies in a 60-minute window is overly ambitious[cite: 24]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "The content is strictly aligned with the required HR plan deliverables[cite: 24]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Requires resolving the null time estimates and likely reducing the scope of the summative assessments to fit the 60-minute constraint."
+      }
+    ],
+    "legacy_overall_edit_effort": 3,
+    "raw_special_question_answer": "PARTIALLY. Pedagogical flow is sound, but refusing to assign lesson times renders the instructional design incomplete."
+  },
+  "missing_required_fields": [
+    "rationales.domain_appropriateness",
+    "rationales.scope_balance",
+    "rationales.workload_time_realism",
+    "rubric_scores.domain_appropriateness",
+    "rubric_scores.scope_balance",
+    "rubric_scores.workload_time_realism",
+    "special_question.answer"
+  ],
+  "ambiguous_fields": [
+    "special_question.answer"
+  ]
+}

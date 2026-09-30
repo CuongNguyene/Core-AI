@@ -1,0 +1,97 @@
+{
+  "review_id": "review-003",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-14T15:16:48+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_observed",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "assessments[*].required_capability_refs",
+        "field": "required_capability_refs",
+        "description": "Assessments list textual capability names such as contractual risk identification and clause-language-to-risk reasoning rather than resolvable supplied IDs; machine observations mark these dependencies as not covered.",
+        "severity": "error",
+        "validator_appears_correct": true
+      }
+    ],
+    "notes": "No orphan module or lesson references were observed. Proposed prerequisites are candidate/model-proposed rather than confirmed. Technical observations are not converted into pedagogical scores."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring traceability issues, the design is pedagogically reasonable: it first introduces risk categories and the no-legal-judgment boundary, then asks learners to identify risks in clauses with textual reasoning while avoiding legal advice."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives are observable: learners map at least three risk categories to clause language and identify at least one risk per clause with textual basis and reasoning. Clause complexity and taxonomy need definition."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The formative categorization task and summative clause-analysis task closely match the two objectives and preserve the boundary against final legal judgment."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Risk-category mapping, textual citation, reasoning statements, and absence of legal advice are valid evidence for the capability. Validity depends on researcher-supplied clauses and calibrated model answers."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "The understand-level taxonomy objective appropriately precedes the apply-level risk-identification task. Worked examples and guided practice are suitable for reasoning from clause language to risk."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "Contract literacy and legal-register reading are relevant, but both are broad and may exclude learners if not operationalized minimally. They should remain explicitly candidate and perhaps be supported with brief orientation."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The sequence is strong: risk-category recognition comes before clause-level risk analysis, and the boundary around legal advice is reinforced in both modules."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Lessons align to assessments through taxonomy explanation, categorization practice, worked example, and supervised clause analysis. Concrete clause examples and feedback keys still need authoring."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Moderate under-teaching risk remains because the risk taxonomy, clause excerpts, annotated solutions, and feedback mechanism are not supplied."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "The scope stays close to the brief. The prerequisite expectations are broad but not unnecessary if kept as minimal access assumptions."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Moderate editing is needed to define the taxonomy, calibrate clause complexity, narrow prerequisites, and author examples/feedback."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-contract-literacy-01",
+        "prereq-legal-register-reading-01"
+      ],
+      "rejected_refs": [],
+      "notes": "Both prerequisites are directionally acceptable as candidate access conditions. Revise them to minimal, observable readiness statements and avoid treating them as confirmed learner facts."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 1,
+      "assessments_changed": 2,
+      "prerequisites_changed": 2,
+      "modules_changed": 1,
+      "lessons_changed": 4,
+      "notes": "Estimated edits: define risk-category taxonomy and clause complexity, revise prerequisite wording, add concrete clause samples and scoring keys, and tighten feedback guidance across the lessons."
+    },
+    "overall_notes": "A coherent legal-contract-review design that handles the important boundary between risk identification and legal judgment. It needs domain-authored materials before a human could approve it."
+  }
+}

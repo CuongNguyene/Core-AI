@@ -1,0 +1,54 @@
+{
+  "fixture_id": "cv-nguyen-vu-minh-thien",
+  "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+  "page_count": 3,
+  "mime_type": "application/pdf",
+  "manifest_version": "1.0",
+  "prompt_id": "cv_full_extraction_schema_ref_experiment",
+  "prompt_version": "1",
+  "success": true,
+  "experience_count": 2,
+  "education_count": 2,
+  "capability_count": 2,
+  "evidence_ref_count": 2,
+  "resolved_ref_count": 2,
+  "dangling_ref_count": 0,
+  "evidence_inventory_count": 5,
+  "capability_names": [
+    "Distribution Management System (DMS) Development",
+    "Omni Channel Platform Development"
+  ],
+  "capability_family_coverage": {
+    "Project Management": "NOT_FOUND",
+    "Product Management": "NOT_FOUND",
+    "eCommerce": "NOT_FOUND",
+    "Omnichannel Commerce": "FOUND",
+    "Order Management": "NOT_FOUND",
+    "Warehouse Management": "NOT_FOUND",
+    "Delivery / Logistics Management": "NOT_FOUND",
+    "Operations Planning": "NOT_FOUND",
+    "Digital Platform Development": "FOUND",
+    "Team Leadership": "NOT_FOUND",
+    "Process Optimization": "NOT_FOUND"
+  },
+  "grounding_rate": 1.0,
+  "unsupported_count": 0,
+  "duplicate_count": 0,
+  "latency_ms": 7872,
+  "token_usage": {
+    "input_tokens": 3239,
+    "output_tokens": 1643
+  },
+  "finish_reason": "STOP",
+  "candidate_profile_created": true,
+  "experience_recall": {
+    "actual": 2,
+    "expected": 17,
+    "recall": 0.11764705882352941
+  },
+  "education_recall": {
+    "actual": 2,
+    "expected": 2,
+    "recall": 1.0
+  }
+}

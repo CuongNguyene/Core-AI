@@ -1,0 +1,10 @@
+{
+  "experiment": "ID-04F",
+  "failure": "legal_contract_review_basic prerequisite_provenance_not_preserved",
+  "candidate": "sufficient English literacy to parse contract clause structure",
+  "generated_value": "sufficient English literacy to parse commercial contract clause structure",
+  "root_cause": "legitimate declared paraphrase rejected by exact-only matcher",
+  "fix_layer": "deterministic provenance alias boundary",
+  "fuzzy_matching": false,
+  "model_generated_aliases": false
+}

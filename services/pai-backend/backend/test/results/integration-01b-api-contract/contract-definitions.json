@@ -1,0 +1,39 @@
+{
+  "envelope": {
+    "required": ["schema_version", "correlation_id", "source_system"],
+    "id_rule": "Cross-context identifiers are opaque references, never shared-database foreign keys."
+  },
+  "contracts": [
+    {
+      "name": "ActorReference",
+      "version": "v1",
+      "fields": ["external_user_id", "source_system", "organization_ref", "tenant_ref", "role_refs", "status"],
+      "owner": "LMS"
+    },
+    {
+      "name": "CourseBlueprintContract",
+      "version": "v1",
+      "fields": ["blueprint_id", "version", "title", "summary", "estimated_duration_minutes", "objectives", "modules", "assessment_blueprint_refs", "projection_constraints"],
+      "owner": "PAI"
+    },
+    {
+      "name": "AssessmentBlueprintContract",
+      "version": "v1",
+      "fields": ["assessment_id", "version", "assessment_type", "title", "objective_refs", "competency_refs", "evidence_expectations", "delivery_guidance"],
+      "owner": "PAI",
+      "not_equivalent_to": "LMS Quiz"
+    },
+    {
+      "name": "LearningResultEvent",
+      "version": "v1",
+      "fields": ["event_name", "event_id", "schema_version", "occurred_at", "correlation_id", "idempotency_key", "actor", "course", "activity", "completion", "assessment_outcome"],
+      "owner": "LMS"
+    },
+    {
+      "name": "CompetencyResult",
+      "version": "v1",
+      "fields": ["result_id", "learner", "competency_ref", "evaluation_status", "evidence_references", "source_learning_result_event_id", "evaluated_at"],
+      "owner": "PAI"
+    }
+  ]
+}

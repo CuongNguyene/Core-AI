@@ -1,0 +1,34 @@
+{
+  "packet_id": "jd-03-accounting-manager",
+  "source": {
+    "filename": "JD-03 — Accounting Manager.docx",
+    "sha256": "de87dd76532780e22cddc13fdaae899f20403fc44bd0f0b4eddc2e15268d506f"
+  },
+  "runtime": {
+    "document_id": "92e430c7-0117-49e5-a8b7-8784b0234b34",
+    "job_id": "acd24c8a-34c0-4b6a-90b2-bdbc4822a539",
+    "profile_id": "e8ecae12-76ff-433f-bf0e-281bfbbbd7d6",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "attempts": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.1",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.1",
+    "input_mode": "whole_parsed_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2",
+    "finish_reason": "STOP",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 24,
+    "supported_requirement_count": 24,
+    "text_span_locator_count": 24,
+    "pdf_page_locator_count": 0
+  }
+}

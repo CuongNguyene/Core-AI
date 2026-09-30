@@ -1,0 +1,45 @@
+{
+  "packet_id": "jd-01-devops-engineer",
+  "source": {
+    "filename": "JD-01 — DevOps Engineer.docx",
+    "sha256": "46d7b787538241afdad64fbaf76cdf240a364cecebece9a77df5343960a993f0"
+  },
+  "runtime": {
+    "profile_id": "a04e8fc1-85ad-429d-adf0-e19dd53d4b5a",
+    "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+    "job_id": "b5efe149-fa5a-42a6-89d6-f6636dfd0915",
+    "review_state": "pending_review",
+    "profile_version": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.2",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.2",
+    "input_mode": "whole_parsed_text",
+    "jd_extraction_mode": "requirement_v2",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 24,
+    "supported_requirement_count": 24,
+    "text_span_locator_count": 24,
+    "pdf_page_locator_count": 0,
+    "dimensions": {
+      "skill": 4,
+      "experience": 8,
+      "education": 0,
+      "credential": 1,
+      "qualification": 0,
+      "null": 11
+    },
+    "modalities": {
+      "must": 8,
+      "preferred": 5,
+      "responsibility": 11,
+      "unspecified": 0
+    }
+  }
+}

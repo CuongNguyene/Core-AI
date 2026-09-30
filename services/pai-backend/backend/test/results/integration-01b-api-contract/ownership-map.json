@@ -1,0 +1,14 @@
+{
+  "fields": [
+    {"field": "external_user_id", "owner": "LMS", "direction": "LMS_TO_PAI", "rule": "stable external reference only"},
+    {"field": "organization_ref", "owner": "UNDECIDED", "direction": "LMS_TO_PAI", "rule": "required once tenant authority is agreed"},
+    {"field": "blueprint_id", "owner": "PAI", "direction": "PAI_TO_LMS", "rule": "immutable opaque reference"},
+    {"field": "blueprint_version", "owner": "PAI", "direction": "PAI_TO_LMS", "rule": "new source version needs explicit projection"},
+    {"field": "course_instance_id", "owner": "LMS", "direction": "LMS_TO_PAI", "rule": "LMS delivery identity"},
+    {"field": "objective_refs", "owner": "PAI", "direction": "PAI_TO_LMS", "rule": "delivery projection only"},
+    {"field": "assessment_id/version", "owner": "PAI", "direction": "PAI_TO_LMS", "rule": "blueprint reference, not Quiz ID"},
+    {"field": "quiz_attempt_id/score/passed", "owner": "LMS", "direction": "LMS_TO_PAI", "rule": "delivery facts, not competency decision"},
+    {"field": "competency_ref/evaluation_status", "owner": "PAI", "direction": "PAI_TO_LMS", "rule": "read-only projection"},
+    {"field": "evidence_references", "owner": "PAI", "direction": "PAI_TO_LMS", "rule": "opaque references only"}
+  ]
+}

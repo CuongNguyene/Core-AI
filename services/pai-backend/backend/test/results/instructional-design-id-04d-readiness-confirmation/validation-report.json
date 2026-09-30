@@ -1,0 +1,25 @@
+{
+  "experiment": "ID-04D",
+  "confirmation_type": "post-ID-04F-legal-refresh",
+  "planned_model_calls": 25,
+  "reused_model_calls": 20,
+  "legal_refresh_model_calls": 5,
+  "domains_stable": true,
+  "stable_domain_count": 5,
+  "provenance_complete": true,
+  "provenance_boundary": {
+    "alias_policy": "declared_alias_only",
+    "unknown_paraphrases_fail_closed": true,
+    "live_legal_provenance_finding": false,
+    "deterministic_alias_tests": "pass"
+  },
+  "id04a_workload_regression": false,
+  "id04b_prerequisite_regression": false,
+  "id04c_practice_regression": false,
+  "quality_gate_changed": false,
+  "readiness": "ID04_SME_REREVIEW_READY",
+  "quality_findings_remain": true,
+  "quality_findings_note": "READY means structural/provenance gates are satisfied; existing workload, practice-coverage, and dependency findings remain visible and are not suppressed.",
+  "sme_rereview_started": false,
+  "historical_artifacts_modified": false
+}

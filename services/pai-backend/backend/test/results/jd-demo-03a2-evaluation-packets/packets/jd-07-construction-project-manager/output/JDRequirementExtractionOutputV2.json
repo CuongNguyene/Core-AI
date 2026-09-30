@@ -1,0 +1,170 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "Hold a Bachelor's degree in Civil Engineering, Construction Management, Architecture, or related field.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": "education",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Bachelor's degree",
+        "Civil Engineering",
+        "Construction Management",
+        "Architecture"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "Bachelor's degree",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "c41e2251-dd23-4b33-8857-36f00a9757b5",
+        "section": "Required Qualifications",
+        "start_offset": 1520,
+        "end_offset": 1616
+      },
+      "source_excerpt": "Bachelor's degree in Civil Engineering, Construction Management, Architecture, or related field.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "Have at least 5 years of construction project experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "experience",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "5 years",
+        "construction project experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "5 years",
+      "observable_behaviors": [],
+      "evidence_constraints": [
+        "At least 5 years"
+      ],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "c41e2251-dd23-4b33-8857-36f00a9757b5",
+        "section": "Required Qualifications",
+        "start_offset": 1617,
+        "end_offset": 1669
+      },
+      "source_excerpt": "At least 5 years of construction project experience.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Have at least 2 years of experience managing construction projects or major project workstreams.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "experience",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "2 years",
+        "managing construction projects",
+        "major project workstreams"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "2 years",
+      "observable_behaviors": [],
+      "evidence_constraints": [
+        "At least 2 years"
+      ],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "c41e2251-dd23-4b33-8857-36f00a9757b5",
+        "section": "Required Qualifications",
+        "start_offset": 1670,
+        "end_offset": 1761
+      },
+      "source_excerpt": "At least 2 years of experience managing construction projects or major project workstreams.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "Develop project execution plans, schedules, milestones, and resource requirements.",
+      "criterion_dimension": "skill",
+      "modality": "responsibility",
+      "logical_group": "responsibilities",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "project execution plans",
+        "schedules",
+        "milestones",
+        "resource requirements"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "Develop project execution plans, schedules, milestones, and resource requirements."
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "c41e2251-dd23-4b33-8857-36f00a9757b5",
+        "section": "Key Responsibilities",
+        "start_offset": 489,
+        "end_offset": 571
+      },
+      "source_excerpt": "Develop project execution plans, schedules, milestones, and resource requirements.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Possess PMP or equivalent project management certification.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": "certifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "PMP",
+        "project management certification"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "c41e2251-dd23-4b33-8857-36f00a9757b5",
+        "section": "Preferred Qualifications",
+        "start_offset": 2007,
+        "end_offset": 2058
+      },
+      "source_excerpt": "PMP or equivalent project management certification.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    }
+  ]
+}

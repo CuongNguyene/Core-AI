@@ -1,0 +1,12 @@
+{
+  "annotation_version": "0.2",
+  "source_results": "results-complete.json",
+  "annotations": [
+    {"finding_code": "assessment_dependency_not_covered", "fixture": "model_monitoring", "assessment_ref": "assess-model-monitoring-002", "dependency": "assess-model-monitoring-001", "root_cause": "assessment_scope_creep", "validator_correct": true, "producer_stage": "AssessmentDesigner", "required_change": "prompt"},
+    {"finding_code": "assessment_dependency_not_covered", "fixture": "model_monitoring", "assessment_ref": "assess-model-monitoring-003", "dependency": "assess-model-monitoring-001", "root_cause": "assessment_scope_creep", "validator_correct": true, "producer_stage": "AssessmentDesigner", "required_change": "prompt"},
+    {"finding_code": "assessment_dependency_not_covered", "fixture": "model_monitoring", "assessment_ref": "assess-model-monitoring-003", "dependency": "assess-model-monitoring-002", "root_cause": "assessment_scope_creep", "validator_correct": true, "producer_stage": "AssessmentDesigner", "required_change": "prompt"},
+    {"finding_code": "assessment_dependency_not_covered", "fixture": "python_data_processing", "assessment_ref": "assess-python-data-processing-002", "dependency": "assess-python-data-processing-001", "root_cause": "assessment_scope_creep", "validator_correct": true, "producer_stage": "AssessmentDesigner", "required_change": "prompt"},
+    {"finding_code": "invalid_model_json", "fixture": "technical_communication", "assessment_ref": null, "dependency": null, "root_cause": "malformed_json", "validator_correct": true, "producer_stage": "ObjectiveDesigner", "required_change": "no_change"}
+  ],
+  "summary": "Four quality findings are AssessmentDesigner scope creep. The missing structured artifact was recovered through the existing bounded JSON repair path; no quality-gate exception or manual artifact repair was used."
+}

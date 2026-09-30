@@ -1,0 +1,7 @@
+{
+  "arithmetic_source": "category_allocations",
+  "estimate_semantics": "planning estimate, not measured learner completion time",
+  "near_limit_slack_ratio": 0.1,
+  "policy_id": "workload_budget_policy",
+  "policy_version": "0.1"
+}

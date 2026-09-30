@@ -1,0 +1,25 @@
+{
+  "rubric_version": "jd_semantic_judge@0.1",
+  "dimensions": {
+    "requirement_coverage": "Did the extraction capture the important explicit requirements in the source?",
+    "unsupported_or_inferred_content": "Are extracted requirements explicitly supported by the source? 5 is good.",
+    "atomicity_and_granularity": "Are requirements split or combined at a useful atomic level?",
+    "criterion_dimension_correctness": "Are skill, experience, education, or null classifications appropriate for the contract and source?",
+    "modality_correctness": "Are must, preferred, responsibility, or unspecified classifications faithful to source language?",
+    "duplicate_and_overlap_control": "Are exact and near duplicates controlled?",
+    "evidence_semantic_alignment": "Does each source excerpt semantically support the extracted statement?",
+    "overall_review_readiness": "Would this be a reasonable starting point for human review before RoleProfileDraft authoring?"
+  },
+  "scale": {
+    "1": "major failure",
+    "2": "many important defects",
+    "3": "meaningful omissions or revision burden",
+    "4": "usable with minor revisions",
+    "5": "nearly complete or review-ready"
+  },
+  "special_questions": {
+    "semantically_reasonable": ["YES", "YES_WITH_RESERVATIONS", "NO"],
+    "proceed_to_review_ui": ["YES", "YES_WITH_RESERVATIONS", "NO"],
+    "calibration_needed": [true, false]
+  }
+}

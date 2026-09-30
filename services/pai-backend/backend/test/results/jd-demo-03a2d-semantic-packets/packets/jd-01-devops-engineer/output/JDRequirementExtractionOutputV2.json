@@ -1,0 +1,810 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-01",
+      "statement": "Design and maintain CI/CD pipelines for development, staging, and production environments.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Design",
+        "maintain",
+        "CI/CD pipelines"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 456,
+        "end_offset": 546
+      },
+      "source_excerpt": "Design and maintain CI/CD pipelines for development, staging, and production environments.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-02",
+      "statement": "Build and operate cloud infrastructure on AWS.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Build",
+        "operate",
+        "AWS"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 547,
+        "end_offset": 593
+      },
+      "source_excerpt": "Build and operate cloud infrastructure on AWS.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-03",
+      "statement": "Manage containerized workloads using Docker and Kubernetes.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Manage",
+        "Docker",
+        "Kubernetes"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 594,
+        "end_offset": 653
+      },
+      "source_excerpt": "Manage containerized workloads using Docker and Kubernetes.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-04",
+      "statement": "Implement Infrastructure as Code using Terraform.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Implement",
+        "Infrastructure as Code",
+        "Terraform"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 654,
+        "end_offset": 703
+      },
+      "source_excerpt": "Implement Infrastructure as Code using Terraform.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-05",
+      "statement": "Monitor system availability, performance, and resource utilization.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Monitor",
+        "availability",
+        "performance"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 704,
+        "end_offset": 771
+      },
+      "source_excerpt": "Monitor system availability, performance, and resource utilization.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-06",
+      "statement": "Build alerting and observability using tools such as Prometheus, Grafana, and centralized logging platforms.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Build alerting",
+        "observability",
+        "Prometheus",
+        "Grafana"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 772,
+        "end_offset": 880
+      },
+      "source_excerpt": "Build alerting and observability using tools such as Prometheus, Grafana, and centralized logging platforms.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-07",
+      "statement": "Investigate production incidents and participate in root-cause analysis.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Investigate",
+        "incidents",
+        "root-cause analysis"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 881,
+        "end_offset": 953
+      },
+      "source_excerpt": "Investigate production incidents and participate in root-cause analysis.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-08",
+      "statement": "Automate infrastructure provisioning and operational tasks using Python, Bash, or equivalent scripting languages.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Automate",
+        "Python",
+        "Bash"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 954,
+        "end_offset": 1067
+      },
+      "source_excerpt": "Automate infrastructure provisioning and operational tasks using Python, Bash, or equivalent scripting languages.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-09",
+      "statement": "Work with engineering teams to improve deployment processes and release reliability.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Work with engineering teams",
+        "deployment processes",
+        "release reliability"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 1068,
+        "end_offset": 1152
+      },
+      "source_excerpt": "Work with engineering teams to improve deployment processes and release reliability.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-10",
+      "statement": "Apply security best practices to infrastructure, secrets, access control, and deployment pipelines.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Apply security best practices",
+        "infrastructure",
+        "secrets"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 1153,
+        "end_offset": 1252
+      },
+      "source_excerpt": "Apply security best practices to infrastructure, secrets, access control, and deployment pipelines.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-11",
+      "statement": "Document infrastructure architecture and operational procedures.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Document",
+        "infrastructure architecture"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Responsibilities",
+        "start_offset": 1253,
+        "end_offset": 1317
+      },
+      "source_excerpt": "Document infrastructure architecture and operational procedures.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-12",
+      "statement": "3+ years of experience in DevOps, Site Reliability Engineering, Cloud Engineering, or a related role.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "3+ years of experience",
+        "DevOps"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "3+ years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1342,
+        "end_offset": 1443
+      },
+      "source_excerpt": "3+ years of experience in DevOps, Site Reliability Engineering, Cloud Engineering, or a related role.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-13",
+      "statement": "Hands-on experience with AWS.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Hands-on experience",
+        "AWS"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1444,
+        "end_offset": 1473
+      },
+      "source_excerpt": "Hands-on experience with AWS.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-14",
+      "statement": "Strong knowledge of Docker.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "knowledge",
+        "Docker"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1474,
+        "end_offset": 1501
+      },
+      "source_excerpt": "Strong knowledge of Docker.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-15",
+      "statement": "Production experience with Kubernetes.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Production experience",
+        "Kubernetes"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1502,
+        "end_offset": 1540
+      },
+      "source_excerpt": "Production experience with Kubernetes.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-16",
+      "statement": "Experience building CI/CD pipelines.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience",
+        "CI/CD pipelines"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1541,
+        "end_offset": 1577
+      },
+      "source_excerpt": "Experience building CI/CD pipelines.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-17",
+      "statement": "Experience with Terraform or another Infrastructure as Code technology.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience",
+        "Terraform",
+        "Infrastructure as Code"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1578,
+        "end_offset": 1649
+      },
+      "source_excerpt": "Experience with Terraform or another Infrastructure as Code technology.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-18",
+      "statement": "Working knowledge of Linux administration.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Working knowledge",
+        "Linux administration"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1650,
+        "end_offset": 1692
+      },
+      "source_excerpt": "Working knowledge of Linux administration.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-19",
+      "statement": "Ability to troubleshoot distributed production systems.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Ability to troubleshoot",
+        "distributed production systems"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Required Qualifications",
+        "start_offset": 1693,
+        "end_offset": 1748
+      },
+      "source_excerpt": "Ability to troubleshoot distributed production systems.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-20",
+      "statement": "Experience with GitHub Actions, GitLab CI, or Jenkins.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience",
+        "GitHub Actions",
+        "GitLab CI",
+        "Jenkins"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Preferred Qualifications",
+        "start_offset": 1774,
+        "end_offset": 1828
+      },
+      "source_excerpt": "Experience with GitHub Actions, GitLab CI, or Jenkins.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-21",
+      "statement": "Experience with Prometheus and Grafana.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience",
+        "Prometheus",
+        "Grafana"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Preferred Qualifications",
+        "start_offset": 1829,
+        "end_offset": 1868
+      },
+      "source_excerpt": "Experience with Prometheus and Grafana.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-22",
+      "statement": "Familiarity with security scanning in CI/CD pipelines.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Familiarity",
+        "security scanning"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Preferred Qualifications",
+        "start_offset": 1869,
+        "end_offset": 1923
+      },
+      "source_excerpt": "Familiarity with security scanning in CI/CD pipelines.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-23",
+      "statement": "Experience operating microservice architectures.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience",
+        "microservice architectures"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Preferred Qualifications",
+        "start_offset": 1924,
+        "end_offset": 1972
+      },
+      "source_excerpt": "Experience operating microservice architectures.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-24",
+      "statement": "AWS certification is an advantage.",
+      "criterion_dimension": "credential",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "AWS certification"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "section": "Preferred Qualifications",
+        "start_offset": 1973,
+        "end_offset": 2007
+      },
+      "source_excerpt": "AWS certification is an advantage.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "source_locator": "jd_extraction",
+        "source_excerpt": "jd_extraction"
+      }
+    }
+  ]
+}

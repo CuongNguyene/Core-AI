@@ -1,0 +1,20 @@
+{
+  "review_id": "review-003",
+  "reviewer_id": "gemini-sme-01",
+  "completion": {
+    "rubric_scores": {
+      "scope_balance": 5,
+      "workload_time_realism": 4,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "scope_balance": "The scope is tightly controlled and perfectly balanced. It focuses strictly on categorizing risks and mapping them to clause language, deliberately avoiding the trap of letting learners drift into out-of-scope legal advice.",
+      "workload_time_realism": "The time budget (25 minutes for taxonomy understanding and 35 minutes for application and assessment) is mostly realistic, provided the sample commercial clauses are kept appropriately brief and focused.",
+      "domain_appropriateness": "The design excellently reflects legal compliance training by enforcing the boundary between risk identification and unauthorized legal advice, using authentic clause analysis and reasoning from evidence."
+    },
+    "special_question": {
+      "answer": "YES",
+      "rationale": "The design uses highly authentic legal review tasks and brilliantly scaffolds the critical professional boundary of identifying risk without dispensing unauthorized legal advice."
+    }
+  }
+}

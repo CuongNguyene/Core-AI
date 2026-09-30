@@ -1,0 +1,112 @@
+{
+  "review_id": "review-005",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-14T15:16:48+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_observed",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "assessments[*].required_capability_refs",
+        "field": "required_capability_refs",
+        "description": "Assessments use textual capability names such as construction drawing element identification and sequential method planning from drawing content rather than resolvable supplied IDs; machine observations mark these dependencies as not covered.",
+        "severity": "error",
+        "validator_appears_correct": true
+      },
+      {
+        "category": "other",
+        "entity": "course_outline.sequencing_rationale",
+        "field": "sequencing_rationale",
+        "description": "The rationale contains minor spacing/text artifacts such as cdmb-obj-03in and within the60-minute estimate.",
+        "severity": "info",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "course_outline / lessons",
+        "field": "estimated_minutes",
+        "description": "The outline notes that assessment administration time is not separately budgeted within the 60-minute estimate, creating a planning risk for the integrated performance task.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "No orphan modules or lessons were observed. Objective, prerequisite, module, lesson, and assessment IDs otherwise resolve internally. Technical notes are separated from pedagogy."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring traceability issues, the design is pedagogically reasonable as an introductory plan: it moves from drawing-element interpretation to method sequencing and then safety considerations within an integrated proposal. It requires stronger SME calibration before use."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives are observable: identify at least four drawing element categories, propose at least three sequenced activities, and state at least two safety considerations traceable to drawings or method steps. Thresholds are clear but need SME validation for adequacy."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "The formative assessment targets drawing interpretation and the summative integrates interpretation, method proposal, and safety considerations, matching the objectives closely."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Identified elements, traceable activity sequence, and safety considerations are valid evidence for the stated performance. Validity depends heavily on the drawing set, acceptable method sequence, and safety-key calibration."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 3,
+        "rationale": "Drawing interpretation is labeled understand and method/safety work apply, which is mostly reasonable. However, preparing a sequenced method proposal and selecting safety considerations may require higher analysis/evaluation than the labels suggest."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 2,
+        "rationale": "The single prerequisite is relevant but problematic as written: familiarity with drawing conventions and symbols is very close to cdmb-obj-01, so it risks assuming the target skill rather than identifying minimal readiness."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "The progression is coherent: interpret drawing elements, derive and sequence construction activities, then add safety considerations tied to the method and drawings."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "Lessons include explanation, guided practice, worked examples, independent practice, and scenario integration. Alignment is weakened by no formative checkpoints for method sequencing or safety, plus unspecified examples and assessment timing."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 4,
+        "rationale": "Under-teaching risk is high because construction drawing interpretation, method planning, and safety reasoning are compressed into 60 minutes and require domain-specific materials not supplied in the artifact."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "The scope is broad but still connected to the desired performance. There is little irrelevant content, though the integrated task may be too large for the time."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 4,
+        "rationale": "Major editing is needed to narrow or teach the prerequisite, validate thresholds, budget assessment time, and add SME-authored drawing/method/safety examples and feedback."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [],
+      "rejected_refs": [
+        "prereq-cdmb-01"
+      ],
+      "notes": "The prerequisite is relevant but not acceptable as written because it substantially overlaps with the first objective. Revise it into a narrower entry condition, such as basic visual literacy or prior exposure to construction-document formats, or teach symbol conventions explicitly."
+    },
+    "edit_effort": {
+      "level": "major",
+      "objectives_changed": 2,
+      "assessments_changed": 2,
+      "prerequisites_changed": 1,
+      "modules_changed": 2,
+      "lessons_changed": 5,
+      "notes": "Estimated edits: recalibrate objective cognitive levels and thresholds, revise the prerequisite, specify drawings and answer keys, add formative practice for method/safety work, and rebudget assessment time."
+    },
+    "overall_notes": "The construction sequence is logical and useful, but it is domain-heavy for 60 minutes and needs SME-authored content and safety guardrails before approval."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "experiment_id": "instructional-design-id-03b-cross-domain-smoke",
+  "condition": "structured_v0.3.1",
+  "expected_runs": 5,
+  "completed_runs": 4,
+  "failed_runs": 1,
+  "checks": [
+    {
+      "name": "reference_ownership",
+      "result": "PASS",
+      "details": [
+        "0 completed-snapshot objective/capability reference collisions",
+        "Legal was not assessed for this check after orchestration graph failure"
+      ]
+    },
+    {
+      "name": "dependency_coverage",
+      "result": "FAIL",
+      "details": [
+        "Python emitted 9 assessment_dependency_not_covered findings vs 7 in ID-03B",
+        "Legal did not reach quality gate"
+      ]
+    },
+    {
+      "name": "scope_creep_guard",
+      "result": "NOT_OBSERVED",
+      "details": [
+        "No assessment_scope_creep finding in completed snapshots; scope_time_conflict warnings were preserved"
+      ]
+    }
+  ],
+  "quality_gate_findings_by_code": {
+    "assessment_dependency_not_covered": 24
+  },
+  "runtime_failures": [
+    {
+      "fixture": "legal_contract_review_basic",
+      "stage": "OrchestrationReferenceResolution",
+      "failure_class": "ValueError",
+      "validation_error": "v0.3 lesson contains an objective outside its module"
+    }
+  ],
+  "decision": "ID-03B.3 NEEDS ITERATION",
+  "verification": {
+    "pytest_instructional_design": "95 passed",
+    "ruff": "passed",
+    "mypy_app": "172 source files, no issues",
+    "git_diff_check": "passed"
+  },
+  "no_change_confirmations": [
+    "prompt version remained 0.3.1",
+    "schema version remained 0.3.1",
+    "quality gate severity/validator code was not modified",
+    "no human review executed"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "external_model_calls": 0,
+  "tests": [
+    "entry_prerequisite",
+    "in_course_support",
+    "not_required",
+    "no_auto_confirmation",
+    "rationale",
+    "provenance",
+    "conflict",
+    "domain_neutral"
+  ]
+}

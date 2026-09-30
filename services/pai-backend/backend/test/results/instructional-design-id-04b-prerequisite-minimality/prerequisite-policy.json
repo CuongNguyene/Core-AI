@@ -1,0 +1,11 @@
+{
+  "candidate_governance": "model_proposed remains candidate",
+  "conflict_behavior": "fail_closed",
+  "dispositions": [
+    "entry_prerequisite",
+    "in_course_support",
+    "not_required"
+  ],
+  "entry_rationale_required": true,
+  "provenance_required": true
+}

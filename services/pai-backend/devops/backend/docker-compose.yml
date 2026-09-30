@@ -1,0 +1,69 @@
+name: pai-backend
+
+services:
+  backend:
+    build:
+      context: ../..
+      dockerfile: devops/backend/Dockerfile
+    container_name: pai-backend
+    env_file:
+      - path: ../../backend/.env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:?set in devops/backend/.env}:${POSTGRES_PASSWORD:?set in devops/backend/.env}@pai-postgres:5432/${POSTGRES_DB:?set in devops/backend/.env}
+      REDIS_CACHE_URL: redis://:${REDIS_PASSWORD:?set in devops/backend/.env}@pai-redis:6379/0
+      REDIS_QUEUE_URL: redis://:${REDIS_PASSWORD:?set in devops/backend/.env}@pai-redis:6379/1
+      OBJECT_STORAGE_ENDPOINT: http://pai-minio:9000
+      CLAMAV_HOST: pai-clamav
+    ports:
+      - "${BACKEND_PORT:?set in devops/backend/.env}:8000"
+    networks:
+      - pai-proxy
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: devops/backend/Dockerfile
+    container_name: pai-worker
+    command: ["uv", "run", "python", "-m", "app.extraction.runner"]
+    env_file:
+      - path: ../../backend/.env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:?set in devops/backend/.env}:${POSTGRES_PASSWORD:?set in devops/backend/.env}@pai-postgres:5432/${POSTGRES_DB:?set in devops/backend/.env}
+      OBJECT_STORAGE_ENDPOINT: http://pai-minio:9000
+      CLAMAV_HOST: pai-clamav
+    networks:
+      - pai-proxy
+
+  course-generation-worker:
+    build:
+      context: ../..
+      dockerfile: devops/backend/Dockerfile
+    container_name: pai-course-generation-worker
+    command: ["uv", "run", "python", "-m", "app.course_generation.runner"]
+    env_file:
+      - path: ../../backend/.env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:?set in devops/backend/.env}:${POSTGRES_PASSWORD:?set in devops/backend/.env}@pai-postgres:5432/${POSTGRES_DB:?set in devops/backend/.env}
+      REDIS_QUEUE_URL: redis://:${REDIS_PASSWORD:?set in devops/backend/.env}@pai-redis:6379/1
+      OBJECT_STORAGE_ENDPOINT: http://pai-minio:9000
+      CLAMAV_HOST: pai-clamav
+    networks:
+      - pai-proxy
+
+  clamav:
+    image: clamav/clamav:stable
+    container_name: pai-clamav
+    volumes:
+      - clamav-data:/var/lib/clamav
+    networks:
+      - pai-proxy
+
+volumes:
+  clamav-data:
+
+networks:
+  pai-proxy:
+    external: true

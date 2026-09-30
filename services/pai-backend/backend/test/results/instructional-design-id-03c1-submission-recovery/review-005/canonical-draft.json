@@ -1,0 +1,126 @@
+{
+  "state": "NEEDS_REVIEWER_COMPLETION",
+  "draft": {
+    "review_id": "review-005",
+    "rubric_scores": {
+      "objective_measurability": 5,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 5,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 5,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4
+    },
+    "rationales": {
+      "objective_measurability": "Criteria like 'identifies at least four distinct drawing element categories' and 'states at least two safety considerations' are highly objective and measurable[cite: 25].",
+      "objective_assessment_alignment": "The integrated written performance task requires learners to execute all three objectives simultaneously, mirroring the brief[cite: 25].",
+      "evidence_validity": "Working directly from a basic construction drawing set ensures authentic, high-fidelity assessment evidence[cite: 25].",
+      "cognitive_alignment": "The progression from 'understand' (interpreting elements) to 'apply' (sequencing methods and identifying safety) is perfectly calibrated[cite: 25].",
+      "prerequisite_quality": "Recognizing that basic drawing conventions must be a prerequisite ensures the 60 minutes are spent on interpretation and method planning, not basic symbol literacy[cite: 25].",
+      "course_sequence_coherence": "The instructional sequence (Read -> Sequence -> Safety) is logically air-tight and reflects standard industry practice[cite: 25].",
+      "instruction_assessment_alignment": "The use of worked examples and an integrated scenario effectively prepares the learner for the summative submission[cite: 25]."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "minor",
+    "special_question": null,
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-005.json",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recovery_mode": "deterministic",
+    "source_sections": [
+      "technical_review",
+      "pedagogical_review"
+    ],
+    "mapped_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "unresolved_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "raw_legacy_fields_preserved": true,
+    "legacy_rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 5,
+        "rationale": "Criteria like 'identifies at least four distinct drawing element categories' and 'states at least two safety considerations' are highly objective and measurable[cite: 25]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The integrated written performance task requires learners to execute all three objectives simultaneously, mirroring the brief[cite: 25]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 5,
+        "rationale": "Working directly from a basic construction drawing set ensures authentic, high-fidelity assessment evidence[cite: 25]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The progression from 'understand' (interpreting elements) to 'apply' (sequencing methods and identifying safety) is perfectly calibrated[cite: 25]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 5,
+        "rationale": "Recognizing that basic drawing conventions must be a prerequisite ensures the 60 minutes are spent on interpretation and method planning, not basic symbol literacy[cite: 25]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The instructional sequence (Read -> Sequence -> Safety) is logically air-tight and reflects standard industry practice[cite: 25]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "The use of worked examples and an integrated scenario effectively prepares the learner for the summative submission[cite: 25]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Fast-paced, but possible within 60 minutes if the sample drawing is kept extremely simple and focused[cite: 25]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Strictly limited to the scope of the drawing set; explicitly excludes general site safety to prevent scope creep[cite: 25]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Only minor effort required to calibrate the complexity of the drawing fixture to ensure it fits the time limit."
+      }
+    ],
+    "legacy_overall_edit_effort": 2,
+    "raw_special_question_answer": "YES. A very strong, highly integrated technical curriculum that respects operational dependencies."
+  },
+  "missing_required_fields": [
+    "rationales.domain_appropriateness",
+    "rationales.scope_balance",
+    "rationales.workload_time_realism",
+    "rubric_scores.domain_appropriateness",
+    "rubric_scores.scope_balance",
+    "rubric_scores.workload_time_realism",
+    "special_question.answer"
+  ],
+  "ambiguous_fields": [
+    "special_question.answer"
+  ]
+}

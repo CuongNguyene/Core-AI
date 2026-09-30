@@ -1,0 +1,26 @@
+{
+  "task": "INTEGRATION-00",
+  "scan_only": true,
+  "generated_at": "2026-08-17",
+  "source_repo": "/Users/mac/Developers/work/PAI Learning/Pai-learning/.worktrees/pr-012-instructional-design-core",
+  "target_repo": "/Users/mac/Developers/work/CT_Brain_Hub/ct_brain_hub/5. SOURCE/ndt-training-management-system-main",
+  "source_commit": "c4af69b78fe7eb8f4ed0654f5007a17599886005",
+  "target_commit": "40104dfd9e01b915534422f1cf97c30bff0e3b26",
+  "artifacts": [
+    "manifest.json",
+    "source-repo-inventory.json",
+    "target-repo-inventory.json",
+    "domain-concept-map.json",
+    "api-surface-map.json",
+    "db-migration-map.json",
+    "contract-schema-map.json",
+    "dependency-runtime-map.json",
+    "conflict-matrix.md",
+    "migration-strategy.md",
+    "exclusion-list.md",
+    "integration-readiness-report.json"
+  ],
+  "documentation_artifact": "docs/domain/integration-migration-plan.md",
+  "method": "read-only find, ls, sed, rg, git status, git branch, git rev-parse, git diff --check",
+  "not_run": ["tests", "dependency_install", "docker", "database_migrations", "merge", "rebase"]
+}

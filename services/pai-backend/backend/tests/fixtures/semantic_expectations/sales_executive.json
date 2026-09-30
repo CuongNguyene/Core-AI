@@ -1,0 +1,33 @@
+{
+  "fixture_id": "sales_executive",
+  "hints": {
+    "own enterprise accounts": "enterprise accounts",
+    "enterprise account assistance": "enterprise accounts",
+    "enterprise account owner": "enterprise accounts",
+    "pipeline management": "sales pipeline",
+    "managed pipeline": "sales pipeline",
+    "CRM operation": "crm",
+    "CRM": "crm",
+    "sales certification": "sales certification",
+    "certified sales professional": "sales certification",
+    "territory forecasting": "territory forecast",
+    "forecasted territory": "territory forecast",
+    "general ledger": "general ledger"
+  },
+  "requirements": [
+    {"id": "account-owner", "phrase": "own enterprise accounts", "expectation": "owned_outcome", "expected_refs": ["account-assisted", "account-owned"], "eligible": 1, "status": "supported", "strongest_refs": ["account-owned"]},
+    {"id": "pipeline", "phrase": "pipeline management", "expectation": "demonstrated_usage", "expected_refs": ["pipeline-work"], "eligible": 1, "status": "supported", "strongest_refs": ["pipeline-work"]},
+    {"id": "crm", "phrase": "CRM operation", "expectation": "demonstrated_usage", "expected_refs": ["crm-mention"], "eligible": 0, "status": "requires_verification", "strongest_refs": ["crm-mention"]},
+    {"id": "credential", "phrase": "sales certification", "expectation": "credential", "expected_refs": ["sales-credential"], "eligible": 1, "status": "supported", "strongest_refs": ["sales-credential"]},
+    {"id": "forecast", "phrase": "territory forecasting", "expectation": "demonstrated_usage", "expected_refs": ["forecast-work"], "eligible": 1, "status": "supported", "strongest_refs": ["forecast-work"]}
+  ],
+  "evidence": [
+    {"ref": "account-assisted", "phrase": "enterprise account assistance", "context": "used_in_employment", "source_kind": "employment", "participation": "assisted", "confidence": 0.95},
+    {"ref": "account-owned", "phrase": "enterprise account owner", "context": "owned_system", "source_kind": "employment", "participation": "owned", "confidence": 0.9},
+    {"ref": "pipeline-work", "phrase": "managed pipeline", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.93},
+    {"ref": "crm-mention", "phrase": "CRM", "context": "mentioned", "source_kind": "skill", "confidence": 0.99},
+    {"ref": "sales-credential", "phrase": "certified sales professional", "context": "credentialed", "source_kind": "credential", "confidence": 0.96},
+    {"ref": "forecast-work", "phrase": "forecasted territory", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.92},
+    {"ref": "unrelated-ledger", "phrase": "general ledger", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.9}
+  ]
+}

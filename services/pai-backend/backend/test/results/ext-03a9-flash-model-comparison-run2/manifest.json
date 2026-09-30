@@ -1,0 +1,82 @@
+{
+  "experiment_id": "EXT-03A.9",
+  "taxonomy": {
+    "id": "professional_capability_core",
+    "version": "0.1"
+  },
+  "criteria": {
+    "id": "strict-demonstrated-evidence",
+    "version": "0.1"
+  },
+  "prompt": {
+    "id": "cv_capability_selection_criteria",
+    "version": "1.0"
+  },
+  "thinking": "medium",
+  "models": [
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash"
+  ],
+  "expectation_ref": "expectations.json",
+  "fixtures": [
+    {
+      "fixture_id": "devops-engineer",
+      "sha256": "93ad6e8b3841f4094251717e15f42d11d2d80123639887e5322d343986feab4d",
+      "domain": "technical"
+    },
+    {
+      "fixture_id": "data-analyst",
+      "sha256": "9ff69245a9795a175c4a9f5baddf96a4658518b5ef09befd96803b4ad01efa12",
+      "domain": "technical"
+    },
+    {
+      "fixture_id": "accounting-manager",
+      "sha256": "ce3de39df7d5a0db913d928840f1f9c550604aca9ccccfe904758b4e0c7a131c",
+      "domain": "accounting_finance"
+    },
+    {
+      "fixture_id": "legal-candidate",
+      "sha256": "aa028fcae63ebaded2ac77a2b35990b9f67b7d991ed2b245b24864ea437c1eed",
+      "domain": "legal"
+    },
+    {
+      "fixture_id": "ta-manager",
+      "sha256": "bcfa9067a80ca70a0b528a3eae052073b280961528452c8ce94f1a7fc26820c1",
+      "domain": "hr_management"
+    },
+    {
+      "fixture_id": "assistant-sales-manager",
+      "sha256": "27efec8dc117c8121039136feb8f93ffaeddcc259932ba3c0ae3d77bf82411af",
+      "domain": "sales"
+    },
+    {
+      "fixture_id": "construction-project-manager",
+      "sha256": "bfbccd0e9f36d3b5049ebb7d3d053cf90d14672da12ee6a7a836273a3b2428e0",
+      "domain": "operations_project"
+    }
+  ],
+  "stage1_fact_ids": {
+    "devops-engineer": "dc44711e9c5524954292b06e323694c1edaa365ecfd2e9aca16f4151ff771ef5",
+    "data-analyst": "b87de61a61ae837a99c72b8d0af2dcaf3315955ac0b821b746d5dc41e4031e48",
+    "accounting-manager": "ca7435cf4e26dddf4624aa4e4c12974959b8ff0e012a62803d1552eb20b62411",
+    "legal-candidate": "5879982f7f13351e3b5ab23813037e6fa88227f82eb567b711e764f6e2a75906",
+    "ta-manager": "c7f93b533e1328df236ed701435bec671363d72dfcdbbf74ef2ad838b0f681ed",
+    "assistant-sales-manager": "75f854d73b6128b6a348c5dc3703e9d3661b7f99c066fa78d868d05cce7c1ec5",
+    "construction-project-manager": "14752729298d564caf00216a679163eefd05ae61a8f028a2c4fe51c97211ab28"
+  },
+  "stage1": {
+    "reusable": false,
+    "new_calls": 7,
+    "reason": "facts unavailable for reuse due privacy-safe artifact policy",
+    "fact_ids": {
+      "devops-engineer": "dc44711e9c5524954292b06e323694c1edaa365ecfd2e9aca16f4151ff771ef5",
+      "data-analyst": "b87de61a61ae837a99c72b8d0af2dcaf3315955ac0b821b746d5dc41e4031e48",
+      "accounting-manager": "ca7435cf4e26dddf4624aa4e4c12974959b8ff0e012a62803d1552eb20b62411",
+      "legal-candidate": "5879982f7f13351e3b5ab23813037e6fa88227f82eb567b711e764f6e2a75906",
+      "ta-manager": "c7f93b533e1328df236ed701435bec671363d72dfcdbbf74ef2ad838b0f681ed",
+      "assistant-sales-manager": "75f854d73b6128b6a348c5dc3703e9d3661b7f99c066fa78d868d05cce7c1ec5",
+      "construction-project-manager": "14752729298d564caf00216a679163eefd05ae61a8f028a2c4fe51c97211ab28"
+    }
+  }
+}

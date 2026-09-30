@@ -1,0 +1,1028 @@
+{
+  "run": {
+    "run_id": "instructional-design-id-02d-live-python:python_data_processing:structured_v0.3.1:1",
+    "experiment_id": "instructional-design-id-02d-live-python",
+    "experiment_version": "0.1",
+    "fixture_id": "python_data_processing",
+    "condition": "structured_v0.3.1",
+    "run_number": 1,
+    "model_provider": "vilao",
+    "model_name": "claude-sonnet-5",
+    "model_revision": null,
+    "generation_config": {
+      "temperature": 0.0,
+      "top_p": null,
+      "max_output_tokens": 8192,
+      "seed": null,
+      "unsupported_fields": [
+        "top_p",
+        "seed"
+      ]
+    },
+    "policy_id": "pai_instructional_design",
+    "policy_version": "0.1",
+    "prompt_schema_versions": [
+      {
+        "prompt_id": "instructional_objective_design",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_objective_design",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_assessment_design",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_assessment_design",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_prerequisite_proposal",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_prerequisite_proposal",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_course_planning",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_course_planning",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_lesson_planning",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_lesson_planning",
+        "schema_version": "0.3.1"
+      }
+    ],
+    "started_at": "2026-08-13T08:42:04.145472Z"
+  },
+  "status": "completed",
+  "snapshot": {
+    "snapshot_version": "instructional-design-research-snapshot@0.1",
+    "brief": {
+      "id": "brief-python-data-processing",
+      "capability": {
+        "id": null,
+        "name": "python data processing",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [
+          "basic Python"
+        ],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:python-data-processing:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a tabular dataset, transform missing or invalid values and justify the transformation choices."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "lo-bpdp-01",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Detect and characterize missing or invalid values in a tabular dataset using Python",
+        "cognitive_process": "analyze",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a tabular dataset loaded into a Python data structure",
+          "Access to standard Python libraries (specific library unspecified by brief)"
+        ],
+        "success_criteria": [
+          "Identifies all columns and rows containing missing or invalid values",
+          "Describes the type and extent of each data quality issue present"
+        ],
+        "prerequisite_refs": [],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Detection is treated as a distinct, assessable step prerequisite to transformation",
+            "No library is named in the brief; this objective is written library-agnostically"
+          ]
+        }
+      },
+      {
+        "id": "lo-bpdp-02",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Apply transformation strategies to missing or invalid values in a tabular dataset using Python",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a tabular dataset with known missing or invalid values",
+          "Access to standard Python libraries"
+        ],
+        "success_criteria": [
+          "Applies at least two distinct transformation strategies (e.g., removal, substitution, imputation)",
+          "Resulting dataset contains no untreated missing or invalid values in the targeted scope"
+        ],
+        "prerequisite_refs": [
+          "lo-bpdp-01"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "At least two strategies assumed necessary to make the justification objective (lo-bpdp-03) assessable",
+            "Specific transformation API deferred to library confirmation"
+          ]
+        }
+      },
+      {
+        "id": "lo-bpdp-03",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Justify the choice of transformation strategy for missing or invalid values given a specific dataset context",
+        "cognitive_process": "evaluate",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "Given a described dataset context and a set of applied transformations",
+          "No prescribed answer key provided"
+        ],
+        "success_criteria": [
+          "States a criterion-based rationale (e.g., missingness pattern, data volume, downstream use) for each transformation choice",
+          "Identifies at least one trade-off of the chosen strategy relative to a named alternative"
+        ],
+        "prerequisite_refs": [
+          "lo-bpdp-01",
+          "lo-bpdp-02"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Justification is treated as evaluative reasoning requiring explicit trade-off articulation, not merely naming a method",
+            "Conceptual knowledge dimension used because justification depends on understanding principles, not procedural recall alone"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "asmnt-bpdp-01-formative",
+        "objective_ids": [
+          "lo-bpdp-01"
+        ],
+        "capability_claim": "Detect and characterize missing or invalid values in a tabular dataset using Python",
+        "required_evidence": [
+          {
+            "id": "re-bpdp-01-01",
+            "criterion": "Code correctly identifies all columns and rows containing missing or invalid values",
+            "rationale": "Directly maps to lo-bpdp-01 success criterion 1"
+          },
+          {
+            "id": "re-bpdp-01-02",
+            "criterion": "Written summary describes the type (e.g., null, out-of-range, wrong type) and extent (count or proportion) of each identified data quality issue",
+            "rationale": "Directly maps to lo-bpdp-01 success criterion 2"
+          }
+        ],
+        "task": {
+          "task_type": "code-and-describe",
+          "description": "Given a provided tabular dataset loaded into a Python data structure, write Python code to identify all columns and rows containing missing or invalid values, then produce a written summary describing the type and extent of each data quality issue found.",
+          "conditions": [
+            "Given a tabular dataset loaded into a Python data structure",
+            "Access to standard Python libraries (specific library unspecified by brief)"
+          ]
+        },
+        "cognitive_process": "analyze",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-bpdp-01-coverage",
+              "criterion": "Completeness of missing and invalid value detection",
+              "performance_levels": [
+                "Identifies fewer than half of the missing or invalid values present",
+                "Identifies most but not all missing or invalid values; minor omissions",
+                "Identifies all missing and invalid values across all targeted columns and rows"
+              ]
+            },
+            {
+              "id": "rd-bpdp-01-characterization",
+              "criterion": "Accuracy of issue characterization by type and extent",
+              "performance_levels": [
+                "Describes issues vaguely or incorrectly; no quantification of extent",
+                "Describes issue type correctly but extent is imprecise or only partially quantified",
+                "Accurately describes both type and extent for each identified issue"
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate proposed: both rubric dimensions at highest performance level required. Deterministic policy decides final gate."
+        },
+        "role": "formative",
+        "required_capabilities": [
+          {
+            "name": "basic Python programming",
+            "objective_ids": [
+              "lo-bpdp-01"
+            ],
+            "rationale": "Learner must write syntactically valid Python to interrogate dataset structure; listed as known in learner state"
+          }
+        ],
+        "is_summative": false,
+        "required_capability_refs": [
+          "basic Python programming"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Formative placement assumes detection (lo-bpdp-01) is taught before transformation (lo-bpdp-02); sequencing is provisional",
+            "Task format 'code-and-describe' is a candidate choice; alternative formats such as notebook or REPL transcript were not evaluated"
+          ]
+        }
+      },
+      {
+        "id": "asmnt-bpdp-02-formative",
+        "objective_ids": [
+          "lo-bpdp-02"
+        ],
+        "capability_claim": "Apply at least two distinct transformation strategies to missing or invalid values in a tabular dataset using Python",
+        "required_evidence": [
+          {
+            "id": "re-bpdp-02-01",
+            "criterion": "Code applies at least two clearly distinct transformation strategies",
+            "rationale": "Directly maps to lo-bpdp-02 success criterion 1; two strategies required so that lo-bpdp-03 justification is assessable"
+          },
+          {
+            "id": "re-bpdp-02-02",
+            "criterion": "Resulting dataset contains no untreated missing or invalid values within the targeted scope",
+            "rationale": "Directly maps to lo-bpdp-02 success criterion 2"
+          }
+        ],
+        "task": {
+          "task_type": "code-execution",
+          "description": "Given a tabular dataset with pre-labeled missing or invalid values, write Python code that applies at least two distinct transformation strategies such that the resulting dataset contains no untreated missing or invalid values within the targeted scope.",
+          "conditions": [
+            "Given a tabular dataset with known missing or invalid values, pre-labeled to reduce confounding with detection",
+            "Access to standard Python libraries (specific library unspecified by brief)"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-bpdp-02-strategy-variety",
+              "criterion": "Distinctness and appropriateness of applied transformation strategies",
+              "performance_levels": [
+                "Applies only one strategy or applies the same strategy repeatedly under different labels",
+                "Applies two strategies but one is trivially similar to the other",
+                "Applies at least two clearly distinct and contextually appropriate transformation strategies"
+              ]
+            },
+            {
+              "id": "rd-bpdp-02-completeness",
+              "criterion": "Post-transformation completeness within targeted scope",
+              "performance_levels": [
+                "Untreated missing or invalid values remain in the targeted scope",
+                "Nearly complete; isolated untreated values remain",
+                "No untreated missing or invalid values remain in the targeted scope"
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate proposed: both rubric dimensions at highest performance level required. Deterministic policy decides final gate."
+        },
+        "role": "formative",
+        "required_capabilities": [
+          {
+            "name": "basic Python programming",
+            "objective_ids": [
+              "lo-bpdp-02"
+            ],
+            "rationale": "Learner must write syntactically valid Python to perform data transformations"
+          },
+          {
+            "name": "missing and invalid value detection in tabular data",
+            "objective_ids": [
+              "lo-bpdp-02"
+            ],
+            "rationale": "Prerequisite per lo-bpdp-01; learner must locate issues before transforming them"
+          }
+        ],
+        "is_summative": false,
+        "required_capability_refs": [
+          "basic Python programming",
+          "missing and invalid value detection in tabular data"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Pre-labeled dataset is a candidate design choice to isolate transformation from detection; this could be revisited",
+            "Specific transformation library left unspecified, consistent with brief constraints"
+          ]
+        }
+      },
+      {
+        "id": "asmnt-bpdp-summative",
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "capability_claim": "Given a tabular dataset, detect and characterize data quality issues, apply transformation strategies, and justify each transformation choice with criterion-based rationale and explicit trade-off analysis",
+        "required_evidence": [
+          {
+            "id": "re-bpdp-s-01",
+            "criterion": "All missing or invalid values are correctly identified and characterized by type and extent",
+            "rationale": "Maps to lo-bpdp-01 success criteria"
+          },
+          {
+            "id": "re-bpdp-s-02",
+            "criterion": "At least two distinct transformation strategies are applied and the resulting dataset contains no untreated missing or invalid values within the targeted scope",
+            "rationale": "Maps to lo-bpdp-02 success criteria"
+          },
+          {
+            "id": "re-bpdp-s-03",
+            "criterion": "Each transformation choice is supported by a criterion-based rationale referencing at least one of: missingness pattern, data volume, or downstream use",
+            "rationale": "Maps to lo-bpdp-03 success criterion 1"
+          },
+          {
+            "id": "re-bpdp-s-04",
+            "criterion": "At least one trade-off of a chosen strategy is explicitly stated relative to a clearly named alternative strategy",
+            "rationale": "Maps to lo-bpdp-03 success criterion 2"
+          }
+        ],
+        "task": {
+          "task_type": "integrated-code-and-written-rationale",
+          "description": "Given a provided tabular dataset and a brief description of its intended downstream use, the learner must: (1) detect and characterize all missing or invalid values; (2) apply at least two distinct transformation strategies such that no untreated values remain in scope; and (3) produce a written rationale for each transformation choice stating a criterion-based reason and at least one trade-off relative to a named alternative strategy. No prescribed answer key is provided.",
+          "conditions": [
+            "Given a tabular dataset loaded into a Python data structure",
+            "A brief contextual description of the dataset's intended downstream use is provided",
+            "Access to standard Python libraries (specific library unspecified by brief)",
+            "No prescribed answer key provided"
+          ]
+        },
+        "cognitive_process": "evaluate",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-bpdp-s-detection",
+              "criterion": "Completeness and accuracy of missing and invalid value detection and characterization",
+              "performance_levels": [
+                "Identifies fewer than half of issues or characterizes them inaccurately",
+                "Identifies most issues; characterization partially accurate",
+                "Identifies all issues and accurately characterizes each by type and extent"
+              ]
+            },
+            {
+              "id": "rd-bpdp-s-transformation",
+              "criterion": "Correctness and distinctness of applied transformation strategies",
+              "performance_levels": [
+                "Applies only one strategy or leaves untreated values in scope",
+                "Applies two strategies but they are not clearly distinct; scope nearly complete",
+                "Applies at least two clearly distinct strategies; no untreated values remain in scope"
+              ]
+            },
+            {
+              "id": "rd-bpdp-s-justification",
+              "criterion": "Quality of criterion-based rationale for each transformation choice",
+              "performance_levels": [
+                "Rationale absent or merely names the method without any criterion reference",
+                "States a reason for choices but does not reference a dataset-specific criterion",
+                "States a criterion-based reason referencing missingness pattern, data volume, or downstream use for each choice"
+              ]
+            },
+            {
+              "id": "rd-bpdp-s-tradeoff",
+              "criterion": "Explicitness of trade-off identification relative to a named alternative",
+              "performance_levels": [
+                "No trade-off identified or no alternative named",
+                "Names an alternative but trade-off is vague or implicit",
+                "Explicitly states at least one trade-off of a chosen strategy relative to a clearly named alternative"
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate proposed: all four rubric dimensions at highest performance level required for mastery. Deterministic policy decides final gate."
+        },
+        "role": "summative",
+        "required_capabilities": [
+          {
+            "name": "basic Python programming",
+            "objective_ids": [
+              "lo-bpdp-01",
+              "lo-bpdp-02"
+            ],
+            "rationale": "Learner must write Python code for both detection and transformation phases"
+          },
+          {
+            "name": "missing and invalid value detection in tabular data",
+            "objective_ids": [
+              "lo-bpdp-01",
+              "lo-bpdp-02",
+              "lo-bpdp-03"
+            ],
+            "rationale": "Core capability exercised in detection and required as basis for transformation and justification"
+          },
+          {
+            "name": "tabular data transformation strategies",
+            "objective_ids": [
+              "lo-bpdp-02",
+              "lo-bpdp-03"
+            ],
+            "rationale": "Learner must know at least two distinct strategies in order to apply and compare them"
+          }
+        ],
+        "is_summative": true,
+        "required_capability_refs": [
+          "basic Python programming",
+          "missing and invalid value detection in tabular data",
+          "tabular data transformation strategies"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Integrating all three objectives into a single summative task is a candidate design choice; disaggregated summative tasks were not evaluated",
+            "Downstream use context is provided within the task to give the learner a basis for criterion-based reasoning, consistent with lo-bpdp-03 conditions",
+            "Task is intentionally library-agnostic, consistent with brief and objective provenance"
+          ]
+        }
+      }
+    ],
+    "dependency_candidates": [
+      {
+        "capability": "conceptual understanding of data quality principles",
+        "reason": "lo-bpdp-03 requires criterion-based justification referencing principles such as missingness patterns, data volume, and downstream impact; this conceptual foundation is not guaranteed by 'basic Python programming' alone and may need to be explicitly taught or verified as a prerequisite before the summative assessment",
+        "required_for_refs": [
+          "lo-bpdp-03",
+          "asmnt-bpdp-summative"
+        ]
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-bpdp-basic-python",
+        "capability": "basic Python programming",
+        "status": "confirmed",
+        "basis": "source_backed",
+        "classification": "required_prerequisite",
+        "rationale": "The learner state records 'basic Python' as known via evidence ref research-fixture:python-data-processing:learner-state, and every assessment (asmnt-bpdp-01-formative, asmnt-bpdp-02-formative, asmnt-bpdp-summative) lists basic Python programming as a required capability with an explicit rationale requiring syntactically valid Python to interrogate structure, detect issues, and transform values. Without it the learner cannot produce runnable code for any detection or transformation task.",
+        "required_for_refs": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03",
+          "asmnt-bpdp-01-formative",
+          "asmnt-bpdp-02-formative",
+          "asmnt-bpdp-summative"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-bpdp-detection",
+        "capability": "missing and invalid value detection in tabular data",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Candidate only. lo-bpdp-02 explicitly declares prerequisite_refs [lo-bpdp-01], and assessment asmnt-bpdp-02-formative requires this capability because a learner must locate issues before transforming them. The learning objective (lo-bpdp-01) would fail without first acquiring detection, since transformation presupposes identification.",
+        "required_for_refs": [
+          "lo-bpdp-02",
+          "asmnt-bpdp-02-formative"
+        ],
+        "requires_prerequisite_refs": [
+          "prereq-bpdp-basic-python"
+        ],
+        "teaching_objective_id": "lo-bpdp-01"
+      },
+      {
+        "id": "prereq-bpdp-transformation-strategies",
+        "capability": "tabular data transformation strategies",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Candidate only. Summative assessment asmnt-bpdp-summative requires knowledge of at least two distinct transformation strategies in order to apply and compare them, and lo-bpdp-02 requires applying at least two distinct strategies. Without prior knowledge of such strategies the learner cannot satisfy the apply and evaluate objectives or the trade-off justification criterion.",
+        "required_for_refs": [
+          "lo-bpdp-02",
+          "lo-bpdp-03",
+          "asmnt-bpdp-summative"
+        ],
+        "requires_prerequisite_refs": [
+          "prereq-bpdp-basic-python"
+        ],
+        "teaching_objective_id": null
+      }
+    ],
+    "canonical_dependencies": [
+      {
+        "capability_ref": "basic python programming",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-01-formative",
+              "original_value": "basic Python programming"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-01-formative",
+              "original_value": "basic Python programming"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "basic python programming",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "basic Python programming"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "basic Python programming"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-02"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "missing and invalid value detection in tabular data",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "missing and invalid value detection in tabular data"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "missing and invalid value detection in tabular data"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-02"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "basic python programming",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "basic Python programming"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "basic Python programming"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "missing and invalid value detection in tabular data",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "missing and invalid value detection in tabular data"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "missing and invalid value detection in tabular data"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "tabular data transformation strategies",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "tabular data transformation strategies"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "tabular data transformation strategies"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "conceptual understanding of data quality principles",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "conceptual understanding of data quality principles"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      }
+    ],
+    "course_outline": {
+      "id": "module-set-bpdp",
+      "brief_id": "brief-python-data-processing",
+      "objective_ids": [
+        "lo-bpdp-01",
+        "lo-bpdp-02",
+        "lo-bpdp-03"
+      ],
+      "modules": [
+        {
+          "id": "mod-bpdp-detection",
+          "title": "Detecting and characterizing missing or invalid values",
+          "objective_ids": [
+            "lo-bpdp-01"
+          ],
+          "prerequisite_refs": [
+            "prereq-bpdp-basic-python"
+          ],
+          "lesson_ids": [
+            "lesson-bpdp-01-detect"
+          ],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "mod-bpdp-transformation",
+          "title": "Applying transformation strategies",
+          "objective_ids": [
+            "lo-bpdp-02"
+          ],
+          "prerequisite_refs": [
+            "prereq-bpdp-detection",
+            "prereq-bpdp-transformation-strategies"
+          ],
+          "lesson_ids": [
+            "lesson-bpdp-02-transform"
+          ],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "mod-bpdp-justification",
+          "title": "Justifying transformation choices with trade-offs",
+          "objective_ids": [
+            "lo-bpdp-03"
+          ],
+          "prerequisite_refs": [
+            "prereq-bpdp-detection",
+            "prereq-bpdp-transformation-strategies"
+          ],
+          "lesson_ids": [
+            "lesson-bpdp-03-justify"
+          ],
+          "estimated_minutes": 20
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-bpdp-basic-python",
+        "prereq-bpdp-detection",
+        "prereq-bpdp-transformation-strategies"
+      ],
+      "estimated_minutes": 60,
+      "planning_warnings": [
+        {
+          "type": "scope_time_conflict",
+          "decision": "prioritized_core_objectives",
+          "rationale": "All supplied objectives are core and are retained within the 60-minute budget; each module is assigned an equal estimated portion. The planning assumption is that library-specific API instruction is out of scope outside the three linked objectives, so no optional scope reduction was required."
+        }
+      ],
+      "sequencing_rationale": [
+        "Detection (lo-bpdp-01) precedes transformation (lo-bpdp-02) because lo-bpdp-02 declares lo-bpdp-01 as a prerequisite and the learner must locate issues before transforming them",
+        "Transformation (lo-bpdp-02) precedes justification (lo-bpdp-03) because lo-bpdp-03 declares both lo-bpdp-01 and lo-bpdp-02 as prerequisites, and trade-off justification depends on having applied at least two distinct strategies",
+        "Prerequisites prereq-bpdp-detection and prereq-bpdp-transformation-strategies are external capability prerequisites; the detection module aligns with prereq-bpdp-detection's teaching_objective_id lo-bpdp-01"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "The 60-minute estimate is a provisional allocation across three equal modules; the deterministic policy decides whether module-level estimates fit the brief budget",
+          "Each module maps exclusively to a single supplied objective ID; no objective ID is placed in prerequisite_refs",
+          "Prerequisite_refs reference only supplied prerequisite IDs from the allow-list; candidate prerequisites (prereq-bpdp-detection, prereq-bpdp-transformation-strategies) remain provisional",
+          "Module lesson_ids are left empty for orchestration to derive after lesson generation"
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-bpdp-01-detect",
+        "module_id": "mod-bpdp-detection",
+        "objective_ids": [
+          "lo-bpdp-01"
+        ],
+        "prerequisite_refs": [
+          "prereq-bpdp-basic-python"
+        ],
+        "lesson_goal": "Explain how to locate and categorize missing or invalid values in a tabular dataset using Python-standard inspection patterns, so the learner can later locate issues before transforming them.",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Follow a step-by-step worked example that interrogates a small tabular structure for null cells, out-of-range values, wrong-type entries, and empty rows; trace how each inspection step maps a column or row to a specific issue type and extent.",
+        "formative_assessment_ids": [
+          "asmnt-bpdp-01-formative"
+        ],
+        "estimated_minutes": 20,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Worked-example pattern is a candidate choice for analyze-level learning; demonstration followed by tracing was not evaluated",
+            "Assumes detection (lo-bpdp-01) is taught before transformation, consistent with candidate sequencing assumption",
+            "Estimated_minutes set to match the module allocation; the deterministic policy decides the final gate"
+          ]
+        }
+      },
+      {
+        "id": "lesson-bpdp-02-transform",
+        "module_id": "mod-bpdp-transformation",
+        "objective_ids": [
+          "lo-bpdp-02"
+        ],
+        "prerequisite_refs": [
+          "prereq-bpdp-detection",
+          "prereq-bpdp-transformation-strategies"
+        ],
+        "lesson_goal": "Enable the learner to apply at least two clearly distinct transformation strategies (e.g., removal, substitution, imputation) so that no untreated missing or invalid values remain in the targeted scope.",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Work through a pre-labeled dataset under instructor guidance, applying removal on some value locations and substitution or imputation on others, verifying after each step that no untreated issues remain in the targeted scope.",
+        "formative_assessment_ids": [
+          "asmnt-bpdp-02-formative"
+        ],
+        "estimated_minutes": 20,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Guided practice is a candidate pattern for apply-level learning; independent practice was not evaluated",
+            "Pre-labeled dataset isolates transformation from detection, matching the formative assessment design",
+            "Library-specific APIs deferred pending library confirmation"
+          ]
+        }
+      },
+      {
+        "id": "lesson-bpdp-03-justify",
+        "module_id": "mod-bpdp-justification",
+        "objective_ids": [
+          "lo-bpdp-03"
+        ],
+        "prerequisite_refs": [
+          "prereq-bpdp-detection",
+          "prereq-bpdp-transformation-strategies"
+        ],
+        "lesson_goal": "Develop the learner's ability to justify each transformation choice using a criterion-based rationale (missingness pattern, data volume, or downstream use) and to state an explicit trade-off relative to a named alternative strategy.",
+        "instructional_pattern": "scenario",
+        "expected_learner_activity": "Work through authentic dataset-context scenarios in which a downstream use is described; for each scenario the learner states a criterion-based rationale for each transformation choice and names a trade-off against a clearly identified alternative.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 20,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Scenario pattern is a candidate choice for evaluate-level reasoning with no prescribed answer key; case-based debate formats were not evaluated",
+            "No formative assessment references are supplied for lo-bpdp-03, so the lesson references none, consistent with the allow-list constraint",
+            "Integrated practice for the combined summative assessment is supplied only at the summative level; integrated formative practice was not designed because no qualifying formative assessment IDs were supplied"
+          ]
+        }
+      }
+    ],
+    "quality_report": {
+      "passed": false,
+      "findings": [
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "asmnt-bpdp-02-formative",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course."
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "asmnt-bpdp-summative",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course."
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "asmnt-bpdp-summative",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course."
+        }
+      ],
+      "objective_coverage": 1.0,
+      "assessment_coverage": 1.0,
+      "unresolved_prerequisites": [
+        "prereq-bpdp-detection",
+        "prereq-bpdp-transformation-strategies"
+      ],
+      "policy_id": "pai_instructional_design",
+      "policy_version": "0.1"
+    },
+    "generation_provenance": {
+      "research_brief_id": "brief-python-data-processing",
+      "instructional_design_policy_id": "pai_instructional_design",
+      "instructional_design_policy_version": "0.1",
+      "prompt_versions": {
+        "instructional_objective_design": "0.3.1",
+        "instructional_assessment_design": "0.3.1",
+        "instructional_prerequisite_proposal": "0.3.1",
+        "instructional_course_planning": "0.3.1",
+        "instructional_lesson_planning": "0.3.1"
+      },
+      "output_schema_versions": {
+        "instructional_objective_design": "0.3.1",
+        "instructional_assessment_design": "0.3.1",
+        "instructional_prerequisite_proposal": "0.3.1",
+        "instructional_course_planning": "0.3.1",
+        "instructional_lesson_planning": "0.3.1"
+      },
+      "provider": "vilao",
+      "model": "claude-sonnet-5",
+      "model_revision": null,
+      "generated_at": "2026-08-13T08:42:04.145472Z"
+    }
+  },
+  "partial_artifacts": null,
+  "stage_failure": null,
+  "model_audits": [
+    {
+      "provider": "vilao",
+      "model": "claude-sonnet-5",
+      "model_revision": "claude-sonnet-5",
+      "prompt_template_id": "instructional_objective_design",
+      "prompt_template_version": "0.3.1",
+      "output_schema_id": "instructional_objective_design",
+      "output_schema_version": "0.3.1",
+      "policy_version": "privacy-v1",
+      "correlation_id": "instructional-design-id-02d-live-python:python_data_processing:structured_v0.3.1:1:model:instructional_objective_design",
+      "routing_decision": "approved_external_sanitized",
+      "attempt_count": 1,
+      "latency_ms": 52225,
+      "usage": {
+        "input_tokens": 1899,
+        "output_tokens": 2694
+      },
+      "outcome": "succeeded",
+      "protocol": "openai_compatible",
+      "deployment_type": "external",
+      "endpoint_origin": "https://api.vilao.ai",
+      "data_boundary": "external_provider"
+    },
+    {
+      "provider": "vilao",
+      "model": "claude-sonnet-5",
+      "model_revision": "claude-sonnet-5",
+      "prompt_template_id": "instructional_assessment_design",
+      "prompt_template_version": "0.3.1",
+      "output_schema_id": "instructional_assessment_design",
+      "output_schema_version": "0.3.1",
+      "policy_version": "privacy-v1",
+      "correlation_id": "instructional-design-id-02d-live-python:python_data_processing:structured_v0.3.1:1:model:instructional_assessment_design",
+      "routing_decision": "approved_external_sanitized",
+      "attempt_count": 1,
+      "latency_ms": 105439,
+      "usage": {
+        "input_tokens": 3945,
+        "output_tokens": 8229
+      },
+      "outcome": "succeeded",
+      "protocol": "openai_compatible",
+      "deployment_type": "external",
+      "endpoint_origin": "https://api.vilao.ai",
+      "data_boundary": "external_provider"
+    },
+    {
+      "provider": "vilao",
+      "model": "claude-sonnet-5",
+      "model_revision": "claude-sonnet-5",
+      "prompt_template_id": "instructional_prerequisite_proposal",
+      "prompt_template_version": "0.3.1",
+      "output_schema_id": "instructional_prerequisite_proposal",
+      "output_schema_version": "0.3.1",
+      "policy_version": "privacy-v1",
+      "correlation_id": "instructional-design-id-02d-live-python:python_data_processing:structured_v0.3.1:1:model:instructional_prerequisite_proposal",
+      "routing_decision": "approved_external_sanitized",
+      "attempt_count": 1,
+      "latency_ms": 8924,
+      "usage": {
+        "input_tokens": 9676,
+        "output_tokens": 809
+      },
+      "outcome": "succeeded",
+      "protocol": "openai_compatible",
+      "deployment_type": "external",
+      "endpoint_origin": "https://api.vilao.ai",
+      "data_boundary": "external_provider"
+    },
+    {
+      "provider": "vilao",
+      "model": "claude-sonnet-5",
+      "model_revision": "claude-sonnet-5",
+      "prompt_template_id": "instructional_course_planning",
+      "prompt_template_version": "0.3.1",
+      "output_schema_id": "instructional_course_planning",
+      "output_schema_version": "0.3.1",
+      "policy_version": "privacy-v1",
+      "correlation_id": "instructional-design-id-02d-live-python:python_data_processing:structured_v0.3.1:1:model:instructional_course_planning",
+      "routing_decision": "approved_external_sanitized",
+      "attempt_count": 1,
+      "latency_ms": 7863,
+      "usage": {
+        "input_tokens": 12159,
+        "output_tokens": 806
+      },
+      "outcome": "succeeded",
+      "protocol": "openai_compatible",
+      "deployment_type": "external",
+      "endpoint_origin": "https://api.vilao.ai",
+      "data_boundary": "external_provider"
+    },
+    {
+      "provider": "vilao",
+      "model": "claude-sonnet-5",
+      "model_revision": "claude-sonnet-5",
+      "prompt_template_id": "instructional_lesson_planning",
+      "prompt_template_version": "0.3.1",
+      "output_schema_id": "instructional_lesson_planning",
+      "output_schema_version": "0.3.1",
+      "policy_version": "privacy-v1",
+      "correlation_id": "instructional-design-id-02d-live-python:python_data_processing:structured_v0.3.1:1:model:instructional_lesson_planning",
+      "routing_decision": "approved_external_sanitized",
+      "attempt_count": 1,
+      "latency_ms": 12508,
+      "usage": {
+        "input_tokens": 13210,
+        "output_tokens": 1191
+      },
+      "outcome": "succeeded",
+      "protocol": "openai_compatible",
+      "deployment_type": "external",
+      "endpoint_origin": "https://api.vilao.ai",
+      "data_boundary": "external_provider"
+    }
+  ],
+  "completed_at": "2026-08-13T08:45:11.111242Z"
+}

@@ -1,0 +1,63 @@
+{
+  "fixture_id": "data-analyst",
+  "domain": "technical",
+  "fingerprint": {
+    "fixture_name": "data-analyst",
+    "document_id": "b2765624-4c7b-4cd7-b394-5a9abe2480a8",
+    "storage_key": "transient/b2765624-4c7b-4cd7-b394-5a9abe2480a8",
+    "filename": "DATA_ANALYST_Phan_Nguyen_Lam_Ha_3750CA74_1778171201.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 79098,
+    "sha256": "9ff69245a9795a175c4a9f5baddf96a4658518b5ef09befd96803b4ad01efa12",
+    "page_count": 1,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 2,
+    "education_count": 1,
+    "statement_count": 6,
+    "reference_validation": "PASS"
+  },
+  "stage2": {
+    "selected_count": 1,
+    "supported_selected_count": 1,
+    "unsupported_selected_count": 0,
+    "selection_precision": 1.0,
+    "bounded_recall": 0.5,
+    "demonstrated_capability_count": 4,
+    "represented_capability_count": 2,
+    "taxonomy_gap_count": 2,
+    "taxonomy_coverage": 0.5,
+    "selected_capability_ids": [
+      "process_optimization"
+    ],
+    "selected_names": [
+      "Process Optimization"
+    ],
+    "unknown_taxonomy_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "grounding_rate": 1.0
+  },
+  "taxonomy_gaps": [
+    {
+      "proposed_name": "Software Engineering",
+      "domain": "technical",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "data-analyst"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    },
+    {
+      "proposed_name": "Data Analysis",
+      "domain": "technical",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "data-analyst"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    }
+  ],
+  "candidate_profile_compatibility": "PASS"
+}

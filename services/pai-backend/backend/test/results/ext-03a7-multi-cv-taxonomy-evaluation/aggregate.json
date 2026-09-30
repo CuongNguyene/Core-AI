@@ -1,0 +1,123 @@
+{
+  "experiment_id": "EXT-03A.7",
+  "taxonomy": {
+    "id": "professional_capability_core",
+    "version": "0.1"
+  },
+  "cv_count": 7,
+  "stage1_success_rate": 1.0,
+  "mean_experience_count": 4.285714285714286,
+  "mean_statement_count": 39.42857142857143,
+  "mean_selection_precision": 0.7619047619047619,
+  "mean_bounded_recall": 0.619047619047619,
+  "mean_taxonomy_coverage": 0.5809523809523809,
+  "total_selected": 20,
+  "unsupported_selections": 7,
+  "unknown_taxonomy_ids": 0,
+  "dangling_refs": 0,
+  "duplicates": 0,
+  "domain_summary": {
+    "accounting_finance": {
+      "cv_count": 1,
+      "mean_selection_precision": 1.0,
+      "mean_bounded_recall": 0.6666666666666666,
+      "mean_taxonomy_coverage": 0.6,
+      "top_taxonomy_gaps": [
+        {
+          "proposed_name": "Financial Reporting",
+          "fixture_count": 1
+        },
+        {
+          "proposed_name": "General Ledger Accounting",
+          "fixture_count": 1
+        }
+      ]
+    },
+    "hr_management": {
+      "cv_count": 1,
+      "mean_selection_precision": 1.0,
+      "mean_bounded_recall": 0.6666666666666666,
+      "mean_taxonomy_coverage": 0.6,
+      "top_taxonomy_gaps": [
+        {
+          "proposed_name": "Recruitment Operations",
+          "fixture_count": 1
+        },
+        {
+          "proposed_name": "Talent Acquisition",
+          "fixture_count": 1
+        }
+      ]
+    },
+    "legal": {
+      "cv_count": 1,
+      "mean_selection_precision": 0.5,
+      "mean_bounded_recall": 0.5,
+      "mean_taxonomy_coverage": 0.5,
+      "top_taxonomy_gaps": [
+        {
+          "proposed_name": "Contract Review",
+          "fixture_count": 1
+        },
+        {
+          "proposed_name": "Legal Research",
+          "fixture_count": 1
+        }
+      ]
+    },
+    "operations_project": {
+      "cv_count": 1,
+      "mean_selection_precision": 1.0,
+      "mean_bounded_recall": 1.0,
+      "mean_taxonomy_coverage": 0.6666666666666666,
+      "top_taxonomy_gaps": [
+        {
+          "proposed_name": "Construction Project Execution",
+          "fixture_count": 1
+        },
+        {
+          "proposed_name": "Site Management",
+          "fixture_count": 1
+        }
+      ]
+    },
+    "sales": {
+      "cv_count": 1,
+      "mean_selection_precision": 0.16666666666666666,
+      "mean_bounded_recall": 0.3333333333333333,
+      "mean_taxonomy_coverage": 0.6,
+      "top_taxonomy_gaps": [
+        {
+          "proposed_name": "Business Development",
+          "fixture_count": 1
+        },
+        {
+          "proposed_name": "Sales Management",
+          "fixture_count": 1
+        }
+      ]
+    },
+    "technical": {
+      "cv_count": 2,
+      "mean_selection_precision": 0.8333333333333333,
+      "mean_bounded_recall": 0.5833333333333333,
+      "mean_taxonomy_coverage": 0.55,
+      "top_taxonomy_gaps": [
+        {
+          "proposed_name": "Data Analysis",
+          "fixture_count": 2
+        },
+        {
+          "proposed_name": "Software Engineering",
+          "fixture_count": 2
+        }
+      ]
+    }
+  },
+  "provider_calls": {
+    "stage1": 7,
+    "stage2": 7,
+    "total": 14,
+    "reused_stage1": 0
+  }
+}

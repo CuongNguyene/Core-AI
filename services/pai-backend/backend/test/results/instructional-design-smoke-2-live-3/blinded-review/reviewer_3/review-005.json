@@ -1,0 +1,131 @@
+{
+  "review_id": "review-005",
+  "reviewer_id": "opus-reviewer-01",
+  "reviewed_at": "2026-08-13T02:48:32+00:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "clean",
+    "issues": [
+      {
+        "category": "other",
+        "entity": "objectives[obj-tc-04] vs brief.desired_performances",
+        "description": "The brief's single desired performance is to structure an explanation and adapt terminology. obj-tc-04 adds evaluating a draft and identifying improvements - a fourth objective and a full module (mod-tc-03, 15 minutes) beyond the supplied capability. The provenance note calls it 'an instructional-design convention', which is an honest disclosure but not a brief-derived warrant.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "assessment_scope_creep",
+        "entity": "assessments[assess-summative-01].required_evidence[ev-s01-03]",
+        "description": "Self-evaluation evidence is traceable to obj-tc-04 and so is internally consistent; flagged only because obj-tc-04 itself extends beyond the brief.",
+        "severity": "info",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "assessments[assess-summative-01].required_evidence",
+        "description": "Three evidence items for four objectives. ev-s01-01 covers obj-tc-02, ev-s01-02 covers obj-tc-03, ev-s01-03 covers obj-tc-04; obj-tc-01 (audience characterisation) is listed in objective_ids but has no matching evidence statement or rubric dimension in the summative.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "lessons[lesson-tc-04].prerequisite_refs",
+        "description": "Empty, while lesson-tc-01 through lesson-tc-03 all declare prerequisite refs and the lesson's own activity depends on a draft produced in lesson-tc-02/03.",
+        "severity": "info",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "sum(lessons[].estimated_minutes) vs constraints.estimated_total_minutes",
+        "description": "Four lessons at 15 minutes each consume the entire 60-minute budget; the summative task carries 'time-limited as determined by researcher' and is not budgeted.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "prerequisite_provenance",
+        "entity": "prerequisites[*].status",
+        "description": "Both prerequisites are status=candidate / basis=model_proposed with rationales that explicitly flag them as pending confirmation. No provenance defect.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "Every ID resolves. All four objectives appear in a module, a lesson and the summative; both module.lesson_ids and lesson.module_id edges close; both formative references resolve to defined assessments; rubric dimension IDs are present. Together with review-003 this is one of only two packets with a fully closed reference graph. No validator output was included in the packet, so `validator_appears_correct` is null on every issue; the findings below are the reviewer's own reference walk over the artifact, not a confirmation or contradiction of a quality gate."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes_with_reservations",
+      "notes": "Answered independently of the scope observations above. The progression is sound and conventionally correct - audience analysis, then structure and terminology as separately practised sub-skills, then evaluation - and the sequencing_rationale gives a defensible reason for splitting structure from terminology so each gets focused practice. Formative checks are attached at the two points where they matter. The reservation that would stop me approving it: the summative asks the learner to produce a complete written explanation, but no lesson ever has them do that. lesson-tc-02 produces a structural outline only; lesson-tc-03 adapts a supplied term list; lesson-tc-04 evaluates a draft. The first time a learner writes a whole explanation is under assessment conditions. Compounding this, the packet's own notes describe the summative and both formatives as 'structural placeholders' with no production prompt or scoring norms, so what is being reviewed is a shell around a task that has not been written yet."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Criteria are quantified where it helps - 'names at least two distinguishing audience characteristics', 'identifies at least two distinct weaknesses', 'each identified weakness is linked to a specific criterion' - which gives a rater countable tests. obj-tc-02's 'logical dependencies between ideas are sequenced correctly' is the weak one: correctness of sequence is asserted without a standard, and unlike review-006 this packet does not flag that 'logical sequence' is undefined in the brief."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 3,
+        "rationale": "The summative claims all four objectives but carries three evidence items and three rubric dimensions, and obj-tc-01 has no representation in either - audience characterisation is measured only by assess-formative-01. obj-tc-02 has no formative at all. So of four objectives, one is summatively unmeasured and one is formatively unmeasured. Where mapping does exist (ev-s01-01 to obj-tc-02, ev-s01-02 to obj-tc-03) it is accurate."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 3,
+        "rationale": "A written explanation plus a self-evaluation is appropriate evidence for the capability, and the three-level rubrics discriminate reasonably ('all terms addressed and audience-appropriate' vs 'most terms addressed' vs 'few or no terms'). But the packet states the tasks are placeholders with no prompt, no rubric values and no scoring norms, and the rubric descriptors are terse two- to six-word fragments. A defensible mastery judgement could not be made from what is supplied without substantial further authoring."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "understand -> apply -> apply -> evaluate is a clean Bloom progression and the lesson patterns track it: explanation for the conceptual objective, worked_example and guided_practice for the two procedural ones, reflection for the evaluative one. Assessment cognitive_process matches each objective. obj-tc-01 tagged 'understand' while its criteria ask for categorisation and justification sits slightly low, and obj-tc-04's metacognitive tag is appropriate."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Two prerequisites, the leanest set in the review, both plainly relevant, both correctly marked candidate with rationales that state they are pending confirmation, and one dependency edge (information-organisation requires basic-communication). This is the right instinct - the course supplies the technical content, so the only real gates are communication ones. Not 5 because 'basic written and verbal communication at a general professional level' is too coarse to screen against, and the set may be incomplete given the summative also requires reading and comprehending a complex technical issue description."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "The order is right and the rationale for it is stated per transition, including the deliberate decision to split structure from terminology for focused practice. What the sequence lacks is a convergence point: the two sub-skills separated in mod-tc-02 are never recombined in instruction before the summative asks for them together."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "Preparation is good for the parts and absent for the whole. lesson-tc-03's guided process - identify term, select strategy, produce adaptation, justify against audience profile - is an excellent rehearsal of what rd-s01-02 scores. But rd-s01-01 scores a complete three-part written explanation and the closest rehearsal is an outline, and rd-s01-03 scores self-evaluation of the learner's own work while lesson-tc-04 permits evaluating a provided draft instead."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Moderate. One 15-minute lesson per objective, no lesson in which the target performance is produced in full, and no practice on drafting prose - only outlining and term substitution. The instructional content itself is also thin: lesson-tc-01 is a 15-minute 'conceptual overview' with no worked model of audience analysis."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 3,
+        "rationale": "obj-tc-04 and the whole of mod-tc-03 - a quarter of the session - deliver an evaluate/metacognitive capability the brief did not ask for, and obj-tc-01 adds an audience-classification objective that the brief treats as a given condition ('a non-specialist audience') rather than something to be determined. Both are defensible as enabling skills, but together they take 30 of 60 minutes away from the two performances actually requested."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Author the three placeholder tasks properly, add an integrated drafting activity before the summative, give obj-tc-01 summative evidence or drop it from the summative's objective list, and decide whether obj-tc-04 stays within a 60-minute brief. The skeleton holds; the content inside it must be written."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-basic-communication",
+        "prereq-information-organisation"
+      ],
+      "rejected_refs": [],
+      "notes": "Both are acceptable as written. Each is correctly presented as a candidate with basis=model_proposed, each rationale explicitly states it is pending confirmation, neither duplicates content the course delivers, and the dependency edge between them is sensible. Accepting the set as written does not mean it is complete: the summative requires reading and comprehending a complex technical issue description, which no prerequisite covers, and 'general professional level' communication is too coarse to screen against in practice. Those are additions and refinements for a later pass, not defects in the two items proposed."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 1,
+      "assessments_changed": 3,
+      "prerequisites_changed": 0,
+      "modules_changed": 1,
+      "lessons_changed": 2,
+      "notes": "Estimated: obj-tc-04 kept, trimmed or moved out of scope; all three assessment tasks written out from placeholder to production prompt, with a rubric dimension added for obj-tc-01; mod-tc-02 extended to hold an integrated drafting activity; lesson-tc-02 extended from outline to full draft and lesson-tc-04 constrained to the learner's own draft. Prerequisites unchanged."
+    },
+    "overall_notes": "Technically the cleanest packet alongside review-003, and the prerequisite set is the most disciplined in the review. The pedagogical gap is a familiar one: sub-skills are taught separately and well, then assessed together without ever being combined in instruction. The self-described placeholder status of all three tasks also means a reviewer is judging a structure rather than a deliverable."
+  }
+}

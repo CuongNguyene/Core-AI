@@ -1,0 +1,15 @@
+[
+  {"name": "plain_sme_assessed", "role": "sme", "operation": "mark_assessed", "allowed": true},
+  {"name": "plain_sme_verify_denied", "role": "sme", "operation": "verify", "allowed": false, "reason_code": "verification_delegation_required"},
+  {"name": "admin_verify_denied", "role": "admin", "operation": "verify", "allowed": false, "reason_code": "sme_role_required"},
+  {"name": "reviewer_verify_denied", "role": "reviewer", "operation": "verify", "allowed": false, "reason_code": "sme_role_required"},
+  {"name": "learner_verify_denied", "role": "learner", "operation": "verify", "allowed": false, "reason_code": "sme_role_required"},
+  {"name": "self_verification_denied", "role": "sme", "operation": "verify", "allowed": false, "reason_code": "self_verification_forbidden"},
+  {"name": "organization_mismatch_denied", "role": "sme", "operation": "verify", "allowed": false, "reason_code": "organization_mismatch"},
+  {"name": "scope_mismatch_denied", "role": "sme", "operation": "verify", "allowed": false, "reason_code": "verification_scope_mismatch"},
+  {"name": "expired_delegation_denied", "role": "sme", "operation": "verify", "allowed": false, "reason_code": "verification_delegation_required"},
+  {"name": "revoked_delegation_denied", "role": "sme", "operation": "verify", "allowed": false, "reason_code": "verification_delegation_required"},
+  {"name": "high_risk_four_eyes", "role": "sme", "operation": "verify", "allowed": false, "reason_code": "four_eyes_required"},
+  {"name": "stale_version_denied", "role": "sme", "operation": "transition", "allowed": false, "reason_code": "version_conflict"},
+  {"name": "invalid_transition_denied", "role": "sme", "operation": "transition", "allowed": false, "reason_code": "invalid_competency_transition"}
+]

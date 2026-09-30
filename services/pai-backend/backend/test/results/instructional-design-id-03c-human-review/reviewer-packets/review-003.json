@@ -1,0 +1,538 @@
+{
+  "review_id": "review-003",
+  "fixture_id": "legal_contract_review_basic",
+  "brief": {
+    "id": "brief-legal_contract_review_basic",
+    "capability": {
+      "id": null,
+      "name": "basic commercial contract review",
+      "target_context": "cross-domain research fixture"
+    },
+    "learner_state": {
+      "known": [],
+      "unknown": [],
+      "evidence_refs": [
+        "cross-domain-fixture:legal_contract_review_basic:learner-state"
+      ]
+    },
+    "desired_performances": [
+      "Given a commercial contract clause, identify potential risks and explain the reasoning without issuing a final legal judgment."
+    ],
+    "constraints": {
+      "estimated_total_minutes": 60,
+      "language": "en",
+      "audience_notes": []
+    },
+    "provenance": {
+      "type": "research_fixture",
+      "authored_by": "instructional-design-research",
+      "created_at": null
+    }
+  },
+  "objectives": [
+    {
+      "id": "obj-lcr-01",
+      "brief_id": "brief-legal_contract_review_basic",
+      "performance": "Distinguish categories of contractual risk (e.g., liability allocation, indemnification scope, termination triggers) present in a commercial clause.",
+      "cognitive_process": "understand",
+      "knowledge_dimension": "conceptual",
+      "conditions": [
+        "Provided with a brief taxonomy of common commercial contract risk categories",
+        "No access to legal counsel during the task"
+      ],
+      "success_criteria": [
+        "Correctly maps at least three distinct risk categories to example clause language",
+        "Does not conflate risk identification with issuing a legal judgment"
+      ],
+      "prerequisite_refs": [],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Assumed prerequisite for the target apply-level performance; candidate only pending researcher review",
+          "Risk category taxonomy is not specified in the brief and must be supplied by the researcher"
+        ]
+      }
+    },
+    {
+      "id": "obj-lcr-02",
+      "brief_id": "brief-legal_contract_review_basic",
+      "performance": "Given a commercial contract clause, identify potential risks and explain the reasoning without issuing a final legal judgment.",
+      "cognitive_process": "apply",
+      "knowledge_dimension": "procedural",
+      "conditions": [
+        "Provided with one or more commercial contract clauses of moderate complexity",
+        "No access to legal counsel during the task",
+        "Task scoped to fit within the 60-minute total learning estimate"
+      ],
+      "success_criteria": [
+        "Names at least one specific risk per clause with a corresponding textual basis from the clause",
+        "Provides a reasoning statement that links clause language to the identified risk",
+        "Explicitly refrains from issuing a definitive legal conclusion or advice"
+      ],
+      "prerequisite_refs": [
+        "obj-lcr-01"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Performance statement is reproduced verbatim from brief desired_performances[0]",
+          "Complexity level of sample clauses is unspecified and must be defined by the researcher"
+        ]
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "id": "asmt-lcr-01-formative",
+      "objective_ids": [
+        "obj-lcr-01"
+      ],
+      "capability_claim": "Distinguish categories of contractual risk present in a commercial clause",
+      "required_evidence": [
+        {
+          "id": "ec-lcr-01-a",
+          "criterion": "Learner correctly maps at least three distinct risk categories to example clause language.",
+          "rationale": "Directly addresses the first success criterion of obj-lcr-01."
+        },
+        {
+          "id": "ec-lcr-01-b",
+          "criterion": "Learner does not conflate risk identification with issuing a legal judgment.",
+          "rationale": "Directly addresses the boundary condition stated in the second success criterion of obj-lcr-01."
+        }
+      ],
+      "task": {
+        "task_type": "categorization",
+        "description": "Given a set of short commercial contract clause excerpts and a provided risk category taxonomy, assign each excerpt to one or more risk categories and briefly explain the basis for each assignment.",
+        "conditions": [
+          "Provided with a brief taxonomy of common commercial contract risk categories",
+          "No access to legal counsel during the task"
+        ]
+      },
+      "cognitive_process": "understand",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-lcr-01-mapping",
+            "criterion": "Accuracy of risk category mapping",
+            "performance_levels": [
+              "Does not map clause language to any recognized risk category",
+              "Maps clause language to one or two risk categories with partial accuracy",
+              "Correctly maps at least three distinct risk categories to clause language"
+            ]
+          },
+          {
+            "id": "rd-lcr-01-boundary",
+            "criterion": "Maintenance of the risk-identification / legal-judgment boundary",
+            "performance_levels": [
+              "Conflates risk identification with a legal conclusion or advice statement",
+              "Partially maintains boundary; one or more statements blur into legal conclusion",
+              "Consistently identifies risk without issuing any legal judgment"
+            ]
+          }
+        ],
+        "mastery_rule": "Model-proposed candidate: all required evidence criteria met; researcher must confirm threshold and number of clause excerpts."
+      },
+      "role": "formative",
+      "required_capabilities": [
+        {
+          "name": "contractual risk category recognition",
+          "objective_ids": [
+            "obj-lcr-01"
+          ],
+          "rationale": "Learner must recognize which risk categories apply to given clause language to demonstrate the understand-level performance."
+        },
+        {
+          "name": "distinguishing risk identification from legal conclusions",
+          "objective_ids": [
+            "obj-lcr-01"
+          ],
+          "rationale": "Learner must stay within the categorization boundary without rendering a legal judgment, as required by the objective success criteria."
+        }
+      ],
+      "is_summative": false,
+      "required_capability_refs": [
+        "contractual risk category recognition",
+        "distinguishing risk identification from legal conclusions"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Formative role assumed to support check-for-understanding before the apply-level summative; candidate only pending researcher review.",
+          "Clause excerpts and taxonomy content are not specified here; content and scope must be supplied by the researcher."
+        ]
+      }
+    },
+    {
+      "id": "asmt-lcr-02-summative",
+      "objective_ids": [
+        "obj-lcr-02"
+      ],
+      "capability_claim": "Identify potential risks in a commercial contract clause and explain the reasoning without issuing a final legal judgment",
+      "required_evidence": [
+        {
+          "id": "ec-lcr-02-a",
+          "criterion": "Names at least one specific risk per clause with a corresponding textual basis from the clause.",
+          "rationale": "Reproduces the first success criterion of obj-lcr-02."
+        },
+        {
+          "id": "ec-lcr-02-b",
+          "criterion": "Provides a reasoning statement that links clause language to the identified risk.",
+          "rationale": "Reproduces the second success criterion of obj-lcr-02."
+        },
+        {
+          "id": "ec-lcr-02-c",
+          "criterion": "Explicitly refrains from issuing a definitive legal conclusion or advice.",
+          "rationale": "Reproduces the third success criterion of obj-lcr-02."
+        }
+      ],
+      "task": {
+        "task_type": "analysis and explanation",
+        "description": "Given one or more commercial contract clauses of moderate complexity, identify each potential risk present, cite the specific clause language that supports the identification, and provide a reasoning statement linking the language to the risk. Explicitly refrain from issuing a definitive legal conclusion or advice.",
+        "conditions": [
+          "Provided with one or more commercial contract clauses of moderate complexity",
+          "No access to legal counsel during the task",
+          "Task scoped to fit within the 60-minute total learning estimate"
+        ]
+      },
+      "cognitive_process": "apply",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-lcr-02-identification",
+            "criterion": "Specificity and textual grounding of risk identification",
+            "performance_levels": [
+              "No risk identified or identification lacks any textual basis",
+              "At least one risk identified with partial textual basis",
+              "At least one specific risk per clause identified with clear textual citation"
+            ]
+          },
+          {
+            "id": "rd-lcr-02-reasoning",
+            "criterion": "Quality of reasoning linking clause language to identified risk",
+            "performance_levels": [
+              "No reasoning statement provided or reasoning is unrelated to clause language",
+              "Reasoning present but connection to clause language is implicit or incomplete",
+              "Explicit reasoning statement clearly links specific clause language to the identified risk"
+            ]
+          },
+          {
+            "id": "rd-lcr-02-boundary",
+            "criterion": "Maintenance of the risk-analysis / legal-advice boundary",
+            "performance_levels": [
+              "Response renders a definitive legal conclusion or advice statement",
+              "Response approaches but does not clearly cross the legal-judgment boundary",
+              "Response consistently identifies and reasons about risk without issuing legal advice"
+            ]
+          }
+        ],
+        "mastery_rule": "Model-proposed candidate: all three required evidence criteria met across all provided clauses; researcher must confirm threshold and clause count."
+      },
+      "role": "summative",
+      "required_capabilities": [
+        {
+          "name": "contractual risk identification",
+          "objective_ids": [
+            "obj-lcr-02"
+          ],
+          "rationale": "Core capability demonstrated by the apply-level performance: locating and naming risks in clause language."
+        },
+        {
+          "name": "clause-language-to-risk reasoning",
+          "objective_ids": [
+            "obj-lcr-02"
+          ],
+          "rationale": "Learner must articulate how specific clause wording produces or signals the identified risk."
+        },
+        {
+          "name": "distinguishing risk identification from legal judgment",
+          "objective_ids": [
+            "obj-lcr-02"
+          ],
+          "rationale": "Performance boundary stated in the objective: analysis must stop short of rendering legal advice."
+        }
+      ],
+      "is_summative": true,
+      "required_capability_refs": [
+        "contractual risk identification",
+        "clause-language-to-risk reasoning",
+        "distinguishing risk identification from legal judgment"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Performance statement reproduced verbatim from brief desired_performances[0] and obj-lcr-02.",
+          "Clause complexity is defined as moderate per objective conditions; specific clause selection and difficulty calibration must be supplied by the researcher.",
+          "Summative role assumed because obj-lcr-02 is the terminal apply-level objective in the supplied set."
+        ]
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-contract-literacy-01",
+      "capability": "familiarity with basic commercial contract structure and terminology",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "Without baseline contract literacy a learner cannot segment or interpret clause language well enough to assign risk categories (obj-lcr-01) or identify and reason about risks in clause text (obj-lcr-02). Both tasks presuppose that the learner can locate, read, and parse discrete clauses; a deficit here blocks task engagement independently of whether the target capability is present, making assessment evidence uninterpretable.",
+      "required_for_refs": [
+        "obj-lcr-01",
+        "obj-lcr-02"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    },
+    {
+      "id": "prereq-legal-register-reading-01",
+      "capability": "reading comprehension of legal-register prose",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "Commercial contract clauses are written in a formal legal register whose syntax and diction differ substantially from general prose. Inability to decode this register would confound performance on the categorization task (obj-lcr-01, asmt-lcr-01-formative) and the risk-identification task (obj-lcr-02, asmt-lcr-02-summative) independently of the target capability, producing assessment evidence that cannot be attributed to contractual-risk knowledge rather than reading difficulty.",
+      "required_for_refs": [
+        "obj-lcr-01",
+        "obj-lcr-02",
+        "asmt-lcr-01-formative",
+        "asmt-lcr-02-summative"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    }
+  ],
+  "course_outline": {
+    "id": "outline-lcr-basic-01",
+    "brief_id": "brief-legal_contract_review_basic",
+    "objective_ids": [
+      "obj-lcr-01",
+      "obj-lcr-02"
+    ],
+    "modules": [
+      {
+        "id": "mod-lcr-01",
+        "title": "Recognizing Contractual Risk Categories",
+        "objective_ids": [
+          "obj-lcr-01"
+        ],
+        "prerequisite_refs": [
+          "prereq-contract-literacy-01",
+          "prereq-legal-register-reading-01"
+        ],
+        "lesson_ids": [
+          "lesson-lcr-01-01",
+          "lesson-lcr-01-02"
+        ],
+        "estimated_minutes": 25
+      },
+      {
+        "id": "mod-lcr-02",
+        "title": "Identifying and Reasoning About Risks in Contract Clauses",
+        "objective_ids": [
+          "obj-lcr-02"
+        ],
+        "prerequisite_refs": [
+          "prereq-contract-literacy-01",
+          "prereq-legal-register-reading-01"
+        ],
+        "lesson_ids": [
+          "lesson-lcr-02-01",
+          "lesson-lcr-02-02"
+        ],
+        "estimated_minutes": 35
+      }
+    ],
+    "prerequisite_refs": [
+      "prereq-contract-literacy-01",
+      "prereq-legal-register-reading-01"
+    ],
+    "estimated_minutes": 60,
+    "planning_warnings": [],
+    "sequencing_rationale": [
+      "Module 1 addresses the understand-level conceptual objective (obj-lcr-01) before Module 2 because the supplied objectives record obj-lcr-01 as a prerequisite of obj-lcr-02.",
+      "The 60-minute budget is allocated approximately 25 minutes to the understand-level module and 35 minutes to the apply-level module; this split is a model-proposed candidate and must be confirmed by the researcher.",
+      "Both entry prerequisites (prereq-contract-literacy-01, prereq-legal-register-reading-01) are treated as course-level entry gates, not instructional targets within this outline, consistent with their classification as required_prerequisites in the supplied artifacts."
+    ],
+    "provenance": {
+      "source": "model_proposed",
+      "provisional": true,
+      "assumption_notes": [
+        "Module time allocations (25 min / 35 min) are model-proposed candidates; the researcher must confirm or adjust.",
+        "Module IDs (mod-lcr-01, mod-lcr-02) are model-proposed and are not drawn from a researcher-authored ID registry.",
+        "lesson_ids are left empty; lesson generation and ID assignment are delegated to the orchestration layer per schema instruction.",
+        "The two entry prerequisites are assumed to be verified before course start and are not taught within this outline."
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "id": "lesson-lcr-01-01",
+      "module_id": "mod-lcr-01",
+      "objective_ids": [
+        "obj-lcr-01"
+      ],
+      "prerequisite_refs": [
+        "prereq-contract-literacy-01",
+        "prereq-legal-register-reading-01"
+      ],
+      "lesson_goal": "Introduce the taxonomy of common commercial contract risk categories so the learner can name and distinguish each category and identify the boundary between risk identification and legal judgment.",
+      "instructional_pattern": "explanation",
+      "expected_learner_activity": "Read or view a structured presentation of the risk category taxonomy; identify the distinguishing features of each category; note how the taxonomy boundary separates risk identification from legal conclusion.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 12,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Taxonomy content, category names, and presentation format are not specified in the supplied artifacts; researcher must supply.",
+          "Estimated 12 minutes is a candidate allocation within the 25-minute mod-lcr-01 budget; researcher must confirm."
+        ]
+      }
+    },
+    {
+      "id": "lesson-lcr-01-02",
+      "module_id": "mod-lcr-01",
+      "objective_ids": [
+        "obj-lcr-01"
+      ],
+      "prerequisite_refs": [
+        "prereq-contract-literacy-01",
+        "prereq-legal-register-reading-01"
+      ],
+      "lesson_goal": "Check learner ability to map clause language to risk categories using the provided taxonomy before progressing to the apply-level module.",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Assign each of a set of short commercial clause excerpts to one or more risk categories from the provided taxonomy; briefly state the basis for each assignment; refrain from issuing legal judgments; review feedback before proceeding.",
+      "formative_assessment_ids": [
+        "asmt-lcr-01-formative"
+      ],
+      "estimated_minutes": 13,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "This lesson operationalizes asmt-lcr-01-formative; clause excerpts, correct mappings, and feedback mechanism must be supplied by the researcher.",
+          "Estimated 13 minutes is a candidate allocation; together with lesson-lcr-01-01 it totals the 25-minute mod-lcr-01 budget; researcher must confirm."
+        ]
+      }
+    },
+    {
+      "id": "lesson-lcr-02-01",
+      "module_id": "mod-lcr-02",
+      "objective_ids": [
+        "obj-lcr-02"
+      ],
+      "prerequisite_refs": [
+        "prereq-contract-literacy-01",
+        "prereq-legal-register-reading-01"
+      ],
+      "lesson_goal": "Model the risk-identification and reasoning procedure on a sample clause so the learner can observe how to link specific clause language to a risk and stop short of issuing legal advice before attempting independent work.",
+      "instructional_pattern": "worked_example",
+      "expected_learner_activity": "Follow a step-by-step annotated walkthrough of risk identification applied to a sample clause; compare the demonstrated reasoning statements to an initial unguided reading; note where the example explicitly declines to issue a legal conclusion.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 15,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "The worked-example clause and its annotated solution must be supplied by the researcher; no clause content or solution is generated here.",
+          "Sequenced before guided practice to satisfy the apply-level instruction-before-practice requirement for obj-lcr-02.",
+          "Estimated 15 minutes is a candidate allocation within the 35-minute mod-lcr-02 budget; researcher must confirm."
+        ]
+      }
+    },
+    {
+      "id": "lesson-lcr-02-02",
+      "module_id": "mod-lcr-02",
+      "objective_ids": [
+        "obj-lcr-02"
+      ],
+      "prerequisite_refs": [
+        "prereq-contract-literacy-01",
+        "prereq-legal-register-reading-01"
+      ],
+      "lesson_goal": "Provide supervised practice identifying and reasoning about risks in moderately complex commercial contract clauses so the learner is prepared for the summative assessment.",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Identify potential risks in one or more provided commercial contract clauses; cite the specific clause language supporting each identification; provide a reasoning statement linking clause language to the identified risk; explicitly refrain from issuing a definitive legal conclusion; review any scaffolded prompts or hints before the summative task.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 20,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Practice clauses, scaffolded prompts, and feedback must be supplied by the researcher; no clause content is generated here.",
+          "Estimated 20 minutes is a candidate allocation; combined with lesson-lcr-02-01 it totals the 35-minute mod-lcr-02 budget; researcher must confirm.",
+          "Positioned immediately before asmt-lcr-02-summative to supply required apply-level practice prior to summative evidence collection; asmt-lcr-02-summative has role 'summative' and is therefore excluded from formative_assessment_ids per schema rules."
+        ]
+      }
+    }
+  ],
+  "machine_observations": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-lcr-01-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-lcr-01-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-lcr-02-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-lcr-02-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-lcr-02-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    }
+  ],
+  "review_instructions": {
+    "overview": "Review the complete instructional-design proposal once before scoring. Evaluate machine validity separately from pedagogical quality.",
+    "scoring_scale": "Use 1-5 for every dimension: 1 poor, 3 mixed/acceptable, 5 strong.",
+    "rubric_dimensions": [
+      "objective_measurability",
+      "objective_assessment_alignment",
+      "evidence_validity",
+      "cognitive_alignment",
+      "prerequisite_quality",
+      "course_sequence_coherence",
+      "instruction_assessment_alignment",
+      "scope_balance",
+      "workload_time_realism",
+      "domain_appropriateness"
+    ],
+    "mandatory_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable? Answer YES, PARTIALLY, or NO with a short rationale.",
+    "blinding_rules": [
+      "Do not infer how the proposal was generated.",
+      "Do not assume a machine observation means the design is pedagogically poor.",
+      "Do not repair the design while scoring; record edit effort separately."
+    ],
+    "machine_observation_rule": "Machine observations are evidence to inspect, not pedagogical verdicts. Record any reviewer disagreement separately."
+  }
+}

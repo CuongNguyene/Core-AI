@@ -1,0 +1,32 @@
+{
+  "fixture_id": "hr_recruitment_planning_basic",
+  "domain": "hr_management",
+  "status": "fail",
+  "findings": [
+    {
+      "code": "stage_execution_failed",
+      "category": "ORCHESTRATION",
+      "severity": "error",
+      "message": "OrchestrationReferenceResolution: v0.3 assessment capability requirement contains an unknown objective reference",
+      "entity_id": "hr_recruitment_planning_basic"
+    }
+  ],
+  "quality_gate_findings": [],
+  "failure_categories": [
+    "ORCHESTRATION"
+  ],
+  "metadata": {
+    "fixture_id": "hr_recruitment_planning_basic",
+    "domain": "hr_management",
+    "industry_family": "human_resources",
+    "learning_type": "scenario_based_professional_skill",
+    "difficulty": "medium",
+    "description": "An HR employee creates a recruitment plan for a department."
+  },
+  "stage_completion": {
+    "status": "failed",
+    "model_audit_count": 5,
+    "snapshot_present": false
+  },
+  "dependency_normalization": null
+}

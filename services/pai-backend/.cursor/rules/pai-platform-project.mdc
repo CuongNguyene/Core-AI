@@ -1,0 +1,8 @@
+---
+description: Cấu trúc dự án và quy ước codebase.
+globs: *
+---
+
+- Bắt buộc cập nhật tài liệu (`*_document.md`) khi thay đổi module.
+- Không tự động rebuild docker trừ khi có yêu cầu.
+- Các conventions: xem `INIT_PROMPT.md` gốc.

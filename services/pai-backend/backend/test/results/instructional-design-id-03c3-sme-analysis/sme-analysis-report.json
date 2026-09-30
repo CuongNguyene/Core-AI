@@ -1,0 +1,2859 @@
+{
+  "coverage_context": {
+    "available": false,
+    "note": "ID-03B.6 coverage counts are not embedded in canonical submissions; no causal comparison was inferred."
+  },
+  "cross_domain_conclusion": "CROSS_DOMAIN_PARTIALLY_SUPPORTED",
+  "dataset": {
+    "fixtures": 5,
+    "reviewers": 2,
+    "reviews": 10
+  },
+  "domain_findings": [
+    {
+      "edit_effort": {
+        "moderate": 2
+      },
+      "fixture": "accounting_financial_reporting_basic",
+      "issues": [],
+      "prerequisites_acceptable": {
+        "false": 1,
+        "true": 1
+      },
+      "scores": {
+        "cognitive_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "course_sequence_coherence": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "domain_appropriateness": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "evidence_validity": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "instruction_assessment_alignment": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "objective_assessment_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "objective_measurability": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "prerequisite_quality": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            3,
+            4
+          ]
+        },
+        "scope_balance": {
+          "mean": 2.5,
+          "reviewer_scores": [
+            2,
+            3
+          ]
+        },
+        "workload_time_realism": {
+          "mean": 1,
+          "reviewer_scores": [
+            1,
+            1
+          ]
+        }
+      },
+      "special_question": {
+        "PARTIALLY": 1,
+        "YES": 1
+      },
+      "strengths": []
+    },
+    {
+      "edit_effort": {
+        "major": 1,
+        "minor": 1
+      },
+      "fixture": "construction_drawing_and_method_basic",
+      "issues": [],
+      "prerequisites_acceptable": {
+        "false": 1,
+        "true": 1
+      },
+      "scores": {
+        "cognitive_alignment": {
+          "mean": 4,
+          "reviewer_scores": [
+            3,
+            5
+          ]
+        },
+        "course_sequence_coherence": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "domain_appropriateness": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "evidence_validity": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "instruction_assessment_alignment": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            3,
+            4
+          ]
+        },
+        "objective_assessment_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "objective_measurability": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "prerequisite_quality": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            2,
+            5
+          ]
+        },
+        "scope_balance": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "workload_time_realism": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            4,
+            3
+          ]
+        }
+      },
+      "special_question": {
+        "YES": 2
+      },
+      "strengths": []
+    },
+    {
+      "edit_effort": {
+        "major": 1,
+        "moderate": 1
+      },
+      "fixture": "hr_recruitment_planning_basic",
+      "issues": [],
+      "prerequisites_acceptable": {
+        "false": 1,
+        "true": 1
+      },
+      "scores": {
+        "cognitive_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "course_sequence_coherence": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "domain_appropriateness": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "evidence_validity": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "instruction_assessment_alignment": {
+          "mean": 3,
+          "reviewer_scores": [
+            3,
+            3
+          ]
+        },
+        "objective_assessment_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "objective_measurability": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "prerequisite_quality": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            3,
+            4
+          ]
+        },
+        "scope_balance": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            3,
+            4
+          ]
+        },
+        "workload_time_realism": {
+          "mean": 2,
+          "reviewer_scores": [
+            2,
+            2
+          ]
+        }
+      },
+      "special_question": {
+        "PARTIALLY": 1,
+        "YES": 1
+      },
+      "strengths": []
+    },
+    {
+      "edit_effort": {
+        "moderate": 1,
+        "none": 1
+      },
+      "fixture": "legal_contract_review_basic",
+      "issues": [],
+      "prerequisites_acceptable": {
+        "false": 1,
+        "true": 1
+      },
+      "scores": {
+        "cognitive_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "course_sequence_coherence": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "domain_appropriateness": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "evidence_validity": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "instruction_assessment_alignment": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "objective_assessment_alignment": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "objective_measurability": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "prerequisite_quality": {
+          "mean": 4,
+          "reviewer_scores": [
+            3,
+            5
+          ]
+        },
+        "scope_balance": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "workload_time_realism": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        }
+      },
+      "special_question": {
+        "YES": 2
+      },
+      "strengths": []
+    },
+    {
+      "edit_effort": {
+        "minor": 1,
+        "moderate": 1
+      },
+      "fixture": "python_data_processing",
+      "issues": [],
+      "prerequisites_acceptable": {
+        "false": 1,
+        "true": 1
+      },
+      "scores": {
+        "cognitive_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "course_sequence_coherence": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "domain_appropriateness": {
+          "mean": 5,
+          "reviewer_scores": [
+            5,
+            5
+          ]
+        },
+        "evidence_validity": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "instruction_assessment_alignment": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            3,
+            4
+          ]
+        },
+        "objective_assessment_alignment": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "objective_measurability": {
+          "mean": 4,
+          "reviewer_scores": [
+            4,
+            4
+          ]
+        },
+        "prerequisite_quality": {
+          "mean": 3.5,
+          "reviewer_scores": [
+            3,
+            4
+          ]
+        },
+        "scope_balance": {
+          "mean": 4.5,
+          "reviewer_scores": [
+            4,
+            5
+          ]
+        },
+        "workload_time_realism": {
+          "mean": 3,
+          "reviewer_scores": [
+            3,
+            3
+          ]
+        }
+      },
+      "special_question": {
+        "YES": 2
+      },
+      "strengths": []
+    }
+  ],
+  "edit_effort": {
+    "overall": {
+      "major": 2,
+      "minor": 2,
+      "moderate": 5,
+      "none": 1
+    },
+    "per_domain": {
+      "accounting_financial_reporting_basic": {
+        "moderate": 2
+      },
+      "construction_drawing_and_method_basic": {
+        "major": 1,
+        "minor": 1
+      },
+      "hr_recruitment_planning_basic": {
+        "major": 1,
+        "moderate": 1
+      },
+      "legal_contract_review_basic": {
+        "moderate": 1,
+        "none": 1
+      },
+      "python_data_processing": {
+        "minor": 1,
+        "moderate": 1
+      }
+    },
+    "per_reviewer": {
+      "codex-sme-reviewer": {
+        "major": 2,
+        "moderate": 3
+      },
+      "gemini-sme-01": {
+        "minor": 2,
+        "moderate": 2,
+        "none": 1
+      }
+    }
+  },
+  "experiment": "ID-03C.3",
+  "limitations": [
+    "small sample",
+    "two reviewers",
+    "one generated artifact per domain",
+    "no learner outcome evidence"
+  ],
+  "machine_human_relationship": [
+    {
+      "category": "A",
+      "fixture": "accounting_financial_reporting_basic",
+      "machine_issue_present": true,
+      "machine_observation_codes": [
+        "id_reference_drift",
+        "other"
+      ],
+      "pedagogically_reasonable": true
+    },
+    {
+      "category": "A",
+      "fixture": "construction_drawing_and_method_basic",
+      "machine_issue_present": true,
+      "machine_observation_codes": [
+        "id_reference_drift",
+        "other"
+      ],
+      "pedagogically_reasonable": true
+    },
+    {
+      "category": "A",
+      "fixture": "hr_recruitment_planning_basic",
+      "machine_issue_present": true,
+      "machine_observation_codes": [
+        "id_reference_drift",
+        "other",
+        "schema_or_shape"
+      ],
+      "pedagogically_reasonable": true
+    },
+    {
+      "category": "A",
+      "fixture": "legal_contract_review_basic",
+      "machine_issue_present": true,
+      "machine_observation_codes": [
+        "id_reference_drift"
+      ],
+      "pedagogically_reasonable": true
+    },
+    {
+      "category": "A",
+      "fixture": "python_data_processing",
+      "machine_issue_present": true,
+      "machine_observation_codes": [
+        "id_reference_drift",
+        "other"
+      ],
+      "pedagogically_reasonable": true
+    }
+  ],
+  "next_step_readiness": "READY_FOR_NEXT_ID_MILESTONE",
+  "pedagogical_signal": "PEDAGOGICAL_SIGNAL_MIXED",
+  "prerequisites": {
+    "overall": {
+      "false": 5,
+      "true": 5
+    },
+    "per_fixture": {
+      "accounting_financial_reporting_basic": {
+        "false": 1,
+        "true": 1
+      },
+      "construction_drawing_and_method_basic": {
+        "false": 1,
+        "true": 1
+      },
+      "hr_recruitment_planning_basic": {
+        "false": 1,
+        "true": 1
+      },
+      "legal_contract_review_basic": {
+        "false": 1,
+        "true": 1
+      },
+      "python_data_processing": {
+        "false": 1,
+        "true": 1
+      }
+    },
+    "quality_scores": {
+      "count": 10,
+      "dimension": "prerequisite_quality",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 2,
+          "reviewer_spread": 3,
+          "std_dev": 1.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4,
+          "median": 4.0,
+          "min": 3,
+          "reviewer_spread": 2,
+          "std_dev": 1.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        }
+      },
+      "max": 5,
+      "mean": 3.6,
+      "median": 3.5,
+      "min": 2,
+      "reviewer_spread": 3,
+      "std_dev": 0.9165
+    },
+    "reviewer_disagreement": 5
+  },
+  "reviewer_agreement": {
+    "at_least_two_difference_count": 3,
+    "at_most_one_difference_count": 47,
+    "dimensions_with_highest_disagreement": [
+      "prerequisite_quality"
+    ],
+    "exact_agreement_count": 22,
+    "fixtures_with_highest_disagreement": [
+      "construction_drawing_and_method_basic"
+    ],
+    "pairs": [
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "cognitive_alignment",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "course_sequence_coherence",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "domain_appropriateness",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "evidence_validity",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "instruction_assessment_alignment",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "objective_assessment_alignment",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "objective_measurability",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "prerequisite_quality",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "scope_balance",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            2
+          ],
+          [
+            "gemini-sme-01",
+            3
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "workload_time_realism",
+        "fixture": "accounting_financial_reporting_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            1
+          ],
+          [
+            "gemini-sme-01",
+            1
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 2,
+        "classification": "meaningful_disagreement",
+        "dimension": "cognitive_alignment",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "course_sequence_coherence",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "domain_appropriateness",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "evidence_validity",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "instruction_assessment_alignment",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "objective_assessment_alignment",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "objective_measurability",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 3,
+        "classification": "major_disagreement",
+        "dimension": "prerequisite_quality",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            2
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "scope_balance",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "workload_time_realism",
+        "fixture": "construction_drawing_and_method_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            3
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "cognitive_alignment",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "course_sequence_coherence",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "domain_appropriateness",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "evidence_validity",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "instruction_assessment_alignment",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            3
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "objective_assessment_alignment",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "objective_measurability",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "prerequisite_quality",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "scope_balance",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "workload_time_realism",
+        "fixture": "hr_recruitment_planning_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            2
+          ],
+          [
+            "gemini-sme-01",
+            2
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "cognitive_alignment",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "course_sequence_coherence",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "domain_appropriateness",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "evidence_validity",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "instruction_assessment_alignment",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "objective_assessment_alignment",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "objective_measurability",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 2,
+        "classification": "meaningful_disagreement",
+        "dimension": "prerequisite_quality",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "scope_balance",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "workload_time_realism",
+        "fixture": "legal_contract_review_basic",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "cognitive_alignment",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "course_sequence_coherence",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "domain_appropriateness",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            5
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "evidence_validity",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "instruction_assessment_alignment",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "objective_assessment_alignment",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "objective_measurability",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "prerequisite_quality",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            4
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 1,
+        "classification": "minor_disagreement",
+        "dimension": "scope_balance",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            4
+          ],
+          [
+            "gemini-sme-01",
+            5
+          ]
+        ]
+      },
+      {
+        "absolute_difference": 0,
+        "classification": "exact_agreement",
+        "dimension": "workload_time_realism",
+        "fixture": "python_data_processing",
+        "reviewer_scores": [
+          [
+            "codex-sme-reviewer",
+            3
+          ],
+          [
+            "gemini-sme-01",
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  "rubric_summary": {
+    "cognitive_alignment": {
+      "count": 10,
+      "dimension": "cognitive_alignment",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4,
+          "median": 4.0,
+          "min": 3,
+          "reviewer_spread": 2,
+          "std_dev": 1.0
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        }
+      },
+      "max": 5,
+      "mean": 4.4,
+      "median": 4.5,
+      "min": 3,
+      "reviewer_spread": 2,
+      "std_dev": 0.6633
+    },
+    "course_sequence_coherence": {
+      "count": 10,
+      "dimension": "course_sequence_coherence",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        }
+      },
+      "max": 5,
+      "mean": 4.7,
+      "median": 5.0,
+      "min": 4,
+      "reviewer_spread": 1,
+      "std_dev": 0.4583
+    },
+    "domain_appropriateness": {
+      "count": 10,
+      "dimension": "domain_appropriateness",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        }
+      },
+      "max": 5,
+      "mean": 5,
+      "median": 5.0,
+      "min": 5,
+      "reviewer_spread": 0,
+      "std_dev": 0.0
+    },
+    "evidence_validity": {
+      "count": 10,
+      "dimension": "evidence_validity",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        }
+      },
+      "max": 5,
+      "mean": 4.3,
+      "median": 4.0,
+      "min": 4,
+      "reviewer_spread": 1,
+      "std_dev": 0.4583
+    },
+    "instruction_assessment_alignment": {
+      "count": 10,
+      "dimension": "instruction_assessment_alignment",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 3,
+          "mean": 3,
+          "median": 3.0,
+          "min": 3,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        }
+      },
+      "max": 4,
+      "mean": 3.6,
+      "median": 4.0,
+      "min": 3,
+      "reviewer_spread": 1,
+      "std_dev": 0.4899
+    },
+    "objective_assessment_alignment": {
+      "count": 10,
+      "dimension": "objective_assessment_alignment",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        }
+      },
+      "max": 5,
+      "mean": 4.6,
+      "median": 5.0,
+      "min": 4,
+      "reviewer_spread": 1,
+      "std_dev": 0.4899
+    },
+    "objective_measurability": {
+      "count": 10,
+      "dimension": "objective_measurability",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        }
+      },
+      "max": 5,
+      "mean": 4.2,
+      "median": 4.0,
+      "min": 4,
+      "reviewer_spread": 1,
+      "std_dev": 0.4
+    },
+    "prerequisite_quality": {
+      "count": 10,
+      "dimension": "prerequisite_quality",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 2,
+          "reviewer_spread": 3,
+          "std_dev": 1.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 4,
+          "median": 4.0,
+          "min": 3,
+          "reviewer_spread": 2,
+          "std_dev": 1.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        }
+      },
+      "max": 5,
+      "mean": 3.6,
+      "median": 3.5,
+      "min": 2,
+      "reviewer_spread": 3,
+      "std_dev": 0.9165
+    },
+    "scope_balance": {
+      "count": 10,
+      "dimension": "scope_balance",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 3,
+          "mean": 2.5,
+          "median": 2.5,
+          "min": 2,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 5,
+          "mean": 5,
+          "median": 5.0,
+          "min": 5,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 5,
+          "mean": 4.5,
+          "median": 4.5,
+          "min": 4,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        }
+      },
+      "max": 5,
+      "mean": 3.9,
+      "median": 4.0,
+      "min": 2,
+      "reviewer_spread": 3,
+      "std_dev": 0.9434
+    },
+    "workload_time_realism": {
+      "count": 10,
+      "dimension": "workload_time_realism",
+      "domain_spread": {
+        "accounting_financial_reporting_basic": {
+          "count": 2,
+          "max": 1,
+          "mean": 1,
+          "median": 1.0,
+          "min": 1,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "construction_drawing_and_method_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 3.5,
+          "median": 3.5,
+          "min": 3,
+          "reviewer_spread": 1,
+          "std_dev": 0.5
+        },
+        "hr_recruitment_planning_basic": {
+          "count": 2,
+          "max": 2,
+          "mean": 2,
+          "median": 2.0,
+          "min": 2,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "legal_contract_review_basic": {
+          "count": 2,
+          "max": 4,
+          "mean": 4,
+          "median": 4.0,
+          "min": 4,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        },
+        "python_data_processing": {
+          "count": 2,
+          "max": 3,
+          "mean": 3,
+          "median": 3.0,
+          "min": 3,
+          "reviewer_spread": 0,
+          "std_dev": 0.0
+        }
+      },
+      "max": 4,
+      "mean": 2.7,
+      "median": 3.0,
+      "min": 1,
+      "reviewer_spread": 3,
+      "std_dev": 1.1
+    }
+  },
+  "special_question": {
+    "overall": {
+      "PARTIALLY": 2,
+      "YES": 8
+    },
+    "per_domain": {
+      "accounting_financial_reporting_basic": {
+        "PARTIALLY": 1,
+        "YES": 1
+      },
+      "construction_drawing_and_method_basic": {
+        "YES": 2
+      },
+      "hr_recruitment_planning_basic": {
+        "PARTIALLY": 1,
+        "YES": 1
+      },
+      "legal_contract_review_basic": {
+        "YES": 2
+      },
+      "python_data_processing": {
+        "YES": 2
+      }
+    },
+    "per_reviewer": {
+      "codex-sme-reviewer": {
+        "YES": 5
+      },
+      "gemini-sme-01": {
+        "PARTIALLY": 2,
+        "YES": 3
+      }
+    }
+  },
+  "themes": [
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 10,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "measurable_objectives"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 10,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "objective_assessment_alignment"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 10,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "authentic_performance_assessment"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 10,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "cognitive_progression"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 10,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "coherent_sequence"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic"
+      ],
+      "occurrences": 8,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "domain_relevant_practice"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 3,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "prerequisite_inflation"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 10,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "insufficient_practice"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "hr_recruitment_planning_basic"
+      ],
+      "occurrences": 3,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "under_teaching"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 7,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "scope_imbalance"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 10,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "workload_time_pressure"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 7,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "assessment_scope_issue"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "gemini-sme-01"
+        },
+        {
+          "fixture": "hr_recruitment_planning_basic",
+          "review_id": "review-004",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "hr_recruitment_planning_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 8,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "weak_scaffolding"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        }
+      ],
+      "fixtures": [
+        "legal_contract_review_basic"
+      ],
+      "occurrences": 1,
+      "reviewers": [
+        "codex-sme-reviewer"
+      ],
+      "theme": "unclear_success_criteria"
+    },
+    {
+      "evidence_refs": [
+        {
+          "fixture": "python_data_processing",
+          "review_id": "review-001",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "accounting_financial_reporting_basic",
+          "review_id": "review-002",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "legal_contract_review_basic",
+          "review_id": "review-003",
+          "reviewer": "codex-sme-reviewer"
+        },
+        {
+          "fixture": "construction_drawing_and_method_basic",
+          "review_id": "review-005",
+          "reviewer": "gemini-sme-01"
+        }
+      ],
+      "fixtures": [
+        "accounting_financial_reporting_basic",
+        "construction_drawing_and_method_basic",
+        "legal_contract_review_basic",
+        "python_data_processing"
+      ],
+      "occurrences": 4,
+      "reviewers": [
+        "codex-sme-reviewer",
+        "gemini-sme-01"
+      ],
+      "theme": "insufficient_feedback"
+    }
+  ]
+}

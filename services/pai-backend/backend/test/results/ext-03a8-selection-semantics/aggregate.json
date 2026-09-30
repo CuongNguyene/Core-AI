@@ -1,0 +1,49 @@
+{
+  "experiment_id": "EXT-03A.8",
+  "taxonomy": {
+    "id": "professional_capability_core",
+    "version": "0.1"
+  },
+  "provider": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "thinking": "medium"
+  },
+  "provider_calls": {
+    "stage1_rerun": 7,
+    "A_reused": 0,
+    "B": 7,
+    "C": 7,
+    "total": 21,
+    "retries_resampling": 0
+  },
+  "B_strict": {
+    "selected": 18,
+    "supported": 13,
+    "unsupported": 5,
+    "mean_precision": 0.8142857142857143,
+    "mean_recall": 0.6547619047619048,
+    "mean_f1": 0.7153061224489796,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "severe_precision_flags": 2
+  },
+  "C_criteria": {
+    "selected": 16,
+    "supported": 12,
+    "unsupported": 4,
+    "mean_precision": 0.8452380952380952,
+    "mean_recall": 0.6071428571428571,
+    "mean_f1": 0.6727891156462585,
+    "grounding": 1.0,
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "severe_precision_flags": 1
+  },
+  "A_baseline_reused": {
+    "mean_precision": 0.7619047619047619,
+    "mean_recall": 0.619047619047619,
+    "mean_f1": 0.683087027914614
+  }
+}

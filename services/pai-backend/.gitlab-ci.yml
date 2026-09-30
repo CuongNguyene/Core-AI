@@ -1,0 +1,2 @@
+include:
+  - local: devops/gitlab/pipeline.yml

@@ -1,0 +1,103 @@
+{
+  "experiment": "ID-04F",
+  "fixture": "legal_contract_review_basic",
+  "model_calls": 5,
+  "snapshot": true,
+  "graph_integrity": true,
+  "provenance_preserved": true,
+  "governance_preserved": true,
+  "no_auto_confirmation": true,
+  "workload_generated": true,
+  "practice_coverage_generated": true,
+  "findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-01-structural-labeling",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-01-structural-labeling",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-02-risk-pattern-flagging",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-02-risk-pattern-flagging",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-02-risk-pattern-flagging",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_requirement_not_taught",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+      "field": "practice_coverage",
+      "message": "Summative requirement has no prior explicit instruction."
+    },
+    {
+      "code": "assessment_requirement_not_taught",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-lo-lcr-03-risk-reasoning-explanation",
+      "field": "practice_coverage",
+      "message": "Summative requirement has no prior explicit instruction."
+    },
+    {
+      "code": "prerequisite_disposition_conflict",
+      "severity": "error",
+      "entity_type": "dependency_candidate",
+      "entity_id": "lo-lcr-02",
+      "field": "disposition",
+      "message": "A source dependency has contradictory prerequisite dispositions."
+    },
+    {
+      "code": "prerequisite_disposition_conflict",
+      "severity": "error",
+      "entity_type": "dependency_candidate",
+      "entity_id": "lo-lcr-03",
+      "field": "disposition",
+      "message": "A source dependency has contradictory prerequisite dispositions."
+    }
+  ],
+  "status": "COMPLETE"
+}

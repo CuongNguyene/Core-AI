@@ -1,0 +1,33 @@
+{
+  "skills": [
+    {
+      "value": "Python",
+      "evidence_type": "unknown",
+      "confidence": 0.9,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "fixture-cv-basic",
+        "section": "skills",
+        "start_offset": 16,
+        "end_offset": 31
+      },
+      "source_excerpt": "Python, FastAPI",
+      "evidence": [
+        {
+          "evidence_type": "unknown",
+          "confidence": 0.9,
+          "source_locator": {
+            "document_id": "fixture-cv-basic",
+            "section": "skills",
+            "start_offset": 16,
+            "end_offset": 31
+          },
+          "source_excerpt": "Python, FastAPI"
+        }
+      ],
+      "unresolved_reason": null
+    }
+  ],
+  "experience": [],
+  "education": []
+}

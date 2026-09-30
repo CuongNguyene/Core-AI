@@ -1,0 +1,76 @@
+{
+  "experiment_id": "ID-04D",
+  "experiment_version": "0.1",
+  "fixture_count": 5,
+  "fixture_ids": [
+    "python_data_processing",
+    "accounting_financial_reporting_basic",
+    "legal_contract_review_basic",
+    "hr_recruitment_planning_basic",
+    "construction_drawing_and_method_basic"
+  ],
+  "conditions": [
+    "structured"
+  ],
+  "runs_per_fixture_per_condition": 1,
+  "model_provider": "vilao",
+  "model_name": "claude-sonnet-5",
+  "model_revision": null,
+  "generation_config": {
+    "temperature": 0.0,
+    "top_p": null,
+    "max_output_tokens": 8192,
+    "seed": null,
+    "unsupported_fields": [
+      "top_p",
+      "seed"
+    ]
+  },
+  "policy_id": "pai_instructional_design",
+  "policy_version": "0.1",
+  "dependency_normalizer_version": "id02d.2@0.1",
+  "prompt_schema_versions": [
+    {
+      "prompt_id": "instructional_objective_design",
+      "prompt_version": "0.3.4",
+      "schema_id": "instructional_objective_design",
+      "schema_version": "0.3.4"
+    },
+    {
+      "prompt_id": "instructional_assessment_design",
+      "prompt_version": "0.3.4",
+      "schema_id": "instructional_assessment_design",
+      "schema_version": "0.3.4"
+    },
+    {
+      "prompt_id": "instructional_prerequisite_proposal",
+      "prompt_version": "0.3.4",
+      "schema_id": "instructional_prerequisite_proposal",
+      "schema_version": "0.3.4"
+    },
+    {
+      "prompt_id": "instructional_course_planning",
+      "prompt_version": "0.3.4",
+      "schema_id": "instructional_course_planning",
+      "schema_version": "0.3.4"
+    },
+    {
+      "prompt_id": "instructional_lesson_planning",
+      "prompt_version": "0.3.4",
+      "schema_id": "instructional_lesson_planning",
+      "schema_version": "0.3.4"
+    }
+  ],
+  "estimated_model_call_count": 25,
+  "source_milestones": [
+    "ID-03C.3",
+    "ID-04A",
+    "ID-04B",
+    "ID-04C"
+  ],
+  "workload_policy_version": "workload_budget_policy@0.1",
+  "prerequisite_minimality_policy_version": "prerequisite_minimality_policy@0.1",
+  "practice_coverage_policy_version": "practice_coverage_policy@0.1",
+  "historical_artifacts_modified": false,
+  "worktree": "/Users/mac/Developers/work/PAI Learning/Pai-learning/.worktrees/pr-012-instructional-design-core/backend"
+}

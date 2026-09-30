@@ -1,0 +1,126 @@
+{
+  "state": "NEEDS_REVIEWER_COMPLETION",
+  "draft": {
+    "review_id": "review-001",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 4,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 4,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4
+    },
+    "rationales": {
+      "objective_measurability": "The success criteria are measurable (e.g., 'all targeted invalid values are replaced'), though the specific invalid values in scope require researcher definition[cite: 21].",
+      "objective_assessment_alignment": "The integrated summative task flawlessly demands both code execution and explicit justification referencing data-quality criteria[cite: 21].",
+      "evidence_validity": "An integrated performance task yielding executable Python and written rationale is a highly valid measure of this capability[cite: 21].",
+      "cognitive_alignment": "The objectives target 'apply' and 'evaluate', which align perfectly with the coding and justification tasks[cite: 21].",
+      "prerequisite_quality": "Correctly isolates Python syntax and tabular data concepts as absolute entry gates, avoiding the trap of trying to teach them within the 60-minute window[cite: 21].",
+      "course_sequence_coherence": "Module 1 (Transformation) naturally feeds into Module 2 (Justification), respecting the dependency that a transformation must exist before it can be justified[cite: 21].",
+      "instruction_assessment_alignment": "Worked examples and guided practice directly scaffold the integrated performance task[cite: 21]."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "minor",
+    "special_question": null,
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-001.json",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recovery_mode": "deterministic",
+    "source_sections": [
+      "technical_review",
+      "pedagogical_review"
+    ],
+    "mapped_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "unresolved_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "raw_legacy_fields_preserved": true,
+    "legacy_rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The success criteria are measurable (e.g., 'all targeted invalid values are replaced'), though the specific invalid values in scope require researcher definition[cite: 21]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The integrated summative task flawlessly demands both code execution and explicit justification referencing data-quality criteria[cite: 21]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "An integrated performance task yielding executable Python and written rationale is a highly valid measure of this capability[cite: 21]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The objectives target 'apply' and 'evaluate', which align perfectly with the coding and justification tasks[cite: 21]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Correctly isolates Python syntax and tabular data concepts as absolute entry gates, avoiding the trap of trying to teach them within the 60-minute window[cite: 21]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "Module 1 (Transformation) naturally feeds into Module 2 (Justification), respecting the dependency that a transformation must exist before it can be justified[cite: 21]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Worked examples and guided practice directly scaffold the integrated performance task[cite: 21]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "The 60-minute constraint is tight for coding and justification, presenting a moderate risk of rushed instruction[cite: 21]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "The curriculum stays strictly within the bounds of handling invalid values and justifying the actions[cite: 21]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Only minor refinements are needed to establish the exact scope of invalid values and finalize the time distributions."
+      }
+    ],
+    "legacy_overall_edit_effort": 2,
+    "raw_special_question_answer": "YES. The progression from applying a procedural transformation to evaluating and justifying the choices is pedagogically sound for data processing[cite: 21]."
+  },
+  "missing_required_fields": [
+    "rationales.domain_appropriateness",
+    "rationales.scope_balance",
+    "rationales.workload_time_realism",
+    "rubric_scores.domain_appropriateness",
+    "rubric_scores.scope_balance",
+    "rubric_scores.workload_time_realism",
+    "special_question.answer"
+  ],
+  "ambiguous_fields": [
+    "special_question.answer"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "source_db": {
+    "orm_paths": ["backend/app/shared/database.py", "backend/app/authorization/models.py", "backend/app/documents/models.py", "backend/app/extraction/models.py", "backend/app/role_profile_authoring/models.py", "backend/app/matching/models.py", "backend/app/assessment/models.py", "backend/app/competency/models.py", "backend/app/capability_analysis/models.py", "backend/app/learning/models.py", "backend/app/credential/models.py", "backend/app/semantic_policy/models.py"],
+    "migration_paths": ["backend/alembic/versions/20260731_01_foundation_baseline.py through 20260811_24_extraction_error_diagnostics.py"],
+    "tables_or_models": ["authorization_users", "authorization_organizations", "organization_memberships", "user_role_assignments", "scoped_delegations", "documents", "extraction_jobs", "extraction_profiles", "role_profile_drafts", "role_profile_draft_versions", "role_competency_profiles", "preliminary_matches", "assessment_*", "competency_*", "capability_gap_*", "learning_paths", "credential_*", "semantic_policies", "audit-event tables"],
+    "migration_head_observed": "20260811_24_extraction_error_diagnostics.py; no migration command was run"
+  },
+  "target_db": {
+    "orm_paths": ["backend/prisma/schema.prisma"],
+    "migration_paths": ["backend/prisma/migrations/; 24 Prisma migration directories through 20260816161000_add_content_ownership"],
+    "tables_or_models": ["User", "Course", "LearningPath", "Document", "LearningPathCourse", "LearningPathAssignment", "CourseModule", "Lesson", "Enrollment", "Progress", "Quiz", "Question", "Answer", "QuizAttempt", "QuizAttemptAnswer", "CertificateTemplate", "Certificate", "Notification"],
+    "migration_head_observed": "20260816161000_add_content_ownership; no migration command was run"
+  },
+  "migration_risks": [
+    "different migration engines and histories; neither history can be replayed into the other database",
+    "User and Document are duplicated names with incompatible ownership/fields",
+    "source organization/tenant foreign keys have no target counterpart",
+    "source competency, evidence, role-profile, policy and audit tables are absent from target",
+    "target Course/LearningPath/Quiz/Certificate tables are not safe substitutes for source learning/assessment/credential tables",
+    "source uses async SQLAlchemy sessions; target uses Prisma-generated client and NestJS services",
+    "target worktree already reports deletions under sibling 5. SOURCE/source_code/ndt-training-management-system-main; migration planning must first establish the authoritative target subtree"
+  ]
+}

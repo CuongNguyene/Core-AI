@@ -1,0 +1,152 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "Bachelor's degree in Statistics, Economics, Computer Science, Business Analytics, or a related field.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": "education",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Bachelor's degree",
+        "Statistics",
+        "Economics",
+        "Computer Science",
+        "Business Analytics"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "Bachelor's degree",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "ee63a6b4-aaaf-4399-8ce5-8c0c85a5efe9",
+        "section": "Minimum requirements",
+        "start_offset": 1085,
+        "end_offset": 1186
+      },
+      "source_excerpt": "Bachelor's degree in Statistics, Economics, Computer Science, Business Analytics, or a related field.",
+      "provenance": {
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "At least 4 years of experience in data analytics or business intelligence.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "experience",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "4 years",
+        "data analytics",
+        "business intelligence"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "4 years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "ee63a6b4-aaaf-4399-8ce5-8c0c85a5efe9",
+        "section": "Minimum requirements",
+        "start_offset": 1187,
+        "end_offset": 1261
+      },
+      "source_excerpt": "At least 4 years of experience in data analytics or business intelligence.",
+      "provenance": {
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Advanced SQL.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": "skill",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "SQL"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "Advanced",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "ee63a6b4-aaaf-4399-8ce5-8c0c85a5efe9",
+        "section": "Minimum requirements",
+        "start_offset": 1262,
+        "end_offset": 1275
+      },
+      "source_excerpt": "Advanced SQL.",
+      "provenance": {
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "Write SQL queries to extract and transform data from multiple sources.",
+      "criterion_dimension": "skill",
+      "modality": "responsibility",
+      "logical_group": "responsibility",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "SQL queries"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "Write SQL queries to extract and transform data from multiple sources."
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "ee63a6b4-aaaf-4399-8ce5-8c0c85a5efe9",
+        "section": "Key activities",
+        "start_offset": 467,
+        "end_offset": 537
+      },
+      "source_excerpt": "Write SQL queries to extract and transform data from multiple sources.",
+      "provenance": {
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Python experience is preferred but not mandatory.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": "nice_to_have",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Python"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "ee63a6b4-aaaf-4399-8ce5-8c0c85a5efe9",
+        "section": "Nice to have",
+        "start_offset": 1469,
+        "end_offset": 1518
+      },
+      "source_excerpt": "Python experience is preferred but not mandatory.",
+      "provenance": {
+        "modality": "jd_extraction"
+      }
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req_1",
+      "statement": "3+ years of Product Management or Digital Product experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "Required Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Product Management",
+        "Digital Product experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "3+ years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "f45678b4-fd7f-4df8-ba7e-064994d6ccbd",
+        "section": "Required Qualifications",
+        "start_offset": 1246,
+        "end_offset": 1307
+      },
+      "source_excerpt": "3+ years of Product Management or Digital Product experience.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_2",
+      "statement": "Experience working with software development teams.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "Required Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "software development teams"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "work with software development teams"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "f45678b4-fd7f-4df8-ba7e-064994d6ccbd",
+        "section": "Required Qualifications",
+        "start_offset": 1308,
+        "end_offset": 1359
+      },
+      "source_excerpt": "Experience working with software development teams.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_3",
+      "statement": "Experience with Agile/Scrum.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": "Preferred Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Agile/Scrum"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "f45678b4-fd7f-4df8-ba7e-064994d6ccbd",
+        "section": "Preferred Qualifications",
+        "start_offset": 1588,
+        "end_offset": 1616
+      },
+      "source_excerpt": "Experience with Agile/Scrum.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_4",
+      "statement": "Define product vision, goals, and roadmap.",
+      "criterion_dimension": "skill",
+      "modality": "responsibility",
+      "logical_group": "Responsibilities",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "product vision",
+        "goals",
+        "roadmap"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "Define product vision, goals, and roadmap."
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "f45678b4-fd7f-4df8-ba7e-064994d6ccbd",
+        "section": "Responsibilities",
+        "start_offset": 451,
+        "end_offset": 493
+      },
+      "source_excerpt": "Define product vision, goals, and roadmap.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    }
+  ]
+}

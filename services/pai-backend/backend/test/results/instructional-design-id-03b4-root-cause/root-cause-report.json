@@ -1,0 +1,28 @@
+{
+  "experiment": "id03b4",
+  "findings": [
+    {
+      "fixture": "python_data_processing",
+      "category": "dependency_propagation",
+      "root_cause": "missing_dependency_propagation",
+      "owner_stage": "AssessmentDesigner → orchestration coverage mapping",
+      "fix_layer": "orchestration",
+      "validator_correct": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "category": "lesson_objective_ownership",
+      "root_cause": "lesson_planning",
+      "owner_stage": "LessonPlanner",
+      "fix_layer": "orchestration",
+      "validator_correct": true
+    }
+  ],
+  "summary": {
+    "prompt_issues": 0,
+    "schema_issues": 0,
+    "orchestration_issues": 2,
+    "validator_issues": 0
+  },
+  "interpretation": "The Python findings are not candidate-prerequisite promotion failures: candidates remain provisional. Required assessment capabilities are emitted, but no explicit structured capability ownership propagates into objective/course/lesson coverage. Legal CoursePlanner ownership is valid; LessonPlanner creates the first invalid cross-module lesson reference."
+}

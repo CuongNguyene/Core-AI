@@ -1,0 +1,161 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req_1",
+      "statement": "Bachelor's degree in Computer Science, Software Engineering, or related field, or equivalent practical experience.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": "Required Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Bachelor's degree",
+        "Computer Science",
+        "Software Engineering"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "Bachelor's degree",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "12ed718e-2159-4a97-8ffb-0d70271f2c8f",
+        "section": "Required Qualifications",
+        "start_offset": 1074,
+        "end_offset": 1188
+      },
+      "source_excerpt": "Bachelor's degree in Computer Science, Software Engineering, or related field, or equivalent practical experience.",
+      "provenance": {
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_2",
+      "statement": "3+ years of professional software development experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "Required Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "professional software development experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "3+ years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "12ed718e-2159-4a97-8ffb-0d70271f2c8f",
+        "section": "Required Qualifications",
+        "start_offset": 1189,
+        "end_offset": 1246
+      },
+      "source_excerpt": "3+ years of professional software development experience.",
+      "provenance": {
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_3",
+      "statement": "Strong programming skills in Java, Python, Go, C#, or a comparable backend language.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": "Required Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Java",
+        "Python",
+        "Go",
+        "C#"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "Strong",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "12ed718e-2159-4a97-8ffb-0d70271f2c8f",
+        "section": "Required Qualifications",
+        "start_offset": 1247,
+        "end_offset": 1331
+      },
+      "source_excerpt": "Strong programming skills in Java, Python, Go, C#, or a comparable backend language.",
+      "provenance": {
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_4",
+      "statement": "Design and implement backend services and REST APIs.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": "Responsibilities",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "backend services",
+        "REST APIs"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "Design and implement backend services and REST APIs"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "12ed718e-2159-4a97-8ffb-0d70271f2c8f",
+        "section": "Responsibilities",
+        "start_offset": 359,
+        "end_offset": 411
+      },
+      "source_excerpt": "Design and implement backend services and REST APIs.",
+      "provenance": {
+        "modality": "jd_extraction",
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_5",
+      "statement": "Experience with microservices.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": "Preferred Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "microservices"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "12ed718e-2159-4a97-8ffb-0d70271f2c8f",
+        "section": "Preferred Qualifications",
+        "start_offset": 1581,
+        "end_offset": 1611
+      },
+      "source_excerpt": "Experience with microservices.",
+      "provenance": {
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "statement": "jd_extraction"
+      }
+    }
+  ]
+}

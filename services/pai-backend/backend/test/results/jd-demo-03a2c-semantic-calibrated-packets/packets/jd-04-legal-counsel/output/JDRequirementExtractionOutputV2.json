@@ -1,0 +1,647 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-01",
+      "statement": "Draft, review, and negotiate commercial contracts, service agreements, NDAs, supplier contracts, and partnership agreements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Draft",
+        "review",
+        "negotiate",
+        "commercial contracts"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 337,
+        "end_offset": 461
+      },
+      "source_excerpt": "Draft, review, and negotiate commercial contracts, service agreements, NDAs, supplier contracts, and partnership agreements.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-02",
+      "statement": "Identify legal and contractual risks and propose appropriate mitigation measures.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Identify legal",
+        "contractual risks",
+        "mitigation measures"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 462,
+        "end_offset": 543
+      },
+      "source_excerpt": "Identify legal and contractual risks and propose appropriate mitigation measures.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-03",
+      "statement": "Provide legal advice to internal stakeholders on commercial and corporate matters.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Provide legal advice",
+        "internal stakeholders"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 544,
+        "end_offset": 626
+      },
+      "source_excerpt": "Provide legal advice to internal stakeholders on commercial and corporate matters.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-04",
+      "statement": "Conduct legal research relating to new business initiatives.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Conduct legal research",
+        "business initiatives"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 627,
+        "end_offset": 687
+      },
+      "source_excerpt": "Conduct legal research relating to new business initiatives.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-05",
+      "statement": "Monitor relevant laws and regulatory changes.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Monitor relevant laws",
+        "regulatory changes"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 688,
+        "end_offset": 733
+      },
+      "source_excerpt": "Monitor relevant laws and regulatory changes.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-06",
+      "statement": "Support corporate governance matters and company secretarial documentation.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Support corporate governance",
+        "company secretarial documentation"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 734,
+        "end_offset": 809
+      },
+      "source_excerpt": "Support corporate governance matters and company secretarial documentation.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-07",
+      "statement": "Assist with licensing and regulatory filings where required.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Assist with licensing",
+        "regulatory filings"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 810,
+        "end_offset": 870
+      },
+      "source_excerpt": "Assist with licensing and regulatory filings where required.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-08",
+      "statement": "Maintain legal records and contract documentation.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Maintain legal records",
+        "contract documentation"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 871,
+        "end_offset": 921
+      },
+      "source_excerpt": "Maintain legal records and contract documentation.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-09",
+      "statement": "Coordinate with external legal counsel for specialized legal matters.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Coordinate with external legal counsel",
+        "specialized legal matters"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 922,
+        "end_offset": 991
+      },
+      "source_excerpt": "Coordinate with external legal counsel for specialized legal matters.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-10",
+      "statement": "Support dispute management and pre-litigation activities.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Support dispute management",
+        "pre-litigation activities"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 992,
+        "end_offset": 1049
+      },
+      "source_excerpt": "Support dispute management and pre-litigation activities.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-11",
+      "statement": "Develop legal templates and internal legal guidance.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Develop legal templates",
+        "internal legal guidance"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Scope of work",
+        "start_offset": 1050,
+        "end_offset": 1102
+      },
+      "source_excerpt": "Develop legal templates and internal legal guidance.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-12",
+      "statement": "Bachelor of Laws or equivalent recognized law degree.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "Bachelor of Laws",
+        "equivalent recognized law degree"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Requirements",
+        "start_offset": 1116,
+        "end_offset": 1169
+      },
+      "source_excerpt": "Bachelor of Laws or equivalent recognized law degree.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-13",
+      "statement": "Minimum 4 years of legal experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Minimum 4 years",
+        "legal experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "4 years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Requirements",
+        "start_offset": 1170,
+        "end_offset": 1206
+      },
+      "source_excerpt": "Minimum 4 years of legal experience.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-14",
+      "statement": "Experience in corporate or commercial law.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "corporate law",
+        "commercial law"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Requirements",
+        "start_offset": 1207,
+        "end_offset": 1249
+      },
+      "source_excerpt": "Experience in corporate or commercial law.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-15",
+      "statement": "Strong contract drafting and contract review skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "contract drafting",
+        "contract review skills"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Requirements",
+        "start_offset": 1250,
+        "end_offset": 1302
+      },
+      "source_excerpt": "Strong contract drafting and contract review skills.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-16",
+      "statement": "Ability to conduct independent legal research.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "independent legal research"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Requirements",
+        "start_offset": 1303,
+        "end_offset": 1349
+      },
+      "source_excerpt": "Ability to conduct independent legal research.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-17",
+      "statement": "Ability to communicate legal risks clearly to non-legal stakeholders.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "communicate legal risks",
+        "non-legal stakeholders"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Requirements",
+        "start_offset": 1350,
+        "end_offset": 1419
+      },
+      "source_excerpt": "Ability to communicate legal risks clearly to non-legal stakeholders.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-18",
+      "statement": "Strong written English.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "written English"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Requirements",
+        "start_offset": 1420,
+        "end_offset": 1443
+      },
+      "source_excerpt": "Strong written English.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-19",
+      "statement": "technology companies;",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "technology companies"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Advantage",
+        "start_offset": 1532,
+        "end_offset": 1553
+      },
+      "source_excerpt": "technology companies;",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-20",
+      "statement": "data privacy;",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "data privacy"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Advantage",
+        "start_offset": 1554,
+        "end_offset": 1567
+      },
+      "source_excerpt": "data privacy;",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-21",
+      "statement": "intellectual property;",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "intellectual property"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Advantage",
+        "start_offset": 1568,
+        "end_offset": 1590
+      },
+      "source_excerpt": "intellectual property;",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-22",
+      "statement": "regulatory compliance;",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "regulatory compliance"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Advantage",
+        "start_offset": 1591,
+        "end_offset": 1613
+      },
+      "source_excerpt": "regulatory compliance;",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-23",
+      "statement": "cross-border commercial transactions.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "cross-border commercial transactions"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Advantage",
+        "start_offset": 1614,
+        "end_offset": 1651
+      },
+      "source_excerpt": "cross-border commercial transactions.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-24",
+      "statement": "Litigation experience is useful but is not a mandatory requirement.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Litigation experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b84f5be2-4c34-42b8-8254-3f54e16b7b09",
+        "section": "Advantage",
+        "start_offset": 1652,
+        "end_offset": 1719
+      },
+      "source_excerpt": "Litigation experience is useful but is not a mandatory requirement.",
+      "provenance": {}
+    }
+  ]
+}

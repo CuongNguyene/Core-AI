@@ -1,0 +1,197 @@
+[
+  {
+    "review_id": "review-001",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/codex-sme-reviewer--review-001.json"
+  },
+  {
+    "review_id": "review-002",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/codex-sme-reviewer--review-002.json"
+  },
+  {
+    "review_id": "review-003",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/codex-sme-reviewer--review-003.json"
+  },
+  {
+    "review_id": "review-004",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/codex-sme-reviewer--review-004.json"
+  },
+  {
+    "review_id": "review-005",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/codex-sme-reviewer--review-005.json"
+  },
+  {
+    "review_id": "review-001",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/gemini-sme-01--review-001.json"
+  },
+  {
+    "review_id": "review-002",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/gemini-sme-01--review-002.json"
+  },
+  {
+    "review_id": "review-003",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/gemini-sme-01--review-003.json"
+  },
+  {
+    "review_id": "review-004",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/gemini-sme-01--review-004.json"
+  },
+  {
+    "review_id": "review-005",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "state": "CANONICAL_VALID",
+    "errors": [],
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "existing_judgement_overwrites": 0,
+    "conflict_attempt": false,
+    "canonical_submission": "test/results/instructional-design-id-03c2-completion-merge/canonical-submissions/gemini-sme-01--review-005.json"
+  }
+]

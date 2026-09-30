@@ -1,0 +1,2376 @@
+{
+  "source_experiment_id": "instructional-design-id-03b-cross-domain-smoke",
+  "traces": [
+    {
+      "fixture": "python_data_processing",
+      "domain": "it_ai",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "form-ppd-01",
+      "dependency": "basic python scripting",
+      "exists_in": [
+        "assessment",
+        "dependency_candidates",
+        "prerequisite",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "form-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01"
+            ]
+          }
+        ],
+        "dependency_candidates": [
+          {
+            "capability": "basic Python scripting",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "form-ppd-01",
+              "sum-ppd-01"
+            ],
+            "exact_capability_match": true
+          }
+        ],
+        "prerequisite": [
+          {
+            "id": "pre-ppd-01",
+            "capability": "basic Python scripting",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ],
+            "exact_capability_match": true
+          }
+        ],
+        "course": [
+          {
+            "id": "mod-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-03",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "les-ppd-01-a",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-b",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-c",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-a",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-b",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-c",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-a",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-b",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "pre-ppd-02",
+            "capability": "tabular data library familiarity (reading and scanning a dataset with a standard Python library)",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "assessment_requirement_boundary",
+      "root_cause": "assessment_scope_creep",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "python_data_processing",
+      "domain": "it_ai",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "form-ppd-01",
+      "dependency": "tabular data library familiarity",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "form-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "les-ppd-01-a",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-b",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-c",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "basic Python scripting",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "form-ppd-01",
+              "sum-ppd-01"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "pre-ppd-01",
+            "capability": "basic Python scripting",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "id": "pre-ppd-02",
+            "capability": "tabular data library familiarity (reading and scanning a dataset with a standard Python library)",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "python_data_processing",
+      "domain": "it_ai",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "form-ppd-02",
+      "dependency": "invalid value identification and classification",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "form-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "les-ppd-02-a",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-b",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-c",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "tabular data library familiarity",
+            "required_for_refs": [
+              "obj-ppd-02",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "pre-ppd-01",
+            "capability": "basic Python scripting",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "id": "pre-ppd-02",
+            "capability": "tabular data library familiarity (reading and scanning a dataset with a standard Python library)",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "python_data_processing",
+      "domain": "it_ai",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "form-ppd-02",
+      "dependency": "tabular data transformation using a standard python library",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "form-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "les-ppd-02-a",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-b",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-c",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "tabular data library familiarity",
+            "required_for_refs": [
+              "obj-ppd-02",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "pre-ppd-01",
+            "capability": "basic Python scripting",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "id": "pre-ppd-02",
+            "capability": "tabular data library familiarity (reading and scanning a dataset with a standard Python library)",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "python_data_processing",
+      "domain": "it_ai",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "sum-ppd-01",
+      "dependency": "invalid value identification and classification",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "sum-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-03",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "les-ppd-01-a",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-b",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-c",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-a",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-b",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-c",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-a",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-b",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "basic Python scripting",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "form-ppd-01",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "capability": "tabular data library familiarity",
+            "required_for_refs": [
+              "obj-ppd-02",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "pre-ppd-01",
+            "capability": "basic Python scripting",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "id": "pre-ppd-02",
+            "capability": "tabular data library familiarity (reading and scanning a dataset with a standard Python library)",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "python_data_processing",
+      "domain": "it_ai",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "sum-ppd-01",
+      "dependency": "tabular data transformation using a standard python library",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "sum-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-03",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "les-ppd-01-a",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-b",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-c",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-a",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-b",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-c",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-a",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-b",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "basic Python scripting",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "form-ppd-01",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "capability": "tabular data library familiarity",
+            "required_for_refs": [
+              "obj-ppd-02",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "pre-ppd-01",
+            "capability": "basic Python scripting",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "id": "pre-ppd-02",
+            "capability": "tabular data library familiarity (reading and scanning a dataset with a standard Python library)",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "python_data_processing",
+      "domain": "it_ai",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "sum-ppd-01",
+      "dependency": "data-driven written justification",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "sum-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-ppd-01",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-02",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "mod-ppd-03",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "les-ppd-01-a",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-b",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-01-c",
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-a",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-b",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-02-c",
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-a",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          },
+          {
+            "id": "les-ppd-03-b",
+            "objective_ids": [
+              "obj-ppd-03"
+            ],
+            "prerequisite_refs": [
+              "pre-ppd-01",
+              "pre-ppd-02"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "basic Python scripting",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "form-ppd-01",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "capability": "tabular data library familiarity",
+            "required_for_refs": [
+              "obj-ppd-02",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "pre-ppd-01",
+            "capability": "basic Python scripting",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          },
+          {
+            "id": "pre-ppd-02",
+            "capability": "tabular data library familiarity (reading and scanning a dataset with a standard Python library)",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "form-ppd-01",
+              "form-ppd-02",
+              "sum-ppd-01"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "assess-legal_contract_review_basic-formative-001",
+      "dependency": "read and comprehend contract language",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "assess-legal_contract_review_basic-formative-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-legal_contract_review_basic-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "lesson-mod001-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "prereq-001",
+            "capability": "Read and comprehend commercial contract language",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-002",
+            "capability": "Hold a working concept of what constitutes a risk in a commercial context",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "assess-legal_contract_review_basic-formative-001",
+      "dependency": "understand what constitutes a risk in a commercial context",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "assess-legal_contract_review_basic-formative-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-legal_contract_review_basic-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "lesson-mod001-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "prereq-001",
+            "capability": "Read and comprehend commercial contract language",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-002",
+            "capability": "Hold a working concept of what constitutes a risk in a commercial context",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "dependency": "read and comprehend contract language",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "assess-legal_contract_review_basic-summative-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-legal_contract_review_basic-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "mod-legal_contract_review_basic-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "lesson-mod001-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod002-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "distinguish between risk analysis and final legal judgment",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "capability": "articulate causal relationships in written explanation",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "prereq-001",
+            "capability": "Read and comprehend commercial contract language",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-002",
+            "capability": "Hold a working concept of what constitutes a risk in a commercial context",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-003",
+            "capability": "Articulate causal relationships in written prose",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-004",
+            "capability": "Distinguish between risk analysis and a final legal judgment",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "dependency": "understand what constitutes a risk in a commercial context",
+      "exists_in": [
+        "assessment",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "assess-legal_contract_review_basic-summative-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ]
+          }
+        ],
+        "dependency_candidates": [],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-legal_contract_review_basic-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "mod-legal_contract_review_basic-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "lesson-mod001-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod002-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "distinguish between risk analysis and final legal judgment",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "capability": "articulate causal relationships in written explanation",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "prereq-001",
+            "capability": "Read and comprehend commercial contract language",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-002",
+            "capability": "Hold a working concept of what constitutes a risk in a commercial context",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-003",
+            "capability": "Articulate causal relationships in written prose",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-004",
+            "capability": "Distinguish between risk analysis and a final legal judgment",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "objective_semantic_capability_refs",
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "dependency": "articulate causal relationships in written explanation",
+      "exists_in": [
+        "assessment",
+        "dependency_candidates",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "assess-legal_contract_review_basic-summative-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ]
+          }
+        ],
+        "dependency_candidates": [
+          {
+            "capability": "articulate causal relationships in written explanation",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ],
+            "exact_capability_match": true
+          }
+        ],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-legal_contract_review_basic-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "mod-legal_contract_review_basic-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "lesson-mod001-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod002-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "distinguish between risk analysis and final legal judgment",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "prereq-001",
+            "capability": "Read and comprehend commercial contract language",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-002",
+            "capability": "Hold a working concept of what constitutes a risk in a commercial context",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-003",
+            "capability": "Articulate causal relationships in written prose",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-004",
+            "capability": "Distinguish between risk analysis and a final legal judgment",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "assessment_requirement_boundary",
+      "root_cause": "assessment_scope_creep",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "finding": "assessment_dependency_not_covered",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "dependency": "distinguish between risk analysis and final legal judgment",
+      "exists_in": [
+        "assessment",
+        "dependency_candidates",
+        "course",
+        "lesson"
+      ],
+      "stage_evidence": {
+        "assessment": [
+          {
+            "id": "assess-legal_contract_review_basic-summative-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ]
+          }
+        ],
+        "dependency_candidates": [
+          {
+            "capability": "distinguish between risk analysis and final legal judgment",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ],
+            "exact_capability_match": true
+          }
+        ],
+        "prerequisite": [],
+        "course": [
+          {
+            "id": "mod-legal_contract_review_basic-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "mod-legal_contract_review_basic-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "lesson": [
+          {
+            "id": "lesson-mod001-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod001-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "prerequisite_refs": [
+              "prereq-001",
+              "prereq-002"
+            ]
+          },
+          {
+            "id": "lesson-mod002-001",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-002",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          },
+          {
+            "id": "lesson-mod002-003",
+            "objective_ids": [
+              "obj-legal_contract_review_basic-002"
+            ],
+            "prerequisite_refs": [
+              "prereq-003",
+              "prereq-004"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_candidates": [
+          {
+            "capability": "articulate causal relationships in written explanation",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ],
+        "unmatched_reference_scoped_prerequisites": [
+          {
+            "id": "prereq-001",
+            "capability": "Read and comprehend commercial contract language",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-002",
+            "capability": "Hold a working concept of what constitutes a risk in a commercial context",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-001",
+              "assess-legal_contract_review_basic-formative-001",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-003",
+            "capability": "Articulate causal relationships in written prose",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          },
+          {
+            "id": "prereq-004",
+            "capability": "Distinguish between risk analysis and a final legal judgment",
+            "status": "candidate",
+            "required_for_refs": [
+              "obj-legal_contract_review_basic-002",
+              "assess-legal_contract_review_basic-summative-001"
+            ]
+          }
+        ]
+      },
+      "objective_semantic_capability_refs": [],
+      "coverage_inputs": {
+        "learner_known": [],
+        "confirmed_prerequisites": [],
+        "taught_objective_capability_refs": []
+      },
+      "missing_at_stage": "assessment_requirement_boundary",
+      "root_cause": "assessment_scope_creep",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    }
+  ],
+  "dependency_normalizer_checks": [
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "form-ppd-01",
+      "capability": "basic python scripting",
+      "legacy_values": [
+        "basic Python scripting",
+        "tabular data library familiarity"
+      ],
+      "typed_values": [
+        "basic Python scripting",
+        "tabular data library familiarity"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "form-ppd-01",
+      "capability": "tabular data library familiarity",
+      "legacy_values": [
+        "basic Python scripting",
+        "tabular data library familiarity"
+      ],
+      "typed_values": [
+        "basic Python scripting",
+        "tabular data library familiarity"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "form-ppd-02",
+      "capability": "invalid value identification and classification",
+      "legacy_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library"
+      ],
+      "typed_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "form-ppd-02",
+      "capability": "tabular data transformation using a standard python library",
+      "legacy_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library"
+      ],
+      "typed_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "sum-ppd-01",
+      "capability": "invalid value identification and classification",
+      "legacy_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library",
+        "data-driven written justification"
+      ],
+      "typed_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library",
+        "data-driven written justification"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "sum-ppd-01",
+      "capability": "tabular data transformation using a standard python library",
+      "legacy_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library",
+        "data-driven written justification"
+      ],
+      "typed_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library",
+        "data-driven written justification"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "sum-ppd-01",
+      "capability": "data-driven written justification",
+      "legacy_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library",
+        "data-driven written justification"
+      ],
+      "typed_values": [
+        "invalid value identification and classification",
+        "tabular data transformation using a standard Python library",
+        "data-driven written justification"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "form-ppd-01",
+      "capability": "basic python scripting",
+      "dependency_role": "supporting_dependency",
+      "status": "candidate",
+      "candidate_not_promoted": true,
+      "provenance_source_types": [
+        "dependency_candidate"
+      ]
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "form-ppd-02",
+      "capability": "tabular data library familiarity",
+      "dependency_role": "supporting_dependency",
+      "status": "candidate",
+      "candidate_not_promoted": true,
+      "provenance_source_types": [
+        "dependency_candidate"
+      ]
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "sum-ppd-01",
+      "capability": "basic python scripting",
+      "dependency_role": "supporting_dependency",
+      "status": "candidate",
+      "candidate_not_promoted": true,
+      "provenance_source_types": [
+        "dependency_candidate"
+      ]
+    },
+    {
+      "fixture": "python_data_processing",
+      "assessment_ref": "sum-ppd-01",
+      "capability": "tabular data library familiarity",
+      "dependency_role": "supporting_dependency",
+      "status": "candidate",
+      "candidate_not_promoted": true,
+      "provenance_source_types": [
+        "dependency_candidate"
+      ]
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-formative-001",
+      "capability": "read and comprehend contract language",
+      "legacy_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context"
+      ],
+      "typed_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-formative-001",
+      "capability": "understand what constitutes a risk in a commercial context",
+      "legacy_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context"
+      ],
+      "typed_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "capability": "read and comprehend contract language",
+      "legacy_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "typed_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "capability": "understand what constitutes a risk in a commercial context",
+      "legacy_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "typed_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "capability": "articulate causal relationships in written explanation",
+      "legacy_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "typed_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "capability": "distinguish between risk analysis and final legal judgment",
+      "legacy_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "typed_values": [
+        "read and comprehend contract language",
+        "understand what constitutes a risk in a commercial context",
+        "articulate causal relationships in written explanation",
+        "distinguish between risk analysis and final legal judgment"
+      ],
+      "canonical_dependency_count_for_capability": 1,
+      "provenance_source_types": [
+        "legacy_compatibility",
+        "typed_required_capability"
+      ],
+      "duplicates_merged": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "capability": "distinguish between risk analysis and final legal judgment",
+      "dependency_role": "supporting_dependency",
+      "status": "candidate",
+      "candidate_not_promoted": true,
+      "provenance_source_types": [
+        "dependency_candidate"
+      ]
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_ref": "assess-legal_contract_review_basic-summative-001",
+      "capability": "articulate causal relationships in written explanation",
+      "dependency_role": "supporting_dependency",
+      "status": "candidate",
+      "candidate_not_promoted": true,
+      "provenance_source_types": [
+        "dependency_candidate"
+      ]
+    }
+  ]
+}

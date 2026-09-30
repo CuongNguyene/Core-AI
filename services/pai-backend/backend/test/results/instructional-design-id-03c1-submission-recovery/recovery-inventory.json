@@ -1,0 +1,302 @@
+[
+  {
+    "review_id": "review-001",
+    "reviewer_id": "codex-sme-reviewer",
+    "fixture": "python_data_processing",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "ambiguous_fields": [],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-001.json",
+    "source_sha256": "170ea75496c7940cbcaf64824549e6971bdaac75a40d1082f818793a8c9692f7"
+  },
+  {
+    "review_id": "review-002",
+    "reviewer_id": "codex-sme-reviewer",
+    "fixture": "accounting_financial_reporting_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "ambiguous_fields": [],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-002.json",
+    "source_sha256": "233a2dec6b00a777e53e5d1540acfe70ea5ea6d70c2dff4f204bde6acce53bc3"
+  },
+  {
+    "review_id": "review-003",
+    "reviewer_id": "codex-sme-reviewer",
+    "fixture": "legal_contract_review_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "ambiguous_fields": [],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-003.json",
+    "source_sha256": "91e70c15f2d3bcfe4cab482162e340d81263967a81e47de6ca502433450992d6"
+  },
+  {
+    "review_id": "review-004",
+    "reviewer_id": "codex-sme-reviewer",
+    "fixture": "hr_recruitment_planning_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "ambiguous_fields": [],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-004.json",
+    "source_sha256": "a73b49a8a7978fdc83088e6b8a5cfae7ac8a5125141102646764cb3a1b317887"
+  },
+  {
+    "review_id": "review-005",
+    "reviewer_id": "codex-sme-reviewer",
+    "fixture": "construction_drawing_and_method_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "ambiguous_fields": [],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-005.json",
+    "source_sha256": "865f30628675722ee8a0488a208bf10108c735ae6d2b8d9598b73d96b00144c4"
+  },
+  {
+    "review_id": "review-001",
+    "reviewer_id": "gemini-sme-01",
+    "fixture": "python_data_processing",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "ambiguous_fields": [
+      "special_question.answer"
+    ],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-001.json",
+    "source_sha256": "b6c0e67b6e6a39f26b509e039a78a7e7890901206c9694ec5e6f051f57238ae0"
+  },
+  {
+    "review_id": "review-002",
+    "reviewer_id": "gemini-sme-01",
+    "fixture": "accounting_financial_reporting_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "ambiguous_fields": [
+      "special_question.answer"
+    ],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-002.json",
+    "source_sha256": "8bf0a9b9c71c8777003b606562a07c5209567fc0e6196441555c762f7a43554d"
+  },
+  {
+    "review_id": "review-003",
+    "reviewer_id": "gemini-sme-01",
+    "fixture": "legal_contract_review_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "ambiguous_fields": [
+      "special_question.answer"
+    ],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-003.json",
+    "source_sha256": "6176704325579cdaaaa86a371eec04b4fbc6916349628b04529b5621cbbf5afe"
+  },
+  {
+    "review_id": "review-004",
+    "reviewer_id": "gemini-sme-01",
+    "fixture": "hr_recruitment_planning_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "ambiguous_fields": [
+      "special_question.answer"
+    ],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-004.json",
+    "source_sha256": "7d30397bbf0c8861bd07685bba083accbe1bde567a68c833294aa031833ff330"
+  },
+  {
+    "review_id": "review-005",
+    "reviewer_id": "gemini-sme-01",
+    "fixture": "construction_drawing_and_method_basic",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recoverable_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "missing_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "ambiguous_fields": [
+      "special_question.answer"
+    ],
+    "source_path": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-005.json",
+    "source_sha256": "0f01e3c85d57f134bdea626135f429df1ef2d07ab7f5a69d1eefca7beac1d127"
+  }
+]

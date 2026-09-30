@@ -1,0 +1,26 @@
+{
+  "total_completion_submissions": 10,
+  "states": {
+    "CANONICAL_VALID": 10,
+    "INCOMPLETE": 0,
+    "CONFLICT": 0,
+    "INVALID_COMPLETION": 0
+  },
+  "reviewers": {
+    "codex-sme-reviewer": {
+      "expected": 5,
+      "valid": 5
+    },
+    "gemini-sme-01": {
+      "expected": 5,
+      "valid": 5
+    }
+  },
+  "required_fields_missing": 0,
+  "ready_for_sme_analysis": true,
+  "existing_judgement_overwrites": 0,
+  "source_submissions_modified": 0,
+  "canonical_drafts_modified_in_place": 0,
+  "completion_submissions_modified": 0,
+  "status": "valid"
+}

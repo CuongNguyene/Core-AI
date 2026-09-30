@@ -1,0 +1,33 @@
+{
+  "fixture_id": "accountant",
+  "hints": {
+    "accounting degree": "accounting",
+    "BS Accounting": "accounting",
+    "IFRS practice": "ifrs",
+    "IFRS coursework": "ifrs",
+    "general ledger operations": "general ledger",
+    "maintained general ledger": "general ledger",
+    "CPA credential": "cpa",
+    "CPA": "cpa",
+    "own month-end close": "month-end close",
+    "assisted month-end close": "month-end close",
+    "owned month-end close": "month-end close",
+    "candidate screening": "candidate screening"
+  },
+  "requirements": [
+    {"id": "degree", "phrase": "accounting degree", "expectation": "education", "expected_refs": ["accounting-degree"], "eligible": 1, "status": "supported", "strongest_refs": ["accounting-degree"]},
+    {"id": "ifrs-practice", "phrase": "IFRS practice", "expectation": "demonstrated_usage", "expected_refs": ["ifrs-coursework"], "eligible": 0, "status": "requires_verification", "strongest_refs": ["ifrs-coursework"]},
+    {"id": "ledger", "phrase": "general ledger operations", "expectation": "demonstrated_usage", "expected_refs": ["ledger-work"], "eligible": 1, "status": "supported", "strongest_refs": ["ledger-work"]},
+    {"id": "credential", "phrase": "CPA credential", "expectation": "credential", "expected_refs": ["cpa-credential"], "eligible": 1, "status": "supported", "strongest_refs": ["cpa-credential"]},
+    {"id": "close-owner", "phrase": "own month-end close", "expectation": "owned_outcome", "expected_refs": ["close-assisted", "close-owned"], "eligible": 1, "status": "supported", "strongest_refs": ["close-owned"]}
+  ],
+  "evidence": [
+    {"ref": "accounting-degree", "phrase": "BS Accounting", "context": "studied", "source_kind": "education", "confidence": 0.99},
+    {"ref": "ifrs-coursework", "phrase": "IFRS coursework", "context": "studied", "source_kind": "education", "confidence": 0.94},
+    {"ref": "ledger-work", "phrase": "maintained general ledger", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.93},
+    {"ref": "cpa-credential", "phrase": "CPA", "context": "credentialed", "source_kind": "credential", "confidence": 0.98},
+    {"ref": "close-assisted", "phrase": "assisted month-end close", "context": "used_in_employment", "source_kind": "employment", "participation": "assisted", "confidence": 0.96},
+    {"ref": "close-owned", "phrase": "owned month-end close", "context": "owned_system", "source_kind": "employment", "participation": "owned", "confidence": 0.91},
+    {"ref": "unrelated-screening", "phrase": "candidate screening", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.9}
+  ]
+}

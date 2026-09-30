@@ -1,0 +1,124 @@
+{
+  "experiment_id": "instructional-design-id-03b-cross-domain-smoke",
+  "experiment_version": "0.1",
+  "fixture_count": 5,
+  "fixture_ids": [
+    "python_data_processing",
+    "accounting_financial_reporting_basic",
+    "legal_contract_review_basic",
+    "hr_recruitment_planning_basic",
+    "construction_drawing_and_method_basic"
+  ],
+  "conditions": [
+    "structured_v0.3.1"
+  ],
+  "runs_per_fixture_per_condition": 1,
+  "model_provider": "vilao",
+  "model_name": "claude-sonnet-5",
+  "model_revision": null,
+  "generation_config": {
+    "temperature": 0.0,
+    "top_p": null,
+    "max_output_tokens": 8192,
+    "seed": null,
+    "unsupported_fields": [
+      "top_p",
+      "seed"
+    ]
+  },
+  "policy_id": "pai_instructional_design",
+  "policy_version": "0.1",
+  "dependency_normalizer_version": "id02d.2@0.1",
+  "prompt_schema_versions": [
+    {
+      "prompt_id": "instructional_objective_design",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_objective_design",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_assessment_design",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_assessment_design",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_prerequisite_proposal",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_prerequisite_proposal",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_course_planning",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_course_planning",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_lesson_planning",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_lesson_planning",
+      "schema_version": "0.3.1"
+    }
+  ],
+  "estimated_model_call_count": 25,
+  "provider": "vilao",
+  "model": "claude-sonnet-5",
+  "prompt_versions": {
+    "instructional_objective_design": "0.3.1",
+    "instructional_assessment_design": "0.3.1",
+    "instructional_prerequisite_proposal": "0.3.1",
+    "instructional_course_planning": "0.3.1",
+    "instructional_lesson_planning": "0.3.1"
+  },
+  "schema_versions": {
+    "instructional_objective_design": "0.3.1",
+    "instructional_assessment_design": "0.3.1",
+    "instructional_prerequisite_proposal": "0.3.1",
+    "instructional_course_planning": "0.3.1",
+    "instructional_lesson_planning": "0.3.1"
+  },
+  "planned_model_calls": 25,
+  "fixtures": [
+    {
+      "fixture_id": "python_data_processing",
+      "domain": "it_ai",
+      "industry_family": "technology",
+      "learning_type": "procedural_technical_skill",
+      "difficulty": "medium",
+      "description": "A learner transforms and validates tabular data with Python."
+    },
+    {
+      "fixture_id": "accounting_financial_reporting_basic",
+      "domain": "accounting",
+      "industry_family": "finance",
+      "learning_type": "regulated_professional_skill",
+      "difficulty": "medium",
+      "description": "An entry-level accountant prepares basic reports and identifies discrepancies."
+    },
+    {
+      "fixture_id": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "industry_family": "legal_services",
+      "learning_type": "analytical_judgment_skill",
+      "difficulty": "high",
+      "description": "A junior legal specialist reviews a commercial contract for potential risks."
+    },
+    {
+      "fixture_id": "hr_recruitment_planning_basic",
+      "domain": "hr_management",
+      "industry_family": "human_resources",
+      "learning_type": "scenario_based_professional_skill",
+      "difficulty": "medium",
+      "description": "An HR employee creates a recruitment plan for a department."
+    },
+    {
+      "fixture_id": "construction_drawing_and_method_basic",
+      "domain": "construction_engineering",
+      "industry_family": "construction",
+      "learning_type": "procedural_safety_skill",
+      "difficulty": "high",
+      "description": "A junior engineer interprets drawings and prepares a simple construction method proposal."
+    }
+  ]
+}

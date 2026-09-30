@@ -1,0 +1,141 @@
+{
+  "review_id": "review-006",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-13T09:56:24+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_observed",
+    "issues": [
+      {
+        "category": "schema_or_shape",
+        "entity": "course_outline.modules[*].lesson_ids",
+        "field": "lesson_ids",
+        "description": "All module lesson_ids arrays are empty even though six lessons reference those modules. This creates a course-outline-to-lesson traceability gap.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "les-tc-01-02.prerequisite_refs",
+        "field": "prerequisite_refs",
+        "description": "Lesson prerequisite_refs points to les-tc-01-01, a lesson ID rather than a prerequisite or objective ID.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "les-tc-02-02.prerequisite_refs",
+        "field": "prerequisite_refs",
+        "description": "Lesson prerequisite_refs points to les-tc-02-01, a lesson ID rather than a prerequisite or objective ID.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "les-tc-03-02.prerequisite_refs",
+        "field": "prerequisite_refs",
+        "description": "Lesson prerequisite_refs points to les-tc-03-01, a lesson ID rather than a prerequisite or objective ID.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "lessons.formative_assessment_ids",
+        "field": "formative_assessment_ids",
+        "description": "Lessons use assess-tc-01, assess-tc-02, and assess-tc-03 as formative checkpoints even though all three assessments are marked is_summative=true.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "assess-tc-02.required_capability_refs / assess-tc-03.required_capability_refs",
+        "field": "required_capability_refs",
+        "description": "required_capability_refs contain objective IDs rather than capability IDs. This may be intended prerequisite chaining, but the field name is ambiguous.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "The main traceability problems are empty module lesson links, lesson IDs used as prerequisite references, and summative assessments reused as formative lesson checks. Pedagogical scores do not include these technical defects directly."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring traceability and schema issues, the design is pedagogically reasonable: it builds from audience analysis to structuring explanations to adapting terminology for non-specialist readers."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives state observable performances and criteria: identify audience characteristics and implications, produce a logical written sequence, and adapt terminology without inaccuracies. Some criteria require domain-informed evaluation and better operational examples."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "Each objective has a corresponding assessment, and evidence criteria map closely to success criteria. Alignment is reduced by assessing the objectives as three separate summative tasks rather than one integrated performance matching the brief."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Written audience analysis, structured explanation, and text adaptation are valid evidence sources. Factual accuracy judgement for adapted terminology is appropriate but depends on a domain-informed evaluator and supplied source material."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "Analyze and apply levels fit the audience-analysis, structuring, and terminology-adaptation tasks. The progression supports the cognitive demand, though independent-practice lessons may need more modeling first."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "The prerequisites are relevant and candidate-marked, but several describe core subskills that may need to be taught rather than assumed, especially distinguishing specialist vocabulary and understanding logical sequence."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The sequence is strong: audience analysis informs structure, and both inform terminology adaptation. The module timing also preserves the 60-minute constraint."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "Lesson activities generally prepare learners for the assessments, but the plan reuses summative assessments as formative checks and relies on placeholder materials. Separate low-stakes practice and clearer feedback would strengthen preparation."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "There is moderate under-teaching risk because source texts, audience profiles, examples, feedback, and factual-accuracy supports are all left to later authoring."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "The design stays close to the requested communication performance. The prerequisite list is somewhat expansive but mostly relevant."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Moderate edits are required to separate formative and summative uses, specify materials, refine prerequisites, and connect lessons into the outline."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "pre-tc-01",
+        "pre-tc-02",
+        "pre-tc-04"
+      ],
+      "rejected_refs": [
+        "pre-tc-03",
+        "pre-tc-05"
+      ],
+      "notes": "Basic reading comprehension, an entry-level concept of audience, and coherent English writing are acceptable candidate prerequisites. Distinguishing specialist vocabulary and applying logical sequence are too close to the target skills and should be revised as taught enabling subskills rather than prerequisites."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 1,
+      "assessments_changed": 3,
+      "prerequisites_changed": 2,
+      "modules_changed": 3,
+      "lessons_changed": 6,
+      "notes": "Estimated edits include integrating or sequencing the assessments, revising two prerequisites into taught subskills, populating module lesson_ids, separating summative assessments from formative checks, and adding concrete source/audience materials to all lessons."
+    },
+    "overall_notes": "A sensible communication-design draft with good sequence logic, but it needs moderate cleanup around prerequisite boundaries, formative practice, and concrete instructional materials."
+  }
+}

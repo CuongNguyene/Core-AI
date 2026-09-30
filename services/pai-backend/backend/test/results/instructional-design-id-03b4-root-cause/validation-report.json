@@ -1,0 +1,30 @@
+{
+  "experiment": "id03b4",
+  "status": "ID-03B.4 COMPLETE",
+  "checks": [
+    {
+      "name": "assessment_objective_allow_list",
+      "result": "PASS",
+      "details": "Completed ID-03B.3 snapshots contain no assessment capability/objective artifact collisions."
+    },
+    {
+      "name": "dependency_normalizer",
+      "result": "PASS",
+      "details": "Python canonical dependencies preserve both legacy_compatibility and typed_required_capability provenance; supporting candidates remain candidate."
+    },
+    {
+      "name": "lesson_objective_subset",
+      "result": "FAIL_EXPECTED",
+      "details": "Legal partial artifact has lesson-lcrb-03-summative refs obj-lcrb-01/02/03 while module-lcrb-03 owns obj-lcrb-03; validator correctly fails closed."
+    },
+    {
+      "name": "production_unchanged",
+      "result": "PASS",
+      "details": "No prompt/schema/quality gate/validator/normalizer changes made."
+    }
+  ],
+  "pytest": "95 passed",
+  "ruff": "passed",
+  "mypy": "172 source files, no issues",
+  "git_diff_check": "passed"
+}

@@ -1,0 +1,124 @@
+{
+  "review_id": "review-003",
+  "reviewer_id": "opus-reviewer-01",
+  "reviewed_at": "2026-08-13T02:48:32+00:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "clean",
+    "issues": [
+      {
+        "category": "other",
+        "entity": "sum(lessons[].estimated_minutes) vs sum(modules[].estimated_minutes)",
+        "description": "Lessons total 45 minutes; modules total 60. The 15-minute gap is mod-3, which carries lesson_ids: [] by design as an assessment block. Internally consistent, recorded for completeness.",
+        "severity": "info",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "assessments[assess-summative-1].task.conditions vs course_outline.modules[mod-3].estimated_minutes",
+        "description": "The summative declares a 30-minute time limit but the module reserved for it is 15 minutes, and the outline total is already at the 60-minute brief ceiling.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "assessment_scope_creep",
+        "entity": "assessments[assess-summative-1].task.description",
+        "description": "The fixture is specified as containing 'missing values, type mismatches, outliers'. Outlier detection appears in no objective; obj-1 covers nulls, NaNs, empty strings and type/range violations. ev-1's demand for 'at least 3 types of data quality issues' is also a quantification absent from obj-1's criteria.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "prerequisite_provenance",
+        "entity": "prerequisites[prereq-1].status",
+        "description": "status=confirmed with basis=researcher_authored, justified as 'directly stated in learner_state.known'. The brief says 'basic Python'; the prerequisite says 'write and execute basic Python scripts'. Defensible, but the wording is an interpretive expansion of the supplied evidence carried at confirmed status. prereq-2 and prereq-3 are correctly candidate.",
+        "severity": "info",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "objectives[obj-1].cognitive_process",
+        "description": "Tagged 'understand' while the performance is 'identify ... using pandas inspection methods' and the matched formative assess-formative-1 is tagged cognitive_process='apply'. Objective and its own assessment disagree on level.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "Every ID resolves. Objectives, prerequisites, modules, lessons and both assessments form a closed graph: all three objectives appear in a module, a lesson and the summative; both module.lesson_ids entries and every lesson.module_id resolve; the formative reference in lesson-1 resolves to a defined assessment. brief_id is consistent throughout. This is the only packet in the set with no broken references. No validator output was included in the packet, so `validator_appears_correct` is null on every issue; the findings below are the reviewer's own reference walk over the artifact, not a confirmation or contradiction of a quality gate."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "The design does the core things right. Three objectives decompose the brief's desired performance into detect -> transform -> justify, which is the natural task analysis for data cleaning; the summative is a single hands-on task that requires all three in one artifact rather than testing them separately; the rubric has three dimensions matching the three objectives; and the mastery rule ('highest level on at least 2 dimensions and middle or higher on the third') is the only realistic, non-brittle mastery threshold in the whole set. Reservations are real but bounded: the summative needs 30 minutes inside a 15-minute block, there is exactly one formative check in the entire course and it covers only obj-1, and the evaluate-level obj-3 is supported by a single 10-minute scenario lesson. None of these require rethinking the design, only rebalancing it."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "All three carry conditions and concrete criteria - 'correctly identifies null, NaN, and empty string values' is directly checkable against a seeded fixture, and obj-3's three criteria (trade-offs, data properties referenced, downstream impact) give a rater specific things to look for. Short of 5 because obj-2's 'applies deletion, imputation, or flagging strategies appropriately' leaves 'appropriately' undefined at objective level."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "assess-summative-1 names all three objectives and its three evidence items map one to each (ev-1 to obj-1, ev-2 to obj-2, ev-3 to obj-3), with rubric dimensions in the same order. Reduced from 5 by the outlier condition in the task, which asks for detection work no objective claims, and by obj-2 and obj-3 having no formative coverage at all."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "The evidence set is well chosen for the capability: executable code plus a written rationale is exactly what would let a rater distinguish someone who cleans data from someone who cleans data for a reason. The rubric's third dimension separates 'vague statements' from 'clearly links data properties, transformation choice, and analysis impact', which is the discrimination that matters. Held at 4 because a single 30-minute artifact is one observation for three objectives."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 3,
+        "rationale": "The instructional ladder is right - demonstration and worked example for detection, guided practice for transformation, scenario analysis for justification. But the tagging is inconsistent: obj-1 is 'understand' while its formative is 'apply' and its performance is tool-based identification; the summative is tagged 'apply' while it carries obj-3, which is 'evaluate'. The activities are pitched correctly even though the labels are not."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Three prerequisites, the leanest set that still covers the entry conditions, with a clean dependency chain (prereq-2 and prereq-3 both require prereq-1) and no overlap with taught content - the course teaches pandas cleaning methods, not Python itself. Not 5 because prereq-1 is carried at confirmed status on a wording that expands the brief's two-word evidence, and prereq-3 (import and use pandas) is the same capability lesson-1 immediately demonstrates."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "Detect before transform before justify is the correct dependency order, mod-2 deliberately pairs obj-2 and obj-3 so justification is learned against the transformations just performed, and mod-3 is reserved as an assessment block. Costs a point because that block is under-budgeted relative to the task it holds."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "lesson-3 practises .dropna() and .fillna() with feedback, which is precisely what ev-2 scores; lesson-4 has learners write justifications against three scenarios, which is precisely what ev-3 scores. The one gap is invalid-value detection: lesson-2 is follow-along only, with no learner attempt before the summative asks them to find type mismatches unaided."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Moderate. One formative check in the whole course, covering only the easiest objective. obj-3 - an evaluate/metacognitive objective - is supported by a single 10-minute scenario discussion, and lesson-2 gives no independent practice on invalid-value detection before it is assessed."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "None. Four lessons, 45 minutes of instruction, every lesson tied to an objective, no tangential content and no padding."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Re-budget the summative against the time available, add a formative check for obj-2 and obj-3, convert lesson-2 into a practice activity, retag obj-1's cognitive level and either drop outliers from the fixture or add an objective covering them. The structure survives intact."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-2",
+        "prereq-3"
+      ],
+      "rejected_refs": [],
+      "notes": "No prerequisite is irrelevant or unsafe, and the set is admirably small. prereq-2 (tabular data structure) and prereq-3 (importing and using pandas) are accepted as written: both are correctly marked candidate / model_proposed with rationales that state they are not confirmed by the brief. prereq-1 is accepted in substance but needs a status or wording change - it is carried as confirmed / researcher_authored on the strength of the two words 'basic Python' in learner_state.known, while the capability text is the broader 'write and execute basic Python scripts'. Either narrow the wording to match the evidence or demote it to candidate. Separately, prereq-3 sits awkwardly as a gate given lesson-1 demonstrates pandas import and inspection in its first ten minutes."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 1,
+      "assessments_changed": 2,
+      "prerequisites_changed": 1,
+      "modules_changed": 1,
+      "lessons_changed": 1,
+      "notes": "Estimated: obj-1 cognitive_process retagged; summative fixture scope narrowed and one formative added for obj-2/obj-3; prereq-1 status or wording corrected; mod-3 retimed against the 30-minute task; lesson-2 converted from follow-along to guided practice."
+    },
+    "overall_notes": "The most economical packet in the set and the only one whose reference graph closes completely. Its mastery rule is also the only one that tolerates partial performance, which is what makes it usable in a real classroom. The binding constraint is time arithmetic, not instructional quality: a 30-minute summative cannot sit in a 15-minute block at the end of a 60-minute course that has already spent 45 minutes teaching."
+  }
+}

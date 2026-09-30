@@ -1,0 +1,122 @@
+{
+  "taxonomy_id": "professional_capability_core",
+  "version": "0.1",
+  "capabilities": [
+    {
+      "id": "project_management",
+      "name": "Project Management",
+      "description": "Planning, coordinating, executing and delivering projects across scope, resources, timelines or stakeholders.",
+      "aliases": [
+        "project delivery"
+      ],
+      "category": "PROJECT",
+      "classification": "CORE"
+    },
+    {
+      "id": "product_management",
+      "name": "Product Management",
+      "description": "Defining, prioritizing and guiding products, platforms or product outcomes for users and stakeholders.",
+      "aliases": [
+        "product ownership"
+      ],
+      "category": "PRODUCT",
+      "classification": "CORE"
+    },
+    {
+      "id": "ecommerce",
+      "name": "eCommerce",
+      "description": "Operating or delivering commerce activities through electronic sales channels and digital commerce processes.",
+      "aliases": [
+        "e-commerce",
+        "electronic commerce"
+      ],
+      "category": "COMMERCE",
+      "classification": "DOMAIN_SPECIFIC"
+    },
+    {
+      "id": "omnichannel_commerce",
+      "name": "Omnichannel Commerce",
+      "description": "Coordinating commerce experiences, inventory or customer journeys across multiple connected channels.",
+      "aliases": [
+        "omni channel",
+        "omnichannel",
+        "o2o commerce"
+      ],
+      "category": "COMMERCE",
+      "classification": "DOMAIN_SPECIFIC"
+    },
+    {
+      "id": "order_management",
+      "name": "Order Management",
+      "description": "Managing order lifecycle, fulfillment coordination, order processing or related operational controls.",
+      "aliases": [
+        "order fulfillment"
+      ],
+      "category": "OPERATIONS",
+      "classification": "DOMAIN_SPECIFIC"
+    },
+    {
+      "id": "warehouse_management",
+      "name": "Warehouse Management",
+      "description": "Planning or operating warehouse activities, inventory handling, storage or warehouse processes.",
+      "aliases": [
+        "warehouse operations"
+      ],
+      "category": "OPERATIONS",
+      "classification": "DOMAIN_SPECIFIC"
+    },
+    {
+      "id": "delivery_logistics_management",
+      "name": "Delivery / Logistics Management",
+      "description": "Planning or coordinating delivery, transportation, logistics networks or last-mile operations.",
+      "aliases": [
+        "delivery management",
+        "logistics management"
+      ],
+      "category": "OPERATIONS",
+      "classification": "DOMAIN_SPECIFIC"
+    },
+    {
+      "id": "operations_planning",
+      "name": "Operations Planning",
+      "description": "Planning operational capacity, processes, resources and execution across recurring business activities.",
+      "aliases": [
+        "operational planning"
+      ],
+      "category": "OPERATIONS",
+      "classification": "DOMAIN_SPECIFIC"
+    },
+    {
+      "id": "digital_platform_development",
+      "name": "Digital Platform Development",
+      "description": "Designing, developing or delivering digital platforms, software systems and technical product capabilities.",
+      "aliases": [
+        "platform development",
+        "software development"
+      ],
+      "category": "DIGITAL_PLATFORM",
+      "classification": "CORE"
+    },
+    {
+      "id": "team_leadership",
+      "name": "Team Leadership",
+      "description": "Leading, coordinating, mentoring or managing people and team delivery.",
+      "aliases": [
+        "team management",
+        "people management"
+      ],
+      "category": "LEADERSHIP",
+      "classification": "CORE"
+    },
+    {
+      "id": "process_optimization",
+      "name": "Process Optimization",
+      "description": "Analyzing, improving or standardizing processes to increase efficiency, quality or reliability.",
+      "aliases": [
+        "process improvement"
+      ],
+      "category": "OPERATIONS",
+      "classification": "CORE"
+    }
+  ]
+}

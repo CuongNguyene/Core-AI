@@ -1,0 +1,90 @@
+{
+  "fixture": "legal_contract_review_basic",
+  "declared_identities": [
+    {
+      "dependency_ref": "dependency_candidate:contract_clause_structure",
+      "canonical_name": "contract clause structure",
+      "aliases": [
+        "commercial contract clause structure"
+      ]
+    }
+  ],
+  "dependency_candidates": [
+    {
+      "capability": "researcher-supplied risk-indicator checklist and risk taxonomy",
+      "reason": "lo-lcr-02's objective provenance states the objective cannot be reliably assessed without a researcher-supplied checklist and taxonomy; this is supporting material, not a learner capability demonstrated by the assessment itself.",
+      "required_for_refs": [
+        "lo-lcr-02",
+        "assess-lo-lcr-02-risk-pattern-flagging"
+      ]
+    },
+    {
+      "capability": "prior completion of structural component identification (lo-lcr-01)",
+      "reason": "lo-lcr-02 lists lo-lcr-01 as a prerequisite_ref; treated as a candidate suporting skill rather than required evidence for the lo-lcr-02 assessment.",
+      "required_for_refs": [
+        "lo-lcr-02"
+      ]
+    },
+    {
+      "capability": "prior completion of risk-pattern flagging (lo-lcr-02)",
+      "reason": "lo-lcr-03 lists lo-lcr-02 as a prerequisite_ref and its conditions require a completed set of flagged risk patterns from lo-lcr-02; treated as a candidate input dependency rather than a capability required by the lo-lcr-03 assessment itself.",
+      "required_for_refs": [
+        "lo-lcr-03",
+        "assess-lo-lcr-03-risk-reasoning-explanation"
+      ]
+    },
+    {
+      "capability": "researcher-defined operational boundary criteria distinguishing risk observation from legal judgment",
+      "reason": "lo-lcr-03's provenance notes that this boundary requires researcher-defined criteria to make the third success criterion assessable; not yet supplied in this input, so it remains a candidate dependency.",
+      "required_for_refs": [
+        "lo-lcr-03"
+      ]
+    }
+  ],
+  "resolved_prerequisites": [
+    {
+      "id": "prereq-lo-lcr-01-completion",
+      "capability": "Identify and describe structural components of a commercial contract clause (lo-lcr-01)",
+      "source_dependency_refs": [
+        "lo-lcr-02"
+      ],
+      "status": "candidate",
+      "basis": "model_proposed",
+      "disposition": "in_course_support"
+    },
+    {
+      "id": "prereq-lo-lcr-02-completion",
+      "capability": "Flag and categorize risk-relevant language patterns in a contract clause using a supplied taxonomy (lo-lcr-02)",
+      "source_dependency_refs": [
+        "lo-lcr-03",
+        "assess-lo-lcr-03-risk-reasoning-explanation"
+      ],
+      "status": "candidate",
+      "basis": "model_proposed",
+      "disposition": "in_course_support"
+    },
+    {
+      "id": "prereq-researcher-checklist-taxonomy",
+      "capability": "Researcher-supplied risk-indicator checklist and risk taxonomy (instructional material, not a learner-held capability)",
+      "source_dependency_refs": [
+        "lo-lcr-02",
+        "assess-lo-lcr-02-risk-pattern-flagging"
+      ],
+      "status": "candidate",
+      "basis": "model_proposed",
+      "disposition": "not_required"
+    },
+    {
+      "id": "prereq-boundary-criteria",
+      "capability": "Researcher-defined scoring criteria distinguishing commercial risk observation from legal judgment (design artifact, not a learner-held capability)",
+      "source_dependency_refs": [
+        "lo-lcr-03"
+      ],
+      "status": "candidate",
+      "basis": "model_proposed",
+      "disposition": "not_required"
+    }
+  ],
+  "alias_resolution": "declared_alias_only",
+  "unknown_paraphrases_fail_closed": true
+}

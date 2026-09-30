@@ -1,0 +1,67 @@
+{
+  "review_id": "review-002",
+  "reviewer_id": "gemini-sme-01",
+  "fixture_id": "accounting_financial_reporting_basic",
+  "instruction": "Complete only the fields listed in required_completion. Do not revise previously submitted judgement.",
+  "required_completion": {
+    "rubric_scores.scope_balance": {
+      "type": "integer",
+      "allowed_range": [
+        1,
+        5
+      ],
+      "rationale_required": true
+    },
+    "rubric_scores.workload_time_realism": {
+      "type": "integer",
+      "allowed_range": [
+        1,
+        5
+      ],
+      "rationale_required": true
+    },
+    "rubric_scores.domain_appropriateness": {
+      "type": "integer",
+      "allowed_range": [
+        1,
+        5
+      ],
+      "rationale_required": true
+    },
+    "special_question": {
+      "answer": {
+        "type": "enum",
+        "allowed_values": [
+          "YES",
+          "PARTIALLY",
+          "NO"
+        ]
+      },
+      "rationale_required": true
+    }
+  },
+  "original_relevant_comments": {
+    "special_question": {
+      "answer": "PARTIALLY. The sequence is beautiful, but the workload/time realism is completely broken.",
+      "notes": "Asking a learner to master report components, prepare a financial report from a ledger, and diagnose seeded discrepancies in 60 minutes is cognitively overwhelming for beginners[cite: 22]."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 1,
+      "assessments_changed": 1,
+      "prerequisites_changed": 0,
+      "modules_changed": 1,
+      "lessons_changed": 2,
+      "notes": "The researcher should strongly consider removing the discrepancy analysis objective to make the 60-minute constraint realistic[cite: 22]."
+    },
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-arith-01",
+        "prereq-ledger-01"
+      ],
+      "rejected_refs": [],
+      "notes": "Both prerequisites are strictly necessary to allow any focus on financial reporting[cite: 22]."
+    }
+  }
+}

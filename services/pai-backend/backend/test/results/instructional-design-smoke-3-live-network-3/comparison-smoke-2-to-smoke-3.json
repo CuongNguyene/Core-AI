@@ -1,0 +1,37 @@
+{
+  "comparison_version": "0.1",
+  "smoke_2_results": "../instructional-design-smoke-2-live-3/results.json",
+  "smoke_3_results": "results.json",
+  "fair_comparison": false,
+  "reason": "Smoke-3 structured_v0.3 has one ObjectiveDesigner invalid_model_json stage failure, so the six-run set is incomplete.",
+  "structured": {
+    "smoke_2_condition": "structured",
+    "smoke_2": {
+      "run_count": 3,
+      "completed_count": 3,
+      "failed_count": 0,
+      "quality_gate_pass_rate": 0.3333333333333333,
+      "finding_counts_by_code": {
+        "assessment_dependency_not_covered": 4,
+        "orphan_lesson": 4,
+        "orphan_module": 1
+      },
+      "unresolved_prerequisite_mean": 5.666666666666667
+    },
+    "smoke_3_condition": "structured_v0.3",
+    "smoke_3": {
+      "run_count": 3,
+      "completed_count": 2,
+      "failed_count": 1,
+      "quality_gate_pass_rate_on_completed": 0.0,
+      "finding_counts_by_code_on_completed": {
+        "assessment_dependency_not_covered": 4
+      },
+      "unresolved_prerequisite_mean_on_completed": 3.0,
+      "stage_failures": {
+        "ObjectiveDesigner/invalid_model_json": 1
+      }
+    }
+  },
+  "interpretation": "Descriptive diagnostics only; no winner or statistical conclusion."
+}

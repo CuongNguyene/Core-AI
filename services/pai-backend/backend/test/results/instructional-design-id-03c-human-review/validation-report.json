@@ -1,0 +1,11 @@
+{
+  "packet_count": 5,
+  "unique_review_ids": true,
+  "unique_fixtures": true,
+  "condition_leakage": 0,
+  "private_metadata_leakage": 0,
+  "root_cause_metadata_leakage": 0,
+  "artifact_sections_present": true,
+  "reviewer_submissions_created": 0,
+  "status": "valid"
+}

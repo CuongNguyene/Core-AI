@@ -1,0 +1,10 @@
+{
+  "experience_count": 17,
+  "experience_recall": 1.0,
+  "education_count": 2,
+  "education_recall": 1.0,
+  "statement_count": 35,
+  "invalid_statement_refs": 0,
+  "statement_grounding_rate": 1.0,
+  "passed": true
+}

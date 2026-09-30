@@ -1,0 +1,32 @@
+{
+  "fixture_id": "construction_drawing_and_method_basic",
+  "domain": "construction_engineering",
+  "status": "fail",
+  "findings": [
+    {
+      "code": "stage_execution_failed",
+      "category": "ORCHESTRATION",
+      "severity": "error",
+      "message": "OrchestrationReferenceResolution: v0.3 assessment capability requirement contains an unknown objective reference",
+      "entity_id": "construction_drawing_and_method_basic"
+    }
+  ],
+  "quality_gate_findings": [],
+  "failure_categories": [
+    "ORCHESTRATION"
+  ],
+  "metadata": {
+    "fixture_id": "construction_drawing_and_method_basic",
+    "domain": "construction_engineering",
+    "industry_family": "construction",
+    "learning_type": "procedural_safety_skill",
+    "difficulty": "high",
+    "description": "A junior engineer interprets drawings and prepares a simple construction method proposal."
+  },
+  "stage_completion": {
+    "status": "failed",
+    "model_audit_count": 5,
+    "snapshot_present": false
+  },
+  "dependency_normalization": null
+}

@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED",
+  "required_packet_count": 6,
+  "completed_snapshot_count": 5,
+  "failed_run_count": 1,
+  "rubric_id": "instructional_design_human_rubric",
+  "rubric_version": "0.1",
+  "packets_created": 0,
+  "reason": "Condition-blind review cannot be prepared until all six Smoke-3 runs have completed snapshots.",
+  "failed_run": {
+    "fixture_id": "technical_communication",
+    "condition": "structured_v0.3",
+    "stage": "ObjectiveDesigner",
+    "failure_class": "StructuredOutputFailedError",
+    "validation_error": "Structured output failed: invalid_model_json"
+  }
+}

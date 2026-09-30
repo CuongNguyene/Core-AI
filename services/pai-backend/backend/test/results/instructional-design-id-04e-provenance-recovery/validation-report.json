@@ -1,0 +1,135 @@
+{
+  "experiment": "ID-04E",
+  "fixture": "construction_drawing_and_method_basic",
+  "model_calls": 5,
+  "snapshot": true,
+  "graph_integrity": true,
+  "provenance_preserved": true,
+  "governance_preserved": true,
+  "no_auto_confirmation": true,
+  "workload_generated": true,
+  "practice_coverage_generated": true,
+  "findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo1-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo1-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo2-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo2-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo3-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo3-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_requirement_not_taught",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo3-summative",
+      "field": "practice_coverage",
+      "message": "Summative requirement has no prior explicit instruction."
+    },
+    {
+      "code": "assessment_requirement_not_taught",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo3-summative",
+      "field": "practice_coverage",
+      "message": "Summative requirement has no prior explicit instruction."
+    },
+    {
+      "code": "module_without_instruction",
+      "severity": "error",
+      "entity_type": "course_module",
+      "entity_id": "mod-01-recognize-conventions",
+      "field": "lesson_ids",
+      "message": "An objective-linked module requires at least one instructional lesson."
+    },
+    {
+      "code": "module_without_instruction",
+      "severity": "error",
+      "entity_type": "course_module",
+      "entity_id": "mod-02-interpret-elements",
+      "field": "lesson_ids",
+      "message": "An objective-linked module requires at least one instructional lesson."
+    },
+    {
+      "code": "module_without_instruction",
+      "severity": "error",
+      "entity_type": "course_module",
+      "entity_id": "mod-03-prepare-proposal",
+      "field": "lesson_ids",
+      "message": "An objective-linked module requires at least one instructional lesson."
+    },
+    {
+      "code": "objective_not_taught",
+      "severity": "error",
+      "entity_type": "learning_objective",
+      "entity_id": "lo-1-recognize-drawing-conventions",
+      "field": null,
+      "message": "Objective is assessed or declared but not covered by a lesson."
+    },
+    {
+      "code": "objective_not_taught",
+      "severity": "error",
+      "entity_type": "learning_objective",
+      "entity_id": "lo-2-interpret-drawing-elements",
+      "field": null,
+      "message": "Objective is assessed or declared but not covered by a lesson."
+    },
+    {
+      "code": "objective_not_taught",
+      "severity": "error",
+      "entity_type": "learning_objective",
+      "entity_id": "lo-3-prepare-method-proposal",
+      "field": null,
+      "message": "Objective is assessed or declared but not covered by a lesson."
+    },
+    {
+      "code": "summative_without_prior_practice",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-lo3-summative",
+      "field": "objective_ids",
+      "message": "Applied or higher-order objectives require a preparatory practice activity."
+    }
+  ],
+  "status": "COMPLETE"
+}

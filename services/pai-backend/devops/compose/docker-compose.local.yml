@@ -1,0 +1,138 @@
+name: pai-local
+
+services:
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?set in devops/compose/.env}
+      POSTGRES_USER: ${POSTGRES_USER:?set in devops/compose/.env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set in devops/compose/.env}
+    ports:
+      - "${PAI_POSTGRES_PORT:?set in devops/compose/.env}:5432"
+    volumes:
+      - pai_local_postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:8-alpine
+    command: >-
+      redis-server --appendonly yes --requirepass
+      ${REDIS_PASSWORD:?set in devops/compose/.env}
+    ports:
+      - "${PAI_REDIS_PORT:?set in devops/compose/.env}:6379"
+    volumes:
+      - pai_local_redis_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli --no-auth-warning -a $$REDIS_PASSWORD ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?set in devops/compose/.env}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?set in devops/compose/.env}
+    ports:
+      - "${PAI_MINIO_PORT:?set in devops/compose/.env}:9000"
+      - "${PAI_MINIO_CONSOLE_PORT:?set in devops/compose/.env}:9001"
+    volumes:
+      - pai_local_minio_data:/data
+
+  clamav:
+    image: clamav/clamav:stable
+    volumes:
+      - pai_local_clamav_data:/var/lib/clamav
+
+  backend:
+    build:
+      context: ../..
+      dockerfile: devops/backend/Dockerfile
+    env_file:
+      - path: ../../backend/.env
+        required: true
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:?set in devops/compose/.env}:${POSTGRES_PASSWORD:?set in devops/compose/.env}@postgres:5432/${POSTGRES_DB:?set in devops/compose/.env}
+      REDIS_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/0
+      REDIS_CACHE_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/0
+      REDIS_QUEUE_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/1
+      OBJECT_STORAGE_ENDPOINT: http://minio:9000
+      OBJECT_STORAGE_ACCESS_KEY: ${MINIO_ROOT_USER:?set in devops/compose/.env}
+      OBJECT_STORAGE_SECRET_KEY: ${MINIO_ROOT_PASSWORD:?set in devops/compose/.env}
+      CLAMAV_HOST: clamav
+    ports:
+      - "${PAI_API_PORT:?set in devops/compose/.env}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      clamav:
+        condition: service_started
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: devops/backend/Dockerfile
+    command: ["uv", "run", "python", "-m", "app.extraction.runner"]
+    env_file:
+      - path: ../../backend/.env
+        required: true
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:?set in devops/compose/.env}:${POSTGRES_PASSWORD:?set in devops/compose/.env}@postgres:5432/${POSTGRES_DB:?set in devops/compose/.env}
+      REDIS_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/0
+      REDIS_CACHE_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/0
+      REDIS_QUEUE_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/1
+      OBJECT_STORAGE_ENDPOINT: http://minio:9000
+      OBJECT_STORAGE_ACCESS_KEY: ${MINIO_ROOT_USER:?set in devops/compose/.env}
+      OBJECT_STORAGE_SECRET_KEY: ${MINIO_ROOT_PASSWORD:?set in devops/compose/.env}
+      CLAMAV_HOST: clamav
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      clamav:
+        condition: service_started
+
+  course-generation-worker:
+    build:
+      context: ../..
+      dockerfile: devops/backend/Dockerfile
+    command: ["uv", "run", "python", "-m", "app.course_generation.runner"]
+    env_file:
+      - path: ../../backend/.env
+        required: true
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:?set in devops/compose/.env}:${POSTGRES_PASSWORD:?set in devops/compose/.env}@postgres:5432/${POSTGRES_DB:?set in devops/compose/.env}
+      REDIS_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/0
+      REDIS_CACHE_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/0
+      REDIS_QUEUE_URL: redis://:${REDIS_PASSWORD:?set in devops/compose/.env}@redis:6379/1
+      OBJECT_STORAGE_ENDPOINT: http://minio:9000
+      OBJECT_STORAGE_ACCESS_KEY: ${MINIO_ROOT_USER:?set in devops/compose/.env}
+      OBJECT_STORAGE_SECRET_KEY: ${MINIO_ROOT_PASSWORD:?set in devops/compose/.env}
+      CLAMAV_HOST: clamav
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      clamav:
+        condition: service_started
+
+volumes:
+  pai_local_postgres_data:
+  pai_local_redis_data:
+  pai_local_minio_data:
+  pai_local_clamav_data:

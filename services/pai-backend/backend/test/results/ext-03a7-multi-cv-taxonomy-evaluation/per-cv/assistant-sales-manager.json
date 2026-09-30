@@ -1,0 +1,73 @@
+{
+  "fixture_id": "assistant-sales-manager",
+  "domain": "sales",
+  "fingerprint": {
+    "fixture_name": "assistant-sales-manager",
+    "document_id": "64b514ca-65dc-4237-95e7-bf32d341b292",
+    "storage_key": "transient/64b514ca-65dc-4237-95e7-bf32d341b292",
+    "filename": "cv_assistant-sales-manager_quynh-mai-ms-pdf_1695531568.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 389794,
+    "sha256": "27efec8dc117c8121039136feb8f93ffaeddcc259932ba3c0ae3d77bf82411af",
+    "page_count": 1,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 3,
+    "education_count": 3,
+    "statement_count": 44,
+    "reference_validation": "PASS"
+  },
+  "stage2": {
+    "selected_count": 6,
+    "supported_selected_count": 1,
+    "unsupported_selected_count": 5,
+    "selection_precision": 0.16666666666666666,
+    "bounded_recall": 0.3333333333333333,
+    "demonstrated_capability_count": 5,
+    "represented_capability_count": 3,
+    "taxonomy_gap_count": 2,
+    "taxonomy_coverage": 0.6,
+    "selected_capability_ids": [
+      "warehouse_management",
+      "order_management",
+      "delivery_logistics_management",
+      "operations_planning",
+      "team_leadership",
+      "process_optimization"
+    ],
+    "selected_names": [
+      "Warehouse Management",
+      "Order Management",
+      "Delivery / Logistics Management",
+      "Operations Planning",
+      "Team Leadership",
+      "Process Optimization"
+    ],
+    "unknown_taxonomy_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "grounding_rate": 1.0
+  },
+  "taxonomy_gaps": [
+    {
+      "proposed_name": "Sales Management",
+      "domain": "sales",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "assistant-sales-manager"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    },
+    {
+      "proposed_name": "Business Development",
+      "domain": "sales",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "assistant-sales-manager"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    }
+  ],
+  "candidate_profile_compatibility": "PASS"
+}

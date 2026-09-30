@@ -1,0 +1,126 @@
+{
+  "state": "NEEDS_REVIEWER_COMPLETION",
+  "draft": {
+    "review_id": "review-002",
+    "rubric_scores": {
+      "objective_measurability": 5,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 5,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 4,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4
+    },
+    "rationales": {
+      "objective_measurability": "Success criteria are highly quantifiable (e.g., 'Correctly classifies at least 4 of 5', 'Identifies at least 2 of 3 seeded discrepancies')[cite: 22].",
+      "objective_assessment_alignment": "The integrated summative task perfectly encapsulates all three objectives in a logical, chronological workflow[cite: 22].",
+      "evidence_validity": "Cross-referencing a ledger to find errors in a completed report is an exceptionally valid, real-world accounting task[cite: 22].",
+      "cognitive_alignment": "The design correctly moves learners through understand, apply, and analyze cognitive processes[cite: 22].",
+      "prerequisite_quality": "Basic arithmetic and ledger familiarity are crucial prerequisites to avoid bogging down the instruction with math/formatting basics[cite: 22].",
+      "course_sequence_coherence": "The progression from identifying components to creating the report to troubleshooting errors is flawless[cite: 22].",
+      "instruction_assessment_alignment": "Worked examples and guided practice directly support the targeted summative performances[cite: 22]."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "moderate",
+    "special_question": null,
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-002.json",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recovery_mode": "deterministic",
+    "source_sections": [
+      "technical_review",
+      "pedagogical_review"
+    ],
+    "mapped_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "unresolved_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "raw_legacy_fields_preserved": true,
+    "legacy_rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 5,
+        "rationale": "Success criteria are highly quantifiable (e.g., 'Correctly classifies at least 4 of 5', 'Identifies at least 2 of 3 seeded discrepancies')[cite: 22]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The integrated summative task perfectly encapsulates all three objectives in a logical, chronological workflow[cite: 22]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 5,
+        "rationale": "Cross-referencing a ledger to find errors in a completed report is an exceptionally valid, real-world accounting task[cite: 22]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The design correctly moves learners through understand, apply, and analyze cognitive processes[cite: 22]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Basic arithmetic and ledger familiarity are crucial prerequisites to avoid bogging down the instruction with math/formatting basics[cite: 22]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The progression from identifying components to creating the report to troubleshooting errors is flawless[cite: 22]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Worked examples and guided practice directly support the targeted summative performances[cite: 22]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 4,
+        "rationale": "A severe risk of under-teaching. 23 minutes to teach report preparation and 15 minutes for discrepancy cause analysis is wildly insufficient for a novice[cite: 22]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "No extraneous topics are introduced[cite: 22]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Requires moderate effort to either reduce the scope (e.g., drop discrepancy analysis) or extend the time constraints."
+      }
+    ],
+    "legacy_overall_edit_effort": 3,
+    "raw_special_question_answer": "PARTIALLY. The sequence is beautiful, but the workload/time realism is completely broken."
+  },
+  "missing_required_fields": [
+    "rationales.domain_appropriateness",
+    "rationales.scope_balance",
+    "rationales.workload_time_realism",
+    "rubric_scores.domain_appropriateness",
+    "rubric_scores.scope_balance",
+    "rubric_scores.workload_time_realism",
+    "special_question.answer"
+  ],
+  "ambiguous_fields": [
+    "special_question.answer"
+  ]
+}

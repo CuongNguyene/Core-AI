@@ -1,0 +1,266 @@
+{
+  "milestone": "EXT-03A.2B",
+  "generated_at": "2026-09-08T08:11:39.716415+00:00",
+  "fixture": {
+    "fixture_id": "cv-nguyen-vu-minh-thien",
+    "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+    "page_count": 3,
+    "mime_type": "application/pdf",
+    "manifest_version": "1.0"
+  },
+  "expectations": {
+    "fixture_id": "cv-nguyen-vu-minh-thien",
+    "document_id": "40584171-3e68-4e6e-8497-089f830797fc",
+    "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+    "mime_type": "application/pdf",
+    "page_count": 3,
+    "manifest_version": "1.0",
+    "expected_education": [
+      "MBA of eCommerce",
+      "Bachelor"
+    ],
+    "expected_capability_families": [
+      "Project Management",
+      "Product Management",
+      "eCommerce",
+      "Omnichannel Commerce",
+      "Order Management",
+      "Warehouse Management",
+      "Delivery / Logistics Management",
+      "Operations Planning",
+      "Digital Platform Development",
+      "Team Leadership",
+      "Process Optimization"
+    ],
+    "experience_minimum": 4
+  },
+  "runs": {
+    "v2.0": {
+      "fixture_id": "cv-nguyen-vu-minh-thien",
+      "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+      "page_count": 3,
+      "mime_type": "application/pdf",
+      "manifest_version": "1.0",
+      "prompt_version": "2.0",
+      "input_mode": "native_pdf",
+      "thinking": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "run": {
+        "run_id": "95da328c-1731-45f7-86b6-197703df4665",
+        "input_mode": "native_pdf",
+        "thinking": "medium",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_id": "cv_full_extraction",
+        "prompt_version": "2.0",
+        "success": true,
+        "failure_stage": null,
+        "failure_code": null,
+        "latency_ms": 9869,
+        "token_usage": {
+          "input_tokens": 3590,
+          "thinking_tokens": null,
+          "output_tokens": 1486,
+          "total_tokens": 5076
+        },
+        "finish_reason": "STOP",
+        "counts": {
+          "experience": 2,
+          "capabilities": 1,
+          "tools_platforms": 2,
+          "education": 2
+        },
+        "quality": {
+          "grounded_capabilities": 1,
+          "grounded_capability_rate": 1.0,
+          "unsupported_capability_count": 0,
+          "duplicate_capability_count": 0
+        },
+        "capability_names": [
+          "Project Management"
+        ],
+        "tool_names": [
+          "Odoo",
+          "Shopify"
+        ],
+        "education_summary": [
+          "MBA",
+          "Bachelor"
+        ],
+        "capability_coverage": {
+          "Project Management": "FOUND",
+          "Product Management": "NOT_FOUND",
+          "eCommerce": "NOT_FOUND",
+          "Omnichannel Commerce": "NOT_FOUND",
+          "Order Management": "NOT_FOUND",
+          "Warehouse Management": "NOT_FOUND",
+          "Delivery / Logistics Management": "NOT_FOUND",
+          "Operations Planning": "NOT_FOUND",
+          "Digital Platform Development": "NOT_FOUND",
+          "Team Leadership": "NOT_FOUND",
+          "Process Optimization": "NOT_FOUND"
+        },
+        "experience_recall": "LOW",
+        "education_recall": "2/2",
+        "candidate_profile_created": true
+      },
+      "experience_recall": {
+        "actual": 2,
+        "minimum": 4,
+        "recall": 0.5
+      },
+      "education_recall": {
+        "matched": 2,
+        "expected": 2,
+        "recall": 1.0
+      },
+      "capability_family_coverage": {
+        "Project Management": "FOUND",
+        "Product Management": "NOT_FOUND",
+        "eCommerce": "NOT_FOUND",
+        "Omnichannel Commerce": "NOT_FOUND",
+        "Order Management": "NOT_FOUND",
+        "Warehouse Management": "NOT_FOUND",
+        "Delivery / Logistics Management": "NOT_FOUND",
+        "Operations Planning": "NOT_FOUND",
+        "Digital Platform Development": "NOT_FOUND",
+        "Team Leadership": "NOT_FOUND",
+        "Process Optimization": "NOT_FOUND"
+      },
+      "capability_family_recall": 0.09090909090909091
+    },
+    "v2.1": {
+      "fixture_id": "cv-nguyen-vu-minh-thien",
+      "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+      "page_count": 3,
+      "mime_type": "application/pdf",
+      "manifest_version": "1.0",
+      "prompt_version": "2.1",
+      "input_mode": "native_pdf",
+      "thinking": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "run": {
+        "run_id": "8daafa62-4510-4f30-a81e-289a1ce8a3f3",
+        "input_mode": "native_pdf",
+        "thinking": "medium",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_id": "cv_full_extraction",
+        "prompt_version": "2.1",
+        "success": true,
+        "failure_stage": null,
+        "failure_code": null,
+        "latency_ms": 21030,
+        "token_usage": {
+          "input_tokens": 3761,
+          "thinking_tokens": null,
+          "output_tokens": 8016,
+          "total_tokens": 11777
+        },
+        "finish_reason": "STOP",
+        "counts": {
+          "experience": 17,
+          "capabilities": 2,
+          "tools_platforms": 7,
+          "education": 2
+        },
+        "quality": {
+          "grounded_capabilities": 2,
+          "grounded_capability_rate": 1.0,
+          "unsupported_capability_count": 0,
+          "duplicate_capability_count": 0
+        },
+        "capability_names": [
+          "Project Management",
+          "Adaptability"
+        ],
+        "tool_names": [
+          "Odoo",
+          "AX",
+          "ERP",
+          "SAP",
+          "PHP",
+          "Magento",
+          "Shopify"
+        ],
+        "education_summary": [
+          "MBA",
+          "Bachelor"
+        ],
+        "capability_coverage": {
+          "Project Management": "FOUND",
+          "Product Management": "NOT_FOUND",
+          "eCommerce": "NOT_FOUND",
+          "Omnichannel Commerce": "NOT_FOUND",
+          "Order Management": "NOT_FOUND",
+          "Warehouse Management": "NOT_FOUND",
+          "Delivery / Logistics Management": "NOT_FOUND",
+          "Operations Planning": "NOT_FOUND",
+          "Digital Platform Development": "NOT_FOUND",
+          "Team Leadership": "NOT_FOUND",
+          "Process Optimization": "NOT_FOUND"
+        },
+        "experience_recall": "HIGH",
+        "education_recall": "2/2",
+        "candidate_profile_created": true
+      },
+      "experience_recall": {
+        "actual": 17,
+        "minimum": 4,
+        "recall": 1.0
+      },
+      "education_recall": {
+        "matched": 2,
+        "expected": 2,
+        "recall": 1.0
+      },
+      "capability_family_coverage": {
+        "Project Management": "FOUND",
+        "Product Management": "NOT_FOUND",
+        "eCommerce": "NOT_FOUND",
+        "Omnichannel Commerce": "NOT_FOUND",
+        "Order Management": "NOT_FOUND",
+        "Warehouse Management": "NOT_FOUND",
+        "Delivery / Logistics Management": "NOT_FOUND",
+        "Operations Planning": "NOT_FOUND",
+        "Digital Platform Development": "NOT_FOUND",
+        "Team Leadership": "NOT_FOUND",
+        "Process Optimization": "NOT_FOUND"
+      },
+      "capability_family_recall": 0.09090909090909091
+    }
+  },
+  "comparison": {
+    "experience_recall": {
+      "v2.0": 0.5,
+      "v2.1": 1.0
+    },
+    "education_recall": {
+      "v2.0": 1.0,
+      "v2.1": 1.0
+    },
+    "capability_family_recall": {
+      "v2.0": 0.09090909090909091,
+      "v2.1": 0.09090909090909091
+    },
+    "grounding": {
+      "v2.0": 1.0,
+      "v2.1": 1.0
+    },
+    "unsupported": {
+      "v2.0": 0,
+      "v2.1": 0
+    },
+    "duplicates": {
+      "v2.0": 0,
+      "v2.1": 0
+    }
+  },
+  "decision": {
+    "v2_1_materially_improves_valid_reference_recall": false,
+    "previous_comparison_valid": false,
+    "next_action": "PROCEED_TO_EXT_03A_2_PROMPT_2_2_CALIBRATION"
+  }
+}

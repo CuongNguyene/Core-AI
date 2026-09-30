@@ -1,0 +1,73 @@
+{
+  "experiment_id": "instructional-design-id-02-smoke-3",
+  "experiment_version": "0.1",
+  "annotation_version": "0.1",
+  "source_results": "results.json",
+  "status": "incomplete_run_set",
+  "annotations": [
+    {
+      "annotation_id": "smoke3-model-monitoring-assessment-dependency-001",
+      "fixture_id": "model_monitoring",
+      "condition": "structured_v0.3",
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_id": "assess-model-monitoring-002",
+      "root_cause": "ASSESSMENT_SCOPE_CREEP",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "evidence": "required_capability_refs contains another assessment ID rather than a declared capability or dependency candidate",
+      "review_status": "researcher_initial"
+    },
+    {
+      "annotation_id": "smoke3-model-monitoring-assessment-dependency-002",
+      "fixture_id": "model_monitoring",
+      "condition": "structured_v0.3",
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_id": "assess-model-monitoring-003",
+      "root_cause": "ASSESSMENT_SCOPE_CREEP",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "evidence": "required_capability_refs contains assessment IDs that are not taught capabilities",
+      "review_status": "researcher_initial"
+    },
+    {
+      "annotation_id": "smoke3-model-monitoring-assessment-dependency-003",
+      "fixture_id": "model_monitoring",
+      "condition": "structured_v0.3",
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_id": "assess-model-monitoring-003",
+      "root_cause": "ASSESSMENT_SCOPE_CREEP",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "evidence": "required_capability_refs contains assessment IDs instead of a typed dependency candidate",
+      "review_status": "researcher_initial"
+    },
+    {
+      "annotation_id": "smoke3-python-assessment-dependency-001",
+      "fixture_id": "python_data_processing",
+      "condition": "structured_v0.3",
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_id": "assess-python-data-processing-002",
+      "root_cause": "ASSESSMENT_SCOPE_CREEP",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "evidence": "required_capability_refs contains assess-python-data-processing-001, not a declared capability or dependency candidate",
+      "review_status": "researcher_initial"
+    },
+    {
+      "annotation_id": "smoke3-technical-objective-json-001",
+      "fixture_id": "technical_communication",
+      "condition": "structured_v0.3",
+      "finding_code": "invalid_model_json",
+      "entity_id": "instructional_objective_design",
+      "root_cause": "PROMPT_CONTRACT",
+      "producer_stage": "ObjectiveDesigner",
+      "validator_correct": true,
+      "evidence": "structured output parser rejected the model response as invalid JSON; no downstream stage was run",
+      "review_status": "researcher_initial"
+    }
+  ],
+  "limitations": [
+    "Annotations are deterministic researcher hypotheses, not blinded human labels.",
+    "The incomplete technical-communication structured run prevents a six-packet blind review handoff."
+  ]
+}

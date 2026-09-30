@@ -1,0 +1,11 @@
+{
+  "experiment": "ID-04C",
+  "external_model_calls": 0,
+  "historical_artifacts_modified": false,
+  "intervention": "practice_before_assessment_coverage",
+  "preceding_interventions": [
+    "ID-04A",
+    "ID-04B"
+  ],
+  "source": "ID-03C.3"
+}

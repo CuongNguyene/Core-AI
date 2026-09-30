@@ -1,0 +1,105 @@
+{
+  "review_id": "review-004",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T14:02:26+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "lesson-003",
+        "field": "formative_assessment_ids",
+        "description": "References 'assess-python-data-processing-001' which is explicitly marked as a summative assessment.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      },
+      {
+        "entity": "lesson-006",
+        "field": "formative_assessment_ids",
+        "description": "References 'assess-python-data-processing-002' which is explicitly marked as a summative assessment.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "Summative assessments are improperly nested into lesson formative assessment arrays[cite: 18]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Marginally reasonable, but constrained heavily by time.",
+      "notes": "The total task time requested in the summative assessments (30-45 minutes total) leaves only 15-30 minutes for instruction, making the 60-minute overall budget severely compressed[cite: 18]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Clear success criteria covering both code implementation and written justification[cite: 18]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The hands-on task and written justification directly reflect the procedural and conceptual capabilities[cite: 18]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "The tasks yield highly valid evidence of data transformation skills[cite: 18]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "Aligned well with apply and evaluate cognitive levels[cite: 18]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Prerequisites correctly state that basic Python and dataset loading are strictly required[cite: 18]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "Transforming data before evaluating and justifying choices is a standard and effective pedagogical sequence[cite: 18]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "Because the summative assessments are improperly used as formative practice within the lessons, there is a risk of teaching directly to the test[cite: 18]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 4,
+        "rationale": "Dedicating only short 8-10 minute bursts to teach complex library implementation before a rigorous coding exam will likely result in under-prepared learners[cite: 18]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Content stays tightly scoped to missing and invalid data handling[cite: 18]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Requires extraction of summative tasks from lesson structures and adjusting time limits to create room for realistic instruction."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-001",
+        "prereq-002"
+      ],
+      "rejected_refs": [],
+      "notes": "These prerequisites represent the necessary entry foundation for the course[cite: 18]."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 2,
+      "notes": "Remove the summative assessment IDs from the formative assessment arrays in lessons 003 and 006, and rebalance the time budget."
+    },
+    "overall_notes": "A well-intended design that suffers from trying to fit highly rigorous, time-consuming summative assessments into an impossibly short total time constraint[cite: 18]."
+  }
+}

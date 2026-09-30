@@ -1,0 +1,40 @@
+{
+  "overall": {
+    "major": 2,
+    "minor": 2,
+    "moderate": 5,
+    "none": 1
+  },
+  "per_domain": {
+    "accounting_financial_reporting_basic": {
+      "moderate": 2
+    },
+    "construction_drawing_and_method_basic": {
+      "major": 1,
+      "minor": 1
+    },
+    "hr_recruitment_planning_basic": {
+      "major": 1,
+      "moderate": 1
+    },
+    "legal_contract_review_basic": {
+      "moderate": 1,
+      "none": 1
+    },
+    "python_data_processing": {
+      "minor": 1,
+      "moderate": 1
+    }
+  },
+  "per_reviewer": {
+    "codex-sme-reviewer": {
+      "major": 2,
+      "moderate": 3
+    },
+    "gemini-sme-01": {
+      "minor": 2,
+      "moderate": 2,
+      "none": 1
+    }
+  }
+}

@@ -1,0 +1,625 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "Partner with department heads to understand workforce and hiring requirements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Partner with department heads",
+        "workforce and hiring requirements"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 246,
+        "end_offset": 324
+      },
+      "source_excerpt": "Partner with department heads to understand workforce and hiring requirements.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "Develop recruitment plans for high-volume and specialist positions.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Develop recruitment plans",
+        "high-volume and specialist positions"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 325,
+        "end_offset": 392
+      },
+      "source_excerpt": "Develop recruitment plans for high-volume and specialist positions.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Manage end-to-end recruitment activities.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Manage end-to-end recruitment activities"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 393,
+        "end_offset": 434
+      },
+      "source_excerpt": "Manage end-to-end recruitment activities.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "Source candidates through LinkedIn, recruitment platforms, referrals, agencies, and professional networks.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Source candidates",
+        "LinkedIn",
+        "recruitment platforms",
+        "referrals",
+        "agencies",
+        "professional networks"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 435,
+        "end_offset": 541
+      },
+      "source_excerpt": "Source candidates through LinkedIn, recruitment platforms, referrals, agencies, and professional networks.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Conduct candidate screening and coordinate interviews.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Conduct candidate screening",
+        "coordinate interviews"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 542,
+        "end_offset": 596
+      },
+      "source_excerpt": "Conduct candidate screening and coordinate interviews.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-6",
+      "statement": "Advise hiring managers on candidate evaluation.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Advise hiring managers",
+        "candidate evaluation"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 597,
+        "end_offset": 644
+      },
+      "source_excerpt": "Advise hiring managers on candidate evaluation.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-7",
+      "statement": "Track recruitment funnel metrics including time-to-fill and offer acceptance.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Track recruitment funnel metrics",
+        "time-to-fill",
+        "offer acceptance"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 645,
+        "end_offset": 722
+      },
+      "source_excerpt": "Track recruitment funnel metrics including time-to-fill and offer acceptance.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-8",
+      "statement": "Improve recruitment processes and candidate experience.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Improve recruitment processes",
+        "candidate experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 723,
+        "end_offset": 778
+      },
+      "source_excerpt": "Improve recruitment processes and candidate experience.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-9",
+      "statement": "Develop talent pipelines for critical roles.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Develop talent pipelines",
+        "critical roles"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 779,
+        "end_offset": 823
+      },
+      "source_excerpt": "Develop talent pipelines for critical roles.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-10",
+      "statement": "Manage relationships with external recruitment vendors.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Manage relationships",
+        "external recruitment vendors"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 824,
+        "end_offset": 879
+      },
+      "source_excerpt": "Manage relationships with external recruitment vendors.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-11",
+      "statement": "Lead and coach members of the recruitment team.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Lead and coach",
+        "members of the recruitment team"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 880,
+        "end_offset": 927
+      },
+      "source_excerpt": "Lead and coach members of the recruitment team.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-12",
+      "statement": "Support employer branding activities.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Support employer branding activities"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 928,
+        "end_offset": 965
+      },
+      "source_excerpt": "Support employer branding activities.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-13",
+      "statement": "Produce recruitment reports for management.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Produce recruitment reports",
+        "management"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Key accountabilities",
+        "start_offset": 966,
+        "end_offset": 1009
+      },
+      "source_excerpt": "Produce recruitment reports for management.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-14",
+      "statement": "5+ years of recruitment or talent acquisition experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "5+ years",
+        "recruitment or talent acquisition experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "5+ years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "What we are looking for",
+        "start_offset": 1034,
+        "end_offset": 1091
+      },
+      "source_excerpt": "5+ years of recruitment or talent acquisition experience.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-15",
+      "statement": "Experience managing recruitment for multiple departments.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience managing recruitment",
+        "multiple departments"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "What we are looking for",
+        "start_offset": 1092,
+        "end_offset": 1149
+      },
+      "source_excerpt": "Experience managing recruitment for multiple departments.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-16",
+      "statement": "Demonstrated ability to work with senior hiring managers.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Demonstrated ability",
+        "work with senior hiring managers"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "What we are looking for",
+        "start_offset": 1150,
+        "end_offset": 1207
+      },
+      "source_excerpt": "Demonstrated ability to work with senior hiring managers.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-17",
+      "statement": "Experience managing recruiters or recruitment coordinators.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience managing recruiters or recruitment coordinators"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "What we are looking for",
+        "start_offset": 1208,
+        "end_offset": 1267
+      },
+      "source_excerpt": "Experience managing recruiters or recruitment coordinators.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-18",
+      "statement": "Strong sourcing and candidate assessment skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Strong sourcing",
+        "candidate assessment skills"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "What we are looking for",
+        "start_offset": 1268,
+        "end_offset": 1316
+      },
+      "source_excerpt": "Strong sourcing and candidate assessment skills.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-19",
+      "statement": "Good stakeholder management and communication skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Good stakeholder management",
+        "communication skills"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "What we are looking for",
+        "start_offset": 1317,
+        "end_offset": 1370
+      },
+      "source_excerpt": "Good stakeholder management and communication skills.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-20",
+      "statement": "Ability to use recruitment data to identify process improvements.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Ability to use recruitment data",
+        "identify process improvements"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "What we are looking for",
+        "start_offset": 1371,
+        "end_offset": 1436
+      },
+      "source_excerpt": "Ability to use recruitment data to identify process improvements.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-21",
+      "statement": "Experience with an Applicant Tracking System.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience with an Applicant Tracking System"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Preferred but not essential",
+        "start_offset": 1466,
+        "end_offset": 1511
+      },
+      "source_excerpt": "Experience with an Applicant Tracking System.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-22",
+      "statement": "Recruitment experience in technology or professional services.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Recruitment experience",
+        "technology or professional services"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Preferred but not essential",
+        "start_offset": 1512,
+        "end_offset": 1574
+      },
+      "source_excerpt": "Recruitment experience in technology or professional services.",
+      "provenance": {}
+    },
+    {
+      "requirement_id": "req-23",
+      "statement": "Employer branding experience.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Employer branding experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "69c2149d-53bf-4d2f-9f23-96f34eaece9d",
+        "section": "Preferred but not essential",
+        "start_offset": 1575,
+        "end_offset": 1604
+      },
+      "source_excerpt": "Employer branding experience.",
+      "provenance": {}
+    }
+  ]
+}

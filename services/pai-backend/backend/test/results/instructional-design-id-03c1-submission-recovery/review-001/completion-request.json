@@ -1,0 +1,68 @@
+{
+  "review_id": "review-001",
+  "reviewer_id": "gemini-sme-01",
+  "fixture_id": "python_data_processing",
+  "instruction": "Complete only the fields listed in required_completion. Do not revise previously submitted judgement.",
+  "required_completion": {
+    "rubric_scores.scope_balance": {
+      "type": "integer",
+      "allowed_range": [
+        1,
+        5
+      ],
+      "rationale_required": true
+    },
+    "rubric_scores.workload_time_realism": {
+      "type": "integer",
+      "allowed_range": [
+        1,
+        5
+      ],
+      "rationale_required": true
+    },
+    "rubric_scores.domain_appropriateness": {
+      "type": "integer",
+      "allowed_range": [
+        1,
+        5
+      ],
+      "rationale_required": true
+    },
+    "special_question": {
+      "answer": {
+        "type": "enum",
+        "allowed_values": [
+          "YES",
+          "PARTIALLY",
+          "NO"
+        ]
+      },
+      "rationale_required": true
+    }
+  },
+  "original_relevant_comments": {
+    "special_question": {
+      "answer": "YES. The progression from applying a procedural transformation to evaluating and justifying the choices is pedagogically sound for data processing[cite: 21].",
+      "notes": "The sequence mirrors authentic engineering practices where action must be followed by rationale[cite: 21]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 0,
+      "notes": "Researcher needs to define the invalid value taxonomy and finalize the time split between instruction and assessment[cite: 21]."
+    },
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-bpdp-01",
+        "prereq-bpdp-02",
+        "prereq-bpdp-03"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisites accurately capture the essential baseline needed to focus the 60 minutes purely on transformation and data quality reasoning[cite: 21]."
+    }
+  }
+}

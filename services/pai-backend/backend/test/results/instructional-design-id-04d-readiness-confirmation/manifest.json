@@ -1,0 +1,13 @@
+{
+  "experiment": "ID-04D-readiness-confirmation",
+  "version": "0.2",
+  "source_artifact": "instructional-design-id-04d-cross-domain-validation-final-rerun",
+  "legal_refresh_artifact": "instructional-design-id-04f-provenance-alias-rerun-legal",
+  "criteria": {
+    "five_domains_stable": "all five runs completed with valid graph",
+    "provenance_complete": "all classified prerequisite dispositions retain source refs",
+    "semantic_regressions": "ID-04A workload, ID-04B prerequisite, and ID-04C practice outputs present and regression flags remain true"
+  },
+  "historical_artifacts_modified": false,
+  "external_model_calls_in_confirmation": 0
+}

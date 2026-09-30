@@ -1,0 +1,110 @@
+{
+  "review_id": "review-002",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-13T09:56:24+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "minor_issues",
+    "issues": [
+      {
+        "category": "schema_or_shape",
+        "entity": "course_outline.modules[*].lesson_ids",
+        "field": "lesson_ids",
+        "description": "All three module lesson_ids arrays are empty even though nine lessons reference those module IDs. This creates a course-outline-to-lesson traceability gap.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "course_outline.modules[module-causal-diagnosis,module-response-planning].prerequisite_refs",
+        "field": "prerequisite_refs",
+        "description": "Module prerequisite_refs mix prerequisite IDs with objective IDs. This may be acceptable if prior objectives are allowed as prerequisites, but the field name otherwise suggests prerequisite entities.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "No unknown objective IDs, assessment objective references, lesson module IDs, or lesson objective IDs were apparent. Technical notes are recorded separately from pedagogy."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring machine traceability issues, the design is pedagogically reasonable: it decomposes the model-monitoring response workflow into interpretation, diagnosis, and response planning with matching practice and integrated assessment."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives define observable performances and mostly judgeable criteria. Some phrases such as likely causes, trade-offs, and constraints need stronger context-specific anchors."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "Individual assessments and the integrated scenario map well to the three objectives. Some assessment requirements, such as three signals and multiple root causes, add thresholds not stated in the objectives."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Signal identification, causal reasoning, response justification, and workflow coherence are valid evidence types. Validity depends on well-authored dashboard fixtures, ground truth signal patterns, and reliable expert scoring."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "Interpretation and causal diagnosis are appropriately analyze-level, while response planning reaches evaluate-level judgement. The activity sequence supports these levels but is ambitious for 60 minutes."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "All prerequisites are relevant and candidate-marked, but the list is broad. General causal reasoning and trade-off thinking need sharper qualification, and several items may be enabling instruction rather than entry gates."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The observe-diagnose-respond sequence is highly coherent and matches the desired performance and prerequisite chain."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Explanation, demonstration, worked examples, guided practice, and scenario work prepare learners for the assessments. The remaining weakness is that lessons describe activity patterns more than concrete content."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "There is moderate under-teaching risk because taxonomies, dashboard fixtures, causal signal signatures, response repertoires, and trade-off frameworks are still left for later authoring."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "The scope is mostly focused on the requested workflow. The prerequisite set is slightly expansive but not a major over-teaching problem."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Moderate editing would be needed to fill lesson content, tighten prerequisite wording, add scoring anchors, and connect modules to lessons, but the instructional architecture is sound."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-dashboard-literacy",
+        "prereq-metric-familiarity",
+        "prereq-degradation-concepts",
+        "prereq-causal-reasoning",
+        "prereq-ml-system-architecture",
+        "prereq-response-actions-awareness",
+        "prereq-tradeoff-thinking"
+      ],
+      "rejected_refs": [],
+      "notes": "All seven prerequisites are directionally relevant and candidate-marked. Revisions should make the set more minimal and precise: combine or order metric/degradation concepts, qualify causal and trade-off reasoning, and specify recognition-level response-action awareness rather than operational execution skill."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 3,
+      "assessments_changed": 4,
+      "prerequisites_changed": 5,
+      "modules_changed": 3,
+      "lessons_changed": 9,
+      "notes": "Estimated edits include tightening all objectives, adding context and scoring anchors to all assessments, revising most prerequisite wording for minimality, populating module lesson_ids, and fleshing out all lessons with concrete examples and feedback guidance."
+    },
+    "overall_notes": "A strong workflow-aligned draft whose main risks are underspecified domain content, dependence on future fixture quality, and a tight 60-minute estimate."
+  }
+}

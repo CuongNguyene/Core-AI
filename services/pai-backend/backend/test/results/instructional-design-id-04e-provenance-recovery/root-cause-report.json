@@ -1,0 +1,9 @@
+{
+  "experiment": "ID-04E",
+  "observed_failure": "prerequisite_provenance_not_preserved",
+  "first_loss_layer": "PrerequisiteProposer output boundary",
+  "evidence": "Construction dispositions had empty source_dependency_refs despite matching assessment dependency candidates.",
+  "fix_layer": "orchestration propagation",
+  "fix": "Exact normalized capability matching restores a deterministic dependency_candidate provenance ref; unmatched refs remain unresolved.",
+  "prompt_schema_policy_changed": false
+}

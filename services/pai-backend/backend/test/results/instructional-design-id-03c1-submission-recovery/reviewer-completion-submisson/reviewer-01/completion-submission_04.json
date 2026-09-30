@@ -1,0 +1,17 @@
+{
+  "review_id": "review-004",
+  "reviewer_id": "codex-sme-reviewer",
+  "completion": {
+    "rubric_scores": {
+      "scope_balance": 3,
+      "workload_time_realism": 2,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "scope_balance": "The content is aligned to recruitment planning, but the design has noticeable under-teaching risk because learners must move from component recall to plan creation and sequencing justification with unresolved lesson timing and limited formative support.",
+      "workload_time_realism": "The workload is clearly unrealistic as specified because several lesson durations are null and the 60-minute session must cover instruction plus a create-level plan and an evaluate-level justification task.",
+      "domain_appropriateness": "The approach is strongly domain-appropriate for HR because it uses a department hiring scenario, plan synthesis, constraint application, sequencing decisions, and justification of workplace planning choices."
+    },
+    "prerequisites_acceptable": false
+  }
+}

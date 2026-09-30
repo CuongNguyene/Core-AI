@@ -1,0 +1,37 @@
+{
+  "review_id": null,
+  "rubric_scores": {
+    "objective_measurability": null,
+    "objective_assessment_alignment": null,
+    "evidence_validity": null,
+    "cognitive_alignment": null,
+    "prerequisite_quality": null,
+    "course_sequence_coherence": null,
+    "instruction_assessment_alignment": null,
+    "scope_balance": null,
+    "workload_time_realism": null,
+    "domain_appropriateness": null
+  },
+  "rationales": {
+    "objective_measurability": "",
+    "objective_assessment_alignment": "",
+    "evidence_validity": "",
+    "cognitive_alignment": "",
+    "prerequisite_quality": "",
+    "course_sequence_coherence": "",
+    "instruction_assessment_alignment": "",
+    "scope_balance": "",
+    "workload_time_realism": "",
+    "domain_appropriateness": ""
+    
+  },
+  "machine_validity_observations": [],
+  "prerequisites_acceptable": null,
+  "edit_effort": null,
+  "special_question": {
+    "answer": null,
+    "rationale": ""
+  },
+  "top_strengths": [],
+  "top_issues": []
+}

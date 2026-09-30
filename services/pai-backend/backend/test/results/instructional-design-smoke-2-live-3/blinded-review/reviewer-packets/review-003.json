@@ -1,0 +1,425 @@
+{
+  "review_id": "review-003",
+  "artifact": {
+    "brief": {
+      "id": "brief-python-data-processing",
+      "capability": {
+        "id": null,
+        "name": "python data processing",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [
+          "basic Python"
+        ],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:python-data-processing:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a tabular dataset, transform missing or invalid values and justify the transformation choices."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-1",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Identify missing and invalid values in a tabular dataset using pandas",
+        "cognitive_process": "understand",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a CSV or DataFrame",
+          "Using pandas inspection methods"
+        ],
+        "success_criteria": [
+          "Correctly identifies null, NaN, and empty string values",
+          "Detects invalid values based on expected data types or ranges"
+        ],
+        "prerequisite_refs": [
+          "prereq-1",
+          "prereq-2"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes pandas as the primary tool based on industry standard for Python tabular data"
+          ]
+        }
+      },
+      {
+        "id": "obj-2",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Select and apply appropriate transformation strategies for missing values",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given identified missing values",
+          "Considering data distribution and domain context"
+        ],
+        "success_criteria": [
+          "Applies deletion, imputation, or flagging strategies appropriately",
+          "Implements transformations using pandas methods"
+        ],
+        "prerequisite_refs": [
+          "prereq-1",
+          "prereq-2",
+          "prereq-3"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      },
+      {
+        "id": "obj-3",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Justify transformation choices based on data characteristics and analysis goals",
+        "cognitive_process": "evaluate",
+        "knowledge_dimension": "metacognitive",
+        "conditions": [
+          "Given a transformation decision",
+          "With access to data summary statistics and domain requirements"
+        ],
+        "success_criteria": [
+          "Explains trade-offs of chosen transformation approach",
+          "References data properties that inform the decision",
+          "Considers impact on downstream analysis"
+        ],
+        "prerequisite_refs": [
+          "prereq-3"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-summative-1",
+        "objective_ids": [
+          "obj-1",
+          "obj-2",
+          "obj-3"
+        ],
+        "capability_claim": "Transform missing or invalid values in a tabular dataset and justify the transformation choices",
+        "required_evidence": [
+          {
+            "id": "ev-1",
+            "criterion": "Correctly identifies at least 3 types of data quality issues in the provided dataset",
+            "rationale": "Demonstrates understanding of common missing and invalid value patterns"
+          },
+          {
+            "id": "ev-2",
+            "criterion": "Applies at least 2 different transformation strategies with correct pandas syntax",
+            "rationale": "Shows procedural capability with the primary tool"
+          },
+          {
+            "id": "ev-3",
+            "criterion": "Provides written justification referencing specific data characteristics and analysis context",
+            "rationale": "Demonstrates metacognitive evaluation of transformation decisions"
+          }
+        ],
+        "task": {
+          "task_type": "hands-on transformation task",
+          "description": "Given a CSV file with multiple data quality issues (missing values, type mismatches, outliers), write Python code to identify problems, apply appropriate transformations, and document your reasoning in comments or markdown",
+          "conditions": [
+            "Access to pandas and numpy",
+            "Dataset includes numeric and categorical columns",
+            "30-minute time limit"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rubric-identification",
+              "criterion": "Identification of data quality issues",
+              "performance_levels": [
+                "Identifies fewer than 2 issue types",
+                "Identifies 2-3 issue types with partial accuracy",
+                "Identifies 3+ issue types with full accuracy"
+              ]
+            },
+            {
+              "id": "rubric-transformation",
+              "criterion": "Correctness of transformation implementation",
+              "performance_levels": [
+                "Code has errors or applies inappropriate transformations",
+                "Code runs but transformations are partially appropriate",
+                "Code runs and all transformations are appropriate and correct"
+              ]
+            },
+            {
+              "id": "rubric-justification",
+              "criterion": "Quality of justification",
+              "performance_levels": [
+                "No justification or vague statements",
+                "Justification references some relevant factors",
+                "Justification clearly links data properties, transformation choice, and analysis impact"
+              ]
+            }
+          ],
+          "mastery_rule": "Achieves highest performance level on at least 2 dimensions and middle or higher on the third"
+        },
+        "is_summative": true,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "30-minute estimate aligns with 60-minute total constraint allowing time for instruction"
+          ]
+        }
+      },
+      {
+        "id": "assess-formative-1",
+        "objective_ids": [
+          "obj-1"
+        ],
+        "capability_claim": "Identify missing and invalid values using pandas methods",
+        "required_evidence": [
+          {
+            "id": "ev-f1",
+            "criterion": "Uses .isnull(), .isna(), or .info() correctly",
+            "rationale": null
+          }
+        ],
+        "task": {
+          "task_type": "code completion",
+          "description": "Complete code snippet to detect missing values in a given DataFrame column",
+          "conditions": [
+            "5-minute practice check"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": null,
+        "is_summative": false,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-1",
+        "capability": "Write and execute basic Python scripts",
+        "status": "confirmed",
+        "basis": "researcher_authored",
+        "rationale": "Directly stated in learner_state.known",
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-2",
+        "capability": "Understand tabular data structure (rows, columns, data types)",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "Necessary to work with datasets but not explicitly confirmed in brief",
+        "requires_prerequisite_refs": [
+          "prereq-1"
+        ],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-3",
+        "capability": "Import and use Python libraries (pandas)",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "Required for pandas-based data processing but not confirmed in learner state",
+        "requires_prerequisite_refs": [
+          "prereq-1"
+        ],
+        "teaching_objective_id": null
+      }
+    ],
+    "course_outline": {
+      "id": "outline-1",
+      "brief_id": "brief-python-data-processing",
+      "objective_ids": [
+        "obj-1",
+        "obj-2",
+        "obj-3"
+      ],
+      "modules": [
+        {
+          "id": "mod-1",
+          "title": "Detecting Data Quality Issues",
+          "objective_ids": [
+            "obj-1"
+          ],
+          "prerequisite_refs": [
+            "prereq-1",
+            "prereq-2",
+            "prereq-3"
+          ],
+          "lesson_ids": [
+            "lesson-1",
+            "lesson-2"
+          ],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "mod-2",
+          "title": "Transforming Missing and Invalid Data",
+          "objective_ids": [
+            "obj-2",
+            "obj-3"
+          ],
+          "prerequisite_refs": [
+            "prereq-1",
+            "prereq-2",
+            "prereq-3"
+          ],
+          "lesson_ids": [
+            "lesson-3",
+            "lesson-4"
+          ],
+          "estimated_minutes": 25
+        },
+        {
+          "id": "mod-3",
+          "title": "Practice and Assessment",
+          "objective_ids": [
+            "obj-1",
+            "obj-2",
+            "obj-3"
+          ],
+          "prerequisite_refs": [
+            "prereq-1",
+            "prereq-2",
+            "prereq-3"
+          ],
+          "lesson_ids": [],
+          "estimated_minutes": 15
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-1",
+        "prereq-2",
+        "prereq-3"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "Module 1 establishes identification skills before transformation",
+        "Module 2 builds on detection to teach transformation and justification together",
+        "Module 3 provides summative assessment with time buffer"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": []
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-1",
+        "module_id": "mod-1",
+        "objective_ids": [
+          "obj-1"
+        ],
+        "prerequisite_refs": [
+          "prereq-1",
+          "prereq-3"
+        ],
+        "lesson_goal": "Use pandas methods to identify missing values in a DataFrame",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Observe demonstration of .isnull(), .isna(), .info(), and .describe() methods on sample dataset with various missing value patterns",
+        "formative_assessment_ids": [
+          "assess-formative-1"
+        ],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      },
+      {
+        "id": "lesson-2",
+        "module_id": "mod-1",
+        "objective_ids": [
+          "obj-1"
+        ],
+        "prerequisite_refs": [
+          "prereq-1",
+          "prereq-2",
+          "prereq-3"
+        ],
+        "lesson_goal": "Detect invalid values using type checking and domain constraints",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Follow along as instructor identifies invalid values (negative ages, out-of-range dates, type mismatches) and explains detection logic",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      },
+      {
+        "id": "lesson-3",
+        "module_id": "mod-2",
+        "objective_ids": [
+          "obj-2"
+        ],
+        "prerequisite_refs": [
+          "prereq-1",
+          "prereq-3"
+        ],
+        "lesson_goal": "Apply deletion, mean/median imputation, and forward-fill strategies using pandas",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Practice applying .dropna(), .fillna() with various parameters on provided datasets with instructor guidance and immediate feedback",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      },
+      {
+        "id": "lesson-4",
+        "module_id": "mod-2",
+        "objective_ids": [
+          "obj-3"
+        ],
+        "prerequisite_refs": [
+          "prereq-3"
+        ],
+        "lesson_goal": "Evaluate and justify transformation decisions based on data distribution and use case",
+        "instructional_pattern": "scenario",
+        "expected_learner_activity": "Analyze three scenarios with different data characteristics and analysis goals, discuss trade-offs, and select appropriate transformation with written justification",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

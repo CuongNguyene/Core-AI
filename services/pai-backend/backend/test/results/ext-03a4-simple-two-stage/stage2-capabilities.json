@@ -1,0 +1,28 @@
+{
+  "capability_count": 4,
+  "capability_names": [
+    "Distribution Management System Development",
+    "Omni Channel Platform Development",
+    "E-commerce and Delivery Project Development",
+    "Mobile Payment Platform Development"
+  ],
+  "capability_family_coverage": {
+    "Project Management": "FOUND",
+    "Product Management": "NOT_FOUND",
+    "eCommerce": "FOUND",
+    "Omnichannel Commerce": "FOUND",
+    "Order Management": "NOT_FOUND",
+    "Warehouse Management": "NOT_FOUND",
+    "Delivery / Logistics Management": "FOUND",
+    "Operations Planning": "NOT_FOUND",
+    "Digital Platform Development": "FOUND",
+    "Team Leadership": "NOT_FOUND",
+    "Process Optimization": "NOT_FOUND"
+  },
+  "capability_family_recall": 0.45454545454545453,
+  "grounding_rate": 1.0,
+  "unsupported_count": 0,
+  "dangling_ref_count": 0,
+  "duplicate_count": 0,
+  "latency_ms": 4201
+}

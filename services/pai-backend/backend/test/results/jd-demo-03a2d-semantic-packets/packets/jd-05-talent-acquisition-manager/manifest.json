@@ -1,0 +1,45 @@
+{
+  "packet_id": "jd-05-talent-acquisition-manager",
+  "source": {
+    "filename": "JD-05 — Talent Acquisition Manager.docx",
+    "sha256": "75f5f115ed3c2e50cf4cf56a6ad79114af4ce1d142aec5ef9881254a6af94a8a"
+  },
+  "runtime": {
+    "profile_id": "d12ba165-1d6c-4f2b-9505-6a614593d81b",
+    "document_id": "9d018ad8-4da9-4136-b336-42df203ac5c6",
+    "job_id": "7c5b6576-d327-4e20-bf3f-eb8edeeafdba",
+    "review_state": "pending_review",
+    "profile_version": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.2",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.2",
+    "input_mode": "whole_parsed_text",
+    "jd_extraction_mode": "requirement_v2",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 24,
+    "supported_requirement_count": 24,
+    "text_span_locator_count": 24,
+    "pdf_page_locator_count": 0,
+    "dimensions": {
+      "skill": 4,
+      "experience": 6,
+      "education": 0,
+      "credential": 0,
+      "qualification": 0,
+      "null": 14
+    },
+    "modalities": {
+      "must": 7,
+      "preferred": 3,
+      "responsibility": 14,
+      "unspecified": 0
+    }
+  }
+}

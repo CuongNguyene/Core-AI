@@ -1,0 +1,34 @@
+{
+  "packet_id": "jd-02-senior-data-analyst",
+  "source": {
+    "filename": "JD-02 — Senior Data Analyst.docx",
+    "sha256": "36f500b4cbed54f0f61b1b37a42c5de74696a3d284b9adceae92400dd0264ac0"
+  },
+  "runtime": {
+    "document_id": "dedfa31a-f61c-41eb-b479-494e1a8724eb",
+    "job_id": "f2bf6582-1dfe-4a02-b094-f253dc59dc9b",
+    "profile_id": "0946a028-08c4-44d0-b2f3-06dc257bd091",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "attempts": 0
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.1",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.1",
+    "input_mode": "whole_parsed_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2",
+    "finish_reason": "STOP",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 21,
+    "supported_requirement_count": 21,
+    "text_span_locator_count": 21,
+    "pdf_page_locator_count": 0
+  }
+}

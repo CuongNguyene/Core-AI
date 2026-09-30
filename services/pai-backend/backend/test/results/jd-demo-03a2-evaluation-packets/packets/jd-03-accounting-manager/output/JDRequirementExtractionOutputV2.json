@@ -1,0 +1,127 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "Bachelor's degree in Accounting, Finance, or equivalent.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": "Education Requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Bachelor's degree",
+        "Accounting",
+        "Finance"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "Bachelor's",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "274aa8d9-4f0a-4490-85cb-ce468710a2cf",
+        "section": "Candidate requirements",
+        "start_offset": 1134,
+        "end_offset": 1190
+      },
+      "source_excerpt": "Bachelor's degree in Accounting, Finance, or equivalent.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "Minimum 5 years of accounting experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "Experience Requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "5 years",
+        "accounting experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "5 years",
+      "observable_behaviors": [],
+      "evidence_constraints": [
+        "Minimum 5 years"
+      ],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "274aa8d9-4f0a-4490-85cb-ce468710a2cf",
+        "section": "Candidate requirements",
+        "start_offset": 1191,
+        "end_offset": 1232
+      },
+      "source_excerpt": "Minimum 5 years of accounting experience.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "At least 2 years in a supervisory or accounting management role.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "Experience Requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "2 years",
+        "supervisory",
+        "accounting management"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "2 years",
+      "observable_behaviors": [],
+      "evidence_constraints": [
+        "At least 2 years"
+      ],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "274aa8d9-4f0a-4490-85cb-ce468710a2cf",
+        "section": "Candidate requirements",
+        "start_offset": 1233,
+        "end_offset": 1297
+      },
+      "source_excerpt": "At least 2 years in a supervisory or accounting management role.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "CPA, ACCA, or equivalent professional qualification.",
+      "criterion_dimension": "education",
+      "modality": "preferred",
+      "logical_group": "Preferred Qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "CPA",
+        "ACCA",
+        "professional qualification"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "274aa8d9-4f0a-4490-85cb-ce468710a2cf",
+        "section": "Candidate requirements",
+        "start_offset": 1500,
+        "end_offset": 1552
+      },
+      "source_excerpt": "CPA, ACCA, or equivalent professional qualification.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    }
+  ]
+}

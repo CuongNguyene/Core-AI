@@ -1,0 +1,622 @@
+{
+  "review_id": "review-006",
+  "artifact": {
+    "brief": {
+      "id": "brief-technical-communication",
+      "capability": {
+        "id": null,
+        "name": "technical communication",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:technical-communication:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a complex technical issue and a non-specialist audience, structure an explanation and adapt terminology to the audience."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "lo-tc-01",
+        "brief_id": "brief-technical-communication",
+        "performance": "Given a complex technical issue and a description of a non-specialist audience, identify the key audience characteristics (prior knowledge, role, goals) that should influence the explanation strategy.",
+        "cognitive_process": "analyze",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "A written scenario describing a technical issue and a non-specialist audience profile is provided",
+          "No domain-specific technical background is assumed for the audience"
+        ],
+        "success_criteria": [
+          "Learner identifies at least two audience characteristics relevant to explanation adaptation",
+          "Learner articulates how each characteristic affects terminology or structure choices"
+        ],
+        "prerequisite_refs": [],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Audience analysis is treated as a prerequisite sub-skill for adaptation; this is a model candidate only and requires researcher validation",
+            "No learner prior knowledge evidence was supplied; known/unknown fields were empty"
+          ]
+        }
+      },
+      {
+        "id": "lo-tc-02",
+        "brief_id": "brief-technical-communication",
+        "performance": "Given a complex technical issue, structure a written explanation using a logical sequence appropriate for a non-specialist reader.",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "A defined technical topic is supplied",
+          "Target audience is specified as non-specialist",
+          "Learner produces a structured written explanation"
+        ],
+        "success_criteria": [
+          "Explanation follows an observable logical sequence (e.g., context before detail, problem before solution)",
+          "Structure is identifiable without requiring domain expertise to evaluate"
+        ],
+        "prerequisite_refs": [
+          "lo-tc-01"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "'Logical sequence' is not defined in the brief; this criterion is a model candidate and must be validated against the target capability definition",
+            "Prerequisite reference to lo-tc-01 is a model-proposed candidate only"
+          ]
+        }
+      },
+      {
+        "id": "lo-tc-03",
+        "brief_id": "brief-technical-communication",
+        "performance": "Given a technical explanation written for a specialist audience, adapt the terminology to be accessible to a specified non-specialist audience.",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "A source explanation containing specialist terminology is provided",
+          "A non-specialist audience profile is specified",
+          "Learner produces a revised version of the explanation"
+        ],
+        "success_criteria": [
+          "Specialist terms are replaced or defined in plain language",
+          "Adapted explanation does not introduce factual inaccuracies (as judged by a domain-informed evaluator)",
+          "Revised text is assessable without access to the original specialist source"
+        ],
+        "prerequisite_refs": [
+          "lo-tc-01",
+          "lo-tc-02"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Accuracy evaluation requires a domain-informed human evaluator; this cannot be automated without additional specification",
+            "Prerequisite chain lo-tc-01 -> lo-tc-02 -> lo-tc-03 is a model-proposed candidate sequence and requires researcher validation",
+            "60-minute time constraint was noted; three objectives are proposed as a candidate scope — researcher should confirm feasibility"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-tc-01",
+        "objective_ids": [
+          "lo-tc-01"
+        ],
+        "capability_claim": "Learner can identify audience characteristics that should influence explanation strategy for a non-specialist audience.",
+        "required_evidence": [
+          {
+            "id": "ev-tc-01-a",
+            "criterion": "At least two distinct audience characteristics (e.g., prior knowledge, role, goals) are explicitly identified from the scenario.",
+            "rationale": "Corresponds to success criterion: identifies at least two relevant audience characteristics."
+          },
+          {
+            "id": "ev-tc-01-b",
+            "criterion": "For each identified characteristic, the learner articulates a specific implication for terminology choice or explanation structure.",
+            "rationale": "Corresponds to success criterion: articulates how each characteristic affects terminology or structure choices."
+          }
+        ],
+        "task": {
+          "task_type": "written-analysis",
+          "description": "Read the provided scenario describing a technical issue and a non-specialist audience profile. Identify at least two audience characteristics and explain, for each, how it should influence the explanation strategy.",
+          "conditions": [
+            "A written scenario describing a technical issue and a non-specialist audience profile is provided.",
+            "No domain-specific technical background is assumed for the audience.",
+            "Response is produced in writing without collaboration."
+          ]
+        },
+        "cognitive_process": "analyze",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-tc-01-1",
+              "criterion": "Number and relevance of identified audience characteristics",
+              "performance_levels": [
+                "Fewer than two characteristics identified, or characteristics are not relevant to explanation adaptation.",
+                "Two characteristics identified; relevance to explanation adaptation is implicit or partial.",
+                "Two or more characteristics identified; each is clearly relevant to explanation adaptation."
+              ]
+            },
+            {
+              "id": "rd-tc-01-2",
+              "criterion": "Quality of articulated implication for each characteristic",
+              "performance_levels": [
+                "No implication stated, or implication is generic and not linked to the specific characteristic.",
+                "Implication stated but connection to terminology or structure is vague.",
+                "Implication is specific and clearly linked to a terminology or structural choice."
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate model: score at top level on both dimensions. Researcher must validate threshold."
+        },
+        "is_summative": true,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Scenario content and audience profile must be supplied by researcher; no factual content is generated here.",
+            "Rubric performance levels are candidate descriptors requiring researcher validation against the capability definition."
+          ]
+        }
+      },
+      {
+        "id": "assess-tc-02",
+        "objective_ids": [
+          "lo-tc-02"
+        ],
+        "capability_claim": "Learner can structure a written explanation of a complex technical issue in a logical sequence appropriate for a non-specialist reader.",
+        "required_evidence": [
+          {
+            "id": "ev-tc-02-a",
+            "criterion": "The explanation follows an observable logical sequence (e.g., context is established before detail; problem is stated before solution).",
+            "rationale": "Corresponds to success criterion: follows an observable logical sequence."
+          },
+          {
+            "id": "ev-tc-02-b",
+            "criterion": "The structural sequence can be identified and evaluated without requiring domain expertise.",
+            "rationale": "Corresponds to success criterion: structure is identifiable without domain expertise."
+          }
+        ],
+        "task": {
+          "task_type": "structured-written-explanation",
+          "description": "Given the specified technical topic and the non-specialist audience profile, produce a written explanation structured for that audience. Your response should make the logical sequence of your explanation discernible to a reader without domain expertise.",
+          "conditions": [
+            "A defined technical topic is supplied.",
+            "Target audience is specified as non-specialist.",
+            "Learner produces a structured written explanation without collaboration.",
+            "No reference materials beyond the supplied topic description are permitted."
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-tc-02-1",
+              "criterion": "Presence and observability of logical sequence",
+              "performance_levels": [
+                "No discernible sequence; information is presented in an arbitrary or confusing order.",
+                "A partial sequence is present but transitions or ordering are inconsistent.",
+                "A clear logical sequence is present throughout and is observable without domain expertise."
+              ]
+            },
+            {
+              "id": "rd-tc-02-2",
+              "criterion": "Appropriateness of sequence for a non-specialist reader",
+              "performance_levels": [
+                "Sequence assumes specialist background or omits necessary context.",
+                "Sequence is broadly appropriate but includes isolated assumptions of prior knowledge.",
+                "Sequence consistently places context and framing before detail, appropriate for a non-specialist."
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate model: top level on both dimensions. 'Logical sequence' definition must be validated by researcher against the capability definition before use."
+        },
+        "is_summative": true,
+        "required_capability_refs": [
+          "lo-tc-01"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "'Logical sequence' is not defined in the brief; the rubric operationalisation here is a model candidate and requires researcher validation.",
+            "Prerequisite reference to lo-tc-01 is a model-proposed candidate only.",
+            "Topic and audience profile must be supplied by researcher."
+          ]
+        }
+      },
+      {
+        "id": "assess-tc-03",
+        "objective_ids": [
+          "lo-tc-03"
+        ],
+        "capability_claim": "Learner can adapt a specialist-audience explanation by replacing or defining specialist terminology to be accessible to a specified non-specialist audience without introducing factual inaccuracies.",
+        "required_evidence": [
+          {
+            "id": "ev-tc-03-a",
+            "criterion": "Specialist terms present in the source are replaced with plain-language alternatives or accompanied by definitions accessible to the specified audience.",
+            "rationale": "Corresponds to success criterion: specialist terms are replaced or defined in plain language."
+          },
+          {
+            "id": "ev-tc-03-b",
+            "criterion": "No factual inaccuracies are introduced in the adapted explanation, as determined by a domain-informed evaluator.",
+            "rationale": "Corresponds to success criterion: adapted explanation does not introduce factual inaccuracies."
+          },
+          {
+            "id": "ev-tc-03-c",
+            "criterion": "The revised explanation is self-contained and assessable without access to the original specialist source.",
+            "rationale": "Corresponds to success criterion: revised text is assessable without the original source."
+          }
+        ],
+        "task": {
+          "task_type": "text-adaptation",
+          "description": "You are provided with a written explanation of a technical topic intended for a specialist audience and a profile of a non-specialist audience. Produce a revised version of the explanation that is accessible to the specified non-specialist audience. Your revised version must be self-contained.",
+          "conditions": [
+            "A source explanation containing specialist terminology is provided.",
+            "A non-specialist audience profile is specified.",
+            "Learner produces a revised written explanation without collaboration.",
+            "The revised explanation must be evaluable without reference to the original source."
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-tc-03-1",
+              "criterion": "Coverage of specialist term adaptation",
+              "performance_levels": [
+                "Specialist terms are largely retained without definition or accessible replacement.",
+                "Most specialist terms are addressed but one or more significant terms remain inaccessible.",
+                "All identified specialist terms are replaced with plain-language alternatives or clearly defined."
+              ]
+            },
+            {
+              "id": "rd-tc-03-2",
+              "criterion": "Factual accuracy of the adapted explanation (domain-informed evaluator required)",
+              "performance_levels": [
+                "Adaptation introduces one or more factual inaccuracies.",
+                "No clear inaccuracies but meaning is distorted or oversimplified to the point of misleading.",
+                "Adapted explanation is factually accurate as judged by a domain-informed evaluator."
+              ]
+            },
+            {
+              "id": "rd-tc-03-3",
+              "criterion": "Self-containedness of revised explanation",
+              "performance_levels": [
+                "Revised explanation requires access to the original source to be understood or evaluated.",
+                "Revised explanation is mostly self-contained but contains isolated references requiring the source.",
+                "Revised explanation is fully self-contained and assessable without the original source."
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate model: top level on all three dimensions. Dimension rd-tc-03-2 requires a domain-informed human evaluator; automated scoring is not specified. Researcher must validate before operational use."
+        },
+        "is_summative": true,
+        "required_capability_refs": [
+          "lo-tc-01",
+          "lo-tc-02"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Factual accuracy evaluation (ev-tc-03-b, rd-tc-03-2) requires a domain-informed human evaluator; this cannot be automated without additional specification.",
+            "Prerequisite chain lo-tc-01 -> lo-tc-02 -> lo-tc-03 is a model-proposed candidate sequence and requires researcher validation.",
+            "Source explanation and audience profile must be supplied by researcher; no factual content is generated here.",
+            "60-minute constraint noted; three assessments are proposed as a candidate scope — feasibility within the time constraint must be confirmed by researcher."
+          ]
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "pre-tc-01",
+        "capability": "Learner can read and comprehend a written scenario or description of a technical issue at a general adult literacy level.",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "All three assessments require reading a supplied written scenario or source text; basic reading comprehension is an implicit entry condition for any written-analysis or text-adaptation task.",
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "pre-tc-02",
+        "capability": "Learner has a working concept of 'audience' as a factor that influences how a message is composed (i.e., that the same information may be expressed differently for different readers).",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "lo-tc-01 asks learners to analyze audience characteristics and derive implications for explanation strategy; this requires an existing mental model of audience as a variable in communication, not just a destination.",
+        "requires_prerequisite_refs": [
+          "pre-tc-01"
+        ],
+        "teaching_objective_id": "lo-tc-01"
+      },
+      {
+        "id": "pre-tc-03",
+        "capability": "Learner can distinguish between specialist and non-specialist vocabulary in a given text (i.e., can flag terms likely to be unfamiliar to a general reader).",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "lo-tc-03 requires replacing or defining specialist terminology; the learner must first be able to identify which terms qualify as specialist relative to a specified audience before adapting them.",
+        "requires_prerequisite_refs": [
+          "pre-tc-02"
+        ],
+        "teaching_objective_id": "lo-tc-03"
+      },
+      {
+        "id": "pre-tc-04",
+        "capability": "Learner can produce a coherent multi-sentence written response in English.",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "All summative tasks require written production (written-analysis, structured-written-explanation, text-adaptation); the ability to compose connected prose in the assessment language is a prerequisite for demonstrating any of the target capabilities.",
+        "requires_prerequisite_refs": [
+          "pre-tc-01"
+        ],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "pre-tc-05",
+        "capability": "Learner understands the concept of logical sequence in expository writing (e.g., that context or problem statement can precede detail or solution).",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "lo-tc-02 requires applying a logical sequence appropriate for a non-specialist reader; awareness that expository texts can be ordered in principled ways is a candidate entry condition before the learner can make deliberate structural choices.",
+        "requires_prerequisite_refs": [
+          "pre-tc-02",
+          "pre-tc-04"
+        ],
+        "teaching_objective_id": "lo-tc-02"
+      }
+    ],
+    "course_outline": {
+      "id": "co-tc-01",
+      "brief_id": "brief-technical-communication",
+      "objective_ids": [
+        "lo-tc-01",
+        "lo-tc-02",
+        "lo-tc-03"
+      ],
+      "modules": [
+        {
+          "id": "mod-tc-01",
+          "title": "Audience Analysis for Technical Explanation",
+          "objective_ids": [
+            "lo-tc-01"
+          ],
+          "prerequisite_refs": [
+            "pre-tc-01",
+            "pre-tc-02",
+            "pre-tc-04"
+          ],
+          "lesson_ids": [],
+          "estimated_minutes": 15
+        },
+        {
+          "id": "mod-tc-02",
+          "title": "Structuring Explanations for Non-Specialist Readers",
+          "objective_ids": [
+            "lo-tc-02"
+          ],
+          "prerequisite_refs": [
+            "lo-tc-01",
+            "pre-tc-05"
+          ],
+          "lesson_ids": [],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "mod-tc-03",
+          "title": "Adapting Specialist Terminology for Non-Specialist Audiences",
+          "objective_ids": [
+            "lo-tc-03"
+          ],
+          "prerequisite_refs": [
+            "lo-tc-01",
+            "lo-tc-02",
+            "pre-tc-03"
+          ],
+          "lesson_ids": [],
+          "estimated_minutes": 25
+        }
+      ],
+      "prerequisite_refs": [
+        "pre-tc-01",
+        "pre-tc-02",
+        "pre-tc-03",
+        "pre-tc-04",
+        "pre-tc-05"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "mod-tc-01 precedes mod-tc-02 because lo-tc-02 lists lo-tc-01 as a prerequisite_ref; audience analysis is treated as a candidate entry condition for structuring decisions.",
+        "mod-tc-02 precedes mod-tc-03 because lo-tc-03 lists both lo-tc-01 and lo-tc-02 as prerequisite_refs; the model-proposed chain lo-tc-01 -> lo-tc-02 -> lo-tc-03 requires researcher validation.",
+        "Estimated minutes per module are distributed to sum to the 60-minute brief constraint; allocation is a model candidate and feasibility must be confirmed by researcher.",
+        "No orphan modules: each module maps to at least one objective_id present in the brief artifacts."
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Module titles and lesson_ids are model-proposed structural placeholders; no factual lesson content is generated.",
+          "Prerequisite refs at course and module level are drawn from the supplied prerequisite artifacts; all have basis model_proposed and status candidate — researcher validation required before operational use.",
+          "60-minute total is preserved from brief constraint; per-module time split is a candidate allocation only.",
+          "Three-module structure mirrors the three supplied objectives; a different granularity may be appropriate depending on delivery context — researcher should confirm."
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "les-tc-01-01",
+        "module_id": "mod-tc-01",
+        "objective_ids": [
+          "lo-tc-01"
+        ],
+        "prerequisite_refs": [
+          "pre-tc-01",
+          "pre-tc-02",
+          "pre-tc-04"
+        ],
+        "lesson_goal": "Learner identifies audience characteristics relevant to explanation strategy for a non-specialist audience.",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Learner reads a framing of the audience-analysis task and responds to guided questions identifying how audience characteristics (prior knowledge, role, goals) relate to explanation choices.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 7,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Lesson content and scenario materials must be supplied by researcher; no factual content is generated here.",
+            "7-minute estimate is a candidate allocation within the 15-minute module budget; researcher must confirm feasibility."
+          ]
+        }
+      },
+      {
+        "id": "les-tc-01-02",
+        "module_id": "mod-tc-01",
+        "objective_ids": [
+          "lo-tc-01"
+        ],
+        "prerequisite_refs": [
+          "les-tc-01-01"
+        ],
+        "lesson_goal": "Learner articulates how each identified audience characteristic implies a specific terminology or structure choice.",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Learner applies audience-analysis to a supplied scenario, explicitly linking each characteristic to a candidate explanation strategy implication.",
+        "formative_assessment_ids": [
+          "assess-tc-01"
+        ],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Scenario and audience profile must be supplied by researcher.",
+            "assess-tc-01 is listed as summative in the supplied artifacts; its use here as a formative checkpoint is a model-proposed candidate and requires researcher validation.",
+            "8-minute estimate is a candidate allocation; researcher must confirm feasibility within the 15-minute module budget."
+          ]
+        }
+      },
+      {
+        "id": "les-tc-02-01",
+        "module_id": "mod-tc-02",
+        "objective_ids": [
+          "lo-tc-02"
+        ],
+        "prerequisite_refs": [
+          "lo-tc-01",
+          "pre-tc-05"
+        ],
+        "lesson_goal": "Learner recognises the structural features of a logically sequenced explanation appropriate for a non-specialist reader.",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Learner examines a supplied annotated example identifying how context precedes detail and problem precedes solution, then describes what they observe about the sequence.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Annotated example must be supplied by researcher; no factual example content is generated here.",
+            "'Logical sequence' definition is a model candidate and must be validated by researcher against the capability definition.",
+            "8-minute estimate is a candidate allocation within the 20-minute module budget."
+          ]
+        }
+      },
+      {
+        "id": "les-tc-02-02",
+        "module_id": "mod-tc-02",
+        "objective_ids": [
+          "lo-tc-02"
+        ],
+        "prerequisite_refs": [
+          "les-tc-02-01"
+        ],
+        "lesson_goal": "Learner produces a structured written explanation with an observable logical sequence for a non-specialist reader.",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Learner drafts a structured written explanation for a supplied technical topic and non-specialist audience profile, making the sequence discernible without domain expertise.",
+        "formative_assessment_ids": [
+          "assess-tc-02"
+        ],
+        "estimated_minutes": 12,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Technical topic and audience profile must be supplied by researcher.",
+            "assess-tc-02 is listed as summative in the supplied artifacts; its use here as a formative checkpoint is a model-proposed candidate and requires researcher validation.",
+            "12-minute estimate is a candidate allocation; researcher must confirm feasibility within the 20-minute module budget."
+          ]
+        }
+      },
+      {
+        "id": "les-tc-03-01",
+        "module_id": "mod-tc-03",
+        "objective_ids": [
+          "lo-tc-03"
+        ],
+        "prerequisite_refs": [
+          "lo-tc-01",
+          "lo-tc-02",
+          "pre-tc-03"
+        ],
+        "lesson_goal": "Learner identifies specialist terms in a source text that require replacement or definition for a specified non-specialist audience.",
+        "instructional_pattern": "scenario",
+        "expected_learner_activity": "Learner reviews a supplied source explanation and audience profile, flagging specialist terms and proposing a rationale for why each term requires adaptation.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Source explanation and audience profile must be supplied by researcher; no factual content is generated here.",
+            "8-minute estimate is a candidate allocation within the 25-minute module budget.",
+            "Prerequisite chain lo-tc-01 -> lo-tc-02 -> lo-tc-03 is model-proposed and requires researcher validation."
+          ]
+        }
+      },
+      {
+        "id": "les-tc-03-02",
+        "module_id": "mod-tc-03",
+        "objective_ids": [
+          "lo-tc-03"
+        ],
+        "prerequisite_refs": [
+          "les-tc-03-01"
+        ],
+        "lesson_goal": "Learner produces a self-contained adapted explanation replacing or defining specialist terminology without introducing factual inaccuracies.",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Learner produces a revised written explanation from the supplied specialist source, ensuring all identified specialist terms are replaced or defined and the result is self-contained and assessable without the original source.",
+        "formative_assessment_ids": [
+          "assess-tc-03"
+        ],
+        "estimated_minutes": 17,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Factual accuracy evaluation (ev-tc-03-b) requires a domain-informed human evaluator; this cannot be automated without additional specification.",
+            "assess-tc-03 is listed as summative in the supplied artifacts; its use here as a formative checkpoint is a model-proposed candidate and requires researcher validation.",
+            "17-minute estimate is a candidate allocation; researcher must confirm feasibility within the 25-minute module budget.",
+            "60-minute total constraint is preserved across all six lessons (7+8+8+12+8+17=60); allocation is candidate only."
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

@@ -1,0 +1,20 @@
+{
+  "recommended_style": "HYBRID",
+  "rest": {
+    "use_for": ["blueprint request", "blueprint retrieval", "projection acknowledgement", "MVP learning-result intake", "competency-result query"],
+    "proposed_prefix": "/api/v1/integration"
+  },
+  "events": {
+    "use_for": ["learning result notifications", "future asynchronous delivery"],
+    "names": ["learning.result.completed.v1", "learning.result.updated.v1"],
+    "transport": "DEFERRED"
+  },
+  "security": ["service-to-service authentication", "audience validation", "trusted actor reference", "authorization mapping", "tenant isolation prerequisite", "correlation IDs", "idempotency keys"],
+  "errors": {
+    "pai_public": ["invalid_learning_brief", "quality_gate_rejected", "blueprint_unavailable", "unsupported_schema_version", "tenant_scope_mismatch", "duplicate_event"],
+    "lms_public": ["lms_user_not_found", "course_projection_conflict", "course_projection_failed"],
+    "prohibited": ["stack traces", "ORM errors", "raw evidence", "prompts", "secrets", "credentials"]
+  },
+  "no_shared_database": true,
+  "no_internal_model_exposure": true
+}

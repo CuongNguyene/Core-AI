@@ -1,0 +1,48 @@
+{
+  "experiment_id": "instructional-design-id-02d-smoke-4",
+  "condition": "structured_v0.3.1",
+  "expected_runs": 3,
+  "completed_runs": 3,
+  "failed_runs": 0,
+  "checks": [
+    {
+      "name": "model_execution",
+      "result": "PASS",
+      "details": []
+    },
+    {
+      "name": "capability_refs",
+      "result": "PASS",
+      "details": []
+    },
+    {
+      "name": "formative_summative_separation",
+      "result": "PASS",
+      "details": []
+    },
+    {
+      "name": "lesson_objective_graph",
+      "result": "PASS",
+      "details": []
+    },
+    {
+      "name": "prerequisite_governance",
+      "result": "PASS",
+      "details": []
+    },
+    {
+      "name": "scope_time_warning",
+      "result": "PASS",
+      "details": []
+    }
+  ],
+  "runtime_failures": [],
+  "quality_gate_pass": false,
+  "quality_gate_findings_by_code": {
+    "assessment_dependency_not_covered": 4
+  },
+  "quality_gate_findings_by_severity": {
+    "error": 4
+  },
+  "decision": "ID-02D NEEDS ITERATION"
+}

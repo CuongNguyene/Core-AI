@@ -1,0 +1,131 @@
+{
+  "review_id": "review-004",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-14T15:16:48+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_observed",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "assessments[*].required_capability_refs",
+        "field": "required_capability_refs",
+        "description": "Assessments list textual capability names such as recruitment plan synthesis and sequencing rationale articulation rather than resolvable supplied IDs; the packet reports these dependencies as not covered.",
+        "severity": "error",
+        "validator_appears_correct": true
+      },
+      {
+        "category": "schema_or_shape",
+        "entity": "les-hrp-02-we.estimated_minutes",
+        "field": "estimated_minutes",
+        "description": "Lesson estimated_minutes is null even though other lessons use numeric estimates and the module must fit a 30-minute allocation.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "schema_or_shape",
+        "entity": "les-hrp-02-gp.estimated_minutes",
+        "field": "estimated_minutes",
+        "description": "Lesson estimated_minutes is null, leaving the worked-example/practice/summative time split unresolved.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "schema_or_shape",
+        "entity": "les-hrp-03.estimated_minutes",
+        "field": "estimated_minutes",
+        "description": "Lesson estimated_minutes is null while the module also needs to accommodate the sequencing-justification assessment.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "course_outline.sequencing_rationale",
+        "field": "sequencing_rationale",
+        "description": "The rationale contains a minor spacing/text artifact: asmt-hrp-s-01or, which does not affect pedagogy but should be cleaned for machine-readable presentation.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "No orphan modules or lessons were observed. Objective and assessment references otherwise resolve. These technical/shape observations are kept separate from pedagogical judgement."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring traceability and schema issues, the design is pedagogically reasonable in concept: learners identify recruitment-plan components, create a scenario-based plan, and justify sequencing decisions. It needs substantial timing and scaffolding refinement."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives specify observable outputs: naming at least four components, producing a plan that addresses role/headcount/timeline, and giving dependency-based sequencing rationales. Criteria such as no critical gaps and required components need researcher-defined standards."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "The assessments map to the three objectives: component recall/classification, plan production, and sequencing justification. The second and third assessments depend on a feasible ordered administration that is not yet resolved."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "A written recruitment plan and sequencing rationale can validly support judgement of the target performance. Validity depends on a well-designed hiring scenario, component list, and rubric standards for plan completeness."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "Understand, create, and evaluate labels are appropriate for component recognition, plan creation, and sequencing justification. Worked example, guided practice, and scenario activities support the intended levels."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "Organizational hiring context and functional writing are relevant candidate prerequisites. Step-dependency reasoning is relevant but overlaps strongly with the sequencing-justification objective and should be taught or framed as minimal general reasoning."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "The overall progression from component knowledge to plan creation to sequencing justification is sensible and dependency-aware."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "Instruction prepares learners through overview, worked example, guided practice, and scenario practice, but there is no scored formative check for plan creation or justification and several timing slots are unresolved."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 4,
+        "rationale": "Under-teaching risk is high because creating and defending a recruitment plan is complex, yet the 60-minute design leaves task timings unresolved and excludes iterative feedback cycles."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "Most content supports the desired performance. The only mild overreach is treating general writing and step-dependency reasoning as separate prerequisites rather than embedded supports."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 4,
+        "rationale": "Major editing is needed to resolve timing, define required components and scenario standards, add formative checks, and clarify prerequisite boundaries before approval."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "pre-hrp-01",
+        "pre-hrp-02"
+      ],
+      "rejected_refs": [
+        "pre-hrp-03"
+      ],
+      "notes": "Basic hiring-context familiarity and functional writing are acceptable candidate prerequisites. pre-hrp-03 should be revised: dependency reasoning is central to lo-hrp-03 and should be taught/scaffolded or narrowed to a minimal general reasoning assumption."
+    },
+    "edit_effort": {
+      "level": "major",
+      "objectives_changed": 2,
+      "assessments_changed": 3,
+      "prerequisites_changed": 2,
+      "modules_changed": 2,
+      "lessons_changed": 3,
+      "notes": "Estimated edits: define the authoritative component list, specify plan-quality standards, resolve three null lesson timings, add formative checks for plan creation and sequencing rationale, and reframe pre-hrp-03."
+    },
+    "overall_notes": "The HR recruitment-planning arc is instructionally plausible, but the current artifact needs major design editing around timing, scaffolding, and assessment feasibility."
+  }
+}

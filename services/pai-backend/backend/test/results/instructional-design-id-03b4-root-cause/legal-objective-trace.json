@@ -1,0 +1,113 @@
+{
+  "fixture": "legal_contract_review_basic",
+  "failure_stage": {
+    "stage": "OrchestrationReferenceResolution",
+    "failure_class": "ValueError",
+    "validation_error": "v0.3 lesson contains an objective outside its module",
+    "retry_count": 0
+  },
+  "traces": [
+    {
+      "fixture": "legal_contract_review_basic",
+      "finding": "lesson_objective_outside_module",
+      "objective_id": "obj-lcrb-01",
+      "lesson_id": "lesson-lcrb-03-summative",
+      "lesson_module_id": "module-lcrb-03",
+      "exists_in_course": true,
+      "exists_in_module": false,
+      "created_by_stage": "LessonPlanner",
+      "root_cause": "lesson_planning",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "evidence": {
+        "course_modules": [
+          [
+            "module-lcrb-01",
+            [
+              "obj-lcrb-01"
+            ]
+          ],
+          [
+            "module-lcrb-02",
+            [
+              "obj-lcrb-02"
+            ]
+          ],
+          [
+            "module-lcrb-03",
+            [
+              "obj-lcrb-03"
+            ]
+          ]
+        ],
+        "lesson_objective_ids": [
+          "obj-lcrb-01",
+          "obj-lcrb-02",
+          "obj-lcrb-03"
+        ]
+      },
+      "notes": "CoursePlanner module ownership is internally consistent; LessonPlanner emitted a cross-module objective list despite the v0.3.1 contract. Orchestration should pass module-scoped allow-lists/fail closed before quality-gate evaluation."
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "finding": "lesson_objective_outside_module",
+      "objective_id": "obj-lcrb-02",
+      "lesson_id": "lesson-lcrb-03-summative",
+      "lesson_module_id": "module-lcrb-03",
+      "exists_in_course": true,
+      "exists_in_module": false,
+      "created_by_stage": "LessonPlanner",
+      "root_cause": "lesson_planning",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "evidence": {
+        "course_modules": [
+          [
+            "module-lcrb-01",
+            [
+              "obj-lcrb-01"
+            ]
+          ],
+          [
+            "module-lcrb-02",
+            [
+              "obj-lcrb-02"
+            ]
+          ],
+          [
+            "module-lcrb-03",
+            [
+              "obj-lcrb-03"
+            ]
+          ]
+        ],
+        "lesson_objective_ids": [
+          "obj-lcrb-01",
+          "obj-lcrb-02",
+          "obj-lcrb-03"
+        ]
+      },
+      "notes": "CoursePlanner module ownership is internally consistent; LessonPlanner emitted a cross-module objective list despite the v0.3.1 contract. Orchestration should pass module-scoped allow-lists/fail closed before quality-gate evaluation."
+    }
+  ],
+  "course_modules": [
+    [
+      "module-lcrb-01",
+      [
+        "obj-lcrb-01"
+      ]
+    ],
+    [
+      "module-lcrb-02",
+      [
+        "obj-lcrb-02"
+      ]
+    ],
+    [
+      "module-lcrb-03",
+      [
+        "obj-lcrb-03"
+      ]
+    ]
+  ]
+}

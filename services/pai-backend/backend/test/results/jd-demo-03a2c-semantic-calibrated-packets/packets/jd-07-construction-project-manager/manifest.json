@@ -1,0 +1,34 @@
+{
+  "packet_id": "jd-07-construction-project-manager",
+  "source": {
+    "filename": "JD-07 — Construction Project Manager.docx",
+    "sha256": "056a33e35f15e8191c065e6fd11748231f73ed0767fc08eae8843d1ae23747fc"
+  },
+  "runtime": {
+    "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+    "job_id": "320888bf-b6f9-4ec1-85a5-aac436f6eba4",
+    "profile_id": "085fc62e-6caa-45de-9778-aa7d6da61a74",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "attempts": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.1",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.1",
+    "input_mode": "whole_parsed_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2",
+    "finish_reason": "STOP",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 28,
+    "supported_requirement_count": 28,
+    "text_span_locator_count": 28,
+    "pdf_page_locator_count": 0
+  }
+}

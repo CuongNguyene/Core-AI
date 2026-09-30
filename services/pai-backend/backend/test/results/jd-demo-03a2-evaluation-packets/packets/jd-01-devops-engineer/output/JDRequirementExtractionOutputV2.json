@@ -1,0 +1,233 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "3+ years of experience in DevOps, Site Reliability Engineering, Cloud Engineering, or a related role.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "experience",
+        "DevOps"
+      ],
+      "conflicting_terms": [],
+      "priority": "high",
+      "target_level": "3+ years",
+      "observable_behaviors": [
+        "Demonstrate experience in DevOps or related roles"
+      ],
+      "evidence_constraints": [
+        "3+ years"
+      ],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "section": "Required Qualifications",
+        "start_offset": 1342,
+        "end_offset": 1443
+      },
+      "source_excerpt": "3+ years of experience in DevOps, Site Reliability Engineering, Cloud Engineering, or a related role.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "taxonomy_normalization",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "Hands-on experience with AWS.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": "qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "AWS"
+      ],
+      "conflicting_terms": [],
+      "priority": "high",
+      "target_level": "hands-on",
+      "observable_behaviors": [
+        "Configure and manage AWS cloud resources"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "section": "Required Qualifications",
+        "start_offset": 1444,
+        "end_offset": 1473
+      },
+      "source_excerpt": "Hands-on experience with AWS.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "taxonomy_normalization",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Strong knowledge of Docker.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": "qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Docker"
+      ],
+      "conflicting_terms": [],
+      "priority": "high",
+      "target_level": "strong knowledge",
+      "observable_behaviors": [
+        "Manage containerized workloads using Docker"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "section": "Required Qualifications",
+        "start_offset": 1474,
+        "end_offset": 1501
+      },
+      "source_excerpt": "Strong knowledge of Docker.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "taxonomy_normalization",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "Production experience with Kubernetes.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": "qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Kubernetes"
+      ],
+      "conflicting_terms": [],
+      "priority": "high",
+      "target_level": "production experience",
+      "observable_behaviors": [
+        "Deploy and manage Kubernetes in production"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "section": "Required Qualifications",
+        "start_offset": 1502,
+        "end_offset": 1540
+      },
+      "source_excerpt": "Production experience with Kubernetes.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "taxonomy_normalization",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Design and maintain CI/CD pipelines for development, staging, and production environments.",
+      "criterion_dimension": "skill",
+      "modality": "responsibility",
+      "logical_group": "responsibilities",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "CI/CD pipelines"
+      ],
+      "conflicting_terms": [],
+      "priority": "medium",
+      "target_level": null,
+      "observable_behaviors": [
+        "Design CI/CD pipelines",
+        "Maintain deployment pipelines"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "section": "Responsibilities",
+        "start_offset": 456,
+        "end_offset": 546
+      },
+      "source_excerpt": "Design and maintain CI/CD pipelines for development, staging, and production environments.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "taxonomy_normalization",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-6",
+      "statement": "Experience with Terraform or another Infrastructure as Code technology.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": "qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Terraform",
+        "Infrastructure as Code"
+      ],
+      "conflicting_terms": [],
+      "priority": "high",
+      "target_level": null,
+      "observable_behaviors": [
+        "Implement Infrastructure as Code using Terraform"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "section": "Required Qualifications",
+        "start_offset": 1578,
+        "end_offset": 1649
+      },
+      "source_excerpt": "Experience with Terraform or another Infrastructure as Code technology.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "taxonomy_normalization",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-7",
+      "statement": "AWS certification is an advantage.",
+      "criterion_dimension": "education",
+      "modality": "preferred",
+      "logical_group": "preferred_qualifications",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "AWS certification"
+      ],
+      "conflicting_terms": [],
+      "priority": "low",
+      "target_level": null,
+      "observable_behaviors": [
+        "Hold AWS certification"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "section": "Preferred Qualifications",
+        "start_offset": 1973,
+        "end_offset": 2007
+      },
+      "source_excerpt": "AWS certification is an advantage.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "taxonomy_normalization",
+        "modality": "jd_extraction"
+      }
+    }
+  ]
+}

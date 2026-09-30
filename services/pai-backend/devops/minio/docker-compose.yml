@@ -1,0 +1,25 @@
+name: pai-minio
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: pai-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?set in devops/minio/.env}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?set in devops/minio/.env}
+    ports:
+      - "${MINIO_PORT:?set in devops/minio/.env}:9000"
+      - "${MINIO_CONSOLE_PORT:?set in devops/minio/.env}:9001"
+    volumes:
+      - pai_minio_data:/data
+    networks:
+      - pai-proxy
+
+volumes:
+  pai_minio_data:
+    name: pai_minio_data
+
+networks:
+  pai-proxy:
+    external: true

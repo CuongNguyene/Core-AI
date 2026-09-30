@@ -1,0 +1,34 @@
+{
+  "packet_id": "jd-06-assistant-sales-manager",
+  "source": {
+    "filename": "JD-06 — Assistant Sales Manager.docx",
+    "sha256": "eee4a0bb91ad7f4507984f44f55cf6833fd6f683cae00a9619aa6b59116f7484"
+  },
+  "runtime": {
+    "document_id": "7c464f6d-93ef-44b8-9446-dd0262b0aa7c",
+    "job_id": "414de366-da1f-4290-a14b-9c166e5f4525",
+    "profile_id": "85080650-cf13-4be0-ac56-99833ff2f958",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "attempts": 2
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.1",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.1",
+    "input_mode": "whole_parsed_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2",
+    "finish_reason": "STOP",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 23,
+    "supported_requirement_count": 23,
+    "text_span_locator_count": 23,
+    "pdf_page_locator_count": 0
+  }
+}

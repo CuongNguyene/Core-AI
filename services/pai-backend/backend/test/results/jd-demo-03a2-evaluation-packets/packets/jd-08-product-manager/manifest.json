@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-08-product-manager",
+  "source": {
+    "filename": "JD-08 — Product Manager.docx",
+    "sha256": "8398fde7dee02b1a6d7b77ba9544e6387c967c97efddad946bc99e635c18615f"
+  },
+  "runtime": {
+    "document_id": "f45678b4-fd7f-4df8-ba7e-064994d6ccbd",
+    "job_id": "edfa7e1d-b97b-4a34-bbcd-d8486040504a",
+    "profile_id": "ed81228b-5540-409c-b519-aec9575c3bdf",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 4,
+    "supported_requirement_count": 4,
+    "text_span_locator_count": 4,
+    "pdf_page_locator_count": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "experiment_id": "instructional-design-id-03b-cross-domain-smoke",
+  "condition": "structured_v0.3.1",
+  "expected_runs": 5,
+  "completed_runs": 2,
+  "failed_runs": 3,
+  "model_calls_observed": 25,
+  "fixture_statuses": {
+    "python_data_processing": "fail",
+    "accounting_financial_reporting_basic": "fail",
+    "legal_contract_review_basic": "fail",
+    "hr_recruitment_planning_basic": "fail",
+    "construction_drawing_and_method_basic": "fail"
+  },
+  "failure_categories": [
+    "ORCHESTRATION",
+    "QUALITY_GATE"
+  ]
+}
