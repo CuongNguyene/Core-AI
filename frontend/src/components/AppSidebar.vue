@@ -7,7 +7,10 @@
 			class="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-40 items-center justify-center bg-surface-white border border-outline-gray-2 shadow-sm p-1 rounded-full hover:bg-surface-gray-1 text-ink-gray-6 transition-all hover:scale-110 active:scale-95"
 			@click="toggleSidebar()"
 		>
-			<ChevronLeft v-if="!sidebarStore.isSidebarCollapsed" class="h-3.5 w-3.5" />
+			<ChevronLeft
+				v-if="!sidebarStore.isSidebarCollapsed"
+				class="h-3.5 w-3.5"
+			/>
 			<ChevronRight v-else class="h-3.5 w-3.5" />
 		</button>
 		<div
@@ -173,12 +176,12 @@ const setSidebarLinks = () => {
 				Object.keys(data).forEach((key) => {
 					if (!parseInt(data[key])) {
 						sidebarLinks.value = sidebarLinks.value.filter(
-							(link) => link.label.toLowerCase().split(' ').join('_') !== key
+							(link) => link.label.toLowerCase().split(' ').join('_') !== key,
 						)
 					}
 				})
 			},
-		}
+		},
 	)
 }
 
@@ -209,7 +212,8 @@ const addNotifications = () => {
 	}
 }
 
-const hasLink = (label) => sidebarLinks.value.some((link) => link.label === label)
+const hasLink = (label) =>
+	sidebarLinks.value.some((link) => link.label === label)
 
 const addQuizzes = () => {
 	if (hasLink('Quizzes')) return
@@ -252,7 +256,7 @@ const restrictCertifications = () => {
 		!userResource.data?.is_system_manager
 	) {
 		sidebarLinks.value = sidebarLinks.value.filter(
-			(link) => link.label !== 'Certifications'
+			(link) => link.label !== 'Certifications',
 		)
 	}
 }
@@ -337,7 +341,7 @@ const deletePage = (link) => {
 			onSuccess() {
 				sidebarSettings.reload()
 			},
-		}
+		},
 	)
 }
 
@@ -345,7 +349,7 @@ const toggleSidebar = () => {
 	sidebarStore.isSidebarCollapsed = !sidebarStore.isSidebarCollapsed
 	localStorage.setItem(
 		'isSidebarCollapsed',
-		JSON.stringify(sidebarStore.isSidebarCollapsed)
+		JSON.stringify(sidebarStore.isSidebarCollapsed),
 	)
 }
 
@@ -517,13 +521,18 @@ const articles = ref([
 		opened: false,
 		subArticles: [
 			{ name: 'create-a-batch', title: __('sidebar.help.createABatch') },
-			{ name: 'create-a-live-class', title: __('sidebar.help.createALiveClass') },
+			{
+				name: 'create-a-live-class',
+				title: __('sidebar.help.createALiveClass'),
+			},
 		],
 	},
 	{
 		title: __('sidebar.help.learningPaths'),
 		opened: false,
-		subArticles: [{ name: 'add-a-program', title: __('sidebar.help.addAProgram') }],
+		subArticles: [
+			{ name: 'add-a-program', title: __('sidebar.help.addAProgram') },
+		],
 	},
 	{
 		title: __('sidebar.help.assessments'),
@@ -537,7 +546,10 @@ const articles = ref([
 		title: __('sidebar.help.certification'),
 		opened: false,
 		subArticles: [
-			{ name: 'issue-a-certificate', title: __('sidebar.help.issueACertificate') },
+			{
+				name: 'issue-a-certificate',
+				title: __('sidebar.help.issueACertificate'),
+			},
 			{
 				name: 'custom-certificate-templates',
 				title: __('sidebar.help.customCertificateTemplates'),
@@ -581,6 +593,15 @@ watch(
 		if (userResource.data) {
 			isModerator.value = userResource.data.is_moderator
 			isInstructor.value = userResource.data.is_instructor
+			if (
+				!userResource.data.is_system_manager &&
+				!isModerator.value &&
+				!isInstructor.value
+			) {
+				sidebarLinks.value = sidebarLinks.value.filter(
+					(link) => !link.requiresPAIStudio,
+				)
+			}
 			addHome()
 			addPrograms()
 			// addProgrammingExercises()
@@ -590,7 +611,7 @@ watch(
 			setUpOnboarding()
 		}
 	},
-	{ immediate: true }
+	{ immediate: true },
 )
 
 onUnmounted(() => {

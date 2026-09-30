@@ -83,7 +83,7 @@ onMounted(() => {
 				filterLinksToShow(data)
 				addOtherLinks()
 			},
-		}
+		},
 	)
 })
 
@@ -107,7 +107,7 @@ const filterLinksToShow = (data) => {
 	Object.keys(data).forEach((key) => {
 		if (!parseInt(data[key])) {
 			sidebarLinks.value = sidebarLinks.value.filter(
-				(link) => link.label.toLowerCase().split(' ').join('_') !== key
+				(link) => link.label.toLowerCase().split(' ').join('_') !== key,
 			)
 		}
 	})
@@ -140,6 +140,15 @@ watch(userResource, () => {
 	if (userResource.data) {
 		isModerator.value = userResource.data.is_moderator
 		isInstructor.value = userResource.data.is_instructor
+		if (
+			!userResource.data.is_system_manager &&
+			!isModerator.value &&
+			!isInstructor.value
+		) {
+			sidebarLinks.value = sidebarLinks.value.filter(
+				(link) => !link.requiresPAIStudio,
+			)
+		}
 		addPrograms()
 		if (isModerator.value || isInstructor.value) {
 			// addProgrammingExercises()

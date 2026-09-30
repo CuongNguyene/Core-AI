@@ -67,6 +67,21 @@ const routes = [
 		component: () => import('@/pages/Statistics.vue'),
 	},
 	{
+		path: '/pai-studio',
+		name: 'PAIStudio',
+		component: () => import('@/pages/PAIStudio.vue'),
+	},
+	{
+		path: '/pai-evidence',
+		name: 'PAIEvidence',
+		component: () => import('@/pages/PAIEvidence.vue'),
+	},
+	{
+		path: '/pai-governance',
+		name: 'PAIGovernance',
+		component: () => import('@/pages/PAIGovernance.vue'),
+	},
+	{
 		path: '/user/:username',
 		name: 'Profile',
 		component: () => import('@/pages/Profile.vue'),

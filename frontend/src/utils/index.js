@@ -29,8 +29,10 @@ const timeAgoMessages = {
 		future: (n) => (/\d/.test(n) ? `trong ${n}` : n),
 		month: (n, past) =>
 			n === 1 ? (past ? 'tháng trước' : 'tháng tới') : `${n} tháng`,
-		year: (n, past) => (n === 1 ? (past ? 'năm trước' : 'năm tới') : `${n} năm`),
-		day: (n, past) => (n === 1 ? (past ? 'hôm qua' : 'ngày mai') : `${n} ngày`),
+		year: (n, past) =>
+			n === 1 ? (past ? 'năm trước' : 'năm tới') : `${n} năm`,
+		day: (n, past) =>
+			n === 1 ? (past ? 'hôm qua' : 'ngày mai') : `${n} ngày`,
 		week: (n, past) =>
 			n === 1 ? (past ? 'tuần trước' : 'tuần tới') : `${n} tuần`,
 		hour: (n) => `${n} giờ`,
@@ -473,19 +475,35 @@ export function getSidebarLinks() {
 			to: 'Statistics',
 			activeFor: ['Statistics'],
 		},
+		{
+			label: 'PAI Studio',
+			icon: 'Sparkles',
+			to: 'PAIStudio',
+			activeFor: ['PAIStudio'],
+			requiresPAIStudio: true,
+		},
+		{
+			label: 'PAI Evidence',
+			icon: 'FileSearch',
+			to: 'PAIEvidence',
+			activeFor: ['PAIEvidence'],
+		},
+		{
+			label: 'PAI Governance',
+			icon: 'ShieldCheck',
+			to: 'PAIGovernance',
+			activeFor: ['PAIGovernance'],
+			requiresPAIStudio: true,
+		},
 	]
 }
 
-export function getFormattedDateRange(
-	startDate,
-	endDate,
-	format = 'L'
-) {
+export function getFormattedDateRange(startDate, endDate, format = 'L') {
 	if (startDate === endDate) {
 		return dayjs(startDate).format(format)
 	}
 	return `${dayjs(startDate).format(format)} - ${dayjs(endDate).format(
-		format
+		format,
 	)}`
 }
 
@@ -517,7 +535,7 @@ export function singularize(word) {
 	}
 	return word.replace(
 		new RegExp(`(${Object.keys(endings).join('|')})$`),
-		(r) => endings[r]
+		(r) => endings[r],
 	)
 }
 
@@ -570,7 +588,7 @@ export const escapeHTML = (text) => {
 
 	return String(text).replace(
 		/[&<>"'`=]/g,
-		(char) => escape_html_mapping[char] || char
+		(char) => escape_html_mapping[char] || char,
 	)
 }
 
@@ -776,7 +794,7 @@ const wrapRangeInHighlight = (
 	{ node, startIndex, endIndex },
 	color,
 	name,
-	scrollIntoView
+	scrollIntoView,
 ) => {
 	const range = document.createRange()
 	range.setStart(node, startIndex)
