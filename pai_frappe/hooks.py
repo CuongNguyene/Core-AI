@@ -1,7 +1,7 @@
 app_name = "pai_frappe"
-app_title = "Pai-backend"
-app_publisher = "Pai-Backend"
-app_description = "Pai-backend"
+app_title = "PAI Frappe"
+app_publisher = "BrainHub"
+app_description = "Secure Frappe LMS integration for the PAI service"
 app_email = "cuongtoi124@gmail.com"
 app_license = "mit"
 
@@ -246,4 +246,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-

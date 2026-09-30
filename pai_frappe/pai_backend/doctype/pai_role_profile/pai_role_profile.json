@@ -1,0 +1,20 @@
+{
+ "actions": [], "autoname": "hash", "doctype": "DocType", "engine": "InnoDB",
+ "field_order": ["title", "profile_version", "status", "source_evidence_case", "semantic_policy", "semantic_policy_version", "requirements_summary", "quality_gate_status", "owner_user", "reviewed_by", "reviewed_on", "approval_note"],
+ "fields": [
+  {"fieldname":"title","fieldtype":"Data","label":"Role Profile Title","reqd":1,"read_only":1},
+  {"fieldname":"profile_version","fieldtype":"Int","label":"Profile Version","default":"1","reqd":1,"read_only":1},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Draft\nIn Review\nNeeds Revision\nProvisional\nActive","default":"Draft","read_only":1},
+  {"fieldname":"source_evidence_case","fieldtype":"Link","label":"Source JD Evidence Case","options":"PAI Evidence Case","read_only":1},
+  {"fieldname":"semantic_policy","fieldtype":"Link","label":"Pinned Semantic Policy","options":"PAI Semantic Policy","read_only":1},
+  {"fieldname":"semantic_policy_version","fieldtype":"Data","label":"Pinned Policy Version","read_only":1},
+  {"fieldname":"requirements_summary","fieldtype":"Small Text","label":"Requirements Summary","read_only":1},
+  {"fieldname":"quality_gate_status","fieldtype":"Select","label":"Quality Gate","options":"Not Run\nPassed\nWarning\nBlocking","default":"Not Run","read_only":1},
+  {"fieldname":"owner_user","fieldtype":"Link","label":"Owner","options":"User","read_only":1},
+  {"fieldname":"reviewed_by","fieldtype":"Link","label":"Reviewed By","options":"User","read_only":1},
+  {"fieldname":"reviewed_on","fieldtype":"Datetime","label":"Reviewed On","read_only":1},
+  {"fieldname":"approval_note","fieldtype":"Small Text","label":"Review Note","read_only":1}
+ ], "module":"Pai Backend", "name":"PAI Role Profile", "permissions":[
+  {"read":1,"role":"Instructor","if_owner":1}, {"read":1,"role":"Moderator"}, {"read":1,"role":"System Manager"}
+ ], "track_changes":1
+}

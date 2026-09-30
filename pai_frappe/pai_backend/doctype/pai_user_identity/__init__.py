@@ -1,0 +1,1 @@
+"""PAI User Identity DocType."""
