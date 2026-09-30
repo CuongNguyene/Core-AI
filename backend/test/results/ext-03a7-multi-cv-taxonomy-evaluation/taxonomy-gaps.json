@@ -1,0 +1,128 @@
+[
+  {
+    "proposed_name": "Software Engineering",
+    "domain": "technical",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "devops-engineer"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Data Analysis",
+    "domain": "technical",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "devops-engineer"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Software Engineering",
+    "domain": "technical",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "data-analyst"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Data Analysis",
+    "domain": "technical",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "data-analyst"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Financial Reporting",
+    "domain": "accounting_finance",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "accounting-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "General Ledger Accounting",
+    "domain": "accounting_finance",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "accounting-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Legal Research",
+    "domain": "legal",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "legal-candidate"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Contract Review",
+    "domain": "legal",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "legal-candidate"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Talent Acquisition",
+    "domain": "hr_management",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "ta-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Recruitment Operations",
+    "domain": "hr_management",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "ta-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Sales Management",
+    "domain": "sales",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "assistant-sales-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Business Development",
+    "domain": "sales",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "assistant-sales-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Construction Project Execution",
+    "domain": "operations_project",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "construction-project-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  },
+  {
+    "proposed_name": "Site Management",
+    "domain": "operations_project",
+    "fixture_count": 1,
+    "fixture_ids": [
+      "construction-project-manager"
+    ],
+    "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+  }
+]

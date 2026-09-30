@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-01-devops-engineer",
+  "source": {
+    "filename": "JD-01 — DevOps Engineer.docx",
+    "sha256": "46d7b787538241afdad64fbaf76cdf240a364cecebece9a77df5343960a993f0"
+  },
+  "runtime": {
+    "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+    "job_id": "4644e894-32b0-4181-a079-e767bc474192",
+    "profile_id": "eeaf91cf-35b7-4ad2-a876-0c2f1b6fbff4",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 7,
+    "supported_requirement_count": 7,
+    "text_span_locator_count": 7,
+    "pdf_page_locator_count": 0
+  }
+}

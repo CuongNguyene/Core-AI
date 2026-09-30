@@ -1,0 +1,11 @@
+{
+  "experiment": "ID-04D",
+  "planned_model_calls": 25,
+  "completed_model_calls": 25,
+  "snapshots": 5,
+  "no_fixes_during_run": true,
+  "readiness": "ID04_SME_REREVIEW_NOT_READY",
+  "readiness_blockers": [
+    "prerequisite_provenance_not_preserved:construction_drawing_and_method_basic"
+  ]
+}

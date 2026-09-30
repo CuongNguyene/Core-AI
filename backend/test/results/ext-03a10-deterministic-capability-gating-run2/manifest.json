@@ -1,0 +1,14 @@
+{
+  "experiment_id": "EXT-03A.10",
+  "taxonomy_id": "professional_capability_core",
+  "taxonomy_version": "0.1",
+  "gate_id": "capability_evidence_gate",
+  "gate_version": "0.1",
+  "expectation_source": "ext-03a8-selection-semantics/expectations.json",
+  "historical_sources": [
+    "ext-03a8-selection-semantics",
+    "ext-03a9-flash-model-comparison-run3/gemini-3.6-flash.json"
+  ],
+  "provider_calls": 0,
+  "facts_source": null
+}

@@ -1,0 +1,114 @@
+{
+  "review_id": "review-004",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-14T15:16:35+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "les-hrp-02-we",
+        "field": "estimated_minutes",
+        "description": "estimated_minutes is explicitly null.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      },
+      {
+        "entity": "les-hrp-02-gp",
+        "field": "estimated_minutes",
+        "description": "estimated_minutes is explicitly null.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      },
+      {
+        "entity": "les-hrp-03",
+        "field": "estimated_minutes",
+        "description": "estimated_minutes is explicitly null.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "Three lessons have null time estimates because the model deferred the decision to the researcher to fit the assessments into the modules[cite: 24]. This renders the schedule technically incomplete."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "PARTIALLY. Pedagogical flow is sound, but refusing to assign lesson times renders the instructional design incomplete.",
+      "notes": "The instructional sequencing is logical, but a design cannot be fully evaluated for realism if key instructional durations are left blank[cite: 24]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Clear success criteria, particularly regarding the inclusion of specific constraints (role, headcount, timeline)[cite: 24]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The tasks perfectly mirror the objectives, advancing from component recall to plan creation to written/verbal justification[cite: 24]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Generating a plan and defending its sequencing yields valid evidence of recruitment planning capability[cite: 24]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "Understand -> Create -> Evaluate is a robust cognitive progression for planning tasks[cite: 24]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Identifying 'step-dependency reasoning' as a prerequisite is an insightful way to ensure learners have the logic skills needed for sequencing[cite: 24]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The module ordering is strictly dictated by the logical prerequisites of the task (components -> synthesis -> evaluation)[cite: 24]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "The null time estimates make it impossible to determine if the instructional events are adequately weighted to prepare learners for the assessments[cite: 24]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 4,
+        "rationale": "There is a high risk of under-teaching. Expecting a learner to create a coherent HR plan and evaluate its dependencies in a 60-minute window is overly ambitious[cite: 24]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "The content is strictly aligned with the required HR plan deliverables[cite: 24]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Requires resolving the null time estimates and likely reducing the scope of the summative assessments to fit the 60-minute constraint."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "pre-hrp-01",
+        "pre-hrp-02",
+        "pre-hrp-03"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisites are appropriate, especially the requirement for functional written communication before demanding a written plan[cite: 24]."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 2,
+      "lessons_changed": 3,
+      "notes": "Mandatory edits required to replace 'null' lesson minutes with realistic estimates[cite: 24]."
+    },
+    "overall_notes": "A logically sound curriculum that abdicates responsibility for time management, resulting in an incomplete artifact[cite: 24]."
+  }
+}

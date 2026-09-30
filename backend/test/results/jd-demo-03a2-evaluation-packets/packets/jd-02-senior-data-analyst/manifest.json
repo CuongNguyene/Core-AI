@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-02-senior-data-analyst",
+  "source": {
+    "filename": "JD-02 — Senior Data Analyst.docx",
+    "sha256": "36f500b4cbed54f0f61b1b37a42c5de74696a3d284b9adceae92400dd0264ac0"
+  },
+  "runtime": {
+    "document_id": "ee63a6b4-aaaf-4399-8ce5-8c0c85a5efe9",
+    "job_id": "c45041a9-0922-49fd-aa21-fc410647d738",
+    "profile_id": "e1437260-2f06-43dc-8a2c-b2e404afa2c3",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 5,
+    "supported_requirement_count": 5,
+    "text_span_locator_count": 5,
+    "pdf_page_locator_count": 0
+  }
+}

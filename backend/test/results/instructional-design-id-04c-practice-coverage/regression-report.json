@@ -1,0 +1,14 @@
+{
+  "external_model_calls": 0,
+  "tests": [
+    "covered",
+    "instruction_only",
+    "not_covered",
+    "self_reference",
+    "after_summative",
+    "formative",
+    "prerequisite_exclusion",
+    "workload_coexistence",
+    "no_fuzzy_matching"
+  ]
+}

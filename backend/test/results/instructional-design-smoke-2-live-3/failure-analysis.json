@@ -1,0 +1,123 @@
+{
+  "experiment_id": "instructional-design-id-02-smoke-2",
+  "source_results_artifact": "results.json",
+  "annotations": [
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:python_data_processing:structured:1",
+      "finding_index": 0,
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_type": "assessment",
+      "entity_id": "asmt-002",
+      "field": "required_capability_refs",
+      "root_cause": "assessment_scope_creep",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "rationale": "The assessment placed obj-001 in required_capability_refs. That is an objective reference, not a supplied capability dependency or an explicit prerequisite candidate."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:python_data_processing:structured:1",
+      "finding_index": 1,
+      "finding_code": "orphan_lesson",
+      "entity_type": "lesson",
+      "entity_id": "les-001-a",
+      "field": "objective_ids",
+      "root_cause": "under_generation",
+      "producer_stage": "LessonPlanner",
+      "validator_correct": true,
+      "rationale": "The lesson omits every objective reference rather than binding its activity to an existing course objective."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:python_data_processing:structured:1",
+      "finding_index": 2,
+      "finding_code": "orphan_lesson",
+      "entity_type": "lesson",
+      "entity_id": "les-001-b",
+      "field": "objective_ids",
+      "root_cause": "under_generation",
+      "producer_stage": "LessonPlanner",
+      "validator_correct": true,
+      "rationale": "The lesson omits every objective reference rather than binding its activity to an existing course objective."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:python_data_processing:structured:1",
+      "finding_index": 3,
+      "finding_code": "orphan_lesson",
+      "entity_type": "lesson",
+      "entity_id": "les-001-c",
+      "field": "objective_ids",
+      "root_cause": "under_generation",
+      "producer_stage": "LessonPlanner",
+      "validator_correct": true,
+      "rationale": "The lesson omits every objective reference rather than binding its activity to an existing course objective."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:python_data_processing:structured:1",
+      "finding_index": 4,
+      "finding_code": "orphan_lesson",
+      "entity_type": "lesson",
+      "entity_id": "les-001-d",
+      "field": "objective_ids",
+      "root_cause": "under_generation",
+      "producer_stage": "LessonPlanner",
+      "validator_correct": true,
+      "rationale": "The lesson omits every objective reference rather than binding its activity to an existing course objective."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:python_data_processing:structured:1",
+      "finding_index": 5,
+      "finding_code": "orphan_module",
+      "entity_type": "course_module",
+      "entity_id": "mod-001",
+      "field": "objective_ids",
+      "root_cause": "under_generation",
+      "producer_stage": "CoursePlanner",
+      "validator_correct": true,
+      "rationale": "The course outline adds a foundation module with an empty objective_ids list, so its downstream lessons cannot retain an objective binding."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:technical_communication:structured:1",
+      "finding_index": 0,
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_type": "assessment",
+      "entity_id": "assess-tc-02",
+      "field": "required_capability_refs",
+      "root_cause": "assessment_scope_creep",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "rationale": "The assessment treats lo-tc-01 as a capability dependency instead of keeping it as supplied objective traceability or declaring a separate candidate prerequisite."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:technical_communication:structured:1",
+      "finding_index": 1,
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_type": "assessment",
+      "entity_id": "assess-tc-03",
+      "field": "required_capability_refs",
+      "root_cause": "assessment_scope_creep",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "rationale": "The assessment treats lo-tc-01 as a capability dependency rather than preserving the supplied objective relationship."
+    },
+    {
+      "annotation_source": "researcher",
+      "run_id": "instructional-design-id-02-smoke-2:technical_communication:structured:1",
+      "finding_index": 2,
+      "finding_code": "assessment_dependency_not_covered",
+      "entity_type": "assessment",
+      "entity_id": "assess-tc-03",
+      "field": "required_capability_refs",
+      "root_cause": "assessment_scope_creep",
+      "producer_stage": "AssessmentDesigner",
+      "validator_correct": true,
+      "rationale": "The assessment treats lo-tc-02 as a capability dependency rather than preserving the supplied objective relationship."
+    }
+  ]
+}

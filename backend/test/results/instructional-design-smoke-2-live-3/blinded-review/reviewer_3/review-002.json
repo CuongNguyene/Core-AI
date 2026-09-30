@@ -1,0 +1,151 @@
+{
+  "review_id": "review-002",
+  "reviewer_id": "opus-reviewer-01",
+  "reviewed_at": "2026-08-13T02:48:32+00:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "significant_issues",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "objectives[obj-model-monitoring-002].prerequisite_refs[0]",
+        "description": "Contains 'obj-model-monitoring-001', an objective ID in a field whose other consumers hold prerequisite IDs. Same pattern in obj-model-monitoring-003 (two objective IDs).",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "course_outline.modules[module-causal-diagnosis / module-response-planning].prerequisite_refs",
+        "description": "Objective IDs are mixed into prerequisite_refs alongside genuine prereq IDs (three occurrences).",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "lessons[lesson-causal-analysis-*, lesson-response-planning-*].prerequisite_refs",
+        "description": "Nine occurrences of objective IDs used as prerequisite references across six lessons.",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "schema_or_shape",
+        "entity": "course_outline.modules[*].lesson_ids",
+        "description": "All three modules declare lesson_ids: []. Nine lessons carry valid module_id back-references, so the parent-to-child edge is missing in one direction only; the lessons are reachable by reverse lookup but not by forward traversal.",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "schema_or_shape",
+        "entity": "assessments[assess-model-monitoring-003].is_summative",
+        "description": "Flagged is_summative=true, but the entity is attached to lesson-response-planning-practice via formative_assessment_ids. Two assessments then claim summative status (this one and assess-model-monitoring-integrated).",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "assessment_scope_creep",
+        "entity": "assessments[assess-model-monitoring-integrated].required_evidence[ev-integrated-d]",
+        "description": "'Maintains coherence across interpretation, diagnosis, and response phases' is a cross-phase integration capability not present in any of the three supplied objectives, and it is scored as a full rubric dimension.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "constraints.estimated_total_minutes vs delivered load",
+        "description": "Modules sum to exactly 60 minutes, matching the brief, but assess-model-monitoring-integrated adds a 30-minute time limit on top, so the package needs ~90 minutes against a 60-minute constraint.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "prerequisite_provenance",
+        "entity": "prerequisites[*].status",
+        "description": "All seven are status=candidate / basis=model_proposed and each rationale names the objective or assessment that motivated it. No prerequisite is asserted as confirmed. Provenance handling is exemplary.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "Objective coverage is complete across modules, lessons and assessments. Two defect families dominate: objective IDs are written into prerequisite_refs at objective, module and lesson level (fourteen occurrences), and modules[].lesson_ids is empty everywhere so the outline cannot be walked downward to the lessons. brief_id is consistent. No validator output was included in the packet, so `validator_appears_correct` is null on every issue; the findings below are the reviewer's own reference walk over the artifact, not a confirmation or contradiction of a quality gate."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Answered independently of the empty lesson_ids arrays and the objective-as-prerequisite references. On instructional design alone this is the most complete packet of the model-monitoring pair: each objective gets its own module built as explanation -> demonstration/worked example -> guided practice, each module ends on a matched formative check, and a novel-fixture integrated task provides transfer evidence. The provenance notes are unusually candid - the assessments state outright which capabilities they do not verify and which prior knowledge they assume without teaching. Two genuine design defects sit underneath: the total load is roughly 90 minutes against a 60-minute brief, and every mastery rule demands the top level on every dimension, which converts three-level rubrics into pass/fail and will fail competent learners."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Performance verbs are precise and each objective carries two criteria naming what a rater looks for ('provides reasoning for why each cause is likely or unlikely based on signal patterns'). Below 5 because each objective has only a single condition line and the criteria are unquantified at objective level; the counts that make them checkable ('at least three signals', 'at least two causes') live only in the assessments."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "One dedicated assessment per objective plus an integrated task. Evidence statements restate the objective criteria almost term for term - ev-002-a/b/c against obj-model-monitoring-002's two criteria, ev-003-a/b/c against obj-model-monitoring-003's three. Nothing in the objectives is left unmeasured."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Multiple independent observations per objective, rubrics with discriminating level descriptors, a novel-fixture transfer task, and explicit acknowledgement that scoring needs expert judgement and inter-rater reliability work. Capped at 4 by the mastery rules: requiring the highest level on all four integrated dimensions makes the decision brittle and will misclassify solid performance as non-mastery."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "analyze / analyze / evaluate across objectives, matched by assessment cognitive_process at each level, and the lesson patterns escalate correctly - explanation and demonstration for acquisition, guided practice for analysis, a scenario lesson before the evaluative objective's practice. The integrated task sits at evaluate, which is right for the terminal performance."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Seven candidates, each with a rationale that cites the specific objective or assessment that generated it, plus two dependency edges (degradation-concepts requires metric-familiarity; response-actions requires ml-system-architecture). Relevance and qualification are strong. Not minimal: prereq-degradation-concepts overlaps lesson-signal-interp-explain's signal taxonomy and prereq-response-actions-awareness overlaps lesson-response-planning-explain's review of response types, so two gates duplicate delivered content."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "Observe -> diagnose -> respond, three equal 20-minute modules, and a sequencing_rationale that states the dependency for each transition and notes the absence of branching. Within modules the acquisition-to-practice order is consistent."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 5,
+        "rationale": "Every module's third lesson is guided practice on exactly the task the matched formative then scores, and lesson-response-planning-scenario rehearses the propose-and-justify-with-trade-offs behaviour that dim-003-judgment scores. The integrated assessment is the only task with no direct rehearsal, but its components are each practised."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Moderate. The practice segments are 6-7 minutes each for analyze-level work, and the packet's own notes concede that degradation causes and response actions are 'not explicitly taught' while being assessed. Learners meet the integrated end-to-end task having never run the full chain once."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 3,
+        "rationale": "Four assessments for three objectives, with the integrated task self-described as duplicating coverage of the individual objectives. Nine lessons plus a 30-minute summative against a 60-minute budget is roughly a 50% overrun, and seven prerequisites is a heavy gate for a one-hour unit."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "The instructional content is largely usable, but the package must be re-scoped to fit 60 minutes (either drop the integrated task or extend the brief), every mastery rule needs a realistic threshold, and the summative/formative flag on assess-model-monitoring-003 must be resolved."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-dashboard-literacy",
+        "prereq-metric-familiarity",
+        "prereq-causal-reasoning",
+        "prereq-ml-system-architecture",
+        "prereq-tradeoff-thinking"
+      ],
+      "rejected_refs": [
+        "prereq-degradation-concepts",
+        "prereq-response-actions-awareness"
+      ],
+      "notes": "All seven are correctly presented as candidates with basis=model_proposed and objective-specific rationales, so the provenance status needs no change - this is the cleanest prerequisite provenance in the set. The two rejections are scope, not status: prereq-degradation-concepts is taught by lesson-signal-interp-explain and prereq-response-actions-awareness is taught by lesson-response-planning-explain, so declaring them entry conditions screens out the audience the course is for. prereq-tradeoff-thinking is accepted but is broad enough that it cannot be verified at intake; it should be reworded as an assumption rather than a gate."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 0,
+      "assessments_changed": 4,
+      "prerequisites_changed": 2,
+      "modules_changed": 3,
+      "lessons_changed": 0,
+      "notes": "Estimated: all four mastery rules rewritten and one is_summative flag corrected; two prerequisites reclassified as content; module timings re-cut to make room for the integrated assessment inside 60 minutes, or the integrated assessment moved to a second session. Objectives and lesson text stand as written."
+    },
+    "overall_notes": "This packet reads as the work of a careful designer who documented their own uncertainty - the assumption_notes name untaught prerequisites, unverified capabilities and the need for inter-rater reliability. The two things a human must fix before approval are arithmetic (90 minutes of content in a 60-minute brief) and measurement policy (all-dimensions-at-top mastery rules), neither of which requires redesigning the instruction."
+  }
+}

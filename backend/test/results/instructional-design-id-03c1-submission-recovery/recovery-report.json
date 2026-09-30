@@ -1,0 +1,24 @@
+{
+  "source_submissions": 10,
+  "canonical_valid": 0,
+  "needs_reviewer_completion": 10,
+  "deterministically_mapped_fields": {
+    "sequence_coherence": "course_sequence_coherence",
+    "overall_edit_effort": "edit_effort"
+  },
+  "missing_fields_summary": {
+    "prerequisites_acceptable": 5,
+    "rationales.domain_appropriateness": 10,
+    "rationales.scope_balance": 10,
+    "rationales.workload_time_realism": 10,
+    "rubric_scores.domain_appropriateness": 10,
+    "rubric_scores.scope_balance": 10,
+    "rubric_scores.workload_time_realism": 10,
+    "special_question.answer": 5
+  },
+  "ambiguous_fields_summary": {
+    "special_question.answer": 5
+  },
+  "source_files_modified": 0,
+  "non_canonical_preliminary_signal": true
+}

@@ -1,0 +1,107 @@
+{
+  "review_id": "review-002",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T14:02:26+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "assess-model-monitoring-002",
+        "field": "required_capability_refs",
+        "description": "References 'assess-model-monitoring-001', pointing to an assessment ID rather than a capability or prerequisite ID.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      },
+      {
+        "entity": "assess-model-monitoring-003",
+        "field": "required_capability_refs",
+        "description": "References assessment IDs instead of capabilities or prerequisites.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "Assessments incorrectly use other assessments as capability references[cite: 16]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Yes, it is pedagogically sound.",
+      "notes": "The modular breakdown of signal identification, cause differentiation, and action proposal builds a robust cognitive schema[cite: 16]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Criteria are highly measurable, particularly the identification and classification steps[cite: 16]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The written tasks perfectly map to the analytical and evaluative demands of the objectives[cite: 16]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Structured written responses provide solid evidence of analytical reasoning, though a live dashboard interaction would offer higher fidelity[cite: 16]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "Cognitive verbs match the requested performances and assessment tasks perfectly[cite: 16]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Prerequisites effectively map out the prior knowledge required to succeed in a time-constrained lesson[cite: 16]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The progression strictly adheres to logical dependencies (signals -> causes -> actions)[cite: 16]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Lessons heavily feature worked examples and independent practice that directly mirror the assessment formats[cite: 16]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 2,
+        "rationale": "The 60-minute limit is tight for covering all three modules, but the reliance on established prerequisites mitigates this risk[cite: 16]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Instruction is precisely targeted to the required performances[cite: 16]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Requires resolving schema reference errors within the assessments array."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-001",
+        "prereq-002",
+        "prereq-003",
+        "prereq-004"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisites are appropriately scoped as entry conditions[cite: 16]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 2,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 0,
+      "notes": "Fix the required_capability_refs in assess-model-monitoring-002 and 003 to point to prerequisite capabilities or objectives rather than other assessments."
+    },
+    "overall_notes": "A well-designed instructional artifact with a strong pedagogical sequence, marred only by minor technical schema references[cite: 16]."
+  }
+}

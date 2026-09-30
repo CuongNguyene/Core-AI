@@ -1,0 +1,646 @@
+{
+  "parent_manifest": {
+    "experiment_id": "instructional-design-id-02d-smoke-4",
+    "experiment_version": "0.1",
+    "fixture_count": 3,
+    "fixture_ids": [
+      "model_monitoring",
+      "python_data_processing",
+      "technical_communication"
+    ],
+    "conditions": [
+      "structured_v0.3.1"
+    ],
+    "runs_per_fixture_per_condition": 1,
+    "model_provider": "vilao",
+    "model_name": "claude-sonnet-5",
+    "model_revision": null,
+    "generation_config": {
+      "temperature": 0.0,
+      "top_p": null,
+      "max_output_tokens": 8192,
+      "seed": null,
+      "unsupported_fields": [
+        "top_p",
+        "seed"
+      ]
+    },
+    "policy_id": "pai_instructional_design",
+    "policy_version": "0.1",
+    "prompt_schema_versions": [
+      {
+        "prompt_id": "instructional_objective_design",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_objective_design",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_assessment_design",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_assessment_design",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_prerequisite_proposal",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_prerequisite_proposal",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_course_planning",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_course_planning",
+        "schema_version": "0.3.1"
+      },
+      {
+        "prompt_id": "instructional_lesson_planning",
+        "prompt_version": "0.3.1",
+        "schema_id": "instructional_lesson_planning",
+        "schema_version": "0.3.1"
+      }
+    ],
+    "estimated_model_call_count": 15
+  },
+  "result": {
+    "run": {
+      "run_id": "instructional-design-id-02d-smoke-4:technical_communication:structured_v0.3.1:1",
+      "experiment_id": "instructional-design-id-02d-smoke-4",
+      "experiment_version": "0.1",
+      "fixture_id": "technical_communication",
+      "condition": "structured_v0.3.1",
+      "run_number": 1,
+      "model_provider": "vilao",
+      "model_name": "claude-sonnet-5",
+      "model_revision": null,
+      "generation_config": {
+        "temperature": 0.0,
+        "top_p": null,
+        "max_output_tokens": 8192,
+        "seed": null,
+        "unsupported_fields": [
+          "top_p",
+          "seed"
+        ]
+      },
+      "policy_id": "pai_instructional_design",
+      "policy_version": "0.1",
+      "prompt_schema_versions": [
+        {
+          "prompt_id": "instructional_objective_design",
+          "prompt_version": "0.3.1",
+          "schema_id": "instructional_objective_design",
+          "schema_version": "0.3.1"
+        },
+        {
+          "prompt_id": "instructional_assessment_design",
+          "prompt_version": "0.3.1",
+          "schema_id": "instructional_assessment_design",
+          "schema_version": "0.3.1"
+        },
+        {
+          "prompt_id": "instructional_prerequisite_proposal",
+          "prompt_version": "0.3.1",
+          "schema_id": "instructional_prerequisite_proposal",
+          "schema_version": "0.3.1"
+        },
+        {
+          "prompt_id": "instructional_course_planning",
+          "prompt_version": "0.3.1",
+          "schema_id": "instructional_course_planning",
+          "schema_version": "0.3.1"
+        },
+        {
+          "prompt_id": "instructional_lesson_planning",
+          "prompt_version": "0.3.1",
+          "schema_id": "instructional_lesson_planning",
+          "schema_version": "0.3.1"
+        }
+      ],
+      "started_at": "2026-08-13T08:11:55.172350Z"
+    },
+    "status": "completed",
+    "snapshot": {
+      "snapshot_version": "instructional-design-research-snapshot@0.1",
+      "brief": {
+        "id": "brief-technical-communication",
+        "capability": {
+          "id": null,
+          "name": "technical communication",
+          "target_context": "research fixture"
+        },
+        "learner_state": {
+          "known": [],
+          "unknown": [],
+          "evidence_refs": [
+            "research-fixture:technical-communication:learner-state"
+          ]
+        },
+        "desired_performances": [
+          "Given a complex technical issue and a non-specialist audience, structure an explanation and adapt terminology to the audience."
+        ],
+        "constraints": {
+          "estimated_total_minutes": 60,
+          "language": "en",
+          "audience_notes": []
+        },
+        "provenance": {
+          "type": "research_fixture",
+          "authored_by": "instructional-design-research",
+          "created_at": null
+        }
+      },
+      "objectives": [
+        {
+          "id": "lo-brief-technical-communication-1",
+          "brief_id": "brief-technical-communication",
+          "performance": "Given a complex technical issue and a non-specialist audience, structure an explanation of the issue and adapt technical terminology to that audience's level",
+          "cognitive_process": "apply",
+          "knowledge_dimension": "procedural",
+          "conditions": [
+            "Given a written or verbal description of a complex technical issue",
+            "Given a specified non-specialist audience"
+          ],
+          "success_criteria": [
+            "A reviewer can identify a discernible explanatory structure (e.g., context, issue, implication, next step) in the output",
+            "A reviewer can confirm that specialist jargon present in the source issue is either replaced with plain-language equivalents or explicitly defined on first use"
+          ],
+          "prerequisite_refs": [],
+          "capability_refs": [],
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "Brief supplied capability.id as null, so no capability_refs could be attached to this objective",
+              "learner_state.known and learner_state.unknown were both empty, so no prerequisite_refs are asserted; any prerequisite would be unverified",
+              "The single desired_performances entry couples two actions (structuring an explanation; adapting terminology); it is modeled as one integrated objective rather than split, pending researcher review of whether separate assessment is required",
+              "Success criteria are model-proposed and heuristic; they are not sourced from the research fixture and require researcher validation before use as quality gates"
+            ]
+          }
+        }
+      ],
+      "assessments": [
+        {
+          "id": "asmt-technical-communication-formative-1",
+          "objective_ids": [
+            "lo-brief-technical-communication-1"
+          ],
+          "capability_claim": "Learner can produce a structured, plain-language explanation of a supplied complex technical issue for a specified non-specialist audience.",
+          "required_evidence": [
+            {
+              "id": "ev-formative-1",
+              "criterion": "Output exhibits a discernible explanatory structure (e.g., context, issue, implication, next step).",
+              "rationale": "Derived directly from the objective's first success criterion, which is itself model-proposed and provisional."
+            },
+            {
+              "id": "ev-formative-2",
+              "criterion": "Specialist jargon present in the source issue is either replaced with plain-language equivalents or explicitly defined on first use.",
+              "rationale": "Derived directly from the objective's second success criterion, which is itself model-proposed and provisional."
+            }
+          ],
+          "task": {
+            "task_type": "written_explanation_draft",
+            "description": "Given a written or verbal description of a complex technical issue and a specified non-specialist audience, draft a short explanation of the issue intended for that audience.",
+            "conditions": [
+              "Given a written or verbal description of a complex technical issue",
+              "Given a specified non-specialist audience"
+            ]
+          },
+          "cognitive_process": "apply",
+          "scoring": {
+            "rubric_dimensions": [
+              {
+                "id": "rd-formative-1",
+                "criterion": "Explanatory structure is present and discernible to a reviewer",
+                "performance_levels": [
+                  "absent",
+                  "partially present",
+                  "clearly present"
+                ]
+              },
+              {
+                "id": "rd-formative-2",
+                "criterion": "Jargon is replaced with plain-language equivalents or defined on first use",
+                "performance_levels": [
+                  "not addressed",
+                  "inconsistently addressed",
+                  "consistently addressed"
+                ]
+              }
+            ],
+            "mastery_rule": null
+          },
+          "role": "formative",
+          "required_capabilities": [],
+          "is_summative": false,
+          "required_capability_refs": [],
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "No assessments were supplied in the input; this formative checkpoint is proposed to precede the summative assessment and is not sourced from the research fixture.",
+              "Task description, required_evidence, and rubric dimensions are heuristically restated from the objective's model-proposed success_criteria and require researcher validation before use as quality gates."
+            ]
+          }
+        },
+        {
+          "id": "asmt-technical-communication-summative-1",
+          "objective_ids": [
+            "lo-brief-technical-communication-1"
+          ],
+          "capability_claim": "Learner can independently structure an explanation of a complex technical issue and adapt terminology to a non-specialist audience's level, under assessment conditions.",
+          "required_evidence": [
+            {
+              "id": "ev-summative-1",
+              "criterion": "Output exhibits a discernible explanatory structure (e.g., context, issue, implication, next step).",
+              "rationale": "Derived directly from the objective's first success criterion, which is itself model-proposed and provisional."
+            },
+            {
+              "id": "ev-summative-2",
+              "criterion": "Specialist jargon present in the source issue is either replaced with plain-language equivalents or explicitly defined on first use.",
+              "rationale": "Derived directly from the objective's second success criterion, which is itself model-proposed and provisional."
+            }
+          ],
+          "task": {
+            "task_type": "written_explanation_final",
+            "description": "Given a new written or verbal description of a complex technical issue and a specified non-specialist audience, produce a final explanation of the issue that structures the content and adapts terminology to that audience's level.",
+            "conditions": [
+              "Given a written or verbal description of a complex technical issue",
+              "Given a specified non-specialist audience"
+            ]
+          },
+          "cognitive_process": "apply",
+          "scoring": {
+            "rubric_dimensions": [
+              {
+                "id": "rd-summative-1",
+                "criterion": "Explanatory structure is present and discernible to a reviewer",
+                "performance_levels": [
+                  "absent",
+                  "partially present",
+                  "clearly present"
+                ]
+              },
+              {
+                "id": "rd-summative-2",
+                "criterion": "Jargon is replaced with plain-language equivalents or defined on first use",
+                "performance_levels": [
+                  "not addressed",
+                  "inconsistently addressed",
+                  "consistently addressed"
+                ]
+              }
+            ],
+            "mastery_rule": "Model-proposed only: both rubric dimensions rated at the highest performance level. This is a provisional heuristic, not a validated quality gate; the deterministic policy, not this proposal, decides actual mastery/quality gates."
+          },
+          "role": "summative",
+          "required_capabilities": [],
+          "is_summative": true,
+          "required_capability_refs": [],
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "No assessments were supplied in the input; this summative task is proposed as the primary evidence-gathering instrument for the single supplied objective.",
+              "Task description, required_evidence, and rubric dimensions are heuristically restated from the objective's model-proposed success_criteria and require researcher validation before use as quality gates."
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        {
+          "id": "prereq-technical-communication-1",
+          "capability": "Comprehend a moderately complex technical issue description (written or verbal) well enough to identify its context, core issue, and any specialist terminology it contains",
+          "status": "candidate",
+          "basis": "model_proposed",
+          "classification": "required_prerequisite",
+          "rationale": "Without this baseline comprehension of the supplied source issue, the learner cannot extract the context/issue/implication content needed to build the explanatory structure required by ev-formative-1 and ev-summative-1, nor locate the specialist jargon that must be replaced or defined per ev-formative-2 and ev-summative-2.",
+          "required_for_refs": [
+            "lo-brief-technical-communication-1",
+            "asmt-technical-communication-formative-1",
+            "asmt-technical-communication-summative-1"
+          ],
+          "requires_prerequisite_refs": [],
+          "teaching_objective_id": null
+        },
+        {
+          "id": "prereq-technical-communication-2",
+          "capability": "Produce coherent written sentences and paragraphs in English sufficient to convey multi-part explanatory content",
+          "status": "candidate",
+          "basis": "model_proposed",
+          "classification": "required_prerequisite",
+          "rationale": "Both asmt-technical-communication-formative-1 and asmt-technical-communication-summative-1 require a written explanation output in English (brief.constraints.language = en). Without baseline written-expression ability, the learner cannot produce output a reviewer could evaluate for a discernible explanatory structure (ev-formative-1, ev-summative-1) or for jargon handling (ev-formative-2, ev-summative-2), regardless of whether the taught structuring/adaptation skill itself has been acquired.",
+          "required_for_refs": [
+            "lo-brief-technical-communication-1",
+            "asmt-technical-communication-formative-1",
+            "asmt-technical-communication-summative-1"
+          ],
+          "requires_prerequisite_refs": [],
+          "teaching_objective_id": null
+        }
+      ],
+      "course_outline": {
+        "id": "course-technical-communication",
+        "brief_id": "brief-technical-communication",
+        "objective_ids": [
+          "lo-brief-technical-communication-1"
+        ],
+        "modules": [
+          {
+            "id": "module-technical-communication-1",
+            "title": "Structuring and Adapting Technical Explanations for Non-Specialist Audiences",
+            "objective_ids": [
+              "lo-brief-technical-communication-1"
+            ],
+            "prerequisite_refs": [
+              "prereq-technical-communication-1",
+              "prereq-technical-communication-2"
+            ],
+            "lesson_ids": [
+              "lesson-technical-communication-1-explanation",
+              "lesson-technical-communication-1-worked-example",
+              "lesson-technical-communication-1-guided-practice",
+              "lesson-technical-communication-1-independent-practice"
+            ],
+            "estimated_minutes": 60
+          }
+        ],
+        "prerequisite_refs": [
+          "prereq-technical-communication-1",
+          "prereq-technical-communication-2"
+        ],
+        "estimated_minutes": 60,
+        "planning_warnings": [],
+        "sequencing_rationale": [
+          "Only one objective (lo-brief-technical-communication-1) was supplied, so a single module carries the full objective rather than splitting across modules.",
+          "Both supplied prerequisites (prereq-technical-communication-1, prereq-technical-communication-2) are candidate-only and required_for this objective per the source fixture, so both are attached as prerequisite_refs at the module and course level rather than assumed verified.",
+          "The module's estimated_minutes is set to the brief's full estimated_total_minutes (60) since no further objectives compete for the time budget; no scope_time_conflict was encountered."
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Module decomposition, title, and time allocation are model-proposed; only one objective was supplied, so no objective-to-module split decisions were required beyond a single module.",
+            "prerequisite_refs are copied from the supplied allow-list only and remain candidate/provisional status as established upstream; this proposal does not upgrade their verification status.",
+            "module.lesson_ids left empty for orchestration to derive after lesson generation, per instructions.",
+            "No planning_warnings were needed because the single module's estimated_minutes fits within the brief's estimated_total_minutes without reducing scope."
+          ]
+        }
+      },
+      "lessons": [
+        {
+          "id": "lesson-technical-communication-1-explanation",
+          "module_id": "module-technical-communication-1",
+          "objective_ids": [
+            "lo-brief-technical-communication-1"
+          ],
+          "prerequisite_refs": [
+            "prereq-technical-communication-1",
+            "prereq-technical-communication-2"
+          ],
+          "lesson_goal": "Introduce a discernible explanatory structure (context, issue, implication, next step) and the practice of replacing or defining specialist jargon for a non-specialist audience.",
+          "instructional_pattern": "explanation",
+          "expected_learner_activity": "Learners review the four-part explanatory structure and jargon-handling approach, and identify these elements when pointed out in a sample technical issue description.",
+          "formative_assessment_ids": [],
+          "estimated_minutes": 10,
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "This lesson is proposed to introduce the structuring and jargon-adaptation concepts named in the objective's model-proposed success_criteria before any practice or assessment is attempted.",
+              "prerequisite_refs are attached because both supplied prerequisites are marked required_for this objective in the source fixture, though their status remains candidate/unverified."
+            ]
+          }
+        },
+        {
+          "id": "lesson-technical-communication-1-worked-example",
+          "module_id": "module-technical-communication-1",
+          "objective_ids": [
+            "lo-brief-technical-communication-1"
+          ],
+          "prerequisite_refs": [
+            "prereq-technical-communication-1",
+            "prereq-technical-communication-2"
+          ],
+          "lesson_goal": "Demonstrate applying the explanatory structure and jargon adaptation to a complete sample technical issue for a specified non-specialist audience.",
+          "instructional_pattern": "worked_example",
+          "expected_learner_activity": "Learners follow a fully worked transformation of a sample complex technical issue into a structured, plain-language explanation, noting how each jargon term is replaced or defined and how the context/issue/implication/next-step structure is realized.",
+          "formative_assessment_ids": [],
+          "estimated_minutes": 10,
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "This lesson is proposed as a worked demonstration bridging the explanation lesson and guided practice, since the objective's cognitive_process is 'apply' and a modeled example is presumed useful before learners attempt production themselves.",
+              "Content of the worked example itself is not specified here per the constraint against generating factual lesson content; only the instructional pattern and activity are proposed."
+            ]
+          }
+        },
+        {
+          "id": "lesson-technical-communication-1-guided-practice",
+          "module_id": "module-technical-communication-1",
+          "objective_ids": [
+            "lo-brief-technical-communication-1"
+          ],
+          "prerequisite_refs": [
+            "prereq-technical-communication-1",
+            "prereq-technical-communication-2"
+          ],
+          "lesson_goal": "Provide scaffolded practice drafting a structured, plain-language explanation of a supplied technical issue for a specified non-specialist audience, with feedback.",
+          "instructional_pattern": "guided_practice",
+          "expected_learner_activity": "Learners draft a short explanation of a supplied technical issue for a specified non-specialist audience, applying the structure and jargon-adaptation approach, then receive feedback against the formative checkpoint's evidence criteria before proceeding.",
+          "formative_assessment_ids": [
+            "asmt-technical-communication-formative-1"
+          ],
+          "estimated_minutes": 20,
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "This lesson is proposed to give practice before summative evidence is collected, as required for apply-level objectives when instruction is present, using the sole supplied formative assessment as the practice checkpoint.",
+              "The formative assessment id is included exactly as supplied and its formative role is unchanged; this proposal does not alter the assessment or its provisional status."
+            ]
+          }
+        },
+        {
+          "id": "lesson-technical-communication-1-independent-practice",
+          "module_id": "module-technical-communication-1",
+          "objective_ids": [
+            "lo-brief-technical-communication-1"
+          ],
+          "prerequisite_refs": [
+            "prereq-technical-communication-1",
+            "prereq-technical-communication-2"
+          ],
+          "lesson_goal": "Consolidate independent application of the explanatory structure and jargon adaptation to a new technical issue and audience, in preparation for the summative task.",
+          "instructional_pattern": "independent_practice",
+          "expected_learner_activity": "Learners independently draft a structured, plain-language explanation of a new technical issue for a specified non-specialist audience without guided feedback, self-checking against the explanatory-structure and jargon-handling criteria before attempting the summative assessment.",
+          "formative_assessment_ids": [],
+          "estimated_minutes": 15,
+          "provenance": {
+            "source": "model_proposed",
+            "provisional": true,
+            "assumption_notes": [
+              "This final practice lesson is proposed to precede the summative assessment (asmt-technical-communication-summative-1), consistent with providing practice before summative evidence for an apply-level objective; the summative assessment itself is not referenced here because only formative-role assessments may be attached to formative_assessment_ids.",
+              "No additional formative assessment was supplied for this stage, so this lesson relies on self-checking rather than a scored checkpoint."
+            ]
+          }
+        }
+      ],
+      "quality_report": {
+        "passed": true,
+        "findings": [],
+        "objective_coverage": 1.0,
+        "assessment_coverage": 1.0,
+        "unresolved_prerequisites": [
+          "prereq-technical-communication-1",
+          "prereq-technical-communication-2"
+        ],
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1"
+      },
+      "generation_provenance": {
+        "research_brief_id": "brief-technical-communication",
+        "instructional_design_policy_id": "pai_instructional_design",
+        "instructional_design_policy_version": "0.1",
+        "prompt_versions": {
+          "instructional_objective_design": "0.3.1",
+          "instructional_assessment_design": "0.3.1",
+          "instructional_prerequisite_proposal": "0.3.1",
+          "instructional_course_planning": "0.3.1",
+          "instructional_lesson_planning": "0.3.1"
+        },
+        "output_schema_versions": {
+          "instructional_objective_design": "0.3.1",
+          "instructional_assessment_design": "0.3.1",
+          "instructional_prerequisite_proposal": "0.3.1",
+          "instructional_course_planning": "0.3.1",
+          "instructional_lesson_planning": "0.3.1"
+        },
+        "provider": "vilao",
+        "model": "claude-sonnet-5",
+        "model_revision": null,
+        "generated_at": "2026-08-13T08:11:55.172350Z"
+      }
+    },
+    "partial_artifacts": null,
+    "stage_failure": null,
+    "model_audits": [
+      {
+        "provider": "vilao",
+        "model": "claude-sonnet-5",
+        "model_revision": "claude-sonnet-5",
+        "prompt_template_id": "instructional_objective_design",
+        "prompt_template_version": "0.3.1",
+        "output_schema_id": "instructional_objective_design",
+        "output_schema_version": "0.3.1",
+        "policy_version": "privacy-v1",
+        "correlation_id": "instructional-design-id-02d-smoke-4:technical_communication:structured_v0.3.1:1:recovery-1:model:instructional_objective_design",
+        "routing_decision": "approved_external_sanitized",
+        "attempt_count": 1,
+        "latency_ms": 21021,
+        "usage": {
+          "input_tokens": 31031,
+          "output_tokens": 1728
+        },
+        "outcome": "succeeded",
+        "protocol": "openai_compatible",
+        "deployment_type": "external",
+        "endpoint_origin": "https://api.vilao.ai",
+        "data_boundary": "external_provider"
+      },
+      {
+        "provider": "vilao",
+        "model": "claude-sonnet-5",
+        "model_revision": "claude-sonnet-5",
+        "prompt_template_id": "instructional_assessment_design",
+        "prompt_template_version": "0.3.1",
+        "output_schema_id": "instructional_assessment_design",
+        "output_schema_version": "0.3.1",
+        "policy_version": "privacy-v1",
+        "correlation_id": "instructional-design-id-02d-smoke-4:technical_communication:structured_v0.3.1:1:recovery-1:model:instructional_assessment_design",
+        "routing_decision": "approved_external_sanitized",
+        "attempt_count": 1,
+        "latency_ms": 48453,
+        "usage": {
+          "input_tokens": 33299,
+          "output_tokens": 5632
+        },
+        "outcome": "succeeded",
+        "protocol": "openai_compatible",
+        "deployment_type": "external",
+        "endpoint_origin": "https://api.vilao.ai",
+        "data_boundary": "external_provider"
+      },
+      {
+        "provider": "vilao",
+        "model": "claude-sonnet-5",
+        "model_revision": "claude-sonnet-5",
+        "prompt_template_id": "instructional_prerequisite_proposal",
+        "prompt_template_version": "0.3.1",
+        "output_schema_id": "instructional_prerequisite_proposal",
+        "output_schema_version": "0.3.1",
+        "policy_version": "privacy-v1",
+        "correlation_id": "instructional-design-id-02d-smoke-4:technical_communication:structured_v0.3.1:1:recovery-1:model:instructional_prerequisite_proposal",
+        "routing_decision": "approved_external_sanitized",
+        "attempt_count": 1,
+        "latency_ms": 34214,
+        "usage": {
+          "input_tokens": 33456,
+          "output_tokens": 3302
+        },
+        "outcome": "succeeded",
+        "protocol": "openai_compatible",
+        "deployment_type": "external",
+        "endpoint_origin": "https://api.vilao.ai",
+        "data_boundary": "external_provider"
+      },
+      {
+        "provider": "vilao",
+        "model": "claude-sonnet-5",
+        "model_revision": "claude-sonnet-5",
+        "prompt_template_id": "instructional_course_planning",
+        "prompt_template_version": "0.3.1",
+        "output_schema_id": "instructional_course_planning",
+        "output_schema_version": "0.3.1",
+        "policy_version": "privacy-v1",
+        "correlation_id": "instructional-design-id-02d-smoke-4:technical_communication:structured_v0.3.1:1:recovery-1:model:instructional_course_planning",
+        "routing_decision": "approved_external_sanitized",
+        "attempt_count": 1,
+        "latency_ms": 21000,
+        "usage": {
+          "input_tokens": 35198,
+          "output_tokens": 1940
+        },
+        "outcome": "succeeded",
+        "protocol": "openai_compatible",
+        "deployment_type": "external",
+        "endpoint_origin": "https://api.vilao.ai",
+        "data_boundary": "external_provider"
+      },
+      {
+        "provider": "vilao",
+        "model": "claude-sonnet-5",
+        "model_revision": "claude-sonnet-5",
+        "prompt_template_id": "instructional_lesson_planning",
+        "prompt_template_version": "0.3.1",
+        "output_schema_id": "instructional_lesson_planning",
+        "output_schema_version": "0.3.1",
+        "policy_version": "privacy-v1",
+        "correlation_id": "instructional-design-id-02d-smoke-4:technical_communication:structured_v0.3.1:1:recovery-1:model:instructional_lesson_planning",
+        "routing_decision": "approved_external_sanitized",
+        "attempt_count": 1,
+        "latency_ms": 43697,
+        "usage": {
+          "input_tokens": 35533,
+          "output_tokens": 3560
+        },
+        "outcome": "succeeded",
+        "protocol": "openai_compatible",
+        "deployment_type": "external",
+        "endpoint_origin": "https://api.vilao.ai",
+        "data_boundary": "external_provider"
+      }
+    ],
+    "completed_at": "2026-08-13T08:14:43.562045Z"
+  }
+}

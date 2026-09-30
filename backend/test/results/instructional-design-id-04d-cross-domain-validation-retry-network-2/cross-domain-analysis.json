@@ -1,0 +1,563 @@
+{
+  "experiment": "ID-04D",
+  "pipeline": [
+    {
+      "fixture": "python_data_processing",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    }
+  ],
+  "workload": [
+    {
+      "fixture": "brief-python_data_processing",
+      "declared_minutes": 60,
+      "planned_minutes": 115,
+      "assessment_minutes": 55,
+      "over_budget_minutes": 55,
+      "status": "over_budget",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_budget_exceeded",
+          "severity": "warning",
+          "declared_minutes": 60,
+          "planned_minutes": 115,
+          "over_budget_minutes": 55,
+          "message": "Planned workload exceeds the declared learning-time budget."
+        }
+      ],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-accounting_financial_reporting_basic",
+      "declared_minutes": 60,
+      "planned_minutes": 60,
+      "assessment_minutes": 60,
+      "over_budget_minutes": 0,
+      "status": "within_budget",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-legal_contract_review_basic",
+      "declared_minutes": 60,
+      "planned_minutes": null,
+      "assessment_minutes": 60,
+      "over_budget_minutes": null,
+      "status": "unresolved",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_allocation_missing",
+          "severity": "error",
+          "field": "guided_practice,independent_practice,instruction",
+          "message": "Required workload allocation is unresolved; missing time is not zero."
+        }
+      ],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-hr_recruitment_planning_basic",
+      "declared_minutes": 60,
+      "planned_minutes": 120,
+      "assessment_minutes": 60,
+      "over_budget_minutes": 60,
+      "status": "over_budget",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_budget_exceeded",
+          "severity": "warning",
+          "declared_minutes": 60,
+          "planned_minutes": 120,
+          "over_budget_minutes": 60,
+          "message": "Planned workload exceeds the declared learning-time budget."
+        }
+      ],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-construction_drawing_and_method_basic",
+      "declared_minutes": 60,
+      "planned_minutes": null,
+      "assessment_minutes": 60,
+      "over_budget_minutes": null,
+      "status": "unresolved",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_allocation_missing",
+          "severity": "error",
+          "field": "guided_practice,independent_practice,instruction",
+          "message": "Required workload allocation is unresolved; missing time is not zero."
+        }
+      ],
+      "course_declared_minutes": 60
+    }
+  ],
+  "prerequisites": [
+    {
+      "fixture": "python_data_processing",
+      "dispositions": {
+        "entry_prerequisite": 2,
+        "in_course_support": 1,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "dispositions": {
+        "entry_prerequisite": 1,
+        "in_course_support": 2,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "dispositions": {
+        "entry_prerequisite": 1,
+        "in_course_support": 1,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "dispositions": {
+        "entry_prerequisite": 0,
+        "in_course_support": 2,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "dispositions": {
+        "entry_prerequisite": 1,
+        "in_course_support": 2,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": false,
+      "entry_rationale_valid": true
+    }
+  ],
+  "practice_coverage": [
+    {
+      "fixture": "python_data_processing",
+      "requirements": [
+        {
+          "assessment_id": "asmt-ppd-summative-01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-ppd-02"
+          ],
+          "capability_ref": "Python-based invalid-value transformation",
+          "source_requirement_ref": "asmt-ppd-summative-01:required_capabilities:0",
+          "instruction_refs": [
+            "lesson-ppd-02-01"
+          ],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "partially_covered"
+        },
+        {
+          "assessment_id": "asmt-ppd-summative-01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-ppd-03"
+          ],
+          "capability_ref": "transformation-strategy evaluation and trade-off justification",
+          "source_requirement_ref": "asmt-ppd-summative-01:required_capabilities:1",
+          "instruction_refs": [
+            "lesson-ppd-02-01"
+          ],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "partially_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 2,
+        "not_covered": 0,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 4,
+        "practice_before_summative_missing": 2
+      }
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "requirements": [
+        {
+          "assessment_id": "assess-accounting_financial_reporting_basic-summative-01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-accounting_financial_reporting_basic-01"
+          ],
+          "capability_ref": "ledger entry classification",
+          "source_requirement_ref": "assess-accounting_financial_reporting_basic-summative-01:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "assess-accounting_financial_reporting_basic-summative-01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-accounting_financial_reporting_basic-01"
+          ],
+          "capability_ref": "basic financial statement preparation",
+          "source_requirement_ref": "assess-accounting_financial_reporting_basic-summative-01:required_capabilities:1",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "assess-accounting_financial_reporting_basic-summative-01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-accounting_financial_reporting_basic-02"
+          ],
+          "capability_ref": "financial discrepancy identification and explanation",
+          "source_requirement_ref": "assess-accounting_financial_reporting_basic-summative-01:required_capabilities:2",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 3,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 5,
+        "assessment_requirement_not_taught": 3
+      }
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "requirements": [
+        {
+          "assessment_id": "asmt-legal-3-summative",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-legal-3"
+          ],
+          "capability_ref": "identifying potential risks in commercial contract clause language",
+          "source_requirement_ref": "asmt-legal-3-summative:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [
+            "lsn-legal-3-practice"
+          ],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "asmt-legal-3-summative",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-legal-3"
+          ],
+          "capability_ref": "constructing reasoned written explanations linking clause language to identified risks",
+          "source_requirement_ref": "asmt-legal-3-summative:required_capabilities:1",
+          "instruction_refs": [],
+          "guided_practice_refs": [
+            "lsn-legal-3-practice"
+          ],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "asmt-legal-3-summative",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-legal-3"
+          ],
+          "capability_ref": "maintaining scope boundary between risk identification and legal judgment in written output",
+          "source_requirement_ref": "asmt-legal-3-summative:required_capabilities:2",
+          "instruction_refs": [],
+          "guided_practice_refs": [
+            "lsn-legal-3-practice"
+          ],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 3,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 5,
+        "assessment_requirement_not_taught": 3
+      }
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "requirements": [
+        {
+          "assessment_id": "ASMT-hr_recruitment_planning_basic-S01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "LO-brief-hr_recruitment_planning_basic-002"
+          ],
+          "capability_ref": "application of recruitment plan structure to a given hiring scenario",
+          "source_requirement_ref": "ASMT-hr_recruitment_planning_basic-S01:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "ASMT-hr_recruitment_planning_basic-S01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "LO-brief-hr_recruitment_planning_basic-003"
+          ],
+          "capability_ref": "evaluation of sequencing decisions with reference to step dependency or risk",
+          "source_requirement_ref": "ASMT-hr_recruitment_planning_basic-S01:required_capabilities:1",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 2,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 4,
+        "assessment_requirement_not_taught": 2
+      }
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "requirements": [
+        {
+          "assessment_id": "asm-cdmb-s01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-cdmb-01"
+          ],
+          "capability_ref": "interpreting basic drawing set elements to establish scope of work",
+          "source_requirement_ref": "asm-cdmb-s01:required_capabilities:0",
+          "instruction_refs": [
+            "les-cdmb-01"
+          ],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [
+            "asm-cdmb-f01"
+          ],
+          "status": "covered"
+        },
+        {
+          "assessment_id": "asm-cdmb-s01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-cdmb-02"
+          ],
+          "capability_ref": "producing a sequenced method proposal traceable to drawing elements",
+          "source_requirement_ref": "asm-cdmb-s01:required_capabilities:1",
+          "instruction_refs": [
+            "les-cdmb-02"
+          ],
+          "guided_practice_refs": [
+            "les-cdmb-03"
+          ],
+          "independent_practice_refs": [],
+          "formative_refs": [
+            "asm-cdmb-f02"
+          ],
+          "status": "covered"
+        },
+        {
+          "assessment_id": "asm-cdmb-s01",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-cdmb-03"
+          ],
+          "capability_ref": "analyzing method steps to state work-specific safety considerations",
+          "source_requirement_ref": "asm-cdmb-s01:required_capabilities:2",
+          "instruction_refs": [
+            "les-cdmb-04"
+          ],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "partially_covered"
+        }
+      ],
+      "counts": {
+        "covered": 2,
+        "partially_covered": 1,
+        "not_covered": 0,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 7,
+        "practice_before_summative_missing": 1
+      }
+    }
+  ],
+  "intervention_interactions": [
+    {
+      "fixture": "python_data_processing",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "over_budget",
+      "interaction_class": "D"
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "within_budget",
+      "interaction_class": "C"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "unresolved",
+      "interaction_class": "C"
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "over_budget",
+      "interaction_class": "D"
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "unresolved",
+      "interaction_class": "C"
+    }
+  ],
+  "regression": [
+    {
+      "fixture": "python_data_processing",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    }
+  ],
+  "historical_id03b6_comparison": {
+    "source": "../instructional-design-id-03b6-cross-domain-smoke/results.json",
+    "historical_snapshots": 5,
+    "historical_finding_counts": {
+      "assessment_dependency_not_covered": 31
+    },
+    "current_snapshots": 5,
+    "note": "Comparison is descriptive only; no SME score improvement is inferred from this run."
+  },
+  "readiness": "ID04_SME_REREVIEW_NOT_READY",
+  "readiness_blockers": [
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "code": "prerequisite_provenance_not_preserved",
+      "severity": "error"
+    }
+  ]
+}

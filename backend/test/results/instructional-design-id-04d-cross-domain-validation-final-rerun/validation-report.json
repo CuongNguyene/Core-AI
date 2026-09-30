@@ -1,0 +1,15 @@
+{
+  "experiment": "ID-04D",
+  "planned_model_calls": 25,
+  "completed_model_calls": 25,
+  "snapshots": 5,
+  "no_fixes_during_run": true,
+  "readiness": "ID04_SME_REREVIEW_NOT_READY",
+  "readiness_blockers": [
+    {
+      "fixture": "legal_contract_review_basic",
+      "code": "prerequisite_provenance_not_preserved",
+      "detail": "Model prerequisite capability is a paraphrase of the dependency candidate; exact provenance matching correctly abstained."
+    }
+  ]
+}

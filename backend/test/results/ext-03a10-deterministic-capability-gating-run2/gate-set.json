@@ -1,0 +1,45 @@
+{
+  "gate_id": "capability_evidence_gate",
+  "version": "0.1",
+  "taxonomy_id": "professional_capability_core",
+  "taxonomy_version": "0.1",
+  "rules": [
+    {
+      "capability_id": "team_leadership",
+      "display_name": "Team Leadership",
+      "status": "EXPLICIT_GATE"
+    },
+    {
+      "capability_id": "warehouse_management",
+      "display_name": "Warehouse Management",
+      "status": "EXPLICIT_GATE"
+    },
+    {
+      "capability_id": "digital_platform_development",
+      "display_name": "Digital Platform Development",
+      "status": "EXPLICIT_GATE"
+    },
+    {
+      "capability_id": "process_optimization",
+      "display_name": "Process Optimization",
+      "status": "EXPLICIT_GATE"
+    },
+    {
+      "capability_id": "product_management",
+      "display_name": "Product Management",
+      "status": "EXPLICIT_GATE"
+    },
+    {
+      "capability_id": "project_management",
+      "display_name": "Project Management",
+      "status": "EXPLICIT_GATE"
+    }
+  ],
+  "pass_through": [
+    "ecommerce",
+    "omnichannel_commerce",
+    "order_management",
+    "delivery_logistics_management",
+    "operations_planning"
+  ]
+}

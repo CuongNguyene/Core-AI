@@ -1,0 +1,14 @@
+{
+  "experiment": "ID-03C.2",
+  "source_recovery": "ID-03C.1",
+  "operation": "reviewer_completion_merge",
+  "expected_reviewers": 2,
+  "expected_reviews_per_reviewer": 5,
+  "expected_completion_submissions": 10,
+  "rubric_version": "instructional_design_human_rubric@0.2",
+  "merge_mode": "deterministic",
+  "source_mutation_allowed": false,
+  "reviewer_id_aliases": {
+    "codex-sme-01": "codex-sme-reviewer"
+  }
+}

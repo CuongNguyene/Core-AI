@@ -1,0 +1,19 @@
+{
+  "status": "HUMAN_REVIEW_COMPLETE",
+  "prior_status": "READY_FOR_BLINDED_REVIEW",
+  "experiment_id": "instructional-design-id-02-smoke-3",
+  "results_artifact": "results-complete.json",
+  "run_count": 6,
+  "completed_count": 6,
+  "one_shot_completed": "3/3",
+  "structured_v03_completed": "3/3",
+  "blind_packet_count": 6,
+  "human_review_count": 6,
+  "human_reviewer_count": 1,
+  "human_review_summary": "blinded-review/human-review-summary.json",
+  "structured_design_quality": "NEEDS_ITERATION",
+  "winner_declared": false,
+  "text_01": "NOT_READY",
+  "recovery_artifact": "recovery-run-1/recovery-results.json",
+  "note": "The original partial results.json remains immutable; results-complete.json replaces only the missing technical_communication structured slot with the separately audited recovery run."
+}

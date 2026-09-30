@@ -1,0 +1,712 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "Define product vision, goals, and roadmap.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Define product vision, goals, and roadmap."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 451,
+        "end_offset": 493
+      },
+      "source_excerpt": "Define product vision, goals, and roadmap.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "Gather and prioritize user, business, and operational requirements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Gather and prioritize user, business, and operational requirements."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 494,
+        "end_offset": 561
+      },
+      "source_excerpt": "Gather and prioritize user, business, and operational requirements.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Translate requirements into product features, user stories, and acceptance criteria.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Translate requirements into product features, user stories, and acceptance criteria."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 562,
+        "end_offset": 646
+      },
+      "source_excerpt": "Translate requirements into product features, user stories, and acceptance criteria.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "Prioritize product backlog based on customer value, business impact, and delivery constraints.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Prioritize product backlog based on customer value, business impact, and delivery constraints."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 647,
+        "end_offset": 741
+      },
+      "source_excerpt": "Prioritize product backlog based on customer value, business impact, and delivery constraints.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Work with UX/UI designers and engineers throughout product development.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Work with UX/UI designers and engineers throughout product development."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 742,
+        "end_offset": 813
+      },
+      "source_excerpt": "Work with UX/UI designers and engineers throughout product development.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-6",
+      "statement": "Coordinate product releases and communicate release scope to stakeholders.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Coordinate product releases and communicate release scope to stakeholders."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 814,
+        "end_offset": 888
+      },
+      "source_excerpt": "Coordinate product releases and communicate release scope to stakeholders.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-7",
+      "statement": "Analyze product usage data and customer feedback.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Analyze product usage data and customer feedback."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 889,
+        "end_offset": 938
+      },
+      "source_excerpt": "Analyze product usage data and customer feedback.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-8",
+      "statement": "Identify product improvement opportunities.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Identify product improvement opportunities."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 939,
+        "end_offset": 982
+      },
+      "source_excerpt": "Identify product improvement opportunities.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-9",
+      "statement": "Define product KPIs and monitor product performance.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Define product KPIs and monitor product performance."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 983,
+        "end_offset": 1035
+      },
+      "source_excerpt": "Define product KPIs and monitor product performance.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-10",
+      "statement": "Conduct competitor and market analysis where relevant.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Conduct competitor and market analysis where relevant."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 1036,
+        "end_offset": 1090
+      },
+      "source_excerpt": "Conduct competitor and market analysis where relevant.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-11",
+      "statement": "Support go-to-market activities for new features.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Support go-to-market activities for new features."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 1091,
+        "end_offset": 1140
+      },
+      "source_excerpt": "Support go-to-market activities for new features.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-12",
+      "statement": "Facilitate trade-off decisions between scope, timeline, quality, and user value.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Facilitate trade-off decisions between scope, timeline, quality, and user value."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Responsibilities",
+        "start_offset": 1141,
+        "end_offset": 1221
+      },
+      "source_excerpt": "Facilitate trade-off decisions between scope, timeline, quality, and user value.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-13",
+      "statement": "3+ years of Product Management or Digital Product experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "3+ years",
+        "Product Management",
+        "Digital Product experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "3+ years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Required Qualifications",
+        "start_offset": 1246,
+        "end_offset": 1307
+      },
+      "source_excerpt": "3+ years of Product Management or Digital Product experience.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-14",
+      "statement": "Experience working with software development teams.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience working with software development teams."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Required Qualifications",
+        "start_offset": 1308,
+        "end_offset": 1359
+      },
+      "source_excerpt": "Experience working with software development teams.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-15",
+      "statement": "Strong ability to write product requirements and user stories.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Strong ability to write product requirements and user stories."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Required Qualifications",
+        "start_offset": 1360,
+        "end_offset": 1422
+      },
+      "source_excerpt": "Strong ability to write product requirements and user stories.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-16",
+      "statement": "Experience managing product roadmaps and backlogs.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience managing product roadmaps and backlogs."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Required Qualifications",
+        "start_offset": 1423,
+        "end_offset": 1473
+      },
+      "source_excerpt": "Experience managing product roadmaps and backlogs.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-17",
+      "statement": "Strong stakeholder management skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Strong stakeholder management skills."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Required Qualifications",
+        "start_offset": 1474,
+        "end_offset": 1511
+      },
+      "source_excerpt": "Strong stakeholder management skills.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-18",
+      "statement": "Analytical and structured problem-solving ability.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Analytical and structured problem-solving ability."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Required Qualifications",
+        "start_offset": 1512,
+        "end_offset": 1562
+      },
+      "source_excerpt": "Analytical and structured problem-solving ability.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-19",
+      "statement": "Experience with Agile/Scrum.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience with Agile/Scrum."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Preferred Qualifications",
+        "start_offset": 1588,
+        "end_offset": 1616
+      },
+      "source_excerpt": "Experience with Agile/Scrum.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-20",
+      "statement": "Experience with Jira or similar tools.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience with Jira or similar tools."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Preferred Qualifications",
+        "start_offset": 1617,
+        "end_offset": 1655
+      },
+      "source_excerpt": "Experience with Jira or similar tools.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-21",
+      "statement": "Familiarity with analytics platforms.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Familiarity with analytics platforms."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Preferred Qualifications",
+        "start_offset": 1656,
+        "end_offset": 1693
+      },
+      "source_excerpt": "Familiarity with analytics platforms.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-22",
+      "statement": "Experience in eCommerce, fintech, SaaS, or digital platforms is an advantage.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience in eCommerce, fintech, SaaS, or digital platforms is an advantage."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Preferred Qualifications",
+        "start_offset": 1694,
+        "end_offset": 1771
+      },
+      "source_excerpt": "Experience in eCommerce, fintech, SaaS, or digital platforms is an advantage.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-23",
+      "statement": "Working with software engineers does not mean the Product Manager is expected to perform software engineering.",
+      "criterion_dimension": null,
+      "modality": "unspecified",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Working with software engineers does not mean the Product Manager is expected to perform software engineering."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Important Scope Clarification",
+        "start_offset": 1802,
+        "end_offset": 1912
+      },
+      "source_excerpt": "Working with software engineers does not mean the Product Manager is expected to perform software engineering.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-24",
+      "statement": "Using Jira, analytics tools, or prototyping software should be treated as tool usage, not as separate professional capabilities.",
+      "criterion_dimension": null,
+      "modality": "unspecified",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Using Jira, analytics tools, or prototyping software should be treated as tool usage, not as separate professional capabilities."
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "section": "Important Scope Clarification",
+        "start_offset": 1913,
+        "end_offset": 2041
+      },
+      "source_excerpt": "Using Jira, analytics tools, or prototyping software should be treated as tool usage, not as separate professional capabilities.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    }
+  ]
+}

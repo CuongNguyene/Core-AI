@@ -1,0 +1,98 @@
+{
+  "review_id": "review-006",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T14:02:26+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "lesson-tc-005",
+        "field": "formative_assessment_ids",
+        "description": "References 'assess-tc-001' which is explicitly designated as a summative assessment.",
+        "category": "schema_or_shape",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "The summative assessment is mistakenly nested within a lesson's formative assessment array[cite: 20]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Yes, the design effectively models technical communication.",
+      "notes": "The emphasis on dependency ordering and logic mapping ensures that technical explanations are structurally sound before vocabulary is adapted[cite: 20]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Criteria such as 'introduced in order of dependency' provide very clear, measurable guidelines[cite: 20]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The authentic performance task encompasses both structural formatting and jargon replacement perfectly[cite: 20]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Producing an explanation provides highly valid evidence, provided the rubric is strictly applied[cite: 20]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "Matches the 'apply' and 'create' cognitive levels required to author original technical documentation[cite: 20]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Prerequisites granularly define the necessary entry skills (identifying core concepts, recognizing jargon, interpreting audience profiles)[cite: 20]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "Structuring the explanation first, then adapting terminology, is a highly logical progression[cite: 20]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Guided practice for outlining and terminology adaptation directly feeds the skills needed for the summative output[cite: 20]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Allocating 20-30 minutes for the assessment restricts the instructional time slightly, making the lessons somewhat rushed[cite: 20]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Instruction is highly focused[cite: 20]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Fixing the assessment reference issue and reviewing time allocations."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-tc-001",
+        "prereq-tc-002",
+        "prereq-tc-003"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisites are very precise and necessary for a 60-minute constraint[cite: 20]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 1,
+      "notes": "Remove the summative assessment ID from lesson-tc-005."
+    },
+    "overall_notes": "A precise and well-designed instructional artifact that correctly emphasizes structural dependencies in technical explanations[cite: 20]."
+  }
+}

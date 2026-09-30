@@ -1,0 +1,664 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "Manage monthly, quarterly, and annual financial closing.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 272,
+        "end_offset": 328
+      },
+      "source_excerpt": "Manage monthly, quarterly, and annual financial closing.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "Review journal entries, general ledger accounts, reconciliations, and supporting documentation.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 329,
+        "end_offset": 424
+      },
+      "source_excerpt": "Review journal entries, general ledger accounts, reconciliations, and supporting documentation.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Prepare and review financial statements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 425,
+        "end_offset": 465
+      },
+      "source_excerpt": "Prepare and review financial statements.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "Ensure accounting transactions comply with company policies and applicable accounting standards.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 466,
+        "end_offset": 562
+      },
+      "source_excerpt": "Ensure accounting transactions comply with company policies and applicable accounting standards.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Coordinate corporate tax and statutory reporting requirements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 563,
+        "end_offset": 625
+      },
+      "source_excerpt": "Coordinate corporate tax and statutory reporting requirements.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-6",
+      "statement": "Work with external auditors and provide requested financial documentation.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 626,
+        "end_offset": 700
+      },
+      "source_excerpt": "Work with external auditors and provide requested financial documentation.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-7",
+      "statement": "Monitor accounts payable, accounts receivable, fixed assets, and cash accounting activities.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 701,
+        "end_offset": 793
+      },
+      "source_excerpt": "Monitor accounts payable, accounts receivable, fixed assets, and cash accounting activities.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-8",
+      "statement": "Develop and improve internal accounting controls.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 794,
+        "end_offset": 843
+      },
+      "source_excerpt": "Develop and improve internal accounting controls.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-9",
+      "statement": "Identify accounting process inefficiencies and recommend improvements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 844,
+        "end_offset": 914
+      },
+      "source_excerpt": "Identify accounting process inefficiencies and recommend improvements.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-10",
+      "statement": "Manage, coach, and review the work of accounting staff.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 915,
+        "end_offset": 970
+      },
+      "source_excerpt": "Manage, coach, and review the work of accounting staff.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-11",
+      "statement": "Support budgeting and financial analysis when required.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 971,
+        "end_offset": 1026
+      },
+      "source_excerpt": "Support budgeting and financial analysis when required.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-12",
+      "statement": "Coordinate with Finance, Operations, Procurement, and other departments.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Main duties",
+        "start_offset": 1027,
+        "end_offset": 1099
+      },
+      "source_excerpt": "Coordinate with Finance, Operations, Procurement, and other departments.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-13",
+      "statement": "Bachelor's degree in Accounting, Finance, or equivalent.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1134,
+        "end_offset": 1190
+      },
+      "source_excerpt": "Bachelor's degree in Accounting, Finance, or equivalent.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-14",
+      "statement": "Minimum 5 years of accounting experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1191,
+        "end_offset": 1232
+      },
+      "source_excerpt": "Minimum 5 years of accounting experience.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-15",
+      "statement": "At least 2 years in a supervisory or accounting management role.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1233,
+        "end_offset": 1297
+      },
+      "source_excerpt": "At least 2 years in a supervisory or accounting management role.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-16",
+      "statement": "Strong knowledge of general ledger accounting.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1298,
+        "end_offset": 1344
+      },
+      "source_excerpt": "Strong knowledge of general ledger accounting.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-17",
+      "statement": "Experience preparing financial reports.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1345,
+        "end_offset": 1384
+      },
+      "source_excerpt": "Experience preparing financial reports.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-18",
+      "statement": "Knowledge of tax compliance and statutory reporting.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1385,
+        "end_offset": 1437
+      },
+      "source_excerpt": "Knowledge of tax compliance and statutory reporting.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-19",
+      "statement": "Advanced Excel skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1438,
+        "end_offset": 1460
+      },
+      "source_excerpt": "Advanced Excel skills.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-20",
+      "statement": "Strong attention to detail.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1461,
+        "end_offset": 1488
+      },
+      "source_excerpt": "Strong attention to detail.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-21",
+      "statement": "CPA, ACCA, or equivalent professional qualification.",
+      "criterion_dimension": "credential",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1500,
+        "end_offset": 1552
+      },
+      "source_excerpt": "CPA, ACCA, or equivalent professional qualification.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-22",
+      "statement": "Experience with ERP systems such as SAP or Oracle.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1553,
+        "end_offset": 1603
+      },
+      "source_excerpt": "Experience with ERP systems such as SAP or Oracle.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-23",
+      "statement": "Experience working in a multinational company.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1604,
+        "end_offset": 1650
+      },
+      "source_excerpt": "Experience working in a multinational company.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-24",
+      "statement": "Familiarity with IFRS.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "section": "Candidate requirements",
+        "start_offset": 1651,
+        "end_offset": 1673
+      },
+      "source_excerpt": "Familiarity with IFRS.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    }
+  ]
+}

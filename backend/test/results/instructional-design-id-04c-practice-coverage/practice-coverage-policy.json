@@ -1,0 +1,12 @@
+{
+  "matching": "explicit canonical refs only",
+  "requires_prior_instruction": true,
+  "requires_prior_practice": true,
+  "statuses": [
+    "covered",
+    "partially_covered",
+    "not_covered",
+    "unresolved"
+  ],
+  "summative_self_reference": "invalid"
+}

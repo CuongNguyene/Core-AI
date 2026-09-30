@@ -1,0 +1,625 @@
+{
+  "review_id": "review-005",
+  "fixture_id": "construction_drawing_and_method_basic",
+  "brief": {
+    "id": "brief-construction_drawing_and_method_basic",
+    "capability": {
+      "id": null,
+      "name": "basic construction drawing interpretation",
+      "target_context": "cross-domain research fixture"
+    },
+    "learner_state": {
+      "known": [],
+      "unknown": [],
+      "evidence_refs": [
+        "cross-domain-fixture:construction_drawing_and_method_basic:learner-state"
+      ]
+    },
+    "desired_performances": [
+      "Given a basic drawing set, interpret the relevant elements and prepare a sequenced method proposal with stated safety considerations."
+    ],
+    "constraints": {
+      "estimated_total_minutes": 60,
+      "language": "en",
+      "audience_notes": []
+    },
+    "provenance": {
+      "type": "research_fixture",
+      "authored_by": "instructional-design-research",
+      "created_at": null
+    }
+  },
+  "objectives": [
+    {
+      "id": "cdmb-obj-01",
+      "brief_id": "brief-construction_drawing_and_method_basic",
+      "performance": "Interpret the relevant elements of a basic construction drawing set (views, symbols, dimensions, and annotations).",
+      "cognitive_process": "understand",
+      "knowledge_dimension": "conceptual",
+      "conditions": [
+        "Given a basic construction drawing set containing plan, elevation, and section views with standard annotations",
+        "Without assistance from an instructor or reference guide"
+      ],
+      "success_criteria": [
+        "Correctly identifies the type and purpose of at least four distinct drawing element categories without major error",
+        "Explains what each identified element communicates to a builder or site team"
+      ],
+      "prerequisite_refs": [],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Learner prior knowledge fields (known/unknown) are empty; this objective assumes no demonstrated drawing literacy",
+          "Candidate prerequisite only; researcher must verify against actual learner-state evidence"
+        ]
+      }
+    },
+    {
+      "id": "cdmb-obj-02",
+      "brief_id": "brief-construction_drawing_and_method_basic",
+      "performance": "Prepare a sequenced method proposal for the work shown in a basic drawing set, listing construction activities in a logical order.",
+      "cognitive_process": "apply",
+      "knowledge_dimension": "procedural",
+      "conditions": [
+        "Given the same basic drawing set used to satisfy cdmb-obj-01",
+        "Without assistance"
+      ],
+      "success_criteria": [
+        "Proposal contains at least three distinct construction activities in a stated sequence",
+        "Sequence is consistent with and traceable to information shown in the drawing set",
+        "No logical ordering error that would render the proposal unworkable"
+      ],
+      "prerequisite_refs": [
+        "cdmb-obj-01"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Assumes the learner has no verified method-planning experience; researcher must confirm",
+          "Minimum sequence length of three activities is a provisional threshold pending subject-matter expert review"
+        ]
+      }
+    },
+    {
+      "id": "cdmb-obj-03",
+      "brief_id": "brief-construction_drawing_and_method_basic",
+      "performance": "State safety considerations relevant to the construction method and drawing elements identified, within the method proposal.",
+      "cognitive_process": "apply",
+      "knowledge_dimension": "procedural",
+      "conditions": [
+        "Given the method proposal produced for cdmb-obj-02",
+        "Without assistance"
+      ],
+      "success_criteria": [
+        "States at least two safety considerations traceable to specific drawing elements or method steps",
+        "No stated safety consideration directly contradicts information shown in the drawing set"
+      ],
+      "prerequisite_refs": [
+        "cdmb-obj-01",
+        "cdmb-obj-02"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Scope of safety considerations is limited to what can be inferred from drawing content; general site-safety knowledge is out of scope for this fixture",
+          "Minimum count of two safety considerations is provisional and subject to researcher review"
+        ]
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "id": "cdmb-assess-01",
+      "objective_ids": [
+        "cdmb-obj-01"
+      ],
+      "capability_claim": "Interpret the elements of a basic construction drawing set by identifying view types, symbols, dimensions, and annotations and explaining what each communicates.",
+      "required_evidence": [
+        {
+          "id": "cdmb-assess-01-ev-01",
+          "criterion": "Learner correctly identifies the type and purpose of at least four distinct drawing element categories without major error.",
+          "rationale": "Directly maps to success criterion 1 of cdmb-obj-01."
+        },
+        {
+          "id": "cdmb-assess-01-ev-02",
+          "criterion": "Learner explains what each identified element communicates to a builder or site team.",
+          "rationale": "Directly maps to success criterion 2 of cdmb-obj-01."
+        }
+      ],
+      "task": {
+        "task_type": "structured identification and explanation",
+        "description": "The learner is presented with a sample page from a basic construction drawing set containing plan, elevation, and section views with standard annotations. Without assistance, the learner identifies and names at least four drawing element categories visible in the set and writes a brief explanation of what each category communicates to a builder or site team.",
+        "conditions": [
+          "Given a basic construction drawing set containing plan, elevation, and section views with standard annotations",
+          "Without assistance from an instructor or reference guide"
+        ]
+      },
+      "cognitive_process": "understand",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "cdmb-assess-01-rub-01",
+            "criterion": "Accuracy of drawing element category identification",
+            "performance_levels": [
+              "Fewer than four categories identified, or major identification errors present",
+              "Four or more categories identified with minor errors",
+              "Four or more categories identified accurately with no major error"
+            ]
+          },
+          {
+            "id": "cdmb-assess-01-rub-02",
+            "criterion": "Clarity and completeness of communication explanation",
+            "performance_levels": [
+              "Explanation absent or does not connect element to builder or site information",
+              "Explanation present but incomplete or unclear for one or more elements",
+              "Each identified element has a clear, coherent explanation of its communication purpose"
+            ]
+          }
+        ],
+        "mastery_rule": "MODEL-PROPOSED: Both required evidence criteria must be met; mastery threshold is provisional and requires researcher review before any production use."
+      },
+      "role": "formative",
+      "required_capabilities": [
+        {
+          "name": "construction drawing element identification",
+          "objective_ids": [
+            "cdmb-obj-01"
+          ],
+          "rationale": "The assessment directly observes the learner identifying and labelling drawing element categories from a drawing set, which is the core performance of cdmb-obj-01."
+        },
+        {
+          "name": "technical symbol and annotation interpretation",
+          "objective_ids": [
+            "cdmb-obj-01"
+          ],
+          "rationale": "Explaining what symbols and annotations communicate requires the learner to interpret standard drawing conventions as stated in cdmb-obj-01."
+        }
+      ],
+      "is_summative": false,
+      "required_capability_refs": [
+        "construction drawing element identification",
+        "technical symbol and annotation interpretation"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Formative role is a model-proposed instructional checkpoint; researcher should confirm whether a separate formative check is warranted or whether the summative task alone is sufficient for this fixture.",
+          "Assessment scope is limited to the drawing elements specified in cdmb-obj-01; no additional view types or drawing categories beyond those stated in the objective are assumed."
+        ]
+      }
+    },
+    {
+      "id": "cdmb-assess-02",
+      "objective_ids": [
+        "cdmb-obj-01",
+        "cdmb-obj-02",
+        "cdmb-obj-03"
+      ],
+      "capability_claim": "Interpret a basic construction drawing set and produce an integrated written submission containing identified drawing elements, a sequenced method proposal, and stated safety considerations traceable to drawing content.",
+      "required_evidence": [
+        {
+          "id": "cdmb-assess-02-ev-01",
+          "criterion": "Learner correctly identifies the type and purpose of at least four distinct drawing element categories without major error.",
+          "rationale": "Maps to success criterion 1 of cdmb-obj-01."
+        },
+        {
+          "id": "cdmb-assess-02-ev-02",
+          "criterion": "Learner explains what each identified element communicates to a builder or site team.",
+          "rationale": "Maps to success criterion 2 of cdmb-obj-01."
+        },
+        {
+          "id": "cdmb-assess-02-ev-03",
+          "criterion": "Method proposal contains at least three distinct construction activities in a stated sequence.",
+          "rationale": "Maps to success criterion 1 of cdmb-obj-02."
+        },
+        {
+          "id": "cdmb-assess-02-ev-04",
+          "criterion": "Each activity in the sequence is consistent with and traceable to information shown in the drawing set.",
+          "rationale": "Maps to success criterion 2 of cdmb-obj-02."
+        },
+        {
+          "id": "cdmb-assess-02-ev-05",
+          "criterion": "No logical ordering error in the sequence that would render the proposal unworkable.",
+          "rationale": "Maps to success criterion 3 of cdmb-obj-02."
+        },
+        {
+          "id": "cdmb-assess-02-ev-06",
+          "criterion": "Proposal states at least two safety considerations, each traceable to a specific drawing element or method step.",
+          "rationale": "Maps to success criterion 1 of cdmb-obj-03."
+        },
+        {
+          "id": "cdmb-assess-02-ev-07",
+          "criterion": "No stated safety consideration directly contradicts information shown in the drawing set.",
+          "rationale": "Maps to success criterion 2 of cdmb-obj-03."
+        }
+      ],
+      "task": {
+        "task_type": "integrated written performance task",
+        "description": "Given a basic construction drawing set, the learner produces a single written submission without assistance. The submission must: (1) identify and briefly explain at least four drawing element categories visible in the set; (2) list at least three construction activities in a stated sequence, each traceable to the drawing content; and (3) state at least two safety considerations within the proposal, each referencing the specific drawing element or method step from which it is derived.",
+        "conditions": [
+          "Given a basic construction drawing set containing plan, elevation, and section views with standard annotations",
+          "Without assistance from an instructor or reference guide",
+          "The same drawing set is used for all three parts of the submission"
+        ]
+      },
+      "cognitive_process": "apply",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "cdmb-assess-02-rub-01",
+            "criterion": "Drawing element identification and explanation (cdmb-obj-01)",
+            "performance_levels": [
+              "Fewer than four categories identified, or major identification errors present; explanations absent or do not connect to builder or site information",
+              "Four or more categories identified with minor errors; at least one explanation incomplete or unclear",
+              "Four or more categories correctly identified with no major error; each element has a clear explanation of its communication purpose"
+            ]
+          },
+          {
+            "id": "cdmb-assess-02-rub-02",
+            "criterion": "Method proposal sequence completeness and traceability (cdmb-obj-02)",
+            "performance_levels": [
+              "Fewer than three activities listed, activities not traceable to the drawing set, or a logical ordering error renders the proposal unworkable",
+              "Three or more activities listed in a stated sequence; traceability present but incomplete for at least one activity; no unworkable ordering error",
+              "Three or more activities listed in a stated sequence; each activity traceable to drawing content; no logical ordering error that would render the proposal unworkable"
+            ]
+          },
+          {
+            "id": "cdmb-assess-02-rub-03",
+            "criterion": "Safety consideration relevance and traceability (cdmb-obj-03)",
+            "performance_levels": [
+              "Fewer than two safety considerations stated, or no stated consideration is traceable to a drawing element or method step",
+              "Two or more safety considerations stated; at least one is traceable but at least one lacks clear traceability to a drawing element or method step",
+              "Two or more safety considerations stated; each is traceable to a specific drawing element or method step; none contradicts drawing set information"
+            ]
+          }
+        ],
+        "mastery_rule": "MODEL-PROPOSED: All required evidence criteria must be satisfied. Numeric thresholds (minimum four element categories, minimum three activities, minimum two safety considerations) are carried forward from objective success criteria and are provisional; researcher and subject-matter expert confirmation is required before production use."
+      },
+      "role": "summative",
+      "required_capabilities": [
+        {
+          "name": "construction drawing element identification",
+          "objective_ids": [
+            "cdmb-obj-01"
+          ],
+          "rationale": "The task requires the learner to identify and explain drawing element categories directly from the drawing set, as stated in cdmb-obj-01."
+        },
+        {
+          "name": "sequential method planning from drawing content",
+          "objective_ids": [
+            "cdmb-obj-02"
+          ],
+          "rationale": "The task requires deriving and ordering construction activities from information present in the drawing set, as stated in cdmb-obj-02."
+        },
+        {
+          "name": "safety consideration identification from drawing content",
+          "objective_ids": [
+            "cdmb-obj-03"
+          ],
+          "rationale": "The task requires stating safety considerations within the method proposal that are traceable to specific drawing elements or method steps, as stated in cdmb-obj-03."
+        }
+      ],
+      "is_summative": true,
+      "required_capability_refs": [
+        "construction drawing element identification",
+        "sequential method planning from drawing content",
+        "safety consideration identification from drawing content"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "The integrated single-submission format is a model-proposed design choice; researcher should confirm whether a unified submission is appropriate for the target audience and context.",
+          "Minimum numeric thresholds are carried forward from objective success criteria and remain provisional pending researcher and subject-matter expert review.",
+          "Safety scope is restricted to what can be inferred from drawing content; general site-safety knowledge not inferrable from the drawing set is treated as out of scope per cdmb-obj-03."
+        ]
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-cdmb-01",
+      "capability": "familiarity with basic construction drawing conventions and standard symbol sets",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "cdmb-obj-01 requires the learner to identify view types, symbols, dimensions, and annotations from a drawing set without assistance. Without prior exposure to standard drawing conventions and symbol sets, the learner cannot recognise element categories at all; this would directly prevent satisfying cdmb-assess-01-ev-01 and cdmb-assess-02-ev-01 (correct identification of at least four drawing element categories without major error). The deficit is not remediable within the instruction because cdmb-obj-01 itself is the first objective and no preceding teaching addresses symbol recognition. This is a model-proposed candidate; researcher must verify against actual learner-state evidence before any prerequisite decision is made.",
+      "required_for_refs": [
+        "cdmb-obj-01",
+        "cdmb-assess-01",
+        "cdmb-assess-02"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    }
+  ],
+  "course_outline": {
+    "id": "co-cdmb-01",
+    "brief_id": "brief-construction_drawing_and_method_basic",
+    "objective_ids": [
+      "cdmb-obj-01",
+      "cdmb-obj-02",
+      "cdmb-obj-03"
+    ],
+    "modules": [
+      {
+        "id": "cdmb-mod-01",
+        "title": "Reading a Construction Drawing Set",
+        "objective_ids": [
+          "cdmb-obj-01"
+        ],
+        "prerequisite_refs": [
+          "prereq-cdmb-01"
+        ],
+        "lesson_ids": [
+          "lesson-cdmb-01",
+          "lesson-cdmb-02"
+        ],
+        "estimated_minutes": 25
+      },
+      {
+        "id": "cdmb-mod-02",
+        "title": "Preparing a Sequenced Method Proposal",
+        "objective_ids": [
+          "cdmb-obj-02"
+        ],
+        "prerequisite_refs": [],
+        "lesson_ids": [
+          "lesson-cdmb-03",
+          "lesson-cdmb-04"
+        ],
+        "estimated_minutes": 20
+      },
+      {
+        "id": "cdmb-mod-03",
+        "title": "Identifying Safety Considerations from Drawing Content",
+        "objective_ids": [
+          "cdmb-obj-03"
+        ],
+        "prerequisite_refs": [],
+        "lesson_ids": [
+          "lesson-cdmb-05",
+          "lesson-cdmb-06"
+        ],
+        "estimated_minutes": 15
+      }
+    ],
+    "prerequisite_refs": [
+      "prereq-cdmb-01"
+    ],
+    "estimated_minutes": 60,
+    "planning_warnings": [],
+    "sequencing_rationale": [
+      "cdmb-mod-01 is placed first because cdmb-obj-01 is declared as a prerequisite for both cdmb-obj-02 and cdmb-obj-03in the supplied objectives; the learner must be able to identify and interpret drawing elements before attempting method sequencing or safety derivation.",
+      "cdmb-mod-02 is placed second because cdmb-obj-02 depends on cdmb-obj-01 and its output—the method proposal—is the direct input required by cdmb-obj-03.",
+      "cdmb-mod-03 is placed third because cdmb-obj-03 requires both the drawing elements identified in cdmb-obj-01 and the sequenced method proposal produced in cdmb-obj-02.",
+      "Module time allocations of 25, 20, and 15 minutes sum to exactly the 60-minute budget; this distribution is model-proposed and assumes assessment administration time for cdmb-assess-01 and cdmb-assess-02 is handled outside the instructional window or has been absorbed into module estimates at researcher discretion.",
+      "prereq-cdmb-01 is expressed at the course level and at cdmb-mod-01 only; intra-course sequencing dependencies on cdmb-obj-01 and cdmb-obj-02 cannot be expressed as prerequisite_refs for cdmb-mod-02 and cdmb-mod-03 under schema rules and are instead captured in this rationale."
+    ],
+    "provenance": {
+      "source": "model_proposed",
+      "provisional": true,
+      "assumption_notes": [
+        "Module boundaries and time allocations (25 / 20 / 15 minutes) are model-proposed candidates; researcher and subject-matter expert review is required before any production use.",
+        "Sequencing order is derived directly from prerequisite_refs declared in the supplied objectives; no additional ordering logic has been introduced by the model.",
+        "prereq-cdmb-01 is a candidate prerequisite with status 'candidate' in the supplied data; its classification as a required prerequisite must be verified against actual learner-state evidence before production use.",
+        "Assessment administration time for cdmb-assess-01 (formative) and cdmb-assess-02 (summative) is not separately budgeted within the60-minute estimate; researcher must decide whether the total budget requires extension to accommodate assessment time.",
+        "lesson_ids in all modules are intentionally left empty; content-level lesson generation is out of scope for this planning artifact and is delegated to downstream orchestration."
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "id": "lesson-cdmb-01",
+      "module_id": "cdmb-mod-01",
+      "objective_ids": [
+        "cdmb-obj-01"
+      ],
+      "prerequisite_refs": [
+        "prereq-cdmb-01"
+      ],
+      "lesson_goal": "Activate awareness of the categories of information presented in a basic construction drawing set, covering plan, elevation, and section views together with standard symbols, dimensions, and annotations.",
+      "instructional_pattern": "explanation",
+      "expected_learner_activity": "Learner reads or views a structured explanation of the drawing element categories present in a basic construction drawing set and identifies the communicative purpose of each category as described.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 15,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Explanation-first placement assumes prereq-cdmb-01 is satisfied but that the learner has not yet been formally introduced to the full scope of element categories required by cdmb-obj-01.",
+          "Time estimate of 15 minutes is a model-proposed candidate; researcher should confirm against actual content volume and learner pacing data.",
+          "This lesson does not generate factual drawing content; element categories and symbol sets must be sourced by the researcher or subject-matter expert."
+        ]
+      }
+    },
+    {
+      "id": "lesson-cdmb-02",
+      "module_id": "cdmb-mod-01",
+      "objective_ids": [
+        "cdmb-obj-01"
+      ],
+      "prerequisite_refs": [
+        "prereq-cdmb-01"
+      ],
+      "lesson_goal": "Consolidate identification and interpretation of drawing element categories through a guided practice activity aligned to the formative assessment task for cdmb-obj-01.",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Learner identifies and labels drawing element categories from a sample construction drawing set and writes a brief explanation of what each communicates to a builder or site team, supported by scaffolded prompts, in preparation for cdmb-assess-01.",
+      "formative_assessment_ids": [
+        "cdmb-assess-01"
+      ],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "cdmb-assess-01 is included here as a formative checkpoint; its provisional role and mastery threshold require researcher confirmation before production use per the assessment provenance notes.",
+          "Scaffolded prompts are referenced as a structural design feature; their content is not specified in this artifact and must be authored by the researcher or subject-matter expert.",
+          "Time estimate of 10 minutes is a model-proposed candidate and does not separately budget assessment administration time for cdmb-assess-01."
+        ]
+      }
+    },
+    {
+      "id": "lesson-cdmb-03",
+      "module_id": "cdmb-mod-02",
+      "objective_ids": [
+        "cdmb-obj-02"
+      ],
+      "prerequisite_refs": [],
+      "lesson_goal": "Introduce the process of deriving and ordering construction activities from drawing content by stepping through an annotated example of a sequenced method proposal.",
+      "instructional_pattern": "worked_example",
+      "expected_learner_activity": "Learner follows a step-by-step worked example showing how construction activities are identified from drawing elements and arranged in a logical sequence, noting the traceability link between each activity and its drawing source.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "No supplied prerequisite IDs are declared for cdmb-mod-02 in the allowed_references; the intra-course dependency on cdmb-obj-01 is captured in the course outline sequencing rationale and cannot be expressed as a prerequisite_ref under the allowed_references constraint.",
+          "Worked-example content is not authored here; researcher or subject-matter expert must supply the example drawing and corresponding method proposal.",
+          "Time estimate of 10 minutes is a model-proposed candidate."
+        ]
+      }
+    },
+    {
+      "id": "lesson-cdmb-04",
+      "module_id": "cdmb-mod-02",
+      "objective_ids": [
+        "cdmb-obj-02"
+      ],
+      "prerequisite_refs": [],
+      "lesson_goal": "Provide independent practice in preparing a sequenced method proposal from a basic drawing set to build proficiency prior to the summative integrated task.",
+      "instructional_pattern": "independent_practice",
+      "expected_learner_activity": "Learner independently produces a draft sequenced method proposal listing at least three construction activities in stated order, each traceable to a provided drawing set, without instructor assistance.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Independent practice is placed before the summative task cdmb-assess-02 to satisfy the requirement to provide practice before summative evidence for apply-level objectives.",
+          "No formative assessment ID is available for cdmb-obj-02in the supplied allow-lists; absence of a formative checkpoint at this stage is a model-identified gap that researcher should review.",
+          "Time estimate of 10 minutes is a model-proposed candidate."
+        ]
+      }
+    },
+    {
+      "id": "lesson-cdmb-05",
+      "module_id": "cdmb-mod-03",
+      "objective_ids": [
+        "cdmb-obj-03"
+      ],
+      "prerequisite_refs": [],
+      "lesson_goal": "Introduce the process of deriving safety considerations from drawing elements and method steps by stepping through an annotated example embedded within a sample method proposal.",
+      "instructional_pattern": "worked_example",
+      "expected_learner_activity": "Learner examines an annotated worked example in which safety considerations are traced to specific drawing elements and method steps within a sample method proposal, identifying the traceability pattern used.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 7,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "No supplied prerequisite IDs are declared for cdmb-mod-03 in the allowed_references; intra-course dependencies on cdmb-obj-01 and cdmb-obj-02 are noted in the course outline sequencing rationale only.",
+          "Worked-example content is not authored here; researcher or subject-matter expert must supply the annotated example.",
+          "Scope of safety considerations is restricted to what is inferrable from drawing content, consistent with cdmb-obj-03 provenance notes.",
+          "Time estimate of 7 minutes is a model-proposed candidate."
+        ]
+      }
+    },
+    {
+      "id": "lesson-cdmb-06",
+      "module_id": "cdmb-mod-03",
+      "objective_ids": [
+        "cdmb-obj-03"
+      ],
+      "prerequisite_refs": [],
+      "lesson_goal": "Provide integrated scenario practice requiring the learner to combine drawing interpretation, method sequencing, and safety identification in a single activity, serving as preparation for the summative integrated submission in cdmb-assess-02.",
+      "instructional_pattern": "scenario",
+      "expected_learner_activity": "Learner works through a scenario using a basic construction drawing set to produce a draft integrated submission—identifying drawing elements, sequencing construction activities, and stating safety considerations traceable to drawing content—before the formal summative assessment.",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 8,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "This integrated practice lesson is model-proposed in response to the requirement to provide practice before summative evidence for apply-level objectives and to include integrated practice when a final assessment combines objectives; researcher should confirm this design is appropriate for the target audience and context.",
+          "objective_ids is restricted to cdmb-obj-03 because the schema requires objective_ids to be owned by the hosting module; the integrative scope of this lesson is captured in lesson_goal and expected_learner_activity rather than via cross-module objective references.",
+          "cdmb-assess-02 is summative and is intentionally excluded from formative_assessment_ids; it must not be administered within this lesson.",
+          "Time estimate of 8 minutes is a model-proposed candidate; the combined practice scope may require a longer window, pending researcher review.",
+          "Scenario content is not authored here; researcher or subject-matter expert must supply the drawing set and scenario prompt."
+        ]
+      }
+    }
+  ],
+  "machine_observations": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "cdmb-assess-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "cdmb-assess-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "cdmb-assess-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "cdmb-assess-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "cdmb-assess-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    }
+  ],
+  "review_instructions": {
+    "overview": "Review the complete instructional-design proposal once before scoring. Evaluate machine validity separately from pedagogical quality.",
+    "scoring_scale": "Use 1-5 for every dimension: 1 poor, 3 mixed/acceptable, 5 strong.",
+    "rubric_dimensions": [
+      "objective_measurability",
+      "objective_assessment_alignment",
+      "evidence_validity",
+      "cognitive_alignment",
+      "prerequisite_quality",
+      "course_sequence_coherence",
+      "instruction_assessment_alignment",
+      "scope_balance",
+      "workload_time_realism",
+      "domain_appropriateness"
+    ],
+    "mandatory_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable? Answer YES, PARTIALLY, or NO with a short rationale.",
+    "blinding_rules": [
+      "Do not infer how the proposal was generated.",
+      "Do not assume a machine observation means the design is pedagogically poor.",
+      "Do not repair the design while scoring; record edit effort separately."
+    ],
+    "machine_observation_rule": "Machine observations are evidence to inspect, not pedagogical verdicts. Record any reviewer disagreement separately."
+  }
+}

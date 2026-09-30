@@ -1,0 +1,607 @@
+{
+  "review_id": "review-004",
+  "artifact": {
+    "brief": {
+      "id": "brief-python-data-processing",
+      "capability": {
+        "id": null,
+        "name": "python data processing",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [
+          "basic Python"
+        ],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:python-data-processing:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a tabular dataset, transform missing or invalid values and justify the transformation choices."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-001",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Given a tabular dataset with missing or invalid values, apply at least two distinct transformation strategies (e.g., imputation, removal, type coercion) using Python, and produce a cleaned dataset.",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Learner has access to a tabular dataset containing missing and invalid values",
+          "Learner uses a Python environment with standard data-processing libraries available"
+        ],
+        "success_criteria": [
+          "At least two transformation strategies are applied to the dataset",
+          "The resulting dataset contains no missing or invalid values in the targeted columns",
+          "Code executes without errors"
+        ],
+        "prerequisite_refs": [
+          "basic Python"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "'basic Python' is interpreted as familiarity with variables, loops, and function calls, not necessarily pandas or numpy",
+            "Library availability (e.g., pandas) is assumed but not confirmed by the brief",
+            "'Invalid values' scope (type mismatches, out-of-range values, duplicates) is not specified in the brief and is treated as open"
+          ]
+        }
+      },
+      {
+        "id": "obj-002",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Given a tabular dataset and the transformation choices made during cleaning, justify each transformation choice by articulating the reasoning in writing (e.g., inline comments or a brief written rationale).",
+        "cognitive_process": "evaluate",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "Learner has completed or can reference a cleaned dataset produced by their own transformation steps",
+          "No external reference materials are restricted"
+        ],
+        "success_criteria": [
+          "Each transformation choice is accompanied by an explicit rationale",
+          "Rationale addresses the potential impact of the chosen strategy on downstream analysis",
+          "Rationale is present for at least every distinct strategy applied"
+        ],
+        "prerequisite_refs": [
+          "obj-001"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "'Justify' is interpreted as a written or inline rationale, not a formal statistical argument, because no audience expertise level beyond 'basic Python' is specified",
+            "The form of justification (comments, markdown cell, separate document) is not constrained by the brief and is left open"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "asmt-001",
+        "objective_ids": [
+          "obj-001"
+        ],
+        "capability_claim": "Learner can apply at least two distinct data transformation strategies to a tabular dataset using Python and produce a cleaned dataset.",
+        "required_evidence": [
+          {
+            "id": "ev-001-a",
+            "criterion": "At least two distinct transformation strategies (e.g., imputation, removal, type coercion) are visibly applied in the submitted code.",
+            "rationale": "Directly maps to the performance requirement of applying multiple strategies."
+          },
+          {
+            "id": "ev-001-b",
+            "criterion": "The resulting dataset contains no missing or invalid values in the columns targeted by the transformations.",
+            "rationale": "Confirms the procedural outcome, not merely the presence of code."
+          },
+          {
+            "id": "ev-001-c",
+            "criterion": "Code executes without errors in a standard Python environment with data-processing libraries available.",
+            "rationale": "Ensures the procedural knowledge is functional, not merely syntactic."
+          }
+        ],
+        "task": {
+          "task_type": "performance-task",
+          "description": "Given a provided tabular dataset containing missing and invalid values, write a Python script or notebook that applies at least two distinct transformation strategies to clean the dataset. Submit the code and the resulting cleaned dataset.",
+          "conditions": [
+            "Learner is given a fixed tabular dataset (researcher-supplied fixture) containing missing values and at least one type of invalid value.",
+            "A Python environment with standard data-processing libraries (e.g., pandas) is available.",
+            "No time limit is imposed beyond the 60-minute session estimate.",
+            "Learner may reference documentation."
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-001-1",
+              "criterion": "Strategy variety",
+              "performance_levels": [
+                "0 – Fewer than two distinct strategies applied",
+                "1 – Exactly two distinct strategies applied",
+                "2 – Three or more distinct strategies applied with clear differentiation"
+              ]
+            },
+            {
+              "id": "rd-001-2",
+              "criterion": "Output correctness",
+              "performance_levels": [
+                "0 – Targeted columns still contain missing or invalid values",
+                "1 – Targeted columns are fully cleaned"
+              ]
+            },
+            {
+              "id": "rd-001-3",
+              "criterion": "Code executability",
+              "performance_levels": [
+                "0 – Code raises errors on execution",
+                "1 – Code executes without errors"
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate proposed: rd-001-1 >= 1 AND rd-001-2 = 1 AND rd-001-3 = 1. Mastery threshold is provisional; researcher must confirm."
+        },
+        "is_summative": true,
+        "required_capability_refs": [
+          "basic Python"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "The specific dataset fixture (schema, size, error types) must be supplied by the researcher; this spec does not generate one.",
+            "'Invalid values' scope remains open per the brief; the researcher should constrain it before use.",
+            "Mastery rule is a candidate only and requires researcher validation."
+          ]
+        }
+      },
+      {
+        "id": "asmt-002",
+        "objective_ids": [
+          "obj-002"
+        ],
+        "capability_claim": "Learner can evaluate and justify each data transformation choice by articulating explicit reasoning tied to potential impact on downstream analysis.",
+        "required_evidence": [
+          {
+            "id": "ev-002-a",
+            "criterion": "Every distinct transformation strategy applied in asmt-001 is accompanied by an explicit written rationale (inline comment, markdown cell, or equivalent).",
+            "rationale": "Maps directly to the performance requirement that justification is present for each strategy."
+          },
+          {
+            "id": "ev-002-b",
+            "criterion": "Each rationale addresses the potential impact of the chosen strategy on downstream analysis (e.g., bias introduction, information loss, type consistency).",
+            "rationale": "Elevates the task to the evaluate cognitive level; mere labelling is insufficient."
+          },
+          {
+            "id": "ev-002-c",
+            "criterion": "Rationale is authored by the learner, not copied verbatim from documentation or generated by a tool without attribution.",
+            "rationale": "Candidate criterion; researcher must decide whether and how to operationalise originality verification."
+          }
+        ],
+        "task": {
+          "task_type": "embedded-written-justification",
+          "description": "Within the same script or notebook submitted for asmt-001, add a written rationale for each transformation choice. Each rationale must state why that strategy was selected and what effect it may have on downstream analysis. The rationale may appear as inline comments, a dedicated markdown cell, or a clearly labelled written section.",
+          "conditions": [
+            "Learner references their own cleaned dataset and transformation code from asmt-001.",
+            "No restrictions on reference materials.",
+            "Rationale must be in English per the brief language constraint."
+          ]
+        },
+        "cognitive_process": "evaluate",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-002-1",
+              "criterion": "Coverage",
+              "performance_levels": [
+                "0 – One or more transformation strategies lack any rationale",
+                "1 – Every distinct strategy has at least one accompanying rationale"
+              ]
+            },
+            {
+              "id": "rd-002-2",
+              "criterion": "Depth of reasoning",
+              "performance_levels": [
+                "0 – Rationale only labels the operation (e.g., 'filled nulls with mean') without explanation",
+                "1 – Rationale explains why the strategy was chosen",
+                "2 – Rationale also addresses potential impact on downstream analysis"
+              ]
+            },
+            {
+              "id": "rd-002-3",
+              "criterion": "Specificity",
+              "performance_levels": [
+                "0 – Rationale is generic and not tied to the specific dataset or column",
+                "1 – Rationale references specific dataset characteristics (e.g., column name, observed distribution, business meaning)"
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate proposed: rd-002-1 = 1 AND rd-002-2 >= 1 AND rd-002-3 >= 0. Full mastery requires rd-002-2 = 2. Thresholds are provisional; researcher must confirm."
+        },
+        "is_summative": true,
+        "required_capability_refs": [
+          "obj-001"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "This assessment is designed to be administered as a single integrated submission with asmt-001, not as a separate session.",
+            "'Justify' is interpreted as written natural-language rationale, not formal statistical justification, per the brief's audience notes.",
+            "The originality criterion ev-002-c is a candidate only; operationalisation is left to the researcher.",
+            "Mastery rule is provisional and requires researcher validation."
+          ]
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "pre-001",
+        "capability": "Basic Python syntax and constructs (variables, loops, conditionals, function calls)",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "Referenced explicitly in brief learner_state known list and obj-001 prerequisite_refs. Interpreted as familiarity with core language constructs, not necessarily data libraries.",
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": "obj-001"
+      },
+      {
+        "id": "pre-002",
+        "capability": "Ability to install and import Python libraries (e.g., pandas) and navigate basic library documentation",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "obj-001 conditions assume a Python environment with standard data-processing libraries available; learner must be able to use them, but the brief does not confirm this capability is present.",
+        "requires_prerequisite_refs": [
+          "pre-001"
+        ],
+        "teaching_objective_id": "obj-001"
+      },
+      {
+        "id": "pre-003",
+        "capability": "Familiarity with tabular data concepts (rows, columns, data types, missing values)",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "The performance tasks in both objectives require recognising and reasoning about tabular structure and data quality; without this conceptual grounding the apply and evaluate tasks cannot be attempted meaningfully.",
+        "requires_prerequisite_refs": [
+          "pre-001"
+        ],
+        "teaching_objective_id": "obj-001"
+      },
+      {
+        "id": "pre-004",
+        "capability": "Ability to read from and write to a tabular file format (e.g., CSV) using Python",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "asmt-001 requires submitting a cleaned dataset; loading and persisting the fixture is an implicit prerequisite not stated in the brief.",
+        "requires_prerequisite_refs": [
+          "pre-001",
+          "pre-002"
+        ],
+        "teaching_objective_id": "obj-001"
+      },
+      {
+        "id": "pre-005",
+        "capability": "Basic written communication in English sufficient to produce inline comments or short rationale text",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "obj-002 and asmt-002 require rationale authored in English; this is a language prerequisite implied by the brief language constraint but not explicitly verified.",
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": "obj-002"
+      }
+    ],
+    "course_outline": {
+      "id": "outline-python-data-processing-001",
+      "brief_id": "brief-python-data-processing",
+      "objective_ids": [
+        "obj-001",
+        "obj-002"
+      ],
+      "modules": [
+        {
+          "id": "mod-001",
+          "title": "Prerequisite Foundations: Python, Libraries, and Tabular Data",
+          "objective_ids": [],
+          "prerequisite_refs": [],
+          "lesson_ids": [
+            "les-001-a",
+            "les-001-b",
+            "les-001-c",
+            "les-001-d"
+          ],
+          "estimated_minutes": 15
+        },
+        {
+          "id": "mod-002",
+          "title": "Applying Data Transformation Strategies (obj-001)",
+          "objective_ids": [
+            "obj-001"
+          ],
+          "prerequisite_refs": [
+            "pre-001",
+            "pre-002",
+            "pre-003",
+            "pre-004"
+          ],
+          "lesson_ids": [
+            "les-002-a",
+            "les-002-b",
+            "les-002-c"
+          ],
+          "estimated_minutes": 30
+        },
+        {
+          "id": "mod-003",
+          "title": "Evaluating and Justifying Transformation Choices (obj-002)",
+          "objective_ids": [
+            "obj-002"
+          ],
+          "prerequisite_refs": [
+            "obj-001",
+            "pre-005"
+          ],
+          "lesson_ids": [
+            "les-003-a",
+            "les-003-b"
+          ],
+          "estimated_minutes": 15
+        }
+      ],
+      "prerequisite_refs": [
+        "pre-001",
+        "pre-002",
+        "pre-003",
+        "pre-004",
+        "pre-005"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "Module 1 addresses candidate prerequisites pre-001 through pre-004 before any objective work begins; learners must be able to load and inspect a tabular dataset before applying transformations.",
+        "Module 2 targets obj-001 (apply, procedural) before obj-002 because obj-002 carries an explicit prerequisite_ref to obj-001; the cleaned dataset produced in Module 2 is the direct input required for Module 3.",
+        "Module 3 targets obj-002 (evaluate, conceptual) and is placed last because written justification of transformation choices presupposes that those choices have already been made and executed.",
+        "pre-005 (English written communication) spans Modules 2 and 3 and is not isolated in a dedicated module because it is a language prerequisite, not a teachable data-processing unit; its status remains candidate.",
+        "No orphan modules are introduced; every module is linked to at least one objective or a prerequisite that directly enables an objective."
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Estimated minutes per module are candidate allocations summing to the brief's 60-minute constraint; researcher must validate against actual content load.",
+          "Module 1 covers prerequisites pre-001 through pre-004 as teachable units; whether these are review or new instruction depends on confirmed learner state, which the brief leaves open.",
+          "pre-005 (English writing) is not assigned a standalone module; it is treated as a cross-cutting language prerequisite. Researcher should confirm whether explicit instruction is needed.",
+          "Lesson IDs within each module are placeholder references only; no lesson content is generated.",
+          "The sequencing is conservative and linear (prerequisites → apply → evaluate) based on the explicit prerequisite_ref chain in the supplied objectives; alternative orderings may be valid depending on confirmed learner state."
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "les-001-a",
+        "module_id": "mod-001",
+        "objective_ids": [],
+        "prerequisite_refs": [],
+        "lesson_goal": "Establish learner readiness with core Python constructs required before any data-processing instruction begins (pre-001).",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Learner reviews or is introduced to variables, loops, conditionals, and function calls in Python through structured exposition.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 4,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Whether les-001-a is review or new instruction depends on confirmed learner state, which the brief leaves open.",
+            "4-minute estimate is a candidate allocation within the 15-minute module budget."
+          ]
+        }
+      },
+      {
+        "id": "les-001-b",
+        "module_id": "mod-001",
+        "objective_ids": [],
+        "prerequisite_refs": [
+          "pre-001"
+        ],
+        "lesson_goal": "Enable the learner to import and navigate a data-processing library (pre-002) so that obj-001 conditions can be met.",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Learner observes a demonstration of importing a library and locating relevant documentation entries.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 3,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Library identity (e.g., pandas) is assumed from brief context but not confirmed; researcher should constrain.",
+            "3-minute estimate is a candidate allocation."
+          ]
+        }
+      },
+      {
+        "id": "les-001-c",
+        "module_id": "mod-001",
+        "objective_ids": [],
+        "prerequisite_refs": [
+          "pre-001"
+        ],
+        "lesson_goal": "Build conceptual grounding in tabular data structure (rows, columns, data types, missing values) required for pre-003.",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Learner is introduced to or reviews tabular data concepts using a representative but non-task dataset or diagram.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 4,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Whether a diagram or code-based exposition is used is left to the researcher.",
+            "4-minute estimate is a candidate allocation."
+          ]
+        }
+      },
+      {
+        "id": "les-001-d",
+        "module_id": "mod-001",
+        "objective_ids": [],
+        "prerequisite_refs": [
+          "pre-001",
+          "pre-002"
+        ],
+        "lesson_goal": "Ensure the learner can read from and write to a tabular file format using Python (pre-004), enabling asmt-001 submission.",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Learner follows a worked example loading and saving a tabular file, observing the code and its output.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 4,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "File format (e.g., CSV) is assumed from asmt-001 conditions but not constrained by the brief; researcher should specify.",
+            "4-minute estimate is a candidate allocation; module total is 15 minutes across les-001-a through les-001-d."
+          ]
+        }
+      },
+      {
+        "id": "les-002-a",
+        "module_id": "mod-002",
+        "objective_ids": [
+          "obj-001"
+        ],
+        "prerequisite_refs": [
+          "pre-001",
+          "pre-002",
+          "pre-003",
+          "pre-004"
+        ],
+        "lesson_goal": "Orient the learner to the class of data transformation problems addressed by obj-001 and introduce the concept of distinct transformation strategies.",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Learner engages with an exposition of what constitutes a transformation strategy (e.g., imputation, removal, type coercion) and when each category applies.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Strategy enumeration (imputation, removal, type coercion) is drawn from asmt-001 evidence criterion ev-001-a examples; researcher may extend or restrict.",
+            "8-minute estimate is a candidate allocation within the 30-minute module budget."
+          ]
+        }
+      },
+      {
+        "id": "les-002-b",
+        "module_id": "mod-002",
+        "objective_ids": [
+          "obj-001"
+        ],
+        "prerequisite_refs": [
+          "pre-001",
+          "pre-002",
+          "pre-003",
+          "pre-004"
+        ],
+        "lesson_goal": "Demonstrate application of at least two distinct transformation strategies on a tabular dataset using Python, modelling the behaviour required by asmt-001.",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Learner observes a complete worked example in which missing values and at least one invalid value type are addressed with two distinct strategies, producing a cleaned output.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 12,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "The worked example dataset must be researcher-supplied; this spec does not generate content.",
+            "12-minute estimate is a candidate allocation.",
+            "Strategy count (two) mirrors the minimum stated in obj-001 success criteria and asmt-001 ev-001-a."
+          ]
+        }
+      },
+      {
+        "id": "les-002-c",
+        "module_id": "mod-002",
+        "objective_ids": [
+          "obj-001"
+        ],
+        "prerequisite_refs": [
+          "pre-001",
+          "pre-002",
+          "pre-003",
+          "pre-004"
+        ],
+        "lesson_goal": "Give the learner supported practice applying transformation strategies independently on the researcher-supplied fixture, producing a cleaned dataset as required by asmt-001.",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Learner attempts to apply at least two distinct transformation strategies to the assessment fixture dataset, with access to documentation and scaffolding prompts.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Scaffolding form (hints, partial code, checklist) is not specified; researcher must design.",
+            "10-minute estimate is a candidate allocation; module total across les-002-a through les-002-c sums to 30 minutes.",
+            "This lesson feeds directly into asmt-001; no formative assessment ID is assigned because the practice itself is the precursor to the summative task."
+          ]
+        }
+      },
+      {
+        "id": "les-003-a",
+        "module_id": "mod-003",
+        "objective_ids": [
+          "obj-002"
+        ],
+        "prerequisite_refs": [
+          "obj-001",
+          "pre-005"
+        ],
+        "lesson_goal": "Introduce the learner to the concept of justifying transformation choices with explicit written reasoning tied to downstream analysis impact, as required by obj-002 and asmt-002.",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Learner reviews an explanation of what constitutes adequate written rationale (coverage, depth, specificity) using the rubric dimensions from asmt-002 as an organising frame.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 7,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Reference to asmt-002 rubric dimensions (rd-002-1, rd-002-2, rd-002-3) is for structural alignment only; no rubric prose is generated.",
+            "7-minute estimate is a candidate allocation within the 15-minute module budget.",
+            "pre-005 (English writing) is treated as a cross-cutting prerequisite; this lesson assumes the learner meets that bar."
+          ]
+        }
+      },
+      {
+        "id": "les-003-b",
+        "module_id": "mod-003",
+        "objective_ids": [
+          "obj-002"
+        ],
+        "prerequisite_refs": [
+          "obj-001",
+          "pre-005"
+        ],
+        "lesson_goal": "Support the learner in producing a written justification for each transformation choice made in their cleaned dataset, satisfying asmt-002 evidence requirements.",
+        "instructional_pattern": "reflection",
+        "expected_learner_activity": "Learner adds inline comments, markdown cells, or a labelled written section to their asmt-001 submission, articulating the reasoning and downstream-impact considerations for each strategy applied.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Reflection pattern is selected because the learner is reasoning over their own prior work (the cleaned dataset from mod-002), not a new external stimulus.",
+            "8-minute estimate is a candidate allocation; module total across les-003-a and les-003-b sums to 15 minutes.",
+            "No separate formative assessment ID is assigned; the reflection activity is itself the precursor to the summative asmt-002 submission."
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

@@ -1,0 +1,318 @@
+{
+  "fixture_id": "legal_contract_review_basic",
+  "domain": "legal_compliance",
+  "status": "fail",
+  "findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-formative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-formative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    }
+  ],
+  "quality_gate_findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-formative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-formative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "assess-legal_contract_review_basic-summative-001",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    }
+  ],
+  "failure_categories": [
+    "QUALITY_GATE"
+  ],
+  "metadata": {
+    "fixture_id": "legal_contract_review_basic",
+    "domain": "legal_compliance",
+    "industry_family": "legal_services",
+    "learning_type": "analytical_judgment_skill",
+    "difficulty": "high",
+    "description": "A junior legal specialist reviews a commercial contract for potential risks."
+  },
+  "stage_completion": {
+    "status": "completed",
+    "model_audit_count": 5,
+    "snapshot_present": true
+  },
+  "dependency_normalization": {
+    "canonical_count": 8,
+    "canonical_dependencies": [
+      {
+        "capability_ref": "read and comprehend contract language",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "assess-legal_contract_review_basic-formative-001",
+              "original_value": "read and comprehend contract language"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "assess-legal_contract_review_basic-formative-001",
+              "original_value": "read and comprehend contract language"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "understand what constitutes a risk in a commercial context",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "assess-legal_contract_review_basic-formative-001",
+              "original_value": "understand what constitutes a risk in a commercial context"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "assess-legal_contract_review_basic-formative-001",
+              "original_value": "understand what constitutes a risk in a commercial context"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "read and comprehend contract language",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "read and comprehend contract language"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "read and comprehend contract language"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001",
+          "obj-legal_contract_review_basic-002"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "understand what constitutes a risk in a commercial context",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "understand what constitutes a risk in a commercial context"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "understand what constitutes a risk in a commercial context"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001",
+          "obj-legal_contract_review_basic-002"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "articulate causal relationships in written explanation",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "articulate causal relationships in written explanation"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "articulate causal relationships in written explanation"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001",
+          "obj-legal_contract_review_basic-002"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "distinguish between risk analysis and final legal judgment",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "distinguish between risk analysis and final legal judgment"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "distinguish between risk analysis and final legal judgment"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001",
+          "obj-legal_contract_review_basic-002"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "distinguish between risk analysis and final legal judgment",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "distinguish between risk analysis and final legal judgment"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001",
+          "obj-legal_contract_review_basic-002"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      },
+      {
+        "capability_ref": "articulate causal relationships in written explanation",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "assess-legal_contract_review_basic-summative-001",
+              "original_value": "articulate causal relationships in written explanation"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-legal_contract_review_basic-001",
+          "obj-legal_contract_review_basic-002"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      }
+    ]
+  }
+}

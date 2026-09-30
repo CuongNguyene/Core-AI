@@ -1,0 +1,141 @@
+{
+  "review_id": "review-004",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-13T09:56:24+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "significant_issues",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "obj-001.prerequisite_refs",
+        "field": "prerequisite_refs",
+        "description": "Objective references basic Python as a prerequisite string, but no prerequisite entity with that ID exists; the packet uses pre-001 for the related prerequisite.",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "asmt-001.required_capability_refs",
+        "field": "required_capability_refs",
+        "description": "Assessment references basic Python in required_capability_refs, but no capability or prerequisite ID with that exact identifier exists in the packet.",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "orphan_module",
+        "entity": "mod-001",
+        "field": "objective_ids",
+        "description": "Module mod-001 has no valid supplied objective references; it is organized around prerequisite foundations rather than a supplied objective.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "orphan_lesson",
+        "entity": "les-001-a through les-001-d",
+        "field": "objective_ids",
+        "description": "Four lessons in mod-001 have empty objective_ids and therefore no valid supplied objective reference.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "prerequisite_provenance",
+        "entity": "pre-001",
+        "field": "status",
+        "description": "Basic Python is listed in the brief learner_state.known, but the prerequisite is marked candidate/model_proposed and linked to obj-001 as a teaching objective; provenance and teaching relationship are ambiguous.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "assessment_scope_creep",
+        "entity": "asmt-002.required_evidence.ev-002-c",
+        "field": "required_evidence",
+        "description": "Originality verification for learner-authored rationale is introduced as an assessment criterion but is not part of the stated objectives or desired performance.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "The packet contains several reference and provenance problems, especially string references to basic Python and prerequisite-focused modules/lessons without objective links. These are not used as direct pedagogical score penalties."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring traceability and schema issues, the design is pedagogically reasonable at the pattern level: it separates data cleaning from written justification, uses observable code/output/rationale evidence, and follows a foundations-to-application-to-reflection sequence. It still needs moderate-to-major refinement before approval."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives specify observable outputs: applied transformation strategies, cleaned targeted columns, executable code, and written rationales. Measurability is limited by the unspecified scope of invalid values and the open form of justification."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "asmt-001 directly measures applying transformations and producing a cleaned dataset, while asmt-002 directly measures written justification. Alignment is slightly diluted by the added originality criterion and dependence on an unspecified fixture."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Submitted code, cleaned output, and rationale text would provide defensible evidence of the desired performance. Validity would improve with explicit definitions of invalid values, targeted columns, and downstream-analysis expectations."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "The apply objective is supported by explanation, worked example, guided practice, and a performance task. The evaluate objective asks learners to reason about downstream impact, which is appropriate, though the short timeframe limits likely depth."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "The prerequisites are mostly relevant and candidate-marked, but the set needs refinement. Basic Python is already listed as known, and installing libraries/documentation navigation may be too broad if the environment is supplied."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "The sequence is coherent: readiness foundations, transformation application, then justification based on completed work. The main weakness is that Module 1 compresses several foundational capabilities into 15 minutes."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "The lessons prepare learners for the assessments through explanation, worked example, guided practice, and reflection. Alignment would be stronger with explicit formative checks and clearer fixture/scaffolding design."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "There is moderate under-teaching risk: pandas/library use, file I/O, identifying invalid values, and downstream-impact reasoning are treated quickly and without detailed practice checks."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "There is minor over-teaching risk from reviewing basic Python despite it being known and from adding install/documentation and English-writing prerequisites. Most content still supports the target performance."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "A human designer would need moderate edits to tighten prerequisite status/wording, define the dataset and invalid-value scope, add formative checks, and adjust timing. The design does not require a full rewrite."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "pre-001",
+        "pre-003",
+        "pre-004",
+        "pre-005"
+      ],
+      "rejected_refs": [
+        "pre-002"
+      ],
+      "notes": "pre-001 is acceptable but should be treated as confirmed prior knowledge rather than newly taught. pre-003 and pre-004 are relevant implied prerequisites, and pre-005 is acceptable as a language-access condition. pre-002 should be narrowed from install/navigation to using an already provided library environment, or moved into instruction."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 1,
+      "assessments_changed": 2,
+      "prerequisites_changed": 2,
+      "modules_changed": 1,
+      "lessons_changed": 3,
+      "notes": "Estimated edits: clarify invalid-value scope in obj-001; revise both assessments to specify fixture/target columns and remove or qualify originality evidence; revise pre-001/pre-002 status and wording; link or reposition Module 1; add clearer formative checks and scaffolds in selected lessons."
+    },
+    "overall_notes": "The artifact is instructionally sound at the design-pattern level. Its strongest feature is the integrated performance task plus written rationale; its main risk is assuming substantial foundational data-processing fluency while trying to review or teach several prerequisites inside the same 60-minute outline."
+  }
+}

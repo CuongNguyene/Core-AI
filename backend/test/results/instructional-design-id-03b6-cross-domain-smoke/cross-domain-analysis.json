@@ -1,0 +1,234 @@
+{
+  "experiment": "ID-03B.6",
+  "fixtures": [
+    "python_data_processing",
+    "accounting_financial_reporting_basic",
+    "legal_contract_review_basic",
+    "hr_recruitment_planning_basic",
+    "construction_drawing_and_method_basic"
+  ],
+  "regressions": {
+    "assessment_reference_ownership": {
+      "python_data_processing": {
+        "assessment_reference_ownership": "pass",
+        "reference_failures": 0
+      },
+      "accounting_financial_reporting_basic": {
+        "assessment_reference_ownership": "pass",
+        "reference_failures": 0
+      },
+      "legal_contract_review_basic": {
+        "assessment_reference_ownership": "pass",
+        "reference_failures": 0
+      },
+      "hr_recruitment_planning_basic": {
+        "assessment_reference_ownership": "pass",
+        "reference_failures": 0
+      },
+      "construction_drawing_and_method_basic": {
+        "assessment_reference_ownership": "pass",
+        "reference_failures": 0
+      }
+    },
+    "objective_graph_ownership": {
+      "python_data_processing": {
+        "course_module_scope": "pass",
+        "module_lesson_scope": "pass",
+        "previous_failure_reproduced": false,
+        "module_failures": [],
+        "lesson_failures": []
+      },
+      "accounting_financial_reporting_basic": {
+        "course_module_scope": "pass",
+        "module_lesson_scope": "pass",
+        "previous_failure_reproduced": false,
+        "module_failures": [],
+        "lesson_failures": []
+      },
+      "legal_contract_review_basic": {
+        "course_module_scope": "pass",
+        "module_lesson_scope": "pass",
+        "previous_failure_reproduced": false,
+        "module_failures": [],
+        "lesson_failures": []
+      },
+      "hr_recruitment_planning_basic": {
+        "course_module_scope": "pass",
+        "module_lesson_scope": "pass",
+        "previous_failure_reproduced": false,
+        "module_failures": [],
+        "lesson_failures": []
+      },
+      "construction_drawing_and_method_basic": {
+        "course_module_scope": "pass",
+        "module_lesson_scope": "pass",
+        "previous_failure_reproduced": false,
+        "module_failures": [],
+        "lesson_failures": []
+      }
+    },
+    "dependency_propagation": {
+      "python_data_processing": {
+        "dependency_candidates_generated": 3,
+        "dependency_candidates_propagated": 3,
+        "dependency_candidates_promoted": 0,
+        "dependency_candidates_with_provenance": 5,
+        "canonical_supporting_dependency_count": 5,
+        "coverage_findings": 5,
+        "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+        "pedagogical_coverage_separate": 5
+      },
+      "accounting_financial_reporting_basic": {
+        "dependency_candidates_generated": 3,
+        "dependency_candidates_propagated": 3,
+        "dependency_candidates_promoted": 0,
+        "dependency_candidates_with_provenance": 8,
+        "canonical_supporting_dependency_count": 8,
+        "coverage_findings": 10,
+        "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+        "pedagogical_coverage_separate": 10
+      },
+      "legal_contract_review_basic": {
+        "dependency_candidates_generated": 2,
+        "dependency_candidates_propagated": 2,
+        "dependency_candidates_promoted": 0,
+        "dependency_candidates_with_provenance": 4,
+        "canonical_supporting_dependency_count": 4,
+        "coverage_findings": 5,
+        "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+        "pedagogical_coverage_separate": 5
+      },
+      "hr_recruitment_planning_basic": {
+        "dependency_candidates_generated": 3,
+        "dependency_candidates_propagated": 3,
+        "dependency_candidates_promoted": 0,
+        "dependency_candidates_with_provenance": 5,
+        "canonical_supporting_dependency_count": 5,
+        "coverage_findings": 6,
+        "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+        "pedagogical_coverage_separate": 6
+      },
+      "construction_drawing_and_method_basic": {
+        "dependency_candidates_generated": 2,
+        "dependency_candidates_propagated": 2,
+        "dependency_candidates_promoted": 0,
+        "dependency_candidates_with_provenance": 3,
+        "canonical_supporting_dependency_count": 3,
+        "coverage_findings": 5,
+        "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+        "pedagogical_coverage_separate": 5
+      }
+    }
+  },
+  "quality_findings": {
+    "python_data_processing": {
+      "model_calls_completed": 5,
+      "pipeline_completed": true,
+      "snapshot_created": true,
+      "quality_gate_reached": true,
+      "quality_gate_passed": false,
+      "error_findings": 5,
+      "warning_findings": 0,
+      "finding_codes": {
+        "assessment_dependency_not_covered": 5
+      },
+      "scope_creep": {
+        "assessment_scope_creep_findings": 0,
+        "outcome": "not_evaluable"
+      }
+    },
+    "accounting_financial_reporting_basic": {
+      "model_calls_completed": 5,
+      "pipeline_completed": true,
+      "snapshot_created": true,
+      "quality_gate_reached": true,
+      "quality_gate_passed": false,
+      "error_findings": 10,
+      "warning_findings": 0,
+      "finding_codes": {
+        "assessment_dependency_not_covered": 10
+      },
+      "scope_creep": {
+        "assessment_scope_creep_findings": 0,
+        "outcome": "not_evaluable"
+      }
+    },
+    "legal_contract_review_basic": {
+      "model_calls_completed": 5,
+      "pipeline_completed": true,
+      "snapshot_created": true,
+      "quality_gate_reached": true,
+      "quality_gate_passed": false,
+      "error_findings": 5,
+      "warning_findings": 0,
+      "finding_codes": {
+        "assessment_dependency_not_covered": 5
+      },
+      "scope_creep": {
+        "assessment_scope_creep_findings": 0,
+        "outcome": "not_evaluable"
+      }
+    },
+    "hr_recruitment_planning_basic": {
+      "model_calls_completed": 5,
+      "pipeline_completed": true,
+      "snapshot_created": true,
+      "quality_gate_reached": true,
+      "quality_gate_passed": false,
+      "error_findings": 6,
+      "warning_findings": 0,
+      "finding_codes": {
+        "assessment_dependency_not_covered": 6
+      },
+      "scope_creep": {
+        "assessment_scope_creep_findings": 0,
+        "outcome": "not_evaluable"
+      }
+    },
+    "construction_drawing_and_method_basic": {
+      "model_calls_completed": 5,
+      "pipeline_completed": true,
+      "snapshot_created": true,
+      "quality_gate_reached": true,
+      "quality_gate_passed": false,
+      "error_findings": 5,
+      "warning_findings": 0,
+      "finding_codes": {
+        "assessment_dependency_not_covered": 5
+      },
+      "scope_creep": {
+        "assessment_scope_creep_findings": 0,
+        "outcome": "not_evaluable"
+      }
+    }
+  },
+  "comparison": {
+    "id03b": {
+      "python_assessment_dependency_not_covered": 7,
+      "legal_assessment_dependency_not_covered": 6,
+      "accounting_hr_construction_reference_ownership": "failed"
+    },
+    "id03b3": {
+      "python_assessment_dependency_not_covered": 9,
+      "legal": "not_observed_due_to_orchestration_graph_failure"
+    },
+    "id03b6": {
+      "python_assessment_dependency_not_covered": 5,
+      "legal_assessment_dependency_not_covered": 5,
+      "all_reference_graphs_pass": true,
+      "all_objective_graphs_pass": true
+    }
+  },
+  "human_review_readiness": {
+    "ready": true,
+    "decision": "HUMAN_REVIEW_READY",
+    "reason": [
+      "5/5 fixtures completed all structured stages and reached quality gate",
+      "No assessment reference ownership failures",
+      "No module/lesson objective graph failures; Legal regression did not recur",
+      "Candidate propagation preserved candidate status and provenance; no promotion",
+      "Remaining findings are deterministic coverage/pedagogical findings, not broken artifact contracts"
+    ]
+  },
+  "runtime_failures": []
+}

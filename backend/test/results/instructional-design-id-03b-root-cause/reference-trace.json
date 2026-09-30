@@ -1,0 +1,210 @@
+{
+  "source_experiment_id": "instructional-design-id-03b-cross-domain-smoke",
+  "traces": [
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "domain": "accounting",
+      "finding": "unknown_objective_reference",
+      "producer_stage": "AssessmentDesigner",
+      "reference_value": "obj-bfr-001",
+      "reference_exists_in_objective_output": true,
+      "expected_owner": {
+        "artifact": "AssessmentSpec",
+        "id": "asmt-bfr-f-002",
+        "field": "objective_ids",
+        "values": [
+          "obj-bfr-002"
+        ]
+      },
+      "actual_owner": {
+        "artifact": "AssessmentCapabilityRequirement",
+        "capability": "recognition of standard financial report components",
+        "field": "objective_ids",
+        "values": [
+          "obj-bfr-001",
+          "obj-bfr-002"
+        ]
+      },
+      "failure_point": "_validate_v03_references",
+      "root_cause": "assessment_generation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "domain": "accounting",
+      "finding": "unknown_objective_reference",
+      "producer_stage": "AssessmentDesigner",
+      "reference_value": "obj-bfr-001",
+      "reference_exists_in_objective_output": true,
+      "expected_owner": {
+        "artifact": "AssessmentSpec",
+        "id": "asmt-bfr-f-003",
+        "field": "objective_ids",
+        "values": [
+          "obj-bfr-003"
+        ]
+      },
+      "actual_owner": {
+        "artifact": "AssessmentCapabilityRequirement",
+        "capability": "recognition of standard financial report components",
+        "field": "objective_ids",
+        "values": [
+          "obj-bfr-001",
+          "obj-bfr-003"
+        ]
+      },
+      "failure_point": "_validate_v03_references",
+      "root_cause": "assessment_generation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "domain": "accounting",
+      "finding": "unknown_objective_reference",
+      "producer_stage": "AssessmentDesigner",
+      "reference_value": "obj-bfr-001",
+      "reference_exists_in_objective_output": true,
+      "expected_owner": {
+        "artifact": "AssessmentSpec",
+        "id": "asmt-bfr-s-001",
+        "field": "objective_ids",
+        "values": [
+          "obj-bfr-002",
+          "obj-bfr-003"
+        ]
+      },
+      "actual_owner": {
+        "artifact": "AssessmentCapabilityRequirement",
+        "capability": "recognition of standard financial report components",
+        "field": "objective_ids",
+        "values": [
+          "obj-bfr-001",
+          "obj-bfr-002",
+          "obj-bfr-003"
+        ]
+      },
+      "failure_point": "_validate_v03_references",
+      "root_cause": "assessment_generation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "domain": "hr_management",
+      "finding": "unknown_objective_reference",
+      "producer_stage": "AssessmentDesigner",
+      "reference_value": "obj-hrb-01",
+      "reference_exists_in_objective_output": true,
+      "expected_owner": {
+        "artifact": "AssessmentSpec",
+        "id": "asm-hrb-s01",
+        "field": "objective_ids",
+        "values": [
+          "obj-hrb-02",
+          "obj-hrb-03"
+        ]
+      },
+      "actual_owner": {
+        "artifact": "AssessmentCapabilityRequirement",
+        "capability": "knowledge of standard recruitment plan components",
+        "field": "objective_ids",
+        "values": [
+          "obj-hrb-01"
+        ]
+      },
+      "failure_point": "_validate_v03_references",
+      "root_cause": "assessment_generation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "domain": "construction_engineering",
+      "finding": "unknown_objective_reference",
+      "producer_stage": "AssessmentDesigner",
+      "reference_value": "obj-cdm-basic-01",
+      "reference_exists_in_objective_output": true,
+      "expected_owner": {
+        "artifact": "AssessmentSpec",
+        "id": "assess-cdm-basic-02-formative",
+        "field": "objective_ids",
+        "values": [
+          "obj-cdm-basic-02"
+        ]
+      },
+      "actual_owner": {
+        "artifact": "AssessmentCapabilityRequirement",
+        "capability": "recall of standard construction drawing symbols and conventions",
+        "field": "objective_ids",
+        "values": [
+          "obj-cdm-basic-01",
+          "obj-cdm-basic-02"
+        ]
+      },
+      "failure_point": "_validate_v03_references",
+      "root_cause": "assessment_generation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "domain": "construction_engineering",
+      "finding": "unknown_objective_reference",
+      "producer_stage": "AssessmentDesigner",
+      "reference_value": "obj-cdm-basic-01",
+      "reference_exists_in_objective_output": true,
+      "expected_owner": {
+        "artifact": "AssessmentSpec",
+        "id": "assess-cdm-basic-03-summative",
+        "field": "objective_ids",
+        "values": [
+          "obj-cdm-basic-03"
+        ]
+      },
+      "actual_owner": {
+        "artifact": "AssessmentCapabilityRequirement",
+        "capability": "recall of standard construction drawing symbols and conventions",
+        "field": "objective_ids",
+        "values": [
+          "obj-cdm-basic-01",
+          "obj-cdm-basic-03"
+        ]
+      },
+      "failure_point": "_validate_v03_references",
+      "root_cause": "assessment_generation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "domain": "construction_engineering",
+      "finding": "unknown_objective_reference",
+      "producer_stage": "AssessmentDesigner",
+      "reference_value": "obj-cdm-basic-02",
+      "reference_exists_in_objective_output": true,
+      "expected_owner": {
+        "artifact": "AssessmentSpec",
+        "id": "assess-cdm-basic-03-summative",
+        "field": "objective_ids",
+        "values": [
+          "obj-cdm-basic-03"
+        ]
+      },
+      "actual_owner": {
+        "artifact": "AssessmentCapabilityRequirement",
+        "capability": "interpretation of construction drawing elements",
+        "field": "objective_ids",
+        "values": [
+          "obj-cdm-basic-02",
+          "obj-cdm-basic-03"
+        ]
+      },
+      "failure_point": "_validate_v03_references",
+      "root_cause": "assessment_generation",
+      "validator_correct": true,
+      "recommended_fix_layer": "prompt"
+    }
+  ]
+}

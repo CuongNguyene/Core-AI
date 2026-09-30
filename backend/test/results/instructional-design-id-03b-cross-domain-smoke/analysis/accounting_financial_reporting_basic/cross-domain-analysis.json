@@ -1,0 +1,32 @@
+{
+  "fixture_id": "accounting_financial_reporting_basic",
+  "domain": "accounting",
+  "status": "fail",
+  "findings": [
+    {
+      "code": "stage_execution_failed",
+      "category": "ORCHESTRATION",
+      "severity": "error",
+      "message": "OrchestrationReferenceResolution: v0.3 assessment capability requirement contains an unknown objective reference",
+      "entity_id": "accounting_financial_reporting_basic"
+    }
+  ],
+  "quality_gate_findings": [],
+  "failure_categories": [
+    "ORCHESTRATION"
+  ],
+  "metadata": {
+    "fixture_id": "accounting_financial_reporting_basic",
+    "domain": "accounting",
+    "industry_family": "finance",
+    "learning_type": "regulated_professional_skill",
+    "difficulty": "medium",
+    "description": "An entry-level accountant prepares basic reports and identifies discrepancies."
+  },
+  "stage_completion": {
+    "status": "failed",
+    "model_audit_count": 5,
+    "snapshot_present": false
+  },
+  "dependency_normalization": null
+}

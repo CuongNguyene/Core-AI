@@ -1,0 +1,114 @@
+{
+  "review_id": "review-003",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-13T09:56:24+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "minor_issues",
+    "issues": [
+      {
+        "category": "schema_or_shape",
+        "entity": "assess-formative-1.required_evidence[0].rationale",
+        "field": "rationale",
+        "description": "The formative assessment evidence rationale is null rather than an explanatory string.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "schema_or_shape",
+        "entity": "assess-formative-1.scoring",
+        "field": "scoring",
+        "description": "The formative assessment has scoring set to null, leaving the object shape less complete than other assessments.",
+        "severity": "info",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "mod-3.lesson_ids",
+        "field": "lesson_ids",
+        "description": "The Practice and Assessment module has no lesson IDs or lesson objects, so the final 15 minutes are represented only at module level.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "All listed objective, prerequisite, module, lesson, and assessment references resolve within the packet. Technical observations are kept separate from pedagogical judgement."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring technical shape issues, the design is pedagogically reasonable: it moves from identifying missing/invalid values to transforming them and justifying decisions in a hands-on pandas task."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives include observable performances and criteria for identifying null/invalid values, applying transformation strategies, and justifying choices. The first objective is labeled understand even though the performance requires tool use, and some criteria need clearer thresholds."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "The summative task measures identification, transformation, and justification in one realistic code-and-explanation performance. The formative task supports obj-1, though obj-2 and obj-3 have less explicit formative checking."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Correct issue identification, executable transformations, and written justifications are valid evidence for the target capability. Validity would be stronger if invalid value types, expected outputs, and analysis context were specified."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 3,
+        "rationale": "The transformation and justification objectives align with apply/evaluate demands, but identifying data issues using pandas is more apply/analyze than understand. The summative assessment cognitive label of apply under-represents the evaluative justification component."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "The prerequisites are relevant and mostly minimal: basic Python, tabular structure, and pandas/library use. Pandas may need to be framed as candidate readiness or explicitly taught because the learner state confirms only basic Python."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "The progression from detecting issues to transforming data to practice/assessment is sensible. Combining transformation and justification in Module 2 is efficient, though justification might need a clearer bridge from code choices to analysis goals."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "Lessons support the summative task through demonstrations, worked examples, guided practice, and scenarios, but the final practice/assessment module has no lesson content and there is little guided preparation for the full integrated task."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Moderate under-teaching risk remains around invalid-value detection, choosing among transformation strategies, and writing defensible justifications within the available lesson detail."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "The content is largely focused on the requested Python data-processing performance. There is little unnecessary breadth beyond including common pandas inspection and transformation methods."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Moderate edits are needed to adjust cognitive labels, specify invalid-value scope, complete formative scoring, and add final practice/assessment lesson detail."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-1",
+        "prereq-2",
+        "prereq-3"
+      ],
+      "rejected_refs": [],
+      "notes": "All three prerequisites are relevant. Revisions should keep prereq-1 confirmed from learner_state.known, qualify prereq-2 as candidate tabular literacy, and decide whether prereq-3 pandas/library use is an entry requirement or part of instruction."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 2,
+      "assessments_changed": 2,
+      "prerequisites_changed": 2,
+      "modules_changed": 1,
+      "lessons_changed": 2,
+      "notes": "Estimated edits include revising two cognitive/criteria statements, completing formative assessment rationale/scoring, clarifying two prerequisite statuses, and adding lesson-level support for the final practice/assessment segment."
+    },
+    "overall_notes": "A practical and mostly aligned draft for a 60-minute pandas cleaning activity, with moderate gaps in specificity and formative scaffolding."
+  }
+}

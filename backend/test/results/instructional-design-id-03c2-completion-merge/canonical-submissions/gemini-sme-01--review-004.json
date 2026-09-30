@@ -1,0 +1,84 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-004",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 4,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 4,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 3,
+      "scope_balance": 4,
+      "workload_time_realism": 2,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "Clear success criteria, particularly regarding the inclusion of specific constraints (role, headcount, timeline)[cite: 24].",
+      "objective_assessment_alignment": "The tasks perfectly mirror the objectives, advancing from component recall to plan creation to written/verbal justification[cite: 24].",
+      "evidence_validity": "Generating a plan and defending its sequencing yields valid evidence of recruitment planning capability[cite: 24].",
+      "cognitive_alignment": "Understand -> Create -> Evaluate is a robust cognitive progression for planning tasks[cite: 24].",
+      "prerequisite_quality": "Identifying 'step-dependency reasoning' as a prerequisite is an insightful way to ensure learners have the logic skills needed for sequencing[cite: 24].",
+      "course_sequence_coherence": "The module ordering is strictly dictated by the logical prerequisites of the task (components -> synthesis -> evaluation)[cite: 24].",
+      "instruction_assessment_alignment": "The null time estimates make it impossible to determine if the instructional events are adequately weighted to prepare learners for the assessments[cite: 24].",
+      "scope_balance": "The activities align well with the objectives conceptually (recall, synthesis, evaluation), but generating a complete HR plan from scratch leaves little room for robust guided practice within the short timeframe.",
+      "workload_time_realism": "The proposed workload is clearly unrealistic for 60 minutes. Creating a coherent recruitment plan from a scenario and formulating dependency-based justifications requires much more time, which is reflected in the AI's inability to assign lesson minutes.",
+      "domain_appropriateness": "The instructional approach relies on realistic workplace scenarios, plan synthesis, prioritization, and dependency-based justification, which are all highly appropriate for HR management capabilities."
+    },
+    "machine_validity_observations": [
+      {
+        "code": "schema_or_shape",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "les-hrp-02-we",
+        "field": "estimated_minutes",
+        "message": "estimated_minutes is explicitly null."
+      },
+      {
+        "code": "schema_or_shape",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "les-hrp-02-gp",
+        "field": "estimated_minutes",
+        "message": "estimated_minutes is explicitly null."
+      },
+      {
+        "code": "schema_or_shape",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "les-hrp-03",
+        "field": "estimated_minutes",
+        "message": "estimated_minutes is explicitly null."
+      }
+    ],
+    "prerequisites_acceptable": true,
+    "edit_effort": "moderate",
+    "special_question": {
+      "answer": "PARTIALLY",
+      "rationale": "The cognitive progression is logically sound for HR planning, but the time constraints are fundamentally mismatched with the heavy generative demands of the summative assessments."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-004.json",
+    "source_submission_sha256": "7d30397bbf0c8861bd07685bba083accbe1bde567a68c833294aa031833ff330",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_04.json",
+    "completion_submission_sha256": "30e9ed8b3ac33014763d44a9f4577688d9bcae266ba2fe8c8712fbafbd2b5cbb",
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

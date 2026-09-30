@@ -1,0 +1,9 @@
+{
+  "domains": [
+    {"fixture": "python_data_processing", "source": "ID-04D final rerun", "completed": true, "graph_valid": true, "provenance_complete": true},
+    {"fixture": "accounting_financial_reporting_basic", "source": "ID-04D final rerun", "completed": true, "graph_valid": true, "provenance_complete": true},
+    {"fixture": "legal_contract_review_basic", "source": "ID-04F Legal rerun", "completed": true, "graph_valid": true, "provenance_complete": true, "provenance_finding_present": false},
+    {"fixture": "hr_recruitment_planning_basic", "source": "ID-04D final rerun", "completed": true, "graph_valid": true, "provenance_complete": true},
+    {"fixture": "construction_drawing_and_method_basic", "source": "ID-04D final rerun", "completed": true, "graph_valid": true, "provenance_complete": true}
+  ]
+}

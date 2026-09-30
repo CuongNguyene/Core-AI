@@ -1,0 +1,905 @@
+{
+  "review_id": "review-002",
+  "fixture_id": "accounting_financial_reporting_basic",
+  "brief": {
+    "id": "brief-accounting_financial_reporting_basic",
+    "capability": {
+      "id": null,
+      "name": "basic financial reporting",
+      "target_context": "cross-domain research fixture"
+    },
+    "learner_state": {
+      "known": [],
+      "unknown": [],
+      "evidence_refs": [
+        "cross-domain-fixture:accounting_financial_reporting_basic:learner-state"
+      ]
+    },
+    "desired_performances": [
+      "Given a small ledger, prepare a basic financial report and identify common discrepancies."
+    ],
+    "constraints": {
+      "estimated_total_minutes": 60,
+      "language": "en",
+      "audience_notes": []
+    },
+    "provenance": {
+      "type": "research_fixture",
+      "authored_by": "instructional-design-research",
+      "created_at": null
+    }
+  },
+  "objectives": [
+    {
+      "id": "obj-fr-01",
+      "brief_id": "brief-accounting_financial_reporting_basic",
+      "performance": "Recognize and name the standard components of a basic financial report",
+      "cognitive_process": "understand",
+      "knowledge_dimension": "conceptual",
+      "conditions": [
+        "Given a mixed list of financial and non-financial document elements"
+      ],
+      "success_criteria": [
+        "Correctly classifies at least 4 of 5 presented elements as belonging or not belonging to a basic financial report"
+      ],
+      "prerequisite_refs": [],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Assumes no prior formal accounting training; candidate prerequisite only — not evidenced by learner-state artifact",
+          "Report type (income statement, balance sheet, or combined) unspecified in brief; component set is provisional"
+        ]
+      }
+    },
+    {
+      "id": "obj-fr-02",
+      "brief_id": "brief-accounting_financial_reporting_basic",
+      "performance": "Given a small ledger, prepare a basic financial report by transferring and summarizing ledger entries into the correct report sections",
+      "cognitive_process": "apply",
+      "knowledge_dimension": "procedural",
+      "conditions": [
+        "Given a small ledger containing 8–12 entries",
+        "Using a provided standard financial report template"
+      ],
+      "success_criteria": [
+        "All ledger entries are correctly categorized in the report",
+        "Column and section totals are arithmetically correct",
+        "All sections identified in obj-fr-01 are present and populated"
+      ],
+      "prerequisite_refs": [
+        "obj-fr-01"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Ledger size of 8–12 entries is a provisional estimate consistent with the 60-minute constraint",
+          "Template type is candidate only; requires researcher decision before production use"
+        ]
+      }
+    },
+    {
+      "id": "obj-fr-03",
+      "brief_id": "brief-accounting_financial_reporting_basic",
+      "performance": "Given a basic financial report derived from a small ledger, identify common discrepancies and state the probable cause of each",
+      "cognitive_process": "analyze",
+      "knowledge_dimension": "conceptual",
+      "conditions": [
+        "Given a financial report containing 2–3 seeded discrepancies",
+        "Original ledger available for cross-reference"
+      ],
+      "success_criteria": [
+        "Identifies at least 2 of 3 seeded discrepancies",
+        "Provides a brief rationale for each discrepancy identified, referencing the ledger"
+      ],
+      "prerequisite_refs": [
+        "obj-fr-01",
+        "obj-fr-02"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Discrepancy types (e.g., transposition errors, omitted entries, misclassification) are candidate only; taxonomy not specified in brief",
+          "Count of seeded discrepancies is a provisional design decision requiring researcher validation"
+        ]
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "id": "asmt-fr-01-f",
+      "objective_ids": [
+        "obj-fr-01"
+      ],
+      "capability_claim": "Recognize and name standard components of a basic financial report from a mixed element list",
+      "required_evidence": [
+        {
+          "id": "ev-fr-01-01",
+          "criterion": "Learner correctly classifies at least 4 of 5 presented elements as belonging or not belonging to a basic financial report",
+          "rationale": "Directly reflects the success criterion stated in obj-fr-01"
+        },
+        {
+          "id": "ev-fr-01-02",
+          "criterion": "For each element classified as belonging, learner provides the correct report section label",
+          "rationale": "Addresses the 'name the component' aspect of the obj-fr-01 performance"
+        }
+      ],
+      "task": {
+        "task_type": "classification task",
+        "description": "Learner is presented with a mixed list of document elements and must classify each as belonging or not belonging to a basic financial report, labeling the applicable report section for each element classified as belonging.",
+        "conditions": [
+          "Given a mixed list of financial and non-financial document elements"
+        ]
+      },
+      "cognitive_process": "understand",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-fr-01-01",
+            "criterion": "Classification accuracy",
+            "performance_levels": [
+              "Below threshold: fewer than 4 of 5 elements correctly classified",
+              "At threshold: exactly 4 of 5 elements correctly classified",
+              "Above threshold: 5 of 5 elements correctly classified"
+            ]
+          },
+          {
+            "id": "rd-fr-01-02",
+            "criterion": "Section label accuracy for elements classified as belonging",
+            "performance_levels": [
+              "No section labels provided",
+              "Some section labels correct",
+              "All section labels correct"
+            ]
+          }
+        ],
+        "mastery_rule": "Learner must reach at least 'At threshold' on classification accuracy; section label accuracy is informational at this formative stage."
+      },
+      "role": "formative",
+      "required_capabilities": [
+        {
+          "name": "recognition of standard financial report components",
+          "objective_ids": [
+            "obj-fr-01"
+          ],
+          "rationale": "Directly demonstrated by the classify-and-name performance of obj-fr-01"
+        }
+      ],
+      "is_summative": false,
+      "required_capability_refs": [
+        "recognition of standard financial report components"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Report type (income statement, balance sheet, or combined) is not specified; component set and section labels are provisional pending researcher decision",
+          "List size of 10 elements is a candidate design decision; final count requires researcher validation"
+        ]
+      }
+    },
+    {
+      "id": "asmt-fr-02-f",
+      "objective_ids": [
+        "obj-fr-02"
+      ],
+      "capability_claim": "Prepare a basic financial report by transferring and categorizing ledger entries and computing section totals",
+      "required_evidence": [
+        {
+          "id": "ev-fr-02-01",
+          "criterion": "All ledger entries are transferred to the report and placed in the correct section",
+          "rationale": "Addresses the categorization component of obj-fr-02 success criteria"
+        },
+        {
+          "id": "ev-fr-02-02",
+          "criterion": "Column and section totals are arithmetically correct",
+          "rationale": "Addresses the summarization component of obj-fr-02 success criteria"
+        },
+        {
+          "id": "ev-fr-02-03",
+          "criterion": "All report sections are present and populated",
+          "rationale": "Confirms that component recognition from obj-fr-01 is applied in the procedural task"
+        }
+      ],
+      "task": {
+        "task_type": "report preparation task",
+        "description": "Learner receives a small ledger (8–12 entries) and a standard financial report template. Learner must transfer each entry to the correct report section, categorize entries appropriately, and compute column and section totals.",
+        "conditions": [
+          "Given a small ledger containing 8–12 entries",
+          "Using a provided standard financial report template"
+        ]
+      },
+      "cognitive_process": "apply",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-fr-02-01",
+            "criterion": "Entry categorization accuracy",
+            "performance_levels": [
+              "Below threshold: one or more entries placed in wrong section",
+              "At threshold: all entries placed in correct sections"
+            ]
+          },
+          {
+            "id": "rd-fr-02-02",
+            "criterion": "Arithmetic correctness",
+            "performance_levels": [
+              "Below threshold: one or more totals incorrect",
+              "At threshold: all totals arithmetically correct"
+            ]
+          },
+          {
+            "id": "rd-fr-02-03",
+            "criterion": "Report completeness",
+            "performance_levels": [
+              "Below threshold: one or more required sections absent or unpopulated",
+              "At threshold: all required sections present and populated"
+            ]
+          }
+        ],
+        "mastery_rule": "Learner must reach 'At threshold' on all three dimensions to demonstrate basic procedural competence."
+      },
+      "role": "formative",
+      "required_capabilities": [
+        {
+          "name": "transfer and categorization of ledger entries into report sections",
+          "objective_ids": [
+            "obj-fr-02"
+          ],
+          "rationale": "Core procedural capability demonstrated by the report-preparation performance of obj-fr-02"
+        },
+        {
+          "name": "arithmetic computation of column and section totals",
+          "objective_ids": [
+            "obj-fr-02"
+          ],
+          "rationale": "Required to satisfy the summarization component of the obj-fr-02 performance"
+        }
+      ],
+      "is_summative": false,
+      "required_capability_refs": [
+        "transfer and categorization of ledger entries into report sections",
+        "arithmetic computation of column and section totals"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Ledger size of 8–12 entries is a provisional estimate consistent with the 60-minute constraint",
+          "Template type is candidate only; requires researcher decision before production use"
+        ]
+      }
+    },
+    {
+      "id": "asmt-fr-03-f",
+      "objective_ids": [
+        "obj-fr-03"
+      ],
+      "capability_claim": "Identify discrepancies in a basic financial report and state the probable cause of each by cross-referencing the source ledger",
+      "required_evidence": [
+        {
+          "id": "ev-fr-03-01",
+          "criterion": "Learner identifies at least 2 of 3 seeded discrepancies",
+          "rationale": "Directly reflects the success criterion stated in obj-fr-03"
+        },
+        {
+          "id": "ev-fr-03-02",
+          "criterion": "For each discrepancy identified, learner provides a brief rationale referencing the corresponding ledger entry",
+          "rationale": "Addresses the 'state the probable cause' component of the obj-fr-03 performance"
+        }
+      ],
+      "task": {
+        "task_type": "discrepancy identification task",
+        "description": "Learner receives a completed financial report containing 2–3 seeded discrepancies and the original ledger. Learner must identify each discrepancy, cross-reference it with the ledger, and provide a brief rationale stating the probable cause.",
+        "conditions": [
+          "Given a financial report containing 2–3 seeded discrepancies",
+          "Original ledger available for cross-reference"
+        ]
+      },
+      "cognitive_process": "analyze",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-fr-03-01",
+            "criterion": "Discrepancy detection",
+            "performance_levels": [
+              "Below threshold: fewer than 2 discrepancies identified",
+              "At threshold: at least 2 of 3 discrepancies identified",
+              "Above threshold: all 3 discrepancies identified"
+            ]
+          },
+          {
+            "id": "rd-fr-03-02",
+            "criterion": "Rationale quality",
+            "performance_levels": [
+              "Below threshold: no ledger reference provided in rationale",
+              "At threshold: rationale references the ledger and identifies a plausible cause",
+              "Above threshold: rationale identifies the specific ledger entry and characterizes the error type"
+            ]
+          }
+        ],
+        "mastery_rule": "Learner must reach 'At threshold' on discrepancy detection and 'At threshold' on rationale quality for each discrepancy identified."
+      },
+      "role": "formative",
+      "required_capabilities": [
+        {
+          "name": "cross-referencing ledger entries against report figures",
+          "objective_ids": [
+            "obj-fr-03"
+          ],
+          "rationale": "Required to locate discrepancies between ledger and report as specified in the obj-fr-03 conditions"
+        },
+        {
+          "name": "identification and characterization of common financial report discrepancy types",
+          "objective_ids": [
+            "obj-fr-03"
+          ],
+          "rationale": "Required to name and explain each discrepancy as specified in the obj-fr-03 performance"
+        }
+      ],
+      "is_summative": false,
+      "required_capability_refs": [
+        "cross-referencing ledger entries against report figures",
+        "identification and characterization of common financial report discrepancy types"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Discrepancy types (e.g., transposition errors, omitted entries, misclassification) are candidate only; taxonomy not specified in brief",
+          "Count of seeded discrepancies is a provisional design decision requiring researcher validation"
+        ]
+      }
+    },
+    {
+      "id": "asmt-fr-sum",
+      "objective_ids": [
+        "obj-fr-01",
+        "obj-fr-02",
+        "obj-fr-03"
+      ],
+      "capability_claim": "Demonstrate basic financial reporting by recognizing report components, preparing a report from a small ledger, and identifying discrepancies with stated probable causes",
+      "required_evidence": [
+        {
+          "id": "ev-fr-sum-01",
+          "criterion": "Learner correctly classifies at least 4 of 5 report component elements",
+          "rationale": "Preserves the obj-fr-01 success criterion in the integrated summative context"
+        },
+        {
+          "id": "ev-fr-sum-02",
+          "criterion": "All ledger entries are transferred and placed in the correct report sections",
+          "rationale": "Preserves the categorization success criterion from obj-fr-02"
+        },
+        {
+          "id": "ev-fr-sum-03",
+          "criterion": "Column and section totals are arithmetically correct",
+          "rationale": "Preserves the summarization success criterion from obj-fr-02"
+        },
+        {
+          "id": "ev-fr-sum-04",
+          "criterion": "Learner identifies at least 2 of 3 seeded discrepancies and provides a ledger-referenced rationale for each",
+          "rationale": "Preserves the detection and explanation success criteria from obj-fr-03"
+        }
+      ],
+      "task": {
+        "task_type": "integrated financial reporting task",
+        "description": "Learner receives a small ledger and a standard financial report template. Learner must: (1) classify and label the standard report components present in the template; (2) transfer and summarize all ledger entries into the correct report sections with arithmetically correct totals; and (3) review the completed report against the ledger to identify any discrepancies and state a probable cause for each.",
+        "conditions": [
+          "Given a small ledger containing 8–12 entries",
+          "Using a provided standard financial report template",
+          "Learner completes the report and then reviews it for discrepancies against the original ledger"
+        ]
+      },
+      "cognitive_process": "analyze",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-sum-01",
+            "criterion": "Component recognition",
+            "performance_levels": [
+              "Below threshold: fewer than 4 of 5 elements correctly classified",
+              "At threshold: at least 4 of 5 elements correctly classified"
+            ]
+          },
+          {
+            "id": "rd-sum-02",
+            "criterion": "Entry categorization accuracy",
+            "performance_levels": [
+              "Below threshold: one or more entries placed in wrong section",
+              "At threshold: all entries placed in correct sections"
+            ]
+          },
+          {
+            "id": "rd-sum-03",
+            "criterion": "Arithmetic correctness",
+            "performance_levels": [
+              "Below threshold: one or more totals incorrect",
+              "At threshold: all totals arithmetically correct"
+            ]
+          },
+          {
+            "id": "rd-sum-04",
+            "criterion": "Discrepancy detection and explanation",
+            "performance_levels": [
+              "Below threshold: fewer than 2 discrepancies identified or no rationale provided",
+              "At threshold: at least 2 discrepancies identified with ledger-referenced rationale for each",
+              "Above threshold: all discrepancies identified with specific entry-level rationale"
+            ]
+          }
+        ],
+        "mastery_rule": "Learner must reach 'At threshold' on all four rubric dimensions to demonstrate basic financial reporting capability."
+      },
+      "role": "summative",
+      "required_capabilities": [
+        {
+          "name": "recognition of standard financial report components",
+          "objective_ids": [
+            "obj-fr-01"
+          ],
+          "rationale": "Required to satisfy the classification and labeling component of the integrated task"
+        },
+        {
+          "name": "transfer and categorization of ledger entries into report sections",
+          "objective_ids": [
+            "obj-fr-02"
+          ],
+          "rationale": "Required to satisfy the report-preparation component of the integrated task"
+        },
+        {
+          "name": "arithmetic computation of column and section totals",
+          "objective_ids": [
+            "obj-fr-02"
+          ],
+          "rationale": "Required to produce a correct completed report available for subsequent discrepancy review"
+        },
+        {
+          "name": "cross-referencing ledger entries against report figures",
+          "objective_ids": [
+            "obj-fr-03"
+          ],
+          "rationale": "Required to locate discrepancies between the completed report and the source ledger"
+        },
+        {
+          "name": "identification and characterization of common financial report discrepancy types",
+          "objective_ids": [
+            "obj-fr-03"
+          ],
+          "rationale": "Required to name and explain each identified discrepancy in the integrated task"
+        }
+      ],
+      "is_summative": true,
+      "required_capability_refs": [
+        "recognition of standard financial report components",
+        "transfer and categorization of ledger entries into report sections",
+        "arithmetic computation of column and section totals",
+        "cross-referencing ledger entries against report figures",
+        "identification and characterization of common financial report discrepancy types"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Integrated task design assumes a sequential structure: component classification, then report preparation, then discrepancy review; sequencing policy is not enforced by this proposal",
+          "Seeded discrepancies used in the summative task may be distinct from those used in the formative task; this is a provisional design decision requiring researcher validation",
+          "Total task time is estimated to fit within the 60-minute constraint; per-phase timing is not allocated and remains a researcher decision"
+        ]
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-arith-01",
+      "capability": "basic arithmetic with whole numbers and simple decimals (addition and subtraction)",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "Without this capability the learner cannot compute column and section totals required by obj-fr-02 success criteria ('Column and section totals are arithmetically correct') and cannot verify numerical figures when cross-referencing the ledger in obj-fr-03. Failure would occur at ev-fr-02-02 and ev-fr-sum-03 regardless of procedural knowledge; rd-fr-02-02 and rd-sum-03 would score below threshold. This capability is not demonstrated by any supplied objective and is not evidenced in the learner-state artifact.",
+      "required_for_refs": [
+        "obj-fr-02",
+        "obj-fr-03",
+        "asmt-fr-02-f",
+        "asmt-fr-sum"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    },
+    {
+      "id": "prereq-ledger-01",
+      "capability": "familiarity with the structure and purpose of a financial ledger",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "Without the ability to read and navigate a ledger the learner cannot transfer entries to the correct report sections (obj-fr-02) or cross-reference ledger figures against the completed report (obj-fr-03). Failure would occur at ev-fr-02-01, ev-fr-03-01, ev-fr-03-02, ev-fr-sum-02, and ev-fr-sum-04; entry-categorization and discrepancy-detection rubric dimensions would score below threshold independent of report-structure knowledge. This capability is not demonstrated by any supplied objective and is not evidenced in the learner-state artifact.",
+      "required_for_refs": [
+        "obj-fr-02",
+        "obj-fr-03"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    }
+  ],
+  "course_outline": {
+    "id": "co-fr-01",
+    "brief_id": "brief-accounting_financial_reporting_basic",
+    "objective_ids": [
+      "obj-fr-01",
+      "obj-fr-02",
+      "obj-fr-03"
+    ],
+    "modules": [
+      {
+        "id": "mod-fr-01",
+        "title": "Financial Report Components",
+        "objective_ids": [
+          "obj-fr-01"
+        ],
+        "prerequisite_refs": [],
+        "lesson_ids": [
+          "les-fr-01-01",
+          "les-fr-01-02"
+        ],
+        "estimated_minutes": 12
+      },
+      {
+        "id": "mod-fr-02",
+        "title": "Report Preparation from a Ledger",
+        "objective_ids": [
+          "obj-fr-02"
+        ],
+        "prerequisite_refs": [
+          "prereq-arith-01",
+          "prereq-ledger-01"
+        ],
+        "lesson_ids": [
+          "les-fr-02-01",
+          "les-fr-02-02"
+        ],
+        "estimated_minutes": 23
+      },
+      {
+        "id": "mod-fr-03",
+        "title": "Discrepancy Identification and Cause Analysis",
+        "objective_ids": [
+          "obj-fr-03"
+        ],
+        "prerequisite_refs": [
+          "prereq-arith-01",
+          "prereq-ledger-01"
+        ],
+        "lesson_ids": [
+          "les-fr-03-01",
+          "les-fr-03-02"
+        ],
+        "estimated_minutes": 15
+      },
+      {
+        "id": "mod-fr-sum",
+        "title": "Integrated Financial Reporting Assessment",
+        "objective_ids": [
+          "obj-fr-01",
+          "obj-fr-02",
+          "obj-fr-03"
+        ],
+        "prerequisite_refs": [
+          "prereq-arith-01",
+          "prereq-ledger-01"
+        ],
+        "lesson_ids": [
+          "les-fr-sum-01"
+        ],
+        "estimated_minutes": 10
+      }
+    ],
+    "prerequisite_refs": [
+      "prereq-arith-01",
+      "prereq-ledger-01"
+    ],
+    "estimated_minutes": 60,
+    "planning_warnings": [
+      {
+        "type": "scope_time_conflict",
+        "decision": "prioritized_core_objectives",
+        "rationale": "Three instructional modules, three formative checkpoints, and one integrated summative are allocated within a 60-minute total. Per-module estimates are provisional and may be insufficient for lower-ability learners or if formative feedback cycles extend beyond planned task time. The summative module (mod-fr-sum) is allocated 10 minutes on the assumption that asmt-fr-sum can be completed within that window by a learner who has mastered all three objectives; this assumption requires researcher validation."
+      }
+    ],
+    "sequencing_rationale": [
+      "mod-fr-01 precedes mod-fr-02 because obj-fr-02 carries obj-fr-01 as an explicit prerequisite: learners must be able to identify and name report sections before they can populate them from a ledger.",
+      "mod-fr-02 precedes mod-fr-03 because obj-fr-03 carries both obj-fr-01 and obj-fr-02 as explicit prerequisites: learners must be able to produce a complete report before cross-referencing it against the source ledger to identify discrepancies.",
+      "mod-fr-sum follows all three instructional modules so that the integrated summative task (asmt-fr-sum) can sample all three objective domains in a single performance after instruction and formative practice are complete."
+    ],
+    "provenance": {
+      "source": "model_proposed",
+      "provisional": true,
+      "assumption_notes": [
+        "Per-module time estimates bundle instruction and formative assessment time; the per-activity split within each module is not specified and remains a researcher decision.",
+        "mod-fr-sum is a candidate module housing the summative assessment; if asmt-fr-sum is administered outside the 60-minute window the three instructional modules total 50 minutes and the scope_time_conflict warning may not apply.",
+        "All IDs in objective_ids and prerequisite_refs are drawn exclusively from the supplied allow-list; no IDs have been invented.",
+        "lesson_ids are left empty in all modules; lesson derivation is deferred to the orchestration layer as specified."
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "id": "les-fr-01-01",
+      "module_id": "mod-fr-01",
+      "objective_ids": [
+        "obj-fr-01"
+      ],
+      "prerequisite_refs": [],
+      "lesson_goal": "Learner can identify and name the standard components of a basic financial report",
+      "instructional_pattern": "explanation",
+      "expected_learner_activity": "Learner reads or views a structured explanation of the standard components of a basic financial report and their associated report sections",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 6,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Instructional pattern 'explanation' is a candidate choice; alternative patterns such as demonstration may be appropriate depending on delivery medium",
+          "Estimated 6 minutes is a provisional subdivision of the 12-minute module allocation; final per-activity split is a researcher decision"
+        ]
+      }
+    },
+    {
+      "id": "les-fr-01-02",
+      "module_id": "mod-fr-01",
+      "objective_ids": [
+        "obj-fr-01"
+      ],
+      "prerequisite_refs": [],
+      "lesson_goal": "Learner practices classifying mixed document elements to consolidate recognition of standard financial report components",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Learner classifies a set of financial and non-financial document elements as belonging or not belonging to a basic financial report, labels the report section for each applicable element, and receives formative feedback",
+      "formative_assessment_ids": [
+        "asmt-fr-01-f"
+      ],
+      "estimated_minutes": 6,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Placement of asmt-fr-01-f in this lesson assumes the formative classification task follows the initial explanation lesson; sequencing within the module is a candidate design decision",
+          "Estimated 6 minutes is a provisional subdivision of the 12-minute module allocation; final per-activity split is a researcher decision"
+        ]
+      }
+    },
+    {
+      "id": "les-fr-02-01",
+      "module_id": "mod-fr-02",
+      "objective_ids": [
+        "obj-fr-02"
+      ],
+      "prerequisite_refs": [
+        "prereq-arith-01",
+        "prereq-ledger-01"
+      ],
+      "lesson_goal": "Learner observes a complete worked example of transferring and summarizing ledger entries into the correct sections of a financial report template",
+      "instructional_pattern": "worked_example",
+      "expected_learner_activity": "Learner follows a step-by-step worked example that demonstrates how to read each ledger entry, assign it to the correct report section, and compute column and section totals",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Worked example precedes guided practice to scaffold the apply-level objective (obj-fr-02); this sequencing is a candidate design decision",
+          "Estimated 10 minutes is a provisional subdivision of the 23-minute module allocation; final per-activity split is a researcher decision"
+        ]
+      }
+    },
+    {
+      "id": "les-fr-02-02",
+      "module_id": "mod-fr-02",
+      "objective_ids": [
+        "obj-fr-02"
+      ],
+      "prerequisite_refs": [
+        "prereq-arith-01",
+        "prereq-ledger-01"
+      ],
+      "lesson_goal": "Learner practices preparing a basic financial report from a small ledger using a standard template under guided conditions",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Learner transfers all entries from a provided small ledger to a report template, categorizes each entry in the correct section, computes totals, and receives formative feedback aligned to asmt-fr-02-f criteria",
+      "formative_assessment_ids": [
+        "asmt-fr-02-f"
+      ],
+      "estimated_minutes": 13,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Practice precedes the formative assessment event; the boundary between practice and assessment administration within this lesson is a candidate design decision",
+          "Estimated 13 minutes is a provisional subdivision of the 23-minute module allocation; final per-activity split is a researcher decision"
+        ]
+      }
+    },
+    {
+      "id": "les-fr-03-01",
+      "module_id": "mod-fr-03",
+      "objective_ids": [
+        "obj-fr-03"
+      ],
+      "prerequisite_refs": [
+        "prereq-arith-01",
+        "prereq-ledger-01"
+      ],
+      "lesson_goal": "Learner observes how to cross-reference a completed financial report against a source ledger to identify discrepancies and state their probable causes",
+      "instructional_pattern": "worked_example",
+      "expected_learner_activity": "Learner follows a worked example demonstrating how to compare each report figure to the corresponding ledger entry, identify mismatches, and articulate a probable cause for each discrepancy found",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 7,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Worked example precedes guided practice to scaffold the analyze-level objective (obj-fr-03); this is a candidate instructional design decision",
+          "Estimated 7 minutes is a provisional subdivision of the 15-minute module allocation; final per-activity split is a researcher decision"
+        ]
+      }
+    },
+    {
+      "id": "les-fr-03-02",
+      "module_id": "mod-fr-03",
+      "objective_ids": [
+        "obj-fr-03"
+      ],
+      "prerequisite_refs": [
+        "prereq-arith-01",
+        "prereq-ledger-01"
+      ],
+      "lesson_goal": "Learner practices identifying seeded discrepancies in a basic financial report and providing ledger-referenced probable-cause rationales",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Learner receives a completed financial report containing seeded discrepancies and the source ledger, cross-references both documents, identifies each discrepancy, and records a brief rationale referencing the corresponding ledger entry",
+      "formative_assessment_ids": [
+        "asmt-fr-03-f"
+      ],
+      "estimated_minutes": 8,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Guided practice incorporates asmt-fr-03-f as the formative checkpoint; the boundary between practice and assessment administration is a candidate design decision",
+          "Estimated 8 minutes is a provisional subdivision of the 15-minute module allocation; final per-activity split is a researcher decision"
+        ]
+      }
+    },
+    {
+      "id": "les-fr-sum-01",
+      "module_id": "mod-fr-sum",
+      "objective_ids": [
+        "obj-fr-01",
+        "obj-fr-02",
+        "obj-fr-03"
+      ],
+      "prerequisite_refs": [
+        "prereq-arith-01",
+        "prereq-ledger-01"
+      ],
+      "lesson_goal": "Learner integrates component recognition, report preparation, and discrepancy identification in a single unscaffolded task immediately before the summative assessment",
+      "instructional_pattern": "independent_practice",
+      "expected_learner_activity": "Learner classifies report components, transfers and summarizes ledger entries into the correct report sections with arithmetically correct totals, and identifies and explains any discrepancies found, completing all three phases without instructional scaffolding in preparation for asmt-fr-sum",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "asmt-fr-sum is summative and is therefore excluded from formative_assessment_ids; the summative event is a separate orchestration concern",
+          "Independent practice is chosen to mirror the unscaffolded conditions of the summative task; this is a candidate design decision",
+          "Estimated 10 minutes matches the mod-fr-sum module allocation; actual time split between this lesson and asmt-fr-sum administration is a researcher decision",
+          "Inclusion of integrated practice in mod-fr-sum is consistent with the requirement to provide practice before summative evidence for apply- and analyze-level objectives"
+        ]
+      }
+    }
+  ],
+  "machine_observations": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-01-f",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-02-f",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-02-f",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-03-f",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-03-f",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-sum",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-sum",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-sum",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-sum",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-fr-sum",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    }
+  ],
+  "review_instructions": {
+    "overview": "Review the complete instructional-design proposal once before scoring. Evaluate machine validity separately from pedagogical quality.",
+    "scoring_scale": "Use 1-5 for every dimension: 1 poor, 3 mixed/acceptable, 5 strong.",
+    "rubric_dimensions": [
+      "objective_measurability",
+      "objective_assessment_alignment",
+      "evidence_validity",
+      "cognitive_alignment",
+      "prerequisite_quality",
+      "course_sequence_coherence",
+      "instruction_assessment_alignment",
+      "scope_balance",
+      "workload_time_realism",
+      "domain_appropriateness"
+    ],
+    "mandatory_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable? Answer YES, PARTIALLY, or NO with a short rationale.",
+    "blinding_rules": [
+      "Do not infer how the proposal was generated.",
+      "Do not assume a machine observation means the design is pedagogically poor.",
+      "Do not repair the design while scoring; record edit effort separately."
+    ],
+    "machine_observation_rule": "Machine observations are evidence to inspect, not pedagogical verdicts. Record any reviewer disagreement separately."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "packet_id": "jd-04-legal-counsel",
+  "source": {
+    "filename": "JD-04 — Legal Counsel.docx",
+    "sha256": "7397fce23c388d518cfd0734da5fb61d8724d0d838f775c63ddb2710f5ff6f0d"
+  },
+  "runtime": {
+    "profile_id": "a88ef195-77f3-42a9-8c10-6d7111a39ada",
+    "document_id": "209cdae0-1f86-4dbf-ba5c-e8c16f0045b5",
+    "job_id": "36a6b6b5-93e6-4070-bf18-a7c10d1e4523",
+    "review_state": "pending_review",
+    "profile_version": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.2",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.2",
+    "input_mode": "whole_parsed_text",
+    "jd_extraction_mode": "requirement_v2",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 24,
+    "supported_requirement_count": 24,
+    "text_span_locator_count": 24,
+    "pdf_page_locator_count": 0,
+    "dimensions": {
+      "skill": 4,
+      "experience": 7,
+      "education": 1,
+      "credential": 0,
+      "qualification": 0,
+      "null": 12
+    },
+    "modalities": {
+      "must": 7,
+      "preferred": 5,
+      "responsibility": 11,
+      "unspecified": 1
+    }
+  }
+}

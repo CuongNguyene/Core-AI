@@ -1,0 +1,67 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-003",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 4,
+      "cognitive_alignment": 4,
+      "prerequisite_quality": 3,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4,
+      "scope_balance": 5,
+      "workload_time_realism": 4,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "The objectives are observable: learners map at least three risk categories to clause language and identify at least one risk per clause with textual basis and reasoning. Clause complexity and taxonomy need definition.",
+      "objective_assessment_alignment": "The formative categorization task and summative clause-analysis task closely match the two objectives and preserve the boundary against final legal judgment.",
+      "evidence_validity": "Risk-category mapping, textual citation, reasoning statements, and absence of legal advice are valid evidence for the capability. Validity depends on researcher-supplied clauses and calibrated model answers.",
+      "cognitive_alignment": "The understand-level taxonomy objective appropriately precedes the apply-level risk-identification task. Worked examples and guided practice are suitable for reasoning from clause language to risk.",
+      "prerequisite_quality": "Contract literacy and legal-register reading are relevant, but both are broad and may exclude learners if not operationalized minimally. They should remain explicitly candidate and perhaps be supported with brief orientation.",
+      "course_sequence_coherence": "The sequence is strong: risk-category recognition comes before clause-level risk analysis, and the boundary around legal advice is reinforced in both modules.",
+      "instruction_assessment_alignment": "Lessons align to assessments through taxonomy explanation, categorization practice, worked example, and supervised clause analysis. Concrete clause examples and feedback keys still need authoring.",
+      "scope_balance": "The design is tightly scoped to risk-category recognition, clause-language reasoning, and the boundary between risk identification and legal advice. Instruction, practice, and assessment are well matched with little extraneous coverage.",
+      "workload_time_realism": "The workload is mostly realistic for 60 minutes if the clause excerpts and taxonomy are kept short and focused. The apply-level module is somewhat tight, but manageable with well-selected fixtures.",
+      "domain_appropriateness": "The approach is strongly suited to legal/compliance learning because it uses clause analysis, evidence-based reasoning from text, and explicitly bounded professional judgement rather than unsupported final legal conclusions."
+    },
+    "machine_validity_observations": [
+      {
+        "code": "id_reference_drift",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "assessments[*].required_capability_refs",
+        "field": "required_capability_refs",
+        "message": "Assessments list textual capability names such as contractual risk identification and clause-language-to-risk reasoning rather than resolvable supplied IDs; machine observations mark these dependencies as not covered."
+      }
+    ],
+    "prerequisites_acceptable": false,
+    "edit_effort": "moderate",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "Ignoring traceability issues, the design is pedagogically reasonable: it first introduces risk categories and the no-legal-judgment boundary, then asks learners to identify risks in clauses with textual reasoning while avoiding legal advice."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-003.json",
+    "source_submission_sha256": "91e70c15f2d3bcfe4cab482162e340d81263967a81e47de6ca502433450992d6",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_03.json",
+    "completion_submission_sha256": "763fc6ca581f3e53796b0b88ad264b96545ca8112a552c8e292f9b334e959517",
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

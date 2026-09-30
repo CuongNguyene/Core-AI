@@ -1,0 +1,92 @@
+{
+  "review_id": "review-001",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T14:02:26+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "clean",
+    "issues": [],
+    "notes": "All objectives, assessments, modules, and lessons are correctly linked with no orphaned entities[cite: 15]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Yes, it is pedagogically reasonable, but the time constraints are extremely tight.",
+      "notes": "The 60-minute time constraint may not allow sufficient depth for the complex evaluative and generative tasks assigned[cite: 15]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The success criteria are generally observable, though measuring how well a learner 'considers tradeoffs' requires qualitative judgment[cite: 15]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The scenario-based summative assessment maps perfectly to the stated performances of interpreting, diagnosing, and proposing actions[cite: 15]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "A simulated dashboard scenario is a valid proxy for real-world monitoring, provided the fidelity of the provided metrics is high[cite: 15]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The instructional verbs (analyze, evaluate, create) are properly matched with the complexity of the tasks in both instruction and assessment[cite: 15]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "There is a heavy prerequisite load (five distinct capabilities) for a short 60-minute module, which may limit the target audience[cite: 15]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The progression from interpreting signals to diagnosing causes to recommending actions follows the natural engineering workflow seamlessly[cite: 15]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Formative practice lessons directly mirror the sub-skills needed for the summative assessment[cite: 15]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Teaching diagnosis and response strategies within 60 minutes leaves very little time for deep conceptual exploration or handling edge cases[cite: 15]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "The content remains strictly focused on the required outcomes with no extraneous material[cite: 15]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Requires only minor adjustments to time estimates and potential consolidation of prerequisites."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-model-monitoring-001",
+        "prereq-model-monitoring-002",
+        "prereq-model-monitoring-003",
+        "prereq-model-monitoring-004"
+      ],
+      "rejected_refs": [
+        "prereq-model-monitoring-005"
+      ],
+      "notes": "prereq-model-monitoring-005 is labeled as 'helpful_background' and can be discarded to simplify entry requirements[cite: 15]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 1,
+      "modules_changed": 0,
+      "lessons_changed": 0,
+      "notes": "Drop the non-essential prerequisite and slightly rebalance the time budget to ensure the summative task is feasible."
+    },
+    "overall_notes": "A well-structured design that effectively captures the troubleshooting workflow, though it demands a fast pace from the learner[cite: 15]."
+  }
+}

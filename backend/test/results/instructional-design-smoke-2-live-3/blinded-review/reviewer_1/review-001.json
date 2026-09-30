@@ -1,0 +1,116 @@
+{
+  "review_id": "review-001",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T09:42:23+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "lesson-mm-002",
+        "field": "formative_assessment_ids",
+        "description": "References 'formative-mm-001' which is not defined in the assessments array.",
+        "category": "id_reference_drift",
+        "severity": "error",
+        "validator_correct": null
+      },
+      {
+        "entity": "lesson-mm-004",
+        "field": "formative_assessment_ids",
+        "description": "References 'formative-mm-002' which is not defined in the assessments array.",
+        "category": "id_reference_drift",
+        "severity": "error",
+        "validator_correct": null
+      },
+      {
+        "entity": "lesson-mm-006",
+        "field": "formative_assessment_ids",
+        "description": "References 'formative-mm-003' which is not defined in the assessments array.",
+        "category": "id_reference_drift",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "Three formative assessments are referenced within the lesson plans but are completely missing from the top-level assessments array [cite: 1]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Yes. The instructional design follows a highly coherent, logical progression for diagnostic troubleshooting (Observe -> Diagnose -> Respond) [cite: 1].",
+      "notes": "The pedagogical foundation is very strong and mirrors real-world technical troubleshooting workflows."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 5,
+        "rationale": "The success criteria are specific, highly observable, and provide clear benchmarks for judgment [cite: 1]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The summative assessment explicitly requires the learner to interpret signals, differentiate causes, and propose actions, directly measuring the objectives [cite: 1]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "The required evidence strongly supports the capability claim [cite: 1]. A simulated dashboard provides good fidelity."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The objectives target 'analyze' and 'evaluate' levels, and the instructional activities perfectly match these higher-order cognitive demands [cite: 1]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "The prerequisites are highly relevant and establish a necessary baseline, appropriate for the advanced nature of model degradation diagnosis [cite: 1]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The sequencing makes perfect logical sense, mirroring the natural workflow of an engineer [cite: 1]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Lessons build systematically from demonstration to guided practice and scenario analysis, heavily preparing the learner for the summative assessment [cite: 1]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 2,
+        "rationale": "Covering signal interpretation, causal diagnosis, and response strategies in a total of 60 minutes is ambitious. There is a slight risk of rushing [cite: 1]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "All lessons strictly adhere to the stated performance outcomes without extraneous content [cite: 1]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "The primary effort is technical (authoring the missing formative assessments) and slightly expanding the time budget."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-mm-001",
+        "prereq-mm-002",
+        "prereq-mm-003",
+        "prereq-mm-004",
+        "prereq-mm-005"
+      ],
+      "rejected_refs": [],
+      "notes": "All five model-proposed prerequisites are necessary entry conditions [cite: 1]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 3,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 0,
+      "notes": "Requires the creation of the three missing formative assessment objects."
+    },
+    "overall_notes": "A well-structured instructional design that successfully breaks down a complex technical workflow [cite: 1]."
+  }
+}

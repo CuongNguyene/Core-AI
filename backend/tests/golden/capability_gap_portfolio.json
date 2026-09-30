@@ -1,0 +1,81 @@
+{
+  "id": "capability-api-1",
+  "cv_profile_id": "cv-profile-1",
+  "cv_profile_version": 3,
+  "current_target_version": "1",
+  "future_target_version": null,
+  "owner_actor_id": "00000000-0000-0000-0000-000000000005",
+  "organization_id": "00000000-0000-0000-0000-000000000001",
+  "correlation_id": "capability-api-1",
+  "candidate_id": null,
+  "analysis_status": "ready",
+  "analysis_version": 1,
+  "idempotency_key": "capability-api-1",
+  "current_role": {
+    "target_id": "role-current",
+    "target_type": "current_role",
+    "usage_mode": "official",
+    "assessments": [
+      {
+        "target_id": "role-current",
+        "target_type": "current_role",
+        "requirement_id": "critical-python",
+        "matched_evidence_refs": [
+          "cv-document-1:experience:0:28:skill:skill:0:0:0"
+        ],
+        "missing_signals": [],
+        "rationale": "Target role-current (current_role) requirement critical-python is source-backed.",
+        "preliminary_priority": "high",
+        "missing_priority_inputs": [
+          "business_impact",
+          "risk",
+          "frequency",
+          "deadline",
+          "manager_confirmation"
+        ],
+        "evidence_status": "supported",
+        "evidence_strength": "production",
+        "production_required": false,
+        "retrieved_candidate_count": 1,
+        "eligible_candidate_count": 1,
+          "decision_details": {
+          "reason_codes": [],
+          "supported_signals": [
+            "python"
+          ],
+          "missing_signals": [],
+          "observed_confidence": 0.91,
+          "required_confidence": 0.8,
+          "evidence_directness": "direct",
+          "verification_required": false,
+          "threshold_source": "policy_default",
+            "threshold_policy_id": "capability-assessment-default",
+            "threshold_policy_version": "1"
+          },
+          "recommendation": "practical_task"
+      }
+    ],
+    "gaps": [],
+    "warning_codes": []
+  },
+  "future_role": null,
+  "overlap_links": [],
+  "snapshot_schema_version": "capability-gap-v1",
+  "preview_readiness": null,
+  "verification_queue": [],
+  "semantic_policies": [
+    {
+      "core_version": "semantic-core-v1",
+      "pack_refs": [
+        {
+          "pack_id": "it_ai",
+          "version": "1"
+        }
+      ],
+      "selection_source": "profile_metadata",
+      "target_id": "role-current",
+      "target_version": "1",
+      "target_type": "current_role"
+    }
+  ]
+}

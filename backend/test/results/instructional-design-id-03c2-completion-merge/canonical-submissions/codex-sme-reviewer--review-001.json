@@ -1,0 +1,83 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-001",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 4,
+      "evidence_validity": 4,
+      "cognitive_alignment": 4,
+      "prerequisite_quality": 3,
+      "course_sequence_coherence": 4,
+      "instruction_assessment_alignment": 3,
+      "scope_balance": 4,
+      "workload_time_realism": 3,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "Both objectives are observable: learners transform invalid values using Python and justify each transformation against data-quality criteria. Measurability would improve by specifying the invalid-value types, target columns, and acceptable justification forms.",
+      "objective_assessment_alignment": "The formative assessment targets transformation and the summative assessment integrates transformation plus justification. Alignment is slightly weakened because learners may declare their own invalid-value scope, which can reduce comparability unless constrained.",
+      "evidence_validity": "Executable code, transformed tabular output, and rationale statements are valid evidence for the stated capability. The evidence would be more defensible with a fixed dataset, answer key, and criteria for data-quality reasoning.",
+      "cognitive_alignment": "The apply-level transformation objective and evaluate-level justification objective are broadly matched by performance and integrated assessment tasks. Scenario/practice work supports the intended cognitive demand.",
+      "prerequisite_quality": "Python syntax and tabular data concepts are relevant candidate prerequisites. Data-quality criteria awareness is relevant but may be too close to the justification objective and may need to be taught explicitly rather than assumed.",
+      "course_sequence_coherence": "The sequence is coherent: transform first, then justify decisions using original and transformed data. The two-module layout mirrors that dependency.",
+      "instruction_assessment_alignment": "Lessons provide worked example, guided practice, explanation, scenario practice, and independent practice. Alignment is limited by unspecified scaffolds and no registered formative checkpoint for the justification objective.",
+      "scope_balance": "The design stays tightly focused on transforming invalid tabular values and justifying those choices. The main remaining scope gap is that the exact invalid-value taxonomy and justification practice boundaries still need researcher definition.",
+      "workload_time_realism": "The 60-minute budget is plausible but tight because learners must complete Python transformation practice, a formative checkpoint, and an integrated summative with justification. The time split needs confirmation before use.",
+      "domain_appropriateness": "The approach is strongly suited to Python data processing because learners produce executable code, transform tabular data, inspect outputs, and justify procedural choices using data-quality criteria."
+    },
+    "machine_validity_observations": [
+      {
+        "code": "id_reference_drift",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "asmt-bpdp-f01.required_capability_refs",
+        "field": "required_capability_refs",
+        "message": "The assessment lists textual capability names such as tabular data manipulation in Python and invalid value identification rather than resolvable objective/prerequisite IDs; the packet also reports these dependencies as not covered."
+      },
+      {
+        "code": "id_reference_drift",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "asmt-bpdp-s01.required_capability_refs",
+        "field": "required_capability_refs",
+        "message": "The summative assessment lists textual capability names, including data quality reasoning, that do not resolve to supplied IDs even though they are linked conceptually to the objectives."
+      },
+      {
+        "code": "other",
+        "severity": "info",
+        "entity_type": null,
+        "entity_id": "course_outline.planning_warnings",
+        "field": "planning_warnings",
+        "message": "The outline explicitly warns that the 60-minute budget must include instruction plus formative and summative assessment time, and that the split is unconfirmed."
+      }
+    ],
+    "prerequisites_acceptable": false,
+    "edit_effort": "moderate",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "Ignoring machine traceability and schema issues, the instructional design is pedagogically reasonable: it decomposes the performance into transforming invalid tabular values and justifying the choices, then sequences procedural practice before integrated justification."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-001.json",
+    "source_submission_sha256": "170ea75496c7940cbcaf64824549e6971bdaac75a40d1082f818793a8c9692f7",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_01.json",
+    "completion_submission_sha256": "567ece31fb1d27b31331c863990d708e31a6d383b28c33ebf56984e84b30565e",
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "review_id": "review-002",
+  "reviewer_id": "codex-sme-reviewer",
+  "completion": {
+    "rubric_scores": {
+      "scope_balance": 2,
+      "workload_time_realism": 1,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "scope_balance": "The objectives and assessments are logically connected, but the design asks novices to learn report components, prepare a report, and diagnose discrepancies in one short sequence. That creates a significant under-teaching imbalance even though the content itself is relevant.",
+      "workload_time_realism": "The workload is not realistic for 60 minutes: report preparation from a ledger plus discrepancy analysis and an integrated summative would require more explanation, practice, feedback, and task time than the design allows.",
+      "domain_appropriateness": "The design is highly appropriate for accounting because it uses ledger-based report preparation, arithmetic accuracy, and discrepancy detection, all of which reflect authentic financial reporting performance."
+    },
+    "prerequisites_acceptable": false
+  }
+}

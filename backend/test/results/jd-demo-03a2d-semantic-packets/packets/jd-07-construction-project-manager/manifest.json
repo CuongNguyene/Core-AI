@@ -1,0 +1,45 @@
+{
+  "packet_id": "jd-07-construction-project-manager",
+  "source": {
+    "filename": "JD-07 — Construction Project Manager.docx",
+    "sha256": "056a33e35f15e8191c065e6fd11748231f73ed0767fc08eae8843d1ae23747fc"
+  },
+  "runtime": {
+    "profile_id": "1bd378ae-ba7c-4573-a423-38e2ef389007",
+    "document_id": "a5f2610e-3a1f-4858-bd47-34e55ac68201",
+    "job_id": "3e2d5194-e634-4ad8-b3ee-16e51b5e364f",
+    "review_state": "pending_review",
+    "profile_version": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.2",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.2",
+    "input_mode": "whole_parsed_text",
+    "jd_extraction_mode": "requirement_v2",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 28,
+    "supported_requirement_count": 28,
+    "text_span_locator_count": 28,
+    "pdf_page_locator_count": 0,
+    "dimensions": {
+      "skill": 4,
+      "experience": 5,
+      "education": 1,
+      "credential": 1,
+      "qualification": 0,
+      "null": 17
+    },
+    "modalities": {
+      "must": 7,
+      "preferred": 4,
+      "responsibility": 15,
+      "unspecified": 2
+    }
+  }
+}

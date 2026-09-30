@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-07-construction-project-manager",
+  "source": {
+    "filename": "JD-07 — Construction Project Manager.docx",
+    "sha256": "056a33e35f15e8191c065e6fd11748231f73ed0767fc08eae8843d1ae23747fc"
+  },
+  "runtime": {
+    "document_id": "c41e2251-dd23-4b33-8857-36f00a9757b5",
+    "job_id": "1a90dd90-5900-43c3-9974-89e57ddb7f10",
+    "profile_id": "d4d83bee-5f2d-4651-8b21-54525814b4ca",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 5,
+    "supported_requirement_count": 5,
+    "text_span_locator_count": 5,
+    "pdf_page_locator_count": 0
+  }
+}

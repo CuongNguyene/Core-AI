@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-10-operations-manager",
+  "source": {
+    "filename": "JD-10 — Operations Manager.docx",
+    "sha256": "e8b08d78b579051d89fdda2021d2b54b3f98e39b81261fad46008c98a2923187"
+  },
+  "runtime": {
+    "document_id": "b38bbe79-7ff9-45d6-a189-2eed2c690518",
+    "job_id": "1f8539f7-b861-42c8-af8c-11cec6a77ec2",
+    "profile_id": "b21bdcb1-83c6-45cc-8cd8-f0002bfe3200",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 4,
+    "supported_requirement_count": 4,
+    "text_span_locator_count": 4,
+    "pdf_page_locator_count": 0
+  }
+}

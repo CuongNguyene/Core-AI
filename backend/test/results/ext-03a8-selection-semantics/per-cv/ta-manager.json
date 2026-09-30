@@ -1,0 +1,52 @@
+{
+  "fixture_id": "ta-manager",
+  "domain": "hr_management",
+  "fingerprint": {
+    "fixture_name": "ta-manager",
+    "document_id": "ec6e53f8-18b6-4239-ab4d-a04bb999e4ae",
+    "storage_key": "transient/ec6e53f8-18b6-4239-ab4d-a04bb999e4ae",
+    "filename": "1_ta-manager-nguyen-ngoc-dung-pdf_1751257908.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 890873,
+    "sha256": "bcfa9067a80ca70a0b528a3eae052073b280961528452c8ce94f1a7fc26820c1",
+    "page_count": 5,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 3,
+    "education_count": 5,
+    "statement_count": 45,
+    "reference_validation": "PASS"
+  },
+  "B_strict": {
+    "selected": 2,
+    "supported": 2,
+    "unsupported": 0,
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1": 0.8,
+    "taxonomy_coverage": 0.6,
+    "selected_capability_ids": [
+      "team_leadership",
+      "process_optimization"
+    ],
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "grounding_rate": 1.0
+  },
+  "C_criteria": {
+    "selected": 1,
+    "supported": 1,
+    "unsupported": 0,
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1": 0.5,
+    "taxonomy_coverage": 0.6,
+    "selected_capability_ids": [
+      "process_optimization"
+    ],
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "grounding_rate": 1.0
+  }
+}

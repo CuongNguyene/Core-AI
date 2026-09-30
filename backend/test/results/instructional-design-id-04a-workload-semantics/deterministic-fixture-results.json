@@ -1,0 +1,117 @@
+[
+  {
+    "budget": {
+      "categories": {
+        "formative_assessment": 5,
+        "guided_practice": 15,
+        "independent_practice": 10,
+        "instruction": 20,
+        "summative_assessment": 10
+      },
+      "declared_total_minutes": 60,
+      "over_budget_minutes": 0,
+      "planned_total_minutes": 60,
+      "policy_id": "workload_budget_policy",
+      "policy_version": "0.1",
+      "status": "within_budget",
+      "unallocated_minutes": 0
+    },
+    "findings": [],
+    "fixture": "python_data_processing"
+  },
+  {
+    "budget": {
+      "categories": {
+        "guided_practice": 15,
+        "independent_practice": 10,
+        "instruction": 20,
+        "summative_assessment": 15
+      },
+      "declared_total_minutes": 60,
+      "over_budget_minutes": 0,
+      "planned_total_minutes": 60,
+      "policy_id": "workload_budget_policy",
+      "policy_version": "0.1",
+      "status": "within_budget",
+      "unallocated_minutes": 0
+    },
+    "findings": [],
+    "fixture": "accounting_financial_reporting_basic"
+  },
+  {
+    "budget": {
+      "categories": {
+        "guided_practice": 15,
+        "independent_practice": 15,
+        "instruction": 20,
+        "summative_assessment": 20
+      },
+      "declared_total_minutes": 60,
+      "over_budget_minutes": 10,
+      "planned_total_minutes": 70,
+      "policy_id": "workload_budget_policy",
+      "policy_version": "0.1",
+      "status": "over_budget",
+      "unallocated_minutes": 0
+    },
+    "findings": [
+      {
+        "code": "workload_time_budget_exceeded",
+        "declared_minutes": 60,
+        "message": "Planned workload exceeds the declared learning-time budget.",
+        "over_budget_minutes": 10,
+        "planned_minutes": 70,
+        "severity": "warning"
+      }
+    ],
+    "fixture": "legal_contract_review_basic"
+  },
+  {
+    "budget": {
+      "categories": {
+        "formative_assessment": 5,
+        "guided_practice": 15,
+        "independent_practice": 10,
+        "instruction": 15,
+        "summative_assessment": 15
+      },
+      "declared_total_minutes": 60,
+      "over_budget_minutes": 0,
+      "planned_total_minutes": 60,
+      "policy_id": "workload_budget_policy",
+      "policy_version": "0.1",
+      "status": "within_budget",
+      "unallocated_minutes": 0
+    },
+    "findings": [],
+    "fixture": "hr_recruitment_planning_basic"
+  },
+  {
+    "budget": {
+      "categories": {
+        "guided_practice": 20,
+        "independent_practice": 15,
+        "instruction": 20,
+        "summative_assessment": 20
+      },
+      "declared_total_minutes": 60,
+      "over_budget_minutes": 15,
+      "planned_total_minutes": 75,
+      "policy_id": "workload_budget_policy",
+      "policy_version": "0.1",
+      "status": "over_budget",
+      "unallocated_minutes": 0
+    },
+    "findings": [
+      {
+        "code": "workload_time_budget_exceeded",
+        "declared_minutes": 60,
+        "message": "Planned workload exceeds the declared learning-time budget.",
+        "over_budget_minutes": 15,
+        "planned_minutes": 75,
+        "severity": "warning"
+      }
+    ],
+    "fixture": "construction_drawing_and_method_basic"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-09-software-engineer",
+  "source": {
+    "filename": "JD-09 — Software Engineer.docx",
+    "sha256": "8fd587de6f9e102f6db14f62d8657508a82a59055c7b6b65560aaca1daf45c37"
+  },
+  "runtime": {
+    "document_id": "12ed718e-2159-4a97-8ffb-0d70271f2c8f",
+    "job_id": "47a5c959-352e-44c5-8b09-f3576989ca79",
+    "profile_id": "0fb7cf68-3b3b-4b4c-8605-54e6f08b21a9",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 5,
+    "supported_requirement_count": 5,
+    "text_span_locator_count": 5,
+    "pdf_page_locator_count": 0
+  }
+}

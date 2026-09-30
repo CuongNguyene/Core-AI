@@ -1,0 +1,352 @@
+{
+  "schema_version": "id02d-live-python-dependency-trace@0.1",
+  "fixture": "python_data_processing",
+  "condition": "structured_v0.3.1",
+  "before_normalization": [
+    {
+      "assessment_id": "asmnt-bpdp-01-formative",
+      "legacy_dependencies": [
+        "basic Python programming"
+      ],
+      "typed_dependencies": [
+        {
+          "name": "basic Python programming",
+          "objective_ids": [
+            "lo-bpdp-01"
+          ],
+          "rationale": "Learner must write syntactically valid Python to interrogate dataset structure; listed as known in learner state"
+        }
+      ]
+    },
+    {
+      "assessment_id": "asmnt-bpdp-02-formative",
+      "legacy_dependencies": [
+        "basic Python programming",
+        "missing and invalid value detection in tabular data"
+      ],
+      "typed_dependencies": [
+        {
+          "name": "basic Python programming",
+          "objective_ids": [
+            "lo-bpdp-02"
+          ],
+          "rationale": "Learner must write syntactically valid Python to perform data transformations"
+        },
+        {
+          "name": "missing and invalid value detection in tabular data",
+          "objective_ids": [
+            "lo-bpdp-02"
+          ],
+          "rationale": "Prerequisite per lo-bpdp-01; learner must locate issues before transforming them"
+        }
+      ]
+    },
+    {
+      "assessment_id": "asmnt-bpdp-summative",
+      "legacy_dependencies": [
+        "basic Python programming",
+        "missing and invalid value detection in tabular data",
+        "tabular data transformation strategies"
+      ],
+      "typed_dependencies": [
+        {
+          "name": "basic Python programming",
+          "objective_ids": [
+            "lo-bpdp-01",
+            "lo-bpdp-02"
+          ],
+          "rationale": "Learner must write Python code for both detection and transformation phases"
+        },
+        {
+          "name": "missing and invalid value detection in tabular data",
+          "objective_ids": [
+            "lo-bpdp-01",
+            "lo-bpdp-02",
+            "lo-bpdp-03"
+          ],
+          "rationale": "Core capability exercised in detection and required as basis for transformation and justification"
+        },
+        {
+          "name": "tabular data transformation strategies",
+          "objective_ids": [
+            "lo-bpdp-02",
+            "lo-bpdp-03"
+          ],
+          "rationale": "Learner must know at least two distinct strategies in order to apply and compare them"
+        }
+      ]
+    }
+  ],
+  "after_normalization": {
+    "canonical_dependencies": [
+      {
+        "capability_ref": "basic python programming",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-01-formative",
+              "original_value": "basic Python programming"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-01-formative",
+              "original_value": "basic Python programming"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "basic python programming",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "basic Python programming"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "basic Python programming"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-02"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "missing and invalid value detection in tabular data",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "missing and invalid value detection in tabular data"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-02-formative",
+              "original_value": "missing and invalid value detection in tabular data"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-02"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "basic python programming",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "basic Python programming"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "basic Python programming"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "missing and invalid value detection in tabular data",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "missing and invalid value detection in tabular data"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "missing and invalid value detection in tabular data"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "tabular data transformation strategies",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "tabular data transformation strategies"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "tabular data transformation strategies"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "conceptual understanding of data quality principles",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "asmnt-bpdp-summative",
+              "original_value": "conceptual understanding of data quality principles"
+            }
+          ]
+        },
+        "objective_ids": [
+          "lo-bpdp-01",
+          "lo-bpdp-02",
+          "lo-bpdp-03"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      }
+    ],
+    "canonical_required_dependency_count": 6,
+    "merged_duplicate_count": 6
+  },
+  "provenance": [
+    {
+      "type": "legacy_compatibility",
+      "source_ref": "asmnt-bpdp-01-formative",
+      "original_value": "basic Python programming"
+    },
+    {
+      "type": "typed_required_capability",
+      "source_ref": "asmnt-bpdp-01-formative",
+      "original_value": "basic Python programming"
+    },
+    {
+      "type": "legacy_compatibility",
+      "source_ref": "asmnt-bpdp-02-formative",
+      "original_value": "basic Python programming"
+    },
+    {
+      "type": "typed_required_capability",
+      "source_ref": "asmnt-bpdp-02-formative",
+      "original_value": "basic Python programming"
+    },
+    {
+      "type": "legacy_compatibility",
+      "source_ref": "asmnt-bpdp-02-formative",
+      "original_value": "missing and invalid value detection in tabular data"
+    },
+    {
+      "type": "typed_required_capability",
+      "source_ref": "asmnt-bpdp-02-formative",
+      "original_value": "missing and invalid value detection in tabular data"
+    },
+    {
+      "type": "legacy_compatibility",
+      "source_ref": "asmnt-bpdp-summative",
+      "original_value": "basic Python programming"
+    },
+    {
+      "type": "typed_required_capability",
+      "source_ref": "asmnt-bpdp-summative",
+      "original_value": "basic Python programming"
+    },
+    {
+      "type": "legacy_compatibility",
+      "source_ref": "asmnt-bpdp-summative",
+      "original_value": "missing and invalid value detection in tabular data"
+    },
+    {
+      "type": "typed_required_capability",
+      "source_ref": "asmnt-bpdp-summative",
+      "original_value": "missing and invalid value detection in tabular data"
+    },
+    {
+      "type": "legacy_compatibility",
+      "source_ref": "asmnt-bpdp-summative",
+      "original_value": "tabular data transformation strategies"
+    },
+    {
+      "type": "typed_required_capability",
+      "source_ref": "asmnt-bpdp-summative",
+      "original_value": "tabular data transformation strategies"
+    },
+    {
+      "type": "dependency_candidate",
+      "source_ref": "asmnt-bpdp-summative",
+      "original_value": "conceptual understanding of data quality principles"
+    }
+  ],
+  "findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-bpdp-02-formative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-bpdp-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmnt-bpdp-summative",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    }
+  ],
+  "quality_gate": {
+    "passed": false,
+    "findings_by_code": {
+      "assessment_dependency_not_covered": 3
+    },
+    "findings_by_severity": {
+      "error": 3
+    }
+  }
+}

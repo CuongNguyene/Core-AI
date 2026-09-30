@@ -1,0 +1,31 @@
+{
+  "fixture_id": "hr_recruiter",
+  "hints": {
+    "own candidate screening": "candidate screening",
+    "participated in screening": "candidate screening",
+    "interview practice": "interviewing",
+    "interview coursework": "interviewing",
+    "recruiting operations": "recruiting",
+    "worked in recruiting": "recruiting",
+    "human resources degree": "human resources",
+    "BA Human Resources": "human resources",
+    "HR credential": "hr certification",
+    "certified HR professional": "hr certification",
+    "Python": "python"
+  },
+  "requirements": [
+    {"id": "screening-owner", "phrase": "own candidate screening", "expectation": "owned_outcome", "expected_refs": ["screening-participated"], "eligible": 0, "status": "insufficient", "strongest_refs": ["screening-participated"]},
+    {"id": "interview-work", "phrase": "interview practice", "expectation": "demonstrated_usage", "expected_refs": ["interview-coursework"], "eligible": 0, "status": "requires_verification", "strongest_refs": ["interview-coursework"]},
+    {"id": "recruiting", "phrase": "recruiting operations", "expectation": "demonstrated_usage", "expected_refs": ["recruiting-work"], "eligible": 1, "status": "supported", "strongest_refs": ["recruiting-work"]},
+    {"id": "degree", "phrase": "human resources degree", "expectation": "education", "expected_refs": ["hr-degree"], "eligible": 1, "status": "supported", "strongest_refs": ["hr-degree"]},
+    {"id": "credential", "phrase": "HR credential", "expectation": "credential", "expected_refs": ["hr-credential"], "eligible": 1, "status": "supported", "strongest_refs": ["hr-credential"]}
+  ],
+  "evidence": [
+    {"ref": "screening-participated", "phrase": "participated in screening", "context": "used_in_employment", "source_kind": "employment", "participation": "participated", "confidence": 0.95},
+    {"ref": "interview-coursework", "phrase": "interview coursework", "context": "studied", "source_kind": "education", "confidence": 0.96},
+    {"ref": "recruiting-work", "phrase": "worked in recruiting", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.93},
+    {"ref": "hr-degree", "phrase": "BA Human Resources", "context": "studied", "source_kind": "education", "confidence": 0.98},
+    {"ref": "hr-credential", "phrase": "certified HR professional", "context": "credentialed", "source_kind": "credential", "confidence": 0.97},
+    {"ref": "unrelated-python", "phrase": "Python", "context": "mentioned", "source_kind": "skill", "confidence": 0.99}
+  ]
+}

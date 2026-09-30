@@ -1,0 +1,281 @@
+[
+  {
+    "fixture": "python_data_processing",
+    "requirements": [
+      {
+        "assessment_id": "asmt-ppd-summative-01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "obj-ppd-02"
+        ],
+        "capability_ref": "Python-based invalid-value transformation",
+        "source_requirement_ref": "asmt-ppd-summative-01:required_capabilities:0",
+        "instruction_refs": [
+          "lesson-ppd-02-01"
+        ],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "partially_covered"
+      },
+      {
+        "assessment_id": "asmt-ppd-summative-01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "obj-ppd-03"
+        ],
+        "capability_ref": "transformation-strategy evaluation and trade-off justification",
+        "source_requirement_ref": "asmt-ppd-summative-01:required_capabilities:1",
+        "instruction_refs": [
+          "lesson-ppd-02-01"
+        ],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "partially_covered"
+      }
+    ],
+    "counts": {
+      "covered": 0,
+      "partially_covered": 2,
+      "not_covered": 0,
+      "unresolved": 0
+    },
+    "findings": {
+      "assessment_dependency_not_covered": 4,
+      "practice_before_summative_missing": 2
+    }
+  },
+  {
+    "fixture": "accounting_financial_reporting_basic",
+    "requirements": [
+      {
+        "assessment_id": "assess-accounting_financial_reporting_basic-summative-01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "obj-accounting_financial_reporting_basic-01"
+        ],
+        "capability_ref": "ledger entry classification",
+        "source_requirement_ref": "assess-accounting_financial_reporting_basic-summative-01:required_capabilities:0",
+        "instruction_refs": [],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      },
+      {
+        "assessment_id": "assess-accounting_financial_reporting_basic-summative-01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "obj-accounting_financial_reporting_basic-01"
+        ],
+        "capability_ref": "basic financial statement preparation",
+        "source_requirement_ref": "assess-accounting_financial_reporting_basic-summative-01:required_capabilities:1",
+        "instruction_refs": [],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      },
+      {
+        "assessment_id": "assess-accounting_financial_reporting_basic-summative-01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "obj-accounting_financial_reporting_basic-02"
+        ],
+        "capability_ref": "financial discrepancy identification and explanation",
+        "source_requirement_ref": "assess-accounting_financial_reporting_basic-summative-01:required_capabilities:2",
+        "instruction_refs": [],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      }
+    ],
+    "counts": {
+      "covered": 0,
+      "partially_covered": 0,
+      "not_covered": 3,
+      "unresolved": 0
+    },
+    "findings": {
+      "assessment_dependency_not_covered": 5,
+      "assessment_requirement_not_taught": 3
+    }
+  },
+  {
+    "fixture": "legal_contract_review_basic",
+    "requirements": [
+      {
+        "assessment_id": "asmt-legal-3-summative",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "lo-legal-3"
+        ],
+        "capability_ref": "identifying potential risks in commercial contract clause language",
+        "source_requirement_ref": "asmt-legal-3-summative:required_capabilities:0",
+        "instruction_refs": [],
+        "guided_practice_refs": [
+          "lsn-legal-3-practice"
+        ],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      },
+      {
+        "assessment_id": "asmt-legal-3-summative",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "lo-legal-3"
+        ],
+        "capability_ref": "constructing reasoned written explanations linking clause language to identified risks",
+        "source_requirement_ref": "asmt-legal-3-summative:required_capabilities:1",
+        "instruction_refs": [],
+        "guided_practice_refs": [
+          "lsn-legal-3-practice"
+        ],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      },
+      {
+        "assessment_id": "asmt-legal-3-summative",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "lo-legal-3"
+        ],
+        "capability_ref": "maintaining scope boundary between risk identification and legal judgment in written output",
+        "source_requirement_ref": "asmt-legal-3-summative:required_capabilities:2",
+        "instruction_refs": [],
+        "guided_practice_refs": [
+          "lsn-legal-3-practice"
+        ],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      }
+    ],
+    "counts": {
+      "covered": 0,
+      "partially_covered": 0,
+      "not_covered": 3,
+      "unresolved": 0
+    },
+    "findings": {
+      "assessment_dependency_not_covered": 5,
+      "assessment_requirement_not_taught": 3
+    }
+  },
+  {
+    "fixture": "hr_recruitment_planning_basic",
+    "requirements": [
+      {
+        "assessment_id": "ASMT-hr_recruitment_planning_basic-S01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "LO-brief-hr_recruitment_planning_basic-002"
+        ],
+        "capability_ref": "application of recruitment plan structure to a given hiring scenario",
+        "source_requirement_ref": "ASMT-hr_recruitment_planning_basic-S01:required_capabilities:0",
+        "instruction_refs": [],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      },
+      {
+        "assessment_id": "ASMT-hr_recruitment_planning_basic-S01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "LO-brief-hr_recruitment_planning_basic-003"
+        ],
+        "capability_ref": "evaluation of sequencing decisions with reference to step dependency or risk",
+        "source_requirement_ref": "ASMT-hr_recruitment_planning_basic-S01:required_capabilities:1",
+        "instruction_refs": [],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "not_covered"
+      }
+    ],
+    "counts": {
+      "covered": 0,
+      "partially_covered": 0,
+      "not_covered": 2,
+      "unresolved": 0
+    },
+    "findings": {
+      "assessment_dependency_not_covered": 4,
+      "assessment_requirement_not_taught": 2
+    }
+  },
+  {
+    "fixture": "construction_drawing_and_method_basic",
+    "requirements": [
+      {
+        "assessment_id": "asm-cdmb-s01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "lo-cdmb-01"
+        ],
+        "capability_ref": "interpreting basic drawing set elements to establish scope of work",
+        "source_requirement_ref": "asm-cdmb-s01:required_capabilities:0",
+        "instruction_refs": [
+          "les-cdmb-01"
+        ],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [
+          "asm-cdmb-f01"
+        ],
+        "status": "covered"
+      },
+      {
+        "assessment_id": "asm-cdmb-s01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "lo-cdmb-02"
+        ],
+        "capability_ref": "producing a sequenced method proposal traceable to drawing elements",
+        "source_requirement_ref": "asm-cdmb-s01:required_capabilities:1",
+        "instruction_refs": [
+          "les-cdmb-02"
+        ],
+        "guided_practice_refs": [
+          "les-cdmb-03"
+        ],
+        "independent_practice_refs": [],
+        "formative_refs": [
+          "asm-cdmb-f02"
+        ],
+        "status": "covered"
+      },
+      {
+        "assessment_id": "asm-cdmb-s01",
+        "assessment_role": "summative",
+        "objective_refs": [
+          "lo-cdmb-03"
+        ],
+        "capability_ref": "analyzing method steps to state work-specific safety considerations",
+        "source_requirement_ref": "asm-cdmb-s01:required_capabilities:2",
+        "instruction_refs": [
+          "les-cdmb-04"
+        ],
+        "guided_practice_refs": [],
+        "independent_practice_refs": [],
+        "formative_refs": [],
+        "status": "partially_covered"
+      }
+    ],
+    "counts": {
+      "covered": 2,
+      "partially_covered": 1,
+      "not_covered": 0,
+      "unresolved": 0
+    },
+    "findings": {
+      "assessment_dependency_not_covered": 7,
+      "practice_before_summative_missing": 1
+    }
+  }
+]

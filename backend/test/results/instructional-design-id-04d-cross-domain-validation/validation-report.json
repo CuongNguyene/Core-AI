@@ -1,0 +1,20 @@
+{
+  "experiment": "ID-04D",
+  "planned_model_calls": 25,
+  "completed_model_calls": 0,
+  "snapshots": 0,
+  "no_fixes_during_run": true,
+  "failure_classification": {
+    "class": "PROVIDER_INFRASTRUCTURE",
+    "stage": "ObjectiveDesigner",
+    "affected_fixtures": [
+      "python_data_processing",
+      "accounting_financial_reporting_basic",
+      "legal_contract_review_basic",
+      "hr_recruitment_planning_basic",
+      "construction_drawing_and_method_basic"
+    ],
+    "detail": "Local model request timed out before the first stage completed; no semantic artifact was produced."
+  },
+  "readiness": "ID04_SME_REREVIEW_NOT_READY"
+}

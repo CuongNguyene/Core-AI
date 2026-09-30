@@ -1,0 +1,59 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-001",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 4,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 4,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4,
+      "scope_balance": 5,
+      "workload_time_realism": 3,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "The success criteria are measurable (e.g., 'all targeted invalid values are replaced'), though the specific invalid values in scope require researcher definition[cite: 21].",
+      "objective_assessment_alignment": "The integrated summative task flawlessly demands both code execution and explicit justification referencing data-quality criteria[cite: 21].",
+      "evidence_validity": "An integrated performance task yielding executable Python and written rationale is a highly valid measure of this capability[cite: 21].",
+      "cognitive_alignment": "The objectives target 'apply' and 'evaluate', which align perfectly with the coding and justification tasks[cite: 21].",
+      "prerequisite_quality": "Correctly isolates Python syntax and tabular data concepts as absolute entry gates, avoiding the trap of trying to teach them within the 60-minute window[cite: 21].",
+      "course_sequence_coherence": "Module 1 (Transformation) naturally feeds into Module 2 (Justification), respecting the dependency that a transformation must exist before it can be justified[cite: 21].",
+      "instruction_assessment_alignment": "Worked examples and guided practice directly scaffold the integrated performance task[cite: 21].",
+      "scope_balance": "The instructional design perfectly matches the procedural application (transforming data) and the conceptual evaluation (justifying trade-offs) required by the summative assessments without introducing extraneous topics.",
+      "workload_time_realism": "There is meaningful time pressure. Expecting learners to complete hands-on coding practice, justification scenarios, and an integrated summative coding and writing assessment within a strict 60-minute window is highly ambitious and may require reducing the practice scope.",
+      "domain_appropriateness": "The design appropriately uses hands-on coding execution and applied data transformation with explicit justification of trade-offs, which accurately reflects standard data engineering and Python processing practices."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "minor",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "The progression from applying a procedural transformation to evaluating and justifying the choices using executable Python code forms an excellent, highly authentic pedagogical sequence for data processing."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-001.json",
+    "source_submission_sha256": "b6c0e67b6e6a39f26b509e039a78a7e7890901206c9694ec5e6f051f57238ae0",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_01.json",
+    "completion_submission_sha256": "dbebb3da6ffea3d2bfd1176dff9ed28dbd928d60e43c6bf1ed7f93f972879cf1",
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

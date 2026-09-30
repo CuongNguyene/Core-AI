@@ -1,0 +1,100 @@
+{
+  "review_id": "review-003",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T14:02:26+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "obj-teach-pandas-basics",
+        "field": "module_id",
+        "description": "Lesson 'obj-teach-pandas-basics' exists in the lessons array but is not referenced in 'module-01' lesson_ids array.",
+        "category": "orphan_lesson",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "There is a severe contradiction in time constraints, and an orphaned lesson exists[cite: 17]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "No, the design is pedagogically flawed due to severe time contradictions.",
+      "notes": "The summative assessment explicitly demands a 45-minute time limit, yet the course outline only reserves 10 minutes for it, creating an impossible schedule within a 60-minute constraint[cite: 17]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Objectives have well-defined, observable success criteria[cite: 17]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The performance task directly covers data inspection, transformation execution, and written justification[cite: 17]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 5,
+        "rationale": "A hands-on coding task combined with written rationale is the gold standard for data processing competencies[cite: 17]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "Tasks and objectives align across analyze, apply, and evaluate levels[cite: 17]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 2,
+        "rationale": "Listing pandas basics as a prerequisite but attempting to optionally teach it in a 5-minute remedial lesson ('obj-teach-pandas-basics') is highly unrealistic[cite: 17]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "Detecting issues before transforming and justifying is the correct logical flow[cite: 17]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "The instruction relies heavily on short demonstrations, which may not adequately prepare novices for a demanding 45-minute summative coding test[cite: 17]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 5,
+        "rationale": "There is a massive risk of under-teaching. You cannot teach pandas detection methods, complex imputation, and trade-off evaluation in 15 minutes of effective instruction time[cite: 17]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Content is relevant to the target capability[cite: 17]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 4,
+        "rationale": "Requires major redesign to resolve the time constraint contradictions and handle pandas prerequisites appropriately."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-01",
+        "prereq-03"
+      ],
+      "rejected_refs": [
+        "prereq-02",
+        "prereq-04"
+      ],
+      "notes": "prereq-02 (pandas basics) must be confirmed prior knowledge, not something crammed into a 5-minute side lesson[cite: 17]."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 0,
+      "assessments_changed": 1,
+      "prerequisites_changed": 2,
+      "modules_changed": 1,
+      "lessons_changed": 1,
+      "notes": "Remove the orphaned remedial lesson, revise assessment time limits, and elevate pandas basics to a hard prerequisite."
+    },
+    "overall_notes": "A structurally logical design that collapses under unrealistic time budgeting and contradictory duration specifications[cite: 17]."
+  }
+}

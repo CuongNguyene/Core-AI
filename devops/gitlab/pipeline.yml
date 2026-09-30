@@ -1,0 +1,13 @@
+stages:
+  - quality
+
+quality:
+  stage: quality
+  image: ghcr.io/astral-sh/uv:python3.13-dhi
+  script:
+    - cd backend
+    - uv sync --all-extras --locked
+    - uv run ruff format --check .
+    - uv run ruff check .
+    - uv run mypy app
+    - uv run pytest -q

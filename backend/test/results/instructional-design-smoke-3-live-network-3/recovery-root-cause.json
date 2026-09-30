@@ -1,0 +1,24 @@
+{
+  "annotation_version": "0.1",
+  "stage": "ObjectiveDesigner",
+  "fixture": "technical_communication",
+  "condition": "structured_v0.3",
+  "failure_class": "malformed_json",
+  "raw_response_available": false,
+  "raw_response_policy": "raw model output is not persisted in audit artifacts",
+  "safe_gateway_evidence": {
+    "log_event": "model_output_invalid_json",
+    "leading_kind": "text",
+    "content_length_observed": [1568, 1323],
+    "provider_http_status": 200,
+    "retry_attempts": 2,
+    "structured_failure_category": "invalid_model_json"
+  },
+  "classification_basis": "Two safe invalid-JSON diagnostics were emitted for the ObjectiveDesigner request and the bounded gateway repair attempt also failed; no provider timeout, empty response, schema-validation diagnostic, or raw-content artifact was available.",
+  "recovery": {
+    "run_artifact": "recovery-run-1/recovery-results.json",
+    "status": "completed",
+    "objective_attempt_count": 1,
+    "quality_gate_passed": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "task": "INTEGRATION-01A",
+  "status": "complete",
+  "analysis_only": true,
+  "generated_at": "2026-08-17",
+  "current_source_repo": "/Users/mac/Developers/work/PAI Learning/Pai-learning",
+  "historical_integration_00_worktree": "/Users/mac/Developers/work/PAI Learning/Pai-learning/.worktrees/pr-012-instructional-design-core",
+  "target_repo": "/Users/mac/Developers/work/CT_Brain_Hub/ct_brain_hub/5. SOURCE/ndt-training-management-system-main",
+  "artifacts": ["manifest.json", "entity-inventory-source.json", "entity-inventory-target.json", "ownership-decisions.json", "semantic-conflicts.json", "integration-readiness.json"],
+  "documentation": ["docs/domain/integration/domain-ownership-map.md", "docs/domain/integration/context-boundary.md", "docs/domain/integration/api-boundary.md", "docs/domain/integration/migration-impact.md", "docs/domain/integration/mvp-boundary.md"],
+  "not_run": ["tests", "builds", "dependency_installation", "docker", "database_migrations", "code_migration"]
+}

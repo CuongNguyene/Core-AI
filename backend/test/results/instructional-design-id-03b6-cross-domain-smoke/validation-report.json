@@ -1,0 +1,162 @@
+{
+  "experiment": "ID-03B.6",
+  "condition": "structured_v0.3.1",
+  "planned_model_calls": 25,
+  "completed_fixtures": 5,
+  "failed_fixtures": 0,
+  "checks": [
+    {
+      "name": "assessment_reference_ownership",
+      "result": "PASS",
+      "details": {
+        "python_data_processing": {
+          "assessment_reference_ownership": "pass",
+          "reference_failures": 0
+        },
+        "accounting_financial_reporting_basic": {
+          "assessment_reference_ownership": "pass",
+          "reference_failures": 0
+        },
+        "legal_contract_review_basic": {
+          "assessment_reference_ownership": "pass",
+          "reference_failures": 0
+        },
+        "hr_recruitment_planning_basic": {
+          "assessment_reference_ownership": "pass",
+          "reference_failures": 0
+        },
+        "construction_drawing_and_method_basic": {
+          "assessment_reference_ownership": "pass",
+          "reference_failures": 0
+        }
+      }
+    },
+    {
+      "name": "objective_graph_ownership",
+      "result": "PASS",
+      "details": {
+        "python_data_processing": {
+          "course_module_scope": "pass",
+          "module_lesson_scope": "pass",
+          "previous_failure_reproduced": false,
+          "module_failures": [],
+          "lesson_failures": []
+        },
+        "accounting_financial_reporting_basic": {
+          "course_module_scope": "pass",
+          "module_lesson_scope": "pass",
+          "previous_failure_reproduced": false,
+          "module_failures": [],
+          "lesson_failures": []
+        },
+        "legal_contract_review_basic": {
+          "course_module_scope": "pass",
+          "module_lesson_scope": "pass",
+          "previous_failure_reproduced": false,
+          "module_failures": [],
+          "lesson_failures": []
+        },
+        "hr_recruitment_planning_basic": {
+          "course_module_scope": "pass",
+          "module_lesson_scope": "pass",
+          "previous_failure_reproduced": false,
+          "module_failures": [],
+          "lesson_failures": []
+        },
+        "construction_drawing_and_method_basic": {
+          "course_module_scope": "pass",
+          "module_lesson_scope": "pass",
+          "previous_failure_reproduced": false,
+          "module_failures": [],
+          "lesson_failures": []
+        }
+      }
+    },
+    {
+      "name": "dependency_candidate_semantics",
+      "result": "PASS",
+      "details": {
+        "python_data_processing": {
+          "dependency_candidates_generated": 3,
+          "dependency_candidates_propagated": 3,
+          "dependency_candidates_promoted": 0,
+          "dependency_candidates_with_provenance": 5,
+          "canonical_supporting_dependency_count": 5,
+          "coverage_findings": 5,
+          "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+          "pedagogical_coverage_separate": 5
+        },
+        "accounting_financial_reporting_basic": {
+          "dependency_candidates_generated": 3,
+          "dependency_candidates_propagated": 3,
+          "dependency_candidates_promoted": 0,
+          "dependency_candidates_with_provenance": 8,
+          "canonical_supporting_dependency_count": 8,
+          "coverage_findings": 10,
+          "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+          "pedagogical_coverage_separate": 10
+        },
+        "legal_contract_review_basic": {
+          "dependency_candidates_generated": 2,
+          "dependency_candidates_propagated": 2,
+          "dependency_candidates_promoted": 0,
+          "dependency_candidates_with_provenance": 4,
+          "canonical_supporting_dependency_count": 4,
+          "coverage_findings": 5,
+          "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+          "pedagogical_coverage_separate": 5
+        },
+        "hr_recruitment_planning_basic": {
+          "dependency_candidates_generated": 3,
+          "dependency_candidates_propagated": 3,
+          "dependency_candidates_promoted": 0,
+          "dependency_candidates_with_provenance": 5,
+          "canonical_supporting_dependency_count": 5,
+          "coverage_findings": 6,
+          "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+          "pedagogical_coverage_separate": 6
+        },
+        "construction_drawing_and_method_basic": {
+          "dependency_candidates_generated": 2,
+          "dependency_candidates_propagated": 2,
+          "dependency_candidates_promoted": 0,
+          "dependency_candidates_with_provenance": 3,
+          "canonical_supporting_dependency_count": 3,
+          "coverage_findings": 5,
+          "propagation_evidence": "candidate collection retained in snapshot; runner passes the same collection to prerequisite/course/lesson stages",
+          "pedagogical_coverage_separate": 5
+        }
+      }
+    },
+    {
+      "name": "quality_gate_strictness",
+      "result": "PASS",
+      "details": "Quality gate remains reached and emits ERROR findings; no severity/validator changes."
+    },
+    {
+      "name": "scope_creep",
+      "result": "NOT_EVALUABLE",
+      "details": "No explicit assessment_scope_creep finding occurred; this run does not establish global absence."
+    }
+  ],
+  "quality_findings_by_fixture": {
+    "python_data_processing": {
+      "assessment_dependency_not_covered": 5
+    },
+    "accounting_financial_reporting_basic": {
+      "assessment_dependency_not_covered": 10
+    },
+    "legal_contract_review_basic": {
+      "assessment_dependency_not_covered": 5
+    },
+    "hr_recruitment_planning_basic": {
+      "assessment_dependency_not_covered": 6
+    },
+    "construction_drawing_and_method_basic": {
+      "assessment_dependency_not_covered": 5
+    }
+  },
+  "human_review_readiness": "HUMAN_REVIEW_READY",
+  "decision": "ID-03B.6 COMPLETE",
+  "no_fixes_during_run": true
+}

@@ -1,0 +1,16 @@
+{
+  "experiment": "ID-03C",
+  "source_experiment": "ID-03B.6",
+  "review_type": "blinded_cross_domain_sme_review",
+  "packet_count": 5,
+  "fixtures": [
+    "python_data_processing",
+    "accounting_financial_reporting_basic",
+    "legal_contract_review_basic",
+    "hr_recruitment_planning_basic",
+    "construction_drawing_and_method_basic"
+  ],
+  "rubric_version": "instructional_design_human_rubric@0.2",
+  "submission_schema_version": "id03c_review_submission@0.1",
+  "status": "prepared"
+}

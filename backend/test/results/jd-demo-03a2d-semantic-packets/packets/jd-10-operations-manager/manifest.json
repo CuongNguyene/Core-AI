@@ -1,0 +1,45 @@
+{
+  "packet_id": "jd-10-operations-manager",
+  "source": {
+    "filename": "JD-10 — Operations Manager.docx",
+    "sha256": "e8b08d78b579051d89fdda2021d2b54b3f98e39b81261fad46008c98a2923187"
+  },
+  "runtime": {
+    "profile_id": "7a8f0e58-49a3-4426-bf52-b8b03f383f58",
+    "document_id": "064714a4-dd3a-421c-be8c-9a72fbc12800",
+    "job_id": "4a7223fc-f7b9-406c-9209-f114432e990f",
+    "review_state": "pending_review",
+    "profile_version": 1
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_template_id": "jd_requirement_extraction_text",
+    "prompt_template_version": "2.2",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "output_schema_version": "2.2",
+    "input_mode": "whole_parsed_text",
+    "jd_extraction_mode": "requirement_v2",
+    "strategy": "full_document"
+  },
+  "summary": {
+    "requirement_count": 27,
+    "supported_requirement_count": 27,
+    "text_span_locator_count": 27,
+    "pdf_page_locator_count": 0,
+    "dimensions": {
+      "skill": 2,
+      "experience": 7,
+      "education": 0,
+      "credential": 1,
+      "qualification": 0,
+      "null": 17
+    },
+    "modalities": {
+      "must": 7,
+      "preferred": 3,
+      "responsibility": 15,
+      "unspecified": 2
+    }
+  }
+}

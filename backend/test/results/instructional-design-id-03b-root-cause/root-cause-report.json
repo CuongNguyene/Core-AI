@@ -1,0 +1,185 @@
+{
+  "experiment": "id03b",
+  "findings": [
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "category": "unknown_objective_reference",
+      "root_cause": "assessment_generation",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "category": "unknown_objective_reference",
+      "root_cause": "assessment_generation",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "category": "unknown_objective_reference",
+      "root_cause": "assessment_generation",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "category": "unknown_objective_reference",
+      "root_cause": "assessment_generation",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "category": "unknown_objective_reference",
+      "root_cause": "assessment_generation",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "category": "unknown_objective_reference",
+      "root_cause": "assessment_generation",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "category": "unknown_objective_reference",
+      "root_cause": "assessment_generation",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "assessment_scope_creep",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "python_data_processing",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "missing_dependency_propagation",
+      "producer_stage": "ObjectiveDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "assessment_scope_creep",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "category": "assessment_dependency_not_covered",
+      "root_cause": "assessment_scope_creep",
+      "producer_stage": "AssessmentDesigner",
+      "fix_layer": "prompt",
+      "validator_correct": true
+    }
+  ],
+  "summary": {
+    "prompt_issues": 20,
+    "schema_issues": 0,
+    "orchestration_issues": 0,
+    "validator_issues": 0,
+    "root_cause_counts": {
+      "assessment_generation": 7,
+      "assessment_scope_creep": 3,
+      "missing_dependency_propagation": 10
+    },
+    "reference_trace_count": 7,
+    "dependency_trace_count": 13
+  },
+  "no_change_confirmations": {
+    "prompt": "unchanged",
+    "schema": "unchanged",
+    "quality_gate": "unchanged",
+    "validator": "unchanged",
+    "dependency_normalizer": "unchanged"
+  }
+}

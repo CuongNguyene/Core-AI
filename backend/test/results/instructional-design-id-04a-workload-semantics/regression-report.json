@@ -1,0 +1,11 @@
+{
+  "external_model_calls": 0,
+  "tests": [
+    "within_budget",
+    "over_budget",
+    "assessment_included",
+    "missing_not_zero",
+    "no_double_counting",
+    "hierarchy_and_dependency_boundaries"
+  ]
+}

@@ -1,0 +1,572 @@
+{
+  "cognitive_alignment": {
+    "count": 10,
+    "dimension": "cognitive_alignment",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4,
+        "median": 4.0,
+        "min": 3,
+        "reviewer_spread": 2,
+        "std_dev": 1.0
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      }
+    },
+    "max": 5,
+    "mean": 4.4,
+    "median": 4.5,
+    "min": 3,
+    "reviewer_spread": 2,
+    "std_dev": 0.6633
+  },
+  "course_sequence_coherence": {
+    "count": 10,
+    "dimension": "course_sequence_coherence",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      }
+    },
+    "max": 5,
+    "mean": 4.7,
+    "median": 5.0,
+    "min": 4,
+    "reviewer_spread": 1,
+    "std_dev": 0.4583
+  },
+  "domain_appropriateness": {
+    "count": 10,
+    "dimension": "domain_appropriateness",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      }
+    },
+    "max": 5,
+    "mean": 5,
+    "median": 5.0,
+    "min": 5,
+    "reviewer_spread": 0,
+    "std_dev": 0.0
+  },
+  "evidence_validity": {
+    "count": 10,
+    "dimension": "evidence_validity",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      }
+    },
+    "max": 5,
+    "mean": 4.3,
+    "median": 4.0,
+    "min": 4,
+    "reviewer_spread": 1,
+    "std_dev": 0.4583
+  },
+  "instruction_assessment_alignment": {
+    "count": 10,
+    "dimension": "instruction_assessment_alignment",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 3,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 3,
+        "mean": 3,
+        "median": 3.0,
+        "min": 3,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 4,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 3,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      }
+    },
+    "max": 4,
+    "mean": 3.6,
+    "median": 4.0,
+    "min": 3,
+    "reviewer_spread": 1,
+    "std_dev": 0.4899
+  },
+  "objective_assessment_alignment": {
+    "count": 10,
+    "dimension": "objective_assessment_alignment",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      }
+    },
+    "max": 5,
+    "mean": 4.6,
+    "median": 5.0,
+    "min": 4,
+    "reviewer_spread": 1,
+    "std_dev": 0.4899
+  },
+  "objective_measurability": {
+    "count": 10,
+    "dimension": "objective_measurability",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      }
+    },
+    "max": 5,
+    "mean": 4.2,
+    "median": 4.0,
+    "min": 4,
+    "reviewer_spread": 1,
+    "std_dev": 0.4
+  },
+  "prerequisite_quality": {
+    "count": 10,
+    "dimension": "prerequisite_quality",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 3,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 2,
+        "reviewer_spread": 3,
+        "std_dev": 1.5
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 3,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 4,
+        "median": 4.0,
+        "min": 3,
+        "reviewer_spread": 2,
+        "std_dev": 1.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 4,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 3,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      }
+    },
+    "max": 5,
+    "mean": 3.6,
+    "median": 3.5,
+    "min": 2,
+    "reviewer_spread": 3,
+    "std_dev": 0.9165
+  },
+  "scope_balance": {
+    "count": 10,
+    "dimension": "scope_balance",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 3,
+        "mean": 2.5,
+        "median": 2.5,
+        "min": 2,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 3,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 5,
+        "mean": 5,
+        "median": 5.0,
+        "min": 5,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 5,
+        "mean": 4.5,
+        "median": 4.5,
+        "min": 4,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      }
+    },
+    "max": 5,
+    "mean": 3.9,
+    "median": 4.0,
+    "min": 2,
+    "reviewer_spread": 3,
+    "std_dev": 0.9434
+  },
+  "workload_time_realism": {
+    "count": 10,
+    "dimension": "workload_time_realism",
+    "domain_spread": {
+      "accounting_financial_reporting_basic": {
+        "count": 2,
+        "max": 1,
+        "mean": 1,
+        "median": 1.0,
+        "min": 1,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "construction_drawing_and_method_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 3,
+        "reviewer_spread": 1,
+        "std_dev": 0.5
+      },
+      "hr_recruitment_planning_basic": {
+        "count": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2.0,
+        "min": 2,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "legal_contract_review_basic": {
+        "count": 2,
+        "max": 4,
+        "mean": 4,
+        "median": 4.0,
+        "min": 4,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      },
+      "python_data_processing": {
+        "count": 2,
+        "max": 3,
+        "mean": 3,
+        "median": 3.0,
+        "min": 3,
+        "reviewer_spread": 0,
+        "std_dev": 0.0
+      }
+    },
+    "max": 4,
+    "mean": 2.7,
+    "median": 3.0,
+    "min": 1,
+    "reviewer_spread": 3,
+    "std_dev": 1.1
+  }
+}

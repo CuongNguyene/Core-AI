@@ -1,0 +1,126 @@
+{
+  "state": "NEEDS_REVIEWER_COMPLETION",
+  "draft": {
+    "review_id": "review-003",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 5,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 5,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4
+    },
+    "rationales": {
+      "objective_measurability": "Measurability is strong, though judging 'boundary maintenance' in the rubric relies on qualitative expert evaluation[cite: 23].",
+      "objective_assessment_alignment": "The tasks directly map to the objectives: categorization for 'understand' and analysis/explanation for 'apply'[cite: 23].",
+      "evidence_validity": "Marking up real clause language and citing specific text is the authentic gold standard for contract review[cite: 23].",
+      "cognitive_alignment": "The progression from understanding risk taxonomies to applying them to novel clauses is perfectly aligned[cite: 23].",
+      "prerequisite_quality": "Identifying 'reading comprehension of legal-register prose' as a prerequisite is brilliant and essential to avoid confounding assessment results with basic reading deficits[cite: 23].",
+      "course_sequence_coherence": "Module 1 establishes the conceptual taxonomy required to execute the procedural application in Module 2[cite: 23].",
+      "instruction_assessment_alignment": "The use of worked examples to model the risk-analysis/legal-advice boundary is a very effective instructional choice[cite: 23]."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "none",
+    "special_question": null,
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-003.json",
+    "source_rubric_version": "instructional_design_human_rubric@0.1",
+    "target_rubric_version": "instructional_design_human_rubric@0.2",
+    "recovery_mode": "deterministic",
+    "source_sections": [
+      "technical_review",
+      "pedagogical_review"
+    ],
+    "mapped_fields": [
+      "cognitive_alignment",
+      "course_sequence_coherence",
+      "evidence_validity",
+      "instruction_assessment_alignment",
+      "machine_validity_observations",
+      "objective_assessment_alignment",
+      "objective_measurability",
+      "prerequisite_quality"
+    ],
+    "unresolved_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer"
+    ],
+    "raw_legacy_fields_preserved": true,
+    "legacy_rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Measurability is strong, though judging 'boundary maintenance' in the rubric relies on qualitative expert evaluation[cite: 23]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The tasks directly map to the objectives: categorization for 'understand' and analysis/explanation for 'apply'[cite: 23]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 5,
+        "rationale": "Marking up real clause language and citing specific text is the authentic gold standard for contract review[cite: 23]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The progression from understanding risk taxonomies to applying them to novel clauses is perfectly aligned[cite: 23]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 5,
+        "rationale": "Identifying 'reading comprehension of legal-register prose' as a prerequisite is brilliant and essential to avoid confounding assessment results with basic reading deficits[cite: 23]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "Module 1 establishes the conceptual taxonomy required to execute the procedural application in Module 2[cite: 23]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "The use of worked examples to model the risk-analysis/legal-advice boundary is a very effective instructional choice[cite: 23]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 2,
+        "rationale": "Time is slightly tight (35 mins for the apply-level module), but manageable if the sample clauses are kept short and focused[cite: 23]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "Zero scope creep. Highly focused on the specific desired performance[cite: 23]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 1,
+        "rationale": "Only trivial edits required to populate the actual taxonomy and clause content."
+      }
+    ],
+    "legacy_overall_edit_effort": 1,
+    "raw_special_question_answer": "YES. Excellent handling of the boundary between risk identification and legal advice."
+  },
+  "missing_required_fields": [
+    "rationales.domain_appropriateness",
+    "rationales.scope_balance",
+    "rationales.workload_time_realism",
+    "rubric_scores.domain_appropriateness",
+    "rubric_scores.scope_balance",
+    "rubric_scores.workload_time_realism",
+    "special_question.answer"
+  ],
+  "ambiguous_fields": [
+    "special_question.answer"
+  ]
+}

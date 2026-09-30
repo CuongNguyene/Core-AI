@@ -1,0 +1,62 @@
+{
+  "experiment_id": "instructional-design-id-02d-smoke-4",
+  "experiment_version": "0.1",
+  "fixture_count": 3,
+  "fixture_ids": [
+    "model_monitoring",
+    "python_data_processing",
+    "technical_communication"
+  ],
+  "conditions": [
+    "structured_v0.3.1"
+  ],
+  "runs_per_fixture_per_condition": 1,
+  "model_provider": "vilao",
+  "model_name": "claude-sonnet-5",
+  "model_revision": null,
+  "generation_config": {
+    "temperature": 0.0,
+    "top_p": null,
+    "max_output_tokens": 8192,
+    "seed": null,
+    "unsupported_fields": [
+      "top_p",
+      "seed"
+    ]
+  },
+  "policy_id": "pai_instructional_design",
+  "policy_version": "0.1",
+  "prompt_schema_versions": [
+    {
+      "prompt_id": "instructional_objective_design",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_objective_design",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_assessment_design",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_assessment_design",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_prerequisite_proposal",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_prerequisite_proposal",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_course_planning",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_course_planning",
+      "schema_version": "0.3.1"
+    },
+    {
+      "prompt_id": "instructional_lesson_planning",
+      "prompt_version": "0.3.1",
+      "schema_id": "instructional_lesson_planning",
+      "schema_version": "0.3.1"
+    }
+  ],
+  "estimated_model_call_count": 15
+}

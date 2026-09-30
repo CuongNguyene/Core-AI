@@ -1,0 +1,22 @@
+{
+  "analysis_allowed": true,
+  "canonical_reviews": 10,
+  "edit_effort_complete": true,
+  "fixtures": 5,
+  "prerequisites_complete": true,
+  "rationales_complete": true,
+  "reviewers": 2,
+  "reviews_per_fixture": {
+    "accounting_financial_reporting_basic": 2,
+    "construction_drawing_and_method_basic": 2,
+    "hr_recruitment_planning_basic": 2,
+    "legal_contract_review_basic": 2,
+    "python_data_processing": 2
+  },
+  "reviews_per_reviewer": {
+    "codex-sme-reviewer": 5,
+    "gemini-sme-01": 5
+  },
+  "rubric_complete": true,
+  "special_question_complete": true
+}

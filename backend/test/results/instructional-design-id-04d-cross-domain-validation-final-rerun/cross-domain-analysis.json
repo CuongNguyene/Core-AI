@@ -1,0 +1,541 @@
+{
+  "experiment": "ID-04D",
+  "pipeline": [
+    {
+      "fixture": "python_data_processing",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "complete": true,
+      "graph_valid": true,
+      "gate_reached": true,
+      "structural_errors": []
+    }
+  ],
+  "workload": [
+    {
+      "fixture": "brief-python_data_processing",
+      "declared_minutes": 60,
+      "planned_minutes": 120,
+      "assessment_minutes": 60,
+      "over_budget_minutes": 60,
+      "status": "over_budget",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_budget_exceeded",
+          "severity": "warning",
+          "declared_minutes": 60,
+          "planned_minutes": 120,
+          "over_budget_minutes": 60,
+          "message": "Planned workload exceeds the declared learning-time budget."
+        }
+      ],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-accounting_financial_reporting_basic",
+      "declared_minutes": 60,
+      "planned_minutes": 120,
+      "assessment_minutes": 60,
+      "over_budget_minutes": 60,
+      "status": "over_budget",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_budget_exceeded",
+          "severity": "warning",
+          "declared_minutes": 60,
+          "planned_minutes": 120,
+          "over_budget_minutes": 60,
+          "message": "Planned workload exceeds the declared learning-time budget."
+        }
+      ],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-legal_contract_review_basic",
+      "declared_minutes": 60,
+      "planned_minutes": null,
+      "assessment_minutes": 60,
+      "over_budget_minutes": null,
+      "status": "unresolved",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_allocation_missing",
+          "severity": "error",
+          "field": "guided_practice,independent_practice,instruction",
+          "message": "Required workload allocation is unresolved; missing time is not zero."
+        }
+      ],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-hr_recruitment_planning_basic",
+      "declared_minutes": 60,
+      "planned_minutes": 60,
+      "assessment_minutes": 60,
+      "over_budget_minutes": 0,
+      "status": "within_budget",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [],
+      "course_declared_minutes": 60
+    },
+    {
+      "fixture": "brief-construction_drawing_and_method_basic",
+      "declared_minutes": 60,
+      "planned_minutes": 120,
+      "assessment_minutes": 60,
+      "over_budget_minutes": 60,
+      "status": "over_budget",
+      "missing_allocations": [],
+      "double_count_detected": false,
+      "findings": [
+        {
+          "code": "workload_time_budget_exceeded",
+          "severity": "warning",
+          "declared_minutes": 60,
+          "planned_minutes": 120,
+          "over_budget_minutes": 60,
+          "message": "Planned workload exceeds the declared learning-time budget."
+        }
+      ],
+      "course_declared_minutes": 60
+    }
+  ],
+  "prerequisites": [
+    {
+      "fixture": "python_data_processing",
+      "dispositions": {
+        "entry_prerequisite": 0,
+        "in_course_support": 2,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "dispositions": {
+        "entry_prerequisite": 2,
+        "in_course_support": 1,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "dispositions": {
+        "entry_prerequisite": 1,
+        "in_course_support": 0,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": false,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "dispositions": {
+        "entry_prerequisite": 1,
+        "in_course_support": 2,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "dispositions": {
+        "entry_prerequisite": 0,
+        "in_course_support": 3,
+        "not_required": 0
+      },
+      "governance_valid": true,
+      "provenance_preserved": true,
+      "entry_rationale_valid": true
+    }
+  ],
+  "practice_coverage": [
+    {
+      "fixture": "python_data_processing",
+      "requirements": [
+        {
+          "assessment_id": "SA-PPD-03",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "LO-PPD-03"
+          ],
+          "capability_ref": "Justify each transformation choice made for invalid values in a tabular dataset",
+          "source_requirement_ref": "SA-PPD-03:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 1,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 3,
+        "assessment_requirement_not_taught": 1
+      }
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "requirements": [
+        {
+          "assessment_id": "asmnt-afr-02-s",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-afr-01",
+            "obj-afr-02"
+          ],
+          "capability_ref": "read and interpret ledger entry rows",
+          "source_requirement_ref": "asmnt-afr-02-s:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [
+            "lsn-afr-01"
+          ],
+          "formative_refs": [
+            "asmnt-afr-01-f"
+          ],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "asmnt-afr-02-s",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-afr-01"
+          ],
+          "capability_ref": "populate standard financial report sections",
+          "source_requirement_ref": "asmnt-afr-02-s:required_capabilities:1",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [
+            "lsn-afr-01"
+          ],
+          "formative_refs": [
+            "asmnt-afr-01-f"
+          ],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "asmnt-afr-02-s",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-afr-01",
+            "obj-afr-02"
+          ],
+          "capability_ref": "compute arithmetic totals and subtotals",
+          "source_requirement_ref": "asmnt-afr-02-s:required_capabilities:2",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [
+            "lsn-afr-01"
+          ],
+          "formative_refs": [
+            "asmnt-afr-01-f"
+          ],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "asmnt-afr-02-s",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-afr-02"
+          ],
+          "capability_ref": "cross-reference a financial report against a source ledger",
+          "source_requirement_ref": "asmnt-afr-02-s:required_capabilities:3",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "asmnt-afr-02-s",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-afr-02"
+          ],
+          "capability_ref": "classify discrepancies by type from a defined taxonomy",
+          "source_requirement_ref": "asmnt-afr-02-s:required_capabilities:4",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 5,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 8,
+        "assessment_requirement_not_taught": 5
+      }
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "requirements": [
+        {
+          "assessment_id": "assess-ccrb-02-summative",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-ccrb-02"
+          ],
+          "capability_ref": "identify obligations and restrictions in unseen contract clause",
+          "source_requirement_ref": "assess-ccrb-02-summative:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [
+            "les-ccrb-02-practice"
+          ],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "assess-ccrb-02-summative",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-ccrb-02"
+          ],
+          "capability_ref": "construct written risk explanation grounded in clause text",
+          "source_requirement_ref": "assess-ccrb-02-summative:required_capabilities:1",
+          "instruction_refs": [],
+          "guided_practice_refs": [
+            "les-ccrb-02-practice"
+          ],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "assess-ccrb-02-summative",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "lo-ccrb-02"
+          ],
+          "capability_ref": "maintain professional boundary between risk analysis and legal judgment in written communication",
+          "source_requirement_ref": "assess-ccrb-02-summative:required_capabilities:2",
+          "instruction_refs": [],
+          "guided_practice_refs": [
+            "les-ccrb-02-practice"
+          ],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 3,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 5,
+        "assessment_requirement_not_taught": 3
+      }
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "requirements": [
+        {
+          "assessment_id": "brief-hr_recruitment_planning_basic:a-2",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "brief-hr_recruitment_planning_basic:lo-2"
+          ],
+          "capability_ref": "ability to construct a recruitment plan addressing scenario requirements",
+          "source_requirement_ref": "brief-hr_recruitment_planning_basic:a-2:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        },
+        {
+          "assessment_id": "brief-hr_recruitment_planning_basic:a-2",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "brief-hr_recruitment_planning_basic:lo-3"
+          ],
+          "capability_ref": "ability to articulate sequencing rationale grounded in scenario context",
+          "source_requirement_ref": "brief-hr_recruitment_planning_basic:a-2:required_capabilities:1",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 2,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 3,
+        "assessment_requirement_not_taught": 2
+      }
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "requirements": [
+        {
+          "assessment_id": "asmnt-cdm-03-s",
+          "assessment_role": "summative",
+          "objective_refs": [
+            "obj-cdm-03"
+          ],
+          "capability_ref": "sequenced method proposal composition from construction drawings",
+          "source_requirement_ref": "asmnt-cdm-03-s:required_capabilities:0",
+          "instruction_refs": [],
+          "guided_practice_refs": [],
+          "independent_practice_refs": [],
+          "formative_refs": [],
+          "status": "not_covered"
+        }
+      ],
+      "counts": {
+        "covered": 0,
+        "partially_covered": 0,
+        "not_covered": 1,
+        "unresolved": 0
+      },
+      "findings": {
+        "assessment_dependency_not_covered": 3,
+        "assessment_requirement_not_taught": 1
+      }
+    }
+  ],
+  "intervention_interactions": [
+    {
+      "fixture": "python_data_processing",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "over_budget",
+      "interaction_class": "D"
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "over_budget",
+      "interaction_class": "D"
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "unresolved",
+      "interaction_class": "C"
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "within_budget",
+      "interaction_class": "C"
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "practice_coverage": "insufficient_or_unresolved",
+      "workload_status": "over_budget",
+      "interaction_class": "D"
+    }
+  ],
+  "regression": [
+    {
+      "fixture": "python_data_processing",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "assessment_reference_ownership": true,
+      "objective_graph_ownership": true,
+      "dependency_normalization": true,
+      "candidate_governance": true,
+      "historical_prompt_replay": true
+    }
+  ],
+  "readiness": "ID04_SME_REREVIEW_NOT_READY",
+  "readiness_blockers": [
+    {
+      "fixture": "legal_contract_review_basic",
+      "code": "prerequisite_provenance_not_preserved",
+      "severity": "error",
+      "detail": "Exact matching abstained on a model paraphrase; no fuzzy repair applied."
+    }
+  ]
+}

@@ -1,0 +1,687 @@
+{
+  "review_id": "review-004",
+  "fixture_id": "hr_recruitment_planning_basic",
+  "brief": {
+    "id": "brief-hr_recruitment_planning_basic",
+    "capability": {
+      "id": null,
+      "name": "basic recruitment planning",
+      "target_context": "cross-domain research fixture"
+    },
+    "learner_state": {
+      "known": [],
+      "unknown": [],
+      "evidence_refs": [
+        "cross-domain-fixture:hr_recruitment_planning_basic:learner-state"
+      ]
+    },
+    "desired_performances": [
+      "Given a department hiring scenario, create a recruitment plan and justify the sequencing decisions."
+    ],
+    "constraints": {
+      "estimated_total_minutes": 60,
+      "language": "en",
+      "audience_notes": []
+    },
+    "provenance": {
+      "type": "research_fixture",
+      "authored_by": "instructional-design-research",
+      "created_at": null
+    }
+  },
+  "objectives": [
+    {
+      "id": "lo-hrp-01",
+      "brief_id": "brief-hr_recruitment_planning_basic",
+      "performance": "Identify the standard components of a basic recruitment plan",
+      "cognitive_process": "understand",
+      "knowledge_dimension": "conceptual",
+      "conditions": [
+        "Given a description of a recruitment planning context"
+      ],
+      "success_criteria": [
+        "Names at least four standard components of a recruitment plan without external reference",
+        "Distinguishes between components that precede and follow candidate sourcing"
+      ],
+      "prerequisite_refs": [],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Assumes learners have no prior formal exposure to structured recruitment planning",
+          "Authoritative component set must be researcher-verified; this list is candidate only"
+        ]
+      }
+    },
+    {
+      "id": "lo-hrp-02",
+      "brief_id": "brief-hr_recruitment_planning_basic",
+      "performance": "Create a recruitment plan for a given department hiring scenario",
+      "cognitive_process": "create",
+      "knowledge_dimension": "procedural",
+      "conditions": [
+        "Given a department hiring scenario specifying role, headcount, and timeline",
+        "Without real-time consultation or reference materials"
+      ],
+      "success_criteria": [
+        "Plan includes all required components identified in lo-hrp-01",
+        "Plan addresses the specific role and constraints stated in the scenario",
+        "Steps are presented in a coherent sequence with no critical gaps"
+      ],
+      "prerequisite_refs": [
+        "lo-hrp-01"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "60-minute constraint assumed sufficient only for a condensed scenario, not a full operational plan",
+          "Quality criteria for plan completeness are candidate only; researcher validation required"
+        ]
+      }
+    },
+    {
+      "id": "lo-hrp-03",
+      "brief_id": "brief-hr_recruitment_planning_basic",
+      "performance": "Justify the sequencing decisions made within a recruitment plan",
+      "cognitive_process": "evaluate",
+      "knowledge_dimension": "conceptual",
+      "conditions": [
+        "Given the recruitment plan produced in lo-hrp-02 or an equivalent authored plan",
+        "In written or verbal form"
+      ],
+      "success_criteria": [
+        "Provides at least one rationale per sequencing decision that references dependencies between steps",
+        "Rationale is internally consistent with the stated scenario constraints"
+      ],
+      "prerequisite_refs": [
+        "lo-hrp-01",
+        "lo-hrp-02"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Justification quality standard is candidate only; an assessable rubric requires researcher definition",
+          "Assumes oral or written defense is within scope of the 60-minute session"
+        ]
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "id": "asmt-hrp-f-01",
+      "objective_ids": [
+        "lo-hrp-01"
+      ],
+      "capability_claim": "Identifies the standard components of a basic recruitment plan and categorizes them relative to candidate sourcing",
+      "required_evidence": [
+        {
+          "id": "ev-hrp-f01-01",
+          "criterion": "Names at least four standard components of a recruitment plan",
+          "rationale": "Maps directly to lo-hrp-01 success criterion 1; authoritative component list requires researcher definition"
+        },
+        {
+          "id": "ev-hrp-f01-02",
+          "criterion": "Correctly distinguishes which named components precede and which follow candidate sourcing",
+          "rationale": "Maps directly to lo-hrp-01 success criterion 2"
+        }
+      ],
+      "task": {
+        "task_type": "structured-recall-and-classification",
+        "description": "Given a brief narrative description of a recruitment planning context, the learner names at least four standard components of a recruitment plan and classifies each component as occurring before or after candidate sourcing.",
+        "conditions": [
+          "Given a description of a recruitment planning context",
+          "Without reference materials"
+        ]
+      },
+      "cognitive_process": "understand",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "dim-hrp-f01-01",
+            "criterion": "Component coverage",
+            "performance_levels": [
+              "Names fewer than four components",
+              "Names exactly four components",
+              "Names more than four components accurately"
+            ]
+          },
+          {
+            "id": "dim-hrp-f01-02",
+            "criterion": "Sequencing classification accuracy",
+            "performance_levels": [
+              "Cannot distinguish pre- and post-sourcing components",
+              "Partially distinguishes with at least one error",
+              "Correctly classifies all named components relative to sourcing"
+            ]
+          }
+        ],
+        "mastery_rule": "MODEL-PROPOSED CANDIDATE ONLY: Both evidence criteria met; mastery threshold requires researcher validation"
+      },
+      "role": "formative",
+      "required_capabilities": [
+        {
+          "name": "recruitment plan component identification",
+          "objective_ids": [
+            "lo-hrp-01"
+          ],
+          "rationale": "Core capability demonstrated: recognizing and labeling standard parts of a recruitment plan from a described context"
+        },
+        {
+          "name": "process sequencing awareness",
+          "objective_ids": [
+            "lo-hrp-01"
+          ],
+          "rationale": "Required to classify components as pre-sourcing or post-sourcing as stated in the objective performance"
+        }
+      ],
+      "is_summative": false,
+      "required_capability_refs": [
+        "recruitment plan component identification",
+        "process sequencing awareness"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Formative role assumed to serve as a readiness check before the summative plan-creation task",
+          "Authoritative component list against which responses are scored must be researcher-defined",
+          "Scoring threshold is candidate only"
+        ]
+      }
+    },
+    {
+      "id": "asmt-hrp-s-01",
+      "objective_ids": [
+        "lo-hrp-02"
+      ],
+      "capability_claim": "Creates a recruitment plan for a department hiring scenario specifying role, headcount, and timeline",
+      "required_evidence": [
+        {
+          "id": "ev-hrp-s01-01",
+          "criterion": "Plan includes all required components identified under lo-hrp-01",
+          "rationale": "Maps directly to lo-hrp-02 success criterion 1"
+        },
+        {
+          "id": "ev-hrp-s01-02",
+          "criterion": "Plan explicitly addresses the role, headcount, and timeline stated in the scenario",
+          "rationale": "Maps directly to lo-hrp-02 success criterion 2"
+        },
+        {
+          "id": "ev-hrp-s01-03",
+          "criterion": "Steps are presented in a coherent sequence with no critical gaps",
+          "rationale": "Maps directly to lo-hrp-02 success criterion 3"
+        }
+      ],
+      "task": {
+        "task_type": "performance-task-plan-production",
+        "description": "Given a department hiring scenario specifying role, headcount, and timeline, the learner produces a written recruitment plan that includes all standard components identified under lo-hrp-01, addresses the specific scenario constraints, and presents steps in a coherent sequence with no critical gaps.",
+        "conditions": [
+          "Given a department hiring scenario specifying role, headcount, and timeline",
+          "Without real-time consultation or reference materials",
+          "Within the time allocated for this task inside the 60-minute session (allocation is candidate only)"
+        ]
+      },
+      "cognitive_process": "create",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "dim-hrp-s01-01",
+            "criterion": "Component completeness",
+            "performance_levels": [
+              "Fewer than the required components present",
+              "All required components present",
+              "All required components present with relevant elaboration"
+            ]
+          },
+          {
+            "id": "dim-hrp-s01-02",
+            "criterion": "Scenario alignment",
+            "performance_levels": [
+              "Plan omits one or more of: role, headcount, or timeline",
+              "Plan addresses all three scenario parameters at a surface level",
+              "Plan integrates all three parameters with explicit acknowledgment of their interdependencies"
+            ]
+          },
+          {
+            "id": "dim-hrp-s01-03",
+            "criterion": "Sequence coherence",
+            "performance_levels": [
+              "Critical gaps or illogical ordering present",
+              "Logical ordering with minor non-critical gaps",
+              "Fully coherent sequence with no critical gaps"
+            ]
+          }
+        ],
+        "mastery_rule": "MODEL-PROPOSED CANDIDATE ONLY: All three evidence criteria met at middle performance level or above; exact threshold requires researcher validation"
+      },
+      "role": "summative",
+      "required_capabilities": [
+        {
+          "name": "recruitment plan synthesis",
+          "objective_ids": [
+            "lo-hrp-02"
+          ],
+          "rationale": "Core capability demonstrated: assembling a coherent plan by applying known components to a novel scenario"
+        },
+        {
+          "name": "scenario constraint application",
+          "objective_ids": [
+            "lo-hrp-02"
+          ],
+          "rationale": "Required to tailor the plan to the specific role, headcount, and timeline conditions supplied in the scenario"
+        }
+      ],
+      "is_summative": true,
+      "required_capability_refs": [
+        "recruitment plan synthesis",
+        "scenario constraint application"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "60-minute total session constraint limits this to a condensed scenario; the plan is not expected to be a full operational document",
+          "Time allocation between this task and asmt-hrp-s-02 is candidate only and requires researcher decision",
+          "Quality criteria for plan completeness are candidate only; researcher validation required"
+        ]
+      }
+    },
+    {
+      "id": "asmt-hrp-s-02",
+      "objective_ids": [
+        "lo-hrp-03"
+      ],
+      "capability_claim": "Justifies the sequencing decisions within a recruitment plan by referencing dependencies between steps and scenario constraints",
+      "required_evidence": [
+        {
+          "id": "ev-hrp-s02-01",
+          "criterion": "Provides at least one rationale per sequencing decision that references dependencies between steps",
+          "rationale": "Maps directly to lo-hrp-03 success criterion 1"
+        },
+        {
+          "id": "ev-hrp-s02-02",
+          "criterion": "Rationale is internally consistent with the scenario constraints stated in the plan",
+          "rationale": "Maps directly to lo-hrp-03 success criterion 2"
+        }
+      ],
+      "task": {
+        "task_type": "oral-or-written-justification",
+        "description": "Given the recruitment plan produced in asmt-hrp-s-01 or an equivalent authored plan, the learner provides a written or verbal justification of the sequencing decisions, supplying at least one rationale per decision that references dependencies between steps and is internally consistent with the stated scenario constraints.",
+        "conditions": [
+          "Given the recruitment plan produced in asmt-hrp-s-01 or an equivalent authored plan",
+          "In written or verbal form",
+          "Within the time allocated for this task inside the 60-minute session (allocation is candidate only)"
+        ]
+      },
+      "cognitive_process": "evaluate",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "dim-hrp-s02-01",
+            "criterion": "Dependency referencing",
+            "performance_levels": [
+              "No sequencing decision includes a dependency reference",
+              "At least one but not all sequencing decisions include a dependency reference",
+              "Every sequencing decision includes at least one dependency reference"
+            ]
+          },
+          {
+            "id": "dim-hrp-s02-02",
+            "criterion": "Internal consistency with scenario constraints",
+            "performance_levels": [
+              "Rationale contradicts one or more stated scenario constraints",
+              "Rationale is consistent with scenario constraints but does not explicitly reference them",
+              "Rationale is consistent with and explicitly references the scenario constraints"
+            ]
+          }
+        ],
+        "mastery_rule": "MODEL-PROPOSED CANDIDATE ONLY: Both evidence criteria met; rubric performance level thresholds require researcher validation"
+      },
+      "role": "summative",
+      "required_capabilities": [
+        {
+          "name": "sequencing rationale articulation",
+          "objective_ids": [
+            "lo-hrp-03"
+          ],
+          "rationale": "Core capability demonstrated: explaining why steps were ordered as they were by referencing step-to-step dependencies"
+        },
+        {
+          "name": "constraint-referenced evaluation",
+          "objective_ids": [
+            "lo-hrp-03"
+          ],
+          "rationale": "Required to ensure the justification remains internally consistent with the scenario conditions that shaped the plan"
+        }
+      ],
+      "is_summative": true,
+      "required_capability_refs": [
+        "sequencing rationale articulation",
+        "constraint-referenced evaluation"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Justification quality standard is candidate only; an assessable rubric requires researcher definition",
+          "Oral or written defense assumed within scope of the 60-minute session; researcher must verify feasibility given time remaining after asmt-hrp-s-01",
+          "This assessment depends on availability of the lo-hrp-02 plan output; assessment ordering is candidate only"
+        ]
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "pre-hrp-01",
+      "capability": "basic familiarity with organizational hiring context",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "The department hiring scenario is the sole instructional stimulus for lo-hrp-01, lo-hrp-02, asmt-hrp-f-01, and asmt-hrp-s-01. A learner with no awareness of what organizational hiring involves cannot interpret that stimulus; engagement with the scenario prompt would fail before any recruitment-planning instruction could begin. This capability is not addressed by any supplied objective and is not developed by the instruction.",
+      "required_for_refs": [
+        "lo-hrp-01",
+        "lo-hrp-02",
+        "asmt-hrp-f-01",
+        "asmt-hrp-s-01"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    },
+    {
+      "id": "pre-hrp-02",
+      "capability": "written communication at a functional level",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "lo-hrp-02 unconditionally requires producing a written recruitment plan (asmt-hrp-s-01, ev-hrp-s01-01 through ev-hrp-s01-03). A learner unable to produce legible structured prose cannot satisfy any of the three summative evidence criteria for that assessment. lo-hrp-03 also permits a written justification path (asmt-hrp-s-02). The oral option in asmt-hrp-s-02 does not remove this requirement because the plan-production task in asmt-hrp-s-01 is unconditionally written. This surface constraint is not taught by any supplied objective.",
+      "required_for_refs": [
+        "lo-hrp-02",
+        "lo-hrp-03",
+        "asmt-hrp-s-01",
+        "asmt-hrp-s-02"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    },
+    {
+      "id": "pre-hrp-03",
+      "capability": "step-dependency reasoning",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "lo-hrp-03 and asmt-hrp-s-02 require the learner to supply at least one rationale per sequencing decision that explicitly references dependencies between steps (ev-hrp-s02-01). This requires the prior ability to reason that one step must logically or operationally precede another. No supplied objective is scoped to developing this general reasoning skill; lo-hrp-03 applies it within a recruitment-planning domain context but does not build it from zero. Without it, the learner cannot produce any dependency-referenced justification, causing ev-hrp-s02-01 to fail entirely.",
+      "required_for_refs": [
+        "lo-hrp-03",
+        "asmt-hrp-s-02"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    }
+  ],
+  "course_outline": {
+    "id": "co-hrp-basic-01",
+    "brief_id": "brief-hr_recruitment_planning_basic",
+    "objective_ids": [
+      "lo-hrp-01",
+      "lo-hrp-02",
+      "lo-hrp-03"
+    ],
+    "modules": [
+      {
+        "id": "mod-hrp-01",
+        "title": "Recruitment Plan Components",
+        "objective_ids": [
+          "lo-hrp-01"
+        ],
+        "prerequisite_refs": [
+          "pre-hrp-01"
+        ],
+        "lesson_ids": [
+          "les-hrp-01"
+        ],
+        "estimated_minutes": 15
+      },
+      {
+        "id": "mod-hrp-02",
+        "title": "Creating a Recruitment Plan from a Hiring Scenario",
+        "objective_ids": [
+          "lo-hrp-02"
+        ],
+        "prerequisite_refs": [
+          "pre-hrp-01",
+          "pre-hrp-02"
+        ],
+        "lesson_ids": [
+          "les-hrp-02-we",
+          "les-hrp-02-gp"
+        ],
+        "estimated_minutes": 30
+      },
+      {
+        "id": "mod-hrp-03",
+        "title": "Justifying Recruitment Plan Sequencing Decisions",
+        "objective_ids": [
+          "lo-hrp-03"
+        ],
+        "prerequisite_refs": [
+          "pre-hrp-03"
+        ],
+        "lesson_ids": [
+          "les-hrp-03"
+        ],
+        "estimated_minutes": 15
+      }
+    ],
+    "prerequisite_refs": [
+      "pre-hrp-01",
+      "pre-hrp-02",
+      "pre-hrp-03"
+    ],
+    "estimated_minutes": 60,
+    "planning_warnings": [
+      {
+        "type": "scope_time_conflict",
+        "decision": "prioritized_core_objectives",
+        "rationale": "The 60-minute budget must cover instruction and embedded assessment across three cognitive levels (understand, create, evaluate). Module time allocations of 15/30/15 minutes are candidate only. Optional elaboration, worked examples, and iterative practice cycles have been excluded to fit within the budget. Time allocation between asmt-hrp-s-01 and asmt-hrp-s-02 within mod-hrp-02 and mod-hrp-03 respectively is not separately resolved here; researcher must verify feasibility of the summative assessment sequence within the remaining time after instruction."
+      }
+    ],
+    "sequencing_rationale": [
+      "mod-hrp-01 is positioned first because lo-hrp-02 explicitly lists lo-hrp-01 as a prerequisite; learners must identify and classify recruitment plan components before they can create a plan.",
+      "mod-hrp-02 follows mod-hrp-01 because plan creation (lo-hrp-02) depends on component knowledge established in lo-hrp-01 and because the plan produced under asmt-hrp-s-01 is the required input artifact for mod-hrp-03.",
+      "mod-hrp-03 is positioned last because lo-hrp-03 lists both lo-hrp-01 and lo-hrp-02 as prerequisites and because asmt-hrp-s-02 explicitly requires the plan from asmt-hrp-s-01or an equivalent authored plan as its stimulus.",
+      "Formative assessment asmt-hrp-f-01 is scoped to mod-hrp-01 as a readiness check before the plan-creation task; summative assessments asmt-hrp-s-01 and asmt-hrp-s-02 are scoped to mod-hrp-02 and mod-hrp-03 respectively as terminal performance measures."
+    ],
+    "provenance": {
+      "source": "model_proposed",
+      "provisional": true,
+      "assumption_notes": [
+        "Module time allocations (15/30/15 minutes) are candidate only; the 60-minute total must cover both instruction and assessment and has not been verified against actual task completion time data.",
+        "The three candidate prerequisites (pre-hrp-01, pre-hrp-02, pre-hrp-03) are referenced at course and module level but remain unconfirmed pending researcher validation.",
+        "lesson_ids are left empty throughout; lesson derivation is delegated to downstream orchestration after lesson generation.",
+        "Assessment sequencing within modules reflects the dependency stated in asmt-hrp-s-02 (depends on asmt-hrp-s-01 output); the exact intra-module time split is candidate only and requires researcher decision."
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "id": "les-hrp-01",
+      "module_id": "mod-hrp-01",
+      "objective_ids": [
+        "lo-hrp-01"
+      ],
+      "prerequisite_refs": [
+        "pre-hrp-01"
+      ],
+      "lesson_goal": "Recognize the standard components of a basic recruitment plan and classify each component as occurring before or after candidate sourcing",
+      "instructional_pattern": "explanation",
+      "expected_learner_activity": "Engage with a structured overview of standard recruitment plan components, then sort each component into a pre-sourcing or post-sourcing category in preparation for the formative readiness check",
+      "formative_assessment_ids": [
+        "asmt-hrp-f-01"
+      ],
+      "estimated_minutes": 15,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Single lesson assumed sufficient for an understand-level objective within the 15-minute module allocation; researcher should verify whether additional instructional passes are needed",
+          "Authoritative component set must be researcher-defined before this lesson can be finalized; the component list used in instruction must match the list scored in asmt-hrp-f-01",
+          "The15-minute estimate is assumed to cover both the explanation and asmt-hrp-f-01; the intra-lesson time split between instruction and formative check is candidate only"
+        ]
+      }
+    },
+    {
+      "id": "les-hrp-02-we",
+      "module_id": "mod-hrp-02",
+      "objective_ids": [
+        "lo-hrp-02"
+      ],
+      "prerequisite_refs": [
+        "pre-hrp-01",
+        "pre-hrp-02"
+      ],
+      "lesson_goal": "Observe how a complete recruitment plan is assembled from a hiring scenario so that the synthesis process is visible before independent guided practice",
+      "instructional_pattern": "worked_example",
+      "expected_learner_activity": "Study an annotated sample recruitment plan derived from a provided hiring scenario, tracing how each component addresses the stated role, headcount, and timeline constraints and how the steps are sequenced without critical gaps",
+      "formative_assessment_ids": [],
+      "estimated_minutes": null,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Worked example lesson is a candidate; whether a separate worked-example lesson or an embedded demonstration within guided practice is more appropriate requires researcher decision",
+          "estimated_minutes is unresolved because the 30-minute mod-hrp-02 budget must also accommodate les-hrp-02-gp and asmt-hrp-s-01, and no verified task-completion time data exists for asmt-hrp-s-01",
+          "The sample hiring scenario used here must be researcher-authored and must be distinct from the summative scenario used in asmt-hrp-s-01",
+          "No formative assessment ID is available for lo-hrp-02; the only formative assessment in the allow-list (asmt-hrp-f-01) is scoped to lo-hrp-01"
+        ]
+      }
+    },
+    {
+      "id": "les-hrp-02-gp",
+      "module_id": "mod-hrp-02",
+      "objective_ids": [
+        "lo-hrp-02"
+      ],
+      "prerequisite_refs": [
+        "pre-hrp-01",
+        "pre-hrp-02"
+      ],
+      "lesson_goal": "Apply the recruitment plan structure to a guided hiring scenario to build procedural fluency before the independent summative plan-production task",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Draft a recruitment plan for a provided hiring scenario using a structured template with per-component prompts, then self-check that the draft addresses the role, headcount, and timeline before proceeding to the summative task",
+      "formative_assessment_ids": [],
+      "estimated_minutes": null,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Guided practice before the create-level summative is required by the instructional sequencing policy; the structured template is a design candidate only and requires researcher review",
+          "estimated_minutes is unresolved for the same reason as les-hrp-02-we; the total of les-hrp-02-we, les-hrp-02-gp, and asmt-hrp-s-01 must fit within 30 minutes and this has not been validated against actual completion times",
+          "No formative assessment ID is available for lo-hrp-02; embedded self-check against the template is not a scored assessment and does not substitute for a researcher-defined formative item"
+        ]
+      }
+    },
+    {
+      "id": "les-hrp-03",
+      "module_id": "mod-hrp-03",
+      "objective_ids": [
+        "lo-hrp-03"
+      ],
+      "prerequisite_refs": [
+        "pre-hrp-03"
+      ],
+      "lesson_goal": "Practice identifying and articulating dependency-based rationale for sequencing decisions within a recruitment plan before composing the evaluated justification in asmt-hrp-s-02",
+      "instructional_pattern": "scenario",
+      "expected_learner_activity": "Given a sample recruitment plan with labeled sequencing decisions, identify at least one step-to-step dependency for each decision and draft a brief rationale that remains internally consistent with the stated scenario constraints, then compare the draft against the evidence criteria before proceeding to asmt-hrp-s-02",
+      "formative_assessment_ids": [],
+      "estimated_minutes": null,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "estimated_minutes is unresolved because the 15-minute mod-hrp-03 budget must also accommodate asmt-hrp-s-02, and no verified task-completion time data exists for the justification task",
+          "No formative assessment ID is available for lo-hrp-03; the only formative assessment in the allow-list (asmt-hrp-f-01) is scoped to lo-hrp-01",
+          "The sample plan used in this scenario should be researcher-authored or an anonymized version distinct from the learner's own asmt-hrp-s-01 output to avoid conflating practice with summative evidence",
+          "Scenario pattern selected as a candidate to activate the evaluate-level reasoning required by lo-hrp-03; researcher should verify whether a reflection or guided_practice pattern would better fit the available time and delivery context"
+        ]
+      }
+    }
+  ],
+  "machine_observations": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-hrp-f-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-hrp-f-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-hrp-s-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-hrp-s-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-hrp-s-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-hrp-s-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    }
+  ],
+  "review_instructions": {
+    "overview": "Review the complete instructional-design proposal once before scoring. Evaluate machine validity separately from pedagogical quality.",
+    "scoring_scale": "Use 1-5 for every dimension: 1 poor, 3 mixed/acceptable, 5 strong.",
+    "rubric_dimensions": [
+      "objective_measurability",
+      "objective_assessment_alignment",
+      "evidence_validity",
+      "cognitive_alignment",
+      "prerequisite_quality",
+      "course_sequence_coherence",
+      "instruction_assessment_alignment",
+      "scope_balance",
+      "workload_time_realism",
+      "domain_appropriateness"
+    ],
+    "mandatory_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable? Answer YES, PARTIALLY, or NO with a short rationale.",
+    "blinding_rules": [
+      "Do not infer how the proposal was generated.",
+      "Do not assume a machine observation means the design is pedagogically poor.",
+      "Do not repair the design while scoring; record edit effort separately."
+    ],
+    "machine_observation_rule": "Machine observations are evidence to inspect, not pedagogical verdicts. Record any reviewer disagreement separately."
+  }
+}

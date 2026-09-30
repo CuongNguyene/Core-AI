@@ -1,0 +1,59 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-003",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 5,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 5,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4,
+      "scope_balance": 5,
+      "workload_time_realism": 4,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "Measurability is strong, though judging 'boundary maintenance' in the rubric relies on qualitative expert evaluation[cite: 23].",
+      "objective_assessment_alignment": "The tasks directly map to the objectives: categorization for 'understand' and analysis/explanation for 'apply'[cite: 23].",
+      "evidence_validity": "Marking up real clause language and citing specific text is the authentic gold standard for contract review[cite: 23].",
+      "cognitive_alignment": "The progression from understanding risk taxonomies to applying them to novel clauses is perfectly aligned[cite: 23].",
+      "prerequisite_quality": "Identifying 'reading comprehension of legal-register prose' as a prerequisite is brilliant and essential to avoid confounding assessment results with basic reading deficits[cite: 23].",
+      "course_sequence_coherence": "Module 1 establishes the conceptual taxonomy required to execute the procedural application in Module 2[cite: 23].",
+      "instruction_assessment_alignment": "The use of worked examples to model the risk-analysis/legal-advice boundary is a very effective instructional choice[cite: 23].",
+      "scope_balance": "The scope is tightly controlled and perfectly balanced. It focuses strictly on categorizing risks and mapping them to clause language, deliberately avoiding the trap of letting learners drift into out-of-scope legal advice.",
+      "workload_time_realism": "The time budget (25 minutes for taxonomy understanding and 35 minutes for application and assessment) is mostly realistic, provided the sample commercial clauses are kept appropriately brief and focused.",
+      "domain_appropriateness": "The design excellently reflects legal compliance training by enforcing the boundary between risk identification and unauthorized legal advice, using authentic clause analysis and reasoning from evidence."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "none",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "The design uses highly authentic legal review tasks and brilliantly scaffolds the critical professional boundary of identifying risk without dispensing unauthorized legal advice."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-003.json",
+    "source_submission_sha256": "6176704325579cdaaaa86a371eec04b4fbc6916349628b04529b5621cbbf5afe",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_03.json",
+    "completion_submission_sha256": "dc264a13cf4be77cabfa7bb7d66aa1607483d44cf50baf46f1f930bd8bf82e98",
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

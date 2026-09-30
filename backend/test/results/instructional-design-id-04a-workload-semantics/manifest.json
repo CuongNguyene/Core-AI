@@ -1,0 +1,8 @@
+{
+  "experiment": "ID-04A",
+  "external_model_calls": 0,
+  "intervention": "workload_time_budget_semantics",
+  "policy_version": "workload_budget_policy@0.1",
+  "scope": "deterministic implementation + tests",
+  "source_milestone": "ID-03C.3"
+}

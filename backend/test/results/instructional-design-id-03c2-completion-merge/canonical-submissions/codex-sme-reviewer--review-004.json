@@ -1,0 +1,99 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-004",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 4,
+      "evidence_validity": 4,
+      "cognitive_alignment": 4,
+      "prerequisite_quality": 3,
+      "course_sequence_coherence": 4,
+      "instruction_assessment_alignment": 3,
+      "scope_balance": 3,
+      "workload_time_realism": 2,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "The objectives specify observable outputs: naming at least four components, producing a plan that addresses role/headcount/timeline, and giving dependency-based sequencing rationales. Criteria such as no critical gaps and required components need researcher-defined standards.",
+      "objective_assessment_alignment": "The assessments map to the three objectives: component recall/classification, plan production, and sequencing justification. The second and third assessments depend on a feasible ordered administration that is not yet resolved.",
+      "evidence_validity": "A written recruitment plan and sequencing rationale can validly support judgement of the target performance. Validity depends on a well-designed hiring scenario, component list, and rubric standards for plan completeness.",
+      "cognitive_alignment": "Understand, create, and evaluate labels are appropriate for component recognition, plan creation, and sequencing justification. Worked example, guided practice, and scenario activities support the intended levels.",
+      "prerequisite_quality": "Organizational hiring context and functional writing are relevant candidate prerequisites. Step-dependency reasoning is relevant but overlaps strongly with the sequencing-justification objective and should be taught or framed as minimal general reasoning.",
+      "course_sequence_coherence": "The overall progression from component knowledge to plan creation to sequencing justification is sensible and dependency-aware.",
+      "instruction_assessment_alignment": "Instruction prepares learners through overview, worked example, guided practice, and scenario practice, but there is no scored formative check for plan creation or justification and several timing slots are unresolved.",
+      "scope_balance": "The content is aligned to recruitment planning, but the design has noticeable under-teaching risk because learners must move from component recall to plan creation and sequencing justification with unresolved lesson timing and limited formative support.",
+      "workload_time_realism": "The workload is clearly unrealistic as specified because several lesson durations are null and the 60-minute session must cover instruction plus a create-level plan and an evaluate-level justification task.",
+      "domain_appropriateness": "The approach is strongly domain-appropriate for HR because it uses a department hiring scenario, plan synthesis, constraint application, sequencing decisions, and justification of workplace planning choices."
+    },
+    "machine_validity_observations": [
+      {
+        "code": "id_reference_drift",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "assessments[*].required_capability_refs",
+        "field": "required_capability_refs",
+        "message": "Assessments list textual capability names such as recruitment plan synthesis and sequencing rationale articulation rather than resolvable supplied IDs; the packet reports these dependencies as not covered."
+      },
+      {
+        "code": "schema_or_shape",
+        "severity": "warning",
+        "entity_type": null,
+        "entity_id": "les-hrp-02-we.estimated_minutes",
+        "field": "estimated_minutes",
+        "message": "Lesson estimated_minutes is null even though other lessons use numeric estimates and the module must fit a 30-minute allocation."
+      },
+      {
+        "code": "schema_or_shape",
+        "severity": "warning",
+        "entity_type": null,
+        "entity_id": "les-hrp-02-gp.estimated_minutes",
+        "field": "estimated_minutes",
+        "message": "Lesson estimated_minutes is null, leaving the worked-example/practice/summative time split unresolved."
+      },
+      {
+        "code": "schema_or_shape",
+        "severity": "warning",
+        "entity_type": null,
+        "entity_id": "les-hrp-03.estimated_minutes",
+        "field": "estimated_minutes",
+        "message": "Lesson estimated_minutes is null while the module also needs to accommodate the sequencing-justification assessment."
+      },
+      {
+        "code": "other",
+        "severity": "info",
+        "entity_type": null,
+        "entity_id": "course_outline.sequencing_rationale",
+        "field": "sequencing_rationale",
+        "message": "The rationale contains a minor spacing/text artifact: asmt-hrp-s-01or, which does not affect pedagogy but should be cleaned for machine-readable presentation."
+      }
+    ],
+    "prerequisites_acceptable": false,
+    "edit_effort": "major",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "Ignoring traceability and schema issues, the design is pedagogically reasonable in concept: learners identify recruitment-plan components, create a scenario-based plan, and justify sequencing decisions. It needs substantial timing and scaffolding refinement."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-004.json",
+    "source_submission_sha256": "a73b49a8a7978fdc83088e6b8a5cfae7ac8a5125141102646764cb3a1b317887",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_04.json",
+    "completion_submission_sha256": "d0f53057bca734ac384ea9595bd157fa40587a128cd69b6c99b721703e3175af",
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

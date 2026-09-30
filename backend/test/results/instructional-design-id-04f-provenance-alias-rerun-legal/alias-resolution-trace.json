@@ -1,0 +1,53 @@
+{
+  "fixture": "legal_contract_review_basic",
+  "declared_identities": [
+    {
+      "dependency_ref": "dependency_candidate:contract_clause_structure",
+      "canonical_name": "contract clause structure",
+      "aliases": [
+        "commercial contract clause structure"
+      ]
+    }
+  ],
+  "dependency_candidates": [
+    {
+      "capability": "foundational legal terminology and contract structure",
+      "reason": "Both objectives assume the learner can parse contract clauses and recognize risk categories, which presupposes familiarity with basic legal terminology (e.g., indemnification, liability, termination) and the structure of commercial agreements. This foundational knowledge was not explicitly stated in the brief or objectives.",
+      "required_for_refs": [
+        "lo-legal_contract_review_basic-01",
+        "lo-legal_contract_review_basic-02"
+      ]
+    },
+    {
+      "capability": "written communication at a professional level",
+      "reason": "lo-legal_contract_review_basic-02 requires the learner to explain reasoning and frame output appropriately, which assumes baseline written communication skill. No prior evidence of writing ability was supplied in the learner state.",
+      "required_for_refs": [
+        "lo-legal_contract_review_basic-02"
+      ]
+    }
+  ],
+  "resolved_prerequisites": [
+    {
+      "id": "prereq-legal_terminology_contract_structure",
+      "capability": "foundational legal terminology and contract structure",
+      "source_dependency_refs": [
+        "foundational legal terminology and contract structure"
+      ],
+      "status": "candidate",
+      "basis": "model_proposed",
+      "disposition": "entry_prerequisite"
+    },
+    {
+      "id": "prereq-written_communication_professional",
+      "capability": "written communication at a professional level",
+      "source_dependency_refs": [
+        "written communication at a professional level"
+      ],
+      "status": "candidate",
+      "basis": "model_proposed",
+      "disposition": "in_course_support"
+    }
+  ],
+  "alias_resolution": "declared_alias_only",
+  "unknown_paraphrases_fail_closed": true
+}

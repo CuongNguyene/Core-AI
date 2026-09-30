@@ -1,0 +1,125 @@
+{
+  "review_id": "review-001",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-13T09:56:24+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_observed",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "lesson-mm-002.formative_assessment_ids",
+        "field": "formative_assessment_ids",
+        "description": "Lesson references formative-mm-001, but no assessment or formative assessment entity with that ID is present in the packet.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "lesson-mm-004.formative_assessment_ids",
+        "field": "formative_assessment_ids",
+        "description": "Lesson references formative-mm-002, but no assessment or formative assessment entity with that ID is present in the packet.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "lesson-mm-006.formative_assessment_ids",
+        "field": "formative_assessment_ids",
+        "description": "Lesson references formative-mm-003, but no assessment or formative assessment entity with that ID is present in the packet.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "course_outline.estimated_minutes",
+        "field": "estimated_minutes",
+        "description": "Course outline estimates 60 minutes while module estimates sum to 55 minutes; this may be intended buffer time but is not explained.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "Objective, assessment, prerequisite, module, and lesson references otherwise appear internally consistent. These observations are not used to lower pedagogical scores."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring traceability concerns, this is a pedagogically reasonable design: it follows the target workflow from dashboard signal interpretation to cause diagnosis to response recommendation."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The objectives use observable performances such as interpret, differentiate, and propose, with criteria for signal identification, severity/trend description, causal reasoning, and justified action. Some criteria need sharper thresholds for what counts as sufficient severity, plausibility, and trade-off analysis."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The summative scenario directly asks learners to analyze a monitoring dashboard, identify likely causes, and recommend a response, matching all three objectives."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "The required evidence would support defensible judgement across interpretation, diagnosis, and response. Validity would improve with concrete dashboard fixtures, expected signal patterns, and clearer scoring anchors."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "Analyze and evaluate levels fit the desired performances, and the lesson patterns move from demonstration/explanation to practice. The response objective is appropriately evaluative but compressed."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "The prerequisites are relevant and marked as candidates, but drift concepts, training-serving skew, system failures, and maintenance strategies may be too central to the course to leave entirely as entry prerequisites."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The sequence is strong: learners first interpret dashboard signals, then use those signals for diagnosis, then select response actions."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Demonstration, guided practice, worked examples, and scenarios generally prepare learners for the summative task. The alignment is weakened by missing concrete formative assessment definitions."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "There is moderate under-teaching risk because 60 minutes is tight for multi-metric dashboard interpretation, several degradation causes, and action trade-offs."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "Most content supports the desired workflow. The breadth of failure modes and response actions is slightly expansive for a short course but not irrelevant."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Moderate editing is needed: define formative checks, sharpen scoring levels, clarify timing, and revise prerequisite boundaries, but the core design does not need a rewrite."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-mm-001",
+        "prereq-mm-002"
+      ],
+      "rejected_refs": [
+        "prereq-mm-003",
+        "prereq-mm-004",
+        "prereq-mm-005"
+      ],
+      "notes": "Dashboard/chart literacy and basic metric familiarity are acceptable entry assumptions. Drift concepts, training-serving skew/system failures, and maintenance strategies are relevant but should be revised as teachable enabling content or much more narrowly qualified candidate prerequisites."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 1,
+      "assessments_changed": 1,
+      "prerequisites_changed": 3,
+      "modules_changed": 1,
+      "lessons_changed": 3,
+      "notes": "Estimated edits include tightening one response objective, adding or resolving three formative checks, revising three prerequisites, explaining the time buffer, and adding more explicit practice support for diagnosis and response selection."
+    },
+    "overall_notes": "A coherent and usable draft with its main weaknesses in compressed timing, broad prerequisite assumptions, and underspecified formative evidence."
+  }
+}

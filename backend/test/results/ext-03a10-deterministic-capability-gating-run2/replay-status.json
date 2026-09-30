@@ -1,0 +1,10 @@
+{
+  "formulation-c": {
+    "status": "NOT_REPLAYABLE",
+    "reason": "historical C artifact has no supporting_statement_ids"
+  },
+  "gemini-3.6-flash": {
+    "status": "NOT_REPLAYABLE",
+    "reason": "Stage-1 factual statements are not persisted in historical artifacts"
+  }
+}

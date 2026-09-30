@@ -1,0 +1,399 @@
+{
+  "fixture_id": "python_data_processing",
+  "domain": "it_ai",
+  "status": "fail",
+  "findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "sum-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "sum-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "sum-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    }
+  ],
+  "quality_gate_findings": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "form-ppd-02",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "sum-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "sum-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "sum-ppd-01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+      "category": "QUALITY_GATE"
+    }
+  ],
+  "failure_categories": [
+    "QUALITY_GATE"
+  ],
+  "metadata": {
+    "fixture_id": "python_data_processing",
+    "domain": "it_ai",
+    "industry_family": "technology",
+    "learning_type": "procedural_technical_skill",
+    "difficulty": "medium",
+    "description": "A learner transforms and validates tabular data with Python."
+  },
+  "stage_completion": {
+    "status": "completed",
+    "model_audit_count": 5,
+    "snapshot_present": true
+  },
+  "dependency_normalization": {
+    "canonical_count": 11,
+    "canonical_dependencies": [
+      {
+        "capability_ref": "basic python scripting",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "form-ppd-01",
+              "original_value": "basic Python scripting"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "form-ppd-01",
+              "original_value": "basic Python scripting"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "tabular data library familiarity",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "form-ppd-01",
+              "original_value": "tabular data library familiarity"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "form-ppd-01",
+              "original_value": "tabular data library familiarity"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "basic python scripting",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "form-ppd-01",
+              "original_value": "basic Python scripting"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      },
+      {
+        "capability_ref": "invalid value identification and classification",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "form-ppd-02",
+              "original_value": "invalid value identification and classification"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "form-ppd-02",
+              "original_value": "invalid value identification and classification"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-02"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "tabular data transformation using a standard python library",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "form-ppd-02",
+              "original_value": "tabular data transformation using a standard Python library"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "form-ppd-02",
+              "original_value": "tabular data transformation using a standard Python library"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-02"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "tabular data library familiarity",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "form-ppd-02",
+              "original_value": "tabular data library familiarity"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-02"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      },
+      {
+        "capability_ref": "invalid value identification and classification",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "sum-ppd-01",
+              "original_value": "invalid value identification and classification"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "sum-ppd-01",
+              "original_value": "invalid value identification and classification"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01",
+          "obj-ppd-02",
+          "obj-ppd-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "tabular data transformation using a standard python library",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "sum-ppd-01",
+              "original_value": "tabular data transformation using a standard Python library"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "sum-ppd-01",
+              "original_value": "tabular data transformation using a standard Python library"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01",
+          "obj-ppd-02",
+          "obj-ppd-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "data-driven written justification",
+        "dependency_role": "required_capability",
+        "provenance": {
+          "sources": [
+            {
+              "type": "legacy_compatibility",
+              "source_ref": "sum-ppd-01",
+              "original_value": "data-driven written justification"
+            },
+            {
+              "type": "typed_required_capability",
+              "source_ref": "sum-ppd-01",
+              "original_value": "data-driven written justification"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01",
+          "obj-ppd-02",
+          "obj-ppd-03"
+        ],
+        "confidence": null,
+        "status": "confirmed"
+      },
+      {
+        "capability_ref": "basic python scripting",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "sum-ppd-01",
+              "original_value": "basic Python scripting"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01",
+          "obj-ppd-02",
+          "obj-ppd-03"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      },
+      {
+        "capability_ref": "tabular data library familiarity",
+        "dependency_role": "supporting_dependency",
+        "provenance": {
+          "sources": [
+            {
+              "type": "dependency_candidate",
+              "source_ref": "sum-ppd-01",
+              "original_value": "tabular data library familiarity"
+            }
+          ]
+        },
+        "objective_ids": [
+          "obj-ppd-01",
+          "obj-ppd-02",
+          "obj-ppd-03"
+        ],
+        "confidence": null,
+        "status": "candidate"
+      }
+    ]
+  }
+}

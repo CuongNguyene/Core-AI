@@ -1,0 +1,83 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-005",
+    "rubric_scores": {
+      "objective_measurability": 4,
+      "objective_assessment_alignment": 4,
+      "evidence_validity": 4,
+      "cognitive_alignment": 3,
+      "prerequisite_quality": 2,
+      "course_sequence_coherence": 4,
+      "instruction_assessment_alignment": 3,
+      "scope_balance": 4,
+      "workload_time_realism": 4,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "The objectives are observable: identify at least four drawing element categories, propose at least three sequenced activities, and state at least two safety considerations traceable to drawings or method steps. Thresholds are clear but need SME validation for adequacy.",
+      "objective_assessment_alignment": "The formative assessment targets drawing interpretation and the summative integrates interpretation, method proposal, and safety considerations, matching the objectives closely.",
+      "evidence_validity": "Identified elements, traceable activity sequence, and safety considerations are valid evidence for the stated performance. Validity depends heavily on the drawing set, acceptable method sequence, and safety-key calibration.",
+      "cognitive_alignment": "Drawing interpretation is labeled understand and method/safety work apply, which is mostly reasonable. However, preparing a sequenced method proposal and selecting safety considerations may require higher analysis/evaluation than the labels suggest.",
+      "prerequisite_quality": "The single prerequisite is relevant but problematic as written: familiarity with drawing conventions and symbols is very close to cdmb-obj-01, so it risks assuming the target skill rather than identifying minimal readiness.",
+      "course_sequence_coherence": "The progression is coherent: interpret drawing elements, derive and sequence construction activities, then add safety considerations tied to the method and drawings.",
+      "instruction_assessment_alignment": "Lessons include explanation, guided practice, worked examples, independent practice, and scenario integration. Alignment is weakened by no formative checkpoints for method sequencing or safety, plus unspecified examples and assessment timing.",
+      "scope_balance": "The design is mostly well balanced: drawing interpretation, method sequencing, and safety considerations are all required by the final integrated task. The main caution is that the drawing fixture must remain simple enough for the 60-minute scope.",
+      "workload_time_realism": "The workload is mostly realistic if the construction drawing set is deliberately basic and tightly bounded. The integrated task is fast-paced, but feasible with a simple fixture and focused safety expectations.",
+      "domain_appropriateness": "The approach is strongly suited to construction and engineering because learners interpret drawings, derive a work sequence from those drawings, and connect method steps to safety considerations in an applied task context."
+    },
+    "machine_validity_observations": [
+      {
+        "code": "id_reference_drift",
+        "severity": "error",
+        "entity_type": null,
+        "entity_id": "assessments[*].required_capability_refs",
+        "field": "required_capability_refs",
+        "message": "Assessments use textual capability names such as construction drawing element identification and sequential method planning from drawing content rather than resolvable supplied IDs; machine observations mark these dependencies as not covered."
+      },
+      {
+        "code": "other",
+        "severity": "info",
+        "entity_type": null,
+        "entity_id": "course_outline.sequencing_rationale",
+        "field": "sequencing_rationale",
+        "message": "The rationale contains minor spacing/text artifacts such as cdmb-obj-03in and within the60-minute estimate."
+      },
+      {
+        "code": "other",
+        "severity": "warning",
+        "entity_type": null,
+        "entity_id": "course_outline / lessons",
+        "field": "estimated_minutes",
+        "message": "The outline notes that assessment administration time is not separately budgeted within the 60-minute estimate, creating a planning risk for the integrated performance task."
+      }
+    ],
+    "prerequisites_acceptable": false,
+    "edit_effort": "major",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "Ignoring traceability issues, the design is pedagogically reasonable as an introductory plan: it moves from drawing-element interpretation to method sequencing and then safety considerations within an integrated proposal. It requires stronger SME calibration before use."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer1/review-005.json",
+    "source_submission_sha256": "865f30628675722ee8a0488a208bf10108c735ae6d2b8d9598b73d96b00144c4",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_05.json",
+    "completion_submission_sha256": "4c684b465203cb49045dd577431d2430893be35042f7a055c6bfd48f5d2b647b",
+    "completed_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

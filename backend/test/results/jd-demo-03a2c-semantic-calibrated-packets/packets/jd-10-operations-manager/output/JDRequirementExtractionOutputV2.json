@@ -1,0 +1,706 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "The Operations Manager is responsible for ensuring consistent and efficient execution of day-to-day business operations across multiple teams.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Role Summary",
+        "start_offset": 102,
+        "end_offset": 244
+      },
+      "source_excerpt": "The Operations Manager is responsible for ensuring consistent and efficient execution of day-to-day business operations across multiple teams.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "The role focuses on operational planning, process performance, service quality, issue resolution, and continuous improvement.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Role Summary",
+        "start_offset": 245,
+        "end_offset": 370
+      },
+      "source_excerpt": "The role focuses on operational planning, process performance, service quality, issue resolution, and continuous improvement.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Plan and coordinate daily operational activities.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 388,
+        "end_offset": 437
+      },
+      "source_excerpt": "Plan and coordinate daily operational activities.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "Monitor operational KPIs, service levels, productivity, and quality.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 438,
+        "end_offset": 506
+      },
+      "source_excerpt": "Monitor operational KPIs, service levels, productivity, and quality.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Identify workflow bottlenecks and process inefficiencies.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 507,
+        "end_offset": 564
+      },
+      "source_excerpt": "Identify workflow bottlenecks and process inefficiencies.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-6",
+      "statement": "Design and implement process improvements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 565,
+        "end_offset": 607
+      },
+      "source_excerpt": "Design and implement process improvements.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-7",
+      "statement": "Develop and maintain standard operating procedures.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 608,
+        "end_offset": 659
+      },
+      "source_excerpt": "Develop and maintain standard operating procedures.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-8",
+      "statement": "Coordinate cross-functional operational activities with Sales, Finance, Customer Service, Logistics, and Technology teams.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 660,
+        "end_offset": 782
+      },
+      "source_excerpt": "Coordinate cross-functional operational activities with Sales, Finance, Customer Service, Logistics, and Technology teams.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-9",
+      "statement": "Investigate recurring operational issues and implement corrective actions.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 783,
+        "end_offset": 857
+      },
+      "source_excerpt": "Investigate recurring operational issues and implement corrective actions.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-10",
+      "statement": "Prepare operational performance reports for management.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 858,
+        "end_offset": 913
+      },
+      "source_excerpt": "Prepare operational performance reports for management.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-11",
+      "statement": "Manage operational risks and escalation processes.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 914,
+        "end_offset": 964
+      },
+      "source_excerpt": "Manage operational risks and escalation processes.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-12",
+      "statement": "Lead and develop operations team members.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 965,
+        "end_offset": 1006
+      },
+      "source_excerpt": "Lead and develop operations team members.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-13",
+      "statement": "Support capacity planning and resource allocation.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 1007,
+        "end_offset": 1057
+      },
+      "source_excerpt": "Support capacity planning and resource allocation.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-14",
+      "statement": "Coordinate implementation of new operational processes and systems.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 1058,
+        "end_offset": 1125
+      },
+      "source_excerpt": "Coordinate implementation of new operational processes and systems.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-15",
+      "statement": "Ensure teams follow company policies and operating standards.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Responsibilities",
+        "start_offset": 1126,
+        "end_offset": 1187
+      },
+      "source_excerpt": "Ensure teams follow company policies and operating standards.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-16",
+      "statement": "5+ years of operations experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Required Qualifications",
+        "start_offset": 1212,
+        "end_offset": 1246
+      },
+      "source_excerpt": "5+ years of operations experience.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-17",
+      "statement": "At least 2 years in an operations management or supervisory role.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Required Qualifications",
+        "start_offset": 1247,
+        "end_offset": 1312
+      },
+      "source_excerpt": "At least 2 years in an operations management or supervisory role.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-18",
+      "statement": "Experience managing operational KPIs and service-level performance.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Required Qualifications",
+        "start_offset": 1313,
+        "end_offset": 1380
+      },
+      "source_excerpt": "Experience managing operational KPIs and service-level performance.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-19",
+      "statement": "Demonstrated experience improving business processes.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Required Qualifications",
+        "start_offset": 1381,
+        "end_offset": 1434
+      },
+      "source_excerpt": "Demonstrated experience improving business processes.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-20",
+      "statement": "Strong problem-solving and stakeholder coordination skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Required Qualifications",
+        "start_offset": 1435,
+        "end_offset": 1494
+      },
+      "source_excerpt": "Strong problem-solving and stakeholder coordination skills.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-21",
+      "statement": "Experience managing or leading operational teams.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Required Qualifications",
+        "start_offset": 1495,
+        "end_offset": 1544
+      },
+      "source_excerpt": "Experience managing or leading operational teams.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-22",
+      "statement": "Strong reporting and data interpretation skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Required Qualifications",
+        "start_offset": 1545,
+        "end_offset": 1593
+      },
+      "source_excerpt": "Strong reporting and data interpretation skills.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-23",
+      "statement": "Experience with ERP, CRM, workflow, or operations management systems.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Preferred Qualifications",
+        "start_offset": 1619,
+        "end_offset": 1688
+      },
+      "source_excerpt": "Experience with ERP, CRM, workflow, or operations management systems.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-24",
+      "statement": "Lean, Six Sigma, or process improvement certification is an advantage.",
+      "criterion_dimension": "credential",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Preferred Qualifications",
+        "start_offset": 1689,
+        "end_offset": 1759
+      },
+      "source_excerpt": "Lean, Six Sigma, or process improvement certification is an advantage.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-25",
+      "statement": "Experience in retail, logistics, technology, or service operations is preferred.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Preferred Qualifications",
+        "start_offset": 1760,
+        "end_offset": 1840
+      },
+      "source_excerpt": "Experience in retail, logistics, technology, or service operations is preferred.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-26",
+      "statement": "Cross-functional coordination with Logistics does not automatically imply logistics management capability.",
+      "criterion_dimension": "qualification",
+      "modality": "unspecified",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Important Scope Clarification",
+        "start_offset": 1871,
+        "end_offset": 1977
+      },
+      "source_excerpt": "Cross-functional coordination with Logistics does not automatically imply logistics management capability.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-27",
+      "statement": "Use of ERP or CRM systems should not be interpreted as software development or platform engineering experience.",
+      "criterion_dimension": "qualification",
+      "modality": "unspecified",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b0c0b8ab-74f4-4924-9935-2e5d6545ecde",
+        "section": "Important Scope Clarification",
+        "start_offset": 1978,
+        "end_offset": 2089
+      },
+      "source_excerpt": "Use of ERP or CRM systems should not be interpreted as software development or platform engineering experience.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    }
+  ]
+}

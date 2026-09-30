@@ -1,0 +1,443 @@
+[
+  {
+    "edit_effort": {
+      "moderate": 2
+    },
+    "fixture": "accounting_financial_reporting_basic",
+    "issues": [],
+    "prerequisites_acceptable": {
+      "false": 1,
+      "true": 1
+    },
+    "scores": {
+      "cognitive_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "course_sequence_coherence": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "domain_appropriateness": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "evidence_validity": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "instruction_assessment_alignment": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "objective_assessment_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "objective_measurability": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "prerequisite_quality": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          3,
+          4
+        ]
+      },
+      "scope_balance": {
+        "mean": 2.5,
+        "reviewer_scores": [
+          2,
+          3
+        ]
+      },
+      "workload_time_realism": {
+        "mean": 1,
+        "reviewer_scores": [
+          1,
+          1
+        ]
+      }
+    },
+    "special_question": {
+      "PARTIALLY": 1,
+      "YES": 1
+    },
+    "strengths": []
+  },
+  {
+    "edit_effort": {
+      "major": 1,
+      "minor": 1
+    },
+    "fixture": "construction_drawing_and_method_basic",
+    "issues": [],
+    "prerequisites_acceptable": {
+      "false": 1,
+      "true": 1
+    },
+    "scores": {
+      "cognitive_alignment": {
+        "mean": 4,
+        "reviewer_scores": [
+          3,
+          5
+        ]
+      },
+      "course_sequence_coherence": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "domain_appropriateness": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "evidence_validity": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "instruction_assessment_alignment": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          3,
+          4
+        ]
+      },
+      "objective_assessment_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "objective_measurability": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "prerequisite_quality": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          2,
+          5
+        ]
+      },
+      "scope_balance": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "workload_time_realism": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          4,
+          3
+        ]
+      }
+    },
+    "special_question": {
+      "YES": 2
+    },
+    "strengths": []
+  },
+  {
+    "edit_effort": {
+      "major": 1,
+      "moderate": 1
+    },
+    "fixture": "hr_recruitment_planning_basic",
+    "issues": [],
+    "prerequisites_acceptable": {
+      "false": 1,
+      "true": 1
+    },
+    "scores": {
+      "cognitive_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "course_sequence_coherence": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "domain_appropriateness": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "evidence_validity": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "instruction_assessment_alignment": {
+        "mean": 3,
+        "reviewer_scores": [
+          3,
+          3
+        ]
+      },
+      "objective_assessment_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "objective_measurability": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "prerequisite_quality": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          3,
+          4
+        ]
+      },
+      "scope_balance": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          3,
+          4
+        ]
+      },
+      "workload_time_realism": {
+        "mean": 2,
+        "reviewer_scores": [
+          2,
+          2
+        ]
+      }
+    },
+    "special_question": {
+      "PARTIALLY": 1,
+      "YES": 1
+    },
+    "strengths": []
+  },
+  {
+    "edit_effort": {
+      "moderate": 1,
+      "none": 1
+    },
+    "fixture": "legal_contract_review_basic",
+    "issues": [],
+    "prerequisites_acceptable": {
+      "false": 1,
+      "true": 1
+    },
+    "scores": {
+      "cognitive_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "course_sequence_coherence": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "domain_appropriateness": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "evidence_validity": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "instruction_assessment_alignment": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "objective_assessment_alignment": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "objective_measurability": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "prerequisite_quality": {
+        "mean": 4,
+        "reviewer_scores": [
+          3,
+          5
+        ]
+      },
+      "scope_balance": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "workload_time_realism": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      }
+    },
+    "special_question": {
+      "YES": 2
+    },
+    "strengths": []
+  },
+  {
+    "edit_effort": {
+      "minor": 1,
+      "moderate": 1
+    },
+    "fixture": "python_data_processing",
+    "issues": [],
+    "prerequisites_acceptable": {
+      "false": 1,
+      "true": 1
+    },
+    "scores": {
+      "cognitive_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "course_sequence_coherence": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "domain_appropriateness": {
+        "mean": 5,
+        "reviewer_scores": [
+          5,
+          5
+        ]
+      },
+      "evidence_validity": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "instruction_assessment_alignment": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          3,
+          4
+        ]
+      },
+      "objective_assessment_alignment": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "objective_measurability": {
+        "mean": 4,
+        "reviewer_scores": [
+          4,
+          4
+        ]
+      },
+      "prerequisite_quality": {
+        "mean": 3.5,
+        "reviewer_scores": [
+          3,
+          4
+        ]
+      },
+      "scope_balance": {
+        "mean": 4.5,
+        "reviewer_scores": [
+          4,
+          5
+        ]
+      },
+      "workload_time_realism": {
+        "mean": 3,
+        "reviewer_scores": [
+          3,
+          3
+        ]
+      }
+    },
+    "special_question": {
+      "YES": 2
+    },
+    "strengths": []
+  }
+]

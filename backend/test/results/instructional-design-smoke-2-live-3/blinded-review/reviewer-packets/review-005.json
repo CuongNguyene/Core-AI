@@ -1,0 +1,529 @@
+{
+  "review_id": "review-005",
+  "artifact": {
+    "brief": {
+      "id": "brief-technical-communication",
+      "capability": {
+        "id": null,
+        "name": "technical communication",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:technical-communication:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a complex technical issue and a non-specialist audience, structure an explanation and adapt terminology to the audience."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-tc-01",
+        "brief_id": "brief-technical-communication",
+        "performance": "Identify the key characteristics that distinguish a non-specialist audience from a specialist audience in a given communication scenario.",
+        "cognitive_process": "understand",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "given a described communication scenario"
+        ],
+        "success_criteria": [
+          "Learner names at least two distinguishing audience characteristics relevant to the scenario.",
+          "Learner correctly categorises the audience as specialist or non-specialist."
+        ],
+        "prerequisite_refs": [
+          "prereq-basic-communication"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Derived from the desired performance; not sourced from a validated framework."
+          ]
+        }
+      },
+      {
+        "id": "obj-tc-02",
+        "brief_id": "brief-technical-communication",
+        "performance": "Structure a technical explanation for a non-specialist audience using a clear logical sequence.",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "given a complex technical issue description",
+          "without specialist audience assumed"
+        ],
+        "success_criteria": [
+          "Explanation contains an identifiable opening context, body, and closing summary.",
+          "Logical dependencies between ideas are sequenced correctly.",
+          "No unexplained jargon is present in the structured output."
+        ],
+        "prerequisite_refs": [
+          "prereq-basic-communication",
+          "prereq-information-organisation"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Directly maps to the stated desired performance; structuring and adapting are treated as separable sub-objectives."
+          ]
+        }
+      },
+      {
+        "id": "obj-tc-03",
+        "brief_id": "brief-technical-communication",
+        "performance": "Adapt technical terminology to suit a non-specialist audience by selecting appropriate analogies, plain-language substitutions, or definitions.",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "given a set of technical terms extracted from a complex issue description",
+          "for a specified non-specialist audience"
+        ],
+        "success_criteria": [
+          "Each identified technical term is either replaced, defined, or supported by an analogy.",
+          "Substitutions preserve the essential meaning of the original term.",
+          "Audience-appropriateness of substitutions is justified by the learner."
+        ],
+        "prerequisite_refs": [
+          "prereq-basic-communication"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Terminology adaptation is treated as a distinct procedural skill separable from structural organisation."
+          ]
+        }
+      },
+      {
+        "id": "obj-tc-04",
+        "brief_id": "brief-technical-communication",
+        "performance": "Evaluate a draft technical explanation for a non-specialist audience and identify at least two specific improvements.",
+        "cognitive_process": "evaluate",
+        "knowledge_dimension": "metacognitive",
+        "conditions": [
+          "given a provided draft explanation of a technical issue"
+        ],
+        "success_criteria": [
+          "Learner identifies at least two distinct weaknesses in audience alignment or structure.",
+          "Each identified weakness is linked to a specific criterion (e.g., unexplained jargon, illogical sequence).",
+          "Suggested improvements are concrete and actionable."
+        ],
+        "prerequisite_refs": [
+          "prereq-basic-communication",
+          "prereq-information-organisation"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Evaluative objective included to support transfer and self-correction; model-proposed as an instructional-design convention."
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-formative-01",
+        "objective_ids": [
+          "obj-tc-01"
+        ],
+        "capability_claim": "Learner can distinguish a non-specialist from a specialist audience in a described scenario.",
+        "required_evidence": [
+          {
+            "id": "ev-f01-01",
+            "criterion": "Learner identifies and labels audience type correctly.",
+            "rationale": "Direct mapping to obj-tc-01 success criterion."
+          }
+        ],
+        "task": {
+          "task_type": "short_response",
+          "description": "Given a brief scenario description, the learner identifies the audience type and lists two characteristics that justify the classification.",
+          "conditions": [
+            "scenario is provided by instructor",
+            "no reference materials permitted"
+          ]
+        },
+        "cognitive_process": "understand",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-f01-01",
+              "criterion": "Correct audience classification",
+              "performance_levels": [
+                "correct with justification",
+                "correct without justification",
+                "incorrect"
+              ]
+            },
+            {
+              "id": "rd-f01-02",
+              "criterion": "Relevance of listed characteristics",
+              "performance_levels": [
+                "two relevant characteristics",
+                "one relevant characteristic",
+                "none relevant"
+              ]
+            }
+          ],
+          "mastery_rule": "model_proposed_candidate: both dimensions at highest level; threshold subject to researcher review"
+        },
+        "is_summative": false,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Formative check; no question bank generated; task description is a structural placeholder only."
+          ]
+        }
+      },
+      {
+        "id": "assess-formative-02",
+        "objective_ids": [
+          "obj-tc-03"
+        ],
+        "capability_claim": "Learner can substitute or define technical terms appropriately for a non-specialist audience.",
+        "required_evidence": [
+          {
+            "id": "ev-f02-01",
+            "criterion": "Each technical term is addressed with a plain-language substitute, definition, or analogy.",
+            "rationale": "Direct mapping to obj-tc-03 success criteria."
+          },
+          {
+            "id": "ev-f02-02",
+            "criterion": "Learner provides a brief justification linking the substitution to audience needs.",
+            "rationale": "Supports metacognitive awareness of audience adaptation."
+          }
+        ],
+        "task": {
+          "task_type": "terminology_adaptation_exercise",
+          "description": "Given a list of technical terms drawn from a provided issue description, the learner produces a plain-language version of each and briefly justifies the choice.",
+          "conditions": [
+            "term list provided by instructor",
+            "audience profile provided",
+            "no dictionary use unless permitted by instructor"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-f02-01",
+              "criterion": "Meaning preservation",
+              "performance_levels": [
+                "meaning fully preserved",
+                "meaning partially preserved",
+                "meaning lost"
+              ]
+            },
+            {
+              "id": "rd-f02-02",
+              "criterion": "Audience-appropriateness of substitution",
+              "performance_levels": [
+                "clearly appropriate",
+                "marginally appropriate",
+                "not appropriate"
+              ]
+            }
+          ],
+          "mastery_rule": "model_proposed_candidate: all terms at 'clearly appropriate' with meaning preserved; threshold subject to researcher review"
+        },
+        "is_summative": false,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Formative only; no production question bank generated."
+          ]
+        }
+      },
+      {
+        "id": "assess-summative-01",
+        "objective_ids": [
+          "obj-tc-01",
+          "obj-tc-02",
+          "obj-tc-03",
+          "obj-tc-04"
+        ],
+        "capability_claim": "Learner can produce a structured, audience-adapted explanation of a complex technical issue for a non-specialist audience and evaluate their own draft.",
+        "required_evidence": [
+          {
+            "id": "ev-s01-01",
+            "criterion": "Written explanation is logically structured with a clear opening, body, and closing.",
+            "rationale": "Maps to obj-tc-02."
+          },
+          {
+            "id": "ev-s01-02",
+            "criterion": "All technical terminology is addressed through substitution, definition, or analogy appropriate to the stated audience.",
+            "rationale": "Maps to obj-tc-03."
+          },
+          {
+            "id": "ev-s01-03",
+            "criterion": "Learner self-evaluation identifies at least two specific improvements with rationale.",
+            "rationale": "Maps to obj-tc-04."
+          }
+        ],
+        "task": {
+          "task_type": "written_explanation_with_self_evaluation",
+          "description": "Given a complex technical issue description and a non-specialist audience profile, the learner produces a written explanation and then writes a brief self-evaluation identifying at least two improvements they would make.",
+          "conditions": [
+            "technical issue description provided by instructor",
+            "audience profile provided",
+            "completed without collaboration",
+            "time-limited as determined by researcher"
+          ]
+        },
+        "cognitive_process": "evaluate",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-s01-01",
+              "criterion": "Logical structure of explanation",
+              "performance_levels": [
+                "clear three-part structure with logical flow",
+                "partial structure or inconsistent flow",
+                "no discernible structure"
+              ]
+            },
+            {
+              "id": "rd-s01-02",
+              "criterion": "Terminology adaptation",
+              "performance_levels": [
+                "all terms addressed and audience-appropriate",
+                "most terms addressed",
+                "few or no terms addressed"
+              ]
+            },
+            {
+              "id": "rd-s01-03",
+              "criterion": "Quality of self-evaluation",
+              "performance_levels": [
+                "two or more specific, criterion-linked improvements identified",
+                "one improvement identified or improvements vague",
+                "no meaningful self-evaluation"
+              ]
+            }
+          ],
+          "mastery_rule": "model_proposed_candidate: all three dimensions at highest performance level; threshold subject to researcher review"
+        },
+        "is_summative": true,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Summative task is a structural design placeholder; no production prompt, rubric values, or scoring norms are finalised here."
+          ]
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-basic-communication",
+        "capability": "Basic written and verbal communication in English at a general professional level.",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "The desired performance implies the learner can already produce coherent sentences; this is a candidate entry-level gate.",
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-information-organisation",
+        "capability": "Ability to organise a set of ideas into a logical sequence (e.g., outline or numbered list).",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "rationale": "Structuring a technical explanation presupposes the learner can form a basic logical sequence; flagged as candidate pending confirmation.",
+        "requires_prerequisite_refs": [
+          "prereq-basic-communication"
+        ],
+        "teaching_objective_id": null
+      }
+    ],
+    "course_outline": {
+      "id": "outline-tc-01",
+      "brief_id": "brief-technical-communication",
+      "objective_ids": [
+        "obj-tc-01",
+        "obj-tc-02",
+        "obj-tc-03",
+        "obj-tc-04"
+      ],
+      "modules": [
+        {
+          "id": "mod-tc-01",
+          "title": "Understanding Your Audience",
+          "objective_ids": [
+            "obj-tc-01"
+          ],
+          "prerequisite_refs": [
+            "prereq-basic-communication"
+          ],
+          "lesson_ids": [
+            "lesson-tc-01"
+          ],
+          "estimated_minutes": 15
+        },
+        {
+          "id": "mod-tc-02",
+          "title": "Structuring and Adapting a Technical Explanation",
+          "objective_ids": [
+            "obj-tc-02",
+            "obj-tc-03"
+          ],
+          "prerequisite_refs": [
+            "prereq-basic-communication",
+            "prereq-information-organisation"
+          ],
+          "lesson_ids": [
+            "lesson-tc-02",
+            "lesson-tc-03"
+          ],
+          "estimated_minutes": 30
+        },
+        {
+          "id": "mod-tc-03",
+          "title": "Evaluating and Refining Explanations",
+          "objective_ids": [
+            "obj-tc-04"
+          ],
+          "prerequisite_refs": [],
+          "lesson_ids": [
+            "lesson-tc-04"
+          ],
+          "estimated_minutes": 15
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-basic-communication",
+        "prereq-information-organisation"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "Module 1 establishes audience analysis as a conceptual foundation before procedural application in Module 2.",
+        "Module 2 separates structural organisation (lesson-tc-02) from terminology adaptation (lesson-tc-03) to allow focused practice on each procedural skill before combining them.",
+        "Module 3 introduces evaluative and metacognitive skills last, as they depend on having constructed an explanation in Module 2.",
+        "Sequencing follows a understand-apply-evaluate progression aligned to Bloom's revised taxonomy levels."
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Module time allocations are estimates; 60-minute total is taken from brief constraints.",
+          "Three-module structure is a model-proposed design candidate."
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-tc-01",
+        "module_id": "mod-tc-01",
+        "objective_ids": [
+          "obj-tc-01"
+        ],
+        "prerequisite_refs": [
+          "prereq-basic-communication"
+        ],
+        "lesson_goal": "Learner will be able to identify and describe the characteristics of a non-specialist audience in a given scenario.",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Learner reads or listens to a conceptual overview of audience types, then classifies a provided scenario and records two audience characteristics with justification.",
+        "formative_assessment_ids": [
+          "assess-formative-01"
+        ],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Explanation pattern chosen because the objective is at the 'understand' level; no production content generated."
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-02",
+        "module_id": "mod-tc-02",
+        "objective_ids": [
+          "obj-tc-02"
+        ],
+        "prerequisite_refs": [
+          "prereq-information-organisation"
+        ],
+        "lesson_goal": "Learner will be able to organise a technical explanation into a logical three-part structure appropriate for a non-specialist audience.",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Learner examines a provided worked example of a structured explanation, then produces a structural outline for a new technical issue using the same pattern.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Worked example chosen to make the procedural structure visible before independent practice; no example content generated."
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-03",
+        "module_id": "mod-tc-02",
+        "objective_ids": [
+          "obj-tc-03"
+        ],
+        "prerequisite_refs": [
+          "prereq-basic-communication"
+        ],
+        "lesson_goal": "Learner will be able to adapt technical terminology for a non-specialist audience using plain-language substitution, definition, or analogy.",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Learner is guided through a structured process for each technical term: identify the term, select an adaptation strategy, produce the adaptation, and justify the choice relative to the audience profile.",
+        "formative_assessment_ids": [
+          "assess-formative-02"
+        ],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Guided practice chosen because terminology adaptation is a procedural skill that benefits from scaffolded step-by-step support before independent application."
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-04",
+        "module_id": "mod-tc-03",
+        "objective_ids": [
+          "obj-tc-04"
+        ],
+        "prerequisite_refs": [],
+        "lesson_goal": "Learner will be able to evaluate a draft technical explanation against audience-alignment and structural criteria and identify specific improvements.",
+        "instructional_pattern": "reflection",
+        "expected_learner_activity": "Learner applies a provided evaluation framework to a draft explanation (either their own from lesson-tc-02/03 or a provided draft), produces a written self-evaluation naming at least two improvements with criterion-linked rationale.",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Reflection pattern chosen to target the metacognitive and evaluative objective; no evaluation framework content is generated here."
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

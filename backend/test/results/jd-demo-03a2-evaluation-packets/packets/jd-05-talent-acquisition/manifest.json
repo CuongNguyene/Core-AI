@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-05-talent-acquisition",
+  "source": {
+    "filename": "JD-05 — Talent Acquisition Manager.docx",
+    "sha256": "75f5f115ed3c2e50cf4cf56a6ad79114af4ce1d142aec5ef9881254a6af94a8a"
+  },
+  "runtime": {
+    "document_id": "b496d309-b909-4a23-93b3-f55da02af550",
+    "job_id": "6a7cc2f4-53ef-43a0-97b7-a6a66d72352d",
+    "profile_id": "f41cd2e9-8641-45ec-a2dd-2f039b2f4885",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 23,
+    "supported_requirement_count": 23,
+    "text_span_locator_count": 23,
+    "pdf_page_locator_count": 0
+  }
+}

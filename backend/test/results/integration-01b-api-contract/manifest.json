@@ -1,0 +1,20 @@
+{
+  "milestone": "INTEGRATION-01B",
+  "title": "FastAPI to NestJS API Contract Mapping",
+  "status": "COMPLETE",
+  "scope": "documentation_and_contract_design_only",
+  "integration_pattern": "HYBRID",
+  "source_of_truth": {
+    "pai": ["blueprints", "objectives", "assessment_blueprints", "competency", "evidence", "policy"],
+    "lms": ["identity", "course_delivery", "enrollment", "progress", "quiz_attempts", "course_certificates"]
+  },
+  "non_goals": ["shared_database", "orm_model_exchange", "routes", "controllers", "persistence_changes", "migrations"],
+  "inputs": ["INTEGRATION-00 repo scan", "INTEGRATION-01A ownership map", "current PAI and LMS API/model evidence"],
+  "artifacts": [
+    "integration-flows.json",
+    "contract-definitions.json",
+    "ownership-map.json",
+    "api-boundary-report.json",
+    "readiness.json"
+  ]
+}

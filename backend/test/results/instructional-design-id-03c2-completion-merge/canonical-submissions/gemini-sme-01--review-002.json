@@ -1,0 +1,59 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-002",
+    "rubric_scores": {
+      "objective_measurability": 5,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 5,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 4,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4,
+      "scope_balance": 3,
+      "workload_time_realism": 1,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "Success criteria are highly quantifiable (e.g., 'Correctly classifies at least 4 of 5', 'Identifies at least 2 of 3 seeded discrepancies')[cite: 22].",
+      "objective_assessment_alignment": "The integrated summative task perfectly encapsulates all three objectives in a logical, chronological workflow[cite: 22].",
+      "evidence_validity": "Cross-referencing a ledger to find errors in a completed report is an exceptionally valid, real-world accounting task[cite: 22].",
+      "cognitive_alignment": "The design correctly moves learners through understand, apply, and analyze cognitive processes[cite: 22].",
+      "prerequisite_quality": "Basic arithmetic and ledger familiarity are crucial prerequisites to avoid bogging down the instruction with math/formatting basics[cite: 22].",
+      "course_sequence_coherence": "The progression from identifying components to creating the report to troubleshooting errors is flawless[cite: 22].",
+      "instruction_assessment_alignment": "Worked examples and guided practice directly support the targeted summative performances[cite: 22].",
+      "scope_balance": "While the instructional activities conceptually match the objectives, there is massive procedural under-teaching. The design attempts to cover report components, ledger transfers, and discrepancy diagnosis, lacking the practice depth needed for such a broad scope[cite: 31].",
+      "workload_time_realism": "The workload is completely unrealistic. Expecting a novice to learn report components, transfer 8-12 ledger entries into a new report, calculate totals, and perform root-cause discrepancy analysis all within 60 minutes is impossible[cite: 31].",
+      "domain_appropriateness": "The pedagogy is exceptionally well-suited to the accounting domain, employing realistic tasks like ledger cross-referencing, financial output preparation, and authentic error identification using worked examples[cite: 31]."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "moderate",
+    "special_question": {
+      "answer": "PARTIALLY",
+      "rationale": "The task sequence and domain authenticity are outstanding, but the instructional workload severely exceeds the 60-minute time constraint, requiring fundamental scoping adjustments."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-002.json",
+    "source_submission_sha256": "8bf0a9b9c71c8777003b606562a07c5209567fc0e6196441555c762f7a43554d",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_02.json",
+    "completion_submission_sha256": "684edc5c7b5bd081c9c6ea80f92da437e3f31ad15b51be54f7667bc6dacc2d66",
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

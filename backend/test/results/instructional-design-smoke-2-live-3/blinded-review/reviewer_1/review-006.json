@@ -1,0 +1,100 @@
+{
+  "review_id": "review-006",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T09:42:23+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "co-tc-01",
+        "field": "modules.lesson_ids",
+        "description": "Module lesson_ids arrays are empty, leaving the lessons orphaned from the module outline.",
+        "category": "orphan_lesson",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "Similar to review-002, the lessons are fully defined but missing from the course outline's module arrays [cite: 6]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Yes. The design is a rigorous and detailed approach to technical communication.",
+      "notes": "The explicit inclusion of a 'domain-informed evaluator' for factual accuracy highlights a sophisticated understanding of the limits of automated assessment in technical writing [cite: 6]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Success criteria are highly detailed, though relying on a human 'domain-informed evaluator' makes it less scalable [cite: 6]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "Assessments precisely map to the conditions and criteria of the objectives [cite: 6]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 5,
+        "rationale": "The requirement that adapted text must not introduce factual inaccuracies is a critical and highly valid evidence bar for this skill [cite: 6]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "Analysis of audience directly supports the application of structural and terminological adaptations [cite: 6]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "The prerequisites are granular (e.g., distinguishing specialist vocabulary) and map perfectly to the cognitive requirements [cite: 6]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The linear progression from audience analysis to structure to terminology is highly coherent [cite: 6]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "The lessons use independent practice and guided questions effectively to build up to the summative tasks [cite: 6]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 2,
+        "rationale": "Time budgeting is tight (12 mins for independent practice of structuring), but the scaffolding is strong [cite: 6]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "No unnecessary content is included [cite: 6]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Technical fixes required for module arrays, but pedagogical structure is sound."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "pre-tc-01",
+        "pre-tc-02",
+        "pre-tc-03",
+        "pre-tc-04",
+        "pre-tc-05"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisites are well-defined and accurately isolate the entry knowledge needed [cite: 6]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 3,
+      "lessons_changed": 0,
+      "notes": "Link the lesson IDs into the module definitions."
+    },
+    "overall_notes": "A very rigorous design that accurately acknowledges the complexities of evaluating technical adaptations for factual accuracy [cite: 6]."
+  }
+}

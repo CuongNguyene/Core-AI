@@ -1,0 +1,57 @@
+[
+  {
+    "fixture": "python_data_processing",
+    "dispositions": {
+      "entry_prerequisite": 0,
+      "in_course_support": 2,
+      "not_required": 0
+    },
+    "governance_valid": true,
+    "provenance_preserved": true,
+    "entry_rationale_valid": true
+  },
+  {
+    "fixture": "accounting_financial_reporting_basic",
+    "dispositions": {
+      "entry_prerequisite": 2,
+      "in_course_support": 1,
+      "not_required": 0
+    },
+    "governance_valid": true,
+    "provenance_preserved": true,
+    "entry_rationale_valid": true
+  },
+  {
+    "fixture": "legal_contract_review_basic",
+    "dispositions": {
+      "entry_prerequisite": 1,
+      "in_course_support": 0,
+      "not_required": 0
+    },
+    "governance_valid": true,
+    "provenance_preserved": false,
+    "entry_rationale_valid": true
+  },
+  {
+    "fixture": "hr_recruitment_planning_basic",
+    "dispositions": {
+      "entry_prerequisite": 1,
+      "in_course_support": 2,
+      "not_required": 0
+    },
+    "governance_valid": true,
+    "provenance_preserved": true,
+    "entry_rationale_valid": true
+  },
+  {
+    "fixture": "construction_drawing_and_method_basic",
+    "dispositions": {
+      "entry_prerequisite": 0,
+      "in_course_support": 3,
+      "not_required": 0
+    },
+    "governance_valid": true,
+    "provenance_preserved": true,
+    "entry_rationale_valid": true
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "canonical_only": true,
+  "experiment": "ID-03C.3",
+  "rubric_version": "instructional_design_human_rubric@0.2",
+  "small_sample_limitation": true,
+  "source": "test/results/instructional-design-id-03c2-completion-merge"
+}

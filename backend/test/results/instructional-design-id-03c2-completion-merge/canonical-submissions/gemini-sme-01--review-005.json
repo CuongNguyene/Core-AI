@@ -1,0 +1,59 @@
+{
+  "state": "CANONICAL_VALID",
+  "submission": {
+    "review_id": "review-005",
+    "rubric_scores": {
+      "objective_measurability": 5,
+      "objective_assessment_alignment": 5,
+      "evidence_validity": 5,
+      "cognitive_alignment": 5,
+      "prerequisite_quality": 5,
+      "course_sequence_coherence": 5,
+      "instruction_assessment_alignment": 4,
+      "scope_balance": 4,
+      "workload_time_realism": 3,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "objective_measurability": "Criteria like 'identifies at least four distinct drawing element categories' and 'states at least two safety considerations' are highly objective and measurable[cite: 25].",
+      "objective_assessment_alignment": "The integrated written performance task requires learners to execute all three objectives simultaneously, mirroring the brief[cite: 25].",
+      "evidence_validity": "Working directly from a basic construction drawing set ensures authentic, high-fidelity assessment evidence[cite: 25].",
+      "cognitive_alignment": "The progression from 'understand' (interpreting elements) to 'apply' (sequencing methods and identifying safety) is perfectly calibrated[cite: 25].",
+      "prerequisite_quality": "Recognizing that basic drawing conventions must be a prerequisite ensures the 60 minutes are spent on interpretation and method planning, not basic symbol literacy[cite: 25].",
+      "course_sequence_coherence": "The instructional sequence (Read -> Sequence -> Safety) is logically air-tight and reflects standard industry practice[cite: 25].",
+      "instruction_assessment_alignment": "The use of worked examples and an integrated scenario effectively prepares the learner for the summative submission[cite: 25].",
+      "scope_balance": "The scope covers interpretation, sequencing, and safety effectively. However, integrating all three complex outputs into a single cohesive assessment within the short time frame slightly limits the depth of the safety analysis[cite: 43].",
+      "workload_time_realism": "There is meaningful time pressure. Extracting activities from a drawing, sequencing them, and deriving safety protocols within 60 minutes will require the provided drawing fixture to be extremely simplistic to be workable[cite: 43].",
+      "domain_appropriateness": "The pedagogy perfectly matches construction engineering by linking drawing interpretation directly to method sequencing, and making safety explicitly traceable to site documents and procedures[cite: 43]."
+    },
+    "machine_validity_observations": [],
+    "prerequisites_acceptable": true,
+    "edit_effort": "minor",
+    "special_question": {
+      "answer": "YES",
+      "rationale": "The design excellently maps the physical reality of construction operations—reading plans, sequencing work, and ensuring safety—into a highly coherent and domain-authentic learning path."
+    },
+    "top_strengths": [],
+    "top_issues": []
+  },
+  "recovery_metadata": {
+    "source_submission": "test/results/instructional-design-id-03c-human-review/reviewer-submissions/reviewer2/review-005.json",
+    "source_submission_sha256": "0f01e3c85d57f134bdea626135f429df1ef2d07ab7f5a69d1eefca7beac1d127",
+    "recovery_version": "ID-03C.1"
+  },
+  "completion_metadata": {
+    "completion_submission": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_05.json",
+    "completion_submission_sha256": "e90be8376800ea1c02bbbd861ba509c21bd2467c5c82fc119cb299ce0edf053a",
+    "completed_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "merge_mode": "deterministic"
+  }
+}

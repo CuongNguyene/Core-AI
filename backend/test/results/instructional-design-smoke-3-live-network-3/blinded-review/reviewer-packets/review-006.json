@@ -1,0 +1,403 @@
+{
+  "review_id": "review-006",
+  "artifact": {
+    "brief": {
+      "id": "brief-technical-communication",
+      "capability": {
+        "id": null,
+        "name": "technical communication",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:technical-communication:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a complex technical issue and a non-specialist audience, structure an explanation and adapt terminology to the audience."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-tc-001",
+        "brief_id": "brief-technical-communication",
+        "performance": "Structure an explanation of a complex technical issue for a non-specialist audience",
+        "cognitive_process": "create",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a complex technical issue",
+          "Given a non-specialist audience"
+        ],
+        "success_criteria": [
+          "Explanation follows a logical structure (e.g., problem-context-mechanism-impact)",
+          "Technical concepts are introduced in order of dependency",
+          "Key points are identifiable and appropriately emphasized"
+        ],
+        "prerequisite_refs": [],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner can identify technical concepts that require adaptation",
+            "Assumes learner has baseline understanding of the technical domain being explained"
+          ]
+        }
+      },
+      {
+        "id": "obj-tc-002",
+        "brief_id": "brief-technical-communication",
+        "performance": "Adapt technical terminology to match non-specialist audience understanding",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "Given technical terminology in a complex issue",
+          "Given a non-specialist audience"
+        ],
+        "success_criteria": [
+          "Jargon is replaced with plain-language equivalents or explained when first used",
+          "Analogies or examples are relevant to the audience's context",
+          "Level of detail matches audience's need without oversimplifying or patronizing"
+        ],
+        "prerequisite_refs": [],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner can assess audience's prior knowledge level",
+            "Assumes learner has access to audience context or personas"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-tc-001",
+        "objective_ids": [
+          "obj-tc-001",
+          "obj-tc-002"
+        ],
+        "capability_claim": "Structure and adapt a technical explanation for a non-specialist audience",
+        "required_evidence": [
+          {
+            "id": "ev-tc-001-structure",
+            "criterion": "Explanation follows a logical structure with identifiable problem, context, mechanism, and impact sections",
+            "rationale": "Directly maps to obj-tc-001 success criterion requiring logical structure"
+          },
+          {
+            "id": "ev-tc-001-dependency",
+            "criterion": "Technical concepts are introduced in order of dependency, with foundational concepts preceding dependent ones",
+            "rationale": "Directly maps to obj-tc-001 success criterion on concept ordering"
+          },
+          {
+            "id": "ev-tc-001-terminology",
+            "criterion": "Technical jargon is either replaced with plain-language equivalents or explicitly defined at first use",
+            "rationale": "Directly maps to obj-tc-002 success criterion on jargon handling"
+          },
+          {
+            "id": "ev-tc-001-audience",
+            "criterion": "Analogies or examples are contextually relevant to the specified non-specialist audience",
+            "rationale": "Directly maps to obj-tc-002 success criterion on audience-relevant examples"
+          }
+        ],
+        "task": {
+          "task_type": "authentic performance task",
+          "description": "Given a complex technical issue description and a specified non-specialist audience profile, produce a written or oral explanation that structures the issue logically and adapts terminology appropriately for the audience.",
+          "conditions": [
+            "Complex technical issue provided with domain-specific terminology",
+            "Non-specialist audience profile or persona provided",
+            "Time constraint of 20-30 minutes for explanation production"
+          ]
+        },
+        "cognitive_process": "create",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "dim-structure",
+              "criterion": "Logical structure and concept sequencing",
+              "performance_levels": [
+                "Explanation lacks clear structure; concepts are presented in arbitrary order",
+                "Explanation has partial structure; some concepts are ordered by dependency but gaps exist",
+                "Explanation follows clear logical structure; technical concepts are consistently introduced in dependency order with identifiable key points"
+              ]
+            },
+            {
+              "id": "dim-adaptation",
+              "criterion": "Terminology adaptation and audience alignment",
+              "performance_levels": [
+                "Technical jargon is used without explanation; no evidence of audience adaptation",
+                "Some jargon is explained or replaced, but inconsistently; limited use of audience-relevant examples",
+                "Jargon is systematically addressed; analogies and detail level are well-matched to audience context without oversimplifying"
+              ]
+            }
+          ],
+          "mastery_rule": "Both dimensions must reach the highest performance level"
+        },
+        "is_summative": true,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes technical issue complexity is calibrated to learner's domain knowledge per obj-tc-001 assumption",
+            "Assumes audience profile provides sufficient context for adaptation decisions per obj-tc-002 assumption",
+            "Combines both objectives into single performance task as they represent integrated capability"
+          ]
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-tc-001",
+        "capability": "Identify core technical concepts and their dependencies within a given technical issue",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Without ability to identify which concepts are foundational vs. dependent, learner cannot sequence them logically as required by obj-tc-001 success criterion on dependency ordering",
+        "required_for_refs": [
+          "obj-tc-001"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-tc-002",
+        "capability": "Recognize technical jargon and domain-specific terminology in text",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Without ability to recognize which terms are jargon, learner cannot replace or define them as required by obj-tc-002 success criterion on jargon handling",
+        "required_for_refs": [
+          "obj-tc-002"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-tc-003",
+        "capability": "Interpret audience profile or persona specifications to determine prior knowledge level",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Without ability to interpret audience profile, learner cannot determine appropriate detail level or select relevant analogies as required by obj-tc-002 success criteria on audience context and detail matching",
+        "required_for_refs": [
+          "obj-tc-002",
+          "assess-tc-001"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      }
+    ],
+    "course_outline": {
+      "id": "course-tc-001",
+      "brief_id": "brief-technical-communication",
+      "objective_ids": [
+        "obj-tc-001",
+        "obj-tc-002"
+      ],
+      "modules": [
+        {
+          "id": "mod-tc-001",
+          "title": "Identifying and Sequencing Technical Concepts",
+          "objective_ids": [
+            "obj-tc-001"
+          ],
+          "prerequisite_refs": [
+            "prereq-tc-001"
+          ],
+          "lesson_ids": [
+            "lesson-tc-001",
+            "lesson-tc-002"
+          ],
+          "estimated_minutes": 25
+        },
+        {
+          "id": "mod-tc-002",
+          "title": "Adapting Technical Terminology for Non-Specialist Audiences",
+          "objective_ids": [
+            "obj-tc-002"
+          ],
+          "prerequisite_refs": [
+            "prereq-tc-002",
+            "prereq-tc-003"
+          ],
+          "lesson_ids": [
+            "lesson-tc-003",
+            "lesson-tc-004"
+          ],
+          "estimated_minutes": 25
+        },
+        {
+          "id": "mod-tc-003",
+          "title": "Integrated Technical Communication Practice",
+          "objective_ids": [
+            "obj-tc-001",
+            "obj-tc-002"
+          ],
+          "prerequisite_refs": [],
+          "lesson_ids": [
+            "lesson-tc-005"
+          ],
+          "estimated_minutes": 10
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-tc-001",
+        "prereq-tc-002",
+        "prereq-tc-003"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "Module 1 addresses obj-tc-001 (structuring explanations) first because logical structure provides the scaffolding for terminology adaptation",
+        "Module 2 addresses obj-tc-002 (adapting terminology) second, building on the structured framework established in Module 1",
+        "Module 3 provides brief integrated practice combining both objectives before the summative assessment, ensuring learners can coordinate both capabilities"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Assumes 60-minute time budget allows approximately 25 minutes per objective-focused module plus 10 minutes for integration",
+          "Assumes prerequisite capabilities (prereq-tc-001, prereq-tc-002, prereq-tc-003) are already met or will be verified separately",
+          "Sequencing assumes obj-tc-001 (structuring) logically precedes obj-tc-002 (terminology adaptation) in instructional order",
+          "Integration module is minimal given tight time budget; deeper practice would require extended time"
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-tc-001",
+        "module_id": "mod-tc-001",
+        "objective_ids": [
+          "obj-tc-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-001"
+        ],
+        "lesson_goal": "Learn to structure technical explanations logically by identifying key points and ordering concepts by dependency",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Observe annotated examples showing how technical issues are broken into problem-context-mechanism-impact structure and how foundational concepts are sequenced before dependent ones",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes demonstration is efficient for tight time budget",
+            "Assumes learners can transfer observed structure to new technical issues"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-002",
+        "module_id": "mod-tc-001",
+        "objective_ids": [
+          "obj-tc-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-001"
+        ],
+        "lesson_goal": "Practice structuring a technical explanation with logical sequencing and identifiable key points",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Outline a provided technical issue by identifying key points, ordering concepts by dependency, and mapping to problem-context-mechanism-impact structure with scaffolding prompts",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes guided practice with scaffolding is appropriate before independent application",
+            "Assumes 15 minutes allows sufficient time for outlining without full explanation production"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-003",
+        "module_id": "mod-tc-002",
+        "objective_ids": [
+          "obj-tc-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-002",
+          "prereq-tc-003"
+        ],
+        "lesson_goal": "Learn strategies for identifying jargon and replacing or defining it appropriately for non-specialist audiences",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Examine worked examples showing jargon identification, plain-language replacement, contextual definition, and audience-matched analogy selection with explicit decision rationales",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes worked examples with explicit reasoning support transfer of adaptation strategies",
+            "Assumes 10 minutes allows examination of multiple terminology adaptation techniques"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-004",
+        "module_id": "mod-tc-002",
+        "objective_ids": [
+          "obj-tc-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-tc-002",
+          "prereq-tc-003"
+        ],
+        "lesson_goal": "Practice adapting technical terminology for a specified non-specialist audience",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Rewrite technical statements for a given audience profile by identifying jargon, selecting appropriate adaptations, and choosing relevant analogies without scaffolding",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes independent practice is appropriate for apply-level objective",
+            "Assumes 15 minutes allows focused practice on terminology adaptation without full explanation production"
+          ]
+        }
+      },
+      {
+        "id": "lesson-tc-005",
+        "module_id": "mod-tc-003",
+        "objective_ids": [
+          "obj-tc-001",
+          "obj-tc-002"
+        ],
+        "prerequisite_refs": [],
+        "lesson_goal": "Integrate structuring and terminology adaptation by producing a brief technical explanation for a non-specialist audience",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Produce a brief technical explanation combining logical structure and audience-appropriate terminology, preparing for summative assessment",
+        "formative_assessment_ids": [
+          "assess-tc-001"
+        ],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes 10 minutes allows brief integrated practice before summative assessment",
+            "Assumes formative use of summative assessment task provides practice with exact performance expectation",
+            "Integrated practice addresses create-level cognitive demand of obj-tc-001"
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

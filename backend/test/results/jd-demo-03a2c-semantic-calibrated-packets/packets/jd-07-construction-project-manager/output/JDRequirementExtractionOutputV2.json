@@ -1,0 +1,828 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req_01",
+      "statement": "delivering assigned construction projects from planning through handover, ensuring that scope, schedule, cost, quality, and safety requirements are met.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "delivering assigned construction projects",
+        "scope, schedule, cost, quality, and safety"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Job Summary",
+        "start_offset": 213,
+        "end_offset": 365
+      },
+      "source_excerpt": "delivering assigned construction projects from planning through handover, ensuring that scope, schedule, cost, quality, and safety requirements are met.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_02",
+      "statement": "coordinates internal teams, consultants, contractors, suppliers, and client representatives.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "coordinates internal teams, consultants, contractors, suppliers, and client representatives"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Job Summary",
+        "start_offset": 375,
+        "end_offset": 467
+      },
+      "source_excerpt": "coordinates internal teams, consultants, contractors, suppliers, and client representatives.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_03",
+      "statement": "Develop project execution plans, schedules, milestones, and resource requirements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Develop project execution plans, schedules, milestones, and resource requirements"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 489,
+        "end_offset": 571
+      },
+      "source_excerpt": "Develop project execution plans, schedules, milestones, and resource requirements.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_04",
+      "statement": "Coordinate design, procurement, construction, commissioning, and handover activities.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Coordinate design, procurement, construction, commissioning, and handover activities"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 572,
+        "end_offset": 657
+      },
+      "source_excerpt": "Coordinate design, procurement, construction, commissioning, and handover activities.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_05",
+      "statement": "Monitor project progress against approved schedule and budget.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Monitor project progress against approved schedule and budget"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 658,
+        "end_offset": 720
+      },
+      "source_excerpt": "Monitor project progress against approved schedule and budget.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_06",
+      "statement": "Identify project risks, delays, and dependencies and coordinate mitigation actions.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Identify project risks, delays, and dependencies and coordinate mitigation actions"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 721,
+        "end_offset": 804
+      },
+      "source_excerpt": "Identify project risks, delays, and dependencies and coordinate mitigation actions.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_07",
+      "statement": "Manage contractors and subcontractors throughout the project lifecycle.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Manage contractors and subcontractors throughout the project lifecycle"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 805,
+        "end_offset": 876
+      },
+      "source_excerpt": "Manage contractors and subcontractors throughout the project lifecycle.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_08",
+      "statement": "Review contractor work plans, method statements, progress reports, and payment submissions.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Review contractor work plans, method statements, progress reports, and payment submissions"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 877,
+        "end_offset": 968
+      },
+      "source_excerpt": "Review contractor work plans, method statements, progress reports, and payment submissions.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_09",
+      "statement": "Coordinate site meetings and communicate project status to stakeholders.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Coordinate site meetings and communicate project status to stakeholders"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 969,
+        "end_offset": 1041
+      },
+      "source_excerpt": "Coordinate site meetings and communicate project status to stakeholders.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_10",
+      "statement": "Track variations, change requests, and scope impacts.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Track variations, change requests, and scope impacts"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 1042,
+        "end_offset": 1095
+      },
+      "source_excerpt": "Track variations, change requests, and scope impacts.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_11",
+      "statement": "Ensure construction work meets approved drawings, specifications, quality standards, and safety requirements.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Ensure construction work meets approved drawings, specifications, quality standards, and safety requirements"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 1096,
+        "end_offset": 1205
+      },
+      "source_excerpt": "Ensure construction work meets approved drawings, specifications, quality standards, and safety requirements.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_12",
+      "statement": "Coordinate issue resolution between design teams, contractors, and site personnel.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Coordinate issue resolution between design teams, contractors, and site personnel"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 1206,
+        "end_offset": 1288
+      },
+      "source_excerpt": "Coordinate issue resolution between design teams, contractors, and site personnel.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_13",
+      "statement": "Support commercial teams in evaluating claims and contract variations.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Support commercial teams in evaluating claims and contract variations"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 1289,
+        "end_offset": 1359
+      },
+      "source_excerpt": "Support commercial teams in evaluating claims and contract variations.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_14",
+      "statement": "Maintain project documentation and reporting.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Maintain project documentation and reporting"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 1360,
+        "end_offset": 1405
+      },
+      "source_excerpt": "Maintain project documentation and reporting.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_15",
+      "statement": "Participate in final inspection, commissioning, punch-list closure, and project handover.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Participate in final inspection, commissioning, punch-list closure, and project handover"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Key Responsibilities",
+        "start_offset": 1406,
+        "end_offset": 1495
+      },
+      "source_excerpt": "Participate in final inspection, commissioning, punch-list closure, and project handover.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_16",
+      "statement": "Bachelor's degree in Civil Engineering, Construction Management, Architecture, or related field.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Bachelor's degree in Civil Engineering, Construction Management, Architecture, or related field"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Required Qualifications",
+        "start_offset": 1520,
+        "end_offset": 1616
+      },
+      "source_excerpt": "Bachelor's degree in Civil Engineering, Construction Management, Architecture, or related field.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_17",
+      "statement": "At least 5 years of construction project experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "At least 5 years of construction project experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Required Qualifications",
+        "start_offset": 1617,
+        "end_offset": 1669
+      },
+      "source_excerpt": "At least 5 years of construction project experience.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_18",
+      "statement": "At least 2 years of experience managing construction projects or major project workstreams.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "At least 2 years of experience managing construction projects or major project workstreams"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Required Qualifications",
+        "start_offset": 1670,
+        "end_offset": 1761
+      },
+      "source_excerpt": "At least 2 years of experience managing construction projects or major project workstreams.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_19",
+      "statement": "Strong understanding of construction planning and site execution.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Strong understanding of construction planning and site execution"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Required Qualifications",
+        "start_offset": 1762,
+        "end_offset": 1827
+      },
+      "source_excerpt": "Strong understanding of construction planning and site execution.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_20",
+      "statement": "Experience coordinating contractors and consultants.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience coordinating contractors and consultants"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Required Qualifications",
+        "start_offset": 1828,
+        "end_offset": 1880
+      },
+      "source_excerpt": "Experience coordinating contractors and consultants.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_21",
+      "statement": "Ability to manage schedule, scope, cost, and project risks.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Ability to manage schedule, scope, cost, and project risks"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Required Qualifications",
+        "start_offset": 1881,
+        "end_offset": 1940
+      },
+      "source_excerpt": "Ability to manage schedule, scope, cost, and project risks.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_22",
+      "statement": "Strong stakeholder communication skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Strong stakeholder communication skills"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Required Qualifications",
+        "start_offset": 1941,
+        "end_offset": 1981
+      },
+      "source_excerpt": "Strong stakeholder communication skills.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_23",
+      "statement": "PMP or equivalent project management certification.",
+      "criterion_dimension": "credential",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "PMP or equivalent project management certification"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Preferred Qualifications",
+        "start_offset": 2007,
+        "end_offset": 2058
+      },
+      "source_excerpt": "PMP or equivalent project management certification.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_24",
+      "statement": "Experience with MS Project or Primavera P6.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "Experience with MS Project or Primavera P6"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Preferred Qualifications",
+        "start_offset": 2059,
+        "end_offset": 2102
+      },
+      "source_excerpt": "Experience with MS Project or Primavera P6.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_25",
+      "statement": "Experience with commercial building, industrial, or infrastructure projects.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "Experience with commercial building, industrial, or infrastructure projects"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Preferred Qualifications",
+        "start_offset": 2103,
+        "end_offset": 2179
+      },
+      "source_excerpt": "Experience with commercial building, industrial, or infrastructure projects.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_26",
+      "statement": "Familiarity with contract administration.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Familiarity with contract administration"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Preferred Qualifications",
+        "start_offset": 2180,
+        "end_offset": 2221
+      },
+      "source_excerpt": "Familiarity with contract administration.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_27",
+      "statement": "The Construction Project Manager coordinates site execution but is not automatically responsible for direct supervision of every site worker.",
+      "criterion_dimension": null,
+      "modality": "unspecified",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "coordinates site execution but is not automatically responsible for direct supervision of every site worker"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Important Scope Clarification",
+        "start_offset": 2252,
+        "end_offset": 2393
+      },
+      "source_excerpt": "The Construction Project Manager coordinates site execution but is not automatically responsible for direct supervision of every site worker.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_28",
+      "statement": "Experience working with procurement or suppliers does not imply procurement management expertise unless the candidate has directly owned procurement activities.",
+      "criterion_dimension": null,
+      "modality": "unspecified",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Experience working with procurement or suppliers does not imply procurement management expertise unless the candidate has directly owned procurement activities"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "dcf2f770-277f-49d2-a643-06c6b9851193",
+        "section": "Important Scope Clarification",
+        "start_offset": 2394,
+        "end_offset": 2554
+      },
+      "source_excerpt": "Experience working with procurement or suppliers does not imply procurement management expertise unless the candidate has directly owned procurement activities.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    }
+  ]
+}

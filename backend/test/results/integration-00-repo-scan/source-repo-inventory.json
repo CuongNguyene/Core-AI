@@ -1,0 +1,60 @@
+{
+  "repo_path": "/Users/mac/Developers/work/PAI Learning/Pai-learning/.worktrees/pr-012-instructional-design-core",
+  "git": {
+    "branch": "pr-012-instructional-design-core",
+    "commit": "c4af69b78fe7eb8f4ed0654f5007a17599886005",
+    "status": "dirty; ID-03/ID-04 implementation, tests, docs, result artifacts and graphify-out are present",
+    "upstream": "origin/pr-012-instructional-design-core; ahead 1"
+  },
+  "architecture": {
+    "backend": "FastAPI modular monolith",
+    "language": "Python 3.13+",
+    "database": "PostgreSQL via SQLAlchemy 2 async",
+    "migrations": "Alembic, 24 version files through 20260811_24",
+    "frontend": "tracked placeholder; no framework selected",
+    "runtime": "uvicorn, async repositories, extraction worker abstraction, MinIO-compatible storage, ModelGateway and PrivacyGateway"
+  },
+  "entrypoints": ["backend/app/main.py", "backend/pyproject.toml", "backend/alembic.ini", "devops/compose/docker-compose.yml"],
+  "dependencies": ["backend/pyproject.toml", "backend/uv.lock"],
+  "test_framework": "pytest, pytest-asyncio",
+  "module_inventory": {
+    "portable_core": [
+      {"path": "backend/app/instructional_design/contracts.py", "reason": "typed learning-objective, assessment, prerequisite, course and lesson design contracts", "port_recommendation": "adapt"},
+      {"path": "backend/app/instructional_design/schemas.py", "reason": "Pydantic validation and stable instructional-design schemas", "port_recommendation": "adapt"},
+      {"path": "backend/app/instructional_design/dependency_normalizer.py", "reason": "deterministic prerequisite/dependency normalization", "port_recommendation": "adapt"},
+      {"path": "backend/app/instructional_design/quality_gate.py", "reason": "quality and boundary checks independent of persistence", "port_recommendation": "adapt"},
+      {"path": "backend/app/instructional_design/workload.py", "reason": "workload/time semantics", "port_recommendation": "adapt"},
+      {"path": "backend/app/instructional_design/prerequisite_minimality.py", "reason": "deterministic prerequisite minimality logic", "port_recommendation": "adapt"},
+      {"path": "backend/app/instructional_design/practice_coverage.py", "reason": "practice/assessment coverage rules", "port_recommendation": "adapt"},
+      {"path": "backend/app/capability_analysis/semantic_core/", "reason": "domain-neutral semantic contracts and compatibility rules", "port_recommendation": "adapt"},
+      {"path": "backend/app/capability_analysis/rules.py", "reason": "deterministic gap and evidence interpretation rules", "port_recommendation": "adapt"},
+      {"path": "backend/app/extraction/normalization.py", "reason": "evidence-preserving normalization logic", "port_recommendation": "adapt"},
+      {"path": "backend/app/extraction/evidence_graph_pipeline.py", "reason": "evidence graph construction semantics", "port_recommendation": "adapt"},
+      {"path": "backend/app/evidence/schemas.py", "reason": "evidence source and verification contracts", "port_recommendation": "adapt"}
+    ],
+    "integration_specific": [
+      {"path": "backend/app/*/api.py and backend/app/main.py", "reason": "FastAPI routing, dependency injection and source-specific response/error contracts", "port_recommendation": "adapt"},
+      {"path": "backend/app/*/models.py and backend/app/*/repository.py", "reason": "SQLAlchemy persistence and source table ownership", "port_recommendation": "defer"},
+      {"path": "backend/alembic/", "reason": "source migration history and PostgreSQL schema evolution", "port_recommendation": "keep_source_only"},
+      {"path": "backend/app/authorization/", "reason": "actor UUID, organization membership, scoped delegation and role policy", "port_recommendation": "adapt"},
+      {"path": "backend/app/documents/storage.py", "reason": "MinIO/S3-compatible object-store boundary", "port_recommendation": "adapt"},
+      {"path": "backend/app/model_gateway/ and backend/app/privacy/", "reason": "vLLM provider, structured output registry and privacy routing", "port_recommendation": "adapt"},
+      {"path": "backend/app/extraction/worker.py and runner.py", "reason": "source worker execution boundary", "port_recommendation": "adapt"}
+    ],
+    "research_only": [
+      {"path": "backend/app/instructional_design/*smoke* and *experiment*", "reason": "research runners, fixtures and model comparison harnesses", "port_recommendation": "keep_source_only"},
+      {"path": "backend/app/instructional_design/blinded_review* and id03c*", "reason": "human-review recovery/merge/analysis workflow", "port_recommendation": "keep_source_only"},
+      {"path": "backend/test/results/", "reason": "experiment outputs, review packets, manifests and raw result artifacts", "port_recommendation": "keep_source_only"},
+      {"path": "backend/scripts/generate_id04* and run_id04d_validation.py", "reason": "experiment artifact generators and validation runners", "port_recommendation": "keep_source_only"},
+      {"path": "backend/tests/test_instructional_design_*", "reason": "source pytest fixtures and research/regression harnesses", "port_recommendation": "adapt"},
+      {"path": "graphify-out/", "reason": "temporary analysis output", "port_recommendation": "keep_source_only"}
+    ]
+  },
+  "source_tables_or_models": [
+    "authorization_users", "authorization_organizations", "organization_memberships", "user_role_assignments", "scoped_delegations",
+    "documents", "extraction_jobs", "extraction_profiles", "role_profile_drafts", "role_profile_draft_versions",
+    "role_competency_profiles", "preliminary_matches", "assessment_templates", "assessment_submissions", "assessment_decisions",
+    "competency_records", "competency_decisions", "capability_gap_portfolios", "capability_gap_assessments", "capability_target_gaps",
+    "learning_paths", "credential_policies", "credential_requests", "credentials", "semantic_policies", "audit-event tables"
+  ]
+}

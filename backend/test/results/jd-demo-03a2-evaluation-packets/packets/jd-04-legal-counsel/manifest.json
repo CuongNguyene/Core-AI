@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-04-legal-counsel",
+  "source": {
+    "filename": "JD-04 — Legal Counsel.docx",
+    "sha256": "7397fce23c388d518cfd0734da5fb61d8724d0d838f775c63ddb2710f5ff6f0d"
+  },
+  "runtime": {
+    "document_id": "4f85d22d-4152-492b-9e4d-0951b1e9b2f1",
+    "job_id": "0b40584b-2da3-44cb-89fe-148db93e4931",
+    "profile_id": "f9a4f55c-26a4-4cab-99dd-97beaf3950bc",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 4,
+    "supported_requirement_count": 4,
+    "text_span_locator_count": 4,
+    "pdf_page_locator_count": 0
+  }
+}

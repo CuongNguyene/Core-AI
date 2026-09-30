@@ -1,0 +1,59 @@
+{
+  "artifact": "instructional-design-smoke-3-live-network-3",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "review_count": 6,
+  "reviewer_count": 1,
+  "packet_count": 6,
+  "raw_submission_directory": "reviewer_submission",
+  "reviewers": ["gemini-sme-01"],
+  "blind_review_integrity": {
+    "all_packets_reviewed": true,
+    "condition_labels_seen_in_submissions": false,
+    "raw_submissions_preserved": true,
+    "condition_join_performed_after_review": true,
+    "private_mapping_used": true,
+    "note": "This is one reviewer's six-packet calibration, not an inter-rater panel."
+  },
+  "per_packet": [
+    {"review_id": "review-001", "fixture_id": "model_monitoring", "condition": "one_shot", "mean_rubric_score": 3.6, "traceability": "clean", "special_question": "yes_with_reservations", "prerequisite_decision": "accept_with_revisions", "edit_effort": "minor", "technical_issue_count": 0},
+    {"review_id": "review-002", "fixture_id": "model_monitoring", "condition": "structured_v0.3", "mean_rubric_score": 3.6, "traceability": "issues_found", "special_question": "yes", "prerequisite_decision": "accept", "edit_effort": "minor", "technical_issue_count": 2},
+    {"review_id": "review-003", "fixture_id": "python_data_processing", "condition": "one_shot", "mean_rubric_score": 3.7, "traceability": "issues_found", "special_question": "no", "prerequisite_decision": "accept_with_revisions", "edit_effort": "moderate", "technical_issue_count": 1},
+    {"review_id": "review-004", "fixture_id": "python_data_processing", "condition": "structured_v0.3", "mean_rubric_score": 3.6, "traceability": "issues_found", "special_question": "marginally_reasonable", "prerequisite_decision": "accept", "edit_effort": "moderate", "technical_issue_count": 2},
+    {"review_id": "review-005", "fixture_id": "technical_communication", "condition": "one_shot", "mean_rubric_score": 3.7, "traceability": "clean", "special_question": "yes", "prerequisite_decision": "accept", "edit_effort": "none", "technical_issue_count": 0},
+    {"review_id": "review-006", "fixture_id": "technical_communication", "condition": "structured_v0.3", "mean_rubric_score": 3.7, "traceability": "issues_found", "special_question": "yes", "prerequisite_decision": "accept", "edit_effort": "minor", "technical_issue_count": 1}
+  ],
+  "condition_summary": {
+    "one_shot": {
+      "review_observations": 3,
+      "mean_rubric_score": 3.667,
+      "dimension_means": {"objective_measurability": 4.333, "objective_assessment_alignment": 5.0, "evidence_validity": 4.333, "cognitive_alignment": 4.667, "prerequisite_quality": 3.333, "sequence_coherence": 4.667, "instruction_assessment_alignment": 3.667, "under_teaching": 3.333, "over_teaching": 1.0, "overall_edit_effort": 2.333},
+      "technical_issue_observations": 1,
+      "special_question": {"yes": 1, "yes_with_reservations": 1, "marginally_reasonable": 0, "no": 1},
+      "prerequisite_decisions": {"accept": 1, "accept_with_revisions": 2, "reject": 0},
+      "edit_effort": {"none": 1, "minor": 1, "moderate": 1, "major": 0}
+    },
+    "structured_v0.3": {
+      "review_observations": 3,
+      "mean_rubric_score": 3.633,
+      "dimension_means": {"objective_measurability": 4.0, "objective_assessment_alignment": 5.0, "evidence_validity": 4.0, "cognitive_alignment": 4.667, "prerequisite_quality": 4.0, "sequence_coherence": 4.667, "instruction_assessment_alignment": 3.667, "under_teaching": 3.0, "over_teaching": 1.0, "overall_edit_effort": 2.333},
+      "technical_issue_observations": 5,
+      "special_question": {"yes": 2, "yes_with_reservations": 0, "marginally_reasonable": 1, "no": 0},
+      "prerequisite_decisions": {"accept": 3, "accept_with_revisions": 0, "reject": 0},
+      "edit_effort": {"none": 0, "minor": 2, "moderate": 1, "major": 0}
+    }
+  },
+  "recurring_findings": [
+    {"category": "time_scope", "evidence": "Python and Model Monitoring reviews cite compressed or contradictory assessment/course time budgets.", "axis": "pedagogical"},
+    {"category": "assessment_scope_or_reference", "evidence": "Structured Model Monitoring assessment references other assessment IDs in required_capability_refs.", "axis": "technical"},
+    {"category": "orphan_lesson", "evidence": "Python one-shot contains obj-teach-pandas-basics outside module-01 lesson_ids.", "axis": "technical"},
+    {"category": "summative_as_formative", "evidence": "Python structured lesson-003/006 and Technical Communication structured lesson-tc-005 reference summative assessments as formative IDs.", "axis": "technical"},
+    {"category": "prerequisite_minimality", "evidence": "Model Monitoring and Python reviewers request consolidation or stronger prerequisite treatment.", "axis": "pedagogical"}
+  ],
+  "interpretation": {
+    "winner_declared": false,
+    "sample_warning": "One reviewer scored six packets; this is descriptive calibration, not statistical comparison or inter-rater agreement.",
+    "pedagogical_signal": "Five of six reviews answered the special question affirmatively or marginally; Python one-shot was the sole negative and was tied to time contradictions.",
+    "technical_signal": "Structured v0.3 received more reviewer-observed technical issues (5 vs 1), consistent with the machine-detected assessment reference findings plus summative/formative boundary observations.",
+    "next_step": "Use the technical observations for targeted contract/gate review and the time/prerequisite observations for the next instructional-design iteration. Do not relax the quality gate and do not proceed to TEXT-01."
+  }
+}

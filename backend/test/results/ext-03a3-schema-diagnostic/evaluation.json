@@ -1,0 +1,223 @@
+{
+  "milestone": "EXT-03A.3",
+  "generated_at": "2026-09-08T08:37:44.605271+00:00",
+  "current_schema_diagnosis": {
+    "capability_required_fields": [
+      "raw_name",
+      "canonical_name",
+      "evidence_strength",
+      "evidence[]"
+    ],
+    "capability_repeated_fields": [
+      "source_excerpt",
+      "source_locator",
+      "evidence_strength",
+      "confidence"
+    ],
+    "post_model_candidates": [
+      "canonical_name",
+      "document_id",
+      "MULTIPLE_SUPPORTING_EXPERIENCES",
+      "dedupe"
+    ],
+    "duplication_path": "experience[].evidence[] -> capabilities[].evidence[].source_excerpt/locator",
+    "hypothesis": "capability evidence repetition may make each capability expensive and suppress recall",
+    "v22_capability_count": 2,
+    "v22_output_tokens": 5891
+  },
+  "experimental_schema": {
+    "model_generated": [
+      "experience",
+      "evidence_inventory",
+      "capabilities.raw_name",
+      "capabilities.evidence_refs",
+      "tools_platforms",
+      "education"
+    ],
+    "post_processed": [
+      "canonical_name",
+      "evidence materialization",
+      "dedupe",
+      "aggregation",
+      "supporting experience refs"
+    ]
+  },
+  "fixture": {
+    "fixture_id": "cv-nguyen-vu-minh-thien",
+    "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+    "page_count": 3,
+    "mime_type": "application/pdf",
+    "manifest_version": "1.0"
+  },
+  "v22_baseline": {
+    "fixture_id": "cv-nguyen-vu-minh-thien",
+    "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+    "page_count": 3,
+    "mime_type": "application/pdf",
+    "manifest_version": "1.0",
+    "prompt_version": "2.2",
+    "input_mode": "native_pdf",
+    "thinking": "medium",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "run": {
+      "run_id": "2e555870-ceea-45b2-9221-44be8f824b05",
+      "input_mode": "native_pdf",
+      "thinking": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_id": "cv_full_extraction",
+      "prompt_version": "2.2",
+      "success": true,
+      "failure_stage": null,
+      "failure_code": null,
+      "latency_ms": 17199,
+      "token_usage": {
+        "input_tokens": 3833,
+        "thinking_tokens": null,
+        "output_tokens": 5891,
+        "total_tokens": 9724
+      },
+      "finish_reason": "STOP",
+      "counts": {
+        "experience": 17,
+        "capabilities": 2,
+        "tools_platforms": 3,
+        "education": 2
+      },
+      "quality": {
+        "grounded_capabilities": 2,
+        "grounded_capability_rate": 1.0,
+        "unsupported_capability_count": 0,
+        "duplicate_capability_count": 0
+      },
+      "capability_names": [
+        "Project Management",
+        "Omnichannel Commerce"
+      ],
+      "tool_names": [
+        "Odoo",
+        "Shopify",
+        "Magento"
+      ],
+      "education_summary": [
+        "MBA of eCommerce",
+        "Bachelor"
+      ],
+      "capability_coverage": {
+        "Project Management": "FOUND",
+        "Product Management": "NOT_FOUND",
+        "eCommerce": "NOT_FOUND",
+        "Omnichannel Commerce": "FOUND",
+        "Order Management": "NOT_FOUND",
+        "Warehouse Management": "NOT_FOUND",
+        "Delivery / Logistics Management": "NOT_FOUND",
+        "Operations Planning": "NOT_FOUND",
+        "Digital Platform Development": "NOT_FOUND",
+        "Team Leadership": "NOT_FOUND",
+        "Process Optimization": "NOT_FOUND"
+      },
+      "experience_recall": "HIGH",
+      "education_recall": "2/2",
+      "candidate_profile_created": true
+    },
+    "experience_recall": {
+      "actual": 17,
+      "minimum": 4,
+      "recall": 1.0
+    },
+    "education_recall": {
+      "matched": 2,
+      "expected": 2,
+      "recall": 1.0
+    },
+    "capability_family_coverage": {
+      "Project Management": "FOUND",
+      "Product Management": "NOT_FOUND",
+      "eCommerce": "NOT_FOUND",
+      "Omnichannel Commerce": "FOUND",
+      "Order Management": "NOT_FOUND",
+      "Warehouse Management": "NOT_FOUND",
+      "Delivery / Logistics Management": "NOT_FOUND",
+      "Operations Planning": "NOT_FOUND",
+      "Digital Platform Development": "NOT_FOUND",
+      "Team Leadership": "NOT_FOUND",
+      "Process Optimization": "NOT_FOUND"
+    },
+    "capability_family_recall": 0.18181818181818182
+  },
+  "one_call_experiment": {
+    "fixture_id": "cv-nguyen-vu-minh-thien",
+    "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+    "page_count": 3,
+    "mime_type": "application/pdf",
+    "manifest_version": "1.0",
+    "prompt_id": "cv_full_extraction_schema_ref_experiment",
+    "prompt_version": "1",
+    "success": true,
+    "experience_count": 2,
+    "education_count": 2,
+    "capability_count": 2,
+    "evidence_ref_count": 2,
+    "resolved_ref_count": 2,
+    "dangling_ref_count": 0,
+    "evidence_inventory_count": 5,
+    "capability_names": [
+      "Distribution Management System (DMS) Development",
+      "Omni Channel Platform Development"
+    ],
+    "capability_family_coverage": {
+      "Project Management": "NOT_FOUND",
+      "Product Management": "NOT_FOUND",
+      "eCommerce": "NOT_FOUND",
+      "Omnichannel Commerce": "FOUND",
+      "Order Management": "NOT_FOUND",
+      "Warehouse Management": "NOT_FOUND",
+      "Delivery / Logistics Management": "NOT_FOUND",
+      "Operations Planning": "NOT_FOUND",
+      "Digital Platform Development": "FOUND",
+      "Team Leadership": "NOT_FOUND",
+      "Process Optimization": "NOT_FOUND"
+    },
+    "grounding_rate": 1.0,
+    "unsupported_count": 0,
+    "duplicate_count": 0,
+    "latency_ms": 7872,
+    "token_usage": {
+      "input_tokens": 3239,
+      "output_tokens": 1643
+    },
+    "finish_reason": "STOP",
+    "candidate_profile_created": true,
+    "capability_family_recall": 0.18181818181818182,
+    "experience_recall": {
+      "actual": 2,
+      "expected": 17,
+      "recall": 0.11764705882352941
+    },
+    "education_recall": {
+      "actual": 2,
+      "expected": 2,
+      "recall": 1.0
+    }
+  },
+  "decision": {
+    "schema_hypothesis": "NOT_CONFIRMED",
+    "gates": {
+      "experience": false,
+      "education": true,
+      "capability_family": false,
+      "grounding": true,
+      "unsupported": true,
+      "duplicates": true,
+      "evidence_refs": true
+    },
+    "experience_regression": {
+      "detected": true,
+      "baseline_count": 17,
+      "experimental_count": 2
+    },
+    "two_stage_experiment": "NOT_RUN",
+    "next_action": "PROCEED_TO_TWO_STAGE_CAPABILITY_EXTRACTION_EXPERIMENT"
+  }
+}

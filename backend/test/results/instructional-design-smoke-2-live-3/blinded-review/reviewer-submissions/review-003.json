@@ -1,0 +1,25 @@
+{
+  "review_id": "review-003",
+  "reviewer_id": "",
+  "reviewed_at": "",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {"traceability_overall": "clean", "issues": [], "notes": ""},
+  "pedagogical_review": {
+    "special_question": {"answer": "", "notes": ""},
+    "rubric_scores": [
+      {"dimension": "objective_measurability", "score": null, "rationale": ""},
+      {"dimension": "objective_assessment_alignment", "score": null, "rationale": ""},
+      {"dimension": "evidence_validity", "score": null, "rationale": ""},
+      {"dimension": "cognitive_alignment", "score": null, "rationale": ""},
+      {"dimension": "prerequisite_quality", "score": null, "rationale": ""},
+      {"dimension": "sequence_coherence", "score": null, "rationale": ""},
+      {"dimension": "instruction_assessment_alignment", "score": null, "rationale": ""},
+      {"dimension": "under_teaching", "score": null, "rationale": ""},
+      {"dimension": "over_teaching", "score": null, "rationale": ""},
+      {"dimension": "overall_edit_effort", "score": null, "rationale": ""}
+    ],
+    "prerequisite_acceptance": {"decision": "", "accepted_refs": [], "rejected_refs": [], "notes": ""},
+    "edit_effort": {"level": "", "objectives_changed": null, "assessments_changed": null, "prerequisites_changed": null, "modules_changed": null, "lessons_changed": null, "notes": ""},
+    "overall_notes": ""
+  }
+}

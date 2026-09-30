@@ -1,0 +1,819 @@
+{
+  "experiment_id": "instructional-design-id-03b-cross-domain-smoke",
+  "condition": "structured_v0.3.1",
+  "analyses": [
+    {
+      "fixture_id": "python_data_processing",
+      "domain": "it_ai",
+      "status": "fail",
+      "findings": [
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-02",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-02",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "sum-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "sum-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "sum-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        }
+      ],
+      "quality_gate_findings": [
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-02",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "form-ppd-02",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "sum-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "sum-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "sum-ppd-01",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        }
+      ],
+      "failure_categories": [
+        "QUALITY_GATE"
+      ],
+      "metadata": {
+        "fixture_id": "python_data_processing",
+        "domain": "it_ai",
+        "industry_family": "technology",
+        "learning_type": "procedural_technical_skill",
+        "difficulty": "medium",
+        "description": "A learner transforms and validates tabular data with Python."
+      },
+      "stage_completion": {
+        "status": "completed",
+        "model_audit_count": 5,
+        "snapshot_present": true
+      },
+      "dependency_normalization": {
+        "canonical_count": 11,
+        "canonical_dependencies": [
+          {
+            "capability_ref": "basic python scripting",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "form-ppd-01",
+                  "original_value": "basic Python scripting"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "form-ppd-01",
+                  "original_value": "basic Python scripting"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "tabular data library familiarity",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "form-ppd-01",
+                  "original_value": "tabular data library familiarity"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "form-ppd-01",
+                  "original_value": "tabular data library familiarity"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "basic python scripting",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "form-ppd-01",
+                  "original_value": "basic Python scripting"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "invalid value identification and classification",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "form-ppd-02",
+                  "original_value": "invalid value identification and classification"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "form-ppd-02",
+                  "original_value": "invalid value identification and classification"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "tabular data transformation using a standard python library",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "form-ppd-02",
+                  "original_value": "tabular data transformation using a standard Python library"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "form-ppd-02",
+                  "original_value": "tabular data transformation using a standard Python library"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "tabular data library familiarity",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "form-ppd-02",
+                  "original_value": "tabular data library familiarity"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-02"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "invalid value identification and classification",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "invalid value identification and classification"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "invalid value identification and classification"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "tabular data transformation using a standard python library",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "tabular data transformation using a standard Python library"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "tabular data transformation using a standard Python library"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "data-driven written justification",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "data-driven written justification"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "data-driven written justification"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "basic python scripting",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "basic Python scripting"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "tabular data library familiarity",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "sum-ppd-01",
+                  "original_value": "tabular data library familiarity"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-ppd-01",
+              "obj-ppd-02",
+              "obj-ppd-03"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          }
+        ]
+      }
+    },
+    {
+      "fixture_id": "accounting_financial_reporting_basic",
+      "domain": "accounting",
+      "status": "fail",
+      "findings": [
+        {
+          "code": "stage_execution_failed",
+          "category": "ORCHESTRATION",
+          "severity": "error",
+          "message": "OrchestrationReferenceResolution: v0.3 assessment capability requirement contains an unknown objective reference",
+          "entity_id": "accounting_financial_reporting_basic"
+        }
+      ],
+      "quality_gate_findings": [],
+      "failure_categories": [
+        "ORCHESTRATION"
+      ],
+      "metadata": {
+        "fixture_id": "accounting_financial_reporting_basic",
+        "domain": "accounting",
+        "industry_family": "finance",
+        "learning_type": "regulated_professional_skill",
+        "difficulty": "medium",
+        "description": "An entry-level accountant prepares basic reports and identifies discrepancies."
+      },
+      "stage_completion": {
+        "status": "failed",
+        "model_audit_count": 5,
+        "snapshot_present": false
+      },
+      "dependency_normalization": null
+    },
+    {
+      "fixture_id": "legal_contract_review_basic",
+      "domain": "legal_compliance",
+      "status": "fail",
+      "findings": [
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-formative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-formative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        }
+      ],
+      "quality_gate_findings": [
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-formative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-formative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        },
+        {
+          "code": "assessment_dependency_not_covered",
+          "severity": "error",
+          "entity_type": "assessment",
+          "entity_id": "assess-legal_contract_review_basic-summative-001",
+          "field": "required_capabilities",
+          "message": "Assessment dependency is not known, confirmed, or taught by the course.",
+          "category": "QUALITY_GATE"
+        }
+      ],
+      "failure_categories": [
+        "QUALITY_GATE"
+      ],
+      "metadata": {
+        "fixture_id": "legal_contract_review_basic",
+        "domain": "legal_compliance",
+        "industry_family": "legal_services",
+        "learning_type": "analytical_judgment_skill",
+        "difficulty": "high",
+        "description": "A junior legal specialist reviews a commercial contract for potential risks."
+      },
+      "stage_completion": {
+        "status": "completed",
+        "model_audit_count": 5,
+        "snapshot_present": true
+      },
+      "dependency_normalization": {
+        "canonical_count": 8,
+        "canonical_dependencies": [
+          {
+            "capability_ref": "read and comprehend contract language",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-formative-001",
+                  "original_value": "read and comprehend contract language"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-formative-001",
+                  "original_value": "read and comprehend contract language"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "understand what constitutes a risk in a commercial context",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-formative-001",
+                  "original_value": "understand what constitutes a risk in a commercial context"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-formative-001",
+                  "original_value": "understand what constitutes a risk in a commercial context"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "read and comprehend contract language",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "read and comprehend contract language"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "read and comprehend contract language"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "understand what constitutes a risk in a commercial context",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "understand what constitutes a risk in a commercial context"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "understand what constitutes a risk in a commercial context"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "articulate causal relationships in written explanation",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "articulate causal relationships in written explanation"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "articulate causal relationships in written explanation"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "distinguish between risk analysis and final legal judgment",
+            "dependency_role": "required_capability",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "legacy_compatibility",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "distinguish between risk analysis and final legal judgment"
+                },
+                {
+                  "type": "typed_required_capability",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "distinguish between risk analysis and final legal judgment"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ],
+            "confidence": null,
+            "status": "confirmed"
+          },
+          {
+            "capability_ref": "distinguish between risk analysis and final legal judgment",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "distinguish between risk analysis and final legal judgment"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          },
+          {
+            "capability_ref": "articulate causal relationships in written explanation",
+            "dependency_role": "supporting_dependency",
+            "provenance": {
+              "sources": [
+                {
+                  "type": "dependency_candidate",
+                  "source_ref": "assess-legal_contract_review_basic-summative-001",
+                  "original_value": "articulate causal relationships in written explanation"
+                }
+              ]
+            },
+            "objective_ids": [
+              "obj-legal_contract_review_basic-001",
+              "obj-legal_contract_review_basic-002"
+            ],
+            "confidence": null,
+            "status": "candidate"
+          }
+        ]
+      }
+    },
+    {
+      "fixture_id": "hr_recruitment_planning_basic",
+      "domain": "hr_management",
+      "status": "fail",
+      "findings": [
+        {
+          "code": "stage_execution_failed",
+          "category": "ORCHESTRATION",
+          "severity": "error",
+          "message": "OrchestrationReferenceResolution: v0.3 assessment capability requirement contains an unknown objective reference",
+          "entity_id": "hr_recruitment_planning_basic"
+        }
+      ],
+      "quality_gate_findings": [],
+      "failure_categories": [
+        "ORCHESTRATION"
+      ],
+      "metadata": {
+        "fixture_id": "hr_recruitment_planning_basic",
+        "domain": "hr_management",
+        "industry_family": "human_resources",
+        "learning_type": "scenario_based_professional_skill",
+        "difficulty": "medium",
+        "description": "An HR employee creates a recruitment plan for a department."
+      },
+      "stage_completion": {
+        "status": "failed",
+        "model_audit_count": 5,
+        "snapshot_present": false
+      },
+      "dependency_normalization": null
+    },
+    {
+      "fixture_id": "construction_drawing_and_method_basic",
+      "domain": "construction_engineering",
+      "status": "fail",
+      "findings": [
+        {
+          "code": "stage_execution_failed",
+          "category": "ORCHESTRATION",
+          "severity": "error",
+          "message": "OrchestrationReferenceResolution: v0.3 assessment capability requirement contains an unknown objective reference",
+          "entity_id": "construction_drawing_and_method_basic"
+        }
+      ],
+      "quality_gate_findings": [],
+      "failure_categories": [
+        "ORCHESTRATION"
+      ],
+      "metadata": {
+        "fixture_id": "construction_drawing_and_method_basic",
+        "domain": "construction_engineering",
+        "industry_family": "construction",
+        "learning_type": "procedural_safety_skill",
+        "difficulty": "high",
+        "description": "A junior engineer interprets drawings and prepares a simple construction method proposal."
+      },
+      "stage_completion": {
+        "status": "failed",
+        "model_audit_count": 5,
+        "snapshot_present": false
+      },
+      "dependency_normalization": null
+    }
+  ]
+}

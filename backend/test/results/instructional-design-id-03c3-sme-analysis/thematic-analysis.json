@@ -1,0 +1,798 @@
+[
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 10,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "measurable_objectives"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 10,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "objective_assessment_alignment"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 10,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "authentic_performance_assessment"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 10,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "cognitive_progression"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 10,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "coherent_sequence"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic"
+    ],
+    "occurrences": 8,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "domain_relevant_practice"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 3,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "prerequisite_inflation"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 10,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "insufficient_practice"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "hr_recruitment_planning_basic"
+    ],
+    "occurrences": 3,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "under_teaching"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 7,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "scope_imbalance"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 10,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "workload_time_pressure"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 7,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "assessment_scope_issue"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "gemini-sme-01"
+      },
+      {
+        "fixture": "hr_recruitment_planning_basic",
+        "review_id": "review-004",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "hr_recruitment_planning_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 8,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "weak_scaffolding"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      }
+    ],
+    "fixtures": [
+      "legal_contract_review_basic"
+    ],
+    "occurrences": 1,
+    "reviewers": [
+      "codex-sme-reviewer"
+    ],
+    "theme": "unclear_success_criteria"
+  },
+  {
+    "evidence_refs": [
+      {
+        "fixture": "python_data_processing",
+        "review_id": "review-001",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "accounting_financial_reporting_basic",
+        "review_id": "review-002",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "legal_contract_review_basic",
+        "review_id": "review-003",
+        "reviewer": "codex-sme-reviewer"
+      },
+      {
+        "fixture": "construction_drawing_and_method_basic",
+        "review_id": "review-005",
+        "reviewer": "gemini-sme-01"
+      }
+    ],
+    "fixtures": [
+      "accounting_financial_reporting_basic",
+      "construction_drawing_and_method_basic",
+      "legal_contract_review_basic",
+      "python_data_processing"
+    ],
+    "occurrences": 4,
+    "reviewers": [
+      "codex-sme-reviewer",
+      "gemini-sme-01"
+    ],
+    "theme": "insufficient_feedback"
+  }
+]

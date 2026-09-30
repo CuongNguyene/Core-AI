@@ -1,0 +1,31 @@
+fixture: jd-demo-03a-reference
+source: human_authored_reference
+requirements:
+  - id: req-analytics-dashboards
+    modality: responsibility
+    criterion_dimension: skill
+    excerpt: Build and maintain analytical dashboards for business stakeholders.
+  - id: req-data-analysis-experience
+    modality: must
+    criterion_dimension: experience
+    excerpt: At least 3 years of experience in data analysis or business intelligence.
+  - id: req-sql-python
+    modality: must
+    criterion_dimension: skill
+    excerpt: Strong SQL skills and practical Python experience for data analysis.
+  - id: req-visualization-tool
+    modality: must
+    criterion_dimension: skill
+    excerpt: Experience designing dashboards with a visualization tool.
+  - id: req-bachelors-degree
+    modality: must
+    criterion_dimension: education
+    excerpt: Bachelor's degree in statistics, mathematics, computer science, or a related field.
+  - id: req-experimentation
+    modality: preferred
+    criterion_dimension: experience
+    excerpt: Experience with experimentation or A/B testing.
+  - id: req-dbt
+    modality: preferred
+    criterion_dimension: skill
+    excerpt: Familiarity with dbt is a plus.

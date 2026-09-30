@@ -1,0 +1,115 @@
+{
+  "review_id": "review-001",
+  "reviewer_id": "codex-sme-reviewer",
+  "reviewed_at": "2026-08-14T15:16:48+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_observed",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "asmt-bpdp-f01.required_capability_refs",
+        "field": "required_capability_refs",
+        "description": "The assessment lists textual capability names such as tabular data manipulation in Python and invalid value identification rather than resolvable objective/prerequisite IDs; the packet also reports these dependencies as not covered.",
+        "severity": "error",
+        "validator_appears_correct": true
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "asmt-bpdp-s01.required_capability_refs",
+        "field": "required_capability_refs",
+        "description": "The summative assessment lists textual capability names, including data quality reasoning, that do not resolve to supplied IDs even though they are linked conceptually to the objectives.",
+        "severity": "error",
+        "validator_appears_correct": true
+      },
+      {
+        "category": "other",
+        "entity": "course_outline.planning_warnings",
+        "field": "planning_warnings",
+        "description": "The outline explicitly warns that the 60-minute budget must include instruction plus formative and summative assessment time, and that the split is unconfirmed.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "No orphan modules or lessons were observed. Objective, module, lesson, and assessment IDs otherwise resolve internally. Technical observations are not used as pedagogical penalties."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes",
+      "notes": "Ignoring machine traceability and schema issues, the instructional design is pedagogically reasonable: it decomposes the performance into transforming invalid tabular values and justifying the choices, then sequences procedural practice before integrated justification."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Both objectives are observable: learners transform invalid values using Python and justify each transformation against data-quality criteria. Measurability would improve by specifying the invalid-value types, target columns, and acceptable justification forms."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "The formative assessment targets transformation and the summative assessment integrates transformation plus justification. Alignment is slightly weakened because learners may declare their own invalid-value scope, which can reduce comparability unless constrained."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Executable code, transformed tabular output, and rationale statements are valid evidence for the stated capability. The evidence would be more defensible with a fixed dataset, answer key, and criteria for data-quality reasoning."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "The apply-level transformation objective and evaluate-level justification objective are broadly matched by performance and integrated assessment tasks. Scenario/practice work supports the intended cognitive demand."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "Python syntax and tabular data concepts are relevant candidate prerequisites. Data-quality criteria awareness is relevant but may be too close to the justification objective and may need to be taught explicitly rather than assumed."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "The sequence is coherent: transform first, then justify decisions using original and transformed data. The two-module layout mirrors that dependency."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "Lessons provide worked example, guided practice, explanation, scenario practice, and independent practice. Alignment is limited by unspecified scaffolds and no registered formative checkpoint for the justification objective."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "There is moderate under-teaching risk because invalid-value detection, transformation technique choice, and data-quality justification are all compressed into 60 minutes with limited concrete content."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 2,
+        "rationale": "The scope is mostly focused. The only minor breadth issue is treating data-quality criteria as an entry prerequisite while also introducing it inside the justification module."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 3,
+        "rationale": "Moderate editing is needed to define the dataset scope, constrain invalid-value types, clarify prerequisite boundaries, and add concrete scaffolding and scoring anchors."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-bpdp-01",
+        "prereq-bpdp-02"
+      ],
+      "rejected_refs": [
+        "prereq-bpdp-03"
+      ],
+      "notes": "Python syntax and tabular data concepts are acceptable candidate entry requirements. prereq-bpdp-03 should be revised: either narrow it to minimal awareness or move it into instruction because the lesson itself introduces data-quality criteria."
+    },
+    "edit_effort": {
+      "level": "moderate",
+      "objectives_changed": 1,
+      "assessments_changed": 2,
+      "prerequisites_changed": 1,
+      "modules_changed": 1,
+      "lessons_changed": 3,
+      "notes": "Estimated edits: clarify invalid-value scope and justification modality, revise both assessments for consistent fixed evidence, reframe prereq-bpdp-03, and add concrete examples/scaffolds for three lessons."
+    },
+    "overall_notes": "A coherent short-course draft for Python invalid-value transformation. The main approval risks are unspecified data fixtures, compressed timing, and prerequisite/instruction boundary around data-quality reasoning."
+  }
+}

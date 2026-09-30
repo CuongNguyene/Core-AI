@@ -1,0 +1,27 @@
+{
+  "experiment": "id03b4",
+  "experiment_version": "0.1",
+  "source_artifact": "instructional-design-id-03b3-cross-domain-smoke-final/results.json",
+  "source_run_manifest": "instructional-design-id-03b3-cross-domain-smoke-final/manifest.json",
+  "analysis_only": true,
+  "external_model_rerun": false,
+  "created_at": "2026-08-14T04:38:39.485845+00:00",
+  "fixtures": [
+    "python_data_processing",
+    "legal_contract_review_basic"
+  ],
+  "condition": "structured_v0.3.1",
+  "constraints_preserved": [
+    "prompts",
+    "schemas",
+    "quality gate",
+    "validators",
+    "DependencyNormalizer"
+  ],
+  "artifacts": [
+    "python-dependency-trace.json",
+    "legal-objective-trace.json",
+    "root-cause-report.json",
+    "validation-report.json"
+  ]
+}

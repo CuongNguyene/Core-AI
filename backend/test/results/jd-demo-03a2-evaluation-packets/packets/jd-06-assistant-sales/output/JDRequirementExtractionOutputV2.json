@@ -1,0 +1,218 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req-1",
+      "statement": "Applicants should have at least three years of B2B sales experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "experience_requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "three years",
+        "B2B sales experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "3 years",
+      "observable_behaviors": [
+        "have at least three years of B2B sales experience"
+      ],
+      "evidence_constraints": [
+        "at least three years"
+      ],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+        "section": "body",
+        "start_offset": 1075,
+        "end_offset": 1143
+      },
+      "source_excerpt": "Applicants should have at least three years of B2B sales experience.",
+      "provenance": {
+        "requirement_id": "jd_extraction",
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "evidence_status": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-2",
+      "statement": "Experience working with distributors or retail customers is preferred.",
+      "criterion_dimension": "experience",
+      "modality": "preferred",
+      "logical_group": "experience_requirements",
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "distributors",
+        "retail customers"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "work with distributors or retail customers"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+        "section": "body",
+        "start_offset": 1144,
+        "end_offset": 1214
+      },
+      "source_excerpt": "Experience working with distributors or retail customers is preferred.",
+      "provenance": {
+        "requirement_id": "jd_extraction",
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "evidence_status": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-3",
+      "statement": "Candidates should have good communication, negotiation and relationship management skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": "skill_requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "communication",
+        "negotiation",
+        "relationship management skills"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "demonstrate good communication, negotiation and relationship management skills"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+        "section": "body",
+        "start_offset": 1215,
+        "end_offset": 1305
+      },
+      "source_excerpt": "Candidates should have good communication, negotiation and relationship management skills.",
+      "provenance": {
+        "requirement_id": "jd_extraction",
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "evidence_status": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-4",
+      "statement": "A university degree in Business Administration, Marketing or related fields is preferred.",
+      "criterion_dimension": "education",
+      "modality": "preferred",
+      "logical_group": "education_requirements",
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "university degree",
+        "Business Administration",
+        "Marketing"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "university degree",
+      "observable_behaviors": [
+        "hold a university degree in Business Administration, Marketing or related fields"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+        "section": "body",
+        "start_offset": 1306,
+        "end_offset": 1395
+      },
+      "source_excerpt": "A university degree in Business Administration, Marketing or related fields is preferred.",
+      "provenance": {
+        "requirement_id": "jd_extraction",
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "evidence_status": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-5",
+      "statement": "Experience with CRM systems is an advantage.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": "skill_requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "CRM systems"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "use CRM systems"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+        "section": "body",
+        "start_offset": 1396,
+        "end_offset": 1440
+      },
+      "source_excerpt": "Experience with CRM systems is an advantage.",
+      "provenance": {
+        "requirement_id": "jd_extraction",
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "evidence_status": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req-6",
+      "statement": "The person will be responsible for achieving monthly sales targets and maintaining relationships with distributors and key customers.",
+      "criterion_dimension": null,
+      "modality": "responsibility",
+      "logical_group": "core_responsibilities",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "achieving monthly sales targets",
+        "maintaining relationships"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "achieve monthly sales targets",
+        "maintain relationships with distributors and key customers"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+        "section": "body",
+        "start_offset": 273,
+        "end_offset": 406
+      },
+      "source_excerpt": "The person will be responsible for achieving monthly sales targets and maintaining relationships with distributors and key customers.",
+      "provenance": {
+        "requirement_id": "jd_extraction",
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction",
+        "evidence_status": "jd_extraction"
+      }
+    }
+  ]
+}

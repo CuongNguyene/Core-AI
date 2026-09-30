@@ -1,0 +1,1171 @@
+{
+  "manifest": {
+    "experiment_id": "instructional-design-id-02-smoke-3",
+    "experiment_version": "0.1",
+    "fixture_count": 3,
+    "fixture_ids": [
+      "model_monitoring",
+      "python_data_processing",
+      "technical_communication"
+    ],
+    "conditions": [
+      "one_shot",
+      "structured_v0.3"
+    ],
+    "runs_per_fixture_per_condition": 1,
+    "model_provider": "vilao",
+    "model_name": "claude-sonnet-5",
+    "model_revision": null,
+    "generation_config": {
+      "temperature": 0.0,
+      "top_p": null,
+      "max_output_tokens": 8192,
+      "seed": null,
+      "unsupported_fields": [
+        "top_p",
+        "seed"
+      ]
+    },
+    "policy_id": "pai_instructional_design",
+    "policy_version": "0.1",
+    "prompt_schema_versions": [
+      {
+        "prompt_id": "instructional_objective_design",
+        "prompt_version": "0.3",
+        "schema_id": "instructional_objective_design",
+        "schema_version": "0.3"
+      },
+      {
+        "prompt_id": "instructional_assessment_design",
+        "prompt_version": "0.3",
+        "schema_id": "instructional_assessment_design",
+        "schema_version": "0.3"
+      },
+      {
+        "prompt_id": "instructional_prerequisite_proposal",
+        "prompt_version": "0.3",
+        "schema_id": "instructional_prerequisite_proposal",
+        "schema_version": "0.3"
+      },
+      {
+        "prompt_id": "instructional_course_planning",
+        "prompt_version": "0.3",
+        "schema_id": "instructional_course_planning",
+        "schema_version": "0.3"
+      },
+      {
+        "prompt_id": "instructional_lesson_planning",
+        "prompt_version": "0.3",
+        "schema_id": "instructional_lesson_planning",
+        "schema_version": "0.3"
+      },
+      {
+        "prompt_id": "instructional_design_one_shot_baseline",
+        "prompt_version": "0.1",
+        "schema_id": "instructional_design_one_shot_baseline",
+        "schema_version": "0.1"
+      }
+    ],
+    "estimated_model_call_count": 18
+  },
+  "results": [
+    {
+      "run": {
+        "run_id": "instructional-design-id-02-smoke-3:model_monitoring:one_shot:1",
+        "experiment_id": "instructional-design-id-02-smoke-3",
+        "experiment_version": "0.1",
+        "fixture_id": "model_monitoring",
+        "condition": "one_shot",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_design_one_shot_baseline",
+            "prompt_version": "0.1",
+            "schema_id": "instructional_design_one_shot_baseline",
+            "schema_version": "0.1"
+          }
+        ],
+        "started_at": "2026-08-13T03:36:17.254200Z"
+      },
+      "status": "failed",
+      "snapshot": null,
+      "partial_artifacts": {
+        "objectives": [],
+        "assessments": [],
+        "prerequisites": [],
+        "course_outline": null,
+        "lessons": []
+      },
+      "stage_failure": {
+        "stage": "OneShotInstructionalDesignGenerator",
+        "failure_class": "ProviderTimeoutError",
+        "validation_error": "Local model request timed out",
+        "retry_count": 0
+      },
+      "model_audits": [],
+      "completed_at": "2026-08-13T03:36:17.465030Z"
+    },
+    {
+      "run": {
+        "run_id": "instructional-design-id-02-smoke-3:model_monitoring:structured_v0.3:1",
+        "experiment_id": "instructional-design-id-02-smoke-3",
+        "experiment_version": "0.1",
+        "fixture_id": "model_monitoring",
+        "condition": "structured_v0.3",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_design_one_shot_baseline",
+            "prompt_version": "0.1",
+            "schema_id": "instructional_design_one_shot_baseline",
+            "schema_version": "0.1"
+          }
+        ],
+        "started_at": "2026-08-13T03:36:17.254200Z"
+      },
+      "status": "failed",
+      "snapshot": null,
+      "partial_artifacts": {
+        "objectives": [],
+        "assessments": [],
+        "prerequisites": [],
+        "course_outline": null,
+        "lessons": []
+      },
+      "stage_failure": {
+        "stage": "ObjectiveDesigner",
+        "failure_class": "ProviderTimeoutError",
+        "validation_error": "Local model request timed out",
+        "retry_count": 0
+      },
+      "model_audits": [],
+      "completed_at": "2026-08-13T03:36:17.641825Z"
+    },
+    {
+      "run": {
+        "run_id": "instructional-design-id-02-smoke-3:python_data_processing:one_shot:1",
+        "experiment_id": "instructional-design-id-02-smoke-3",
+        "experiment_version": "0.1",
+        "fixture_id": "python_data_processing",
+        "condition": "one_shot",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_design_one_shot_baseline",
+            "prompt_version": "0.1",
+            "schema_id": "instructional_design_one_shot_baseline",
+            "schema_version": "0.1"
+          }
+        ],
+        "started_at": "2026-08-13T03:36:17.254200Z"
+      },
+      "status": "failed",
+      "snapshot": null,
+      "partial_artifacts": {
+        "objectives": [],
+        "assessments": [],
+        "prerequisites": [],
+        "course_outline": null,
+        "lessons": []
+      },
+      "stage_failure": {
+        "stage": "OneShotInstructionalDesignGenerator",
+        "failure_class": "ProviderTimeoutError",
+        "validation_error": "Local model request timed out",
+        "retry_count": 0
+      },
+      "model_audits": [],
+      "completed_at": "2026-08-13T03:36:17.823852Z"
+    },
+    {
+      "run": {
+        "run_id": "instructional-design-id-02-smoke-3:python_data_processing:structured_v0.3:1",
+        "experiment_id": "instructional-design-id-02-smoke-3",
+        "experiment_version": "0.1",
+        "fixture_id": "python_data_processing",
+        "condition": "structured_v0.3",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_design_one_shot_baseline",
+            "prompt_version": "0.1",
+            "schema_id": "instructional_design_one_shot_baseline",
+            "schema_version": "0.1"
+          }
+        ],
+        "started_at": "2026-08-13T03:36:17.254200Z"
+      },
+      "status": "failed",
+      "snapshot": null,
+      "partial_artifacts": {
+        "objectives": [],
+        "assessments": [],
+        "prerequisites": [],
+        "course_outline": null,
+        "lessons": []
+      },
+      "stage_failure": {
+        "stage": "ObjectiveDesigner",
+        "failure_class": "ProviderTimeoutError",
+        "validation_error": "Local model request timed out",
+        "retry_count": 0
+      },
+      "model_audits": [],
+      "completed_at": "2026-08-13T03:36:17.999474Z"
+    },
+    {
+      "run": {
+        "run_id": "instructional-design-id-02-smoke-3:technical_communication:one_shot:1",
+        "experiment_id": "instructional-design-id-02-smoke-3",
+        "experiment_version": "0.1",
+        "fixture_id": "technical_communication",
+        "condition": "one_shot",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_design_one_shot_baseline",
+            "prompt_version": "0.1",
+            "schema_id": "instructional_design_one_shot_baseline",
+            "schema_version": "0.1"
+          }
+        ],
+        "started_at": "2026-08-13T03:36:17.254200Z"
+      },
+      "status": "failed",
+      "snapshot": null,
+      "partial_artifacts": {
+        "objectives": [],
+        "assessments": [],
+        "prerequisites": [],
+        "course_outline": null,
+        "lessons": []
+      },
+      "stage_failure": {
+        "stage": "OneShotInstructionalDesignGenerator",
+        "failure_class": "ProviderTimeoutError",
+        "validation_error": "Local model request timed out",
+        "retry_count": 0
+      },
+      "model_audits": [],
+      "completed_at": "2026-08-13T03:36:18.176295Z"
+    },
+    {
+      "run": {
+        "run_id": "instructional-design-id-02-smoke-3:technical_communication:structured_v0.3:1",
+        "experiment_id": "instructional-design-id-02-smoke-3",
+        "experiment_version": "0.1",
+        "fixture_id": "technical_communication",
+        "condition": "structured_v0.3",
+        "run_number": 1,
+        "model_provider": "vilao",
+        "model_name": "claude-sonnet-5",
+        "model_revision": null,
+        "generation_config": {
+          "temperature": 0.0,
+          "top_p": null,
+          "max_output_tokens": 8192,
+          "seed": null,
+          "unsupported_fields": [
+            "top_p",
+            "seed"
+          ]
+        },
+        "policy_id": "pai_instructional_design",
+        "policy_version": "0.1",
+        "prompt_schema_versions": [
+          {
+            "prompt_id": "instructional_objective_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_objective_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_assessment_design",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_assessment_design",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_prerequisite_proposal",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_prerequisite_proposal",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_course_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_course_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_lesson_planning",
+            "prompt_version": "0.3",
+            "schema_id": "instructional_lesson_planning",
+            "schema_version": "0.3"
+          },
+          {
+            "prompt_id": "instructional_design_one_shot_baseline",
+            "prompt_version": "0.1",
+            "schema_id": "instructional_design_one_shot_baseline",
+            "schema_version": "0.1"
+          }
+        ],
+        "started_at": "2026-08-13T03:36:17.254200Z"
+      },
+      "status": "failed",
+      "snapshot": null,
+      "partial_artifacts": {
+        "objectives": [],
+        "assessments": [],
+        "prerequisites": [],
+        "course_outline": null,
+        "lessons": []
+      },
+      "stage_failure": {
+        "stage": "ObjectiveDesigner",
+        "failure_class": "ProviderTimeoutError",
+        "validation_error": "Local model request timed out",
+        "retry_count": 0
+      },
+      "model_audits": [],
+      "completed_at": "2026-08-13T03:36:18.358326Z"
+    }
+  ],
+  "comparisons": [
+    {
+      "fixture_id": "model_monitoring",
+      "one_shot_runs": [
+        {
+          "run": {
+            "run_id": "instructional-design-id-02-smoke-3:model_monitoring:one_shot:1",
+            "experiment_id": "instructional-design-id-02-smoke-3",
+            "experiment_version": "0.1",
+            "fixture_id": "model_monitoring",
+            "condition": "one_shot",
+            "run_number": 1,
+            "model_provider": "vilao",
+            "model_name": "claude-sonnet-5",
+            "model_revision": null,
+            "generation_config": {
+              "temperature": 0.0,
+              "top_p": null,
+              "max_output_tokens": 8192,
+              "seed": null,
+              "unsupported_fields": [
+                "top_p",
+                "seed"
+              ]
+            },
+            "policy_id": "pai_instructional_design",
+            "policy_version": "0.1",
+            "prompt_schema_versions": [
+              {
+                "prompt_id": "instructional_objective_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_objective_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_assessment_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_assessment_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_prerequisite_proposal",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_prerequisite_proposal",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_course_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_course_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_lesson_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_lesson_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_design_one_shot_baseline",
+                "prompt_version": "0.1",
+                "schema_id": "instructional_design_one_shot_baseline",
+                "schema_version": "0.1"
+              }
+            ],
+            "started_at": "2026-08-13T03:36:17.254200Z"
+          },
+          "status": "failed",
+          "snapshot": null,
+          "partial_artifacts": {
+            "objectives": [],
+            "assessments": [],
+            "prerequisites": [],
+            "course_outline": null,
+            "lessons": []
+          },
+          "stage_failure": {
+            "stage": "OneShotInstructionalDesignGenerator",
+            "failure_class": "ProviderTimeoutError",
+            "validation_error": "Local model request timed out",
+            "retry_count": 0
+          },
+          "model_audits": [],
+          "completed_at": "2026-08-13T03:36:17.465030Z"
+        }
+      ],
+      "structured_runs": [
+        {
+          "run": {
+            "run_id": "instructional-design-id-02-smoke-3:model_monitoring:structured_v0.3:1",
+            "experiment_id": "instructional-design-id-02-smoke-3",
+            "experiment_version": "0.1",
+            "fixture_id": "model_monitoring",
+            "condition": "structured_v0.3",
+            "run_number": 1,
+            "model_provider": "vilao",
+            "model_name": "claude-sonnet-5",
+            "model_revision": null,
+            "generation_config": {
+              "temperature": 0.0,
+              "top_p": null,
+              "max_output_tokens": 8192,
+              "seed": null,
+              "unsupported_fields": [
+                "top_p",
+                "seed"
+              ]
+            },
+            "policy_id": "pai_instructional_design",
+            "policy_version": "0.1",
+            "prompt_schema_versions": [
+              {
+                "prompt_id": "instructional_objective_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_objective_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_assessment_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_assessment_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_prerequisite_proposal",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_prerequisite_proposal",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_course_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_course_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_lesson_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_lesson_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_design_one_shot_baseline",
+                "prompt_version": "0.1",
+                "schema_id": "instructional_design_one_shot_baseline",
+                "schema_version": "0.1"
+              }
+            ],
+            "started_at": "2026-08-13T03:36:17.254200Z"
+          },
+          "status": "failed",
+          "snapshot": null,
+          "partial_artifacts": {
+            "objectives": [],
+            "assessments": [],
+            "prerequisites": [],
+            "course_outline": null,
+            "lessons": []
+          },
+          "stage_failure": {
+            "stage": "ObjectiveDesigner",
+            "failure_class": "ProviderTimeoutError",
+            "validation_error": "Local model request timed out",
+            "retry_count": 0
+          },
+          "model_audits": [],
+          "completed_at": "2026-08-13T03:36:17.641825Z"
+        }
+      ],
+      "human_evaluations": []
+    },
+    {
+      "fixture_id": "python_data_processing",
+      "one_shot_runs": [
+        {
+          "run": {
+            "run_id": "instructional-design-id-02-smoke-3:python_data_processing:one_shot:1",
+            "experiment_id": "instructional-design-id-02-smoke-3",
+            "experiment_version": "0.1",
+            "fixture_id": "python_data_processing",
+            "condition": "one_shot",
+            "run_number": 1,
+            "model_provider": "vilao",
+            "model_name": "claude-sonnet-5",
+            "model_revision": null,
+            "generation_config": {
+              "temperature": 0.0,
+              "top_p": null,
+              "max_output_tokens": 8192,
+              "seed": null,
+              "unsupported_fields": [
+                "top_p",
+                "seed"
+              ]
+            },
+            "policy_id": "pai_instructional_design",
+            "policy_version": "0.1",
+            "prompt_schema_versions": [
+              {
+                "prompt_id": "instructional_objective_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_objective_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_assessment_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_assessment_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_prerequisite_proposal",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_prerequisite_proposal",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_course_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_course_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_lesson_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_lesson_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_design_one_shot_baseline",
+                "prompt_version": "0.1",
+                "schema_id": "instructional_design_one_shot_baseline",
+                "schema_version": "0.1"
+              }
+            ],
+            "started_at": "2026-08-13T03:36:17.254200Z"
+          },
+          "status": "failed",
+          "snapshot": null,
+          "partial_artifacts": {
+            "objectives": [],
+            "assessments": [],
+            "prerequisites": [],
+            "course_outline": null,
+            "lessons": []
+          },
+          "stage_failure": {
+            "stage": "OneShotInstructionalDesignGenerator",
+            "failure_class": "ProviderTimeoutError",
+            "validation_error": "Local model request timed out",
+            "retry_count": 0
+          },
+          "model_audits": [],
+          "completed_at": "2026-08-13T03:36:17.823852Z"
+        }
+      ],
+      "structured_runs": [
+        {
+          "run": {
+            "run_id": "instructional-design-id-02-smoke-3:python_data_processing:structured_v0.3:1",
+            "experiment_id": "instructional-design-id-02-smoke-3",
+            "experiment_version": "0.1",
+            "fixture_id": "python_data_processing",
+            "condition": "structured_v0.3",
+            "run_number": 1,
+            "model_provider": "vilao",
+            "model_name": "claude-sonnet-5",
+            "model_revision": null,
+            "generation_config": {
+              "temperature": 0.0,
+              "top_p": null,
+              "max_output_tokens": 8192,
+              "seed": null,
+              "unsupported_fields": [
+                "top_p",
+                "seed"
+              ]
+            },
+            "policy_id": "pai_instructional_design",
+            "policy_version": "0.1",
+            "prompt_schema_versions": [
+              {
+                "prompt_id": "instructional_objective_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_objective_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_assessment_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_assessment_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_prerequisite_proposal",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_prerequisite_proposal",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_course_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_course_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_lesson_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_lesson_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_design_one_shot_baseline",
+                "prompt_version": "0.1",
+                "schema_id": "instructional_design_one_shot_baseline",
+                "schema_version": "0.1"
+              }
+            ],
+            "started_at": "2026-08-13T03:36:17.254200Z"
+          },
+          "status": "failed",
+          "snapshot": null,
+          "partial_artifacts": {
+            "objectives": [],
+            "assessments": [],
+            "prerequisites": [],
+            "course_outline": null,
+            "lessons": []
+          },
+          "stage_failure": {
+            "stage": "ObjectiveDesigner",
+            "failure_class": "ProviderTimeoutError",
+            "validation_error": "Local model request timed out",
+            "retry_count": 0
+          },
+          "model_audits": [],
+          "completed_at": "2026-08-13T03:36:17.999474Z"
+        }
+      ],
+      "human_evaluations": []
+    },
+    {
+      "fixture_id": "technical_communication",
+      "one_shot_runs": [
+        {
+          "run": {
+            "run_id": "instructional-design-id-02-smoke-3:technical_communication:one_shot:1",
+            "experiment_id": "instructional-design-id-02-smoke-3",
+            "experiment_version": "0.1",
+            "fixture_id": "technical_communication",
+            "condition": "one_shot",
+            "run_number": 1,
+            "model_provider": "vilao",
+            "model_name": "claude-sonnet-5",
+            "model_revision": null,
+            "generation_config": {
+              "temperature": 0.0,
+              "top_p": null,
+              "max_output_tokens": 8192,
+              "seed": null,
+              "unsupported_fields": [
+                "top_p",
+                "seed"
+              ]
+            },
+            "policy_id": "pai_instructional_design",
+            "policy_version": "0.1",
+            "prompt_schema_versions": [
+              {
+                "prompt_id": "instructional_objective_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_objective_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_assessment_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_assessment_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_prerequisite_proposal",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_prerequisite_proposal",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_course_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_course_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_lesson_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_lesson_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_design_one_shot_baseline",
+                "prompt_version": "0.1",
+                "schema_id": "instructional_design_one_shot_baseline",
+                "schema_version": "0.1"
+              }
+            ],
+            "started_at": "2026-08-13T03:36:17.254200Z"
+          },
+          "status": "failed",
+          "snapshot": null,
+          "partial_artifacts": {
+            "objectives": [],
+            "assessments": [],
+            "prerequisites": [],
+            "course_outline": null,
+            "lessons": []
+          },
+          "stage_failure": {
+            "stage": "OneShotInstructionalDesignGenerator",
+            "failure_class": "ProviderTimeoutError",
+            "validation_error": "Local model request timed out",
+            "retry_count": 0
+          },
+          "model_audits": [],
+          "completed_at": "2026-08-13T03:36:18.176295Z"
+        }
+      ],
+      "structured_runs": [
+        {
+          "run": {
+            "run_id": "instructional-design-id-02-smoke-3:technical_communication:structured_v0.3:1",
+            "experiment_id": "instructional-design-id-02-smoke-3",
+            "experiment_version": "0.1",
+            "fixture_id": "technical_communication",
+            "condition": "structured_v0.3",
+            "run_number": 1,
+            "model_provider": "vilao",
+            "model_name": "claude-sonnet-5",
+            "model_revision": null,
+            "generation_config": {
+              "temperature": 0.0,
+              "top_p": null,
+              "max_output_tokens": 8192,
+              "seed": null,
+              "unsupported_fields": [
+                "top_p",
+                "seed"
+              ]
+            },
+            "policy_id": "pai_instructional_design",
+            "policy_version": "0.1",
+            "prompt_schema_versions": [
+              {
+                "prompt_id": "instructional_objective_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_objective_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_assessment_design",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_assessment_design",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_prerequisite_proposal",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_prerequisite_proposal",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_course_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_course_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_lesson_planning",
+                "prompt_version": "0.3",
+                "schema_id": "instructional_lesson_planning",
+                "schema_version": "0.3"
+              },
+              {
+                "prompt_id": "instructional_design_one_shot_baseline",
+                "prompt_version": "0.1",
+                "schema_id": "instructional_design_one_shot_baseline",
+                "schema_version": "0.1"
+              }
+            ],
+            "started_at": "2026-08-13T03:36:17.254200Z"
+          },
+          "status": "failed",
+          "snapshot": null,
+          "partial_artifacts": {
+            "objectives": [],
+            "assessments": [],
+            "prerequisites": [],
+            "course_outline": null,
+            "lessons": []
+          },
+          "stage_failure": {
+            "stage": "ObjectiveDesigner",
+            "failure_class": "ProviderTimeoutError",
+            "validation_error": "Local model request timed out",
+            "retry_count": 0
+          },
+          "model_audits": [],
+          "completed_at": "2026-08-13T03:36:18.358326Z"
+        }
+      ],
+      "human_evaluations": []
+    }
+  ],
+  "aggregation": {
+    "by_condition": {
+      "one_shot": {
+        "run_count": 3,
+        "completed_count": 0,
+        "failed_count": 3,
+        "quality_gate_pass_rate": null,
+        "objective_coverage": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        },
+        "assessment_coverage": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        },
+        "finding_counts_by_code": {},
+        "finding_counts_by_severity": {},
+        "unresolved_prerequisite_count": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        }
+      },
+      "structured": {
+        "run_count": 0,
+        "completed_count": 0,
+        "failed_count": 0,
+        "quality_gate_pass_rate": null,
+        "objective_coverage": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        },
+        "assessment_coverage": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        },
+        "finding_counts_by_code": {},
+        "finding_counts_by_severity": {},
+        "unresolved_prerequisite_count": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        }
+      },
+      "structured_v0.3": {
+        "run_count": 3,
+        "completed_count": 0,
+        "failed_count": 3,
+        "quality_gate_pass_rate": null,
+        "objective_coverage": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        },
+        "assessment_coverage": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        },
+        "finding_counts_by_code": {},
+        "finding_counts_by_severity": {},
+        "unresolved_prerequisite_count": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "minimum": null,
+          "maximum": null,
+          "standard_deviation": null
+        }
+      }
+    }
+  }
+}

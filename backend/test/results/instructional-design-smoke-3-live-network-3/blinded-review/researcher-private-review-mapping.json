@@ -1,0 +1,34 @@
+{
+  "private_mapping": [
+    {
+      "review_id": "review-001",
+      "run_id": "instructional-design-id-02-smoke-3:model_monitoring:one_shot:1",
+      "condition": "one_shot"
+    },
+    {
+      "review_id": "review-002",
+      "run_id": "instructional-design-id-02-smoke-3:model_monitoring:structured_v0.3:1",
+      "condition": "structured_v0.3"
+    },
+    {
+      "review_id": "review-003",
+      "run_id": "instructional-design-id-02-smoke-3:python_data_processing:one_shot:1",
+      "condition": "one_shot"
+    },
+    {
+      "review_id": "review-004",
+      "run_id": "instructional-design-id-02-smoke-3:python_data_processing:structured_v0.3:1",
+      "condition": "structured_v0.3"
+    },
+    {
+      "review_id": "review-005",
+      "run_id": "instructional-design-id-02-smoke-3:technical_communication:one_shot:1",
+      "condition": "one_shot"
+    },
+    {
+      "review_id": "review-006",
+      "run_id": "instructional-design-id-02-smoke-3:technical_communication:structured_v0.3:recovery-1",
+      "condition": "structured_v0.3"
+    }
+  ]
+}

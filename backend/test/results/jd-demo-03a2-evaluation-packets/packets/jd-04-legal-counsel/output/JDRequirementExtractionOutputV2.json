@@ -1,0 +1,128 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "REQ-01",
+      "statement": "Bachelor of Laws or equivalent recognized law degree.",
+      "criterion_dimension": "education",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Bachelor of Laws",
+        "law degree"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4f85d22d-4152-492b-9e4d-0951b1e9b2f1",
+        "section": "Requirements",
+        "start_offset": 1116,
+        "end_offset": 1169
+      },
+      "source_excerpt": "Bachelor of Laws or equivalent recognized law degree.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "REQ-02",
+      "statement": "Minimum 4 years of legal experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "4 years",
+        "legal experience"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": "4 years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4f85d22d-4152-492b-9e4d-0951b1e9b2f1",
+        "section": "Requirements",
+        "start_offset": 1170,
+        "end_offset": 1206
+      },
+      "source_excerpt": "Minimum 4 years of legal experience.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "REQ-03",
+      "statement": "Experience in corporate or commercial law.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "corporate law",
+        "commercial law"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4f85d22d-4152-492b-9e4d-0951b1e9b2f1",
+        "section": "Requirements",
+        "start_offset": 1207,
+        "end_offset": 1249
+      },
+      "source_excerpt": "Experience in corporate or commercial law.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "REQ-04",
+      "statement": "Strong contract drafting and contract review skills.",
+      "criterion_dimension": "skill",
+      "modality": "must",
+      "logical_group": null,
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "contract drafting",
+        "contract review"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "4f85d22d-4152-492b-9e4d-0951b1e9b2f1",
+        "section": "Requirements",
+        "start_offset": 1250,
+        "end_offset": 1302
+      },
+      "source_excerpt": "Strong contract drafting and contract review skills.",
+      "provenance": {
+        "statement": "jd_extraction",
+        "criterion_dimension": "jd_extraction",
+        "modality": "jd_extraction"
+      }
+    }
+  ]
+}

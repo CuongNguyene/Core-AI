@@ -1,0 +1,312 @@
+[
+  {
+    "review_id": "review-001",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_01.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-001/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-001/completion-request.json",
+    "source_sha256": "567ece31fb1d27b31331c863990d708e31a6d383b28c33ebf56984e84b30565e",
+    "requested_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "prerequisites_acceptable"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-002",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_02.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-002/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-002/completion-request.json",
+    "source_sha256": "9b84d52252e392192e66d8807437896bea2b5e0d637253b3c169ea8afafaee83",
+    "requested_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "prerequisites_acceptable"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-003",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_03.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-003/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-003/completion-request.json",
+    "source_sha256": "763fc6ca581f3e53796b0b88ad264b96545ca8112a552c8e292f9b334e959517",
+    "requested_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "prerequisites_acceptable"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-004",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_04.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-004/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-004/completion-request.json",
+    "source_sha256": "d0f53057bca734ac384ea9595bd157fa40587a128cd69b6c99b721703e3175af",
+    "requested_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "prerequisites_acceptable"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-005",
+    "reviewer_id": "codex-sme-reviewer",
+    "resolved_reviewer_id": "codex-sme-reviewer",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-01/completion-submission_05.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-005/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-005/completion-request.json",
+    "source_sha256": "4c684b465203cb49045dd577431d2430893be35042f7a055c6bfd48f5d2b647b",
+    "requested_fields": [
+      "prerequisites_acceptable",
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "prerequisites_acceptable"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-001",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_01.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-001/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-001/completion-request.json",
+    "source_sha256": "dbebb3da6ffea3d2bfd1176dff9ed28dbd928d60e43c6bf1ed7f93f972879cf1",
+    "requested_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-002",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_02.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-002/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-002/completion-request.json",
+    "source_sha256": "684edc5c7b5bd081c9c6ea80f92da437e3f31ad15b51be54f7667bc6dacc2d66",
+    "requested_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-003",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_03.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-003/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-003/completion-request.json",
+    "source_sha256": "dc264a13cf4be77cabfa7bb7d66aa1607483d44cf50baf46f1f930bd8bf82e98",
+    "requested_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-004",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_04.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-004/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-004/completion-request.json",
+    "source_sha256": "30e9ed8b3ac33014763d44a9f4577688d9bcae266ba2fe8c8712fbafbd2b5cbb",
+    "requested_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  },
+  {
+    "review_id": "review-005",
+    "reviewer_id": "gemini-sme-01",
+    "resolved_reviewer_id": "gemini-sme-01",
+    "completion_submission_path": "test/results/instructional-design-id-03c1-submission-recovery/reviewer-completion-submisson/reviewer-02/completion-submission_05.json",
+    "matching_canonical_draft": "test/results/instructional-design-id-03c1-submission-recovery/review-005/canonical-draft.json",
+    "matching_completion_request": "test/results/instructional-design-id-03c1-submission-recovery/review-005/completion-request.json",
+    "source_sha256": "e90be8376800ea1c02bbbd861ba509c21bd2467c5c82fc119cb299ce0edf053a",
+    "requested_fields": [
+      "rationales.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "submitted_fields": [
+      "rubric_scores.scope_balance",
+      "rubric_scores.workload_time_realism",
+      "rubric_scores.domain_appropriateness",
+      "rationales.scope_balance",
+      "rationales.workload_time_realism",
+      "rationales.domain_appropriateness",
+      "special_question.answer",
+      "special_question.rationale"
+    ],
+    "unexpected_fields": [],
+    "missing_requested_fields": [],
+    "state": "CANONICAL_VALID"
+  }
+]

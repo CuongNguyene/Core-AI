@@ -1,0 +1,20 @@
+{
+  "review_id": "review-004",
+  "reviewer_id": "gemini-sme-01",
+  "completion": {
+    "rubric_scores": {
+      "scope_balance": 4,
+      "workload_time_realism": 2,
+      "domain_appropriateness": 5
+    },
+    "rationales": {
+      "scope_balance": "The activities align well with the objectives conceptually (recall, synthesis, evaluation), but generating a complete HR plan from scratch leaves little room for robust guided practice within the short timeframe.",
+      "workload_time_realism": "The proposed workload is clearly unrealistic for 60 minutes. Creating a coherent recruitment plan from a scenario and formulating dependency-based justifications requires much more time, which is reflected in the AI's inability to assign lesson minutes.",
+      "domain_appropriateness": "The instructional approach relies on realistic workplace scenarios, plan synthesis, prioritization, and dependency-based justification, which are all highly appropriate for HR management capabilities."
+    },
+    "special_question": {
+      "answer": "PARTIALLY",
+      "rationale": "The cognitive progression is logically sound for HR planning, but the time constraints are fundamentally mismatched with the heavy generative demands of the summative assessments."
+    }
+  }
+}

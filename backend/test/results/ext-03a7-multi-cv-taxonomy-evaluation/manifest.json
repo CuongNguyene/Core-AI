@@ -1,0 +1,63 @@
+{
+  "experiment_id": "EXT-03A.7",
+  "taxonomy_id": "professional_capability_core",
+  "taxonomy_version": "0.1",
+  "fixtures": [
+    {
+      "fixture_id": "devops-engineer",
+      "sha256": "93ad6e8b3841f4094251717e15f42d11d2d80123639887e5322d343986feab4d",
+      "domain": "technical",
+      "mime_type": "application/pdf",
+      "input_mode": "native_pdf",
+      "page_count": 3
+    },
+    {
+      "fixture_id": "data-analyst",
+      "sha256": "9ff69245a9795a175c4a9f5baddf96a4658518b5ef09befd96803b4ad01efa12",
+      "domain": "technical",
+      "mime_type": "application/pdf",
+      "input_mode": "native_pdf",
+      "page_count": 1
+    },
+    {
+      "fixture_id": "accounting-manager",
+      "sha256": "ce3de39df7d5a0db913d928840f1f9c550604aca9ccccfe904758b4e0c7a131c",
+      "domain": "accounting_finance",
+      "mime_type": "application/pdf",
+      "input_mode": "native_pdf",
+      "page_count": 6
+    },
+    {
+      "fixture_id": "legal-candidate",
+      "sha256": "aa028fcae63ebaded2ac77a2b35990b9f67b7d991ed2b245b24864ea437c1eed",
+      "domain": "legal",
+      "mime_type": "application/pdf",
+      "input_mode": "native_pdf",
+      "page_count": 4
+    },
+    {
+      "fixture_id": "ta-manager",
+      "sha256": "bcfa9067a80ca70a0b528a3eae052073b280961528452c8ce94f1a7fc26820c1",
+      "domain": "hr_management",
+      "mime_type": "application/pdf",
+      "input_mode": "native_pdf",
+      "page_count": 5
+    },
+    {
+      "fixture_id": "assistant-sales-manager",
+      "sha256": "27efec8dc117c8121039136feb8f93ffaeddcc259932ba3c0ae3d77bf82411af",
+      "domain": "sales",
+      "mime_type": "application/pdf",
+      "input_mode": "native_pdf",
+      "page_count": 1
+    },
+    {
+      "fixture_id": "construction-project-manager",
+      "sha256": "bfbccd0e9f36d3b5049ebb7d3d053cf90d14672da12ee6a7a836273a3b2428e0",
+      "domain": "operations_project",
+      "mime_type": "application/pdf",
+      "input_mode": "native_pdf",
+      "page_count": 4
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "target_profile_id": "role-1",
+  "target_profile_version": "1.0",
+  "preliminary_match_id": "match-1",
+  "approved_gap_ids": ["python"],
+  "development_goal": "Become job-ready",
+  "target_completion_date": "2026-12-01",
+  "expected": {
+    "learning_object_id": "lo-objective-python",
+    "lesson_id": "lesson-objective-python",
+    "module_id": "module-objective-python",
+    "approved_source_reference": "catalog:python",
+    "assessment_template_id": "assessment-python"
+  }
+}

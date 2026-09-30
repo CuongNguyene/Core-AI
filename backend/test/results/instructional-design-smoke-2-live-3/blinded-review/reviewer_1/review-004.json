@@ -1,0 +1,107 @@
+{
+  "review_id": "review-004",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T09:42:23+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "pre-001",
+        "field": "teaching_objective_id",
+        "description": "Prerequisite lists 'obj-001' as its teaching objective, which conceptually conflates entry requirements with target learning outcomes.",
+        "category": "schema_or_shape",
+        "severity": "warning",
+        "validator_correct": null
+      },
+      {
+        "entity": "pre-002",
+        "field": "teaching_objective_id",
+        "description": "Prerequisite lists 'obj-001' as its teaching objective.",
+        "category": "schema_or_shape",
+        "severity": "warning",
+        "validator_correct": null
+      }
+    ],
+    "notes": "Multiple prerequisites improperly reference the main learning objectives as their teaching objectives [cite: 4]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Marginally reasonable, but highly problematic regarding cognitive load.",
+      "notes": "The design attempts to teach basic Python, pandas library usage, data transformation, AND evaluative justification all within a single 60-minute session. This is pedagogically unsustainable [cite: 4]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The procedural and conceptual objectives have clear, measurable success criteria [cite: 4]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "Assessments closely track the stated objectives, requiring both code execution and written justification [cite: 4]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "A performance task yielding a cleaned dataset and rationale provides valid evidence of learning [cite: 4]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 3,
+        "rationale": "The cognitive leap from basic Python to evaluating data transformation trade-offs is too large for the allotted time [cite: 4]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 2,
+        "rationale": "Prerequisites are listed as candidate but the design spends 15 minutes trying to teach them (Mod 1), confusing prerequisites with core content [cite: 4]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 4,
+        "rationale": "The progression from foundations to application to evaluation is structurally logical [cite: 4]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 3,
+        "rationale": "The extremely short lesson durations (e.g., 3 mins for importing libraries) will not prepare learners for the rigorous summative assessment [cite: 4]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 5,
+        "rationale": "Severe under-teaching. 15 minutes to learn Python basics, tabular data, and library navigation is impossible for a novice [cite: 4]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "The content is relevant, there is just far too much of it for the time constraint [cite: 4]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 4,
+        "rationale": "Requires major revision to properly establish prerequisites as assumed knowledge rather than teaching them in Module 1."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "reject",
+      "accepted_refs": [],
+      "rejected_refs": [
+        "pre-001",
+        "pre-002",
+        "pre-003",
+        "pre-004"
+      ],
+      "notes": "These should be confirmed prior knowledge, not taught in a 15-minute introductory module [cite: 4]."
+    },
+    "edit_effort": {
+      "level": "major",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 4,
+      "modules_changed": 1,
+      "lessons_changed": 4,
+      "notes": "Module 1 should be completely removed, and its contents treated as hard prerequisites, freeing up 15 minutes for actual transformation practice."
+    },
+    "overall_notes": "A classic case of scope creep relative to time constraints. The structural design is good, but the instructional time budgeting is highly flawed [cite: 4]."
+  }
+}

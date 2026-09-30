@@ -1,0 +1,26 @@
+{
+  "status": "INTEGRATION-01A COMPLETE",
+  "implementation_readiness": "BLOCKED_BY_SEMANTIC_UNKNOWN",
+  "ownership_map_complete": true,
+  "bounded_contexts_defined": ["LMS", "PAI Intelligence", "Shared Integration Contract"],
+  "integration_pattern": "hybrid",
+  "decisions": {
+    "user": "LMS owns authentication/account; PAI owns its decision authorization context and stores an external actor reference.",
+    "course": "PAI owns CourseBlueprint; LMS owns delivery Course; projection only.",
+    "assessment": "PAI owns competency assessment; LMS owns delivery Quiz/Attempt; separate entities.",
+    "learning_objective": "PAI owns semantic objective; LMS may store immutable delivery projection.",
+    "competency": "PAI owns meaning, persistence and API.",
+    "evidence": "PAI owns meaning, persistence and API; target receives references only when authorized.",
+    "organization_tenant": "UNDECIDED pending product/architecture decision."
+  },
+  "blockers": [
+    "Target organization/tenant semantics are absent.",
+    "Cross-context identity trust and actor mapping are not yet specified.",
+    "Shared contract versions and event/API transport are not yet specified.",
+    "Current source root and historical INTEGRATION-00 worktree are different baselines.",
+    "Target parent worktree reports pre-existing sibling deletions."
+  ],
+  "mvp_boundary_defined": true,
+  "code_changed": false,
+  "database_changed": false
+}

@@ -1,0 +1,129 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "req_1",
+      "statement": "5+ years of operations experience.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "experience_requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "operations experience",
+        "5+ years"
+      ],
+      "conflicting_terms": [],
+      "priority": "high",
+      "target_level": "5+ years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b38bbe79-7ff9-45d6-a189-2eed2c690518",
+        "section": "Required Qualifications",
+        "start_offset": 1212,
+        "end_offset": 1246
+      },
+      "source_excerpt": "5+ years of operations experience.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_2",
+      "statement": "At least 2 years in an operations management or supervisory role.",
+      "criterion_dimension": "experience",
+      "modality": "must",
+      "logical_group": "experience_requirements",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "operations management",
+        "supervisory role",
+        "2 years"
+      ],
+      "conflicting_terms": [],
+      "priority": "high",
+      "target_level": "2+ years",
+      "observable_behaviors": [],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b38bbe79-7ff9-45d6-a189-2eed2c690518",
+        "section": "Required Qualifications",
+        "start_offset": 1247,
+        "end_offset": 1312
+      },
+      "source_excerpt": "At least 2 years in an operations management or supervisory role.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_3",
+      "statement": "Experience with ERP, CRM, workflow, or operations management systems.",
+      "criterion_dimension": "skill",
+      "modality": "preferred",
+      "logical_group": "preferred_systems",
+      "logical_operator": "OR",
+      "evidence_terms": [
+        "ERP",
+        "CRM",
+        "workflow",
+        "operations management systems"
+      ],
+      "conflicting_terms": [],
+      "priority": "medium",
+      "target_level": null,
+      "observable_behaviors": [],
+      "evidence_constraints": [
+        "Use of ERP or CRM systems should not be interpreted as software development or platform engineering experience."
+      ],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b38bbe79-7ff9-45d6-a189-2eed2c690518",
+        "section": "Preferred Qualifications",
+        "start_offset": 1619,
+        "end_offset": 1688
+      },
+      "source_excerpt": "Experience with ERP, CRM, workflow, or operations management systems.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    },
+    {
+      "requirement_id": "req_4",
+      "statement": "Plan and coordinate daily operational activities.",
+      "criterion_dimension": "skill",
+      "modality": "responsibility",
+      "logical_group": "responsibilities",
+      "logical_operator": "AND",
+      "evidence_terms": [
+        "Plan",
+        "coordinate",
+        "daily operational activities"
+      ],
+      "conflicting_terms": [],
+      "priority": null,
+      "target_level": null,
+      "observable_behaviors": [
+        "Plan daily operational activities",
+        "Coordinate daily operational activities"
+      ],
+      "evidence_constraints": [],
+      "confidence": 1.0,
+      "evidence_status": "supported",
+      "source_locator": {
+        "document_id": "b38bbe79-7ff9-45d6-a189-2eed2c690518",
+        "section": "Responsibilities",
+        "start_offset": 388,
+        "end_offset": 437
+      },
+      "source_excerpt": "Plan and coordinate daily operational activities.",
+      "provenance": {
+        "statement": "jd_extraction"
+      }
+    }
+  ]
+}

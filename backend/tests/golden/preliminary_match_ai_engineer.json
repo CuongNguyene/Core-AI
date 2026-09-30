@@ -1,0 +1,74 @@
+{
+  "eligibility_cases": [
+    {
+      "name": "unaccepted_cv",
+      "cv_state": "pending_review",
+      "role_active": true,
+      "supersede_cv": false,
+      "error": "ExtractionProfileNotAcceptedError"
+    },
+    {
+      "name": "inactive_role",
+      "cv_state": "accepted",
+      "role_active": false,
+      "supersede_cv": false,
+      "error": "RoleProfileNotActiveError"
+    },
+    {
+      "name": "stale_superseded_cv",
+      "cv_state": "accepted",
+      "role_active": true,
+      "supersede_cv": true,
+      "error": "SupersededInputError"
+    }
+  ],
+  "rule_cases": [
+    {
+      "name": "happy_path",
+      "claims": [{"value": "Python", "confidence": 0.9}],
+      "requirements": [{"id": "critical-python", "classification": "role_critical"}],
+      "statuses": ["matched"],
+      "allocation_count": 1
+    },
+    {
+      "name": "evidence_reuse",
+      "claims": [{"value": "Python", "confidence": 0.9}],
+      "requirements": [
+        {"id": "legal-python", "classification": "legal_mandatory"},
+        {"id": "optional-python", "classification": "optional"}
+      ],
+      "statuses": ["matched", "insufficient"],
+      "allocation_count": 1
+    },
+    {
+      "name": "low_confidence",
+      "claims": [{"value": "Python", "confidence": 0.5}],
+      "requirements": [{"id": "critical-python", "classification": "role_critical"}],
+      "statuses": ["partial"],
+      "allocation_count": 0
+    },
+    {
+      "name": "mandatory_gap",
+      "claims": [{"value": "FastAPI", "confidence": 0.9}],
+      "requirements": [{"id": "legal-python", "classification": "legal_mandatory"}],
+      "statuses": ["insufficient"],
+      "allocation_count": 0
+    },
+    {
+      "name": "conflicting",
+      "claims": [
+        {"value": "Python", "confidence": 0.9, "offset": 16},
+        {"value": "No Python", "confidence": 0.9, "offset": 30}
+      ],
+      "requirements": [
+        {
+          "id": "critical-python",
+          "classification": "role_critical",
+          "conflicting_terms": ["No Python"]
+        }
+      ],
+      "statuses": ["conflicting"],
+      "allocation_count": 0
+    }
+  ]
+}

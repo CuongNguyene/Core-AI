@@ -1,0 +1,604 @@
+{
+  "review_id": "review-002",
+  "artifact": {
+    "brief": {
+      "id": "brief-model-monitoring",
+      "capability": {
+        "id": null,
+        "name": "model monitoring response",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:model-monitoring:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a monitoring dashboard, interpret degradation signals, differentiate likely causes, and propose a response action."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-model-monitoring-001",
+        "brief_id": "brief-model-monitoring",
+        "performance": "Interpret degradation signals from a monitoring dashboard",
+        "cognitive_process": "analyze",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "Given a monitoring dashboard displaying model performance metrics"
+        ],
+        "success_criteria": [
+          "Identifies which metrics indicate degradation",
+          "Describes the pattern or trend observed in the signals"
+        ],
+        "prerequisite_refs": [],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner has basic familiarity with monitoring dashboards and common ML metrics"
+          ]
+        }
+      },
+      {
+        "id": "obj-model-monitoring-002",
+        "brief_id": "brief-model-monitoring",
+        "performance": "Differentiate likely causes of model degradation",
+        "cognitive_process": "analyze",
+        "knowledge_dimension": "conceptual",
+        "conditions": [
+          "Given observed degradation signals"
+        ],
+        "success_criteria": [
+          "Distinguishes between data drift, concept drift, and system issues",
+          "Provides reasoning for which cause is most likely based on signal patterns"
+        ],
+        "prerequisite_refs": [
+          "obj-model-monitoring-001"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner understands basic taxonomy of degradation causes"
+          ]
+        }
+      },
+      {
+        "id": "obj-model-monitoring-003",
+        "brief_id": "brief-model-monitoring",
+        "performance": "Propose an appropriate response action to model degradation",
+        "cognitive_process": "evaluate",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given identified degradation signals and a differentiated cause"
+        ],
+        "success_criteria": [
+          "Selects a response action aligned with the identified cause",
+          "Justifies the proposed action with reference to the degradation type"
+        ],
+        "prerequisite_refs": [
+          "obj-model-monitoring-001",
+          "obj-model-monitoring-002"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner has awareness of common response actions (e.g., retraining, feature engineering, alerting)"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-model-monitoring-001",
+        "objective_ids": [
+          "obj-model-monitoring-001"
+        ],
+        "capability_claim": "Learner can interpret degradation signals from a monitoring dashboard by identifying which metrics indicate degradation and describing observed patterns or trends.",
+        "required_evidence": [
+          {
+            "id": "ev-001-a",
+            "criterion": "Learner identifies at least one metric from the dashboard that indicates degradation.",
+            "rationale": "Directly maps to success criterion: identifies which metrics indicate degradation."
+          },
+          {
+            "id": "ev-001-b",
+            "criterion": "Learner describes the pattern or trend observed (e.g., monotonic decline, sudden drop, gradual drift) in the identified signal(s).",
+            "rationale": "Directly maps to success criterion: describes the pattern or trend observed in the signals."
+          }
+        ],
+        "task": {
+          "task_type": "structured-response",
+          "description": "Given a monitoring dashboard displaying model performance metrics, learner examines the displayed data and produces a written interpretation: (1) naming the metric(s) they consider degradation signals, and (2) describing the pattern or trend each signal shows.",
+          "conditions": [
+            "Dashboard is provided as a static artifact (screenshot or simulated interface) showing multiple metrics over time.",
+            "Learner has no access to ground-truth labels for the cause of degradation.",
+            "Response is open-ended written prose or structured notes; no multiple-choice."
+          ]
+        },
+        "cognitive_process": "analyze",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-001-1",
+              "criterion": "Signal identification accuracy",
+              "performance_levels": [
+                "Does not identify any metric indicative of degradation, or selects clearly irrelevant metrics.",
+                "Identifies at least one relevant degradation metric but misses others that are equally salient.",
+                "Identifies all salient degradation metrics visible on the dashboard."
+              ]
+            },
+            {
+              "id": "rd-001-2",
+              "criterion": "Pattern description quality",
+              "performance_levels": [
+                "Provides no description or describes a pattern inconsistent with the displayed data.",
+                "Describes the pattern in vague or partially accurate terms.",
+                "Accurately describes the trend (direction, magnitude, temporal shape) for each identified signal."
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate: learner reaches top performance level on both dimensions. Provisional — threshold requires researcher validation against actual learner population data."
+        },
+        "is_summative": false,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Dashboard artifact content and fidelity are not specified; scoring validity depends on artifact design.",
+            "Mastery threshold is a candidate only; no empirical cut-score is established."
+          ]
+        }
+      },
+      {
+        "id": "assess-model-monitoring-002",
+        "objective_ids": [
+          "obj-model-monitoring-002"
+        ],
+        "capability_claim": "Learner can differentiate likely causes of model degradation by distinguishing between data drift, concept drift, and system issues, and by reasoning about which cause is most likely given observed signal patterns.",
+        "required_evidence": [
+          {
+            "id": "ev-002-a",
+            "criterion": "Learner names and distinguishes at least two candidate causes (e.g., data drift vs. concept drift vs. system issue) relevant to the observed signals.",
+            "rationale": "Directly maps to success criterion: distinguishes between data drift, concept drift, and system issues."
+          },
+          {
+            "id": "ev-002-b",
+            "criterion": "Learner selects one most-likely cause and provides reasoning that references specific signal patterns from the dashboard.",
+            "rationale": "Directly maps to success criterion: provides reasoning for which cause is most likely based on signal patterns."
+          }
+        ],
+        "task": {
+          "task_type": "analytical-written-response",
+          "description": "Using the degradation signals identified in the prior task (or a supplied interpretation summary), learner produces a short differential analysis: (1) listing candidate causes with brief distinguishing characteristics, and (2) arguing for the most probable cause based on the signal evidence.",
+          "conditions": [
+            "Learner is given either their own output from assess-model-monitoring-001 or a researcher-supplied interpretation summary as input.",
+            "A reference taxonomy of degradation cause types is NOT provided during the task; learner must draw on prior knowledge.",
+            "Learner writes in prose or structured notes; no guided templates."
+          ]
+        },
+        "cognitive_process": "analyze",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-002-1",
+              "criterion": "Cause differentiation",
+              "performance_levels": [
+                "Does not distinguish between cause types, or conflates data drift and concept drift.",
+                "Distinguishes at least two cause types but description of one or more is inaccurate or incomplete.",
+                "Accurately characterizes all three candidate cause types and explains how they differ."
+              ]
+            },
+            {
+              "id": "rd-002-2",
+              "criterion": "Evidence-linked reasoning",
+              "performance_levels": [
+                "Selects a cause without referencing signal evidence, or reasoning is circular.",
+                "References signal evidence but the logical link between evidence and selected cause is weak or partially justified.",
+                "Clearly links specific signal patterns to the selected cause and explains why alternative causes are less likely."
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate: top level on rd-002-2 (evidence-linked reasoning) is required; rd-002-1 at middle level or above. Provisional — researcher must validate against domain-expert scoring."
+        },
+        "is_summative": false,
+        "required_capability_refs": [
+          "assess-model-monitoring-001"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner has prior exposure to a degradation cause taxonomy (data drift, concept drift, system issues); this is listed as a prerequisite assumption in obj-model-monitoring-002 but is not verified.",
+            "The three-way taxonomy (data drift / concept drift / system issues) is used as a working frame; researcher should confirm it matches the target domain's classification scheme."
+          ]
+        }
+      },
+      {
+        "id": "assess-model-monitoring-003",
+        "objective_ids": [
+          "obj-model-monitoring-003"
+        ],
+        "capability_claim": "Learner can propose an appropriate response action to model degradation that is aligned with the identified cause and justified with reference to the degradation type.",
+        "required_evidence": [
+          {
+            "id": "ev-003-a",
+            "criterion": "Learner proposes a specific response action (e.g., trigger retraining, initiate feature engineering review, escalate alert) rather than a generic or vague recommendation.",
+            "rationale": "Specificity is necessary to evaluate alignment with identified cause."
+          },
+          {
+            "id": "ev-003-b",
+            "criterion": "Learner explicitly connects the proposed action to the degradation type identified in the prior analysis.",
+            "rationale": "Directly maps to success criterion: justifies the proposed action with reference to the degradation type."
+          },
+          {
+            "id": "ev-003-c",
+            "criterion": "The proposed action is plausibly appropriate for the identified cause (i.e., not contraindicated by domain knowledge).",
+            "rationale": "Directly maps to success criterion: selects a response action aligned with the identified cause."
+          }
+        ],
+        "task": {
+          "task_type": "decision-and-justification",
+          "description": "Given their differentiated cause analysis (or a researcher-supplied scenario summary specifying the degradation type), learner proposes one response action, names it precisely, and writes a justification that references the degradation type and explains why the action addresses it.",
+          "conditions": [
+            "Learner is given either their own output from assess-model-monitoring-002 or a researcher-supplied scenario summary as input.",
+            "Learner must choose a single primary action; listing multiple actions without prioritization is not sufficient.",
+            "No decision-support aids or response-action menus are provided.",
+            "Learner writes in prose; response length is unconstrained but must include both a named action and a written justification."
+          ]
+        },
+        "cognitive_process": "evaluate",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rd-003-1",
+              "criterion": "Action specificity",
+              "performance_levels": [
+                "Action is absent, vague (e.g., 'fix the model'), or generic without operational meaning.",
+                "Action is named but described at a level of abstraction that would require significant clarification before execution.",
+                "Action is named specifically and described with enough precision to be operationally meaningful."
+              ]
+            },
+            {
+              "id": "rd-003-2",
+              "criterion": "Cause-action alignment",
+              "performance_levels": [
+                "Proposed action does not address the identified cause or is contraindicated.",
+                "Proposed action is plausible but the alignment with the specific cause type is implicit or underdeveloped.",
+                "Proposed action is well-matched to the cause type and the learner explicitly explains the alignment."
+              ]
+            },
+            {
+              "id": "rd-003-3",
+              "criterion": "Justification quality",
+              "performance_levels": [
+                "No justification provided, or justification does not reference degradation type.",
+                "Justification references degradation type but reasoning is superficial or incomplete.",
+                "Justification explicitly references the degradation type and explains the mechanism by which the proposed action addresses it."
+              ]
+            }
+          ],
+          "mastery_rule": "Candidate: top level on rd-003-2 and rd-003-3; middle level or above on rd-003-1. Provisional — requires researcher validation."
+        },
+        "is_summative": true,
+        "required_capability_refs": [
+          "assess-model-monitoring-001",
+          "assess-model-monitoring-002"
+        ],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learner has awareness of at least a small repertoire of response actions (retraining, feature engineering, alerting, rollback); this is stated as an assumption in obj-model-monitoring-003 but is unverified.",
+            "Scenario supply (researcher-authored vs. learner-generated input) affects scoring consistency; researcher should standardize input conditions before piloting."
+          ]
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-001",
+        "capability": "Read and interpret time-series charts showing metric values over time",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Without ability to parse time-series visualizations, learner cannot identify which metrics indicate degradation or describe observed patterns in obj-model-monitoring-001",
+        "required_for_refs": [
+          "obj-model-monitoring-001"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-002",
+        "capability": "Recognize common ML performance metrics (e.g., accuracy, precision, recall, loss) by name",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Without recognition of metric names, learner cannot identify which metrics indicate degradation in obj-model-monitoring-001; dashboard interpretation fails at the labeling step",
+        "required_for_refs": [
+          "obj-model-monitoring-001"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-003",
+        "capability": "Distinguish between data drift, concept drift, and system issues as distinct categories of model degradation causes",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "obj-model-monitoring-002 requires differentiating these three cause types; without prior exposure to the taxonomy, learner cannot distinguish or reason about them during the no-reference task",
+        "required_for_refs": [
+          "obj-model-monitoring-002"
+        ],
+        "requires_prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-004",
+        "capability": "Name at least two response actions applicable to model degradation (e.g., retraining, feature engineering, alerting, rollback)",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "obj-model-monitoring-003 requires proposing a specific action; without awareness of a response-action repertoire, learner cannot generate or select an operationally meaningful proposal",
+        "required_for_refs": [
+          "obj-model-monitoring-003"
+        ],
+        "requires_prerequisite_refs": [
+          "prereq-003"
+        ],
+        "teaching_objective_id": null
+      }
+    ],
+    "course_outline": {
+      "id": "course-model-monitoring-001",
+      "brief_id": "brief-model-monitoring",
+      "objective_ids": [
+        "obj-model-monitoring-001",
+        "obj-model-monitoring-002",
+        "obj-model-monitoring-003"
+      ],
+      "modules": [
+        {
+          "id": "module-dashboard-interpretation",
+          "title": "Interpreting Monitoring Dashboard Signals",
+          "objective_ids": [
+            "obj-model-monitoring-001"
+          ],
+          "prerequisite_refs": [
+            "prereq-001",
+            "prereq-002"
+          ],
+          "lesson_ids": [
+            "lesson-001",
+            "lesson-002"
+          ],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "module-cause-differentiation",
+          "title": "Differentiating Degradation Causes",
+          "objective_ids": [
+            "obj-model-monitoring-002"
+          ],
+          "prerequisite_refs": [
+            "prereq-003"
+          ],
+          "lesson_ids": [
+            "lesson-003",
+            "lesson-004"
+          ],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "module-response-action",
+          "title": "Proposing Response Actions",
+          "objective_ids": [
+            "obj-model-monitoring-003"
+          ],
+          "prerequisite_refs": [
+            "prereq-004"
+          ],
+          "lesson_ids": [
+            "lesson-005",
+            "lesson-006"
+          ],
+          "estimated_minutes": 20
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-001",
+        "prereq-002"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "Module 1 establishes dashboard interpretation capability required by both subsequent modules",
+        "Module 2 builds on Module 1 output by using identified signals to differentiate causes",
+        "Module 3 requires cause differentiation from Module 2 to propose aligned response actions",
+        "Sequence follows cognitive progression from analyze (interpret, differentiate) to evaluate (propose action)"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Each module allocated 20 minutes to fit 60-minute total constraint",
+          "Prerequisite instruction is assumed to occur outside this course; prerequisites are not taught here",
+          "Module time estimates are provisional and require validation against pilot learner completion data"
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-001",
+        "module_id": "module-dashboard-interpretation",
+        "objective_ids": [
+          "obj-model-monitoring-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Practice interpreting degradation signals from a monitoring dashboard by examining metric patterns and trends",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Learner observes annotated dashboard example showing degraded metrics, follows instructor reasoning that identifies signal metrics and describes their patterns, then reviews summary of interpretation strategy",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes worked example dashboard artifact will be supplied by researcher",
+            "Assumes learner can transfer interpretation strategy from example to novel dashboard in assessment"
+          ]
+        }
+      },
+      {
+        "id": "lesson-002",
+        "module_id": "module-dashboard-interpretation",
+        "objective_ids": [
+          "obj-model-monitoring-001"
+        ],
+        "prerequisite_refs": [
+          "prereq-001",
+          "prereq-002"
+        ],
+        "lesson_goal": "Apply dashboard interpretation skills to a new monitoring scenario",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Learner examines unseen dashboard, identifies degradation metrics, describes patterns, receives feedback on identification accuracy and pattern description quality",
+        "formative_assessment_ids": [
+          "assess-model-monitoring-001"
+        ],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Practice dashboard must differ from worked example to assess transfer",
+            "Feedback mechanism is not specified; researcher must define feedback delivery method"
+          ]
+        }
+      },
+      {
+        "id": "lesson-003",
+        "module_id": "module-cause-differentiation",
+        "objective_ids": [
+          "obj-model-monitoring-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-003"
+        ],
+        "lesson_goal": "Practice differentiating degradation causes by analyzing signal patterns and reasoning about probable causes",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Learner observes annotated scenario showing dashboard signals, follows instructor reasoning that distinguishes data drift vs concept drift vs system issues and selects most likely cause with evidence, then reviews differentiation strategy",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes worked example will demonstrate all three cause types and selection reasoning",
+            "Assumes prereq-003 taxonomy exposure is sufficient foundation; no additional explanation of cause types is provided in lesson"
+          ]
+        }
+      },
+      {
+        "id": "lesson-004",
+        "module_id": "module-cause-differentiation",
+        "objective_ids": [
+          "obj-model-monitoring-002"
+        ],
+        "prerequisite_refs": [
+          "prereq-003"
+        ],
+        "lesson_goal": "Apply cause differentiation skills to a new degradation scenario",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Learner examines degradation signals from new scenario, distinguishes candidate causes, selects most likely cause with reasoning, receives feedback on differentiation accuracy and evidence quality",
+        "formative_assessment_ids": [
+          "assess-model-monitoring-002"
+        ],
+        "estimated_minutes": 10,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Practice scenario must differ from worked example to assess transfer",
+            "Feedback mechanism is not specified; researcher must define feedback delivery method"
+          ]
+        }
+      },
+      {
+        "id": "lesson-005",
+        "module_id": "module-response-action",
+        "objective_ids": [
+          "obj-model-monitoring-003"
+        ],
+        "prerequisite_refs": [
+          "prereq-004"
+        ],
+        "lesson_goal": "Practice proposing response actions aligned with degradation causes",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Learner observes annotated scenario showing identified degradation cause, follows instructor reasoning that proposes specific response action and justifies alignment with cause type, then reviews action-selection strategy",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes worked example will demonstrate action-cause alignment reasoning for at least one cause type",
+            "Assumes prereq-004 action repertoire is sufficient foundation; no additional instruction on response-action taxonomy is provided"
+          ]
+        }
+      },
+      {
+        "id": "lesson-006",
+        "module_id": "module-response-action",
+        "objective_ids": [
+          "obj-model-monitoring-003"
+        ],
+        "prerequisite_refs": [
+          "prereq-004"
+        ],
+        "lesson_goal": "Apply response action selection and justification skills to integrate monitoring interpretation, cause differentiation, and action proposal",
+        "instructional_pattern": "independent_practice",
+        "expected_learner_activity": "Learner examines degradation scenario with identified cause, proposes specific response action, justifies alignment with cause, receives summative feedback on action specificity, alignment, and justification quality",
+        "formative_assessment_ids": [
+          "assess-model-monitoring-003"
+        ],
+        "estimated_minutes": 12,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Summative assessment integrates all prior objectives; scenario may supply cause or require learner to use prior analysis output",
+            "Practice scenario must differ from worked example to assess transfer",
+            "Estimated time includes both response generation and reflective review of summative feedback"
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

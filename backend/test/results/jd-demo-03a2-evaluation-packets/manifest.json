@@ -1,0 +1,276 @@
+{
+  "packet_set": "JD-DEMO-03A.2A",
+  "packet_count": 10,
+  "packets": [
+    {
+      "packet_id": "jd-01-devops-engineer",
+      "source": {
+        "filename": "JD-01 — DevOps Engineer.docx",
+        "sha256": "46d7b787538241afdad64fbaf76cdf240a364cecebece9a77df5343960a993f0"
+      },
+      "runtime": {
+        "document_id": "95f67cec-6f75-40e7-85be-5682923e8f69",
+        "job_id": "4644e894-32b0-4181-a079-e767bc474192",
+        "profile_id": "eeaf91cf-35b7-4ad2-a876-0c2f1b6fbff4",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 7,
+        "supported_requirement_count": 7,
+        "text_span_locator_count": 7,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-02-senior-data-analyst",
+      "source": {
+        "filename": "JD-02 — Senior Data Analyst.docx",
+        "sha256": "36f500b4cbed54f0f61b1b37a42c5de74696a3d284b9adceae92400dd0264ac0"
+      },
+      "runtime": {
+        "document_id": "ee63a6b4-aaaf-4399-8ce5-8c0c85a5efe9",
+        "job_id": "c45041a9-0922-49fd-aa21-fc410647d738",
+        "profile_id": "e1437260-2f06-43dc-8a2c-b2e404afa2c3",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 5,
+        "supported_requirement_count": 5,
+        "text_span_locator_count": 5,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-03-accounting-manager",
+      "source": {
+        "filename": "JD-03 — Accounting Manager.docx",
+        "sha256": "de87dd76532780e22cddc13fdaae899f20403fc44bd0f0b4eddc2e15268d506f"
+      },
+      "runtime": {
+        "document_id": "274aa8d9-4f0a-4490-85cb-ce468710a2cf",
+        "job_id": "7e41bd86-f965-43fd-9458-8aabc3779ae1",
+        "profile_id": "778b52ca-b1be-4d1f-b1f9-a7040562bb68",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 4,
+        "supported_requirement_count": 4,
+        "text_span_locator_count": 4,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-04-legal-counsel",
+      "source": {
+        "filename": "JD-04 — Legal Counsel.docx",
+        "sha256": "7397fce23c388d518cfd0734da5fb61d8724d0d838f775c63ddb2710f5ff6f0d"
+      },
+      "runtime": {
+        "document_id": "4f85d22d-4152-492b-9e4d-0951b1e9b2f1",
+        "job_id": "0b40584b-2da3-44cb-89fe-148db93e4931",
+        "profile_id": "f9a4f55c-26a4-4cab-99dd-97beaf3950bc",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 4,
+        "supported_requirement_count": 4,
+        "text_span_locator_count": 4,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-05-talent-acquisition",
+      "source": {
+        "filename": "JD-05 — Talent Acquisition Manager.docx",
+        "sha256": "75f5f115ed3c2e50cf4cf56a6ad79114af4ce1d142aec5ef9881254a6af94a8a"
+      },
+      "runtime": {
+        "document_id": "b496d309-b909-4a23-93b3-f55da02af550",
+        "job_id": "6a7cc2f4-53ef-43a0-97b7-a6a66d72352d",
+        "profile_id": "f41cd2e9-8641-45ec-a2dd-2f039b2f4885",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 23,
+        "supported_requirement_count": 23,
+        "text_span_locator_count": 23,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-06-assistant-sales",
+      "source": {
+        "filename": "JD-06 — Assistant Sales Manager.docx",
+        "sha256": "eee4a0bb91ad7f4507984f44f55cf6833fd6f683cae00a9619aa6b59116f7484"
+      },
+      "runtime": {
+        "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+        "job_id": "86e4d299-3036-4959-a45c-83443024dc06",
+        "profile_id": "b8013f70-4990-4f65-9455-ea82873d23e3",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 6,
+        "supported_requirement_count": 6,
+        "text_span_locator_count": 6,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-07-construction-project-manager",
+      "source": {
+        "filename": "JD-07 — Construction Project Manager.docx",
+        "sha256": "056a33e35f15e8191c065e6fd11748231f73ed0767fc08eae8843d1ae23747fc"
+      },
+      "runtime": {
+        "document_id": "c41e2251-dd23-4b33-8857-36f00a9757b5",
+        "job_id": "1a90dd90-5900-43c3-9974-89e57ddb7f10",
+        "profile_id": "d4d83bee-5f2d-4651-8b21-54525814b4ca",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 5,
+        "supported_requirement_count": 5,
+        "text_span_locator_count": 5,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-08-product-manager",
+      "source": {
+        "filename": "JD-08 — Product Manager.docx",
+        "sha256": "8398fde7dee02b1a6d7b77ba9544e6387c967c97efddad946bc99e635c18615f"
+      },
+      "runtime": {
+        "document_id": "f45678b4-fd7f-4df8-ba7e-064994d6ccbd",
+        "job_id": "edfa7e1d-b97b-4a34-bbcd-d8486040504a",
+        "profile_id": "ed81228b-5540-409c-b519-aec9575c3bdf",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 4,
+        "supported_requirement_count": 4,
+        "text_span_locator_count": 4,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-09-software-engineer",
+      "source": {
+        "filename": "JD-09 — Software Engineer.docx",
+        "sha256": "8fd587de6f9e102f6db14f62d8657508a82a59055c7b6b65560aaca1daf45c37"
+      },
+      "runtime": {
+        "document_id": "12ed718e-2159-4a97-8ffb-0d70271f2c8f",
+        "job_id": "47a5c959-352e-44c5-8b09-f3576989ca79",
+        "profile_id": "0fb7cf68-3b3b-4b4c-8605-54e6f08b21a9",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 5,
+        "supported_requirement_count": 5,
+        "text_span_locator_count": 5,
+        "pdf_page_locator_count": 0
+      }
+    },
+    {
+      "packet_id": "jd-10-operations-manager",
+      "source": {
+        "filename": "JD-10 — Operations Manager.docx",
+        "sha256": "e8b08d78b579051d89fdda2021d2b54b3f98e39b81261fad46008c98a2923187"
+      },
+      "runtime": {
+        "document_id": "b38bbe79-7ff9-45d6-a189-2eed2c690518",
+        "job_id": "1f8539f7-b861-42c8-af8c-11cec6a77ec2",
+        "profile_id": "b21bdcb1-83c6-45cc-8cd8-f0002bfe3200",
+        "profile_version": 1,
+        "review_state": "pending_review",
+        "document_kind": "jd"
+      },
+      "contract": {
+        "input_mode": "whole_parsed_text",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "pipeline_mode": "legacy_v2",
+        "jd_extraction_mode": "requirement_v2"
+      },
+      "summary": {
+        "requirement_count": 4,
+        "supported_requirement_count": 4,
+        "text_span_locator_count": 4,
+        "pdf_page_locator_count": 0
+      }
+    }
+  ]
+}

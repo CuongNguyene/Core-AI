@@ -1,0 +1,45 @@
+{
+  "fixture": "construction_drawing_and_method_basic",
+  "dependency_candidates": [
+    {
+      "capability": "basic spatial reasoning for multi-view drawings",
+      "reason": "Interpreting spatial relationships across plan, elevation, and section views requires spatial reasoning that may need prior activation; this is supporting knowledge not directly demonstrated by any supplied objective and has not been confirmed in the learner state",
+      "required_for_refs": [
+        "lo-2-interpret-drawing-elements",
+        "asmnt-lo2-formative"
+      ]
+    },
+    {
+      "capability": "generic familiarity with construction work phase concepts",
+      "reason": "Sequencing a method proposal presupposes some conceptual familiarity with what constitutes a work phase; this is candidate supporting knowledge for lo-3 but is not directly derivable from drawing content alone and is not assessed by any supplied objective",
+      "required_for_refs": [
+        "lo-3-prepare-method-proposal",
+        "asmnt-lo3-summative"
+      ]
+    }
+  ],
+  "prerequisite_dispositions": [
+    {
+      "id": "prereq-01-spatial-reasoning",
+      "capability": "basic spatial reasoning for multi-view drawings",
+      "disposition": "in_course_support",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "source_dependency_refs": [
+        "dependency_candidate:basic spatial reasoning for multi-view drawings"
+      ]
+    },
+    {
+      "id": "prereq-02-work-phase-familiarity",
+      "capability": "generic familiarity with construction work phase concepts",
+      "disposition": "in_course_support",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "source_dependency_refs": [
+        "dependency_candidate:generic familiarity with construction work phase concepts"
+      ]
+    }
+  ],
+  "planner_payload_provenance": true,
+  "snapshot_provenance": true
+}

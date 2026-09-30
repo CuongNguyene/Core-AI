@@ -1,0 +1,89 @@
+{
+  "review_id": "review-001",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-14T15:16:35+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "clean",
+    "issues": [],
+    "notes": "Machine observations flag 'assessment_dependency_not_covered' for the assessments, indicating a potential schema matching issue with 'required_capabilities', but pedagogically the entities link correctly[cite: 21]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "YES. The progression from applying a procedural transformation to evaluating and justifying the choices is pedagogically sound for data processing[cite: 21].",
+      "notes": "The sequence mirrors authentic engineering practices where action must be followed by rationale[cite: 21]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "The success criteria are measurable (e.g., 'all targeted invalid values are replaced'), though the specific invalid values in scope require researcher definition[cite: 21]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The integrated summative task flawlessly demands both code execution and explicit justification referencing data-quality criteria[cite: 21]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "An integrated performance task yielding executable Python and written rationale is a highly valid measure of this capability[cite: 21]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "The objectives target 'apply' and 'evaluate', which align perfectly with the coding and justification tasks[cite: 21]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 4,
+        "rationale": "Correctly isolates Python syntax and tabular data concepts as absolute entry gates, avoiding the trap of trying to teach them within the 60-minute window[cite: 21]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "Module 1 (Transformation) naturally feeds into Module 2 (Justification), respecting the dependency that a transformation must exist before it can be justified[cite: 21]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "Worked examples and guided practice directly scaffold the integrated performance task[cite: 21]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "The 60-minute constraint is tight for coding and justification, presenting a moderate risk of rushed instruction[cite: 21]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "The curriculum stays strictly within the bounds of handling invalid values and justifying the actions[cite: 21]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Only minor refinements are needed to establish the exact scope of invalid values and finalize the time distributions."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept",
+      "accepted_refs": [
+        "prereq-bpdp-01",
+        "prereq-bpdp-02",
+        "prereq-bpdp-03"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisites accurately capture the essential baseline needed to focus the 60 minutes purely on transformation and data quality reasoning[cite: 21]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 0,
+      "modules_changed": 0,
+      "lessons_changed": 0,
+      "notes": "Researcher needs to define the invalid value taxonomy and finalize the time split between instruction and assessment[cite: 21]."
+    },
+    "overall_notes": "A well-structured and authentic data processing module that correctly leverages prerequisites to protect instructional time[cite: 21]."
+  }
+}

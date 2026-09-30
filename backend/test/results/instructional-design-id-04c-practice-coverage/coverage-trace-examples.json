@@ -1,0 +1,89 @@
+[
+  {
+    "assessment_id": "assessment-python_data_processing",
+    "assessment_role": "summative",
+    "capability_ref": "transform_and_justify_invalid_values",
+    "coverage_refs": {
+      "formative": [
+        "assessment-python-formative"
+      ],
+      "guided_practice": [
+        "lesson-python-guided"
+      ],
+      "independent_practice": [],
+      "instruction": [
+        "lesson-python-explanation"
+      ]
+    },
+    "fixture": "python_data_processing",
+    "status": "covered"
+  },
+  {
+    "assessment_id": "assessment-accounting_financial_reporting_basic",
+    "assessment_role": "summative",
+    "capability_ref": "prepare_financial_output",
+    "coverage_refs": {
+      "formative": [],
+      "guided_practice": [
+        "lesson-accounting-reporting-practice"
+      ],
+      "independent_practice": [],
+      "instruction": [
+        "lesson-accounting-worked-example"
+      ]
+    },
+    "fixture": "accounting_financial_reporting_basic",
+    "status": "covered"
+  },
+  {
+    "assessment_id": "assessment-legal_contract_review_basic",
+    "assessment_role": "summative",
+    "capability_ref": "identify_contract_risks",
+    "coverage_refs": {
+      "formative": [],
+      "guided_practice": [
+        "lesson-legal-guided-analysis"
+      ],
+      "independent_practice": [],
+      "instruction": [
+        "lesson-legal-risk-intro"
+      ]
+    },
+    "fixture": "legal_contract_review_basic",
+    "status": "covered"
+  },
+  {
+    "assessment_id": "assessment-hr_recruitment_planning_basic",
+    "assessment_role": "summative",
+    "capability_ref": "create_recruitment_plan",
+    "coverage_refs": {
+      "formative": [],
+      "guided_practice": [],
+      "independent_practice": [
+        "lesson-hr-scenario"
+      ],
+      "instruction": [
+        "lesson-hr-planning-intro"
+      ]
+    },
+    "fixture": "hr_recruitment_planning_basic",
+    "status": "covered"
+  },
+  {
+    "assessment_id": "assessment-construction_drawing_and_method_basic",
+    "assessment_role": "summative",
+    "capability_ref": "interpret_drawing_method",
+    "coverage_refs": {
+      "formative": [],
+      "guided_practice": [
+        "lesson-construction-guided"
+      ],
+      "independent_practice": [],
+      "instruction": [
+        "lesson-construction-symbols"
+      ]
+    },
+    "fixture": "construction_drawing_and_method_basic",
+    "status": "covered"
+  }
+]

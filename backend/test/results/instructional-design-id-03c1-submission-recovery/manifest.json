@@ -1,0 +1,9 @@
+{
+  "experiment": "ID-03C.1",
+  "source_experiment": "ID-03C",
+  "source_submission_count": 10,
+  "target_rubric_version": "instructional_design_human_rubric@0.2",
+  "recovery_mode": "deterministic",
+  "source_files_modified": 0,
+  "status": "recovered"
+}

@@ -1,0 +1,34 @@
+{
+  "fixture_id": "ai_engineer",
+  "hints": {
+    "Python development": "python",
+    "Python": "python",
+    "production deployment": "deployment",
+    "project deployment": "deployment",
+    "model evaluation": "model evaluation",
+    "evaluated models": "model evaluation",
+    "computer science degree": "computer science",
+    "MS Computer Science": "computer science",
+    "cloud certification": "cloud certification",
+    "cloud certified": "cloud certification",
+    "MLOps operations": "mlops",
+    "enterprise sales": "enterprise sales"
+  },
+  "requirements": [
+    {"id": "python-usage", "phrase": "Python development", "expectation": "demonstrated_usage", "expected_refs": ["python-work", "python-mention"], "eligible": 1, "status": "supported", "strongest_refs": ["python-work"]},
+    {"id": "production-deployment", "phrase": "production deployment", "expectation": "demonstrated_usage", "constraints": [{"dimension": "context", "values": ["used_in_production"]}], "expected_refs": ["deployment-project"], "eligible": 0, "status": "context_mismatch", "strongest_refs": ["deployment-project"]},
+    {"id": "model-evaluation", "phrase": "model evaluation", "expectation": "demonstrated_usage", "expected_refs": ["evaluation-project"], "eligible": 1, "status": "supported", "strongest_refs": ["evaluation-project"]},
+    {"id": "degree", "phrase": "computer science degree", "expectation": "education", "expected_refs": ["cs-degree"], "eligible": 1, "status": "supported", "strongest_refs": ["cs-degree"]},
+    {"id": "credential", "phrase": "cloud certification", "expectation": "credential", "expected_refs": ["cloud-credential"], "eligible": 1, "status": "supported", "strongest_refs": ["cloud-credential"]},
+    {"id": "mlops", "phrase": "MLOps operations", "expectation": "demonstrated_usage", "expected_refs": [], "eligible": 0, "status": "not_found_in_evidence", "strongest_refs": []}
+  ],
+  "evidence": [
+    {"ref": "python-work", "phrase": "Python", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.91},
+    {"ref": "python-mention", "phrase": "Python", "context": "mentioned", "source_kind": "skill", "confidence": 0.99},
+    {"ref": "deployment-project", "phrase": "project deployment", "context": "used_in_project", "source_kind": "project", "confidence": 0.93},
+    {"ref": "evaluation-project", "phrase": "evaluated models", "context": "used_in_project", "source_kind": "project", "confidence": 0.92},
+    {"ref": "cs-degree", "phrase": "MS Computer Science", "context": "studied", "source_kind": "education", "confidence": 0.98},
+    {"ref": "cloud-credential", "phrase": "cloud certified", "context": "credentialed", "source_kind": "credential", "confidence": 0.97},
+    {"ref": "unrelated-sales", "phrase": "enterprise sales", "context": "used_in_employment", "source_kind": "employment", "confidence": 0.94}
+  ]
+}

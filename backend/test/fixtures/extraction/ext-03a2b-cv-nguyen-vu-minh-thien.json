@@ -1,0 +1,27 @@
+{
+  "fixture_id": "cv-nguyen-vu-minh-thien",
+  "document_id": "40584171-3e68-4e6e-8497-089f830797fc",
+  "reference_sha256": "ff28e6315ae1f698e8277b6b572e2dcf8389eb70671a03c472f50a7b3c354ffa",
+  "mime_type": "application/pdf",
+  "page_count": 3,
+  "manifest_version": "1.0",
+  "expected_education": [
+    "MBA of eCommerce",
+    "Bachelor"
+  ],
+  "expected_capability_families": [
+    "Project Management",
+    "Product Management",
+    "eCommerce",
+    "Omnichannel Commerce",
+    "Order Management",
+    "Warehouse Management",
+    "Delivery / Logistics Management",
+    "Operations Planning",
+    "Digital Platform Development",
+    "Team Leadership",
+    "Process Optimization"
+  ],
+  "experience_minimum": 4,
+  "notes": "Evaluation-only expectations manually reviewed against the checksum-bound runtime reference. No raw CV text is stored."
+}

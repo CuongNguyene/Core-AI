@@ -1,0 +1,491 @@
+{
+  "packet_set": "JD-DEMO-03A.2D",
+  "packet_count": 10,
+  "calibration": true,
+  "source_policy": "same 10 DOCX fixtures as JD-DEMO-03A.2C; post-2.2 output only",
+  "runtime_gate": {
+    "succeeded": 10,
+    "pending_review": 10,
+    "accepted": 0
+  },
+  "contract": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "jd_extraction_mode": "requirement_v2",
+    "input_mode": "whole_parsed_text",
+    "prompt_template_version": "2.2",
+    "output_schema_version": "2.2"
+  },
+  "aggregate": {
+    "requirements": 252,
+    "supported": 252,
+    "text_span": 252,
+    "pdf_page": 0,
+    "dimensions": {
+      "skill": 34,
+      "experience": 64,
+      "education": 6,
+      "credential": 4,
+      "qualification": 0,
+      "null": 144
+    },
+    "modalities": {
+      "must": 67,
+      "preferred": 43,
+      "responsibility": 131,
+      "unspecified": 11
+    }
+  },
+  "packets": [
+    {
+      "packet_id": "jd-01-devops-engineer",
+      "source": {
+        "filename": "JD-01 — DevOps Engineer.docx",
+        "sha256": "46d7b787538241afdad64fbaf76cdf240a364cecebece9a77df5343960a993f0"
+      },
+      "runtime": {
+        "profile_id": "a04e8fc1-85ad-429d-adf0-e19dd53d4b5a",
+        "document_id": "4de2ae52-7e8c-445a-8cad-51b2b46efdd3",
+        "job_id": "b5efe149-fa5a-42a6-89d6-f6636dfd0915",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 24,
+        "supported_requirement_count": 24,
+        "text_span_locator_count": 24,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 4,
+          "experience": 8,
+          "education": 0,
+          "credential": 1,
+          "qualification": 0,
+          "null": 11
+        },
+        "modalities": {
+          "must": 8,
+          "preferred": 5,
+          "responsibility": 11,
+          "unspecified": 0
+        }
+      }
+    },
+    {
+      "packet_id": "jd-02-senior-data-analyst",
+      "source": {
+        "filename": "JD-02 — Senior Data Analyst.docx",
+        "sha256": "36f500b4cbed54f0f61b1b37a42c5de74696a3d284b9adceae92400dd0264ac0"
+      },
+      "runtime": {
+        "profile_id": "24d4c499-270a-43c4-b075-ab19486575a1",
+        "document_id": "0cf78177-2acc-4d9a-9d58-b30ab9180481",
+        "job_id": "fc923cb3-23b2-40d5-b278-03ccbfe56c34",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 25,
+        "supported_requirement_count": 25,
+        "text_span_locator_count": 25,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 3,
+          "experience": 8,
+          "education": 1,
+          "credential": 0,
+          "qualification": 0,
+          "null": 13
+        },
+        "modalities": {
+          "must": 7,
+          "preferred": 5,
+          "responsibility": 13,
+          "unspecified": 0
+        }
+      }
+    },
+    {
+      "packet_id": "jd-03-accounting-manager",
+      "source": {
+        "filename": "JD-03 — Accounting Manager.docx",
+        "sha256": "de87dd76532780e22cddc13fdaae899f20403fc44bd0f0b4eddc2e15268d506f"
+      },
+      "runtime": {
+        "profile_id": "51e59661-bbb0-4fc3-b519-ccda11b8b523",
+        "document_id": "99fb8d0a-02f9-433f-abbe-e54320e9d33b",
+        "job_id": "8f2b5fa2-3c63-4cc3-a258-424df71c9a6f",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 24,
+        "supported_requirement_count": 24,
+        "text_span_locator_count": 24,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 5,
+          "experience": 5,
+          "education": 1,
+          "credential": 1,
+          "qualification": 0,
+          "null": 12
+        },
+        "modalities": {
+          "must": 8,
+          "preferred": 4,
+          "responsibility": 12,
+          "unspecified": 0
+        }
+      }
+    },
+    {
+      "packet_id": "jd-04-legal-counsel",
+      "source": {
+        "filename": "JD-04 — Legal Counsel.docx",
+        "sha256": "7397fce23c388d518cfd0734da5fb61d8724d0d838f775c63ddb2710f5ff6f0d"
+      },
+      "runtime": {
+        "profile_id": "a88ef195-77f3-42a9-8c10-6d7111a39ada",
+        "document_id": "209cdae0-1f86-4dbf-ba5c-e8c16f0045b5",
+        "job_id": "36a6b6b5-93e6-4070-bf18-a7c10d1e4523",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 24,
+        "supported_requirement_count": 24,
+        "text_span_locator_count": 24,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 4,
+          "experience": 7,
+          "education": 1,
+          "credential": 0,
+          "qualification": 0,
+          "null": 12
+        },
+        "modalities": {
+          "must": 7,
+          "preferred": 5,
+          "responsibility": 11,
+          "unspecified": 1
+        }
+      }
+    },
+    {
+      "packet_id": "jd-05-talent-acquisition-manager",
+      "source": {
+        "filename": "JD-05 — Talent Acquisition Manager.docx",
+        "sha256": "75f5f115ed3c2e50cf4cf56a6ad79114af4ce1d142aec5ef9881254a6af94a8a"
+      },
+      "runtime": {
+        "profile_id": "d12ba165-1d6c-4f2b-9505-6a614593d81b",
+        "document_id": "9d018ad8-4da9-4136-b336-42df203ac5c6",
+        "job_id": "7c5b6576-d327-4e20-bf3f-eb8edeeafdba",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 24,
+        "supported_requirement_count": 24,
+        "text_span_locator_count": 24,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 4,
+          "experience": 6,
+          "education": 0,
+          "credential": 0,
+          "qualification": 0,
+          "null": 14
+        },
+        "modalities": {
+          "must": 7,
+          "preferred": 3,
+          "responsibility": 14,
+          "unspecified": 0
+        }
+      }
+    },
+    {
+      "packet_id": "jd-06-assistant-sales-manager",
+      "source": {
+        "filename": "JD-06 — Assistant Sales Manager.docx",
+        "sha256": "eee4a0bb91ad7f4507984f44f55cf6833fd6f683cae00a9619aa6b59116f7484"
+      },
+      "runtime": {
+        "profile_id": "e01a2e04-d62b-4832-8c26-e9373d1c842f",
+        "document_id": "903bd733-47ac-42f2-95d6-c39b3e0d26bf",
+        "job_id": "4800ed4e-ad72-4c16-87c2-69167f831bba",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 23,
+        "supported_requirement_count": 23,
+        "text_span_locator_count": 23,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 1,
+          "experience": 3,
+          "education": 1,
+          "credential": 0,
+          "qualification": 0,
+          "null": 18
+        },
+        "modalities": {
+          "must": 2,
+          "preferred": 5,
+          "responsibility": 14,
+          "unspecified": 2
+        }
+      }
+    },
+    {
+      "packet_id": "jd-07-construction-project-manager",
+      "source": {
+        "filename": "JD-07 — Construction Project Manager.docx",
+        "sha256": "056a33e35f15e8191c065e6fd11748231f73ed0767fc08eae8843d1ae23747fc"
+      },
+      "runtime": {
+        "profile_id": "1bd378ae-ba7c-4573-a423-38e2ef389007",
+        "document_id": "a5f2610e-3a1f-4858-bd47-34e55ac68201",
+        "job_id": "3e2d5194-e634-4ad8-b3ee-16e51b5e364f",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 28,
+        "supported_requirement_count": 28,
+        "text_span_locator_count": 28,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 4,
+          "experience": 5,
+          "education": 1,
+          "credential": 1,
+          "qualification": 0,
+          "null": 17
+        },
+        "modalities": {
+          "must": 7,
+          "preferred": 4,
+          "responsibility": 15,
+          "unspecified": 2
+        }
+      }
+    },
+    {
+      "packet_id": "jd-08-product-manager",
+      "source": {
+        "filename": "JD-08 — Product Manager.docx",
+        "sha256": "8398fde7dee02b1a6d7b77ba9544e6387c967c97efddad946bc99e635c18615f"
+      },
+      "runtime": {
+        "profile_id": "703d6870-0cc8-425b-99db-28110fa982aa",
+        "document_id": "443a69e8-c7ab-4ca8-924a-61923972eb3f",
+        "job_id": "5e0ae5d3-bcfa-43d9-adf2-805004d05a52",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 24,
+        "supported_requirement_count": 24,
+        "text_span_locator_count": 24,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 4,
+          "experience": 6,
+          "education": 0,
+          "credential": 0,
+          "qualification": 0,
+          "null": 14
+        },
+        "modalities": {
+          "must": 6,
+          "preferred": 4,
+          "responsibility": 12,
+          "unspecified": 2
+        }
+      }
+    },
+    {
+      "packet_id": "jd-09-software-engineer",
+      "source": {
+        "filename": "JD-09 — Software Engineer.docx",
+        "sha256": "8fd587de6f9e102f6db14f62d8657508a82a59055c7b6b65560aaca1daf45c37"
+      },
+      "runtime": {
+        "profile_id": "b191d260-e1c1-4b5b-b576-d16099e1f94c",
+        "document_id": "5f519fa7-1508-4de6-8e6e-d1951ab7a83c",
+        "job_id": "14e70b65-1456-4ed6-9616-98c89b51822c",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 29,
+        "supported_requirement_count": 29,
+        "text_span_locator_count": 29,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 3,
+          "experience": 9,
+          "education": 1,
+          "credential": 0,
+          "qualification": 0,
+          "null": 16
+        },
+        "modalities": {
+          "must": 8,
+          "preferred": 5,
+          "responsibility": 14,
+          "unspecified": 2
+        }
+      }
+    },
+    {
+      "packet_id": "jd-10-operations-manager",
+      "source": {
+        "filename": "JD-10 — Operations Manager.docx",
+        "sha256": "e8b08d78b579051d89fdda2021d2b54b3f98e39b81261fad46008c98a2923187"
+      },
+      "runtime": {
+        "profile_id": "7a8f0e58-49a3-4426-bf52-b8b03f383f58",
+        "document_id": "064714a4-dd3a-421c-be8c-9a72fbc12800",
+        "job_id": "4a7223fc-f7b9-406c-9209-f114432e990f",
+        "review_state": "pending_review",
+        "profile_version": 1
+      },
+      "contract": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_template_id": "jd_requirement_extraction_text",
+        "prompt_template_version": "2.2",
+        "output_schema_id": "jd_requirement_extraction_text",
+        "output_schema_version": "2.2",
+        "input_mode": "whole_parsed_text",
+        "jd_extraction_mode": "requirement_v2",
+        "strategy": "full_document"
+      },
+      "summary": {
+        "requirement_count": 27,
+        "supported_requirement_count": 27,
+        "text_span_locator_count": 27,
+        "pdf_page_locator_count": 0,
+        "dimensions": {
+          "skill": 2,
+          "experience": 7,
+          "education": 0,
+          "credential": 1,
+          "qualification": 0,
+          "null": 17
+        },
+        "modalities": {
+          "must": 7,
+          "preferred": 3,
+          "responsibility": 15,
+          "unspecified": 2
+        }
+      }
+    }
+  ]
+}

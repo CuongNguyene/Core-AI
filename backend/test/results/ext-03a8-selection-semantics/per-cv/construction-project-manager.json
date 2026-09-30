@@ -1,0 +1,55 @@
+{
+  "fixture_id": "construction-project-manager",
+  "domain": "operations_project",
+  "fingerprint": {
+    "fixture_name": "construction-project-manager",
+    "document_id": "2b3ac022-ef34-49f2-95d1-079dedf56fb8",
+    "storage_key": "transient/2b3ac022-ef34-49f2-95d1-079dedf56fb8",
+    "filename": "Chi_Huy_Truong_QLDA_Truong_phong_Tran_Van_Ngoc_3620A1D3_1781499378.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 363676,
+    "sha256": "bfbccd0e9f36d3b5049ebb7d3d053cf90d14672da12ee6a7a836273a3b2428e0",
+    "page_count": 4,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 5,
+    "education_count": 1,
+    "statement_count": 38,
+    "reference_validation": "PASS"
+  },
+  "B_strict": {
+    "selected": 3,
+    "supported": 3,
+    "unsupported": 0,
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571428571428571,
+    "taxonomy_coverage": 0.6666666666666666,
+    "selected_capability_ids": [
+      "project_management",
+      "team_leadership",
+      "process_optimization"
+    ],
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "grounding_rate": 1.0
+  },
+  "C_criteria": {
+    "selected": 3,
+    "supported": 3,
+    "unsupported": 0,
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571428571428571,
+    "taxonomy_coverage": 0.6666666666666666,
+    "selected_capability_ids": [
+      "project_management",
+      "team_leadership",
+      "process_optimization"
+    ],
+    "unknown_ids": 0,
+    "dangling_refs": 0,
+    "grounding_rate": 1.0
+  }
+}

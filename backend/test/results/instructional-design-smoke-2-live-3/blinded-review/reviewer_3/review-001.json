@@ -1,0 +1,128 @@
+{
+  "review_id": "review-001",
+  "reviewer_id": "opus-reviewer-01",
+  "reviewed_at": "2026-08-13T02:48:32+00:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "minor_issues",
+    "issues": [
+      {
+        "category": "id_reference_drift",
+        "entity": "lessons[lesson-mm-002].formative_assessment_ids[0]",
+        "description": "Points to 'formative-mm-001', which is not defined in assessments[]. The only assessment present is assess-mm-001.",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "lessons[lesson-mm-004].formative_assessment_ids[0]",
+        "description": "Points to 'formative-mm-002'; no such assessment entity exists.",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "id_reference_drift",
+        "entity": "lessons[lesson-mm-006].formative_assessment_ids[0]",
+        "description": "Points to 'formative-mm-003'; no such assessment entity exists.",
+        "severity": "error",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "other",
+        "entity": "course_outline.estimated_minutes vs sum(modules[].estimated_minutes)",
+        "description": "Outline declares 60 minutes; modules sum to 55 (20+20+15). Five minutes are unallocated and no assessment block is budgeted.",
+        "severity": "warning",
+        "validator_appears_correct": null
+      },
+      {
+        "category": "prerequisite_provenance",
+        "entity": "prerequisites[prereq-mm-001..005].status",
+        "description": "All five are correctly marked status=candidate / basis=model_proposed with per-item rationale. brief.learner_state.known is empty, so no prerequisite is presented as confirmed. No provenance defect found.",
+        "severity": "info",
+        "validator_appears_correct": null
+      }
+    ],
+    "notes": "Objective, module and lesson graphs resolve cleanly: every objective appears in a module, a lesson and the summative assessment; every lesson.module_id resolves and every module.lesson_ids entry resolves back. The only broken edges are the three formative assessment references. brief_id is consistent across objectives and outline. No validator output was included in the packet, so `validator_appears_correct` is null on every issue; the findings below are the reviewer's own reference walk over the artifact, not a confirmation or contradiction of a quality gate."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "yes_with_reservations",
+      "notes": "Answered independently of the dangling formative IDs. The design is a coherent observe -> diagnose -> respond chain that mirrors the brief's desired performance almost exactly, with each module carrying an exposition lesson followed by a practice lesson, and a scenario summative whose three rubric dimensions correspond one-to-one with the three objectives. A competent instructor could teach from this. The reservation is prerequisite scoping: prereq-mm-003 (drift concepts), prereq-mm-004 (training-serving skew) and prereq-mm-005 (maintenance strategies) are declared entry conditions, yet lesson-mm-003 and lesson-mm-005 teach exactly that material. With learner_state.known empty, the design simultaneously assumes and teaches its own content, which will misfire at intake."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Each objective carries conditions plus three observable success criteria; 'Distinguishes normal variance from meaningful degradation' and 'Considers trade-offs and risks of the action' are judgeable from a learner artifact. Short of 5 because severity/trend judgements have no stated threshold, so two raters could split on the same response."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 4,
+        "rationale": "assess-mm-001 lists all three objectives and its three rubric dimensions map cleanly onto obj-mm-001 (signal interpretation), obj-mm-002 (causal reasoning) and obj-mm-003 (response appropriateness). Not 5 because the formative layer is referenced by three lessons but never specified, so obj-mm-001 and obj-mm-002 have no defined check before the single terminal task."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "Three evidence statements plus a three-level rubric and an explicit mastery rule ('all at highest, or two highest and one middle') would support a defensible judgement. Weakness: a single scenario is one observation, and the conditions fix the pattern as 'data drift or concept drift', so the assessment cannot show whether the learner discriminates drift from system-level causes as obj-mm-002 requires."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 4,
+        "rationale": "analyze / analyze / evaluate is the right ladder for interpret -> differentiate -> propose. Activities match: demonstration then guided practice for analysis, explanation then scenario for the evaluative objective, and the summative sits at evaluate. obj-mm-003 is tagged knowledge_dimension=procedural while its criteria are about justification and trade-offs, which reads closer to conceptual."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "Relevant and properly qualified as candidates with individual rationales, but not minimal and partly circular: prereq-mm-003/004 restate the content of lesson-mm-003 and prereq-mm-005 restates lesson-mm-005. Gating a 60-minute course on prior understanding of drift, skew and maintenance strategy leaves little that the course itself adds for obj-mm-002 and obj-mm-003."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "Three modules follow the operational workflow, each objective is isolated in its own module, and the sequencing_rationale states the dependency explicitly. Lessons run exposition -> practice inside every module. Nothing is out of order."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "lesson-mm-002, lesson-mm-004 and lesson-mm-006 rehearse precisely the three behaviours the summative rubric scores, and lesson-mm-006's activity ('propose appropriate responses with justification') is the summative in miniature. Held at 4 because no lesson rehearses the three phases end-to-end, which is what the summative actually asks for."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "Moderate. obj-mm-002 gets 20 minutes to cover four failure families (data drift, concept drift, training-serving skew, system issues) and obj-mm-003 gets 15 minutes including the practice; the three formative checkpoints exist only as references, so in practice there is no specified feedback instrument before the graded task."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "No excess. 55 minutes of instruction, six lessons, no content outside the three objectives, no optional breadth."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Author the three missing formative checks, rewrite or demote prereq-mm-003/004/005 so they stop duplicating taught content, and budget the unallocated 5 minutes for the summative. The instructional spine needs no change."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-mm-001",
+        "prereq-mm-002"
+      ],
+      "rejected_refs": [
+        "prereq-mm-003",
+        "prereq-mm-004",
+        "prereq-mm-005"
+      ],
+      "notes": "prereq-mm-001 (chart/dashboard literacy) and prereq-mm-002 (what accuracy, precision, recall and latency mean) are genuine entry conditions: nothing in the course teaches them and obj-mm-001 is unattemptable without them. prereq-mm-003, prereq-mm-004 and prereq-mm-005 are rejected as prerequisites because the course teaches them - lesson-mm-003 covers drift types and training-serving skew, lesson-mm-005 covers retraining/rollback/mitigation. They should either be reclassified as learning content with teaching_objective_id set, or the corresponding lessons should be cut and the time returned to practice. All five are correctly marked candidate, so the provenance handling itself is acceptable."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 1,
+      "assessments_changed": 3,
+      "prerequisites_changed": 3,
+      "modules_changed": 1,
+      "lessons_changed": 0,
+      "notes": "Estimated: obj-mm-003 knowledge_dimension retag; three formative assessments authored from scratch; three prerequisites reclassified; one module retimed to absorb the 5-minute gap. Lessons stand as written."
+    },
+    "overall_notes": "Strongest feature is proportion: one objective per module, one exposition and one practice lesson per objective, one rubric dimension per objective. The design's real risk is not the broken IDs but the prerequisite/content overlap, which would let a cohort be screened out on material the course was built to deliver."
+  }
+}

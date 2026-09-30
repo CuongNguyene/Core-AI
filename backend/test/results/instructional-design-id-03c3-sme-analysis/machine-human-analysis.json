@@ -1,0 +1,52 @@
+[
+  {
+    "category": "A",
+    "fixture": "accounting_financial_reporting_basic",
+    "machine_issue_present": true,
+    "machine_observation_codes": [
+      "id_reference_drift",
+      "other"
+    ],
+    "pedagogically_reasonable": true
+  },
+  {
+    "category": "A",
+    "fixture": "construction_drawing_and_method_basic",
+    "machine_issue_present": true,
+    "machine_observation_codes": [
+      "id_reference_drift",
+      "other"
+    ],
+    "pedagogically_reasonable": true
+  },
+  {
+    "category": "A",
+    "fixture": "hr_recruitment_planning_basic",
+    "machine_issue_present": true,
+    "machine_observation_codes": [
+      "id_reference_drift",
+      "other",
+      "schema_or_shape"
+    ],
+    "pedagogically_reasonable": true
+  },
+  {
+    "category": "A",
+    "fixture": "legal_contract_review_basic",
+    "machine_issue_present": true,
+    "machine_observation_codes": [
+      "id_reference_drift"
+    ],
+    "pedagogically_reasonable": true
+  },
+  {
+    "category": "A",
+    "fixture": "python_data_processing",
+    "machine_issue_present": true,
+    "machine_observation_codes": [
+      "id_reference_drift",
+      "other"
+    ],
+    "pedagogically_reasonable": true
+  }
+]

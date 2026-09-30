@@ -1,0 +1,37 @@
+{
+  "experiment": "id03b.3",
+  "source_artifacts": "instructional-design-id-03b3-cross-domain-smoke-attempt-2",
+  "scope": {
+    "condition": "structured_v0.3.1",
+    "fixtures": 5,
+    "runs_per_fixture": 1,
+    "planned_model_calls": 25
+  },
+  "reference_ownership": {
+    "completed_runs": 4,
+    "failed_runs": 1,
+    "unknown_objective_reference_observed": false,
+    "notes": "No AssessmentDesigner artifact-id collision observed in 4 completed snapshots. Legal did not reach quality-gate because orchestration graph validation failed."
+  },
+  "dependency_coverage": {
+    "findings_by_fixture": {
+      "python_data_processing": 9,
+      "accounting_financial_reporting_basic": 6,
+      "hr_recruitment_planning_basic": 4,
+      "construction_drawing_and_method_basic": 5
+    },
+    "total_findings": 24,
+    "comparison_to_id03b": {
+      "python_prior": 7,
+      "python_current": 9,
+      "legal_prior": 6,
+      "legal_current": "not_observed"
+    },
+    "normalizer": "Snapshot exposes canonical_dependencies; no candidate promotion was performed."
+  },
+  "scope_creep": {
+    "assessment_scope_creep_findings": 0,
+    "scope_time_conflict_warnings_observed": true,
+    "conclusion": "No explicit assessment_scope_creep finding was emitted; candidate scope language and scope_time_conflict warnings remain present. A positive scope-creep catch was not exercised by these fixtures."
+  }
+}

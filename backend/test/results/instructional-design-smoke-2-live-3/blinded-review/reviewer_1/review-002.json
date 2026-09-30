@@ -1,0 +1,98 @@
+{
+  "review_id": "review-002",
+  "reviewer_id": "gemini-sme-01",
+  "reviewed_at": "2026-08-13T09:42:23+07:00",
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "technical_review": {
+    "traceability_overall": "issues_found",
+    "issues": [
+      {
+        "entity": "course-model-monitoring-001",
+        "field": "modules.lesson_ids",
+        "description": "The lesson_ids arrays in all three modules are empty, but lesson objects exist pointing to these modules.",
+        "category": "orphan_lesson",
+        "severity": "error",
+        "validator_correct": null
+      }
+    ],
+    "notes": "The modules fail to reference their constituent lessons, leaving the lessons orphaned from the course outline's perspective [cite: 2]."
+  },
+  "pedagogical_review": {
+    "special_question": {
+      "answer": "Yes. It breaks down a complex troubleshooting task into a clear, logical sequence.",
+      "notes": "The integration of an end-to-end summative assessment after formative practice is pedagogically sound [cite: 2]."
+    },
+    "rubric_scores": [
+      {
+        "dimension": "objective_measurability",
+        "score": 4,
+        "rationale": "Success criteria like 'distinguishes between multiple plausible root causes' are observable, though some criteria rely on expert judgment [cite: 2]."
+      },
+      {
+        "dimension": "objective_assessment_alignment",
+        "score": 5,
+        "rationale": "The integrated assessment requires the learner to perform the exact workflow described in the objectives [cite: 2]."
+      },
+      {
+        "dimension": "evidence_validity",
+        "score": 4,
+        "rationale": "The tasks are highly authentic to engineering workflows, providing strong evidence of capability [cite: 2]."
+      },
+      {
+        "dimension": "cognitive_alignment",
+        "score": 5,
+        "rationale": "Cognitive verbs (analyze, evaluate) are perfectly aligned with the scenario-based assessments [cite: 2]."
+      },
+      {
+        "dimension": "prerequisite_quality",
+        "score": 3,
+        "rationale": "Seven prerequisites are proposed for a 60-minute course. This is a very heavy entry requirement that might limit accessibility [cite: 2]."
+      },
+      {
+        "dimension": "sequence_coherence",
+        "score": 5,
+        "rationale": "The workflow sequence (interpret -> diagnose -> respond) is naturally coherent and logically interdependent [cite: 2]."
+      },
+      {
+        "dimension": "instruction_assessment_alignment",
+        "score": 4,
+        "rationale": "The instructional pattern of explanation -> worked example -> practice directly prepares learners for the assessments [cite: 2]."
+      },
+      {
+        "dimension": "under_teaching",
+        "score": 3,
+        "rationale": "A 30-minute integrated summative assessment leaves only 30 minutes for instruction, which is likely insufficient to teach all three complex diagnostic skills [cite: 2]."
+      },
+      {
+        "dimension": "over_teaching",
+        "score": 1,
+        "rationale": "The content is strictly focused on the required performances [cite: 2]."
+      },
+      {
+        "dimension": "overall_edit_effort",
+        "score": 2,
+        "rationale": "Technical fixes are needed for the orphan lessons, and the time allocations need rebalancing [cite: 2]."
+      }
+    ],
+    "prerequisite_acceptance": {
+      "decision": "accept_with_revisions",
+      "accepted_refs": [
+        "prereq-dashboard-literacy",
+        "prereq-metric-familiarity",
+        "prereq-degradation-concepts"
+      ],
+      "rejected_refs": [],
+      "notes": "The prerequisites are valid but arguably too numerous. Some could be consolidated [cite: 2]."
+    },
+    "edit_effort": {
+      "level": "minor",
+      "objectives_changed": 0,
+      "assessments_changed": 0,
+      "prerequisites_changed": 2,
+      "modules_changed": 3,
+      "lessons_changed": 0,
+      "notes": "Need to link lessons to modules and review the time constraint."
+    },
+    "overall_notes": "Pedagogically strong but technically flawed in its module-to-lesson linkages [cite: 2]."
+  }
+}

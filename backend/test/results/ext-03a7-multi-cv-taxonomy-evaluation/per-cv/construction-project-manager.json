@@ -1,0 +1,69 @@
+{
+  "fixture_id": "construction-project-manager",
+  "domain": "operations_project",
+  "fingerprint": {
+    "fixture_name": "construction-project-manager",
+    "document_id": "88335dc0-ce78-4276-9a69-802e0fb472b7",
+    "storage_key": "transient/88335dc0-ce78-4276-9a69-802e0fb472b7",
+    "filename": "Chi_Huy_Truong_QLDA_Truong_phong_Tran_Van_Ngoc_3620A1D3_1781499378.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 363676,
+    "sha256": "bfbccd0e9f36d3b5049ebb7d3d053cf90d14672da12ee6a7a836273a3b2428e0",
+    "page_count": 4,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 5,
+    "education_count": 1,
+    "statement_count": 42,
+    "reference_validation": "PASS"
+  },
+  "stage2": {
+    "selected_count": 4,
+    "supported_selected_count": 4,
+    "unsupported_selected_count": 0,
+    "selection_precision": 1.0,
+    "bounded_recall": 1.0,
+    "demonstrated_capability_count": 6,
+    "represented_capability_count": 4,
+    "taxonomy_gap_count": 2,
+    "taxonomy_coverage": 0.6666666666666666,
+    "selected_capability_ids": [
+      "project_management",
+      "team_leadership",
+      "process_optimization",
+      "operations_planning"
+    ],
+    "selected_names": [
+      "Project Management",
+      "Team Leadership",
+      "Process Optimization",
+      "Operations Planning"
+    ],
+    "unknown_taxonomy_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "grounding_rate": 1.0
+  },
+  "taxonomy_gaps": [
+    {
+      "proposed_name": "Construction Project Execution",
+      "domain": "operations_project",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "construction-project-manager"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    },
+    {
+      "proposed_name": "Site Management",
+      "domain": "operations_project",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "construction-project-manager"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    }
+  ],
+  "candidate_profile_compatibility": "PASS"
+}

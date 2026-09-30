@@ -1,0 +1,536 @@
+{
+  "review_id": "review-003",
+  "artifact": {
+    "brief": {
+      "id": "brief-python-data-processing",
+      "capability": {
+        "id": null,
+        "name": "python data processing",
+        "target_context": "research fixture"
+      },
+      "learner_state": {
+        "known": [
+          "basic Python"
+        ],
+        "unknown": [],
+        "evidence_refs": [
+          "research-fixture:python-data-processing:learner-state"
+        ]
+      },
+      "desired_performances": [
+        "Given a tabular dataset, transform missing or invalid values and justify the transformation choices."
+      ],
+      "constraints": {
+        "estimated_total_minutes": 60,
+        "language": "en",
+        "audience_notes": []
+      },
+      "provenance": {
+        "type": "research_fixture",
+        "authored_by": "instructional-design-research",
+        "created_at": null
+      }
+    },
+    "objectives": [
+      {
+        "id": "obj-01",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Identify missing and invalid values in a tabular dataset using pandas",
+        "cognitive_process": "analyze",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a CSV or DataFrame",
+          "Using pandas library"
+        ],
+        "success_criteria": [
+          "Correctly identifies all missing values (NaN, None, empty strings)",
+          "Distinguishes between missing and invalid values",
+          "Uses appropriate pandas methods (.isnull(), .isna(), .info())"
+        ],
+        "prerequisite_refs": [
+          "prereq-01",
+          "prereq-02"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes pandas is the primary library for tabular data in Python",
+            "Assumes learner will work with standard formats like CSV"
+          ]
+        }
+      },
+      {
+        "id": "obj-02",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Apply appropriate transformation strategies for missing values based on data characteristics",
+        "cognitive_process": "apply",
+        "knowledge_dimension": "procedural",
+        "conditions": [
+          "Given a dataset with missing values",
+          "Considering data type and distribution"
+        ],
+        "success_criteria": [
+          "Selects appropriate strategy (deletion, imputation, flagging)",
+          "Implements transformation using pandas methods",
+          "Preserves data integrity during transformation"
+        ],
+        "prerequisite_refs": [
+          "prereq-01",
+          "prereq-02",
+          "prereq-03"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes basic statistical understanding is prerequisite",
+            "Assumes focus on common strategies rather than advanced ML-based imputation"
+          ]
+        }
+      },
+      {
+        "id": "obj-03",
+        "brief_id": "brief-python-data-processing",
+        "performance": "Justify transformation choices by evaluating trade-offs and data context",
+        "cognitive_process": "evaluate",
+        "knowledge_dimension": "metacognitive",
+        "conditions": [
+          "Given a specific dataset and business context",
+          "After applying transformations"
+        ],
+        "success_criteria": [
+          "Articulates rationale for chosen strategy",
+          "Identifies potential biases or limitations introduced",
+          "Compares alternative approaches and their trade-offs"
+        ],
+        "prerequisite_refs": [
+          "prereq-03"
+        ],
+        "capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes learners need to develop professional judgment about data decisions"
+          ]
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "id": "assess-summative-01",
+        "objective_ids": [
+          "obj-01",
+          "obj-02",
+          "obj-03"
+        ],
+        "capability_claim": "Learner can transform missing or invalid values in a tabular dataset and justify the transformation choices",
+        "required_evidence": [
+          {
+            "id": "evidence-01",
+            "criterion": "Correctly identifies all missing and invalid values in the provided dataset",
+            "rationale": "Demonstrates analytical capability from obj-01"
+          },
+          {
+            "id": "evidence-02",
+            "criterion": "Applies at least two different transformation strategies appropriately based on column characteristics",
+            "rationale": "Demonstrates application skill from obj-02"
+          },
+          {
+            "id": "evidence-03",
+            "criterion": "Provides written justification for each transformation decision that addresses trade-offs",
+            "rationale": "Demonstrates evaluative reasoning from obj-03"
+          }
+        ],
+        "task": {
+          "task_type": "performance_task",
+          "description": "Given a real-world tabular dataset with multiple types of missing and invalid values, write a Python script that cleans the data and produces a written report justifying each transformation decision",
+          "conditions": [
+            "Dataset contains numeric and categorical columns",
+            "Multiple patterns of missingness present",
+            "Time limit: 45 minutes",
+            "Access to pandas documentation allowed"
+          ]
+        },
+        "cognitive_process": "evaluate",
+        "scoring": {
+          "rubric_dimensions": [
+            {
+              "id": "rubric-01",
+              "criterion": "Identification of data quality issues",
+              "performance_levels": [
+                "Misses major issues",
+                "Identifies most missing values but misses invalid patterns",
+                "Comprehensively identifies all missing and invalid values with correct categorization"
+              ]
+            },
+            {
+              "id": "rubric-02",
+              "criterion": "Appropriateness of transformation strategies",
+              "performance_levels": [
+                "Applies single strategy to all columns",
+                "Applies different strategies but some are inappropriate for data type",
+                "Applies contextually appropriate strategies for each column type and pattern"
+              ]
+            },
+            {
+              "id": "rubric-03",
+              "criterion": "Quality of justification",
+              "performance_levels": [
+                "States decisions without rationale",
+                "Provides surface-level rationale",
+                "Articulates trade-offs, potential biases, and alternative approaches considered"
+              ]
+            }
+          ],
+          "mastery_rule": "All dimensions must be at highest performance level"
+        },
+        "is_summative": true,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Assumes 45 minutes is sufficient for focused performance task within 60-minute constraint",
+            "Assumes written justification is appropriate evidence of evaluative thinking"
+          ]
+        }
+      },
+      {
+        "id": "assess-formative-01",
+        "objective_ids": [
+          "obj-01"
+        ],
+        "capability_claim": "Learner can identify missing and invalid values using pandas",
+        "required_evidence": [
+          {
+            "id": "evidence-form-01",
+            "criterion": "Correctly applies .isnull() or .isna() to detect missing values",
+            "rationale": null
+          }
+        ],
+        "task": {
+          "task_type": "code_exercise",
+          "description": "Write code to identify and count missing values in each column of a provided DataFrame",
+          "conditions": [
+            "Small sample dataset provided",
+            "Immediate feedback on correctness"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": null,
+        "is_summative": false,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      },
+      {
+        "id": "assess-formative-02",
+        "objective_ids": [
+          "obj-02"
+        ],
+        "capability_claim": "Learner can select and apply appropriate transformation strategy",
+        "required_evidence": [
+          {
+            "id": "evidence-form-02",
+            "criterion": "Chooses different strategies for numeric vs categorical data",
+            "rationale": null
+          }
+        ],
+        "task": {
+          "task_type": "decision_scenario",
+          "description": "Given descriptions of three columns with missing data, select the most appropriate transformation strategy for each and implement it",
+          "conditions": [
+            "Scaffolded with strategy options provided",
+            "Must explain selection briefly"
+          ]
+        },
+        "cognitive_process": "apply",
+        "scoring": null,
+        "is_summative": false,
+        "required_capability_refs": [],
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "id": "prereq-01",
+        "capability": "Write and execute basic Python code including variables, functions, and control flow",
+        "status": "confirmed",
+        "basis": "researcher_authored",
+        "classification": "required_prerequisite",
+        "rationale": "Learner state confirms 'basic Python' knowledge",
+        "required_for_refs": [
+          "obj-01",
+          "obj-02"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-02",
+        "capability": "Load and inspect DataFrames using pandas basics",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Required to work with tabular data in Python, but not explicitly confirmed in learner state",
+        "required_for_refs": [
+          "obj-01",
+          "obj-02"
+        ],
+        "requires_prerequisite_refs": [
+          "prereq-01"
+        ],
+        "teaching_objective_id": "obj-teach-pandas-basics"
+      },
+      {
+        "id": "prereq-03",
+        "capability": "Understand basic descriptive statistics (mean, median, mode, distribution)",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "required_prerequisite",
+        "rationale": "Necessary to make informed decisions about imputation strategies",
+        "required_for_refs": [
+          "obj-02",
+          "obj-03"
+        ],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      },
+      {
+        "id": "prereq-04",
+        "capability": "Familiarity with common data quality issues in real-world datasets",
+        "status": "candidate",
+        "basis": "model_proposed",
+        "classification": "helpful_background",
+        "rationale": "Helpful context but can be introduced during instruction",
+        "required_for_refs": [],
+        "requires_prerequisite_refs": [],
+        "teaching_objective_id": null
+      }
+    ],
+    "course_outline": {
+      "id": "outline-01",
+      "brief_id": "brief-python-data-processing",
+      "objective_ids": [
+        "obj-01",
+        "obj-02",
+        "obj-03"
+      ],
+      "modules": [
+        {
+          "id": "module-01",
+          "title": "Detecting Data Quality Issues",
+          "objective_ids": [
+            "obj-01"
+          ],
+          "prerequisite_refs": [
+            "prereq-01",
+            "prereq-02"
+          ],
+          "lesson_ids": [
+            "lesson-01",
+            "lesson-02"
+          ],
+          "estimated_minutes": 15
+        },
+        {
+          "id": "module-02",
+          "title": "Transformation Strategies",
+          "objective_ids": [
+            "obj-02"
+          ],
+          "prerequisite_refs": [
+            "prereq-01",
+            "prereq-02",
+            "prereq-03"
+          ],
+          "lesson_ids": [
+            "lesson-03",
+            "lesson-04"
+          ],
+          "estimated_minutes": 20
+        },
+        {
+          "id": "module-03",
+          "title": "Evaluating and Justifying Decisions",
+          "objective_ids": [
+            "obj-03"
+          ],
+          "prerequisite_refs": [
+            "prereq-03"
+          ],
+          "lesson_ids": [
+            "lesson-05"
+          ],
+          "estimated_minutes": 15
+        }
+      ],
+      "prerequisite_refs": [
+        "prereq-01",
+        "prereq-02",
+        "prereq-03"
+      ],
+      "estimated_minutes": 60,
+      "sequencing_rationale": [
+        "Module 1 builds foundation by teaching identification before transformation",
+        "Module 2 provides procedural skills to apply transformations after learners can identify issues",
+        "Module 3 develops evaluative judgment after learners have practical experience with strategies",
+        "Summative assessment (10 minutes reserved) integrates all three objectives"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "50 minutes instruction + 10 minutes for summative assessment to meet 60-minute constraint"
+        ]
+      }
+    },
+    "lessons": [
+      {
+        "id": "lesson-01",
+        "module_id": "module-01",
+        "objective_ids": [
+          "obj-01"
+        ],
+        "prerequisite_refs": [
+          "prereq-02"
+        ],
+        "lesson_goal": "Learner can use pandas methods to detect missing values in a DataFrame",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Follow along with live coding demonstration showing .isnull(), .isna(), .info(), and .describe() methods on sample dataset",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Demonstration pattern chosen to efficiently introduce pandas methods"
+          ]
+        }
+      },
+      {
+        "id": "lesson-02",
+        "module_id": "module-01",
+        "objective_ids": [
+          "obj-01"
+        ],
+        "prerequisite_refs": [
+          "prereq-02"
+        ],
+        "lesson_goal": "Learner can distinguish missing values from invalid values and categorize data quality issues",
+        "instructional_pattern": "guided_practice",
+        "expected_learner_activity": "Work through scaffolded exercise identifying different types of issues (NaN, None, empty strings, out-of-range values, format errors) in provided dataset",
+        "formative_assessment_ids": [
+          "assess-formative-01"
+        ],
+        "estimated_minutes": 7,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": []
+        }
+      },
+      {
+        "id": "lesson-03",
+        "module_id": "module-02",
+        "objective_ids": [
+          "obj-02"
+        ],
+        "prerequisite_refs": [
+          "prereq-03"
+        ],
+        "lesson_goal": "Learner understands the spectrum of transformation strategies and when each is appropriate",
+        "instructional_pattern": "explanation",
+        "expected_learner_activity": "Review presented decision framework covering deletion (listwise/pairwise), imputation (mean/median/mode/forward-fill), and flagging strategies with context for each",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 8,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Explanation pattern provides conceptual foundation before practice"
+          ]
+        }
+      },
+      {
+        "id": "lesson-04",
+        "module_id": "module-02",
+        "objective_ids": [
+          "obj-02"
+        ],
+        "prerequisite_refs": [
+          "prereq-02",
+          "prereq-03"
+        ],
+        "lesson_goal": "Learner can implement appropriate transformation strategies for different column types",
+        "instructional_pattern": "worked_example",
+        "expected_learner_activity": "Study worked example showing complete transformation pipeline for dataset with numeric and categorical columns, then apply similar approach to new dataset",
+        "formative_assessment_ids": [
+          "assess-formative-02"
+        ],
+        "estimated_minutes": 12,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Worked example pattern supports transfer of procedural knowledge"
+          ]
+        }
+      },
+      {
+        "id": "lesson-05",
+        "module_id": "module-03",
+        "objective_ids": [
+          "obj-03"
+        ],
+        "prerequisite_refs": [],
+        "lesson_goal": "Learner can articulate trade-offs and justify data transformation decisions",
+        "instructional_pattern": "scenario",
+        "expected_learner_activity": "Analyze scenario where different transformation choices lead to different conclusions, discuss potential biases introduced, and write justification for recommended approach",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 15,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Scenario pattern develops evaluative judgment through authentic decision-making context"
+          ]
+        }
+      },
+      {
+        "id": "obj-teach-pandas-basics",
+        "module_id": "module-01",
+        "objective_ids": [],
+        "prerequisite_refs": [
+          "prereq-01"
+        ],
+        "lesson_goal": "Teach pandas DataFrame basics for learners without prior pandas experience",
+        "instructional_pattern": "demonstration",
+        "expected_learner_activity": "Learn to load CSV, view DataFrame structure, and access columns",
+        "formative_assessment_ids": [],
+        "estimated_minutes": 5,
+        "provenance": {
+          "source": "model_proposed",
+          "provisional": true,
+          "assumption_notes": [
+            "Optional remedial lesson for learners missing prereq-02",
+            "Time not included in main 60-minute estimate"
+          ]
+        }
+      }
+    ]
+  },
+  "rubric_version": "instructional_design_human_rubric@0.1",
+  "special_review_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable?"
+}

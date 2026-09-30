@@ -1,0 +1,67 @@
+{
+  "fixture_id": "devops-engineer",
+  "domain": "technical",
+  "fingerprint": {
+    "fixture_name": "devops-engineer",
+    "document_id": "b0719018-b0d4-4e1d-be5e-0150f2a83e08",
+    "storage_key": "transient/b0719018-b0d4-4e1d-be5e-0150f2a83e08",
+    "filename": "Devops_Engineer_BuI_VaN_THIeU_37528F1A_1778212136.pdf",
+    "mime_type": "application/pdf",
+    "file_size": 633348,
+    "sha256": "93ad6e8b3841f4094251717e15f42d11d2d80123639887e5322d343986feab4d",
+    "page_count": 3,
+    "input_mode": "native_pdf"
+  },
+  "stage1": {
+    "experience_count": 2,
+    "education_count": 1,
+    "statement_count": 30,
+    "reference_validation": "PASS"
+  },
+  "stage2": {
+    "selected_count": 3,
+    "supported_selected_count": 2,
+    "unsupported_selected_count": 1,
+    "selection_precision": 0.6666666666666666,
+    "bounded_recall": 0.6666666666666666,
+    "demonstrated_capability_count": 5,
+    "represented_capability_count": 3,
+    "taxonomy_gap_count": 2,
+    "taxonomy_coverage": 0.6,
+    "selected_capability_ids": [
+      "digital_platform_development",
+      "process_optimization",
+      "ecommerce"
+    ],
+    "selected_names": [
+      "Digital Platform Development",
+      "Process Optimization",
+      "eCommerce"
+    ],
+    "unknown_taxonomy_ids": 0,
+    "dangling_refs": 0,
+    "duplicates": 0,
+    "grounding_rate": 1.0
+  },
+  "taxonomy_gaps": [
+    {
+      "proposed_name": "Software Engineering",
+      "domain": "technical",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "devops-engineer"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    },
+    {
+      "proposed_name": "Data Analysis",
+      "domain": "technical",
+      "fixture_count": 1,
+      "fixture_ids": [
+        "devops-engineer"
+      ],
+      "suggested_scope": "DOMAIN_PACK_CANDIDATE"
+    }
+  ],
+  "candidate_profile_compatibility": "PASS"
+}

@@ -1,0 +1,595 @@
+{
+  "review_id": "review-001",
+  "fixture_id": "python_data_processing",
+  "brief": {
+    "id": "brief-python_data_processing",
+    "capability": {
+      "id": null,
+      "name": "python data processing",
+      "target_context": "cross-domain research fixture"
+    },
+    "learner_state": {
+      "known": [],
+      "unknown": [],
+      "evidence_refs": [
+        "cross-domain-fixture:python_data_processing:learner-state"
+      ]
+    },
+    "desired_performances": [
+      "Given a tabular dataset, transform invalid values and justify the choices."
+    ],
+    "constraints": {
+      "estimated_total_minutes": 60,
+      "language": "en",
+      "audience_notes": []
+    },
+    "provenance": {
+      "type": "research_fixture",
+      "authored_by": "instructional-design-research",
+      "created_at": null
+    }
+  },
+  "objectives": [
+    {
+      "id": "obj-bpdp-01",
+      "brief_id": "brief-python_data_processing",
+      "performance": "Apply at least one transformation technique to invalid values in a supplied tabular dataset using Python",
+      "cognitive_process": "apply",
+      "knowledge_dimension": "procedural",
+      "conditions": [
+        "given a tabular dataset containing invalid values",
+        "using a Python data-processing environment"
+      ],
+      "success_criteria": [
+        "All targeted invalid values are replaced or removed according to a stated rule",
+        "Transformed output is a valid tabular structure with no untreated invalid values remaining in the declared scope"
+      ],
+      "prerequisite_refs": [],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Learner state evidence ref 'cross-domain-fixture:python_data_processing:learner-state' was not resolvable; no prior competencies confirmed",
+          "Types of invalid values in scope (nulls, type mismatches, out-of-range entries) are not specified in the brief and are assumed common cases only"
+        ]
+      }
+    },
+    {
+      "id": "obj-bpdp-02",
+      "brief_id": "brief-python_data_processing",
+      "performance": "Justify the transformation choices made for invalid values in a tabular dataset",
+      "cognitive_process": "evaluate",
+      "knowledge_dimension": "conceptual",
+      "conditions": [
+        "given the original and transformed tabular datasets",
+        "justification expressed in any observable form (written, verbal, or inline code comments)"
+      ],
+      "success_criteria": [
+        "Learner states a rationale for each transformation decision that references at least one data-quality criterion",
+        "Rationale is internally consistent with the observable effect of the transformation on the dataset"
+      ],
+      "prerequisite_refs": [
+        "obj-bpdp-01"
+      ],
+      "capability_refs": [],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Justification modality is unspecified in the brief; any observable form is assumed acceptable pending researcher confirmation"
+        ]
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "id": "asmt-bpdp-f01",
+      "objective_ids": [
+        "obj-bpdp-01"
+      ],
+      "capability_claim": "Apply at least one transformation technique to invalid values in a supplied tabular dataset using Python",
+      "required_evidence": [
+        {
+          "id": "ev-f01-01",
+          "criterion": "Python code executes without error and produces a tabular output",
+          "rationale": "Verifies that the procedural application is technically valid"
+        },
+        {
+          "id": "ev-f01-02",
+          "criterion": "All targeted invalid values in the declared scope are replaced or removed according to a stated rule",
+          "rationale": "Directly maps to obj-bpdp-01 success criterion 1"
+        },
+        {
+          "id": "ev-f01-03",
+          "criterion": "The transformed output is a valid tabular structure with no untreated invalid values remaining in the declared scope",
+          "rationale": "Directly maps to obj-bpdp-01 success criterion 2"
+        }
+      ],
+      "task": {
+        "task_type": "performance-task",
+        "description": "Given a prepared tabular dataset containing invalid values, write Python code to apply at least one transformation technique that addresses those invalid values. The learner may declare the scope of targeted invalid values before transforming.",
+        "conditions": [
+          "Given a tabular dataset containing invalid values",
+          "Using a Python data-processing environment",
+          "Learner may declare the scope of targeted invalid values before transforming"
+        ]
+      },
+      "cognitive_process": "apply",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-f01-01",
+            "criterion": "Transformation execution",
+            "performance_levels": [
+              "No executable transformation present",
+              "Transformation executes but leaves targeted invalid values untreated",
+              "Transformation executes and replaces or removes all targeted invalid values per a stated rule"
+            ]
+          },
+          {
+            "id": "rd-f01-02",
+            "criterion": "Output validity",
+            "performance_levels": [
+              "Output is not a valid tabular structure",
+              "Output is tabular but contains untreated invalid values within the declared scope",
+              "Output is a valid tabular structure with no untreated invalid values in the declared scope"
+            ]
+          }
+        ],
+        "mastery_rule": "Model-proposed: all required evidence criteria met; researcher must confirm mastery threshold"
+      },
+      "role": "formative",
+      "required_capabilities": [
+        {
+          "name": "tabular data manipulation in Python",
+          "objective_ids": [
+            "obj-bpdp-01"
+          ],
+          "rationale": "Directly demonstrated by writing Python code to transform a tabular dataset"
+        },
+        {
+          "name": "invalid value identification",
+          "objective_ids": [
+            "obj-bpdp-01"
+          ],
+          "rationale": "Learner must identify which values are invalid before scoping and applying a transformation"
+        }
+      ],
+      "is_summative": false,
+      "required_capability_refs": [
+        "tabular data manipulation in Python",
+        "invalid value identification"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Invalid value types in scope inherited from obj-bpdp-01 provenance: nulls, type mismatches, out-of-range entries assumed as common cases only; researcher confirmation required",
+          "Formative role is model-proposed; researcher should confirm whether a separate formative checkpoint prior to the summative is intended",
+          "60-minute total estimate is assumed shared across both assessments; time split is model-proposed and unspecified in the brief"
+        ]
+      }
+    },
+    {
+      "id": "asmt-bpdp-s01",
+      "objective_ids": [
+        "obj-bpdp-01",
+        "obj-bpdp-02"
+      ],
+      "capability_claim": "Transform invalid values in a tabular dataset using Python and justify each transformation decision with reference to at least one data-quality criterion",
+      "required_evidence": [
+        {
+          "id": "ev-s01-01",
+          "criterion": "Python code executes and all targeted invalid values in the declared scope are replaced or removed according to a stated rule",
+          "rationale": "Maps to obj-bpdp-01 success criterion 1"
+        },
+        {
+          "id": "ev-s01-02",
+          "criterion": "The transformed output is a valid tabular structure with no untreated invalid values remaining in the declared scope",
+          "rationale": "Maps to obj-bpdp-01 success criterion 2"
+        },
+        {
+          "id": "ev-s01-03",
+          "criterion": "Learner states a rationale for each transformation decision that references at least one data-quality criterion",
+          "rationale": "Directly maps to obj-bpdp-02 success criterion 1"
+        },
+        {
+          "id": "ev-s01-04",
+          "criterion": "The stated rationale is internally consistent with the observable effect of each transformation on the dataset",
+          "rationale": "Directly maps to obj-bpdp-02 success criterion 2"
+        }
+      ],
+      "task": {
+        "task_type": "integrated-performance-task",
+        "description": "Given a tabular dataset containing invalid values, write Python code to apply transformation techniques that address those invalid values, and provide a justification—in any observable form (written narrative, verbal explanation, or inline code comments)—for each transformation decision, referencing at least one data-quality criterion per decision.",
+        "conditions": [
+          "Given the original tabular dataset containing invalid values",
+          "Using a Python data-processing environment",
+          "Both the original and transformed datasets are available for comparison during justification",
+          "Justification may be expressed in any observable form: written narrative, verbal explanation, or inline code comments"
+        ]
+      },
+      "cognitive_process": "evaluate",
+      "scoring": {
+        "rubric_dimensions": [
+          {
+            "id": "rd-s01-01",
+            "criterion": "Transformation correctness",
+            "performance_levels": [
+              "No transformation applied or code does not execute",
+              "Transformation applied but leaves targeted invalid values untreated or output is not a valid tabular structure",
+              "All targeted invalid values are treated per a stated rule and output is a valid tabular structure"
+            ]
+          },
+          {
+            "id": "rd-s01-02",
+            "criterion": "Justification grounding",
+            "performance_levels": [
+              "No justification provided",
+              "Justification provided but does not reference a data-quality criterion for at least one decision",
+              "Each transformation decision is justified with reference to at least one data-quality criterion"
+            ]
+          },
+          {
+            "id": "rd-s01-03",
+            "criterion": "Justification consistency",
+            "performance_levels": [
+              "Rationale contradicts the observable effect of the transformation on the dataset",
+              "Rationale is partially consistent but contains unexplained gaps between stated reason and observed effect",
+              "Rationale is fully internally consistent with the observable transformation effects across all decisions"
+            ]
+          }
+        ],
+        "mastery_rule": "Model-proposed: all four required evidence criteria met; researcher must confirm mastery threshold and whether partial credit applies across dimensions"
+      },
+      "role": "summative",
+      "required_capabilities": [
+        {
+          "name": "tabular data manipulation in Python",
+          "objective_ids": [
+            "obj-bpdp-01"
+          ],
+          "rationale": "Directly demonstrated by applying Python transformations to the dataset"
+        },
+        {
+          "name": "invalid value identification",
+          "objective_ids": [
+            "obj-bpdp-01"
+          ],
+          "rationale": "Learner must identify and scope invalid values before transforming"
+        },
+        {
+          "name": "data quality reasoning",
+          "objective_ids": [
+            "obj-bpdp-02"
+          ],
+          "rationale": "Demonstrated by justifying transformation decisions with explicit reference to data-quality criteria"
+        }
+      ],
+      "is_summative": true,
+      "required_capability_refs": [
+        "tabular data manipulation in Python",
+        "invalid value identification",
+        "data quality reasoning"
+      ],
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Summative integrates both objectives, consistent with the brief's single stated desired performance",
+          "Justification modality inherited from obj-bpdp-02 provenance: any observable form assumed acceptable; researcher confirmation required",
+          "Invalid value types in scope assumed to be nulls, type mismatches, and out-of-range entries per obj-bpdp-01 provenance; researcher should confirm"
+        ]
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-bpdp-01",
+      "capability": "Python syntax fundamentals",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "Without the ability to write executable Python, the learner cannot produce the code transformation required by obj-bpdp-01 or attempt asmt-bpdp-f01 or asmt-bpdp-s01. Instruction on transformation techniques cannot reasonably begin if the learner cannot execute Python at all; the failure is structural, not merely a performance gap.",
+      "required_for_refs": [
+        "obj-bpdp-01",
+        "asmt-bpdp-f01",
+        "asmt-bpdp-s01"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    },
+    {
+      "id": "prereq-bpdp-02",
+      "capability": "tabular data concepts (rows, columns, data types)",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "Identifying and scoping invalid values (nulls, type mismatches, out-of-range entries) requires understanding of column structure and data types. Without this, the learner cannot recognize which values are invalid or declare a transformation scope, which is the required entry action for obj-bpdp-01 and the conceptual substrate of obj-bpdp-02.",
+      "required_for_refs": [
+        "obj-bpdp-01",
+        "obj-bpdp-02"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    },
+    {
+      "id": "prereq-bpdp-03",
+      "capability": "data quality criteria awareness",
+      "status": "candidate",
+      "basis": "model_proposed",
+      "classification": "required_prerequisite",
+      "rationale": "obj-bpdp-02 success criterion 1 and asmt-bpdp-s01 evidence criterion ev-s01-03 require the learner to reference at least one named data-quality criterion per transformation decision. Without any prior familiarity with such criteria, the learner cannot produce an externally-grounded justification; the evidence threshold cannot be met. Researcher must confirm whether minimal awareness is a required entry condition or is intended to be taught within the session.",
+      "required_for_refs": [
+        "obj-bpdp-02",
+        "asmt-bpdp-s01"
+      ],
+      "requires_prerequisite_refs": [],
+      "teaching_objective_id": null
+    }
+  ],
+  "course_outline": {
+    "id": "co-bpdp-01",
+    "brief_id": "brief-python_data_processing",
+    "objective_ids": [
+      "obj-bpdp-01",
+      "obj-bpdp-02"
+    ],
+    "modules": [
+      {
+        "id": "mod-bpdp-01",
+        "title": "Identifying and Transforming Invalid Values in Python",
+        "objective_ids": [
+          "obj-bpdp-01"
+        ],
+        "prerequisite_refs": [
+          "prereq-bpdp-01",
+          "prereq-bpdp-02"
+        ],
+        "lesson_ids": [
+          "lesson-bpdp-01",
+          "lesson-bpdp-02"
+        ],
+        "estimated_minutes": 30
+      },
+      {
+        "id": "mod-bpdp-02",
+        "title": "Justifying Transformation Decisions Against Data-Quality Criteria",
+        "objective_ids": [
+          "obj-bpdp-02"
+        ],
+        "prerequisite_refs": [
+          "prereq-bpdp-03"
+        ],
+        "lesson_ids": [
+          "lesson-bpdp-03",
+          "lesson-bpdp-04",
+          "lesson-bpdp-05"
+        ],
+        "estimated_minutes": 30
+      }
+    ],
+    "prerequisite_refs": [
+      "prereq-bpdp-01",
+      "prereq-bpdp-02",
+      "prereq-bpdp-03"
+    ],
+    "estimated_minutes": 60,
+    "planning_warnings": [
+      {
+        "type": "scope_time_conflict",
+        "decision": "prioritized_core_objectives",
+        "rationale": "The 60-minute total budget must accommodate both instructional delivery and two model-proposed assessments (asmt-bpdp-f01 formative in mod-bpdp-01; asmt-bpdp-s01 summative integrating both objectives at the close of mod-bpdp-02). The per-module time split (30 min each) and the instruction-to-assessment ratio within each module are model-proposed and unconfirmed. If assessment execution time alone approaches the per-module allocation, instructional scope within that module will require reduction. Researcher confirmation of the intended time allocation across instruction and assessment is required before treating these estimates as planning constraints."
+      }
+    ],
+    "sequencing_rationale": [
+      "mod-bpdp-01 is placed first because obj-bpdp-01 (procedural application) is a declared prerequisite of obj-bpdp-02 in the supplied objectives artifact; the learner must produce a transformation before justifying it.",
+      "mod-bpdp-02 is placed second to build directly on the applied transformation produced in mod-bpdp-01; the summative assessment asmt-bpdp-s01 integrates both objectives and is intended to follow both modules.",
+      "prereq-bpdp-03 (data quality criteria awareness) is assigned to mod-bpdp-02 rather than the course-level entry condition because it is structurally required only at the justification step; researcher must confirm whether it is a verified entry condition for the whole course or is to be introduced within mod-bpdp-02.",
+      "The intra-module dependency between mod-bpdp-01 and mod-bpdp-02 is expressed through sequencing order; the underlying objective dependency (obj-bpdp-01 as prerequisite of obj-bpdp-02) cannot be represented in prerequisite_refs per schema constraints."
+    ],
+    "provenance": {
+      "source": "model_proposed",
+      "provisional": true,
+      "assumption_notes": [
+        "Two-module structure is model-proposed based on the two supplied objectives and their declared dependency relationship; researcher should confirm whether a different module count or grouping is preferred.",
+        "Per-module time allocation of 30 minutes each is model-proposed; no time split is specified in the brief.",
+        "All three prerequisites are candidate entry conditions per their supplied status; researcher must confirm which are verified entry conditions versus capabilities to be introduced within the session.",
+        "lesson_ids are left empty in all modules for downstream orchestration to derive after lesson generation.",
+        "Assessment time for asmt-bpdp-f01 and asmt-bpdp-s01 is assumed to be included within the 60-minute total budget; the instruction-to-assessment ratio is unspecified and model-proposed."
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "id": "lesson-bpdp-01",
+      "module_id": "mod-bpdp-01",
+      "objective_ids": [
+        "obj-bpdp-01"
+      ],
+      "prerequisite_refs": [
+        "prereq-bpdp-01",
+        "prereq-bpdp-02"
+      ],
+      "lesson_goal": "Introduce and demonstrate at least one technique for identifying and transforming invalid values in a tabular dataset using Python",
+      "instructional_pattern": "worked_example",
+      "expected_learner_activity": "Trace a worked Python example that identifies invalid values in a tabular dataset and applies a transformation technique, following the code logic step by step",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 15,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Worked-example pattern assumed appropriate for a procedural apply objective; researcher may substitute demonstration if a live-coding format is preferred",
+          "Transformation technique scope and example dataset are unspecified; researcher must confirm intended content",
+          "15-minute estimate is model-proposed; no instruction-to-assessment time split is specified in the brief"
+        ]
+      }
+    },
+    {
+      "id": "lesson-bpdp-02",
+      "module_id": "mod-bpdp-01",
+      "objective_ids": [
+        "obj-bpdp-01"
+      ],
+      "prerequisite_refs": [
+        "prereq-bpdp-01",
+        "prereq-bpdp-02"
+      ],
+      "lesson_goal": "Apply a transformation technique to invalid values in a supplied tabular dataset using Python, with guided support, before the formative assessment checkpoint",
+      "instructional_pattern": "guided_practice",
+      "expected_learner_activity": "Write Python code to identify and transform invalid values in a prepared tabular dataset with scaffolding available, then submit code and output for formative feedback via asmt-bpdp-f01",
+      "formative_assessment_ids": [
+        "asmt-bpdp-f01"
+      ],
+      "estimated_minutes": 15,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "asmt-bpdp-f01 is the only formative assessment in the allow-list and is assigned here as the practice checkpoint for obj-bpdp-01",
+          "15-minute estimate is model-proposed and assumed to include time to complete asmt-bpdp-f01; researcher must confirm time allocation",
+          "Availability and form of scaffolding are unspecified; researcher should confirm whether hints or partial code are intended"
+        ]
+      }
+    },
+    {
+      "id": "lesson-bpdp-03",
+      "module_id": "mod-bpdp-02",
+      "objective_ids": [
+        "obj-bpdp-02"
+      ],
+      "prerequisite_refs": [
+        "prereq-bpdp-03"
+      ],
+      "lesson_goal": "Introduce how data-quality criteria ground transformation decisions and illustrate the structure of a well-formed justification",
+      "instructional_pattern": "explanation",
+      "expected_learner_activity": "Review an explanation of how data-quality criteria apply to transformation decisions and examine a sample justification alongside the corresponding transformation output",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Explanation pattern assumed appropriate given the conceptual knowledge dimension of obj-bpdp-02; researcher may substitute demonstration or scenario",
+          "prereq-bpdp-03 (data quality criteria awareness) is a candidate entry condition; researcher must confirm whether it is a verified entry condition or is to be introduced within this lesson",
+          "10-minute estimate is model-proposed; researcher must confirm time allocation within mod-bpdp-02"
+        ]
+      }
+    },
+    {
+      "id": "lesson-bpdp-04",
+      "module_id": "mod-bpdp-02",
+      "objective_ids": [
+        "obj-bpdp-02"
+      ],
+      "prerequisite_refs": [
+        "prereq-bpdp-03"
+      ],
+      "lesson_goal": "Practice formulating justified rationales for transformation decisions by applying data-quality criteria to a realistic case before the integrated summative assessment",
+      "instructional_pattern": "scenario",
+      "expected_learner_activity": "Given a scenario presenting an original and a transformed tabular dataset, produce a justification for each transformation decision that explicitly references at least one data-quality criterion",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "No formative assessment in the allow-list targets obj-bpdp-02; this lesson provides scenario-based practice without a registered formative assessment checkpoint",
+          "Scenario pattern assumed appropriate for an evaluate-level objective requiring application of criteria to a specific case",
+          "10-minute estimate is model-proposed; researcher must confirm"
+        ]
+      }
+    },
+    {
+      "id": "lesson-bpdp-05",
+      "module_id": "mod-bpdp-02",
+      "objective_ids": [
+        "obj-bpdp-02"
+      ],
+      "prerequisite_refs": [
+        "prereq-bpdp-03"
+      ],
+      "lesson_goal": "Consolidate transformation and justification skills through independent integrated practice that mirrors the combined-objective demands of the summative assessment asmt-bpdp-s01",
+      "instructional_pattern": "independent_practice",
+      "expected_learner_activity": "Independently write Python transformations for a tabular dataset containing invalid values and produce a complete justification for each transformation decision referencing data-quality criteria, in direct preparation for asmt-bpdp-s01",
+      "formative_assessment_ids": [],
+      "estimated_minutes": 10,
+      "provenance": {
+        "source": "model_proposed",
+        "provisional": true,
+        "assumption_notes": [
+          "Integrated practice is included because asmt-bpdp-s01 combines obj-bpdp-01 and obj-bpdp-02; this lesson is the proximate practice opportunity before that summative",
+          "Lesson is assigned to mod-bpdp-02 because obj-bpdp-01 is not owned by mod-bpdp-02; objective_ids reflects only the module-owned objective obj-bpdp-02, though the expected activity integrates both objectives",
+          "10-minute estimate is model-proposed; researcher must confirm whether a separate integrated practice slot is warranted given the 30-minute module budget"
+        ]
+      }
+    }
+  ],
+  "machine_observations": [
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-bpdp-f01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-bpdp-f01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-bpdp-s01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-bpdp-s01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    },
+    {
+      "code": "assessment_dependency_not_covered",
+      "severity": "error",
+      "entity_type": "assessment",
+      "entity_id": "asmt-bpdp-s01",
+      "field": "required_capabilities",
+      "message": "Assessment dependency is not known, confirmed, or taught by the course."
+    }
+  ],
+  "review_instructions": {
+    "overview": "Review the complete instructional-design proposal once before scoring. Evaluate machine validity separately from pedagogical quality.",
+    "scoring_scale": "Use 1-5 for every dimension: 1 poor, 3 mixed/acceptable, 5 strong.",
+    "rubric_dimensions": [
+      "objective_measurability",
+      "objective_assessment_alignment",
+      "evidence_validity",
+      "cognitive_alignment",
+      "prerequisite_quality",
+      "course_sequence_coherence",
+      "instruction_assessment_alignment",
+      "scope_balance",
+      "workload_time_realism",
+      "domain_appropriateness"
+    ],
+    "mandatory_question": "Ignoring machine traceability or schema issues, is this instructional design pedagogically reasonable? Answer YES, PARTIALLY, or NO with a short rationale.",
+    "blinding_rules": [
+      "Do not infer how the proposal was generated.",
+      "Do not assume a machine observation means the design is pedagogically poor.",
+      "Do not repair the design while scoring; record edit effort separately."
+    ],
+    "machine_observation_rule": "Machine observations are evidence to inspect, not pedagogical verdicts. Record any reviewer disagreement separately."
+  }
+}

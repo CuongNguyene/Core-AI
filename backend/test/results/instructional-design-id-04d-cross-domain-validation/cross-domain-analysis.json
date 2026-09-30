@@ -1,0 +1,82 @@
+{
+  "experiment": "ID-04D",
+  "failure_classification": "PROVIDER_INFRASTRUCTURE",
+  "pipeline": [
+    {
+      "fixture": "python_data_processing",
+      "complete": false,
+      "graph_valid": false,
+      "gate_reached": false,
+      "structural_errors": [
+        {
+          "stage": "ObjectiveDesigner",
+          "failure_class": "ProviderTimeoutError",
+          "validation_error": "Local model request timed out",
+          "retry_count": 0
+        }
+      ]
+    },
+    {
+      "fixture": "accounting_financial_reporting_basic",
+      "complete": false,
+      "graph_valid": false,
+      "gate_reached": false,
+      "structural_errors": [
+        {
+          "stage": "ObjectiveDesigner",
+          "failure_class": "ProviderTimeoutError",
+          "validation_error": "Local model request timed out",
+          "retry_count": 0
+        }
+      ]
+    },
+    {
+      "fixture": "legal_contract_review_basic",
+      "complete": false,
+      "graph_valid": false,
+      "gate_reached": false,
+      "structural_errors": [
+        {
+          "stage": "ObjectiveDesigner",
+          "failure_class": "ProviderTimeoutError",
+          "validation_error": "Local model request timed out",
+          "retry_count": 0
+        }
+      ]
+    },
+    {
+      "fixture": "hr_recruitment_planning_basic",
+      "complete": false,
+      "graph_valid": false,
+      "gate_reached": false,
+      "structural_errors": [
+        {
+          "stage": "ObjectiveDesigner",
+          "failure_class": "ProviderTimeoutError",
+          "validation_error": "Local model request timed out",
+          "retry_count": 0
+        }
+      ]
+    },
+    {
+      "fixture": "construction_drawing_and_method_basic",
+      "complete": false,
+      "graph_valid": false,
+      "gate_reached": false,
+      "structural_errors": [
+        {
+          "stage": "ObjectiveDesigner",
+          "failure_class": "ProviderTimeoutError",
+          "validation_error": "Local model request timed out",
+          "retry_count": 0
+        }
+      ]
+    }
+  ],
+  "workload": [],
+  "prerequisites": [],
+  "practice_coverage": [],
+  "intervention_interactions": [],
+  "regression": [],
+  "readiness": "ID04_SME_REREVIEW_NOT_READY"
+}

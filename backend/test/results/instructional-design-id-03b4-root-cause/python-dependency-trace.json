@@ -1,0 +1,348 @@
+{
+  "fixture": "python_data_processing",
+  "finding_count": 9,
+  "traces": [
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "invalid value category recognition",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-01-f"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-01"
+        ],
+        "module_ids": [
+          "mod-bpd-01"
+        ],
+        "lesson_ids": [
+          "les-bpd-01-01",
+          "les-bpd-01-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "tabular data inspection",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-01-f"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-01"
+        ],
+        "module_ids": [
+          "mod-bpd-01"
+        ],
+        "lesson_ids": [
+          "les-bpd-01-01",
+          "les-bpd-01-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "python tabular-data transformation",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-02-f"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-02"
+        ],
+        "module_ids": [
+          "mod-bpd-02"
+        ],
+        "lesson_ids": [
+          "les-bpd-02-01",
+          "les-bpd-02-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "invalid value handling strategy selection",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-02-f"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-02"
+        ],
+        "module_ids": [
+          "mod-bpd-02"
+        ],
+        "lesson_ids": [
+          "les-bpd-02-01",
+          "les-bpd-02-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "invalid value category recognition",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-s"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-01",
+          "obj-bpd-02",
+          "obj-bpd-03"
+        ],
+        "module_ids": [
+          "mod-bpd-01",
+          "mod-bpd-02",
+          "mod-bpd-03"
+        ],
+        "lesson_ids": [
+          "les-bpd-01-01",
+          "les-bpd-01-02",
+          "les-bpd-02-01",
+          "les-bpd-02-02",
+          "les-bpd-03-01",
+          "les-bpd-03-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "tabular data inspection",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-s"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-01",
+          "obj-bpd-02",
+          "obj-bpd-03"
+        ],
+        "module_ids": [
+          "mod-bpd-01",
+          "mod-bpd-02",
+          "mod-bpd-03"
+        ],
+        "lesson_ids": [
+          "les-bpd-01-01",
+          "les-bpd-01-02",
+          "les-bpd-02-01",
+          "les-bpd-02-02",
+          "les-bpd-03-01",
+          "les-bpd-03-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "python tabular-data transformation",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-s"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-01",
+          "obj-bpd-02",
+          "obj-bpd-03"
+        ],
+        "module_ids": [
+          "mod-bpd-01",
+          "mod-bpd-02",
+          "mod-bpd-03"
+        ],
+        "lesson_ids": [
+          "les-bpd-01-01",
+          "les-bpd-01-02",
+          "les-bpd-02-01",
+          "les-bpd-02-02",
+          "les-bpd-03-01",
+          "les-bpd-03-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "invalid value handling strategy selection",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-s"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-01",
+          "obj-bpd-02",
+          "obj-bpd-03"
+        ],
+        "module_ids": [
+          "mod-bpd-01",
+          "mod-bpd-02",
+          "mod-bpd-03"
+        ],
+        "lesson_ids": [
+          "les-bpd-01-01",
+          "les-bpd-01-02",
+          "les-bpd-02-01",
+          "les-bpd-02-02",
+          "les-bpd-03-01",
+          "les-bpd-03-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    },
+    {
+      "fixture": "python_data_processing",
+      "finding": "assessment_dependency_not_covered",
+      "dependency": "data transformation decision justification",
+      "created_at_stage": "AssessmentDesigner",
+      "first_invalid_state": "required capability is confirmed in assessment output but has no explicit objective.capability_refs, confirmed prerequisite capability, or canonical lesson capability ownership",
+      "assessment_refs": [
+        "asmt-bpd-s"
+      ],
+      "propagation_status": {
+        "assessment": "present",
+        "dependency_candidate": "missing",
+        "prerequisite": "missing",
+        "course": "covered",
+        "lesson": "covered"
+      },
+      "coverage_evidence": {
+        "objective_ids": [
+          "obj-bpd-01",
+          "obj-bpd-02",
+          "obj-bpd-03"
+        ],
+        "module_ids": [
+          "mod-bpd-01",
+          "mod-bpd-02",
+          "mod-bpd-03"
+        ],
+        "lesson_ids": [
+          "les-bpd-01-01",
+          "les-bpd-01-02",
+          "les-bpd-02-01",
+          "les-bpd-02-02",
+          "les-bpd-03-01",
+          "les-bpd-03-02"
+        ]
+      },
+      "root_cause": "missing_dependency_propagation",
+      "validator_correct": true,
+      "recommended_fix_layer": "orchestration",
+      "notes": "Course and lessons cover the owning objectives, but the structured capability-to-objective/lesson propagation used by the gate is empty. Supporting dependency candidates remain candidate/model_proposed and are intentionally not promoted."
+    }
+  ],
+  "candidate_dependencies_not_promoted": [
+    "loading a tabular file into a Python data structure",
+    "Python syntax and basic programming constructs",
+    "domain knowledge of valid value ranges for the target dataset"
+  ]
+}

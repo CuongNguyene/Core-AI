@@ -1,0 +1,27 @@
+{
+  "packet_id": "jd-06-assistant-sales",
+  "source": {
+    "filename": "JD-06 — Assistant Sales Manager.docx",
+    "sha256": "eee4a0bb91ad7f4507984f44f55cf6833fd6f683cae00a9619aa6b59116f7484"
+  },
+  "runtime": {
+    "document_id": "67cb1895-4892-4853-8ec7-118fc4720152",
+    "job_id": "86e4d299-3036-4959-a45c-83443024dc06",
+    "profile_id": "b8013f70-4990-4f65-9455-ea82873d23e3",
+    "profile_version": 1,
+    "review_state": "pending_review",
+    "document_kind": "jd"
+  },
+  "contract": {
+    "input_mode": "whole_parsed_text",
+    "output_schema_id": "jd_requirement_extraction_text",
+    "pipeline_mode": "legacy_v2",
+    "jd_extraction_mode": "requirement_v2"
+  },
+  "summary": {
+    "requirement_count": 6,
+    "supported_requirement_count": 6,
+    "text_span_locator_count": 6,
+    "pdf_page_locator_count": 0
+  }
+}
