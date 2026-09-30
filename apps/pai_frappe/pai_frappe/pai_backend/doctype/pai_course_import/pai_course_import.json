@@ -1,0 +1,31 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pai_request", "result_ref", "result_version", "result_status", "source_hash", "status",
+  "lms_course", "imported_by", "imported_on", "error_code", "error_message"
+ ],
+ "fields": [
+  {"fieldname": "pai_request", "fieldtype": "Link", "label": "PAI Request", "options": "PAI Request", "reqd": 1, "read_only": 1},
+  {"fieldname": "result_ref", "fieldtype": "Data", "label": "PAI Result Reference", "reqd": 1, "unique": 1, "read_only": 1},
+  {"fieldname": "result_version", "fieldtype": "Int", "label": "PAI Result Version", "reqd": 1, "read_only": 1},
+  {"fieldname": "result_status", "fieldtype": "Data", "label": "PAI Result Status", "read_only": 1},
+  {"fieldname": "source_hash", "fieldtype": "Data", "label": "Source Hash", "read_only": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Import Status", "options": "Pending\nImporting\nImported\nFailed", "default": "Pending", "read_only": 1},
+  {"fieldname": "lms_course", "fieldtype": "Link", "label": "LMS Course", "options": "LMS Course", "read_only": 1},
+  {"fieldname": "imported_by", "fieldtype": "Link", "label": "Imported By", "options": "User", "read_only": 1},
+  {"fieldname": "imported_on", "fieldtype": "Datetime", "label": "Imported On", "read_only": 1},
+  {"fieldname": "error_code", "fieldtype": "Data", "label": "Error Code", "read_only": 1},
+  {"fieldname": "error_message", "fieldtype": "Small Text", "label": "Safe Error Message", "read_only": 1}
+ ],
+ "module": "Pai Backend",
+ "name": "PAI Course Import",
+ "permissions": [
+  {"read": 1, "role": "Instructor", "if_owner": 1},
+  {"read": 1, "role": "Moderator"},
+  {"read": 1, "role": "System Manager"}
+ ],
+ "track_changes": 1
+}

@@ -1,0 +1,15 @@
+{
+ "actions": [], "doctype": "DocType", "engine": "InnoDB", "issingle": 1,
+ "field_order": ["enabled", "service_url", "allow_insecure_local_url", "timeout_seconds", "organization_id", "actor_key_id", "integration_api_key", "actor_private_key"],
+ "fields": [
+  {"fieldname": "enabled", "fieldtype": "Check", "label": "Enable PAI Integration"},
+  {"fieldname": "service_url", "fieldtype": "Data", "label": "PAI Service URL", "options": "URL"},
+  {"fieldname": "allow_insecure_local_url", "fieldtype": "Check", "label": "Allow Insecure Local PAI URL", "description": "Developer mode only. Allows HTTP only for localhost or loopback addresses; production still requires HTTPS."},
+  {"fieldname": "timeout_seconds", "fieldtype": "Int", "label": "Timeout Seconds", "default": "30"},
+  {"fieldname": "organization_id", "fieldtype": "Data", "label": "PAI Organization UUID"},
+  {"fieldname": "actor_key_id", "fieldtype": "Data", "label": "Actor Signing Key ID"},
+  {"fieldname": "integration_api_key", "fieldtype": "Password", "label": "PAI Integration API Key"},
+  {"fieldname": "actor_private_key", "fieldtype": "Password", "label": "Actor Signing Private Key"}
+ ], "module": "Pai Backend", "name": "PAI Settings",
+ "permissions": [{"read": 1, "write": 1, "role": "System Manager"}]
+}
