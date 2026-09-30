@@ -1,0 +1,4 @@
+# Local runtime configuration. Templates remain versioned.
+.env
+.env.*
+!.env.example
