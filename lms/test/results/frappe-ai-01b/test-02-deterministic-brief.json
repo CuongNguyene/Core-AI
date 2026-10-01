@@ -1,0 +1,40 @@
+{
+  "test": "TEST-02",
+  "status": "PASS",
+  "actor_role": "System Manager / Moderator / Instructor",
+  "local_request_name": "7h5a8mk1u1",
+  "pai_request_id": "course-authoring-request-07b61fb3aa3243b38dff6acda9aaad88",
+  "lifecycle": {
+    "create": "DRAFT",
+    "revision_v1": "authoring-brief-revision:baf4c0387d714a46804c8f40f0dd954e",
+    "clarify_v1": "READY_FOR_CONFIRMATION",
+    "edited_fields": [
+      "desired_outcomes",
+      "learning_horizon",
+      "expected_learning_effort",
+      "emphasis",
+      "author_feedback"
+    ],
+    "revision_v2": "authoring-brief-revision:e55f6c939b914f97bf9bc5077e82fcd8",
+    "revision_v2_version": 2,
+    "stale_v1_confirm": "DENIED",
+    "clarify_v2": "READY_FOR_CONFIRMATION",
+    "confirm_v2": "CONFIRMED",
+    "reload_source_of_truth": "Core-AI request and revision history"
+  },
+  "linux_cypress": {
+    "image": "cypress/included:14.5.4",
+    "spec": "cypress/e2e/ai_course_planning.cy.js",
+    "result": "1/1 passed"
+  },
+  "no_go": {
+    "conversation_respond": false,
+    "model_provider": false,
+    "curriculum": false,
+    "generation": false,
+    "materialization": false,
+    "learning_assignment_mutation": false,
+    "document_workflow": false,
+    "minio_or_clamav_dependency": false
+  }
+}

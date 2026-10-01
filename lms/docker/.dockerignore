@@ -1,0 +1,12 @@
+.git
+.gitmodules
+.DS_Store
+node_modules
+frontend/node_modules
+__pycache__
+*.pyc
+*.egg-info
+lms/public/dist
+lms/public/frontend
+graphify-out
+.superpowers

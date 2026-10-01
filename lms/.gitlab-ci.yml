@@ -1,0 +1,41 @@
+# CI/CD for lms (vendor app, company fork) -> dev server.
+#
+# Scoped to this app only. Triggers on `dev` (the pre-existing company
+# branch for this app -- unlike frappe/erpnext/hrms/lending, no dev2 was
+# created here since we haven't pushed new history to it).
+#
+# Required GitLab CI/CD variables (Settings > CI/CD > Variables), set to
+# "Protected" + scoped to the `dev` branch:
+#   DEPLOY_SSH_PRIVATE_KEY  - private key for a deploy user on the dev server
+#   DEPLOY_HOST             - dev server hostname/IP
+#   DEPLOY_USER             - ssh user (the frappe/bench-owning user)
+#   DEPLOY_BENCH_PATH       - absolute path to the bench root on that server
+#   DEPLOY_SITE             - site name to migrate
+
+stages:
+  - deploy
+
+deploy_dev:
+  stage: deploy
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+  environment:
+    name: dev
+  before_script:
+    - which ssh-agent || (apt-get update -y && apt-get install -y openssh-client)
+    - eval $(ssh-agent -s)
+    - echo "$DEPLOY_SSH_PRIVATE_KEY" | base64 -d | ssh-add -
+    - mkdir -p ~/.ssh
+    - ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+  script:
+    - >
+      ssh "$DEPLOY_USER@$DEPLOY_HOST" "
+      set -e &&
+      cd '$DEPLOY_BENCH_PATH/apps/lms' &&
+      git fetch origin '$CI_COMMIT_SHA' --depth=1 &&
+      git reset --hard '$CI_COMMIT_SHA' &&
+      cd '$DEPLOY_BENCH_PATH' &&
+      bench --site '$DEPLOY_SITE' migrate &&
+      bench build --app lms &&
+      sudo supervisorctl restart all
+      "

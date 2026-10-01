@@ -1,0 +1,9 @@
+{
+  "milestone": "FRAPPE-AI-01B",
+  "title": "Integration Hardening & Runtime Verification",
+  "generated_at": "2026-09-30",
+  "scope": "LMS frontend, Frappe pai_frappe boundary, and local runtime verification",
+  "core_ai_modified_by_this_milestone": false,
+  "secrets_included": false,
+  "status_model": ["IMPLEMENTATION_PASS", "RUNTIME_PASS", "PASS_WITH_LEARNING_OPERATIONS_FIXTURE_BLOCKERS", "FIXTURE_BLOCKED", "PRE_EXISTING_SPEC_FAILURE"]
+}

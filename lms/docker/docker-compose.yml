@@ -1,0 +1,79 @@
+name: lms
+
+services:
+  mariadb:
+    image: mariadb:10.8
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --skip-innodb-read-only-compressed
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-123}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mariadb-admin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD} --silent
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - mariadb-data:/var/lib/mysql
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - redis-data:/data
+
+  frappe:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      SHELL: /bin/bash
+      BENCH_DIR: /home/frappe/frappe-bench
+      SITE_NAME: ${SITE_NAME:-lms.localhost}
+      APP_NAME: lms
+      APP_PATH: /workspace
+      FRAPPE_BRANCH: ${FRAPPE_BRANCH:-version-15}
+      DB_HOST: mariadb
+      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-123}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin}
+      REDIS_URL: redis://redis:6379
+      INSTALL_REQUIREMENTS: ${INSTALL_REQUIREMENTS:-1}
+      BUILD_ASSETS: ${BUILD_ASSETS:-1}
+      ENABLE_ASSET_WATCH: ${ENABLE_ASSET_WATCH:-1}
+    working_dir: /home/frappe
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - bench-data:/home/frappe/frappe-bench
+      - ..:/workspace
+      - ${CORE_AI_PATH:-../../Core-AI}:/workspace/core-ai:ro
+      - ..:/home/frappe/frappe-bench/apps/lms
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS http://127.0.0.1:8000/api/method/frappe.ping >/dev/null
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+volumes:
+  bench-data:
+  mariadb-data:
+  redis-data:

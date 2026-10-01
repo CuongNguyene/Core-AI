@@ -1,0 +1,17 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["course", "lms_enrollment", "source_batch", "archived", "archived_at"],
+ "fields": [
+  {"fieldname":"course","fieldtype":"Link","in_list_view":1,"label":"Course","options":"LMS Course","reqd":1,"read_only":1},
+  {"fieldname":"lms_enrollment","fieldtype":"Link","in_list_view":1,"label":"Enrollment","options":"LMS Enrollment","reqd":1,"read_only":1},
+  {"fieldname":"source_batch","fieldtype":"Link","label":"Source Batch","options":"LMS Batch","read_only":1}
+  ,{"default":"0","fieldname":"archived","fieldtype":"Check","label":"Archived","read_only":1}
+  ,{"fieldname":"archived_at","fieldtype":"Datetime","label":"Archived At","read_only":1}
+ ],
+ "istable": 1,
+ "module": "LMS",
+ "name": "LMS Learning Assignment Item"
+}

@@ -74,7 +74,8 @@ class TestPAIClient(TestCase):
 
 		throw.assert_called_once_with(
 			"PAI Service URL must be an HTTPS base URL without credentials or query values. "
-			"Developer mode may use HTTP only for localhost or a loopback address."
+			"Developer mode may use HTTP only for localhost, a loopback address, "
+			"or Docker Desktop's host gateway."
 		)
 
 	def test_settings_accepts_loopback_http_only_in_developer_mode(self):
@@ -82,6 +83,21 @@ class TestPAIClient(TestCase):
 
 		settings = SimpleNamespace(
 			service_url="http://127.0.0.1:18000",
+			allow_insecure_local_url=True,
+		)
+		with patch(
+			"pai_frappe.pai_backend.doctype.pai_settings.pai_settings._developer_mode_enabled",
+			return_value=True,
+		), patch("pai_frappe.pai_backend.doctype.pai_settings.pai_settings.frappe.throw") as throw:
+			PAISettings._validate_service_url(settings)
+
+		throw.assert_not_called()
+
+	def test_settings_accepts_docker_host_http_only_in_developer_mode(self):
+		from pai_frappe.pai_backend.doctype.pai_settings.pai_settings import PAISettings
+
+		settings = SimpleNamespace(
+			service_url="http://host.docker.internal:18000",
 			allow_insecure_local_url=True,
 		)
 		with patch(
@@ -113,7 +129,8 @@ class TestPAIClient(TestCase):
 
 		throw.assert_called_once_with(
 			"PAI Service URL must be an HTTPS base URL without credentials or query values. "
-			"Developer mode may use HTTP only for localhost or a loopback address."
+			"Developer mode may use HTTP only for localhost, a loopback address, "
+			"or Docker Desktop's host gateway."
 		)
 
 	@patch("pai_frappe.pai_backend.doctype.pai_settings.pai_settings.frappe.throw")

@@ -1,0 +1,37 @@
+{
+  "route": "/lms/ai-course-planning/:requestId?",
+  "allowed_roles": ["Instructor", "Moderator", "System Manager"],
+  "lifecycle": ["create", "load", "clarify", "revise", "clarify_new_revision", "confirm", "resume"],
+  "revision_clarification_invariant": "Confirm is unavailable while any mutation is in flight, including the reload-to-clarify interval after revision creation.",
+  "static_status": "RUNTIME_PASS",
+  "vue_sfc_parse": "PASS",
+  "cypress_syntax": "PASS",
+  "git_diff_check": "PASS",
+  "cypress_execution": {
+    "status": "PASS",
+    "runner": "Docker cypress/included:14.5.4, Linux Electron 130",
+    "spec": "cypress/e2e/ai_course_planning.cy.js",
+    "result": "1/1 passed",
+    "host_runner_note": "Native macOS Cypress remains unsupported and is not required for acceptance."
+  },
+  "learning_operations_smoke": {
+    "batch_course_sync": {
+      "status": "FIXTURE_BLOCKED",
+      "result": "0/2 passed",
+      "reason": "Frappe SSR returned HTTP 500 for nonexistent BATCH-SYNC-UAT before SPA intercepts could run; traceback ends at NoneType.batch_details."
+    },
+    "course_creation": {
+      "status": "PRE_EXISTING_SPEC_FAILURE",
+      "result": "0/1 passed",
+      "reason": "Existing spec timed out looking for instructor input at course_creation.cy.js:57; unrelated to AI Course Planning."
+    }
+  },
+  "production_build": {
+    "status": "PASS",
+    "reason": "Canonical build passed in the running Bench container after using its real site configuration, Node 24 toolchain, and lockfile-installed dependencies"
+  },
+  "docker_health": {
+    "status": "RUNTIME_PASS",
+    "reason": "Elevated verification saw healthy LMS MariaDB/Redis/Frappe and healthy PAI Postgres/Redis; Core-AI /health/ready returned HTTP 200"
+  }
+}

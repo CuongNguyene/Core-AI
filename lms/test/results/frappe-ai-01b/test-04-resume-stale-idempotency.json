@@ -1,0 +1,25 @@
+{
+  "test": "TEST-04",
+  "status": "PASS",
+  "checks": {
+    "resume_request_id_route": "PASS in focused Cypress lifecycle and prior authenticated UI smoke",
+    "hard_reload": "PASS in focused Cypress lifecycle",
+    "canonical_latest_ordering": "PASS: latestRevision selects highest version; revision history reloads after mutations",
+    "stale_revision": "PASS: confirming v1 after v2 returned safe upstream rejection and did not confirm v1",
+    "unsaved_edit_preservation": "PASS by bounded implementation path: stale revise reload uses preserveEditor; no destructive retry loop",
+    "double_create_lock": "PASS by UI mutationInFlight/creating guard and focused Cypress lifecycle",
+    "retry_same_operation": "PASS: same idempotency key returned same local and PAI request",
+    "new_intent": "PASS: new key created a new local and PAI request",
+    "double_confirm": "PASS by UI mutationInFlight/confirming guard and focused Cypress lifecycle"
+  },
+  "live_retry": {
+    "same_local_name": true,
+    "same_pai_request_id": true,
+    "new_intent_new_local_name": true,
+    "new_intent_new_pai_request_id": true
+  },
+  "limitations": [
+    "A second live actor/tab was not created; stale semantics were exercised with a stale v1 confirm after v2 existed and covered by focused bridge tests.",
+    "No production rows were manually edited or deleted."
+  ]
+}

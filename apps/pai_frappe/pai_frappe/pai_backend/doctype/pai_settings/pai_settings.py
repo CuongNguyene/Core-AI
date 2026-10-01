@@ -7,6 +7,9 @@ import frappe
 from frappe.model.document import Document
 
 
+_DEVELOPMENT_HTTP_HOSTS = {"localhost", "127.0.0.1", "::1", "host.docker.internal"}
+
+
 def _developer_mode_enabled():
 	try:
 		return bool(frappe.conf.get("developer_mode"))
@@ -56,7 +59,7 @@ class PAISettings(Document):
 			parsed.scheme == "http"
 			and getattr(self, "allow_insecure_local_url", False)
 			and _developer_mode_enabled()
-			and parsed.hostname in {"localhost", "127.0.0.1", "::1"}
+			and parsed.hostname in _DEVELOPMENT_HTTP_HOSTS
 		)
 		if (
 			parsed.scheme != "https"
@@ -69,7 +72,8 @@ class PAISettings(Document):
 		):
 			frappe.throw(
 				"PAI Service URL must be an HTTPS base URL without credentials or query values. "
-				"Developer mode may use HTTP only for localhost or a loopback address."
+				"Developer mode may use HTTP only for localhost, a loopback address, "
+				"or Docker Desktop's host gateway."
 			)
 
 	def _validate_organization_id(self):

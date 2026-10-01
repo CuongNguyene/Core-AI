@@ -1,0 +1,10 @@
+backend/.env
+backend/.env.*
+!backend/.env.example
+.local-secrets/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

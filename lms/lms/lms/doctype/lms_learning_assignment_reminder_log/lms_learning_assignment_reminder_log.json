@@ -1,0 +1,20 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["assignment", "reminder_code", "sent_at", "notification", "reminder_key"],
+ "fields": [
+  {"fieldname":"assignment","fieldtype":"Link","label":"Learning Assignment","options":"LMS Learning Assignment","reqd":1,"read_only":1},
+  {"fieldname":"reminder_code","fieldtype":"Select","label":"Reminder Code","options":"D-7\nD-3\nD-1","reqd":1,"read_only":1},
+  {"fieldname":"sent_at","fieldtype":"Datetime","label":"Sent At","reqd":1,"read_only":1},
+  {"fieldname":"notification","fieldtype":"Link","label":"Notification","options":"LMS Notification","read_only":1},
+  {"fieldname":"reminder_key","fieldtype":"Data","label":"Reminder Key","hidden":1,"read_only":1,"unique":1}
+ ],
+ "module": "LMS",
+ "name": "LMS Learning Assignment Reminder Log",
+ "permissions": [
+  {"read":1,"report":1,"role":"System Manager"},
+  {"read":1,"report":1,"role":"Moderator"}
+ ]
+}

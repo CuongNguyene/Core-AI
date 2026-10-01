@@ -20,6 +20,7 @@ node_modules/
 *.sql
 *.dump
 devops/backups/
+.local-secrets/
 devops/nginx/certbot/
 backend/*.log
 graphify-out/

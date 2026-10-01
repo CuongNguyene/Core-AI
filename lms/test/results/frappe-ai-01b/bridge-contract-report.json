@@ -1,0 +1,19 @@
+{
+  "status": "RUNTIME_PASS",
+  "browser_calls_only_to_frappe": true,
+  "methods": {
+    "create": "pai_frappe.api.create_course_authoring_request",
+    "load": "pai_frappe.api.get_course_authoring_request",
+    "revisions": "pai_frappe.api.list_authoring_brief_revisions",
+    "clarify": "pai_frappe.api.clarify_authoring_brief",
+    "revise": "pai_frappe.api.revise_authoring_brief",
+    "confirm": "pai_frappe.api.confirm_authoring_brief"
+  },
+  "identifiers": {
+    "browser_route_reference": "local PAI Request.name",
+    "remote_reference": "pai_request_id held server-side and returned in the bridge response",
+    "confirm_reference": "latest canonical Core-AI revision.id"
+  },
+  "error_mapping": "Known bridge error codes are mapped to safe user-facing messages; raw traceback is not rendered.",
+  "existing_bridge_tests": "35/35 OK"
+}

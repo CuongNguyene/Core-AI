@@ -11,7 +11,9 @@ cp backend/.env.example backend/.env
 cp devops/compose/.env.example devops/compose/.env
 ```
 
-Hai file `.env` là cấu hình local và đã bị Git ignore. Không commit API key,
+`backend/.env.example` và `backend/.env` dùng cùng một bộ tên biến; file
+example chỉ chứa placeholder, còn `.env` là cấu hình local và đã bị Git ignore.
+Không commit API key,
 JWT signing key, mật khẩu database, mật khẩu Redis/MinIO hoặc actor private key.
 
 Để FastAPI chạy được, thay các placeholder bắt buộc trong `backend/.env` bằng
@@ -48,6 +50,23 @@ Mật khẩu PostgreSQL cho DBeaver là `POSTGRES_PASSWORD` trong
 
 Các port mặc định cố ý khác BrainHub để hai stack có thể cùng tồn tại. Muốn dùng
 port khác, chỉ sửa `devops/compose/.env`, không sửa Compose file.
+
+## Bootstrap actor cho Frappe local
+
+Core-AI giữ actor public key trong `backend/.env`; private key không được đưa
+vào PAI hoặc Git. Chạy command sau từ `services/pai-backend`:
+
+```bash
+cd backend
+uv run python scripts/bootstrap_dev_actor.py
+```
+
+Command dùng organization/actor fixture local ổn định, ghi public key vào
+`backend/.env`, và ghi raw Ed25519 private key dạng base64url vào
+`.local-secrets/frappe-lms-local/actor_ed25519.key` với mode `0600`.
+
+Chạy lại command sẽ reuse key hiện tại. Nếu private key và public key đã đăng
+ký không khớp, command fail-closed; không tự rotate key.
 
 ## Kiểm tra và dừng
 
