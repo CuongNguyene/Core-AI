@@ -1,0 +1,14 @@
+{
+  "model": [
+    "MODEL_NAME is replace-with-approved-model; no model service is running; model-backed conversation/planning/generation not live-smoked"
+  ],
+  "worker": [
+    "worker and course-generation-worker are not running; extraction/generation async paths not live-smoked"
+  ],
+  "data": [
+    "broader candidate/JD/role/capability fixtures require authenticated signed actor context and bounded synthetic records"
+  ],
+  "test_environment": [
+    "runtime image lacks pytest; host optional dev extra required network download; 15 tests remain blocked by fixture/auth drift"
+  ]
+}

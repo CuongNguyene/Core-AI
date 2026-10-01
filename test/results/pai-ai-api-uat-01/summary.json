@@ -1,0 +1,123 @@
+{
+  "milestone": "PAI-AI-API-UAT-01",
+  "status": "COMPLETE",
+  "source": "live OpenAPI + source router registration + focused tests + bounded live probes",
+  "route_counts": {
+    "openapi_paths": 116,
+    "operations": 131,
+    "source_include_router_count": 21
+  },
+  "runtime": {
+    "core_ai_health": "200",
+    "postgres": "up",
+    "redis": "up",
+    "minio": "up/ready",
+    "clamav": "up/ready",
+    "workers": "not running",
+    "model_provider": "local-vllm",
+    "model_name": "replace-with-approved-model",
+    "model_base_url": "http://localhost:4000/api/v1/generate"
+  },
+  "live_probes": [
+    {
+      "endpoint": "/health",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/health/live",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/health/ready",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/course-authoring/requests/nonexistent",
+      "http": 401,
+      "error_code": "integration_authentication_failed",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/integration/capability-analyses/nonexistent",
+      "http": 401,
+      "error_code": "integration_authentication_failed",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/candidates",
+      "http": 403,
+      "error_code": "development_identity_required",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/roles",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/extraction-jobs/nonexistent",
+      "http": 404,
+      "error_code": "extraction_job_not_found",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/learning-paths/nonexistent",
+      "http": 404,
+      "error_code": "learning_path_not_found",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/content-generation/results/nonexistent",
+      "http": 401,
+      "error_code": "integration_authentication_failed",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "http://127.0.0.1:19000/minio/health/ready",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "clamav tcp 3310",
+      "result": "ready",
+      "status": "VERIFIED"
+    }
+  ],
+  "focused_tests": {
+    "command": "uv run --extra dev python -m pytest [21 focused API suites]",
+    "passed": 110,
+    "failed": 15,
+    "result": "15 failures in two fixture/auth drift clusters; not fixed in discovery"
+  },
+  "defects": [
+    {
+      "id": "PAI-AI-API-UAT-01-D01",
+      "scope": "capability-gap integration API tests",
+      "type": "CONTRACT_DEFECT",
+      "severity": "medium",
+      "expected": "signed integration test fixture reaches capability analysis route",
+      "actual": "11 tests send legacy X-PAI-Actor-ID/fixture auth and receive 401",
+      "status": "OPEN",
+      "blocks": "live capability-analysis verification"
+    },
+    {
+      "id": "PAI-AI-API-UAT-01-D02",
+      "scope": "content-generation API tests",
+      "type": "CONTRACT_DEFECT",
+      "severity": "medium",
+      "expected": "test ActorContext fixture accepted",
+      "actual": "4 tests construct authentication_method=test; schema rejects it before request",
+      "status": "OPEN",
+      "blocks": "content-generation contract suite"
+    }
+  ],
+  "security": {
+    "secrets_printed": false,
+    "private_keys_printed": false,
+    "raw_authorization_persisted": false,
+    "artifacts_sanitized": true
+  }
+}

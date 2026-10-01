@@ -1,0 +1,2971 @@
+{
+  "source": "FastAPI route decorators + live OpenAPI",
+  "operation_count": 131,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/v1/authoring/instructional-blueprints/{blueprint_id}",
+      "domain": "LEARNING_NEED",
+      "router_tag": "learning-authoring",
+      "operation_id": "get_instructional_blueprint_api_v1_authoring_instructional_blueprints__blueprint_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_authoring_api.py",
+        "tests/test_learning_openapi.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/learning_authoring_api.py",
+      "handler": "get_instructional_blueprint",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_InstructionalBlueprintProjection_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authoring/learning-needs/{learning_need_id}",
+      "domain": "LEARNING_NEED",
+      "router_tag": "learning-authoring",
+      "operation_id": "get_learning_need_api_v1_authoring_learning_needs__learning_need_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_authoring_api.py",
+        "tests/test_learning_openapi.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/learning_authoring_api.py",
+      "handler": "get_learning_need",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_LearningNeedProfileProjection_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authoring/learning-objectives/{objective_id}",
+      "domain": "LEARNING_NEED",
+      "router_tag": "learning-authoring",
+      "operation_id": "get_learning_objective_api_v1_authoring_learning_objectives__objective_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_authoring_api.py",
+        "tests/test_learning_openapi.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/learning_authoring_api.py",
+      "handler": "get_learning_objective",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_LearningObjectiveProjection_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/candidates",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "list_candidates_api_v1_candidates_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "list_candidates",
+      "request_schema": null,
+      "response_schema": "CandidateListResponse"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "create_candidate_api_v1_candidates_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "create_candidate",
+      "request_schema": "CandidateCreateRequest",
+      "response_schema": "CandidateSummary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/candidates/{candidate_id}",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "get_candidate_api_v1_candidates__candidate_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "get_candidate",
+      "request_schema": null,
+      "response_schema": "CandidateDetail"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/accept",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "accept_candidate_api_v1_candidates__candidate_id__accept_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "accept_candidate",
+      "request_schema": "CandidateReviewRequest",
+      "response_schema": "CandidateSummary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/candidates/{candidate_id}/claims/{claim_id}/evidence",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "claim_evidence_api_v1_candidates__candidate_id__claims__claim_id__evidence_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "claim_evidence",
+      "request_schema": null,
+      "response_schema": "CandidateEvidenceResponse"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/candidates/{candidate_id}/cv/versions",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "list_candidate_cv_versions_api_v1_candidates__candidate_id__cv_versions_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "list_candidate_cv_versions",
+      "request_schema": null,
+      "response_schema": "CandidateCVVersionListResponse"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/cv/versions",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "create_candidate_cv_version_api_v1_candidates__candidate_id__cv_versions_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "create_candidate_cv_version",
+      "request_schema": "CandidateCVVersionRequest",
+      "response_schema": "CandidateCVVersionResponse"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/documents",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "attach_candidate_document_api_v1_candidates__candidate_id__documents_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "attach_candidate_document",
+      "request_schema": "CandidateDocumentRequest",
+      "response_schema": "Response Attach Candidate Document Api V1 Candidates  Candidate Id  Documents Post"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/candidates/{candidate_id}/extraction-status",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "extraction_status_api_v1_candidates__candidate_id__extraction_status_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "extraction_status",
+      "request_schema": null,
+      "response_schema": "CandidateExtractionStatus"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/candidates/{candidate_id}/profiles",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "list_candidate_profiles_api_v1_candidates__candidate_id__profiles_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "list_candidate_profiles",
+      "request_schema": null,
+      "response_schema": "CandidateProfileHistoryResponse"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/profiles",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "link_candidate_profile_api_v1_candidates__candidate_id__profiles_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "link_candidate_profile",
+      "request_schema": "CandidateProfileLinkRequest",
+      "response_schema": "Response Link Candidate Profile Api V1 Candidates  Candidate Id  Profiles Post"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/profiles/{profile_id}/accept",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "accept_candidate_profile_api_v1_candidates__candidate_id__profiles__profile_id__accept_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "accept_candidate_profile",
+      "request_schema": "CandidateExactReviewRequest",
+      "response_schema": "CandidateSummary"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/profiles/{profile_id}/reject",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "reject_candidate_profile_api_v1_candidates__candidate_id__profiles__profile_id__reject_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "reject_candidate_profile",
+      "request_schema": "CandidateExactReviewRequest",
+      "response_schema": "CandidateSummary"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/reject",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "reject_candidate_api_v1_candidates__candidate_id__reject_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "reject_candidate",
+      "request_schema": "CandidateReviewRequest",
+      "response_schema": "CandidateSummary"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/candidates/{candidate_id}/request-revision",
+      "domain": "CANDIDATE_PROFILE",
+      "router_tag": "candidates",
+      "operation_id": "request_candidate_revision_api_v1_candidates__candidate_id__request_revision_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/candidate/api.py",
+      "handler": "request_candidate_revision",
+      "request_schema": "CandidateReviewRequest",
+      "response_schema": "CandidateSummary"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/content-generation/requests",
+      "domain": "CONTENT_GENERATION",
+      "router_tag": "content-generation",
+      "operation_id": "create_content_generation_request_api_v1_content_generation_requests_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES",
+        "REDIS",
+        "WORKER"
+      ],
+      "automated_tests": [
+        "tests/test_content_generation_api.py",
+        "tests/test_content_generation.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "DEFERRED",
+      "notes": "legacy/deferred model-backed path; no live call",
+      "source_module": "app/integration/content_generation_api.py",
+      "handler": "create_content_generation_request",
+      "request_schema": "IntegrationEnvelopeV1_ContentGenerationRequestCreateV1_",
+      "response_schema": "IntegrationEnvelopeV1_ContentGenerationRequestAccepted_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/content-generation/results/{result_id}",
+      "domain": "CONTENT_GENERATION",
+      "router_tag": "content-generation",
+      "operation_id": "get_content_generation_result_api_v1_content_generation_results__result_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES",
+        "REDIS",
+        "WORKER"
+      ],
+      "automated_tests": [
+        "tests/test_content_generation_api.py",
+        "tests/test_content_generation.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "DEFERRED",
+      "notes": "legacy/deferred model-backed path; no live call",
+      "source_module": "app/integration/content_generation_api.py",
+      "handler": "get_content_generation_result",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_ContentGenerationResult_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/curriculum-plans/{plan_id}/confirm",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "confirm_curriculum_plan_api_v1_course_authoring_curriculum_plans__plan_id__confirm_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "deterministic authoring baseline/UAT already passed",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "confirm_curriculum_plan",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CurriculumPlanV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/curriculum-plans/{plan_id}/review",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "review_curriculum_plan_api_v1_course_authoring_curriculum_plans__plan_id__review_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "review_curriculum_plan",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CurriculumPlanV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/curriculum-plans/{plan_id}/revisions",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "revise_curriculum_plan_api_v1_course_authoring_curriculum_plans__plan_id__revisions_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "deterministic authoring baseline/UAT already passed",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "revise_curriculum_plan",
+      "request_schema": "CurriculumPlanRevisionRequestV1",
+      "response_schema": "IntegrationEnvelopeV1_CurriculumPlanV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/requests",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "list_course_authoring_requests_api_v1_course_authoring_requests_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "list_course_authoring_requests",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_list_CourseAuthoringRequestV1__"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "create_course_authoring_request_api_v1_course_authoring_requests_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "deterministic authoring baseline/UAT already passed",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "create_course_authoring_request",
+      "request_schema": "IntegrationEnvelopeV1_CourseAuthoringRequestCreateV1_",
+      "response_schema": "IntegrationEnvelopeV1_CourseAuthoringRequestAcceptedV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/requests/{request_id}",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "get_course_authoring_request_api_v1_course_authoring_requests__request_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "get_course_authoring_request",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CourseAuthoringRequestV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests/{request_id}/clarify",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "clarify_authoring_brief_api_v1_course_authoring_requests__request_id__clarify_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "deterministic authoring baseline/UAT already passed",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "clarify_authoring_brief",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_AuthoringBriefRevisionV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests/{request_id}/conversation/respond",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "respond_to_authoring_conversation_api_v1_course_authoring_requests__request_id__conversation_respond_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model provider is placeholder/unavailable",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "respond_to_authoring_conversation",
+      "request_schema": "IntegrationEnvelopeV1_AuthoringConversationRespondV1_",
+      "response_schema": "IntegrationEnvelopeV1_AuthoringConversationResponseV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/requests/{request_id}/curriculum-plans",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "list_curriculum_plans_api_v1_course_authoring_requests__request_id__curriculum_plans_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "list_curriculum_plans",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_list_CurriculumPlanV1__"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests/{request_id}/generate",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "generate_course_authoring_request_api_v1_course_authoring_requests__request_id__generate_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model provider is placeholder/unavailable",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "generate_course_authoring_request",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_Union_CourseGenerationAccepted__CourseGenerationProgress__"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/requests/{request_id}/generation",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "get_course_generation_progress_api_v1_course_authoring_requests__request_id__generation_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES",
+        "WORKER"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "notes": "course-generation-worker not running",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "get_course_generation_progress",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CourseGenerationProgress_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests/{request_id}/generation/retry",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "retry_course_generation_api_v1_course_authoring_requests__request_id__generation_retry_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES",
+        "WORKER"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model provider is placeholder/unavailable",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "retry_course_generation",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CourseGenerationProgress_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/requests/{request_id}/plan",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "get_course_authoring_plan_api_v1_course_authoring_requests__request_id__plan_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model provider is placeholder/unavailable",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "get_course_authoring_plan",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CurriculumPlanV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests/{request_id}/plan",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "plan_course_authoring_request_api_v1_course_authoring_requests__request_id__plan_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model provider is placeholder/unavailable",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "plan_course_authoring_request",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CurriculumPlanV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/requests/{request_id}/results",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "list_course_draft_versions_api_v1_course_authoring_requests__request_id__results_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "list_course_draft_versions",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_list_CourseAuthoringResultVersionV1__"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/requests/{request_id}/revisions",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "list_authoring_brief_revisions_api_v1_course_authoring_requests__request_id__revisions_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "list_authoring_brief_revisions",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_list_AuthoringBriefRevisionV1__"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests/{request_id}/revisions",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "create_authoring_brief_revision_api_v1_course_authoring_requests__request_id__revisions_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "deterministic authoring baseline/UAT already passed",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "create_authoring_brief_revision",
+      "request_schema": "IntegrationEnvelopeV1_BriefRevisionChangesV1_",
+      "response_schema": "IntegrationEnvelopeV1_AuthoringBriefRevisionV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/requests/{request_id}/revisions/{revision_id}/confirm",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "confirm_authoring_brief_revision_api_v1_course_authoring_requests__request_id__revisions__revision_id__confirm_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "deterministic authoring baseline/UAT already passed",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "confirm_authoring_brief_revision",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_AuthoringBriefRevisionV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course-authoring/results/{result_id}",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "get_course_draft_version_api_v1_course_authoring_results__result_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "get_course_draft_version",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_ContentGenerationResult_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/results/{result_id}/approve",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "approve_course_draft_api_v1_course_authoring_results__result_id__approve_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "approve_course_draft",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_ContentGenerationResult_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/results/{result_id}/ready-for-materialization",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "mark_course_draft_ready_api_v1_course_authoring_results__result_id__ready_for_materialization_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "mark_course_draft_ready",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_ContentGenerationResult_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/results/{result_id}/reject",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "reject_course_draft_api_v1_course_authoring_results__result_id__reject_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "requires persisted UAT fixture",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "reject_course_draft",
+      "request_schema": "IntegrationEnvelopeV1_ContentReviewRejectV1_",
+      "response_schema": "IntegrationEnvelopeV1_ContentGenerationResult_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/course-authoring/results/{result_id}/revisions",
+      "domain": "COURSE_AUTHORING",
+      "router_tag": "course-authoring",
+      "operation_id": "create_course_draft_revision_api_v1_course_authoring_results__result_id__revisions_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "deterministic authoring baseline/UAT already passed",
+      "source_module": "app/integration/course_authoring_api.py",
+      "handler": "create_course_draft_revision",
+      "request_schema": "IntegrationEnvelopeV1_CourseDraftRevisionRequestV1_",
+      "response_schema": "IntegrationEnvelopeV1_ContentGenerationResult_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/candidates/{candidate_id}/capability-analyses",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "list_candidate_analyses_api_v1_integration_candidates__candidate_id__capability_analyses_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "list_candidate_analyses",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CandidateCapabilityAnalysisHistoryResponseV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/candidates/{candidate_id}/capability-analyses",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "create_analysis_api_v1_integration_candidates__candidate_id__capability_analyses_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "create_analysis",
+      "request_schema": "IntegrationEnvelopeV1_CapabilityAnalysisCreateV1_",
+      "response_schema": "IntegrationEnvelopeV1_CapabilityAnalysisProjectionV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/candidates/{candidate_id}/learning-paths",
+      "domain": "LEARNING_PATH",
+      "router_tag": "integration-learning-path",
+      "operation_id": "create_learning_path_api_v1_integration_candidates__candidate_id__learning_paths_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model-backed generation not configured",
+      "source_module": "app/integration/learning_path_api.py",
+      "handler": "create_learning_path",
+      "request_schema": "IntegrationEnvelopeV1_LearningPathCreateV1_",
+      "response_schema": "IntegrationEnvelopeV1_LearningPathProjectionV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/candidates/{candidate_id}/lms-user-link",
+      "domain": "INTEGRATION_AUTH",
+      "router_tag": "candidate-identity-bridge",
+      "operation_id": "get_link_api_v1_integration_candidates__candidate_id__lms_user_link_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_identity_bridge.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/identity_bridge_api.py",
+      "handler": "get_link",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CandidateLmsUserLinkProjection_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/candidates/{candidate_id}/lms-user-link",
+      "domain": "INTEGRATION_AUTH",
+      "router_tag": "candidate-identity-bridge",
+      "operation_id": "create_link_api_v1_integration_candidates__candidate_id__lms_user_link_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_candidate_identity_bridge.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/identity_bridge_api.py",
+      "handler": "create_link",
+      "request_schema": "IntegrationEnvelopeV1_CandidateLmsUserLinkRequest_",
+      "response_schema": "IntegrationEnvelopeV1_CandidateLmsUserLinkProjection_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/candidates/{candidate_id}/roles/{role_id}/capability-analyses",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "create_analysis_for_candidate_role_api_v1_integration_candidates__candidate_id__roles__role_id__capability_analyses_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "create_analysis_for_candidate_role",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CapabilityAnalysisProjectionV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/capability-analyses/{analysis_id}",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "get_analysis_api_v1_integration_capability_analyses__analysis_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "get_analysis",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CapabilityAnalysisProjectionV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/capability-analyses/{analysis_id}/candidate-evidence",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "get_candidate_evidence_api_v1_integration_capability_analyses__analysis_id__candidate_evidence_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "get_candidate_evidence",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CandidateEvidenceProjectionV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/capability-analyses/{analysis_id}/gaps/{gap_id}/evidence",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "get_gap_evidence_api_v1_integration_capability_analyses__analysis_id__gaps__gap_id__evidence_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "get_gap_evidence",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CapabilityEvidenceProjectionV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/capability-analyses/{analysis_id}/learning-decision",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "get_learning_decision_api_v1_integration_capability_analyses__analysis_id__learning_decision_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "get_learning_decision",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_LearningDecisionProjectionV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/capability-analyses/{analysis_id}/reanalyse-with-evidence",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "reanalyse_with_evidence_api_v1_integration_capability_analyses__analysis_id__reanalyse_with_evidence_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "reanalyse_with_evidence",
+      "request_schema": "IntegrationEnvelopeV1_HumanAssistedReanalysisRequest_",
+      "response_schema": "IntegrationEnvelopeV1_CapabilityAnalysisProjectionV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/competency-results/{result_id}",
+      "domain": "INTEGRATION_AUTH",
+      "router_tag": "integration",
+      "operation_id": "get_competency_result_api_v1_integration_competency_results__result_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/router.py",
+      "handler": "get_competency_result",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CompetencyResultReference_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/course-blueprints/{blueprint_id}",
+      "domain": "INTEGRATION_AUTH",
+      "router_tag": "integration",
+      "operation_id": "get_course_blueprint_api_v1_integration_course_blueprints__blueprint_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/router.py",
+      "handler": "get_course_blueprint",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CourseBlueprintV1_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/learning-paths/{learning_path_id}",
+      "domain": "LEARNING_PATH",
+      "router_tag": "integration-learning-path",
+      "operation_id": "get_learning_path_api_v1_integration_learning_paths__learning_path_id__get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/learning_path_api.py",
+      "handler": "get_learning_path",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_LearningPathProjectionV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/learning-results",
+      "domain": "INTEGRATION_AUTH",
+      "router_tag": "integration",
+      "operation_id": "accept_learning_result_api_v1_integration_learning_results_post",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/router.py",
+      "handler": "accept_learning_result",
+      "request_schema": "IntegrationEnvelopeV1_LearningResultRequest_",
+      "response_schema": "IntegrationEnvelopeV1_LearningResultAccepted_"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/roles/{role_id}/capability-analyses",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "integration-capability-analysis",
+      "operation_id": "list_role_analyses_api_v1_integration_roles__role_id__capability_analyses_get",
+      "auth": "INTEGRATION_API_KEY + SIGNED_ACTOR_CONTEXT",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/integration/capability_gap_api.py",
+      "handler": "list_role_analyses",
+      "request_schema": null,
+      "response_schema": "IntegrationEnvelopeV1_CandidateCapabilityAnalysisHistoryResponseV1_"
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-decisions",
+      "domain": "ASSESSMENT",
+      "router_tag": "assessment",
+      "operation_id": "create_assessment_decision_assessment_decisions_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_assessment_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/assessment/api.py",
+      "handler": "create_assessment_decision",
+      "request_schema": "CreateDecisionRequest",
+      "response_schema": "AssessmentDecision"
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-decisions/{record_id}/mark-assessed",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "mark_assessed_assessment_decisions__record_id__mark_assessed_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "mark_assessed",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Mark Assessed Assessment Decisions  Record Id  Mark Assessed Post"
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-decisions/{record_id}/request-verification",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "request_verification_assessment_decisions__record_id__request_verification_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "request_verification",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Request Verification Assessment Decisions  Record Id  Request Verification Post"
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-decisions/{record_id}/return-for-review",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "return_for_review_assessment_decisions__record_id__return_for_review_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "return_for_review",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Return For Review Assessment Decisions  Record Id  Return For Review Post"
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-decisions/{record_id}/verify",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "verify_assessment_decisions__record_id__verify_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "verify",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Verify Assessment Decisions  Record Id  Verify Post"
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-submissions",
+      "domain": "ASSESSMENT",
+      "router_tag": "assessment",
+      "operation_id": "submit_assessment_assessment_submissions_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_assessment_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/assessment/api.py",
+      "handler": "submit_assessment",
+      "request_schema": "SubmitAssessmentRequest",
+      "response_schema": "AssessmentSubmission"
+    },
+    {
+      "method": "GET",
+      "path": "/assessment-submissions/{submission_id}",
+      "domain": "ASSESSMENT",
+      "router_tag": "assessment",
+      "operation_id": "get_assessment_submission_assessment_submissions__submission_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_assessment_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/assessment/api.py",
+      "handler": "get_assessment_submission",
+      "request_schema": null,
+      "response_schema": "AssessmentSubmission"
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-templates",
+      "domain": "ASSESSMENT",
+      "router_tag": "assessment",
+      "operation_id": "create_assessment_template_assessment_templates_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_assessment_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/assessment/api.py",
+      "handler": "create_assessment_template",
+      "request_schema": "AssessmentTemplate",
+      "response_schema": "AssessmentTemplate"
+    },
+    {
+      "method": "GET",
+      "path": "/assessment-templates/{template_id}",
+      "domain": "ASSESSMENT",
+      "router_tag": "assessment",
+      "operation_id": "get_assessment_template_assessment_templates__template_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_assessment_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/assessment/api.py",
+      "handler": "get_assessment_template",
+      "request_schema": null,
+      "response_schema": "AssessmentTemplate"
+    },
+    {
+      "method": "POST",
+      "path": "/capability-gap-portfolios",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "capability-analysis",
+      "operation_id": "create_capability_gap_portfolio_capability_gap_portfolios_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_analysis_api.py",
+        "tests/test_capability_analysis_service.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/capability_analysis/api.py",
+      "handler": "create_capability_gap_portfolio",
+      "request_schema": "CreateCapabilityGapAnalysisRequest",
+      "response_schema": "CombinedGapPortfolio"
+    },
+    {
+      "method": "GET",
+      "path": "/capability-gap-portfolios/{portfolio_id}",
+      "domain": "CAPABILITY_ANALYSIS",
+      "router_tag": "capability-analysis",
+      "operation_id": "get_capability_gap_portfolio_capability_gap_portfolios__portfolio_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_capability_analysis_api.py",
+        "tests/test_capability_analysis_service.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/capability_analysis/api.py",
+      "handler": "get_capability_gap_portfolio",
+      "request_schema": null,
+      "response_schema": "CombinedGapPortfolio"
+    },
+    {
+      "method": "POST",
+      "path": "/competencies/{record_id}/mark-assessed",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "mark_assessed_competencies__record_id__mark_assessed_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "mark_assessed",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Mark Assessed Competencies  Record Id  Mark Assessed Post"
+    },
+    {
+      "method": "POST",
+      "path": "/competencies/{record_id}/require-reassessment",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "require_reassessment_competencies__record_id__require_reassessment_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "require_reassessment",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Require Reassessment Competencies  Record Id  Require Reassessment Post"
+    },
+    {
+      "method": "POST",
+      "path": "/competencies/{record_id}/revoke-verification",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "revoke_verification_competencies__record_id__revoke_verification_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "revoke_verification",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Revoke Verification Competencies  Record Id  Revoke Verification Post"
+    },
+    {
+      "method": "POST",
+      "path": "/competencies/{record_id}/verify",
+      "domain": "COURSE_CAPABILITY",
+      "router_tag": "competency",
+      "operation_id": "verify_competencies__record_id__verify_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/competency/api.py",
+      "handler": "verify",
+      "request_schema": "DecisionTransitionRequest",
+      "response_schema": "Response Verify Competencies  Record Id  Verify Post"
+    },
+    {
+      "method": "POST",
+      "path": "/credential-requests",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "create_request_credential_requests_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "create_request",
+      "request_schema": "CredentialRequestBody",
+      "response_schema": "CredentialRequest"
+    },
+    {
+      "method": "GET",
+      "path": "/credential-requests/{request_id}",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "get_request_credential_requests__request_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "get_request",
+      "request_schema": null,
+      "response_schema": "CredentialRequest"
+    },
+    {
+      "method": "POST",
+      "path": "/credential-requests/{request_id}/approve",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "approve_credential_requests__request_id__approve_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "approve",
+      "request_schema": "CredentialTransitionBody",
+      "response_schema": "CredentialRequest"
+    },
+    {
+      "method": "POST",
+      "path": "/credential-requests/{request_id}/issue",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "issue_credential_requests__request_id__issue_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "issue",
+      "request_schema": "CredentialTransitionBody",
+      "response_schema": "Credential"
+    },
+    {
+      "method": "POST",
+      "path": "/credential-requests/{request_id}/reject",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "reject_credential_requests__request_id__reject_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "reject",
+      "request_schema": "CredentialTransitionBody",
+      "response_schema": "CredentialRequest"
+    },
+    {
+      "method": "POST",
+      "path": "/credentials/{credential_id}/expire",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "expire_credentials__credential_id__expire_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "expire",
+      "request_schema": "CredentialTransitionBody",
+      "response_schema": "Credential"
+    },
+    {
+      "method": "POST",
+      "path": "/credentials/{credential_id}/revoke",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "revoke_credentials__credential_id__revoke_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "revoke",
+      "request_schema": "CredentialTransitionBody",
+      "response_schema": "Credential"
+    },
+    {
+      "method": "GET",
+      "path": "/credentials/{credential_id}/verify",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "credentials",
+      "operation_id": "verify_credentials__credential_id__verify_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/credential/api.py",
+      "handler": "verify",
+      "request_schema": null,
+      "response_schema": "CredentialVerification"
+    },
+    {
+      "method": "POST",
+      "path": "/delegations",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "delegations",
+      "operation_id": "create_delegation_delegations_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_delegation_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/authorization/api.py",
+      "handler": "create_delegation",
+      "request_schema": "CreateDelegationRequest",
+      "response_schema": "ScopedDelegation"
+    },
+    {
+      "method": "GET",
+      "path": "/delegations/{delegation_id}",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "delegations",
+      "operation_id": "get_delegation_delegations__delegation_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_delegation_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/authorization/api.py",
+      "handler": "get_delegation",
+      "request_schema": null,
+      "response_schema": "ScopedDelegation"
+    },
+    {
+      "method": "POST",
+      "path": "/delegations/{delegation_id}/{target}",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "delegations",
+      "operation_id": "transition_delegation_delegations__delegation_id___target__post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_delegation_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/authorization/api.py",
+      "handler": "transition_delegation",
+      "request_schema": "DelegationTransitionRequest",
+      "response_schema": "ScopedDelegation"
+    },
+    {
+      "method": "POST",
+      "path": "/documents",
+      "domain": "CV_DOCUMENT",
+      "router_tag": "documents",
+      "operation_id": "upload_document_documents_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "CLAMAV",
+        "MINIO",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_document_api.py",
+        "tests/test_documents.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "storage/scanner healthy; authenticated upload not run in this bounded pass",
+      "source_module": "app/documents/api.py",
+      "handler": "upload_document",
+      "request_schema": "Body_upload_document_documents_post",
+      "response_schema": "StoredDocument"
+    },
+    {
+      "method": "POST",
+      "path": "/extraction-jobs",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "create_extraction_job_extraction_jobs_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "CLAMAV",
+        "MINIO",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "notes": "extraction worker not running; model placeholder",
+      "source_module": "app/extraction/api.py",
+      "handler": "create_extraction_job",
+      "request_schema": "CreateExtractionJobRequest",
+      "response_schema": "ExtractionJob"
+    },
+    {
+      "method": "DELETE",
+      "path": "/extraction-jobs/{job_id}",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "cancel_extraction_job_extraction_jobs__job_id__delete",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "cancel_extraction_job",
+      "request_schema": null,
+      "response_schema": "ExtractionJob"
+    },
+    {
+      "method": "GET",
+      "path": "/extraction-jobs/{job_id}",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "get_extraction_job_extraction_jobs__job_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "get_extraction_job",
+      "request_schema": null,
+      "response_schema": "ExtractionJob"
+    },
+    {
+      "method": "DELETE",
+      "path": "/extraction-profiles/{profile_id}",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "delete_extraction_profile_extraction_profiles__profile_id__delete",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "delete_extraction_profile",
+      "request_schema": null,
+      "response_schema": "Response Delete Extraction Profile Extraction Profiles  Profile Id  Delete"
+    },
+    {
+      "method": "GET",
+      "path": "/extraction-profiles/{profile_id}",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "get_extraction_profile_extraction_profiles__profile_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "get_extraction_profile",
+      "request_schema": null,
+      "response_schema": "ExtractionProfile"
+    },
+    {
+      "method": "POST",
+      "path": "/extraction-profiles/{profile_id}/accept",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "accept_extraction_profile_extraction_profiles__profile_id__accept_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "CLAMAV",
+        "MINIO",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "accept_extraction_profile",
+      "request_schema": "AcceptExtractionProfileRequest",
+      "response_schema": "ExtractionProfile"
+    },
+    {
+      "method": "POST",
+      "path": "/extraction-profiles/{profile_id}/corrections",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "submit_correction_extraction_profiles__profile_id__corrections_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "CLAMAV",
+        "MINIO",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "submit_correction",
+      "request_schema": "SubmitCorrectionRequest",
+      "response_schema": "ExtractionProfile"
+    },
+    {
+      "method": "POST",
+      "path": "/extraction-profiles/{profile_id}/reject",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "reject_extraction_profile_extraction_profiles__profile_id__reject_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "CLAMAV",
+        "MINIO",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "reject_extraction_profile",
+      "request_schema": "AcceptExtractionProfileRequest",
+      "response_schema": "ExtractionProfile"
+    },
+    {
+      "method": "POST",
+      "path": "/extraction-profiles/{profile_id}/request-revision",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "request_profile_revision_extraction_profiles__profile_id__request_revision_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "CLAMAV",
+        "MINIO",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "request_profile_revision",
+      "request_schema": "AcceptExtractionProfileRequest",
+      "response_schema": "ExtractionProfile"
+    },
+    {
+      "method": "GET",
+      "path": "/extraction-profiles/{profile_id}/review",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "get_jd_review_projection_extraction_profiles__profile_id__review_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "get_jd_review_projection",
+      "request_schema": null,
+      "response_schema": "JDReviewProjection"
+    },
+    {
+      "method": "POST",
+      "path": "/extraction-profiles/{profile_id}/review-corrections",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "submit_jd_review_correction_extraction_profiles__profile_id__review_corrections_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "CLAMAV",
+        "MINIO",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "submit_jd_review_correction",
+      "request_schema": "JDReviewCorrectionRequest",
+      "response_schema": "ExtractionProfile"
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "domain": "HEALTH",
+      "router_tag": "health",
+      "operation_id": "health_health_get",
+      "auth": "NONE",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_health.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "live 200",
+      "source_module": "app/shared/health.py",
+      "handler": "health",
+      "request_schema": null,
+      "response_schema": "HealthResponse"
+    },
+    {
+      "method": "GET",
+      "path": "/health/live",
+      "domain": "HEALTH",
+      "router_tag": "health",
+      "operation_id": "live_health_health_live_get",
+      "auth": "NONE",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_health.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "live 200",
+      "source_module": "app/shared/health.py",
+      "handler": "live_health",
+      "request_schema": null,
+      "response_schema": "HealthResponse"
+    },
+    {
+      "method": "GET",
+      "path": "/health/ready",
+      "domain": "HEALTH",
+      "router_tag": "health",
+      "operation_id": "ready_health_health_ready_get",
+      "auth": "NONE",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_health.py"
+      ],
+      "live_smoke": "PASS",
+      "status": "VERIFIED",
+      "notes": "live 200",
+      "source_module": "app/shared/health.py",
+      "handler": "ready_health",
+      "request_schema": null,
+      "response_schema": "HealthResponse"
+    },
+    {
+      "method": "GET",
+      "path": "/jd-extraction-profiles",
+      "domain": "CV_EXTRACTION",
+      "router_tag": "extraction",
+      "operation_id": "list_jd_review_projections_jd_extraction_profiles_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/extraction/api.py",
+      "handler": "list_jd_review_projections",
+      "request_schema": null,
+      "response_schema": "array[JDReviewProjection]"
+    },
+    {
+      "method": "POST",
+      "path": "/learning-paths",
+      "domain": "LEARNING_PATH",
+      "router_tag": "learning",
+      "operation_id": "create_learning_path_learning_paths_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_api.py",
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model-backed generation not configured",
+      "source_module": "app/learning/api.py",
+      "handler": "create_learning_path",
+      "request_schema": "LearningPathRequest",
+      "response_schema": "LearningPath"
+    },
+    {
+      "method": "GET",
+      "path": "/learning-paths/{path_id}",
+      "domain": "LEARNING_PATH",
+      "router_tag": "learning",
+      "operation_id": "get_learning_path_learning_paths__path_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_api.py",
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/learning/api.py",
+      "handler": "get_learning_path",
+      "request_schema": null,
+      "response_schema": "LearningPath"
+    },
+    {
+      "method": "POST",
+      "path": "/learning-paths/{path_id}/approve",
+      "domain": "LEARNING_PATH",
+      "router_tag": "learning",
+      "operation_id": "approve_learning_path_learning_paths__path_id__approve_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_api.py",
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model-backed generation not configured",
+      "source_module": "app/learning/api.py",
+      "handler": "approve_learning_path",
+      "request_schema": "LearningPathLifecycleRequest",
+      "response_schema": "LearningPath"
+    },
+    {
+      "method": "POST",
+      "path": "/learning-paths/{path_id}/regenerate",
+      "domain": "LEARNING_PATH",
+      "router_tag": "learning",
+      "operation_id": "regenerate_learning_path_learning_paths__path_id__regenerate_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_api.py",
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model-backed generation not configured",
+      "source_module": "app/learning/api.py",
+      "handler": "regenerate_learning_path",
+      "request_schema": "CapabilityAnalysisLearningPathRequest",
+      "response_schema": "LearningPath"
+    },
+    {
+      "method": "POST",
+      "path": "/learning-paths/{path_id}/review",
+      "domain": "LEARNING_PATH",
+      "router_tag": "learning",
+      "operation_id": "review_learning_path_learning_paths__path_id__review_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_api.py",
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model-backed generation not configured",
+      "source_module": "app/learning/api.py",
+      "handler": "review_learning_path",
+      "request_schema": "LearningPathLifecycleRequest",
+      "response_schema": "LearningPath"
+    },
+    {
+      "method": "POST",
+      "path": "/learning-paths/{path_id}/supersede",
+      "domain": "LEARNING_PATH",
+      "router_tag": "learning",
+      "operation_id": "supersede_learning_path_learning_paths__path_id__supersede_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "MODEL_PROVIDER",
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_learning_api.py",
+        "tests/test_learning_path_integration.py"
+      ],
+      "live_smoke": "BLOCKED",
+      "status": "BLOCKED_BY_MODEL",
+      "notes": "model-backed generation not configured",
+      "source_module": "app/learning/api.py",
+      "handler": "supersede_learning_path",
+      "request_schema": "LearningPathRequest",
+      "response_schema": "LearningPath"
+    },
+    {
+      "method": "POST",
+      "path": "/preliminary-matches",
+      "domain": "INTERNAL_RECOMMENDATION",
+      "router_tag": "preliminary-matching",
+      "operation_id": "create_preliminary_match_preliminary_matches_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_matching_api.py",
+        "tests/test_matching_review.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/matching/api.py",
+      "handler": "create_preliminary_match",
+      "request_schema": "CreatePreliminaryMatchRequest",
+      "response_schema": "PreliminaryMatch"
+    },
+    {
+      "method": "GET",
+      "path": "/preliminary-matches/{match_id}",
+      "domain": "INTERNAL_RECOMMENDATION",
+      "router_tag": "preliminary-matching",
+      "operation_id": "get_preliminary_match_preliminary_matches__match_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_matching_api.py",
+        "tests/test_matching_review.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/matching/api.py",
+      "handler": "get_preliminary_match",
+      "request_schema": null,
+      "response_schema": "PreliminaryMatch"
+    },
+    {
+      "method": "POST",
+      "path": "/preliminary-matches/{match_id}/review",
+      "domain": "INTERNAL_RECOMMENDATION",
+      "router_tag": "preliminary-matching",
+      "operation_id": "review_preliminary_match_preliminary_matches__match_id__review_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_matching_api.py",
+        "tests/test_matching_review.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/matching/api.py",
+      "handler": "review_preliminary_match",
+      "request_schema": "ReviewPreliminaryMatchRequest",
+      "response_schema": "PreliminaryMatch"
+    },
+    {
+      "method": "GET",
+      "path": "/role-profile-drafts",
+      "domain": "ROLE_PROFILE",
+      "router_tag": "role-profile-authoring",
+      "operation_id": "list_drafts_role_profile_drafts_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_profile_authoring_api.py",
+        "tests/test_role_profile_authoring_quality_gate.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_profile_authoring/api.py",
+      "handler": "list_drafts",
+      "request_schema": null,
+      "response_schema": "array[RoleProfileDraftResponse]"
+    },
+    {
+      "method": "POST",
+      "path": "/role-profile-drafts",
+      "domain": "ROLE_PROFILE",
+      "router_tag": "role-profile-authoring",
+      "operation_id": "create_draft_role_profile_drafts_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_profile_authoring_api.py",
+        "tests/test_role_profile_authoring_quality_gate.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_profile_authoring/api.py",
+      "handler": "create_draft",
+      "request_schema": "CreateRoleProfileDraftRequest",
+      "response_schema": "RoleProfileDraftResponse"
+    },
+    {
+      "method": "GET",
+      "path": "/role-profile-drafts/{draft_id}",
+      "domain": "ROLE_PROFILE",
+      "router_tag": "role-profile-authoring",
+      "operation_id": "get_draft_role_profile_drafts__draft_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_profile_authoring_api.py",
+        "tests/test_role_profile_authoring_quality_gate.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_profile_authoring/api.py",
+      "handler": "get_draft",
+      "request_schema": null,
+      "response_schema": "RoleProfileDraftResponse"
+    },
+    {
+      "method": "PATCH",
+      "path": "/role-profile-drafts/{draft_id}",
+      "domain": "ROLE_PROFILE",
+      "router_tag": "role-profile-authoring",
+      "operation_id": "author_draft_role_profile_drafts__draft_id__patch",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_profile_authoring_api.py",
+        "tests/test_role_profile_authoring_quality_gate.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_profile_authoring/api.py",
+      "handler": "author_draft",
+      "request_schema": "AuthorRoleProfileDraftRequest",
+      "response_schema": "RoleProfileDraftResponse"
+    },
+    {
+      "method": "POST",
+      "path": "/role-profile-drafts/{draft_id}/approve",
+      "domain": "ROLE_PROFILE",
+      "router_tag": "role-profile-authoring",
+      "operation_id": "approve_draft_role_profile_drafts__draft_id__approve_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_profile_authoring_api.py",
+        "tests/test_role_profile_authoring_quality_gate.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_profile_authoring/api.py",
+      "handler": "approve_draft",
+      "request_schema": "ApproveRoleProfileDraftRequest",
+      "response_schema": "RoleProfileDraftResponse"
+    },
+    {
+      "method": "POST",
+      "path": "/role-profile-drafts/{draft_id}/validate",
+      "domain": "ROLE_PROFILE",
+      "router_tag": "role-profile-authoring",
+      "operation_id": "validate_draft_role_profile_drafts__draft_id__validate_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_profile_authoring_api.py",
+        "tests/test_role_profile_authoring_quality_gate.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_profile_authoring/api.py",
+      "handler": "validate_draft",
+      "request_schema": "ValidateRoleProfileDraftRequest",
+      "response_schema": "RoleProfileDraftResponse"
+    },
+    {
+      "method": "PUT",
+      "path": "/role-profiles/{role_profile_id}/semantic-policy",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "semantic-policy",
+      "operation_id": "bind_role_profile_policy_role_profiles__role_profile_id__semantic_policy_put",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_semantic_policy_api.py",
+        "tests/test_semantic_policy_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/semantic_policy/api.py",
+      "handler": "bind_role_profile_policy",
+      "request_schema": "BindSemanticPolicyRequest",
+      "response_schema": "Response Bind Role Profile Policy Role Profiles  Role Profile Id  Semantic Policy Put"
+    },
+    {
+      "method": "GET",
+      "path": "/roles",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "search_roles_roles_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "search_roles",
+      "request_schema": null,
+      "response_schema": "array[RoleSummary]"
+    },
+    {
+      "method": "POST",
+      "path": "/roles",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "create_role_roles_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "create_role",
+      "request_schema": "CreateRoleRequest",
+      "response_schema": "Role"
+    },
+    {
+      "method": "GET",
+      "path": "/roles/{role_id}",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "get_role_roles__role_id__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "get_role",
+      "request_schema": null,
+      "response_schema": "Role"
+    },
+    {
+      "method": "PATCH",
+      "path": "/roles/{role_id}",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "update_role_roles__role_id__patch",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "update_role",
+      "request_schema": "UpdateRoleRequest",
+      "response_schema": "Role"
+    },
+    {
+      "method": "GET",
+      "path": "/roles/{role_id}/competency-profiles",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "list_competency_profiles_roles__role_id__competency_profiles_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "list_competency_profiles",
+      "request_schema": null,
+      "response_schema": "array[RoleCompetencyProfileHistoryEntry]"
+    },
+    {
+      "method": "GET",
+      "path": "/roles/{role_id}/competency-profiles/active",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "get_active_competency_profile_roles__role_id__competency_profiles_active_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "get_active_competency_profile",
+      "request_schema": null,
+      "response_schema": "RoleCompetencyProfile"
+    },
+    {
+      "method": "POST",
+      "path": "/roles/{role_id}/competency-profiles/{profile_id}/activate",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "activate_competency_profile_roles__role_id__competency_profiles__profile_id__activate_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "activate_competency_profile",
+      "request_schema": "ActivateRoleCompetencyProfileRequest",
+      "response_schema": "RoleCompetencyProfile"
+    },
+    {
+      "method": "GET",
+      "path": "/roles/{role_id}/jd/versions",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "list_jd_versions_roles__role_id__jd_versions_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "list_jd_versions",
+      "request_schema": null,
+      "response_schema": "array[RoleJDVersion]"
+    },
+    {
+      "method": "POST",
+      "path": "/roles/{role_id}/jd/versions",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "role-registry",
+      "operation_id": "attach_jd_version_roles__role_id__jd_versions_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/role_registry/api.py",
+      "handler": "attach_jd_version",
+      "request_schema": null,
+      "response_schema": "RoleJDVersion"
+    },
+    {
+      "method": "POST",
+      "path": "/semantic-policies",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "semantic-policy",
+      "operation_id": "create_policy_semantic_policies_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_semantic_policy_api.py",
+        "tests/test_semantic_policy_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/semantic_policy/api.py",
+      "handler": "create_policy",
+      "request_schema": "CreateSemanticPolicyRequest",
+      "response_schema": "SemanticPolicy"
+    },
+    {
+      "method": "GET",
+      "path": "/semantic-policies/{policy_id}/versions/{version}",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "semantic-policy",
+      "operation_id": "get_policy_semantic_policies__policy_id__versions__version__get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_semantic_policy_api.py",
+        "tests/test_semantic_policy_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/semantic_policy/api.py",
+      "handler": "get_policy",
+      "request_schema": null,
+      "response_schema": "SemanticPolicy"
+    },
+    {
+      "method": "POST",
+      "path": "/semantic-policies/{policy_id}/versions/{version}/activate",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "semantic-policy",
+      "operation_id": "activate_policy_semantic_policies__policy_id__versions__version__activate_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_semantic_policy_api.py",
+        "tests/test_semantic_policy_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/semantic_policy/api.py",
+      "handler": "activate_policy",
+      "request_schema": null,
+      "response_schema": "SemanticPolicy"
+    },
+    {
+      "method": "POST",
+      "path": "/semantic-policies/{policy_id}/versions/{version}/deprecate",
+      "domain": "ROLE_GOVERNANCE",
+      "router_tag": "semantic-policy",
+      "operation_id": "deprecate_policy_semantic_policies__policy_id__versions__version__deprecate_post",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_semantic_policy_api.py",
+        "tests/test_semantic_policy_governance.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/semantic_policy/api.py",
+      "handler": "deprecate_policy",
+      "request_schema": null,
+      "response_schema": "SemanticPolicy"
+    },
+    {
+      "method": "GET",
+      "path": "/users/{user_id}/delegations",
+      "domain": "ADMIN_INTERNAL",
+      "router_tag": "delegations",
+      "operation_id": "list_user_delegations_users__user_id__delegations_get",
+      "auth": "DEVELOPMENT_ACTOR_HEADER (local); signed context for integration",
+      "dependencies": [
+        "POSTGRES"
+      ],
+      "automated_tests": [
+        "tests/test_delegation_repository.py"
+      ],
+      "live_smoke": "NOT_RUN",
+      "status": "NOT_YET_VERIFIED",
+      "notes": "contract/test evidence exists or route is registered; live functional smoke pending",
+      "source_module": "app/authorization/api.py",
+      "handler": "list_user_delegations",
+      "request_schema": null,
+      "response_schema": "array[ScopedDelegation]"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "focused_run": {
+    "command": "uv run --extra dev python -m pytest [21 focused API suites]",
+    "passed": 110,
+    "failed": 15,
+    "result": "15 failures in two fixture/auth drift clusters; not fixed in discovery"
+  },
+  "tag_coverage": {
+    "health": {
+      "files": [
+        "tests/test_health.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "documents": {
+      "files": [
+        "tests/test_document_api.py",
+        "tests/test_documents.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "delegations": {
+      "files": [
+        "tests/test_delegation_repository.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "assessment": {
+      "files": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_assessment_repository.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "competency": {
+      "files": [
+        "tests/test_assessment_competency_api.py",
+        "tests/test_competency_repository.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "extraction": {
+      "files": [
+        "tests/test_extraction_api.py",
+        "tests/test_extraction_router.py",
+        "tests/test_extraction_worker.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "candidates": {
+      "files": [
+        "tests/test_candidate_api.py",
+        "tests/test_candidate_governance.py",
+        "tests/test_candidate_profile.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "preliminary-matching": {
+      "files": [
+        "tests/test_matching_api.py",
+        "tests/test_matching_review.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "role-profile-authoring": {
+      "files": [
+        "tests/test_role_profile_authoring_api.py",
+        "tests/test_role_profile_authoring_quality_gate.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "role-registry": {
+      "files": [
+        "tests/test_role_registry.py",
+        "tests/test_role_profile_governance.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "semantic-policy": {
+      "files": [
+        "tests/test_semantic_policy_api.py",
+        "tests/test_semantic_policy_governance.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "capability-analysis": {
+      "files": [
+        "tests/test_capability_analysis_api.py",
+        "tests/test_capability_analysis_service.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "learning": {
+      "files": [
+        "tests/test_learning_api.py",
+        "tests/test_learning_path_integration.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "credentials": {
+      "files": [
+        "tests/test_credential_api.py",
+        "tests/test_credential_authorization.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "integration": {
+      "files": [
+        "tests/test_integration_api.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "integration-capability-analysis": {
+      "files": [
+        "tests/test_capability_gap_integration_api.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "integration-learning-path": {
+      "files": [
+        "tests/test_learning_path_integration.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "candidate-identity-bridge": {
+      "files": [
+        "tests/test_candidate_identity_bridge.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "learning-authoring": {
+      "files": [
+        "tests/test_learning_authoring_api.py",
+        "tests/test_learning_openapi.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "content-generation": {
+      "files": [
+        "tests/test_content_generation_api.py",
+        "tests/test_content_generation.py"
+      ],
+      "coverage_type": "API/service tests"
+    },
+    "course-authoring": {
+      "files": [
+        "tests/test_course_authoring_api.py",
+        "tests/test_course_authoring_revision_api.py",
+        "tests/test_course_generation_api.py",
+        "tests/test_curriculum_planning_api.py"
+      ],
+      "coverage_type": "API/service tests"
+    }
+  }
+}

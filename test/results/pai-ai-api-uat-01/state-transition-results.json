@@ -1,0 +1,24 @@
+{
+  "verified": [
+    {
+      "scenario": "unauthenticated integration request",
+      "expected": "401",
+      "actual": "401 integration_authentication_failed"
+    },
+    {
+      "scenario": "unauthenticated local product request",
+      "expected": "403/401",
+      "actual": "403 development_identity_required"
+    },
+    {
+      "scenario": "nonexistent persisted IDs",
+      "expected": "404",
+      "actual": "404 domain-specific not-found"
+    }
+  ],
+  "not_run": [
+    "stale/immutable transitions outside existing course-authoring baseline",
+    "PROVISIONAL versus ACTIVE capability analysis",
+    "role/profile approval gates"
+  ]
+}

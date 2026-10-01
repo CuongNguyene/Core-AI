@@ -1,0 +1,72 @@
+{
+  "probes": [
+    {
+      "endpoint": "/health",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/health/live",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/health/ready",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/course-authoring/requests/nonexistent",
+      "http": 401,
+      "error_code": "integration_authentication_failed",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/integration/capability-analyses/nonexistent",
+      "http": 401,
+      "error_code": "integration_authentication_failed",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/candidates",
+      "http": 403,
+      "error_code": "development_identity_required",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/roles",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/extraction-jobs/nonexistent",
+      "http": 404,
+      "error_code": "extraction_job_not_found",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/learning-paths/nonexistent",
+      "http": 404,
+      "error_code": "learning_path_not_found",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "/api/v1/content-generation/results/nonexistent",
+      "http": 401,
+      "error_code": "integration_authentication_failed",
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "http://127.0.0.1:19000/minio/health/ready",
+      "http": 200,
+      "status": "VERIFIED"
+    },
+    {
+      "endpoint": "clamav tcp 3310",
+      "result": "ready",
+      "status": "VERIFIED"
+    }
+  ],
+  "course_authoring_baseline": "PASS",
+  "broader_authenticated_product_smoke": "not run; signed actor/data/model prerequisites not all available"
+}
