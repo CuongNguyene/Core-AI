@@ -1,0 +1,16 @@
+{
+  "api": "/api/v1/authoring/learning-needs/{learning_need_id}",
+  "negative_fixture": {
+    "id": "learning-need:cap-demo-08b1-negative:e2e-gap-cap-demo-08b1-negative-role-profile-e2e-08b1-a-sql",
+    "http": 200,
+    "source_gap_refs": ["e2e-gap-cap-demo-08b1-negative-role-profile-e2e-08b1-a-sql"],
+    "target_reference": "role-profile-e2e-08b1-a@1",
+    "current_state_level": null,
+    "target_state_level": "working",
+    "status": "VERIFIED"
+  },
+  "supported_gap_projection": {"http": 404, "status": "VERIFIED_NOT_A_LEARNING_GAP", "reason": "supported evidence does not project to a learning need"},
+  "target_gap_mutated": false,
+  "reload": "HTTP read of persisted capability analysis projection",
+  "final_status": "VERIFIED_FOR_NON_MODEL_PROJECTION"
+}

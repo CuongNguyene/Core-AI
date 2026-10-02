@@ -1,0 +1,9 @@
+{
+  "fixture_regression": {"passed": 1, "failed": 0},
+  "focused_uat_selection_plus_fixture": {"passed": 126, "failed": 0, "result": "PASS"},
+  "auth_security_and_governance_learning": {"passed": 104, "failed": 0},
+  "ruff": "PASS",
+  "mypy": "NOT CLEAN for combined script/module invocation due duplicate module mapping; no production typing change",
+  "git_diff_check": "NOT AVAILABLE on canonical source because .git metadata is absent",
+  "sandbox_note": "the same focused selection initially had one localhost bind PermissionError; rerun with network permission passed 126"
+}

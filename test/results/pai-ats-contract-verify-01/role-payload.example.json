@@ -1,0 +1,25 @@
+{
+  "source_system": "synthetic-ats",
+  "external_role_id": "job-demo-0001",
+  "organization_ref": "org-demo-0001",
+  "source_updated_at": "2026-10-02T02:00:00Z",
+  "role": {
+    "role_code": "PM-DEMO-001",
+    "title": "Synthetic Product Manager",
+    "description": "Own a synthetic product delivery scope.",
+    "requirements": [
+      {
+        "source_requirement_ref": "req-demo-python",
+        "statement": "Python backend experience",
+        "criterion_dimension": "skill",
+        "modality": "must",
+        "evidence_terms": ["Python", "backend"],
+        "target_level": null,
+        "observable_behaviors": [],
+        "evidence_constraints": [],
+        "source_provenance": {"source_field": "required_skills[0]"}
+      }
+    ]
+  },
+  "integration_note": "PROPOSED adapter payload; Core-AI owns RoleRequirement normalization, quality gate, approval and RoleCompetencyProfile creation."
+}

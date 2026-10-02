@@ -1,8 +1,0 @@
-{
-  "command": "cd /home/frappe/frappe-bench && export PYTHONPATH=/home/frappe/.bench PATH=/home/frappe/.nvm/versions/node/v24.21.0/bin:/home/frappe/.local/bin:$PATH && env/bin/python /home/frappe/.local/bin/bench build --app lms",
-  "status": "PASS",
-  "environment": "lms-frappe-1 Bench container, Node 24.21.0, Frappe Bench 5.31.0",
-  "result": "Assets linked, Vite transformed 4500 modules, generated frontend assets and service worker, copied lms.html, and compiled translations.",
-  "host_build": "ENVIRONMENT_BLOCKED: host checkout lacks Bench sites/common_site_config.json",
-  "action": "No fake production configuration was created."
-}

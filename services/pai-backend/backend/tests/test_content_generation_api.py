@@ -1,11 +1,12 @@
+from uuid import UUID
+
 import pytest
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from httpx import ASGITransport, AsyncClient
-from uuid import UUID
 
-from app.content_generation.service import ContentGenerationService
 from app.authorization.schemas import ActorContext
+from app.content_generation.service import ContentGenerationService
 from app.integration.actor_context import get_signed_actor_context
 from app.integration.auth import verify_integration_api_key
 from app.integration.content_generation_api import router
@@ -22,7 +23,7 @@ async def client() -> AsyncClient:
         actor_id=UUID("00000000-0000-0000-0000-000000000001"),
         organization_id=UUID("00000000-0000-0000-0000-000000000002"),
         roles=frozenset(),
-        authentication_method="test",
+        authentication_method="signed_actor_context",
     )
     app.include_router(router)
     return AsyncClient(transport=ASGITransport(app=app), base_url="http://testserver")

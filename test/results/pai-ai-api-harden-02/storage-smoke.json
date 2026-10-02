@@ -1,0 +1,11 @@
+{
+  "application_abstraction": "app.documents.storage.MinioDocumentBlobStore",
+  "payload": "synthetic text only",
+  "put": "BLOCKED_BY_STORAGE",
+  "read": "NOT_RUN",
+  "delete": "NOT_RUN",
+  "failure": "S3 NoSuchBucket: pai-documents",
+  "minio_health": {"http": 200, "status": "VERIFIED"},
+  "clamav_backend_probe": {"response": "PONG", "status": "VERIFIED"},
+  "interpretation": "MinIO process is healthy but the application bucket is not provisioned; no direct bucket creation was performed"
+}

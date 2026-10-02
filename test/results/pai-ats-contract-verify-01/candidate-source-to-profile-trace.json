@@ -1,0 +1,10 @@
+{
+  "source": "CVFullExtractionOutputV2 or CVExtractionOutput",
+  "mapping_service": "app.extraction.capability_projection.project_v2_to_candidate_profile -> app.extraction.profile_builder.build_candidate_profile_from_output",
+  "accepted_profile": "app.extraction.schemas.ExtractionProfile with review_state=accepted and acceptance metadata",
+  "preserved": ["supported claims", "entity values", "evidence context", "confidence", "source_excerpt", "source_locator", "evidence type", "profile version"],
+  "transformed": ["capabilities/tools/experience/education -> legacy claims -> CandidateProfile entities", "entity labels canonicalized", "evidence type mapped to EvidenceContext", "profile entity_id derived from entity type and normalized value"],
+  "discarded_or_not_in_candidate_profile": ["candidate_summary", "dates/start_date/end_date", "company on ExperienceItem", "location/year on EducationItem", "raw capability category/mapping_status"],
+  "derived_by_core": ["canonical entity names", "entity IDs", "capability status/verification snapshot", "candidate claims/evidence materialization"],
+  "provenance": "EvidenceItem.source_locator/source_excerpt and CandidateEvidence.provenance; supported capability requires a source locator"
+}

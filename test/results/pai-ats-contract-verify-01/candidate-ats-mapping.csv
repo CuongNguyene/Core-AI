@@ -1,0 +1,12 @@
+priority,ats_field,pai_field,datatype,required,nullable,direction,transformation,example,provenance,notes
+P0,external_candidate_id,PROPOSED source metadata,string,true,false,ATS -> adapter,preserve,cand-demo-0001,source_system+source_record_id,not current PAI field
+P0,organization_ref,Candidate.organization_id,UUID,true,false,ATS/auth -> Core-AI,tenant resolution,org-demo-0001,auth organization context,internal ownership field
+P0,display_name,Candidate.display_name,string,false,true,ATS -> Core-AI,direct,Synthetic Candidate,ATS candidate record,current create API optional
+P0,email,Candidate.primary_email,string,false,true,ATS -> Core-AI,direct,candidate@example.invalid,ATS candidate record,current create API optional
+P0,profile.skills[].entity,CandidateProfile.skills[].entity,string,true,false,ATS -> adapter -> Core-AI,normalize,Python,structured source field,analyzable capability input
+P0,profile.skills[].evidence[],EvidenceItem,object,true,false,ATS -> adapter -> Core-AI,resolve locator,source excerpt,source record/field mapping,source-backed analysis needs locator
+P1,employment_history[],CandidateProfile.employment_history[],object[],false,true,ATS -> adapter,map supported fields,[],source evidence,current entity lacks dates
+P1,projects[],CandidateProfile.projects[],object[],false,true,ATS -> adapter,map name/evidence,[],source evidence,current entity only name/evidence
+P1,education[],CandidateProfile.education[],object[],false,true,ATS -> adapter,map institution/degree/field,[],source evidence,current entity lacks year/location
+P2,credentials[],CandidateProfile.credentials[],object[],false,true,ATS -> adapter,map name/evidence,[],source evidence,extra certification metadata not canonical
+P2,source_updated_at,PROPOSED sync metadata,datetime,false,true,ATS -> adapter,preserve,2026-10-02T02:00:00Z,ATS source,not current field

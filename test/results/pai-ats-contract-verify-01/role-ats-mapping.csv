@@ -1,0 +1,13 @@
+priority,ats_field,pai_field,datatype,required,nullable,direction,transformation,example,provenance,notes
+P0,external_role_id,PROPOSED source metadata,string,true,false,ATS -> adapter,preserve,job-demo-0001,source_system+source_record_id,not current PAI field
+P0,organization_ref,Role.organization_id,UUID,true,false,ATS/auth -> Core-AI,tenant resolution,org-demo-0001,auth organization context,tenant scope
+P0,role_title,Role.title,string,true,false,ATS -> Core-AI,direct,Synthetic Product Manager,ATS job record,current CreateRoleRequest requires title
+P0,job_description,Role.description / JD source,string,false,true,ATS -> adapter,preserve,Synthetic scope,ATS source record,full source may need document adapter
+P0,requirements[],RoleRequirement[],object[],true,false,ATS -> adapter -> Core-AI,normalize,one requirement,source requirement refs,do not send derived profile
+P0,requirements[].statement,RoleRequirement.evidence_terms,string,true,false,ATS -> adapter,preserve+normalize,Python backend experience,ATS requirement field,source fact
+P0,requirements[].modality,RoleRequirement.modality/classification,enum,false,true,ATS -> adapter,map,must,ATS requirement field,must/preferred/responsibility/unspecified
+P1,requirements[].target_level,RoleRequirement.target_level,string,false,true,ATS -> adapter,preserve explicit only,null,source requirement,do not infer
+P1,requirements[].observable_behaviors,RoleRequirement.observable_behaviors,string[],false,true,ATS -> adapter,direct,[],source requirement,quality/analysis aid
+P1,requirements[].evidence_constraints,RoleRequirement.evidence_constraints,string[],false,true,ATS -> adapter,direct,[],source requirement,quality/analysis aid
+P1,role_code,Role.role_code,string,false,false,ATS -> adapter,preserve if accepted,PM-DEMO-001,ATS role record,current create service generates code
+P2,source_updated_at,PROPOSED sync metadata,datetime,false,true,ATS -> adapter,preserve,2026-10-02T02:00:00Z,ATS source,not current field

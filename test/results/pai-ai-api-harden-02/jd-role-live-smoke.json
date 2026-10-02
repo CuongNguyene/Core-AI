@@ -1,0 +1,11 @@
+{
+  "synthetic_ids": {"job": "e2e-jd-job-08b1", "profile": "e2e-jd-profile-08b1", "draft": "e2e-role-profile-draft-08b1", "role": "08b10000-0000-4000-8000-000000000002"},
+  "jd_profile_read": {"http": 200, "status": "VERIFIED"},
+  "jd_review_projection": {"http": 200, "status": "VERIFIED"},
+  "role_read": {"http": 200, "status": "VERIFIED"},
+  "draft_read": {"http": 200, "status": "VERIFIED", "state": "draft"},
+  "active_profile_read": {"http": 200, "status": "VERIFIED", "state": "active"},
+  "actual_jd_extraction_execution": "BLOCKED_BY_MODEL",
+  "governance_transition_mutation": "NOT_RUN; existing governance tests cover forbidden transitions",
+  "final_status": "VERIFIED_FOR_PREBUILT_SYNTHETIC_ROLE_LIFECYCLE; EXTRACTION_EXECUTION_BLOCKED_BY_MODEL"
+}

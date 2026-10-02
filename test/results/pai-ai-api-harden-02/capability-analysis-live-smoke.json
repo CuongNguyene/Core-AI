@@ -1,0 +1,14 @@
+{
+  "fresh_create": {"http": 409, "error_code": "semantic_policy_not_configured", "status": "BLOCKED_BY_DATA"},
+  "persisted_positive_read": {"id": "cap-demo-08b1-positive", "http": 200, "status": "VERIFIED"},
+  "persisted_negative_read": {"id": "cap-demo-08b1-negative", "http": 200, "status": "VERIFIED"},
+  "candidate_profile": "e2e-cv-profile-08b1@1, ACCEPTED",
+  "role_profile": "role-profile-e2e-08b1-a@1, active source profile with preview warning",
+  "usage_mode": "preview",
+  "positive_evidence_states": ["supported", "insufficient", "not_found_in_evidence"],
+  "negative_evidence_states": ["not_found_in_evidence"],
+  "warnings": ["current_target_profile_provisional", "source_capability_analysis_preview", "source_learning_need_preview"],
+  "verification_queue": [],
+  "reload": "GET returned persisted canonical portfolio projections",
+  "final_status": "BLOCKED_BY_DATA_FOR_FRESH_CREATE; VERIFIED_FOR_PERSISTED_READ_PROJECTION"
+}

@@ -1,0 +1,14 @@
+{
+  "role_registry": {
+    "role": "app.role_registry.schemas.Role",
+    "fields": ["id UUID", "organization_id UUID", "role_code", "title", "description", "status", "created_by", "created_at", "updated_at", "active_role_profile_id"],
+    "status": ["active", "inactive", "archived"]
+  },
+  "jd_source": {
+    "jd_extraction": "JDRequirementExtractionOutputV2",
+    "fields": ["requirement_id", "statement", "criterion_dimension", "modality", "logical_group", "logical_operator", "evidence_terms", "conflicting_terms", "priority", "target_level", "observable_behaviors", "evidence_constraints", "confidence", "evidence_status", "source_locator", "source_excerpt", "provenance"]
+  },
+  "draft": "app.role_profile_authoring.schemas.RoleProfileDraft",
+  "competency_profile": "app.matching.schemas.RoleCompetencyProfile",
+  "role_identity": "Role.id + organization_id + unique role_code; RoleCompetencyProfile.id@version is the pinned analysis reference"
+}

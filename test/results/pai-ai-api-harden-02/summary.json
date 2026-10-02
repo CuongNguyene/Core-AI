@@ -1,0 +1,19 @@
+{
+  "milestone": "PAI-AI-API-HARDEN-02",
+  "status": "COMPLETE_WITH_EXPLICIT_BLOCKERS",
+  "canonical_repo": "/Users/mac/Developers/work/LMS/Core-AI",
+  "bootstrap": "PASS; second run manifest identical",
+  "fixture_regression": "1 passed",
+  "focused_regression": "126 passed, 0 failed",
+  "governance_learning_regression": "104 passed, 0 failed",
+  "storage_application_smoke": "BLOCKED_BY_STORAGE",
+  "cv_candidate": "accepted synthetic profile read VERIFIED; extraction BLOCKED_BY_MODEL",
+  "jd_role": "synthetic role lifecycle reads VERIFIED; extraction BLOCKED_BY_MODEL",
+  "capability_analysis": "persisted read VERIFIED; fresh create BLOCKED_BY_DATA",
+  "learning_need": "VERIFIED for non-model projection",
+  "learning_path": "VERIFIED for isolated historical synthetic read",
+  "lms_changed": false,
+  "model_configured": false,
+  "commit": false,
+  "push": false
+}

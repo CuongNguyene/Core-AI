@@ -1,0 +1,20 @@
+{
+  "capabilities": [
+    {"name": "Health/Auth", "before": "VERIFIED", "after": "VERIFIED"},
+    {"name": "Deterministic Course Authoring", "before": "VERIFIED", "after": "VERIFIED"},
+    {"name": "CV Document", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_STORAGE"},
+    {"name": "CV Extraction", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_MODEL"},
+    {"name": "Candidate Profile", "before": "NOT_YET_VERIFIED", "after": "VERIFIED", "evidence": "accepted synthetic profile read"},
+    {"name": "JD Document", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_STORAGE"},
+    {"name": "JD Extraction", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_MODEL"},
+    {"name": "Role Profile", "before": "NOT_YET_VERIFIED", "after": "VERIFIED", "evidence": "draft and active profile reads"},
+    {"name": "Capability Analysis", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_DATA", "evidence": "persisted read verified; fresh create rejected by semantic_policy_not_configured"},
+    {"name": "Learning Need", "before": "NOT_YET_VERIFIED", "after": "VERIFIED", "evidence": "negative synthetic gap projection HTTP 200"},
+    {"name": "Conversational Brief", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_MODEL"},
+    {"name": "Curriculum Planning", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_MODEL"},
+    {"name": "Internal Recommendation", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_DATA"},
+    {"name": "External Recommendation", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_EXTERNAL_DEPENDENCY"},
+    {"name": "Learning Path", "before": "NOT_YET_VERIFIED", "after": "VERIFIED", "evidence": "historical synthetic projection HTTP 200 in isolated signed read"},
+    {"name": "Content Generation", "before": "NOT_YET_VERIFIED", "after": "BLOCKED_BY_MODEL"}
+  ]
+}

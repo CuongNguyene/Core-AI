@@ -1,0 +1,9 @@
+{
+  "model": ["MODEL_NAME remains replace-with-approved-model; extraction and generation execution not live-tested"],
+  "worker": ["worker and course-generation-worker remain stopped; model-backed extraction would still be blocked by model"],
+  "data": ["fresh capability analysis requires configured semantic policy; create returned semantic_policy_not_configured"],
+  "storage": ["application MinioDocumentBlobStore put failed because pai-documents bucket does not exist"],
+  "external_dependency": ["external recommendation provider not configured"],
+  "contract": [],
+  "implementation": []
+}

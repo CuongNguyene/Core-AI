@@ -1,0 +1,11 @@
+{
+  "command": "PYTHONPATH=. uv run --extra dev python scripts/bootstrap_e2e_fixtures.py",
+  "before_fix": {
+    "failure": "asyncpg expected str, got UUID",
+    "field": "extraction_jobs.document_id",
+    "python_type": "UUID",
+    "persistence_type": "TEXT/String(128)",
+    "location": "scripts/bootstrap_e2e_fixtures.py:506"
+  },
+  "after_fix": "bootstrap passed in Compose backend runtime"
+}

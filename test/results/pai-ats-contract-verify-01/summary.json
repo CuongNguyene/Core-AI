@@ -1,0 +1,17 @@
+{
+  "milestone": "PAI-ATS-CONTRACT-VERIFY-01",
+  "status": "COMPLETE",
+  "mode": "READ_ONLY_DISCOVERY",
+  "canonical_source": "/Users/mac/Developers/work/LMS/Core-AI",
+  "candidate_canonical_object": "CandidateProfile plus Candidate aggregate/profile link",
+  "candidate_capability_profile_separate_object": false,
+  "role_registry_present": true,
+  "role_canonical_objects": ["Role", "RoleJDVersion", "RoleProfileDraft", "RoleCompetencyProfile"],
+  "candidate_mapping_ready": true,
+  "role_mapping_ready": true,
+  "new_adapter_or_api_needed": true,
+  "production_code_changed": false,
+  "lms_changed": false,
+  "commit": false,
+  "push": false
+}

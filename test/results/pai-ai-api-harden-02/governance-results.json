@@ -1,0 +1,11 @@
+{
+  "live": {
+    "role_profile_draft": "draft",
+    "role_profile_active": "active",
+    "capability_usage_mode": "preview",
+    "provisional_warning": "current_target_profile_provisional",
+    "unsupported_final_claim": "not observed"
+  },
+  "automated": {"governance_learning_selection": "104 passed, 0 failed"},
+  "cross_org_and_forbidden_transitions": "covered by existing tests; no direct DB status update performed"
+}

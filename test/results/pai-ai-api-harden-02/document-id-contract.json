@@ -1,0 +1,12 @@
+{
+  "layers": [
+    {"layer": "domain/schema", "file": "app/extraction/schemas.py", "type": "str", "notes": "ExtractionJob.document_id is an external string reference"},
+    {"layer": "SQLAlchemy", "file": "app/extraction/models.py", "type": "Mapped[str] / String(128)", "notes": "extraction_jobs.document_id"},
+    {"layer": "migration", "file": "alembic/versions/20260731_02_extraction_slice.py", "type": "sa.String(length=128)", "notes": "database column is text-like"},
+    {"layer": "repository", "file": "app/extraction/repository.py", "type": "str", "notes": "get/enqueue/profile boundaries use string document references"},
+    {"layer": "API", "file": "app/extraction/api.py", "type": "str", "notes": "CreateExtractionJobRequest.document_id"}
+  ],
+  "canonical_type": "string/text at extraction persistence boundary",
+  "classification": "FIXTURE_DEFECT",
+  "production_schema_changed": false
+}

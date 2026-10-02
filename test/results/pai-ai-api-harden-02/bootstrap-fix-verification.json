@@ -1,0 +1,9 @@
+{
+  "fix": "serialize UUID source_document_id with _document_id_for_persistence before new ExtractionJobRecord and ExtractionProfileRecord inserts",
+  "regression": {"test": "tests/test_e2e_fixture_bootstrap.py", "before": "collection ImportError", "after": "1 passed"},
+  "first_run": {"exit_code": 0, "manifest": "synthetic IDs emitted", "result": "PASS"},
+  "second_run": {"exit_code": 0, "manifest_identical": true, "result": "PASS"},
+  "manual_db_insert": false,
+  "production_schema_changed": false,
+  "production_domain_changed": false
+}

@@ -1,0 +1,9 @@
+{
+  "synthetic_ids": {"job": "e2e-cv-job-08b1", "profile": "e2e-cv-profile-08b1", "candidate": "08b10000-0000-4000-8000-000000000001"},
+  "extraction_job_read": {"http": 200, "status": "VERIFIED"},
+  "accepted_cv_profile_read": {"http": 200, "status": "VERIFIED"},
+  "candidate_reference_in_capability_projection": {"http": 200, "status": "VERIFIED"},
+  "actual_extraction_execution": "BLOCKED_BY_MODEL",
+  "worker": "stopped",
+  "final_status": "VERIFIED_FOR_PREBUILT_SYNTHETIC_PROFILE; EXTRACTION_EXECUTION_BLOCKED_BY_MODEL"
+}

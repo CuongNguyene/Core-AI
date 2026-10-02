@@ -80,6 +80,11 @@ ROLE_CODE = "E2E-08B1"
 HISTORICAL_LEARNING_PATH_ID = "e2e-historical-learning-path-08b1"
 
 
+def _document_id_for_persistence(document_id: UUID) -> str:
+    """Serialize the UUID domain identifier for the text extraction boundary."""
+    return str(document_id)
+
+
 class _CommonRequirement(TypedDict):
     classification: RequirementClassification
     confidence_threshold: float
@@ -503,7 +508,7 @@ async def main() -> None:
             if job is None:
                 job = ExtractionJobRecord(
                     id=job_id,
-                    document_id=source_document_id,
+                    document_id=_document_id_for_persistence(source_document_id),
                     document_kind=document_type,
                     owner_actor_id=ACTOR_ID,
                     correlation_id=job_id,
@@ -521,7 +526,7 @@ async def main() -> None:
                     ExtractionProfileRecord(
                         id=profile_id,
                         job_id=job_id,
-                        document_id=source_document_id,
+                        document_id=_document_id_for_persistence(source_document_id),
                         document_kind=document_type,
                         owner_actor_id=ACTOR_ID,
                         version=1,

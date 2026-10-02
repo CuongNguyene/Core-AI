@@ -1,0 +1,13 @@
+{
+  "gaps": [
+    {"gap":"No external_candidate_id/source_system field on Candidate", "classification":"IDENTITY_GAP", "impact":"adapter must maintain mapping outside current domain or a future API must add it", "needed_later":true},
+    {"gap":"No external_role_id/source_system field on Role", "classification":"IDENTITY_GAP", "impact":"ATS role identity cannot be persisted canonically today", "needed_later":true},
+    {"gap":"No direct ATS CandidateProfile ingest API", "classification":"NEW_API_REQUIRED", "impact":"current path is create candidate + document/extraction/profile link", "needed_later":true},
+    {"gap":"No direct structured ATS role source API; draft creation requires accepted JD ExtractionProfile", "classification":"ADAPTER_REQUIRED", "impact":"ATS structured job cannot currently terminate at RoleProfileDraft without an adapter/source artifact", "needed_later":true},
+    {"gap":"CandidateProfile evidence requires SourceLocator for source-backed capability observations", "classification":"PROVENANCE_GAP", "impact":"structured ATS evidence needs a source-document/field locator mapping", "needed_later":true},
+    {"gap":"RoleRequirement.target_level is nullable free text, not a controlled level enum", "classification":"SCHEMA_GAP", "impact":"ATS must send only explicit source levels; Core-AI should not infer", "needed_later":false},
+    {"gap":"Role create API generates role_code and does not accept external role_code", "classification":"ADAPTER_REQUIRED", "impact":"preserve ATS role code in future adapter metadata", "needed_later":true},
+    {"gap":"No current source_updated_at/upsert contract", "classification":"VERSIONING_GAP", "impact":"future adapter must define stale-event and new profile-version behavior", "needed_later":true},
+    {"gap":"Role Registry already exists", "classification":"NO_GAP", "impact":"future ATS role adapter can target Role + RoleJDVersion + RoleProfileDraft", "needed_later":false}
+  ]
+}

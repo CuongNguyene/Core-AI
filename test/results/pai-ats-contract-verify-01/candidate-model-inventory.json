@@ -1,0 +1,17 @@
+{
+  "canonical_object": "app.extraction.profile.CandidateProfile",
+  "candidate_aggregate": "app.candidate.schemas.Candidate",
+  "candidate_capability_profile_object": "NOT_PRESENT_AS_SEPARATE_CURRENT_OBJECT",
+  "persistence": {
+    "candidate": "candidates",
+    "profile_link": "candidate_profiles",
+    "accepted_extraction_profile": "extraction_profiles.normalized_output with _candidate_profile",
+    "claims": "candidate_claims",
+    "evidence": "candidate_evidence"
+  },
+  "identity": {"internal": "Candidate.candidate_id UUID", "display": "candidate_code", "external_source_id": "NOT_CURRENTLY_MODELED"},
+  "profile_schema_version": "2.0",
+  "profile_entities": ["employment_history", "projects", "research_work", "education", "publications", "skills", "credentials", "activities", "findings"],
+  "candidate_lifecycle": ["draft", "extraction_pending", "pending_review", "accepted", "needs_revision", "rejected"],
+  "candidate_status": ["active", "archived"]
+}

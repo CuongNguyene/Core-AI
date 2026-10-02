@@ -1,0 +1,38 @@
+{
+  "source_system": "synthetic-ats",
+  "external_candidate_id": "cand-demo-0001",
+  "organization_ref": "org-demo-0001",
+  "source_updated_at": "2026-10-02T02:00:00Z",
+  "candidate": {
+    "display_name": "Synthetic Candidate",
+    "email": "candidate@example.invalid",
+    "phone": "+84000000000",
+    "profile": {
+      "schema_version": "2.0",
+      "skills": [
+        {
+          "entity": "Python",
+          "evidence": [
+            {
+              "context": "used_in_employment",
+              "usage": "backend development",
+              "source_excerpt": "Built backend services with Python.",
+              "confidence": 0.95,
+              "source_type": "synthetic_ats_candidate_record",
+              "source_locator": null
+            }
+          ]
+        }
+      ],
+      "employment_history": [],
+      "projects": [],
+      "research_work": [],
+      "education": [],
+      "publications": [],
+      "credentials": [],
+      "activities": [],
+      "findings": []
+    }
+  },
+  "integration_note": "PROPOSED adapter payload; current Core-AI has no direct ATS profile-ingest endpoint and source_locator must be resolved before capability analysis."
+}

@@ -1,0 +1,9 @@
+{
+  "pipeline": ["accepted JD ExtractionProfile", "role_profile_authoring.source_adapter.adapt_jd_profile", "RoleProfileDraft", "quality_gate.evaluate_role_profile_draft", "approval", "RoleCompetencyProfile"],
+  "source_facts": ["statement", "evidence_terms", "conflicting_terms", "source_locator", "source_excerpt", "source_requirement_ref", "source schema/version"],
+  "normalized": ["RoleRequirement.id", "criterion_dimension", "classification", "confidence_threshold", "assessment_recommendation", "rubric_version", "logical_operator", "provenance"],
+  "derived_or_policy": ["threshold policy fields", "classification from modality", "rubric/policy versions", "quality findings", "approval eligibility", "semantic policy reference/packs"],
+  "governance": ["draft", "in_review", "needs_revision", "provisional", "active", "validated", "approved"],
+  "quality_gate": "source chain, requirement IDs, evidence terms, criterion dimensions, provenance and legacy uncertainty checks",
+  "capability_analysis_input": "RoleCompetencyProfile with requirements, pinned id@version and available semantic policy"
+}

@@ -1,7 +1,8 @@
-from datetime import UTC, datetime
-from uuid import UUID
+from datetime import UTC, datetime, timedelta
+from uuid import UUID, uuid4
 
 import pytest
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from fastapi import FastAPI
 from httpx import ASGITransport, AsyncClient
 from pydantic import SecretStr
@@ -10,6 +11,11 @@ from app.authorization.fixtures import LEARNER_ID, ORG_PAI_ID, subject_fixture
 from app.candidate.repository import InMemoryCandidateRepository
 from app.candidate.schemas import Candidate, CandidateReviewState
 from app.capability_analysis.errors import CurrentTargetNotUsableError
+from app.integration.actor_context import (
+    SignedActorContextVerifier,
+    actor_context_headers,
+)
+from app.integration.nonce_store import InMemoryActorContextNonceStore
 from app.main import create_app
 from app.matching.schemas import CriterionDimension, RequirementClassification, RoleRequirement
 from app.role_registry.repository import InMemoryRoleRegistryRepository
@@ -19,6 +25,8 @@ from tests.test_capability_analysis_service import learner, service_with
 
 CANDIDATE_ID = UUID("10000000-0000-0000-0000-000000000001")
 ROLE_ID = UUID("20000000-0000-0000-0000-000000000001")
+AUTH_PRIVATE_KEY = Ed25519PrivateKey.generate()
+AUTH_NOW = datetime(2026, 8, 24, 10, 0, tzinfo=UTC)
 
 
 async def capability_integration_client() -> tuple[AsyncClient, InMemoryCandidateRepository]:
@@ -81,6 +89,11 @@ async def capability_integration_client() -> tuple[AsyncClient, InMemoryCandidat
     service._role_registry = role_registry  # type: ignore[attr-defined]
     app.state.capability_gap_analysis_service = service
     app.state.subject_repository = subject_fixture()
+    app.state.actor_context_verifier = SignedActorContextVerifier(
+        public_keys={"lms-key-1": AUTH_PRIVATE_KEY.public_key()},
+        now=lambda: AUTH_NOW,
+    )
+    app.state.actor_context_nonce_store = InMemoryActorContextNonceStore()
     return (
         AsyncClient(transport=ASGITransport(app=app), base_url="http://testserver"),
         candidates,
@@ -90,8 +103,16 @@ async def capability_integration_client() -> tuple[AsyncClient, InMemoryCandidat
 def headers(key: str = "analysis-key-001") -> dict[str, str]:
     return {
         "Authorization": "Bearer integration-test-key",
-        "X-PAI-Actor-ID": str(LEARNER_ID),
         "Idempotency-Key": key,
+        **actor_context_headers(
+            private_key=AUTH_PRIVATE_KEY,
+            key_id="lms-key-1",
+            actor_id=LEARNER_ID,
+            organization_id=ORG_PAI_ID,
+            issued_at=AUTH_NOW,
+            expires_at=AUTH_NOW + timedelta(seconds=30),
+            nonce=f"capability-gap-{uuid4()}",
+        ),
     }
 
 
