@@ -242,8 +242,11 @@ CourseGenerationAcceptedEnvelopeV1 = IntegrationEnvelopeV1[CourseGenerationRespo
 
 
 class CurriculumPlanV1(CurriculumPlanProjection):
+    authoring_request_ref: str = Field(min_length=1)
     version: int = Field(ge=1)
     supersedes_plan_ref: str | None = None
+    course_title: str = Field(min_length=1)
+    course_description: str = Field(min_length=1)
 
     @classmethod
     def from_domain(cls, plan: CurriculumPlan) -> "CurriculumPlanV1":
@@ -261,8 +264,11 @@ class CurriculumPlanV1(CurriculumPlanProjection):
                 projected_status = CurriculumPlanStatus.READY_FOR_REVIEW
         return cls(
             plan_ref=plan.id,
+            authoring_request_ref=plan.authoring_request_ref,
             version=plan.version,
             supersedes_plan_ref=plan.supersedes_plan_ref,
+            course_title=plan.course_title,
+            course_description=plan.course_description,
             status=projected_status,
             duration=plan.normalized_duration,
             objective_count=len(plan.learning_objectives),
@@ -292,6 +298,24 @@ class CurriculumPlanRevisionRequestV1(BaseModel):
 
     operations: list[CurriculumPatchOperationV1] = Field(min_length=1)
     rationale: str | None = None
+
+
+class CurriculumFeedbackRequestV1(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    feedback: dict[str, Any]
+    rationale: str | None = None
+
+
+class CurriculumFeedbackPreviewV1(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    operations: list[CurriculumPatchOperationV1]
+    before: dict[str, Any]
+    after: dict[str, Any]
+
+
+CurriculumFeedbackPreviewEnvelopeV1 = IntegrationEnvelopeV1[CurriculumFeedbackPreviewV1]
 
 
 class CourseDraftRevisionRequestV1(CourseDraftRevisionRequest):

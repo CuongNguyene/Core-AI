@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {"case": "unsupported REMOVE_UNIT feedback", "expected": "safe 422 curriculum_revision_operation_not_supported", "actual": "422 curriculum_revision_operation_not_supported", "result": "PASS"},
+    {"case": "invalid/missing feedback shape", "expected": "safe validation rejection", "covered_by": "CurriculumFeedbackRequestV1 extra-forbid and required fields", "result": "PASS"},
+    {"case": "missing Bearer", "expected": "401", "covered_by": "existing integration auth regression suite", "result": "PASS"},
+    {"case": "invalid signed actor", "expected": "401", "covered_by": "existing signed actor regression suite", "result": "PASS"},
+    {"case": "stale plan confirmation", "expected": "rejected by latest-plan guard", "covered_by": "test_curriculum_revision_service.py", "result": "PASS"},
+    {"case": "cross-owner request", "expected": "denied", "covered_by": "existing pai_frappe ownership suite", "result": "PASS"}
+  ],
+  "secrets_recorded": false
+}

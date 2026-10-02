@@ -1,0 +1,17 @@
+{
+  "request_name": "dboeftbdlp",
+  "initial_plan_version": 1,
+  "get": "PASS",
+  "list": "PASS",
+  "preview": "PASS",
+  "preview_persisted_new_plan": false,
+  "revise": "PASS",
+  "new_plan_version": 2,
+  "review": "PASS",
+  "confirm": "PASS",
+  "reload": "PASS",
+  "training_brief_revision_unchanged": true,
+  "materialization_called": false,
+  "publish_called": false,
+  "browser_direct_core_call": false
+}

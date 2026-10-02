@@ -1,0 +1,12 @@
+{
+  "pai_frappe_wrappers": [
+    {"function": "list_curriculum_plans", "route": "GET /api/v1/course-authoring/requests/{request_id}/curriculum-plans", "mutation": false},
+    {"function": "get_curriculum_plan", "route": "GET /api/v1/course-authoring/curriculum-plans/{plan_id}", "mutation": false},
+    {"function": "preview_curriculum_feedback", "route": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/feedback/preview", "mutation": false},
+    {"function": "revise_curriculum_plan", "route": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/feedback", "mutation": true},
+    {"function": "review_course_authoring_plan", "route": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/review", "mutation": true},
+    {"function": "confirm_course_authoring_plan", "route": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/confirm", "mutation": true}
+  ],
+  "browser_direct_core_calls": false,
+  "auth_and_error_path": "existing PAIClient and safe PAIClientError mapping"
+}

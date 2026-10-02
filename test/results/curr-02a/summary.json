@@ -1,0 +1,14 @@
+{
+  "task": "CURR-02A",
+  "status": "COMPLETE",
+  "scope": "backend and pai_frappe bridge only",
+  "core_api_routes_added": 3,
+  "pai_frappe_wrappers_added": 4,
+  "lms_ui_changed": false,
+  "materialization_changed": false,
+  "publish_changed": false,
+  "training_brief_api_changed": false,
+  "secrets_exposed": false,
+  "commit": false,
+  "push": false
+}

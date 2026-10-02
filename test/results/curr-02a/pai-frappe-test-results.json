@@ -1,0 +1,7 @@
+{
+  "command": "python -m unittest discover -s apps/pai_frappe/pai_frappe/tests -p test_*.py -v",
+  "passed": 36,
+  "failed": 0,
+  "result": "PASS",
+  "runtime": "Frappe container"
+}

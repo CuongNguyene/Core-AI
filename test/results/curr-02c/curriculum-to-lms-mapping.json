@@ -1,0 +1,13 @@
+{
+  "course_title": {"target": "LMS Course.title", "transformation": "trimmed text", "persisted": true},
+  "course_description": {"target": "LMS Course.description and short_introduction", "transformation": "trimmed text; short_introduction capped at 1000", "persisted": true},
+  "module.title": {"target": "Course Chapter.title", "transformation": "trimmed text", "persisted": true},
+  "module.order": {"target": "Course Chapter child-table idx", "transformation": "sort ascending before append", "persisted": true},
+  "lesson.title": {"target": "Course Lesson.title", "transformation": "trimmed text", "persisted": true},
+  "lesson.order": {"target": "Course Lesson child-table idx", "transformation": "sort ascending before append", "persisted": true},
+  "lesson.objective_refs": {"target": null, "transformation": "none", "persisted": false, "notes": "no canonical LMS field"},
+  "lesson.estimated_minutes": {"target": null, "transformation": "none", "persisted": false, "notes": "no canonical LMS field"},
+  "lesson.lesson_type": {"target": null, "transformation": "none", "persisted": false, "notes": "no canonical LMS field"},
+  "lesson.body": {"target": "Course Lesson.body", "transformation": "empty structural placeholder", "persisted": true},
+  "published": {"target": "LMS Course.published", "transformation": "constant 0", "persisted": true}
+}

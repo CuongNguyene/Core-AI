@@ -53,6 +53,9 @@ from app.integration.course_authoring_schemas import (
     CourseGenerationAcceptedEnvelopeV1,
     CourseGenerationAcceptedV1,
     CourseGenerationProgressV1,
+    CurriculumFeedbackPreviewEnvelopeV1,
+    CurriculumFeedbackPreviewV1,
+    CurriculumFeedbackRequestV1,
     CurriculumPlanEnvelopeV1,
     CurriculumPlanListEnvelopeV1,
     CurriculumPlanRevisionRequestV1,
@@ -487,6 +490,26 @@ async def list_curriculum_plans(
     )
 
 
+@router.get(
+    "/curriculum-plans/{plan_id}",
+    response_model=CurriculumPlanEnvelopeV1,
+)
+async def get_curriculum_plan(
+    plan_id: str,
+    request: Request,
+    actor: ActorContext = Depends(get_signed_actor_context),
+) -> IntegrationEnvelopeV1[CurriculumPlanV1]:
+    try:
+        plan = await _curriculum_revision_service(request).get(plan_id)
+        await _service(request).get(plan.authoring_request_ref, actor)
+    except Exception as exc:
+        raise _error(exc) from exc
+    return IntegrationEnvelopeV1(
+        schema_version="v1",
+        data=CurriculumPlanV1.from_domain(plan),
+    )
+
+
 @router.post(
     "/curriculum-plans/{plan_id}/review",
     response_model=CurriculumPlanEnvelopeV1,
@@ -502,6 +525,59 @@ async def review_curriculum_plan(
     except Exception as exc:
         raise _error(exc) from exc
     return IntegrationEnvelopeV1(schema_version="v1", data=CurriculumPlanV1.from_domain(plan))
+
+
+@router.post(
+    "/curriculum-plans/{plan_id}/feedback/preview",
+    response_model=CurriculumFeedbackPreviewEnvelopeV1,
+)
+async def preview_curriculum_feedback(
+    plan_id: str,
+    body: CurriculumFeedbackRequestV1,
+    request: Request,
+    actor: ActorContext = Depends(get_signed_actor_context),
+) -> IntegrationEnvelopeV1[CurriculumFeedbackPreviewV1]:
+    try:
+        plan = await _curriculum_revision_service(request).get(plan_id)
+        await _service(request).get(plan.authoring_request_ref, actor)
+        preview = await _curriculum_revision_service(request).adapt_curriculum_feedback(
+            plan_id, body.feedback, actor
+        )
+    except Exception as exc:
+        raise _error(exc) from exc
+    return IntegrationEnvelopeV1(
+        schema_version="v1",
+        data=CurriculumFeedbackPreviewV1(
+            operations=preview.operations,
+            before=preview.before,
+            after=preview.after,
+        ),
+    )
+
+
+@router.post(
+    "/curriculum-plans/{plan_id}/feedback",
+    response_model=CurriculumPlanEnvelopeV1,
+    status_code=status.HTTP_201_CREATED,
+)
+async def revise_curriculum_plan_from_feedback(
+    plan_id: str,
+    body: CurriculumFeedbackRequestV1,
+    request: Request,
+    actor: ActorContext = Depends(get_signed_actor_context),
+) -> IntegrationEnvelopeV1[CurriculumPlanV1]:
+    try:
+        plan = await _curriculum_revision_service(request).get(plan_id)
+        await _service(request).get(plan.authoring_request_ref, actor)
+        revised = await _curriculum_revision_service(request).apply_curriculum_feedback(
+            plan_id, body.feedback, body.rationale, actor
+        )
+    except Exception as exc:
+        raise _error(exc) from exc
+    return IntegrationEnvelopeV1(
+        schema_version="v1",
+        data=CurriculumPlanV1.from_domain(revised),
+    )
 
 
 @router.post(

@@ -1,0 +1,8 @@
+[
+  {"case": "READY_FOR_REVIEW plan", "expected": "reject before import record lookup", "result": "covered by test", "status": "PASS"},
+  {"case": "cross-request plan", "expected": "permission denial", "result": "covered by test", "status": "PASS"},
+  {"case": "plan_ref mismatch", "expected": "validation denial", "result": "implemented", "status": "PASS"},
+  {"case": "mid-tree failure", "expected": "savepoint rollback and Failed import", "result": "covered by test", "status": "PASS"},
+  {"case": "repeated same plan", "expected": "same LMS Course, no duplicate", "result": "CRS-2026-00003 reused", "status": "PASS"},
+  {"case": "publish path", "expected": "no publish", "result": "published=0; no publish API", "status": "PASS"}
+]

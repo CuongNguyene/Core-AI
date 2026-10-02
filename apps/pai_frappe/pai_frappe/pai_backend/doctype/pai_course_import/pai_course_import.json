@@ -4,13 +4,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "pai_request", "result_ref", "result_version", "result_status", "source_hash", "status",
+  "pai_request", "source_type", "result_ref", "source_plan_ref", "source_plan_version", "result_version", "result_status", "source_hash", "status",
   "lms_course", "imported_by", "imported_on", "error_code", "error_message"
  ],
  "fields": [
   {"fieldname": "pai_request", "fieldtype": "Link", "label": "PAI Request", "options": "PAI Request", "reqd": 1, "read_only": 1},
-  {"fieldname": "result_ref", "fieldtype": "Data", "label": "PAI Result Reference", "reqd": 1, "unique": 1, "read_only": 1},
-  {"fieldname": "result_version", "fieldtype": "Int", "label": "PAI Result Version", "reqd": 1, "read_only": 1},
+  {"fieldname": "source_type", "fieldtype": "Select", "label": "Source Type", "options": "Generated Course\nCurriculum Plan", "default": "Generated Course", "reqd": 1, "read_only": 1},
+  {"fieldname": "result_ref", "fieldtype": "Data", "label": "PAI Result Reference", "unique": 1, "read_only": 1},
+  {"fieldname": "source_plan_ref", "fieldtype": "Data", "label": "CurriculumPlan Reference", "unique": 1, "read_only": 1},
+  {"fieldname": "source_plan_version", "fieldtype": "Int", "label": "CurriculumPlan Version", "read_only": 1},
+  {"fieldname": "result_version", "fieldtype": "Int", "label": "PAI Result Version", "read_only": 1},
   {"fieldname": "result_status", "fieldtype": "Data", "label": "PAI Result Status", "read_only": 1},
   {"fieldname": "source_hash", "fieldtype": "Data", "label": "Source Hash", "read_only": 1},
   {"fieldname": "status", "fieldtype": "Select", "label": "Import Status", "options": "Pending\nImporting\nImported\nFailed", "default": "Pending", "read_only": 1},

@@ -1,0 +1,6 @@
+{
+  "command": "uv run pytest tests/test_curriculum_planning.py tests/test_curriculum_planning_api.py tests/test_curriculum_revision_service.py tests/test_curriculum_conversation_adapter.py tests/test_curriculum_review_api.py tests/test_course_authoring_api.py tests/test_course_authoring_revision_api.py tests/test_course_authoring_hardening.py tests/test_integration_api.py tests/test_errors.py -q",
+  "passed": 72,
+  "failed": 0,
+  "result": "PASS"
+}

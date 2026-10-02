@@ -1,0 +1,14 @@
+{
+  "operations": [
+    {"operation": "GET current/latest plan", "route_or_service": "GET /api/v1/course-authoring/requests/{request_id}/plan", "before": "EXISTS_PUBLIC_API", "after": "NO_GAP"},
+    {"operation": "LIST plans/revisions", "route_or_service": "GET /api/v1/course-authoring/requests/{request_id}/curriculum-plans", "before": "EXISTS_PUBLIC_API", "after": "NO_GAP"},
+    {"operation": "GET specific plan version", "route_or_service": "GET /api/v1/course-authoring/curriculum-plans/{plan_id}", "before": "PUBLIC_ROUTE_MISSING", "after": "EXISTS_PUBLIC_API"},
+    {"operation": "REVIEW plan", "route_or_service": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/review", "before": "EXISTS_PUBLIC_API", "after": "NO_GAP"},
+    {"operation": "PREVIEW feedback", "route_or_service": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/feedback/preview", "before": "SERVICE_NOT_EXPOSED", "after": "EXISTS_PUBLIC_API"},
+    {"operation": "REVISE from feedback", "route_or_service": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/feedback", "before": "SERVICE_NOT_EXPOSED", "after": "EXISTS_PUBLIC_API"},
+    {"operation": "REVISE with explicit operations", "route_or_service": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/revisions", "before": "EXISTS_PUBLIC_API", "after": "NO_GAP"},
+    {"operation": "CONFIRM plan", "route_or_service": "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/confirm", "before": "EXISTS_PUBLIC_API", "after": "NO_GAP"}
+  ],
+  "auth": "integration API key plus signed actor context",
+  "envelope": "IntegrationEnvelopeV1"
+}

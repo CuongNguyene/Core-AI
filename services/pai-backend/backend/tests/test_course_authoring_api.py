@@ -258,3 +258,7 @@ def test_course_authoring_router_is_registered_in_application() -> None:
     assert "/api/v1/course-authoring/results/{result_id}/revisions" in paths
     assert "/api/v1/course-authoring/requests/{request_id}/results" in paths
     assert "/api/v1/course-authoring/results/{result_id}/ready-for-materialization" in paths
+    assert "/api/v1/course-authoring/requests/{request_id}/curriculum-plans" in paths
+    assert "/api/v1/course-authoring/curriculum-plans/{plan_id}" in paths
+    assert "/api/v1/course-authoring/curriculum-plans/{plan_id}/feedback/preview" in paths
+    assert "/api/v1/course-authoring/curriculum-plans/{plan_id}/feedback" in paths

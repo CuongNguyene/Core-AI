@@ -11,6 +11,10 @@ from pai_frappe.api import (
 	_normalize_idempotency_key,
 	_parse_brief_revision,
 	create_course_authoring_request,
+	get_curriculum_plan,
+	list_curriculum_plans,
+	preview_curriculum_feedback,
+	revise_curriculum_plan,
 )
 from pai_frappe.client import PAIClient, PAIClientError
 from pai_frappe.pai_backend.doctype.pai_request.pai_request import PAIRequest
@@ -269,6 +273,52 @@ class TestPAIClient(TestCase):
 		_parse_brief_revision({"unsafe": "value"})
 
 		throw.assert_called_with("Invalid PAI brief revision.", frappe.ValidationError)
+
+	@patch("pai_frappe.api._call_pai")
+	@patch("pai_frappe.api._get_request")
+	@patch("pai_frappe.api._require_authoring_access")
+	def test_curriculum_plan_wrappers_map_server_side_routes(
+		self, require_access, get_request, call_pai
+	):
+		doc = SimpleNamespace(pai_request_id="pai-request-001")
+		get_request.return_value = doc
+		call_pai.side_effect = [
+			{"data": [{"plan_ref": "curriculum-plan:v1"}]},
+			{"data": {"plan_ref": "curriculum-plan:v1"}},
+			{"data": {"operations": []}},
+			{"data": {"plan_ref": "curriculum-plan:v2"}},
+		]
+
+		self.assertEqual(list_curriculum_plans.__wrapped__("PAI-REQUEST-001")[0]["plan_ref"], "curriculum-plan:v1")
+		self.assertEqual(
+			get_curriculum_plan.__wrapped__("PAI-REQUEST-001", "curriculum-plan:v1")["plan_ref"],
+			"curriculum-plan:v1",
+		)
+		preview_curriculum_feedback.__wrapped__(
+			"PAI-REQUEST-001", "curriculum-plan:v1", {"kind": "ADJUST_EFFORT"}
+		)
+		revise_curriculum_plan.__wrapped__(
+			"PAI-REQUEST-001", "curriculum-plan:v1", {"kind": "ADJUST_EFFORT"}, "Increase effort"
+		)
+
+		self.assertEqual(
+			[call.args[:2] for call in call_pai.call_args_list],
+			[
+				("GET", "/api/v1/course-authoring/requests/pai-request-001/curriculum-plans"),
+				("GET", "/api/v1/course-authoring/curriculum-plans/curriculum-plan:v1"),
+				("POST", "/api/v1/course-authoring/curriculum-plans/curriculum-plan:v1/feedback/preview"),
+				("POST", "/api/v1/course-authoring/curriculum-plans/curriculum-plan:v1/feedback"),
+			],
+		)
+		self.assertEqual(
+			call_pai.call_args_list[2].kwargs["payload"],
+			{"feedback": {"kind": "ADJUST_EFFORT"}},
+		)
+		self.assertEqual(
+			call_pai.call_args_list[3].kwargs["payload"],
+			{"feedback": {"kind": "ADJUST_EFFORT"}, "rationale": "Increase effort"},
+		)
+		self.assertEqual(require_access.call_count, 4)
 
 
 	@patch("pai_frappe.api._is_admin", return_value=False)

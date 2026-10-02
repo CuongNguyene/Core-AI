@@ -1,0 +1,7 @@
+{
+  "pai_frappe_focused": "9 passed",
+  "pai_frappe_full": "45 passed",
+  "existing_generated_course_materialization": "included in 44 passed",
+  "core_ai_curriculum_and_bridge": "72 passed",
+  "migration": "bench --site lms.localhost migrate passed"
+}

@@ -1,0 +1,7 @@
+{
+  "required_status": "CONFIRMED",
+  "request_binding": "plan.authoring_request_ref must equal local PAI Request.pai_request_id",
+  "plan_binding": "returned plan_ref must equal requested plan_id",
+  "owner_binding": "local _get_request ownership plus authenticated Core-AI actor context",
+  "rejected": ["missing plan", "plan_ref mismatch", "non-confirmed status", "superseded/stale plan", "cross-request plan", "malformed plan"]
+}

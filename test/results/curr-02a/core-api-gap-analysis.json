@@ -1,0 +1,15 @@
+{
+  "added_routes": [
+    "GET /api/v1/course-authoring/curriculum-plans/{plan_id}",
+    "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/feedback/preview",
+    "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/feedback"
+  ],
+  "existing_routes_preserved": [
+    "GET /api/v1/course-authoring/requests/{request_id}/curriculum-plans",
+    "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/review",
+    "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/revisions",
+    "POST /api/v1/course-authoring/curriculum-plans/{plan_id}/confirm"
+  ],
+  "service_reused": ["adapt_curriculum_feedback", "apply_curriculum_feedback"],
+  "unsupported_action_expansion": false
+}

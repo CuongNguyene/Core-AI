@@ -1,0 +1,23 @@
+{
+  "site": "lms.localhost",
+  "request_name": "dboeftbdlp",
+  "plan_ref": "curriculum-plan:08ee70cb8d70494f900ead1a54ff2f5b",
+  "plan_status": "CONFIRMED",
+  "plan_version": 2,
+  "import_name": "a3dojo05nk",
+  "lms_course": "CRS-2026-00003",
+  "course_published": 0,
+  "course_status": "In Progress",
+  "chapter_count": 2,
+  "lesson_count": 4,
+  "lesson_bodies_empty": true,
+  "source_plan_linkage": true,
+  "first_materialization": "PASS",
+  "repeated_materialization": "PASS",
+  "duplicate_course_created": false,
+  "training_brief_revision_count_before": 2,
+  "training_brief_revision_count_after": 2,
+  "model_call_during_materialization": false,
+  "publish_call": false,
+  "browser_direct_core_call": false
+}

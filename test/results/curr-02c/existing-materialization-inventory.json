@@ -1,0 +1,16 @@
+{
+  "generated_course_path": "apps/pai_frappe/pai_frappe/materialization.py",
+  "readiness_guard": "READY_FOR_MATERIALIZATION",
+  "generated_course_dto_reused": false,
+  "reused_primitives": [
+    "Frappe get_doc/insert/save conventions",
+    "PAI Course Import provenance DocType",
+    "_resolve_course_instructor authorization helper"
+  ],
+  "generated_course_specific": [
+    "get_generated_course validation",
+    "generated_course source hash",
+    "render_lesson_body"
+  ],
+  "curriculum_path": "apps/pai_frappe/pai_frappe/curriculum_materialization.py"
+}

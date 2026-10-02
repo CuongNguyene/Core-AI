@@ -1,0 +1,22 @@
+{
+  "live_request": "dboeftbdlp",
+  "plan_v1": {
+    "plan_ref": "curriculum-plan:535ad666d597464b8634718218cd4bfa",
+    "version": 1,
+    "status_before_revision": "READY_FOR_REVIEW",
+    "status_after_revision": "READY_FOR_REVIEW",
+    "lesson_minutes_unchanged": true
+  },
+  "plan_v2": {
+    "plan_ref": "curriculum-plan:08ee70cb8d70494f900ead1a54ff2f5b",
+    "version": 2,
+    "supersedes_plan_ref": "curriculum-plan:535ad666d597464b8634718218cd4bfa",
+    "review_status": "READY_FOR_CONFIRMATION",
+    "confirmed_status": "CONFIRMED"
+  },
+  "preview_plan_count": 1,
+  "post_revision_plan_count": 2,
+  "old_plan_immutable": true,
+  "training_brief_revision_count_before": 2,
+  "training_brief_revision_count_after": 2
+}

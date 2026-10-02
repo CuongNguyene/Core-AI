@@ -1,0 +1,6 @@
+{
+  "test_file": "apps/pai_frappe/pai_frappe/tests/test_curriculum_materialization.py",
+  "tests": 9,
+  "passed": 9,
+  "coverage": ["mapping", "order", "confirmed gate", "empty lesson body", "unpublished course", "bridge fetch", "idempotency", "rollback", "cross-request rejection"]
+}

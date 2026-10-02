@@ -1,0 +1,8 @@
+{
+  "source_plan_ref": "PAI Course Import.source_plan_ref",
+  "unique_constraint": true,
+  "stored_course_linkage": "PAI Course Import.lms_course",
+  "duplicate_behavior": "return existing Imported linkage with already_materialized=true",
+  "in_progress_behavior": "safe validation error; no second tree",
+  "live_result": {"first_course": "CRS-2026-00003", "second_course": "CRS-2026-00003", "duplicate_created": false}
+}

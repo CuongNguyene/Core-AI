@@ -1,0 +1,17 @@
+{
+  "request_shape": {
+    "feedback": {
+      "kind": "ADJUST_EFFORT",
+      "target_ref": "<lesson_ref>",
+      "estimated_minutes": "positive integer"
+    },
+    "rationale": "optional string"
+  },
+  "supported_actions": [
+    {"action": "ADJUST_EFFORT", "preview": true, "revision": true, "notes": "Maps to UPDATE_UNIT_EFFORT."}
+  ],
+  "unsupported_actions": [
+    "REDUCE_EMPHASIS", "INCREASE_EMPHASIS", "REMOVE_UNIT", "ADD_UNIT", "MOVE_UNIT", "MERGE_UNITS", "SPLIT_UNIT", "REORDER_MODULE", "REORDER_UNIT", "ADJUST_PRACTICE", "ADJUST_ASSESSMENT", "OTHER"
+  ],
+  "scope_rule": "ADD_UNIT or scope expansion requires a new confirmed TrainingBrief revision."
+}

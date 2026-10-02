@@ -1,0 +1,24 @@
+{
+  "lms_course": {
+    "doctype": "LMS Course",
+    "required_fields": ["title", "description", "short_introduction", "instructors"],
+    "published_field": "published",
+    "draft_value": 0,
+    "status_default": "In Progress",
+    "chapter_table": "chapters"
+  },
+  "course_chapter": {
+    "doctype": "Course Chapter",
+    "required_fields": ["course", "title"],
+    "lesson_table": "lessons",
+    "ordering": "child-table idx follows adapter source order"
+  },
+  "course_lesson": {
+    "doctype": "Course Lesson",
+    "required_fields": ["chapter", "title"],
+    "course_field": "course",
+    "content_field": "body",
+    "content_requirement": "optional; empty string is used for structural draft",
+    "ordering": "child-table idx follows adapter source order"
+  }
+}

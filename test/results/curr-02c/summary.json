@@ -1,0 +1,17 @@
+{
+  "milestone": "CURR-02C",
+  "status": "COMPLETE",
+  "confirmed_plan_to_lms_draft": true,
+  "chapters_materialized": true,
+  "lessons_materialized": true,
+  "unpublished": true,
+  "idempotent": true,
+  "authorized_server_side_bridge": true,
+  "transaction_safe": true,
+  "model_called": false,
+  "curriculum_mutated": false,
+  "training_brief_mutated": false,
+  "publish_implemented": false,
+  "lms_ui_changed": false,
+  "commit_or_push": false
+}

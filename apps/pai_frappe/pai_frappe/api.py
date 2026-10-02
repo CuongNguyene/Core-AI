@@ -12,6 +12,12 @@ import frappe
 from frappe.utils import now_datetime
 
 from pai_frappe.client import PAIClient, PAIClientError
+from pai_frappe.curriculum_materialization import (
+	CurriculumMaterializationError,
+	adapt_curriculum_plan,
+	create_lms_draft,
+	get_plan_source_hash,
+)
 from pai_frappe.materialization import get_generated_course, get_source_hash, materialize_course
 
 _AUTHORING_ROLES = ("System Manager", "Moderator", "Instructor")
@@ -419,6 +425,64 @@ def get_course_authoring_plan(name):
 
 
 @frappe.whitelist()
+def list_curriculum_plans(name):
+	_require_authoring_access()
+	doc = _get_request(name)
+	return _call_pai("GET", f"/api/v1/course-authoring/requests/{doc.pai_request_id}/curriculum-plans")["data"]
+
+
+@frappe.whitelist()
+def get_curriculum_plan(name, plan_id):
+	_require_authoring_access()
+	doc = _get_request(name)
+	if not isinstance(plan_id, str) or not plan_id.strip():
+		frappe.throw("A curriculum plan is required.", frappe.ValidationError)
+	return _call_pai("GET", f"/api/v1/course-authoring/curriculum-plans/{plan_id}")["data"]
+
+
+def _parse_curriculum_feedback(data):
+	if isinstance(data, str):
+		try:
+			data = json.loads(data)
+		except json.JSONDecodeError:
+			frappe.throw("Invalid curriculum feedback.", frappe.ValidationError)
+	if not isinstance(data, dict):
+		frappe.throw("Invalid curriculum feedback.", frappe.ValidationError)
+	return data
+
+
+@frappe.whitelist()
+def preview_curriculum_feedback(name, plan_id, feedback):
+	_require_authoring_access()
+	doc = _get_request(name)
+	if not isinstance(plan_id, str) or not plan_id.strip():
+		frappe.throw("A curriculum plan is required.", frappe.ValidationError)
+	return _call_pai(
+		"POST",
+		f"/api/v1/course-authoring/curriculum-plans/{plan_id}/feedback/preview",
+		payload={"feedback": _parse_curriculum_feedback(feedback)},
+	)["data"]
+
+
+@frappe.whitelist()
+def revise_curriculum_plan(name, plan_id, feedback, rationale=None):
+	_require_authoring_access()
+	doc = _get_request(name)
+	if not isinstance(plan_id, str) or not plan_id.strip():
+		frappe.throw("A curriculum plan is required.", frappe.ValidationError)
+	if rationale is not None and not isinstance(rationale, str):
+		frappe.throw("Curriculum revision rationale must be text.", frappe.ValidationError)
+	return _call_pai(
+		"POST",
+		f"/api/v1/course-authoring/curriculum-plans/{plan_id}/feedback",
+		payload={
+			"feedback": _parse_curriculum_feedback(feedback),
+			"rationale": rationale.strip() if isinstance(rationale, str) and rationale.strip() else None,
+		},
+	)["data"]
+
+
+@frappe.whitelist()
 def review_course_authoring_plan(name, plan_id):
 	_require_authoring_access()
 	_get_request(name)
@@ -588,6 +652,117 @@ def materialize_course_authoring_result(name, result_ref, instructor=None):
 		"lms_course": course.name,
 		"already_imported": False,
 	}
+
+
+def _curriculum_import_response(import_doc, *, already_materialized, tree=None):
+	tree = tree or _get_lms_draft_tree(import_doc.lms_course)
+	return {
+		"import_name": import_doc.name,
+		"source_plan_ref": import_doc.source_plan_ref,
+		"source_plan_version": import_doc.source_plan_version,
+		"status": import_doc.status,
+		"lms_course": import_doc.lms_course,
+		"chapters": tree["chapters"],
+		"lessons": tree["lessons"],
+		"already_materialized": already_materialized,
+	}
+
+
+def _get_lms_draft_tree(course_name):
+	chapters = frappe.get_all(
+		"Course Chapter",
+		filters={"course": course_name},
+		fields=["name", "title"],
+		order_by="creation asc",
+	)
+	lessons = frappe.get_all(
+		"Course Lesson",
+		filters={"course": course_name},
+		fields=["name", "title", "chapter"],
+		order_by="creation asc",
+	)
+	return {"chapters": chapters, "lessons": lessons}
+
+
+@frappe.whitelist()
+def materialize_curriculum_plan(name, plan_id, instructor=None):
+	"""Materialize one confirmed canonical CurriculumPlan into an LMS draft.
+
+	The browser supplies only the local request and exact plan references. The
+	plan body is fetched from Core-AI with the authenticated server-side bridge;
+	this endpoint never accepts an arbitrary curriculum payload and never calls
+	any publish operation.
+	"""
+	_require_authoring_access()
+	request_doc = _get_request(name)
+	if not isinstance(plan_id, str) or not plan_id.strip():
+		frappe.throw("A CurriculumPlan reference is required.", frappe.ValidationError)
+
+	plan = _call_pai("GET", f"/api/v1/course-authoring/curriculum-plans/{plan_id}")["data"]
+	if plan.get("plan_ref") != plan_id:
+		frappe.throw("CurriculumPlan reference does not match the requested plan.", frappe.ValidationError)
+	if plan.get("authoring_request_ref") != request_doc.pai_request_id:
+		frappe.throw("CurriculumPlan access is not permitted.", frappe.PermissionError)
+	try:
+		spec = adapt_curriculum_plan(plan)
+	except CurriculumMaterializationError as exc:
+		frappe.throw(str(exc), frappe.ValidationError)
+
+	existing_name = frappe.db.exists("PAI Course Import", {"source_plan_ref": spec.plan_ref})
+	if existing_name:
+		import_doc = frappe.get_doc("PAI Course Import", existing_name)
+		if import_doc.pai_request != request_doc.name:
+			frappe.throw("CurriculumPlan access is not permitted.", frappe.PermissionError)
+		if import_doc.status == "Imported":
+			return _curriculum_import_response(import_doc, already_materialized=True)
+		if import_doc.status == "Importing":
+			frappe.throw("This CurriculumPlan is already being materialized. Refresh its status before retrying.", frappe.ValidationError)
+	else:
+		try:
+			import_doc = frappe.get_doc(
+				{
+					"doctype": "PAI Course Import",
+					"pai_request": request_doc.name,
+					"source_type": "Curriculum Plan",
+					"source_plan_ref": spec.plan_ref,
+					"source_plan_version": spec.version,
+					"result_status": plan.get("status"),
+					"status": "Pending",
+				}
+			).insert(ignore_permissions=True)
+		except frappe.DuplicateEntryError:
+			import_doc = frappe.get_doc("PAI Course Import", {"source_plan_ref": spec.plan_ref})
+			if import_doc.pai_request != request_doc.name:
+				frappe.throw("CurriculumPlan access is not permitted.", frappe.PermissionError)
+			if import_doc.status == "Imported":
+				return _curriculum_import_response(import_doc, already_materialized=True)
+			frappe.throw("This CurriculumPlan is already being materialized. Refresh its status before retrying.", frappe.ValidationError)
+
+	resolved_instructor = _resolve_course_instructor(request_doc, instructor)
+	import_doc.db_set("source_hash", get_plan_source_hash(plan), update_modified=False)
+	import_doc.db_set("status", "Importing", update_modified=False)
+	savepoint = f"pai_curriculum_materialization_{frappe.generate_hash(length=12)}"
+	frappe.db.savepoint(savepoint)
+	try:
+		tree = create_lms_draft(spec, resolved_instructor)
+		import_doc.db_set("lms_course", tree["course"]["name"], update_modified=False)
+		import_doc.db_set("status", "Imported", update_modified=False)
+		import_doc.db_set("imported_by", frappe.session.user, update_modified=False)
+		import_doc.db_set("imported_on", now_datetime(), update_modified=False)
+		import_doc.db_set("error_code", "", update_modified=False)
+		import_doc.db_set("error_message", "", update_modified=False)
+		frappe.db.release_savepoint(savepoint)
+	except Exception as exc:
+		frappe.db.rollback(save_point=savepoint)
+		import_doc.db_set("status", "Failed", update_modified=False)
+		import_doc.db_set("error_code", "LMS_CURRICULUM_MATERIALIZATION_FAILED", update_modified=False)
+		import_doc.db_set(
+			"error_message",
+			"The LMS curriculum draft could not be created. Correct the confirmed plan and retry.",
+			update_modified=False,
+		)
+		raise frappe.ValidationError("The LMS curriculum draft could not be created. Review the import record and retry.") from exc
+	return _curriculum_import_response(import_doc, already_materialized=False, tree=tree)
 
 
 @frappe.whitelist()
