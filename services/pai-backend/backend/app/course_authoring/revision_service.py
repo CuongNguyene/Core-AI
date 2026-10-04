@@ -103,6 +103,7 @@ class CourseDraftRevisionService:
         if result.status not in {
             ContentGenerationStatus.DRAFT,
             ContentGenerationStatus.IN_REVIEW,
+            ContentGenerationStatus.APPROVED,
         }:
             raise CourseRevisionConflictError("result_not_ready_for_materialization")
         return await self._repository.update_result_status(
