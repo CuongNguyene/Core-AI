@@ -1,0 +1,66 @@
+[
+  {
+    "capability_ref": "project_management",
+    "evidence": [
+      {
+        "source_locator": "dspace:item:6f6156c3-7b85-4ce0-85cc-1efbd439d144:metadata:dc.description.abstract",
+        "source_field": "dc.description.abstract",
+        "excerpt": "This introductory course in project management concepts ... is designed to prepare students to utilize project management techniques in the workplace.",
+        "strength": "EXPLICIT_COURSE_OBJECTIVE"
+      }
+    ],
+    "evidence_strength": "EXPLICIT_COURSE_OBJECTIVE",
+    "mapping_method": "GOVERNED_EXACT_MAPPING",
+    "review_status": "PENDING_REVIEW",
+    "confidence": 0.98,
+    "rationale": null
+  },
+  {
+    "capability_ref": "team_leadership",
+    "evidence": [
+      {
+        "source_locator": "dspace:item:f64795cb-b561-4bb6-9748-9841d6e982dd:metadata:dc.description.abstract",
+        "source_field": "dc.description.abstract",
+        "excerpt": "Also presented are learning theories, leadership and teams, management and quality assurance...",
+        "strength": "ABSTRACT"
+      }
+    ],
+    "evidence_strength": "ABSTRACT",
+    "mapping_method": "GOVERNED_EXACT_MAPPING",
+    "review_status": "PENDING_REVIEW",
+    "confidence": 0.98,
+    "rationale": null
+  },
+  {
+    "capability_ref": "digital_platform_development",
+    "evidence": [
+      {
+        "source_locator": "dspace:item:5aa287ec-ce0a-4773-a937-33a777056e07:metadata:dc.description.abstract",
+        "source_field": "dc.description.abstract",
+        "excerpt": "...programming, ... APIs ... and an introduction to object-oriented programming.",
+        "strength": "ABSTRACT"
+      }
+    ],
+    "evidence_strength": "ABSTRACT",
+    "mapping_method": "GOVERNED_EXACT_MAPPING",
+    "review_status": "PENDING_REVIEW",
+    "confidence": 0.35,
+    "rationale": null
+  },
+  {
+    "capability_ref": "team_leadership",
+    "evidence": [
+      {
+        "source_locator": "dspace:item:63e10921-279e-4404-912e-432c80fd82a1:metadata:dc.description.abstract",
+        "source_field": "dc.description.abstract",
+        "excerpt": "Introduction to professional training activities ... interpersonal relationships, problem solving, goal settings...",
+        "strength": "ABSTRACT"
+      }
+    ],
+    "evidence_strength": "ABSTRACT",
+    "mapping_method": "GOVERNED_EXACT_MAPPING",
+    "review_status": "PENDING_REVIEW",
+    "confidence": 0.35,
+    "rationale": null
+  }
+]

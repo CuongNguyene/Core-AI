@@ -1,0 +1,10 @@
+{
+  "base_url": "https://library.skillscommons.org/server",
+  "api_root": "https://library.skillscommons.org/server/api",
+  "dspace_version": "DSpace 9.0",
+  "content_type": "application/hal+json",
+  "authentication": "anonymous for root, search, item, bundle, bitstream metadata and content HEAD",
+  "tls_verification": true,
+  "legacy_oai_mets_used": false,
+  "exact_type_key": "dc.type"
+}

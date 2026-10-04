@@ -1,0 +1,7 @@
+{
+  "command": "UV_CACHE_DIR=/private/tmp/course-rec-01a-uv-cache uv run pytest tests/test_course_catalog_schemas.py tests/test_course_catalog_fixtures.py -q",
+  "result": "15 passed",
+  "model_calls": 0,
+  "network_calls": 0,
+  "recommendation_ranking": false
+}

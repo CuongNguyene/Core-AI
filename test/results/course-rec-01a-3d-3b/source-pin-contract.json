@@ -1,0 +1,1 @@
+{"type":"SourceSemanticPin","fields":["source_ref","evidence_fingerprint"],"fingerprint":"sha256 canonical compact sorted-key JSON over source identity and canonical full evidence","rejects_empty_evidence":true,"rejects_evidence_from_other_source":true,"tests":"tests/test_governed_mapping.py"}

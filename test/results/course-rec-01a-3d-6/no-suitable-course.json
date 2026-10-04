@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "target_ref": "capability:test_core:communication",
+  "course_ref": "capability:test_core:writing",
+  "intersection": [],
+  "result": "NO_SUITABLE_COURSE",
+  "forced_fallback": false
+}

@@ -1,0 +1,93 @@
+{
+  "kind": "OBSERVED_AND_PROPOSED_DEFINITIONS",
+  "entities": [
+    {
+      "entity": "Candidate capability",
+      "meaning": "Evidence-supported provisional observation; not verified competency",
+      "identity_owner": "Candidate/extraction",
+      "lifecycle_owner": "Evidence/assessment",
+      "current_namespace": "Source entity labels/IDs",
+      "semantic_kind": "skill/capability observation"
+    },
+    {
+      "entity": "Role requirement",
+      "meaning": "Authored behavioral/contextual/level requirement",
+      "identity_owner": "Role author",
+      "lifecycle_owner": "Role approval",
+      "current_namespace": "RoleRequirement.id + profile/version",
+      "semantic_kind": "role requirement"
+    },
+    {
+      "entity": "Gap requirement",
+      "meaning": "Requirement-scoped evidence assessment/gap",
+      "identity_owner": "Capability analysis",
+      "lifecycle_owner": "Analysis lifecycle",
+      "current_namespace": "requirement_id and gap.id",
+      "semantic_kind": "evidence gap"
+    },
+    {
+      "entity": "LearningNeed competency",
+      "meaning": "Projected learning target from requirement/gap",
+      "identity_owner": "Need projection",
+      "lifecycle_owner": "Source analysis/eligibility",
+      "current_namespace": "competency.id=requirement.id",
+      "semantic_kind": "requirement-backed target"
+    },
+    {
+      "entity": "LearningPath target",
+      "meaning": "Objective tied to need/gap/target profile",
+      "identity_owner": "Learning service",
+      "lifecycle_owner": "Path review/approval",
+      "current_namespace": "competency_id from need, legacy gap_id",
+      "semantic_kind": "learning outcome/target"
+    },
+    {
+      "entity": "Course capability",
+      "meaning": "Evidence-supported development/coverage, not learner verification",
+      "identity_owner": "Core-AI catalog",
+      "lifecycle_owner": "Semantic profile approval",
+      "current_namespace": "opaque capability_ref",
+      "semantic_kind": "capability coverage"
+    },
+    {
+      "entity": "Course learning outcome",
+      "meaning": "Intended observable result with source behavior/context evidence",
+      "identity_owner": "Course author, preserved by Core-AI",
+      "lifecycle_owner": "Source version + semantic review",
+      "current_namespace": "No distinct catalog model currently",
+      "semantic_kind": "learning outcome"
+    },
+    {
+      "entity": "Provider subject/topic",
+      "meaning": "Content/classification label, not capability automatically",
+      "identity_owner": "Provider",
+      "lifecycle_owner": "Provider metadata",
+      "current_namespace": "dc.subject/title locators",
+      "semantic_kind": "topic"
+    },
+    {
+      "entity": "Occupation metadata",
+      "meaning": "Occupational context, not outcome evidence alone",
+      "identity_owner": "Provider/external owner",
+      "lifecycle_owner": "Source release",
+      "current_namespace": "taaccct.occupation",
+      "semantic_kind": "occupation context"
+    },
+    {
+      "entity": "Domain taxonomy entry",
+      "meaning": "Explicit semantic definition with scope",
+      "identity_owner": "Current owner absent; proposed namespace owner",
+      "lifecycle_owner": "Static version; proposed governed release",
+      "current_namespace": "professional_capability_core@0.1 IDs",
+      "semantic_kind": "capability family"
+    }
+  ],
+  "rule": "Source/business identity, canonical concept and learner verification state are distinct.",
+  "sources": [
+    "services/pai-backend/backend/app/extraction/profile.py",
+    "services/pai-backend/backend/app/matching/schemas.py",
+    "services/pai-backend/backend/app/learning_need_profile/schemas.py",
+    "services/pai-backend/backend/app/learning/schemas.py",
+    "services/pai-backend/backend/app/course_catalog/schemas.py"
+  ]
+}

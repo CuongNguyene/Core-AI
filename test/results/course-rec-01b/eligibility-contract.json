@@ -1,0 +1,10 @@
+{
+  "gates": [
+    {"gate": "profile lifecycle", "rule": "profile_status == ACTIVE", "rejection": "PROFILE_NOT_ACTIVE"},
+    {"gate": "semantic capabilities", "rule": "capabilities is non-empty", "rejection": "NO_SEMANTIC_CAPABILITIES"},
+    {"gate": "capability intersection", "rule": "at least one exact target capability ref", "rejection": "NO_CAPABILITY_MATCH"},
+    {"gate": "availability", "rule": "UNAVAILABLE excluded; UNKNOWN retained with warning", "rejection": "COURSE_UNAVAILABLE"},
+    {"gate": "hard prerequisites", "rule": "explicit UNSATISFIED excluded; UNKNOWN retained conditionally", "rejection": "PREREQUISITE_UNSATISFIED"}
+  ],
+  "provider_only_capabilities_empty_eligible": false
+}

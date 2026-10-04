@@ -1,0 +1,6 @@
+{
+  "command": "pytest capability definitions, pack lifecycle, resolution, identity, catalog, recommendation, LearningNeed and semantic policy tests",
+  "result": "PASS",
+  "passed": 219,
+  "failed": 0
+}

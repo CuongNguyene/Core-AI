@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "course_ref_compared_exactly_to_profile": true,
+  "source_id_recomputed_from_claim_fields": true,
+  "source_namespace_checked": true,
+  "entity_kind_checked": true,
+  "prefix_matching_used_for_ownership": false,
+  "foreign_course_projection_rejected": true
+}

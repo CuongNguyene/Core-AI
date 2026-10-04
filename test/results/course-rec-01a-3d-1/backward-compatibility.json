@@ -1,0 +1,12 @@
+{
+  "professional_capability_core_0_1_changed": false,
+  "course_capability_profile_schema_changed": false,
+  "role_requirement_schema_changed": false,
+  "learning_need_profile_schema_changed": false,
+  "recommendation_engine_changed": false,
+  "legacy_opaque_capability_ref_preserved": true,
+  "persistence": false,
+  "api": false,
+  "migration": false,
+  "lms_changed": false
+}

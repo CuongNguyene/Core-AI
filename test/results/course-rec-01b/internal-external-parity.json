@@ -1,0 +1,7 @@
+{
+  "same_semantic_logic": true,
+  "source_type_affects_rank": false,
+  "provider_affects_rank": false,
+  "provenance_exposed": true,
+  "parity_test": "PASS"
+}

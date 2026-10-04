@@ -1,0 +1,1177 @@
+{
+  "sample_size": 15,
+  "sampling_method": "deterministic stratified selection from the 27 strict 01A.2C package candidates; no new network crawl",
+  "live_provider_data": true,
+  "courses": [
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "4f3652e5-82d3-4a78-9b02-73126bb86bc9",
+      "course_ref": "skillscommons:4f3652e5-82d3-4a78-9b02-73126bb86bc9",
+      "handle": "taaccct/13001",
+      "title": "BA 177 - Payroll Accounting Online",
+      "category": "business/accounting",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "BA 177 - Payroll Accounting Online"
+        ],
+        "dc.description.abstract": [
+          "BA 177 - Payroll Accounting Online\r\nThis course is designed to teach, reinforce and supplement payroll skills in both manual and computerized formats.\r\n\r\nCourse Outcomes:\r\n\r\nCompute the income tax withholding from employee wages.\r\nCalculate employee's withholding allowances for IRS Form W-4.\r\nDetermine employer's quarterly estimated payments.\r\nDescribe how the Federal Insurance Contributions Act (FICA) is applied by employers.\r\nDescribe the federal deposit system and how the Electronic Federal Tax Payment System is used by employers.\r\nDescribe the difference between employees and independent contractors."
+        ],
+        "dc.subject": [
+          "Business, Accounting",
+          "Accounting, Payroll Online"
+        ],
+        "dc.publisher": [
+          "Linn-Benton Virtual College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "All Occupations (00-0000)"
+        ],
+        "taaccct.industry": [
+          "Management of Companies and Enterprises (55)"
+        ],
+        "taaccct.credentialType": [
+          "Credential",
+          "Associate Degree"
+        ],
+        "taaccct.projectName": [
+          "LB iLearn Online"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2024-09-10T09:56:15.566Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "TEXT",
+        "THUMBNAIL",
+        "ORIGINAL",
+        "LICENSE"
+      ],
+      "bitstreams": [
+        {
+          "name": "BA 177 QM Rubric.docx.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "BA 177.pdf.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "BA 177.pdf.jpg",
+          "bitstream_type": "UNKNOWN"
+        },
+        {
+          "name": "skillscom-ba-177-16-dot-0-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "Repository - BA 177.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "BA 177 QM Rubric.docx",
+          "bitstream_type": "DOCUMENT"
+        },
+        {
+          "name": "BA 177.pdf",
+          "bitstream_type": "DOCUMENT"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "4828d609-2f88-4324-bf80-55aa7b1c68fa",
+      "course_ref": "skillscommons:4828d609-2f88-4324-bf80-55aa7b1c68fa",
+      "handle": "taaccct/13826",
+      "title": "General Education Massive Open Online Course (MOOC)",
+      "category": "general/ambiguous",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "General Education Massive Open Online Course (MOOC)"
+        ],
+        "dc.description.abstract": [
+          "Florida XCEL-IT will expand efforts by community colleges to use non-credit courses that are more accessible, to quickly train participants and start them on their career pathway.   The developmental education MOOC will be one of the non-credit courses. A large portion of the target population for Florida XCEL-IT lack the knowledge for college level learning in reading, English or math. The MOOC will address this deficiency. Elements of this college readiness or \u201cDev Ed\u201d MOOC will consist of an enrollment page to capture data on  users for evaluation purposes, a pre-test, 24 topic modules and quizzes covering 70 state educational competencies, 180 primary learning activities, 90 optional learning activities, a closing test, and links to follow-up activities. As the name implies, the expected impact is to involve a much larger number of people in a learning and review process than might otherwise not be possible.  MOOCs also offer the possibility that a \u201clearning community\u201d effect could emerge as many people get involved and start to chat online or at the local coffee shop about their experiences hopes and/or anxieties about signing up for more college level learning.  Ultimately, the spirit of MOOCs is that everyone is a student and everyone is a teacher: a concept that fits well in the rural context of neighbors helping neighbors."
+        ],
+        "dc.subject": [
+          "Online course",
+          "Developmental Education"
+        ],
+        "dc.contributor.author": [
+          "Calandrino, Tina",
+          "Currie, Brandy",
+          "Danuff, Alan",
+          "Fields, Meribeth",
+          "Jones, Marguerite",
+          "Murphy, Valerie",
+          "Witkowich, Lori",
+          "Wood, Judith"
+        ],
+        "dc.publisher": [
+          "College of Central Florida"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "All Occupations (00-0000)"
+        ],
+        "taaccct.industry": [
+          "Developmental Education"
+        ],
+        "taaccct.credentialType": [
+          "None"
+        ],
+        "taaccct.projectName": [
+          "Massive Open Online Course (MOOC)"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:32:29.349Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE"
+      ],
+      "bitstreams": [
+        {
+          "name": "mooc-development-shell-export (1).imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "aee2a65b-d134-4a3e-93a2-118a4fef89d8",
+      "course_ref": "skillscommons:aee2a65b-d134-4a3e-93a2-118a4fef89d8",
+      "handle": "taaccct/13254",
+      "title": "Canvas Orientation Course",
+      "category": "technical/ambiguous",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "Canvas Orientation Course"
+        ],
+        "dc.description.abstract": [
+          "Free online course to help students discover what skills they need to be a successful online student."
+        ],
+        "dc.subject": [
+          "study environment",
+          "communication",
+          "time management",
+          "recommended browsers",
+          "messages"
+        ],
+        "dc.contributor.author": [
+          "Luke, Chad"
+        ],
+        "dc.publisher": [
+          "Great Basin College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "All Occupations (00-0000)"
+        ],
+        "taaccct.industry": [
+          "Developmental Education"
+        ],
+        "taaccct.credentialType": [
+          "Certificate"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T01:13:42.274Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE"
+      ],
+      "bitstreams": [
+        {
+          "name": "webcampus-orientation-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "1398f9e1-49ee-4885-8eba-7d2d36d680e9",
+      "course_ref": "skillscommons:1398f9e1-49ee-4885-8eba-7d2d36d680e9",
+      "handle": "taaccct/2947",
+      "title": "PRN0020 Human Development",
+      "category": "healthcare",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "PRN0020 Human Development"
+        ],
+        "dc.description.abstract": [
+          "This course presents normal human development from birth to death. Emphasis is on developmental stages."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Health & Sciences"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Corso, Melody"
+        ],
+        "dc.publisher": [
+          "Florida Gateway College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Healthcare Practitioners and Technical Occupations -- Registered Nurses (29-1111)"
+        ],
+        "taaccct.industry": [
+          "Health Care and Social Assistance -- Nursing and Residential Care Facilities (623)"
+        ],
+        "taaccct.credentialType": [
+          "Certificate"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:18:01.326Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "PRN0020-human-development-and-lifespan-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_HSPRN0020DEVEL_20150623041945.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "9d98276ffa1dd8b70b773042e582a33b.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "f38740c4-657e-4c62-abe1-d9ce94eb30b0",
+      "course_ref": "skillscommons:f38740c4-657e-4c62-abe1-d9ce94eb30b0",
+      "handle": "taaccct/2948",
+      "title": "PRN0070 Basic Nutrition",
+      "category": "healthcare/nutrition",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "PRN0070 Basic Nutrition"
+        ],
+        "dc.description.abstract": [
+          "This course presents the basic principles of nutrition and diet therapy for all age groups."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Health & Sciences"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Corso, Melody"
+        ],
+        "dc.publisher": [
+          "Florida Gateway College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Healthcare Practitioners and Technical Occupations -- Registered Nurses (29-1111)"
+        ],
+        "taaccct.industry": [
+          "Health Care and Social Assistance -- Nursing and Residential Care Facilities (623)"
+        ],
+        "taaccct.credentialType": [
+          "Certificate"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:26:50.709Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "PRN0070-basic-nutrition-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_HSPRN0070DEVEL_20150623041953.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "40cdbb23e2c4af12d775ab02cbd0631d.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+      "course_ref": "skillscommons:f64795cb-b561-4bb6-9748-9841d6e982dd",
+      "handle": "taaccct/3013",
+      "title": "PHT1007 Topics in Physical Therapy",
+      "category": "healthcare/physical-therapy",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "PHT1007 Topics in Physical Therapy"
+        ],
+        "dc.description.abstract": [
+          "This course provides an overview of the profession of physical therapy, related issues and professional organizations. The course introduces topics on domestic violence, end of life issues, stress/stress management. Also presented are learning theories, leadership and teams, management and quality assurance and ethical/legal issues. The course introduces government agencies: ADA, OSHA; patient bill of rights and HIPAA. Discussion of the Models of Disability, professional ethics, and materials/resources available at APTA organization is presented. The course also presents communication skills and the SOAP format for documentation along with developing familiarity with other healthcare providers. This course is designed to engage the student in an active interest in the profession of physical therapy."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Health & Sciences"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Salyers, Kimberly"
+        ],
+        "dc.publisher": [
+          "Florida Gateway College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Healthcare Support Occupations -- Physical Therapist Assistants (31-2021)"
+        ],
+        "taaccct.industry": [
+          "Health Care and Social Assistance -- Ambulatory Health Care Services (621)"
+        ],
+        "taaccct.credentialType": [
+          "Certificate"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:27:38.370Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "PHT1007-topics-in-physical-therapy-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_HSPHT1007DEVEL_20150623041429.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "0dbb9c61c11205dc89944e05257a4d69.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "9cbe25b2-7502-405f-bbc3-92016ddcfed8",
+      "course_ref": "skillscommons:9cbe25b2-7502-405f-bbc3-92016ddcfed8",
+      "handle": "taaccct/2974",
+      "title": "CTS1131 Hardware Configuration",
+      "category": "technical/hardware",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "CTS1131 Hardware Configuration"
+        ],
+        "dc.description.abstract": [
+          "This course will provide students with an in-depth hands-on overview of computer hardware including processors, memory, motherboards, storage systems, and peripherals. Students completing this course will be prepared to take the Comptia A+ certification exams."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Information Technology"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Blitz, Andrew"
+        ],
+        "dc.publisher": [
+          "Florida Southwestern State College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Computer and Mathematical Occupations -- Computer Systems Analysts (15-1051)"
+        ],
+        "taaccct.industry": [
+          "Information Technology -- Data Processing, Hosting, and Related Services (518)"
+        ],
+        "taaccct.credentialType": [
+          "Associate Degree"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T02:26:06.112Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "cts1131-hardware-configuration-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_ITCTS1131DEVEL_20150422090802.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "f0f9198a9b6b9c0e487e63ff05de5aaf.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "5aa287ec-ce0a-4773-a937-33a777056e07",
+      "course_ref": "skillscommons:5aa287ec-ce0a-4773-a937-33a777056e07",
+      "handle": "taaccct/2953",
+      "title": "COP1510 Programming Concepts I",
+      "category": "technical/programming",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "COP1510 Programming Concepts I"
+        ],
+        "dc.description.abstract": [
+          "This is an essential first course for Information Technology majors. It will introduce the fundamentals of computer programming, covering the basic computer science vocabulary and topics such as algorithm design, user interfaces, data validation techniques, integrated development environments (IDEs), programming debugging and testing, use of application programmer interfaces (APIs), and an introduction to object-oriented programming. A high-level programming language will be introduced and used throughout the course to supplement the theoretical foundations that are being built."
+        ],
+        "dc.subject": [
+          "Online Course"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Andrae, Chad"
+        ],
+        "dc.publisher": [
+          "Pensacola State College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Computer and Mathematical Occupations -- Computer\ufffd\ufffdProgrammers (15-1021)"
+        ],
+        "taaccct.industry": [
+          "Information Technology -- Data Processing, Hosting, and Related Services (518)"
+        ],
+        "taaccct.credentialType": [
+          "Associate Degree"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T03:08:46.455Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "cop1510-programming-concepts-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_ITCOP1510DEVEL_20150623030739.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "6c4045663011368fc74c029e45816ec1.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "5fa371f7-e619-44d4-86e9-083feb5d45e9",
+      "course_ref": "skillscommons:5fa371f7-e619-44d4-86e9-083feb5d45e9",
+      "handle": "taaccct/2941",
+      "title": "HCP0796 Patient Care Technician",
+      "category": "healthcare/patient-care",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "HCP0796 Patient Care Technician"
+        ],
+        "dc.description.abstract": [
+          "This course is designed to focus on the organizational and management skills to practice in a clinical setting. Students enrolled in this course must have successfully completed all modules in the patient care technician program."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Health & Sciences"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Smythe, Samantha"
+        ],
+        "dc.publisher": [
+          "Florida Gateway College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Healthcare Support Occupations -- Nursing Aides, Orderlies, and Attendants (31-1012)"
+        ],
+        "taaccct.industry": [
+          "Health Care and Social Assistance -- Nursing and Residential Care Facilities (623)"
+        ],
+        "taaccct.credentialType": [
+          "Certificate"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:31:18.423Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "HCP0796-patient-care-technician-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_HSHCP0796DEVEL_20150622052351.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "9b4362d2b69ddab45a12bb7186570d89.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+      "course_ref": "skillscommons:6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+      "handle": "taaccct/2946",
+      "title": "MAN2582 Introduction to Project Management",
+      "category": "business/project-management",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "MAN2582 Introduction to Project Management"
+        ],
+        "dc.description.abstract": [
+          "This introductory course in project management concepts, with Microsoft Project application, is designed to prepare students to utilize project management techniques in the workplace. Further, the course will prepare the student for further study in project management and related areas."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Information Technology"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "French, Ric"
+        ],
+        "dc.publisher": [
+          "Florida State College at Jacksonville"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Management Occupations (11-0000)"
+        ],
+        "taaccct.industry": [
+          "Professional, Scientific, and Technical Services -- Professional, Scientific, and Technical Services (541)"
+        ],
+        "taaccct.credentialType": [
+          "Associate Degree"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "2nd Year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T04:43:00.001Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "man2582-intro-to-project-management-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_ITMAN2582DEVEL_20150623090346.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "d31817a4573615df615fc51e10f0d1e5.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "df391f77-5a76-4c10-9e45-0a2783706b30",
+      "course_ref": "skillscommons:df391f77-5a76-4c10-9e45-0a2783706b30",
+      "handle": "taaccct/3017",
+      "title": "PTN0086 Pharmacy Technician III",
+      "category": "healthcare/pharmacy",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "PTN0086 Pharmacy Technician III"
+        ],
+        "dc.description.abstract": [
+          "This course provides a study of the principles used in manipulation of data and materials in preparing and dispensing drugs. This course provides a lab and practicum experience in a pharmacy environment."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Health & Sciences"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Pritchett, Nicole"
+        ],
+        "dc.publisher": [
+          "Florida State College at Jacksonville"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Healthcare Practitioners and Technical Occupations -- Pharmacy Technicians (29-2052)"
+        ],
+        "taaccct.industry": [
+          "Health Care and Social Assistance -- Hospitals -- Specialty (except Psychiatric and Substance Abuse) Hospitals (6223)"
+        ],
+        "taaccct.credentialType": [
+          "Certificate"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:27:36.335Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "ptn0086-pharmacy-technician-iii-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_HSPTN0086DEVEL_20150623050404.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "16e67004c77defd6d8b7bcf558eed88c.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "f252280a-b389-4dd7-bac4-669224a0dc96",
+      "course_ref": "skillscommons:f252280a-b389-4dd7-bac4-669224a0dc96",
+      "handle": "taaccct/2997",
+      "title": "DES1051C Pain Management",
+      "category": "healthcare/pain-management",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "DES1051C Pain Management"
+        ],
+        "dc.description.abstract": [
+          "This course provides the student with the required training and information to safely and effectively relieve pain and reduce anxiety in the dental patient. The course requires that the student apply knowledge from pharmacology, biochemistry, physiology and anatomy. The student should also realize that competency, and ultimately proficiency, in the administration of local anesthesia requires repeated administration and periodic self-reeducation."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Health & Sciences"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Lambert, Linda"
+        ],
+        "dc.publisher": [
+          "Pensacola State College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Healthcare Practitioners and Technical Occupations -- Dental Hygienists (29-2021)"
+        ],
+        "taaccct.industry": [
+          "Health Care and Social Assistance -- Ambulatory Health Care Services -- Offices of Dentists (6212)"
+        ],
+        "taaccct.credentialType": [
+          "Associate Degree"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2020-02-06T14:10:34.669Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "des1051c-pain-management-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_HSDES1051CDEVEL_20150623033843.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "cd1fdebd1af218b0e4f4c7f859873be5.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "63e10921-279e-4404-912e-432c80fd82a1",
+      "course_ref": "skillscommons:63e10921-279e-4404-912e-432c80fd82a1",
+      "handle": "taaccct/2939",
+      "title": "EGS1000 Professional Performance for the Technician",
+      "category": "workforce/professional-performance",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "EGS1000 Professional Performance for the Technician"
+        ],
+        "dc.description.abstract": [
+          "Introduction to professional training activities related to organizations including interpersonal relationships, problem solving, goal settings, ethics, policy and procedures, personal development and organizational structures and cultures."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Information Technology"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Cameron, Chris"
+        ],
+        "dc.publisher": [
+          "Daytona State College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Computer and Mathematical Occupations (15-0000)"
+        ],
+        "taaccct.industry": [
+          "Information Technology -- Data Processing, Hosting, and Related Services (518)"
+        ],
+        "taaccct.credentialType": [
+          "Associate Degree"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T02:32:10.414Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "EGS1000-professional-performance-for-the-technician-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_ITEGS1000DEVEL_20150622051753.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "e4be95ad41f3ca3fc9ba1a1a780e425c.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "c2d999f7-2867-43e1-b229-e205696e0c48",
+      "course_ref": "skillscommons:c2d999f7-2867-43e1-b229-e205696e0c48",
+      "handle": "taaccct/2935",
+      "title": "CGS1560 Microcomputer Operating Systems",
+      "category": "technical/operating-systems",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "CGS1560 Microcomputer Operating Systems"
+        ],
+        "dc.description.abstract": [
+          "This course is an introductory course for microcomputer operating systems covering development, concepts, components and usage. We will learn about several operating systems that are currently available on the market. This course will combine various learning methods to accomplish the goals of this course. The student will have various assignments in the following areas: reading, chapter reviews, Internet research, discussion questions, hands-on labs and case studies."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Information Technology"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Adams, J. R."
+        ],
+        "dc.publisher": [
+          "St. Johns River State College"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Computer and Mathematical Occupations -- Computer Support Specialists (15-1041)"
+        ],
+        "taaccct.industry": [
+          "Information Technology -- Data Processing, Hosting, and Related Services (518)"
+        ],
+        "taaccct.credentialType": [
+          "Associate Degree"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:31:03.815Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "CGS1560-microcomputer-operating-systems-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_ITCGS1560CDEVEL_20150622050418.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "8c64fb22901a4dadac83dfb274de307c.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    },
+    {
+      "provider_ref": "skillscommons",
+      "provider_course_id": "5776ecdb-fbd0-49a3-b11a-f96a4ed90a55",
+      "course_ref": "skillscommons:5776ecdb-fbd0-49a3-b11a-f96a4ed90a55",
+      "handle": "taaccct/2942",
+      "title": "HIM1253 Medical Coding",
+      "category": "healthcare/medical-coding",
+      "strict_provider_candidate": true,
+      "source_metadata": {
+        "dc.title": [
+          "HIM1253 Medical Coding"
+        ],
+        "dc.description.abstract": [
+          "This course provides an introduction to coding outpatient procedures using CPT-4 including both manual and computer-based practice. CPT-4 is then integrated with ICD-9-CM coding. Reimbursement issues are reviewed."
+        ],
+        "dc.subject": [
+          "Online College Course",
+          "Health & Sciences"
+        ],
+        "dc.contributor.author": [
+          "Cheng, David",
+          "Thomas, Eudelia"
+        ],
+        "dc.publisher": [
+          "Florida State College at Jacksonville"
+        ],
+        "dc.type": [
+          "Online Course"
+        ],
+        "dcterms.license": [
+          "CC BY"
+        ],
+        "taaccct.occupation": [
+          "Healthcare Practitioners and Technical Occupations -- Medical Records and Health Information Technicians (29-2071)"
+        ],
+        "taaccct.industry": [
+          "Health Care and Social Assistance -- Hospitals (622)"
+        ],
+        "taaccct.credentialType": [
+          "Certificate"
+        ],
+        "taaccct.projectName": [
+          "Florida Regional Consortium for Technology Enabled Learning Solutions"
+        ],
+        "taaccct.level": [
+          "1st year Community College or equivalent"
+        ]
+      },
+      "last_modified": "2023-11-25T00:31:02.221Z",
+      "dspace_state": {
+        "inArchive": true,
+        "withdrawn": false,
+        "discoverable": true
+      },
+      "bundle_names": [
+        "ORIGINAL",
+        "LICENSE",
+        "SWORD"
+      ],
+      "bitstreams": [
+        {
+          "name": "HIM1253-cpt4-coding-export.imscc",
+          "bitstream_type": "COURSE_PACKAGE"
+        },
+        {
+          "name": "ArchiveFile_HSHIM1253DEVEL_20150622052658.zip",
+          "bitstream_type": "ARCHIVE"
+        },
+        {
+          "name": "license.txt",
+          "bitstream_type": "TEXT"
+        },
+        {
+          "name": "3ce12b038ba8b9b961509a60b1f349f2.zip",
+          "bitstream_type": "ARCHIVE"
+        }
+      ]
+    }
+  ]
+}

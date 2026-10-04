@@ -1,0 +1,9 @@
+{
+  "input_order_independent": true,
+  "repeated_runs_identical": true,
+  "randomness": false,
+  "current_time_dependency": false,
+  "network_dependency": false,
+  "stable_tie_breaker": "course_ref ascending",
+  "duplicate_course_ref": "request validation error"
+}

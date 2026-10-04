@@ -1,0 +1,15 @@
+{
+  "milestone": "COURSE-REC-01A.2",
+  "title": "SKILLSCOMMONS COURSE AVAILABILITY VERIFICATION SPIKE",
+  "status": "LIVE_NETWORK_BLOCKED",
+  "provider_implementation": "PASS",
+  "fixture_verification": "PASS",
+  "live_oai": "BLOCKED_DNS",
+  "live_mets": "NOT_REACHED",
+  "recommendation_ranking": false,
+  "ai_calls": 0,
+  "lms_changes": 0,
+  "migration": false,
+  "commit": false,
+  "push": false
+}

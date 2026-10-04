@@ -1,0 +1,7 @@
+{
+  "references": "exact pack_id/version/checksum",
+  "duplicate_dependencies": "rejected",
+  "cycles": "rejected",
+  "new_binding_requires_active_closure": true,
+  "historical_resolution_allows_deprecated_exact_dependencies": true
+}

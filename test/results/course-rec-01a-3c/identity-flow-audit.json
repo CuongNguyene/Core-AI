@@ -1,0 +1,56 @@
+{
+  "kind": "OBSERVED",
+  "flows": [
+    {
+      "edge": "RoleRequirement -> Gap",
+      "action": "PRESERVED",
+      "detail": "requirement.id -> gap.requirement_id",
+      "evidence": "services/pai-backend/backend/app/capability_analysis/schemas.py:238"
+    },
+    {
+      "edge": "Role/Gap -> LearningNeed",
+      "action": "PRESERVED",
+      "detail": "competency.id=requirement.id; source_gap_refs preserved",
+      "evidence": "services/pai-backend/backend/app/learning_need_profile/projection.py"
+    },
+    {
+      "edge": "LearningNeed -> LearningPath",
+      "action": "PRESERVED",
+      "detail": "competency_id=learning_need.competency.id",
+      "evidence": "services/pai-backend/backend/app/learning/mapper.py:41"
+    },
+    {
+      "edge": "Legacy verified gap -> LearningPath",
+      "action": "AUTHORED",
+      "detail": "competency_id=gap_id; not taxonomy remap",
+      "evidence": "services/pai-backend/backend/app/learning/service.py:440"
+    },
+    {
+      "edge": "Need/Path -> RecommendationTarget",
+      "action": "NOT_IMPLEMENTED",
+      "detail": "Caller supplies canonical target refs; no automatic adapter",
+      "evidence": "services/pai-backend/backend/app/course_recommendation/schemas.py:57"
+    },
+    {
+      "edge": "CourseProfile -> NormalizedCandidate",
+      "action": "PRESERVED",
+      "detail": "capability_ref copied verbatim",
+      "evidence": "services/pai-backend/backend/app/course_catalog/schemas.py"
+    },
+    {
+      "edge": "Target/candidate -> Engine",
+      "action": "EXACT_EQUALITY",
+      "detail": "Exact ref intersection; no registry resolution",
+      "evidence": "services/pai-backend/backend/app/course_recommendation/engine.py:123"
+    },
+    {
+      "edge": "Provider -> ExternalCourse",
+      "action": "PROVIDER_SPECIFIC",
+      "detail": "Provider namespace plus UUID; topics remain facts",
+      "evidence": "services/pai-backend/backend/app/course_catalog/skillscommons.py"
+    }
+  ],
+  "current_alignment": "PARTIALLY_SHARED",
+  "missing": "Automatic role/need/path-to-canonical recommendation adapter",
+  "source_id_replacement": false
+}

@@ -1,0 +1,12 @@
+{
+  "type": "CapabilityMappingProposal",
+  "fields": ["proposal_id", "source_ref", "target_capability_ref", "mapping_type", "mapping_scope", "evidence", "proposal_method", "proposer_ref", "rationale"],
+  "mapping_types": ["exact"],
+  "evidence_nonempty": true,
+  "evidence_representation": "sorted immutable tuple by canonical JSON of full value",
+  "duplicate_evidence": "exact full-value duplicates rejected",
+  "target_validation": "canonical ref syntax only; no registry lookup",
+  "proposal_fingerprint": "sha256 over all serialized proposal fields",
+  "synthetic_unknown_target_fixture": "capability:test_unregistered:synthetic_capability",
+  "synthetic_only": true
+}

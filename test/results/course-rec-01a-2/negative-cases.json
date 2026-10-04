@@ -1,0 +1,21 @@
+{
+  "result": "PASS_IN_FIXTURES",
+  "cases": [
+    "malformed OAI XML",
+    "malformed METS XML",
+    "XXE/DTD/entity XML",
+    "missing OAI identifier",
+    "unexpected OAI identifier",
+    "absolute/external bitstream URL",
+    "private IPv4 URL",
+    "metadata-service URL",
+    "redirect to private network",
+    "HEAD 405 GET fallback",
+    "401/403 restricted",
+    "404/410 broken",
+    "429/5xx unknown",
+    "timeout/connection unknown",
+    "oversized response bounded"
+  ],
+  "network_calls_in_unit_tests": false
+}

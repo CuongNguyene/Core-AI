@@ -1,0 +1,10 @@
+{
+  "internal_count": 24,
+  "external_count": 24,
+  "domains": ["software", "sales", "finance", "hr"],
+  "delivery_modes": ["self_paced", "instructor_led"],
+  "internal_unavailable_count": 1,
+  "external_unknown_availability_count": 1,
+  "synthetic_only": true,
+  "deterministic": true
+}

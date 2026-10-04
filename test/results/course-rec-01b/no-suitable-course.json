@@ -1,0 +1,6 @@
+{
+  "supported": true,
+  "no_suitable_reasons": ["NO_TARGET_CAPABILITIES", "NO_SUITABLE_COURSE"],
+  "forced_fallback_recommendation": false,
+  "rejection_summary": true
+}

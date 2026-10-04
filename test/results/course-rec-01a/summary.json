@@ -1,0 +1,14 @@
+{
+  "milestone": "COURSE-REC-01A",
+  "status": "COMPLETE",
+  "scope": "course catalog and CourseCapabilityProfile contract only",
+  "internal_catalog_count": 24,
+  "external_catalog_count": 24,
+  "domains": ["software", "sales", "finance", "hr"],
+  "lms_schema_modified": false,
+  "recommendation_logic_added": false,
+  "model_calls_added": false,
+  "live_provider_added": false,
+  "commit": false,
+  "push": false
+}

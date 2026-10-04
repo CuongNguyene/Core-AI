@@ -1,0 +1,32 @@
+{
+  "sample_course_count": 15,
+  "courses_with_at_least_one_accepted_capability": 2,
+  "courses_with_zero_supported_capabilities": 13,
+  "total_proposed_claims": 4,
+  "accepted_claims": 2,
+  "rejected_claims": 2,
+  "uncertain_claims": 0,
+  "accepted_capabilities_per_course_mean": 0.13333333333333333,
+  "accepted_capabilities_per_course_median": 0,
+  "semantic_course_coverage_rate": 0.13333333333333333,
+  "unsupported_claim_rate": 0.5,
+  "ambiguous_course_rate": 0.13333333333333333,
+  "reviewed_claim_rate": 1.0,
+  "review_effort": {
+    "courses_reviewed": 15,
+    "claims_reviewed": 4,
+    "edits_required": 2,
+    "category": "MEDIUM"
+  },
+  "metadata_sufficiency": {
+    "METADATA_SUFFICIENT": 2,
+    "METADATA_PARTIAL": 13,
+    "METADATA_INSUFFICIENT": 0
+  },
+  "metadata_only_enrichment": "PARTIAL",
+  "automatic_active_profiles": 0,
+  "policy_version": "skillscommons_course_semantic_enrichment@0.1",
+  "ai_assisted_condition_executed": false,
+  "package_content_parsed": false,
+  "recommendation_ranking_implemented": false
+}

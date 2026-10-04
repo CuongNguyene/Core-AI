@@ -1,0 +1,11 @@
+{
+  "partner_site": {"url": "https://partner.skillscommons.org/", "framework": "WordPress 6.9.9", "role": "partner/library navigation"},
+  "library_site": {"url": "https://library.skillscommons.org/", "framework": "DSpace Angular", "dspace_version": "DSpace 9.0"},
+  "search": "https://library.skillscommons.org/search",
+  "browse_routes": ["/browse/type", "/browse/credential", "/browse/institution", "/browse/community", "/browse/occupation", "/browse/program"],
+  "rest_base": "https://library.skillscommons.org/server",
+  "rest_api_root": "https://library.skillscommons.org/server/api",
+  "detail_routes": ["/items/<UUID>", "/handle/<prefix>/<suffix>"],
+  "public_config": "https://library.skillscommons.org/assets/config.373d61365fd0cf4fef85385998635bf6.json",
+  "html_scraper_required": false
+}

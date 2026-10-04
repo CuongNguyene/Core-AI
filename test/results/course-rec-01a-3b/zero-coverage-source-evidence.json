@@ -1,0 +1,147 @@
+{
+  "scope": "Only the original 13 zero-accepted-claim courses; classify metadata source sufficiency, no new semantic mapping.",
+  "definition": {
+    "SOURCE_SEMANTICS_CLEAR": "Title/abstract identifies concrete content or outcomes at metadata resolution; does not establish assessed learner competency.",
+    "SOURCE_SEMANTICS_PARTIAL": "Broad contextual content but insufficient specific outcomes/behaviors.",
+    "SOURCE_SEMANTICS_INSUFFICIENT": "No meaningful concrete semantic content available."
+  },
+  "counts": {
+    "SOURCE_SEMANTICS_CLEAR": 9,
+    "SOURCE_SEMANTICS_PARTIAL": 4,
+    "SOURCE_SEMANTICS_INSUFFICIENT": 0
+  },
+  "courses": [
+    {
+      "provider_course_id": "4f3652e5-82d3-4a78-9b02-73126bb86bc9",
+      "title": "BA 177 - Payroll Accounting Online",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Payroll tax withholding, allowances, employer payments and FICA explicitly listed as course outcomes.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:4f3652e5-82d3-4a78-9b02-73126bb86bc9:metadata:dc.description.abstract",
+      "supported_topic": "payroll accounting and payroll-tax computation",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "4828d609-2f88-4324-bf80-55aa7b1c68fa",
+      "title": "General Education Massive Open Online Course (MOOC)",
+      "source_classification": "SOURCE_SEMANTICS_PARTIAL",
+      "reason": "Reading, English and math college readiness named, but 70 competencies and 24 modules are not enumerated.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:4828d609-2f88-4324-bf80-55aa7b1c68fa:metadata:dc.description.abstract",
+      "supported_topic": null,
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "aee2a65b-d134-4a3e-93a2-118a4fef89d8",
+      "title": "Canvas Orientation Course",
+      "source_classification": "SOURCE_SEMANTICS_PARTIAL",
+      "reason": "Successful online student is generic; subject tags do not specify developed behaviors.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:aee2a65b-d134-4a3e-93a2-118a4fef89d8:metadata:dc.description.abstract",
+      "supported_topic": null,
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "1398f9e1-49ee-4885-8eba-7d2d36d680e9",
+      "title": "PRN0020 Human Development",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Abstract explicitly presents normal lifespan development and developmental stages.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:1398f9e1-49ee-4885-8eba-7d2d36d680e9:metadata:dc.description.abstract",
+      "supported_topic": "normal human lifespan development",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "f38740c4-657e-4c62-abe1-d9ce94eb30b0",
+      "title": "PRN0070 Basic Nutrition",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Abstract explicitly presents nutrition and diet therapy for all age groups.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:f38740c4-657e-4c62-abe1-d9ce94eb30b0:metadata:dc.description.abstract",
+      "supported_topic": "nutrition principles and diet therapy",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "9cbe25b2-7502-405f-bbc3-92016ddcfed8",
+      "title": "CTS1131 Hardware Configuration",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Hands-on hardware components and certification preparation explicitly described.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:9cbe25b2-7502-405f-bbc3-92016ddcfed8:metadata:dc.description.abstract",
+      "supported_topic": "computer hardware components and configuration",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "5aa287ec-ce0a-4773-a937-33a777056e07",
+      "title": "COP1510 Programming Concepts I",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Programming fundamentals, algorithms, APIs, debugging/testing and introductory OOP explicitly described.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:5aa287ec-ce0a-4773-a937-33a777056e07:metadata:dc.description.abstract",
+      "supported_topic": "introductory programming fundamentals",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "5fa371f7-e619-44d4-86e9-083feb5d45e9",
+      "title": "HCP0796 Patient Care Technician",
+      "source_classification": "SOURCE_SEMANTICS_PARTIAL",
+      "reason": "Organizational and management skills in a clinical setting stated without concrete tasks or behaviors.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:5fa371f7-e619-44d4-86e9-083feb5d45e9:metadata:dc.description.abstract",
+      "supported_topic": null,
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "df391f77-5a76-4c10-9e45-0a2783706b30",
+      "title": "PTN0086 Pharmacy Technician III",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Drug preparation/dispensing principles plus pharmacy lab/practicum explicitly described.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:df391f77-5a76-4c10-9e45-0a2783706b30:metadata:dc.description.abstract",
+      "supported_topic": "preparing and dispensing drugs",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "f252280a-b389-4dd7-bac4-669224a0dc96",
+      "title": "DES1051C Pain Management",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Dental pain/anxiety relief, local anesthesia and applied pharmacology explicitly described.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:f252280a-b389-4dd7-bac4-669224a0dc96:metadata:dc.description.abstract",
+      "supported_topic": "dental pain management and local anesthesia",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "63e10921-279e-4404-912e-432c80fd82a1",
+      "title": "EGS1000 Professional Performance for the Technician",
+      "source_classification": "SOURCE_SEMANTICS_PARTIAL",
+      "reason": "Broad introduction to interpersonal relations, problem solving, ethics and organizations; development outcomes unspecified.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:63e10921-279e-4404-912e-432c80fd82a1:metadata:dc.description.abstract",
+      "supported_topic": null,
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "c2d999f7-2867-43e1-b229-e205696e0c48",
+      "title": "CGS1560 Microcomputer Operating Systems",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Operating-system concepts/components/usage and hands-on labs explicitly described.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:c2d999f7-2867-43e1-b229-e205696e0c48:metadata:dc.description.abstract",
+      "supported_topic": "microcomputer operating-system concepts and usage",
+      "new_capability_proposed": false
+    },
+    {
+      "provider_course_id": "5776ecdb-fbd0-49a3-b11a-f96a4ed90a55",
+      "title": "HIM1253 Medical Coding",
+      "source_classification": "SOURCE_SEMANTICS_CLEAR",
+      "reason": "Outpatient CPT-4 coding, ICD-9-CM integration and practice explicitly described.",
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:5776ecdb-fbd0-49a3-b11a-f96a4ed90a55:metadata:dc.description.abstract",
+      "supported_topic": "outpatient medical coding",
+      "new_capability_proposed": false
+    }
+  ],
+  "source": "test/results/course-rec-01a-3/sample-manifest.json",
+  "full_semantic_review": false
+}

@@ -1,0 +1,1 @@
+{"ruff_check":"PASS","ruff_format":"PASS","mypy":"PASS: 4 production modules","json_validation":"PASS: all 19 evidence JSON files parsed","git_diff_check":"PASS","whitespace_scan":"PASS: no trailing whitespace in scoped files","secret_scan":"PASS: no credential/token/private-key patterns in scoped files"}

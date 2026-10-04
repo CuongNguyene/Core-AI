@@ -1,0 +1,30 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "mandatory": [
+    "stable namespaced ID",
+    "separate label and bounded definition/exclusions",
+    "domain scope/owner",
+    "exact release/revision/checksum",
+    "lifecycle/approval audit",
+    "coverage evidence expectations",
+    "source/mapping/policy provenance",
+    "deprecation/replacement rules",
+    "cross-domain collision review"
+  ],
+  "optional": [
+    "same-concept language-scoped aliases"
+  ],
+  "deferred": [
+    "hierarchy",
+    "external crosswalks"
+  ],
+  "shared_identity": "YES for equivalent reviewed capability facets; source business identities remain separate.",
+  "tradeoffs": {
+    "semantic": "Share only demonstrably equivalent concepts, not entire outcomes/requirements",
+    "operational": "Exact joins and reproducible explanation",
+    "governance": "Named owner/reviewer plus versioned approval",
+    "coverage": "Unmapped retained, no nearest match",
+    "migration": "Additive sidecars, explicit compatibility"
+  }
+}

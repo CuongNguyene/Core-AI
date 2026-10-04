@@ -1,0 +1,12 @@
+{
+  "type": "CourseLearningOutcome",
+  "identity": "SourceSemanticRef with entity_kind course_learning_outcome",
+  "fields": ["outcome_ref", "course_ref", "statement", "source_locator"],
+  "bounds": {
+    "course_ref_characters": 512,
+    "statement_characters": 4000,
+    "source_locator_characters": 2048
+  },
+  "topic_auto_promotion": false,
+  "canonical_capability_identity": false
+}

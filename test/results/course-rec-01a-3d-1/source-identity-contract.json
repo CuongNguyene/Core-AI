@@ -1,0 +1,16 @@
+{
+  "type": "SourceSemanticRef",
+  "fields": ["source_namespace", "entity_kind", "source_id", "source_version"],
+  "entity_kinds": [
+    "role_requirement",
+    "learning_need_competency",
+    "learning_path_target",
+    "course_learning_outcome",
+    "course_direct_claim",
+    "candidate_concept",
+    "provider_classification"
+  ],
+  "source_identity_is_canonical_capability": false,
+  "source_id_is_normalized": false,
+  "source_version_optional": true
+}

@@ -1,0 +1,6 @@
+{
+  "type": "MappingScope",
+  "values": ["capability_facet", "outcome_capability_facet", "direct_capability_claim"],
+  "exact_applies_to": "bounded semantic facet",
+  "whole_source_aggregate_equality": false
+}

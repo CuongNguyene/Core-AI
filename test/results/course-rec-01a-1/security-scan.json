@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "checks": {
+    "provider_token_in_source": false,
+    "provider_token_in_fixtures": false,
+    "provider_token_in_evidence": false,
+    "provider_response_body_in_errors": false,
+    "model_gateway_imported_by_adapter": false,
+    "recommendation_runtime_changed": false,
+    "lms_runtime_changed": false
+  },
+  "note": "The auth test uses the literal test-token only to assert request header behavior; it is not a credential."
+}

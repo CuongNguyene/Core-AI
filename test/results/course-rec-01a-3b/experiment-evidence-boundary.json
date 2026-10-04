@@ -1,0 +1,99 @@
+{
+  "source": "test/results/course-rec-01a-3/sample-manifest.json",
+  "artifact_inventory": [
+    {
+      "artifact": "sample-manifest.json",
+      "fields": "UUID, handle, title, source_metadata, last_modified, dspace_state",
+      "classification": "REAL_PROVIDER_SOURCE",
+      "qualification": "Copied public DSpace metadata in a sanitized sample; not raw HTTP response; no independent network refetch in this audit. last_modified is not retrieval time."
+    },
+    {
+      "artifact": "sample-manifest.json",
+      "fields": "bitstreams and bundle_names",
+      "classification": "REAL_PROVIDER_SOURCE",
+      "qualification": "Copied from 01A.2C live-course-results; binary content absent."
+    },
+    {
+      "artifact": "sample-manifest.json",
+      "fields": "category, selection, sampling_method, strict_provider_candidate",
+      "classification": "EXPERIMENT_DERIVED",
+      "qualification": "Strata are authored labels; strict candidate is a provider-policy derived result."
+    },
+    {
+      "artifact": "manual-baseline-proposals.json",
+      "fields": "capability_ref, evidence strength, mapping_method, confidence",
+      "classification": "MANUAL_SEMANTIC_JUDGMENT",
+      "qualification": "Hard-coded MAPPINGS and confidence 0.98/0.35; not a measured or separately approved mapping registry."
+    },
+    {
+      "artifact": "manual-baseline-proposals.json",
+      "fields": "excerpt",
+      "classification": "MANUAL_SEMANTIC_JUDGMENT",
+      "qualification": "Edited/abridged excerpt with ellipses; underlying metadata is provider source, excerpt is not byte-exact."
+    },
+    {
+      "artifact": "manual-review-results.json",
+      "fields": "review_status, rationale, rejection_reason",
+      "classification": "MANUAL_SEMANTIC_JUDGMENT",
+      "qualification": "Decisions authored inside experiment script; no named reviewer, timestamp, signed approval or evidence of independent SME review."
+    },
+    {
+      "artifact": "course-capability-profiles-draft.json",
+      "fields": "profiles, DIRECT coverage, null level, empty prerequisites, DRAFT status",
+      "classification": "EXPERIMENT_DERIVED",
+      "qualification": "Generated from two accepted authored decisions; valid structure does not verify mapping truth."
+    },
+    {
+      "artifact": "canonical-capability-source.json",
+      "fields": "taxonomy choice and canonical designation",
+      "classification": "EXPERIMENT_DERIVED",
+      "qualification": "Taxonomy is real code, designation as canonical for course semantics is an experiment assumption."
+    },
+    {
+      "artifact": "enrichment-policy.json and source-evidence-contract.json",
+      "fields": "policy label and evidence requirements",
+      "classification": "EXPERIMENT_DERIVED",
+      "qualification": "Declared local experiment contract, not approved SemanticPolicy registry record."
+    },
+    {
+      "artifact": "semantic-coverage.json and summary.json",
+      "fields": "2/15, 4 claims, 2 accept/2 reject, means/median",
+      "classification": "EXPERIMENT_DERIVED",
+      "qualification": "Arithmetic over authored decisions; not validated full-course recall or independently reviewed accuracy."
+    },
+    {
+      "artifact": "metadata-sufficiency.json, semantic-coverage.json and summary.json",
+      "fields": "2 sufficient/13 partial, ambiguous rate, MEDIUM effort",
+      "classification": "MANUAL_SEMANTIC_JUDGMENT",
+      "qualification": "Hard-coded counts/effort; source strength and absence of taxonomy mapping are conflated. No per-course sufficiency decision log."
+    },
+    {
+      "artifact": "negative-cases.json",
+      "fields": "blocked/rejected/enforced labels",
+      "classification": "EXPERIMENT_DERIVED",
+      "qualification": "Script-written assertion summary; code/tests provide structural evidence, not semantic acceptance validation."
+    },
+    {
+      "artifact": "provider-regression.json",
+      "fields": "13/62 passed",
+      "classification": "EXPERIMENT_DERIVED",
+      "qualification": "Recorded previous verification; not rerun during read-only semantic audit."
+    },
+    {
+      "artifact": "services/pai-backend/backend/tests/test_course_catalog_semantic_enrichment.py",
+      "fields": "synthetic UUID, course, title evidence, proposals",
+      "classification": "TEST_FIXTURE",
+      "qualification": "Eight unparametrized test functions; same UUID belongs to payroll in live manifest, not project management. Synthetic test data must not count as live mapping evidence."
+    },
+    {
+      "artifact": "01A.3 report",
+      "fields": "SINGLE_REVIEWER_REFERENCE and trustworthy draft claims",
+      "classification": "MANUAL_SEMANTIC_JUDGMENT",
+      "qualification": "Bounded engineering reference acknowledged, but independent human/SME reviewer identity remains UNKNOWN; report says 20 semantic tests while file has eight functions."
+    }
+  ],
+  "all_previous_evidence_files_inspected": 12,
+  "full_course_semantics_inspected": false,
+  "independent_reviewer_identity": "UNKNOWN",
+  "provider_metadata_refetched": false
+}

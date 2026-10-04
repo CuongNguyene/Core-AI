@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "pair_a": {
+    "course_ref": "skillscommons:course-A#segment",
+    "claim_id": "claim-B"
+  },
+  "pair_b": {
+    "course_ref": "skillscommons:course-A",
+    "claim_id": "segment#claim-B"
+  },
+  "new_ids_differ": true,
+  "both_ids_within_source_ref_limit": true
+}

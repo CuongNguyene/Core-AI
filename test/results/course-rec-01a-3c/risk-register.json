@@ -1,0 +1,56 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "risks": [
+    {
+      "risk": "Semantic dumping ground",
+      "severity": "HIGH",
+      "mitigation": "Business need, bounded scope, owner and independent review"
+    },
+    {
+      "risk": "Cross-pack duplicate capabilities",
+      "severity": "HIGH",
+      "mitigation": "Namespace owner uniqueness and cross-domain semantic collision review; reuse pinned IDs"
+    },
+    {
+      "risk": "Narrow outcome promoted to broad capability",
+      "severity": "HIGH",
+      "mitigation": "EXACT facet mapping plus coverage-scope gate; reject incompatible target"
+    },
+    {
+      "risk": "Engine loses scope nuance",
+      "severity": "HIGH",
+      "mitigation": "Upstream target-specific prefilter and recorded exclusions; ref coverage never mastery"
+    },
+    {
+      "risk": "Pack fragmentation",
+      "severity": "MEDIUM",
+      "mitigation": "Same pinned active release per ref/context; stable ID without version"
+    },
+    {
+      "risk": "Stale source/mapping",
+      "severity": "HIGH",
+      "mitigation": "Pin checksum/version; re-review on source change"
+    },
+    {
+      "risk": "Mapping explosion",
+      "severity": "MEDIUM",
+      "mitigation": "Atomic facets/reusable reviewed rules; no keyword mapping"
+    },
+    {
+      "risk": "AI automatic authority",
+      "severity": "HIGH",
+      "mitigation": "Draft proposals; human approval; confidence cannot activate"
+    },
+    {
+      "risk": "Role policy/definition packs conflated",
+      "severity": "HIGH",
+      "mitigation": "Distinct contracts and explicit pinned composition context"
+    },
+    {
+      "risk": "Legacy breakage",
+      "severity": "HIGH",
+      "mitigation": "Sidecars/new versions; preserve historical IDs/replay"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "internal_course_ref": "frappe_lms:course-parity",
+  "external_course_ref": "skillscommons:course-parity",
+  "same_canonical_capability": "capability:test_core:communication",
+  "same_rank": 1,
+  "same_decision_details": true,
+  "provider_specific_semantic_branch": false
+}

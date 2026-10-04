@@ -1,0 +1,13 @@
+{
+  "status": "REPRODUCED_BEFORE_FIX",
+  "legacy_behavior": "both_structured_pairs_accepted_and_collapsed_to_same_source_id",
+  "pair_a": {
+    "course_ref": "skillscommons:course-A#segment",
+    "claim_id": "claim-B"
+  },
+  "pair_b": {
+    "course_ref": "skillscommons:course-A",
+    "claim_id": "segment#claim-B"
+  },
+  "old_source_id": "course-A#segment#claim-B"
+}

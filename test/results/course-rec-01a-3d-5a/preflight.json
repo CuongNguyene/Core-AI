@@ -1,0 +1,11 @@
+{
+  "core_ai_path": "/Users/mac/Developers/work/LMS/Core-AI",
+  "core_ai_branch": "feat/deterministic-ai-course-planning-workspace",
+  "core_ai_head": "a078526ab7ea38327fdeece142aba325f3de3352",
+  "core_ai_worktree": "dirty_with_pre-existing_work",
+  "lms_path": "/Users/mac/Developers/work/LMS/lms",
+  "lms_branch": "feat/learning-operations-phase-1",
+  "lms_head": "289174af73ad648a2e42c7d55a2273d815790235",
+  "lms_worktree": "clean_and_unchanged",
+  "git_diff_check": "PASS"
+}

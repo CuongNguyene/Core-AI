@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "3d_1": ["CanonicalCapabilityRef", "SourceSemanticRef"],
+  "3d_2": ["CapabilityDefinition", "CapabilityPackRelease", "CapabilityDefinitionPin", "resolve_for_new_binding", "resolve_historical"],
+  "3d_3a": ["SemanticEvidence", "CapabilityMappingProposal", "CapabilityMappingReview", "CourseLearningOutcome", "UnmappedSemantic"],
+  "3d_3b": ["GovernedCapabilityMapping", "SourceSemanticPin", "resolve_governed_mapping_for_use", "resolve_governed_mapping_historical"],
+  "3d_4_entry_point": "project_governed_recommendation_target",
+  "3d_5_entry_point": "project_governed_course_capabilities",
+  "01b_input": "RecommendationTarget + CourseRecommendationCandidate[]",
+  "01b_mutated": false,
+  "01b_production_sha256": {
+    "engine.py": "329b0709e0d0022f5e3153f35b3a986564b8b16c6af148b6219723731006d068",
+    "schemas.py": "f8f16908d0283b185768532af055fb4d04ef54117e63de9b784738e5bacfb8fd",
+    "__init__.py": "351a2f7240a878bc23799b7f2734e23f251548a85b1dd8792c4f4f6ca9deb270"
+  },
+  "canonical_join": "exact string intersection plus dry-run exact CapabilityDefinitionPin equality"
+}

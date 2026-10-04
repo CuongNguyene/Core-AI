@@ -1,0 +1,18 @@
+{
+  "decision": "PACKAGE_CONTENT_RESEARCH_PREMATURE",
+  "reason": "Broad parsing cannot resolve absent governed representation or shared-identity approval. The previous blanket 13-case package recommendation is unsupported.",
+  "eligible_future_cases": [
+    {
+      "course": "PHT1007 Topics in Physical Therapy",
+      "condition": "After course mapping/development coverage rules are approved, objectives might distinguish topic introduction from team-leadership development."
+    },
+    {
+      "course": "Canvas Orientation Course or HCP0796 Patient Care Technician",
+      "condition": "After target semantic vocabulary is settled, inspect selected objectives to clarify currently broad outcomes."
+    }
+  ],
+  "parsing_performed": false,
+  "packages_downloaded": false,
+  "selected_case_future_research_not_authorized_by_this_audit": true,
+  "next_step": "B. Perform taxonomy governance/design work first."
+}

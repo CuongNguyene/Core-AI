@@ -1,0 +1,7 @@
+{
+  "provider": "MockExternalProvider",
+  "methods": ["list_courses", "get_course"],
+  "network_calls": false,
+  "model_calls": false,
+  "live_provider": false
+}

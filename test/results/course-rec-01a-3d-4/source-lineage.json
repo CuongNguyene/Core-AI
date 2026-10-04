@@ -1,0 +1,8 @@
+{
+  "role_gap_track": "exact target id and version; exactly one current/future match",
+  "gap_analysis": "LearningNeed provenance analysis id/version must match CapabilityGapProfile",
+  "source_profile": "LearningNeed provenance source profile id/version must match gap CV profile",
+  "requirement": "unique in role profile and selected track; need competency and requirement_reference exact",
+  "source_gaps": "all LearningNeed source_gap_refs must uniquely belong to the selected requirement",
+  "stale_or_ambiguous": "fail closed"
+}

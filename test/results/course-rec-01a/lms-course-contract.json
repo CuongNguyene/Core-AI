@@ -1,0 +1,10 @@
+{
+  "doctype": "LMS Course",
+  "identity": {"field": "name", "normalized": "frappe_lms:<name>"},
+  "direct_fields": ["title", "duration"],
+  "snapshot_fields": ["description", "short_introduction"],
+  "availability_field": "published",
+  "optional_metadata": ["category", "instructors", "published_on"],
+  "not_used_for_capability_inference": ["title", "description", "chapters", "lessons", "instructors"],
+  "source_file": "lms/lms/doctype/lms_course/lms_course.json"
+}

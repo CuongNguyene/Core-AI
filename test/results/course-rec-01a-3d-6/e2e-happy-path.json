@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "synthetic": true,
+  "pack": {
+    "pack_id": "test_core_pack",
+    "version": "1.0",
+    "checksum": "sha256:486b8c5d2e5206ca9df4edd87bd56bf2d63d3c61498cebef12728f33bbd522d5"
+  },
+  "role_requirement_ref": "req-1",
+  "learning_need_ref": "need-record-1",
+  "gap_ref": "gap-1",
+  "recommendation_target_ref": "role-1@2",
+  "course_ref": "skillscommons:course-e2e",
+  "course_outcome_ref": {
+    "source_namespace": "skillscommons",
+    "entity_kind": "course_learning_outcome",
+    "source_id": "course-e2e#outcome-1",
+    "source_version": "v1"
+  },
+  "canonical_ref": "capability:test_core:communication",
+  "target_mapping_id": "mapping:proposal:req-1:capability_facet:communication",
+  "target_mapping_fingerprint": "sha256:958dca4b28930e63b25534732b3329c121526ea27fea6d55438e6058cd609942",
+  "course_mapping_id": "mapping:proposal:course-e2e#outcome-1:outcome_capability_facet:communication",
+  "course_mapping_fingerprint": "sha256:de269538e4296c83ec7567cabdd376b68f4e042c14a34fdac3cd1086ca54d1db",
+  "source_evidence_fingerprint": "sha256:79fc1528835de4b4d635d765b4c47e452b73c52f26fa766902e86b28d73f53be",
+  "definition_pin": {
+    "capability_ref": "capability:test_core:communication",
+    "pack_id": "test_core_pack",
+    "version": "1.0",
+    "checksum": "sha256:486b8c5d2e5206ca9df4edd87bd56bf2d63d3c61498cebef12728f33bbd522d5"
+  },
+  "recommendation": {
+    "algorithm_id": "deterministic_course_recommendation",
+    "algorithm_version": "0.1",
+    "selected_course_ref": "skillscommons:course-e2e",
+    "rank": 1,
+    "coverage": "FULL_COVERAGE",
+    "no_suitable_reason": null
+  },
+  "trace": {
+    "target_ref": "role-1@2",
+    "role_requirement_refs": ["req-1"],
+    "learning_need_ref": "need-record-1",
+    "gap_refs": ["gap-1"],
+    "learning_path_ref": "path:1",
+    "path_step_ref": "step:2"
+  }
+}

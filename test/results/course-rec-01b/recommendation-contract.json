@@ -1,0 +1,11 @@
+{
+  "algorithm_id": "deterministic_course_recommendation",
+  "algorithm_version": "0.1",
+  "input": "RecommendationTarget + CourseRecommendationCandidate[]",
+  "output": "CourseRecommendationResult",
+  "pure": true,
+  "persistence": false,
+  "api": false,
+  "network": false,
+  "model_calls": false
+}

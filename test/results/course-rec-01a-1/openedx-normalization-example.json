@@ -1,0 +1,31 @@
+{
+  "input_fixture": {
+    "course_id": "course-v1:demo+101+2026",
+    "name": "Open edX Fundamentals",
+    "overview": "<p>Learn <strong>course operations</strong>.</p>",
+    "effort": "6 weeks",
+    "pacing": "self_paced",
+    "start": "2026-09-01T00:00:00Z",
+    "end": "2026-12-31T00:00:00Z"
+  },
+  "external_course": {
+    "provider_ref": "openedx",
+    "provider_course_id": "course-v1:demo+101+2026",
+    "title": "Open edX Fundamentals",
+    "description": "<p>Learn <strong>course operations</strong>.</p>",
+    "duration_minutes": null,
+    "delivery_mode": "self_paced",
+    "language": null,
+    "availability": "available",
+    "course_url": null
+  },
+  "normalized_candidate": {
+    "course_ref": "openedx:course-v1:demo+101+2026",
+    "source_type": "external",
+    "source_system": "openedx",
+    "capabilities": [],
+    "target_level": null,
+    "prerequisites": []
+  },
+  "secrets_present": false
+}

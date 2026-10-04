@@ -1,0 +1,14 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "identity_format": "capability:<namespace_key>:<semantic_key>",
+  "grammar": "Each key starts with lowercase ASCII letter; remaining lowercase ASCII letters/digits/underscore; no colon or @ within keys.",
+  "version_embedded": false,
+  "label_separate": true,
+  "global_uniqueness": "Unique namespace/key, one approved owner per namespace; semantic duplication review across namespaces.",
+  "ownership_transfer": "Owner assignment changes without changing ID.",
+  "cross_pack_reuse": "Pinned dependency references original canonical ID; never duplicate ID under another domain.",
+  "rename": "Display-label update preserves ID; semantic key is immutable.",
+  "namespace_keys_allocated": 0,
+  "production_ids_created": 0
+}

@@ -1,0 +1,8 @@
+{
+  "recommendation_target_schema_changed": false,
+  "canonical_refs": "sorted unique exact refs from resolved bindings",
+  "same_ref_same_definition_pin": "deduplicate target ref; retain every mapping provenance row",
+  "same_ref_different_definition_pin": "fail closed",
+  "role_and_need_facets": "resolve independently; shared caller facet_id requires equal canonical result",
+  "original_requirement_need_gap_refs": "preserved"
+}

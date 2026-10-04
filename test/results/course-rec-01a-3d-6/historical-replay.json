@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "historical_source_pin": "exact mapping SourceSemanticPin",
+  "historical_target_pin": "capability:test_core:communication at test_core_pack@1.0 exact checksum",
+  "historical_resolution_mode": "historical",
+  "deprecated_mapping_replay": "PASS",
+  "deprecated_mapping_current_target_use": "REJECTED",
+  "deprecated_mapping_current_course_use": "REJECTED",
+  "replacement_redirect": false
+}

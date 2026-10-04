@@ -1,0 +1,77 @@
+{
+  "claims": [
+    {
+      "provider_course_id": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+      "course": "MAN2582 Introduction to Project Management",
+      "capability_ref": "project_management",
+      "original_outcome": "ACCEPT",
+      "audit_outcome": "SUPPORTED",
+      "evidence": "prepare students to utilize project management techniques in the workplace",
+      "assessment": "Explicit project-management objective fits planning/coordinating/delivering projects. Introduction does not imply proficiency or whole-family mastery.",
+      "original_decision_still_justified": true,
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:6f6156c3-7b85-4ce0-85cc-1efbd439d144:metadata:dc.description.abstract",
+      "evidence_reference": "test/results/course-rec-01a-3/sample-manifest.json",
+      "substitute_capability_searched": false,
+      "profile_modified": false
+    },
+    {
+      "provider_course_id": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+      "course": "PHT1007 Topics in Physical Therapy",
+      "capability_ref": "team_leadership",
+      "original_outcome": "ACCEPT",
+      "audit_outcome": "AMBIGUOUS",
+      "evidence": "Also presented are learning theories, leadership and teams, management and quality assurance",
+      "assessment": "Topic presentation is explicit; leading, mentoring or coordinating people/team delivery is not. DIRECT development coverage is not established. Existing DRAFT must remain experimental pending later review.",
+      "original_decision_still_justified": false,
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:f64795cb-b561-4bb6-9748-9841d6e982dd:metadata:dc.description.abstract",
+      "evidence_reference": "test/results/course-rec-01a-3/sample-manifest.json",
+      "substitute_capability_searched": false,
+      "profile_modified": false
+    },
+    {
+      "provider_course_id": "5aa287ec-ce0a-4773-a937-33a777056e07",
+      "course": "COP1510 Programming Concepts I",
+      "capability_ref": "digital_platform_development",
+      "original_outcome": "REJECT",
+      "audit_outcome": "UNSUPPORTED",
+      "evidence": "fundamentals of computer programming",
+      "assessment": "Introductory algorithms, debugging/testing, APIs and OOP do not establish designing/developing/delivering software systems or platforms. The software-development alias creates conceptual overlap, not proof of equivalent developed capability; no hierarchy-based gap follows.",
+      "original_decision_still_justified": true,
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:5aa287ec-ce0a-4773-a937-33a777056e07:metadata:dc.description.abstract",
+      "evidence_reference": "test/results/course-rec-01a-3/sample-manifest.json",
+      "substitute_capability_searched": false,
+      "profile_modified": false
+    },
+    {
+      "provider_course_id": "63e10921-279e-4404-912e-432c80fd82a1",
+      "course": "EGS1000 Professional Performance for the Technician",
+      "capability_ref": "team_leadership",
+      "original_outcome": "REJECT",
+      "audit_outcome": "UNSUPPORTED",
+      "evidence": "interpersonal relationships, problem solving, goal settings",
+      "assessment": "Generic professional topics do not show leading, coordinating, mentoring or managing a team.",
+      "original_decision_still_justified": true,
+      "source_field": "dc.description.abstract",
+      "source_locator": "dspace:item:63e10921-279e-4404-912e-432c80fd82a1:metadata:dc.description.abstract",
+      "evidence_reference": "test/results/course-rec-01a-3/sample-manifest.json",
+      "substitute_capability_searched": false,
+      "profile_modified": false
+    }
+  ],
+  "counts": {
+    "SUPPORTED": 1,
+    "UNSUPPORTED": 2,
+    "AMBIGUOUS": 1,
+    "INSUFFICIENT_SOURCE_EVIDENCE": 0
+  },
+  "original_counts_preserved": {
+    "ACCEPT": 2,
+    "REJECT": 2
+  },
+  "new_claims_created": 0,
+  "approved_profiles_created": 0,
+  "original_profiles_modified": false
+}

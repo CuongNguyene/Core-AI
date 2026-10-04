@@ -1,0 +1,16 @@
+{
+  "exact_online_course_processed": 30,
+  "learning_access": {
+    "HOSTED_COURSEWARE": 0,
+    "DOWNLOADABLE_COURSE_PACKAGE": 27,
+    "DOWNLOADABLE_MATERIALS": 3,
+    "RESTRICTED": 0,
+    "BROKEN": 0,
+    "UNKNOWN": 0
+  },
+  "access_verification_status_counts": {"VERIFIED_ACCESSIBLE": 118, "RESTRICTED": 5, "UNKNOWN": 30, "BROKEN": 0},
+  "strict_rule": "FULL_COURSE and active DSpace state and HOSTED_COURSEWARE or DOWNLOADABLE_COURSE_PACKAGE",
+  "strict_candidates": 27,
+  "observed_verified_yield_in_sample": 0.9,
+  "sample_bias": "bounded free-text recall followed by exact dc.type post-filter; not population representative"
+}

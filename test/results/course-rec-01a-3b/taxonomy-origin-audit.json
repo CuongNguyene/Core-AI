@@ -1,0 +1,24 @@
+{
+  "taxonomy": "professional_capability_core@0.1",
+  "original_purpose": "Immutable bounded professional capability families for CV fact-to-capability selection/evaluation; later reused by CV bounded/discovery runtime.",
+  "origin_evidence": [
+    "services/pai-backend/backend/app/extraction/capability_taxonomy.py:1",
+    "services/pai-backend/backend/app/extraction/capability_taxonomy.py:122",
+    "services/pai-backend/backend/scripts/ext_03a6_bounded_taxonomy.py:1",
+    "services/pai-backend/backend/scripts/ext_03a7_multi_cv_taxonomy.py:1",
+    "services/pai-backend/backend/test/results/ext-03a6-bounded-taxonomy/evaluation.md",
+    "services/pai-backend/backend/test/results/ext-03a7-multi-cv-taxonomy-evaluation/evaluation.md"
+  ],
+  "uses": [
+    "services/pai-backend/backend/app/extraction/capability_discovery.py",
+    "services/pai-backend/backend/app/extraction/worker.py",
+    "services/pai-backend/backend/app/extraction/two_stage_composer.py",
+    "services/pai-backend/backend/app/course_catalog/semantic_enrichment.py"
+  ],
+  "originates_in_cv_extraction": true,
+  "originates_in_jd_role_normalization": false,
+  "general_competency_ontology_intent": "NOT_ESTABLISHED",
+  "explicit_course_designation": "Only experiment-local reuse, no course-wide governance decision",
+  "course_contract_requires_taxonomy": false,
+  "git_history_note": "Canonical repository imports backend through d4bfab8 subtree commit; original upstream authorship history not established here."
+}

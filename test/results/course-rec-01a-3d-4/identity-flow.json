@@ -1,0 +1,9 @@
+{
+  "milestone": "COURSE-REC-01A.3D-4",
+  "role_profile": "RoleCompetencyProfile.id/version",
+  "requirement_identity": "RoleRequirement.id == LearningNeedProfile.competency.id == LearningNeedProfile.requirement_reference",
+  "target_ref": "LearningNeedProfile.target_reference",
+  "source_learning_need_ref": "LearningNeedProfile.id",
+  "canonical_capability_identity": "additive; does not replace source identities",
+  "learning_need_source_version": "not invented; caller pin preserved and resolved exactly"
+}

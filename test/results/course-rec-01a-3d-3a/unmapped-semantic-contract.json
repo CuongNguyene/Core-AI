@@ -1,0 +1,10 @@
+{
+  "type": "UnmappedSemantic",
+  "fields": ["source_ref", "evidence", "reason", "provenance_ref"],
+  "canonical_target_required": false,
+  "evidence_nonempty_immutable_tuple": true,
+  "reasons": ["no_canonical_match", "insufficient_evidence", "mapping_rejected", "deferred_governance"],
+  "reason_computed_by_contract": false,
+  "nearest_match_reason": false,
+  "capability_creation": false
+}

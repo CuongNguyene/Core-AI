@@ -1,0 +1,21 @@
+{
+  "command": "UV_CACHE_DIR=/private/tmp/course-rec-01a-uv-cache uv run pytest tests/test_course_catalog_openedx.py -q",
+  "result": "PASS",
+  "passed": 25,
+  "failed": 0,
+  "coverage": [
+    "list and detail mapping",
+    "pagination bound",
+    "minimal/missing optional fields",
+    "HTML overview preservation",
+    "effort does not become duration",
+    "availability future/ended/hidden",
+    "empty capabilities and nullable semantics",
+    "provenance",
+    "401/403/404/429/5xx",
+    "invalid JSON",
+    "malformed shapes",
+    "timeout",
+    "optional auth header"
+  ]
+}

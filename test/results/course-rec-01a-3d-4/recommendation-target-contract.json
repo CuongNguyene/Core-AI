@@ -1,0 +1,10 @@
+{
+  "contract": "existing COURSE-REC-01B RecommendationTarget",
+  "target_ref": "LearningNeedProfile.target_reference (version-pinned target identity)",
+  "source_learning_need_ref": "LearningNeedProfile.id (need-record trace identity)",
+  "target_capability_refs": "exact canonical refs only",
+  "source_role_requirement_refs": "validated RoleRequirement.id",
+  "source_gap_refs": "validated LearningNeed source gap identities",
+  "path_and_step_refs": "pass-through",
+  "prerequisite_context": "existing explicit context or default empty context"
+}

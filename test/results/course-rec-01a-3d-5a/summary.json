@@ -1,0 +1,14 @@
+{
+  "milestone": "COURSE-REC-01A.3D-5A",
+  "title": "DIRECT CLAIM IDENTITY HARDENING",
+  "status": "COMPLETE",
+  "verification": "PASS",
+  "focused_tests_passed": 335,
+  "commit_readiness": "READY",
+  "next_compatibility_status": "READY_TO_RERUN_3D_6",
+  "core_ai_changed_files": 4,
+  "lms_changed_files": 0,
+  "full_3d_6_execution": false,
+  "commit_created": false,
+  "push_performed": false
+}

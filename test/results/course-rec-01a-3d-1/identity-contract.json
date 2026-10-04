@@ -1,0 +1,13 @@
+{
+  "milestone": "COURSE-REC-01A.3D-1",
+  "contract_package": "app.capability_governance.identity",
+  "types": [
+    "CanonicalCapabilityRef",
+    "SourceSemanticRef",
+    "SourceSemanticKind",
+    "CapabilityIdentityPair"
+  ],
+  "pair_implies_approval": false,
+  "production_capability_definitions_created": false,
+  "architecture": "OPTION_D_HYBRID_OUTCOMES_PLUS_DOMAIN_PACKS"
+}

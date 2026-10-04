@@ -1,0 +1,20 @@
+{
+  "status": "TARGETED_WITH_SANITIZED_FIXTURES",
+  "provider": "openedx",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/courses/v1/courses/",
+      "purpose": "bounded catalog listing",
+      "pagination": "results plus pagination.next"
+    },
+    {
+      "method": "GET",
+      "path": "/api/courses/v1/courses/{course_key}/",
+      "purpose": "course detail"
+    }
+  ],
+  "live_verification": "BLOCKED_NO_APPROVED_ENDPOINT_OR_CREDENTIAL",
+  "fixture_transport": "httpx.MockTransport",
+  "secrets_present": false
+}

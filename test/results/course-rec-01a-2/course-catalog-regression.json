@@ -1,0 +1,9 @@
+{
+  "command": "UV_CACHE_DIR=/private/tmp/course-rec-01a-uv-cache uv run pytest tests/test_course_catalog_*.py tests/test_settings.py -q",
+  "result": "PASS",
+  "passed": 84,
+  "failed": 0,
+  "open edx provider preserved": true,
+  "mock provider preserved": true,
+  "schema migration": false
+}

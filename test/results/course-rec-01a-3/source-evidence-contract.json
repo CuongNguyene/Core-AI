@@ -1,0 +1,6 @@
+{
+  "locator_format": "dspace:item:<UUID>:metadata:<actual-key>",
+  "evidence_required": true,
+  "source_excerpt_required": true,
+  "full_package_content_parsed": false
+}

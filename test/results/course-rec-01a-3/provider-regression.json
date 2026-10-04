@@ -1,0 +1,7 @@
+{
+  "skillscommons": {"command": "uv run pytest tests/test_course_catalog_skillscommons.py -q", "result": "13 passed"},
+  "course_catalog_and_profile": {"command": "uv run pytest tests/test_course_catalog_*.py -q", "result": "62 passed"},
+  "openedx": "covered by course catalog regression",
+  "mock_provider": "covered by course catalog regression",
+  "lms_changed": false
+}

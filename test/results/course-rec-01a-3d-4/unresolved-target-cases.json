@@ -1,0 +1,6 @@
+{
+  "empty_required_facets": "TARGET_CAPABILITY_UNRESOLVED",
+  "required_facet_without_mapping": "TARGET_CAPABILITY_UNRESOLVED",
+  "stale_required_facet": "native 3D-3B stale_source propagated",
+  "partial_projection": "not returned"
+}

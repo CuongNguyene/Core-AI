@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "core_ai": {
+    "course_capability_profile": "new_in_course_catalog",
+    "external_course": "new_in_course_catalog",
+    "normalized_course_candidate": "new_in_course_catalog",
+    "provider_contract": "new_pure_mock_contract",
+    "existing_learning_prerequisites": "not_reused_instructional_design_contract"
+  },
+  "lms": {
+    "course_doctype": "lms/lms/doctype/lms_course/lms_course.json",
+    "course_controller": "lms/lms/doctype/lms_course/lms_course.py",
+    "schema_modified": false
+  }
+}

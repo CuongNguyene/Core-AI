@@ -1,0 +1,11 @@
+{
+  "observed_from": "host_network",
+  "tls_verification": "enabled",
+  "endpoints": [
+    {"name": "OAI Identify", "www_status": 404, "partner_status": 404, "content_type": "text/html", "result": "unavailable"},
+    {"name": "OAI ListRecords", "www_status": 404, "content_type": "text/html", "result": "unavailable"},
+    {"name": "METS", "www_status": 404, "partner_status": 404, "content_type": "text/html", "result": "unavailable"},
+    {"name": "legacy bitstream pattern", "www_status": 404, "partner_status": 404, "content_type": "text/html", "result": "unavailable"}
+  ],
+  "migration_assessment": "legacy_documented_endpoints_unavailable_after_host_migration"
+}

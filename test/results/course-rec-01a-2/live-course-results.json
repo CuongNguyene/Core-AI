@@ -1,0 +1,7 @@
+{
+  "status": "NO_LIVE_RECORDS",
+  "records": [],
+  "reason": "Host is reachable, but the documented OAI endpoint returns HTML 404; provider TLS verification also failed before parsing.",
+  "raw_xml_persisted": false,
+  "secrets_present": false
+}

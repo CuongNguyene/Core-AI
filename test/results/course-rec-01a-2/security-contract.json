@@ -1,0 +1,10 @@
+{
+  "xml_dtd_entity_system_public_rejected": true,
+  "allowed_url_schemes": ["http", "https"],
+  "private_network_targets_blocked": true,
+  "redirect_targets_rechecked": true,
+  "absolute_bitstream_host_injection_blocked": true,
+  "large_response_bounded": true,
+  "credentials_sent": false,
+  "secrets_present": false
+}

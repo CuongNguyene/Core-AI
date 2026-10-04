@@ -1,0 +1,5 @@
+{
+  "requires": ["draft release", "approved semantic review", "collision review ref", "explicit approval", "reviewer independent of owner", "valid exact active dependency closure", "acyclic graph", "valid namespace authority", "no active ref collision"],
+  "failure_mutates_input": false,
+  "rbac_or_authentication": false
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "new_source_ref_is_used_as_ordinary_source_semantic_ref": true,
+  "proposal_fingerprint_algorithm_changed": false,
+  "source_pin_algorithm_changed": false,
+  "mapping_fingerprint_algorithm_changed": false,
+  "old_identity_requires_explicit_remap_and_review_for_current_use": true,
+  "compatibility_hack_added": false
+}

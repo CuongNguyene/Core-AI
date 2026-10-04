@@ -1,0 +1,16 @@
+{
+  "milestone": "COURSE-REC-01B",
+  "status": "COMPLETE",
+  "recommendation_tests": 25,
+  "course_catalog_regression_tests": 54,
+  "total_tests": 79,
+  "pure_engine": true,
+  "semantic_enrichment": false,
+  "recommendation_api": false,
+  "persistence": false,
+  "lms_changed": false,
+  "migrations": false,
+  "live_network": false,
+  "commit": false,
+  "push": false
+}

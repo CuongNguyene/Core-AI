@@ -1,0 +1,8 @@
+{
+  "legacy_role_need_gap_rewritten": false,
+  "recommendation_target_schema_modified": false,
+  "existing_01b_engine_modified": false,
+  "manual_legacy_need_auto_upgraded": false,
+  "regression_command": "focused existing Role/Gap/LearningNeed/LearningPath/01B tests",
+  "result": "PASS; see test-results.json"
+}

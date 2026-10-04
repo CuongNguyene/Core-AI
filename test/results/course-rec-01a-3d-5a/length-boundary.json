@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "course_ref_model_max_length": 512,
+  "claim_id_model_max_length": null,
+  "claim_id_length_contract": "no_existing_upper_bound; helper hashes full value",
+  "tested_claim_id_length": 100000,
+  "output_id_length": 68,
+  "output_within_source_ref_max_512": true,
+  "input_truncated": false
+}

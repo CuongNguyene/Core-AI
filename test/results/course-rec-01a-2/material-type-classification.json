@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "Online Course": "ONLINE_COURSE",
+    "Hybrid/Blended Course": "HYBRID_COURSE",
+    "Online Course Module": "COURSE_MODULE",
+    "Tutorial/Open Textbook/Video - Instructional/Syllabus/Assignment/Quiz/Test/Reference Material": "LEARNING_RESOURCE",
+    "missing_or_unknown": "UNKNOWN"
+  },
+  "keyword_similarity_used": false,
+  "default_full_course_pool": "ONLINE_COURSE"
+}

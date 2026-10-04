@@ -1,0 +1,12 @@
+{
+  "tls_verification": "PASS",
+  "insecure_tls_disabled": false,
+  "allowed_schemes": ["http", "https"],
+  "trusted_dspace_api_host": "library.skillscommons.org",
+  "redirects_revalidated": true,
+  "private_networks_blocked": true,
+  "max_access_body_bytes": 32768,
+  "binary_downloads": false,
+  "credentials_added": false,
+  "secret_scan_scope": "provider source, tests and evidence; no secrets stored"
+}

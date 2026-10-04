@@ -1,0 +1,13 @@
+{
+  "focused_3d3a": {
+    "result": "PASS",
+    "passed": 49,
+    "failed": 0
+  },
+  "combined_regression": {
+    "result": "PASS",
+    "passed": 178,
+    "failed": 0,
+    "command": "pytest tests/test_capability_outcome_mapping_contracts.py tests/test_capability_identity_contracts.py tests/test_course_catalog_fixtures.py tests/test_course_catalog_schemas.py tests/test_course_catalog_semantic_enrichment.py tests/test_course_recommendation.py tests/test_learning_need_profile.py tests/test_learning_need_projection_policy.py tests/test_role_profile_source_adapter.py tests/test_semantic_core_contracts.py -q"
+  }
+}

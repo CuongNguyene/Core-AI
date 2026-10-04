@@ -1,0 +1,15 @@
+{
+  "observed_from": "host_network",
+  "requests": [
+    {"endpoint": "GET /assets/config.373d61365fd0cf4fef85385998635bf6.json", "status": 200, "content_type": "application/json", "auth": "anonymous", "classification": "public_runtime_config"},
+    {"endpoint": "GET /server/api", "status": 200, "content_type": "application/hal+json", "auth": "anonymous", "classification": "public_dspace_rest_root"},
+    {"endpoint": "GET /server/api/discover/search/objects?query=%2A&size=1", "status": 200, "content_type": "application/hal+json", "auth": "anonymous", "classification": "public_catalog_search"},
+    {"endpoint": "GET /server/api/discover/search/objects?query=Online%20Course&size=1", "status": 200, "content_type": "application/hal+json", "auth": "anonymous", "classification": "public_catalog_search_free_text"},
+    {"endpoint": "GET /server/api/core/items/<UUID>", "status": 200, "content_type": "application/hal+json", "auth": "anonymous", "classification": "public_item_metadata"},
+    {"endpoint": "GET /server/api/core/items/<UUID>/bundles", "status": 200, "content_type": "application/hal+json", "auth": "anonymous", "classification": "public_bundle_metadata"},
+    {"endpoint": "GET /server/api/core/bundles/<UUID>/bitstreams", "status": 200, "content_type": "application/hal+json", "auth": "anonymous", "classification": "public_bitstream_metadata"},
+    {"endpoint": "HEAD /server/api/core/bitstreams/<UUID>/content", "status": 200, "content_type": "application/octet-stream", "auth": "anonymous", "classification": "public_content_access"},
+    {"endpoint": "GET /server/api/core/items?size=1", "status": 401, "content_type": "application/json", "auth": "required", "classification": "protected_collection_endpoint"}
+  ],
+  "browser_network_trace": "not_available_in_current_CUA_browser_surface; source/config and direct read_only_requests inspected"
+}

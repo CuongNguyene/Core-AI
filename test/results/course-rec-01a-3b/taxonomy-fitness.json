@@ -1,0 +1,56 @@
+{
+  "classification": "TAXONOMY_PARTIALLY_FIT",
+  "reason": "Project management positive control fits; 9 clear zero-coverage source topics lack equivalent governed representation. Bounded CV families may be shared, but current extraction reference is not a governed general course ontology.",
+  "questions": [
+    {
+      "question": "CandidateProfile validity",
+      "answer": "Bounded mapped CV evidence use is explicit; broad CandidateProfile sufficiency not established. Discovery retains grounded unmapped concepts."
+    },
+    {
+      "question": "RoleCompetencyProfile validity",
+      "answer": "Not established for this taxonomy; role requirements are independently authored IDs governed by semantic policies/packs."
+    },
+    {
+      "question": "Capability-gap validity",
+      "answer": "Not established as mandatory taxonomy; gaps preserve requirement identity and context."
+    },
+    {
+      "question": "Explicit course validity",
+      "answer": "Experiment-local restriction only; no broad contractual mandate or independent approval."
+    },
+    {
+      "question": "SkillsCommons domain coverage",
+      "answer": "Not broad enough for the concrete source semantics in this 15-record sample; no population coverage estimate."
+    },
+    {
+      "question": "Granularity compatibility",
+      "answer": "Compatible for introductory project-management coverage; mixed scopes and no formal skill/topic-to-capability rule."
+    },
+    {
+      "question": "Exact matching intention",
+      "answer": "Explicit at recommendation target/candidate boundary; end-to-end identity conversion is unresolved."
+    },
+    {
+      "question": "Low coverage cause",
+      "answer": "Mixed observed causes: representation limitations, 4 broad source descriptions, one ambiguous accepted development claim, and restricted experiment proposals. Primary causal share cannot be quantified."
+    }
+  ],
+  "validity": "VALID_WITH_OVERSTATED_CONCLUSIONS",
+  "supported": [
+    "15 real copied provider records",
+    "4 authored proposals with traceable metadata",
+    "2 original accept decisions and 2 rejections",
+    "2 generated schema-valid DRAFT artifacts",
+    "No ACTIVE artifacts"
+  ],
+  "overstated": [
+    "2/15 is measured metadata sufficiency or exhaustive recall",
+    "13 courses all require package inspection",
+    "Both drafts are independently established trustworthy",
+    "GOVERNED_EXACT_MAPPING label is approved cross-pipeline mapping governance",
+    "Confidence 0.98/0.35 is calibrated",
+    "20 semantic tests evidenced by current 8-function file"
+  ],
+  "strong_scope_mismatch_claimed": false,
+  "strong_granularity_gap_claimed": false
+}

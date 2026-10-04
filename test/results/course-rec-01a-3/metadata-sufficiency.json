@@ -1,0 +1,8 @@
+{
+  "counts": {
+    "METADATA_SUFFICIENT": 2,
+    "METADATA_PARTIAL": 13,
+    "METADATA_INSUFFICIENT": 0
+  },
+  "classification_rule": "explicit objectives/strong semantic anchors sufficient; metadata without safe canonical mapping partial"
+}

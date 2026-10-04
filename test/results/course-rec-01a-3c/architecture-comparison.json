@@ -1,0 +1,101 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "criteria": [
+    "semantic_correctness",
+    "traceability",
+    "governance",
+    "domain_extensibility",
+    "course_coverage",
+    "role_alignment",
+    "implementation_simplicity",
+    "migration_simplicity",
+    "recommendation_compatibility",
+    "explainability",
+    "resistance_to_forcing"
+  ],
+  "scale": [
+    "STRONG",
+    "MODERATE",
+    "WEAK"
+  ],
+  "numeric_weights": false,
+  "options": [
+    {
+      "key": "A",
+      "decision": "PARTIAL",
+      "criteria": {
+        "semantic_correctness": "MODERATE",
+        "traceability": "WEAK",
+        "governance": "MODERATE",
+        "domain_extensibility": "MODERATE",
+        "course_coverage": "WEAK",
+        "role_alignment": "MODERATE",
+        "implementation_simplicity": "STRONG",
+        "migration_simplicity": "WEAK",
+        "recommendation_compatibility": "STRONG",
+        "explainability": "MODERATE",
+        "resistance_to_forcing": "WEAK"
+      }
+    },
+    {
+      "key": "B",
+      "decision": "PARTIAL",
+      "criteria": {
+        "semantic_correctness": "STRONG",
+        "traceability": "STRONG",
+        "governance": "MODERATE",
+        "domain_extensibility": "MODERATE",
+        "course_coverage": "STRONG",
+        "role_alignment": "STRONG",
+        "implementation_simplicity": "MODERATE",
+        "migration_simplicity": "MODERATE",
+        "recommendation_compatibility": "STRONG",
+        "explainability": "STRONG",
+        "resistance_to_forcing": "STRONG"
+      }
+    },
+    {
+      "key": "C",
+      "decision": "PARTIAL",
+      "criteria": {
+        "semantic_correctness": "MODERATE",
+        "traceability": "MODERATE",
+        "governance": "STRONG",
+        "domain_extensibility": "STRONG",
+        "course_coverage": "MODERATE",
+        "role_alignment": "STRONG",
+        "implementation_simplicity": "MODERATE",
+        "migration_simplicity": "MODERATE",
+        "recommendation_compatibility": "STRONG",
+        "explainability": "MODERATE",
+        "resistance_to_forcing": "MODERATE"
+      }
+    },
+    {
+      "key": "D",
+      "decision": "ACCEPT",
+      "criteria": {
+        "semantic_correctness": "STRONG",
+        "traceability": "STRONG",
+        "governance": "STRONG",
+        "domain_extensibility": "STRONG",
+        "course_coverage": "STRONG",
+        "role_alignment": "STRONG",
+        "implementation_simplicity": "WEAK",
+        "migration_simplicity": "MODERATE",
+        "recommendation_compatibility": "STRONG",
+        "explainability": "STRONG",
+        "resistance_to_forcing": "STRONG"
+      }
+    }
+  ],
+  "selected": "OPTION_D_HYBRID_OUTCOMES_PLUS_DOMAIN_PACKS",
+  "evidence_basis": [
+    "01A.3B identity/source audit",
+    "Course development/coverage contract",
+    "Role exact policy/pack governance",
+    "01B exact caller-supplied refs"
+  ],
+  "assessment_is_design_judgment_not_measured_benchmark": true
+}

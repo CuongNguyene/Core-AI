@@ -1,0 +1,8 @@
+{
+  "endpoint": "/server/api/core/items/<UUID>",
+  "status": 200,
+  "fields": ["uuid", "name", "handle", "metadata", "lastModified", "inArchive", "withdrawn", "discoverable", "entityType", "_links"],
+  "metadata_keys_observed": ["dc.title", "dc.description.abstract", "dc.identifier.uri", "dc.language", "dc.publisher", "dc.subject", "dc.type", "dcterms.license", "taaccct.deliveryFormat", "taaccct.credentialType", "taaccct.creditType", "taaccct.industry", "taaccct.instructional", "taaccct.occupation", "taaccct.projectName", "taaccct.type.secondary"],
+  "identity": {"primary": "uuid", "provenance": "handle"},
+  "state_semantics_used": {"withdrawn_true": "exclude", "discoverable_false": "exclude", "inArchive_false": "exclude"}
+}

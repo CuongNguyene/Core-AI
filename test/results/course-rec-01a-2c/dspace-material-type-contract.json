@@ -1,0 +1,24 @@
+{
+  "metadata_key": "dc.type",
+  "exact_online_course_value": "Online Course",
+  "observed_values_in_bounded_raw_sample": {
+    "Online Course": 50,
+    "Online Course Module": 8,
+    "Student Support Materials": 4,
+    "Reference Material": 4,
+    "Program Planning Resources": 3,
+    "Instructor and/or Advisor/Case Manager Support Materials": 2,
+    "Program Assessment and Evaluation": 2,
+    "Partnership Resources": 1,
+    "Grant Management Materials": 1,
+    "Syllabus": 1,
+    "Hybrid/Blended Course": 1,
+    "Development Tool": 1,
+    "Video - Outreach": 1,
+    "Workshop and Training Material": 1
+  },
+  "selection_strategy": "BOUNDED_POST_FILTER",
+  "free_text_query_only": false,
+  "server_exact_filter": "not resolved; bounded filter probes returned 400/422",
+  "language_or_authority_fields": "not required for exact dc.type match"
+}

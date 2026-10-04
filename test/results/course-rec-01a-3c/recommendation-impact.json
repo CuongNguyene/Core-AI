@@ -1,0 +1,35 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "classification": "01B_INPUT_ADAPTER_CHANGE",
+  "engine_code_changes_now": false,
+  "exact_match_retained": true,
+  "steps": [
+    "Resolve source business identities/version",
+    "Approve equivalent canonical facets",
+    "Preserve role AND/OR/context/level constraints",
+    "Resolve exact active releases/mappings",
+    "Prefilter candidate evidence freshness/scope against target",
+    "Pass exact canonical strings to unchanged 01B",
+    "Record immutable resolution trace outside engine"
+  ],
+  "scope_limitation": "FULL_COVERAGE is target ref coverage, not behavioral completeness/mastery. Unrepresentable target/AND-OR branches fail closed before engine; no flattening.",
+  "readiness_01c": "YES_WITH_CONSTRAINTS",
+  "safe_persistence": [
+    "request/result",
+    "algorithm/version",
+    "course/profile refs/version",
+    "decision details/exclusions/warnings",
+    "need/path/gap/requirement refs",
+    "supplied resolution provenance; explicit legacy-unresolved marker"
+  ],
+  "must_not_freeze": [
+    "extraction taxonomy as universal authority",
+    "requirement IDs equal capability refs",
+    "DRAFT claims as approved",
+    "latest defaults",
+    "raw source/secrets in audit"
+  ],
+  "external_standards": "Future versioned source mappings, not canonical external IDs by default; none researched/integrated.",
+  "immediate_package_parsing": false
+}

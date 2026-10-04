@@ -1,0 +1,12 @@
+{
+  "wrong_course_outcome": "PASS: rejected with course_source_mismatch",
+  "direct_claim_foreign_course_prefix": "PASS: rejected with course_source_mismatch",
+  "stale_outcome_evidence": "PASS: resolver rejects stale_source",
+  "deprecated_mapping": "PASS: resolver rejects mapping_deprecated",
+  "unmapped_outcome": "PASS: produces warning and no canonical coverage",
+  "legacy_draft_ref": "PASS: no candidate and no opaque-ref rewrite",
+  "active_profile_ref_mismatch": "PASS: rejected with active_profile_projection_mismatch",
+  "no_fake_direct_outcome": "PASS: direct claim projects using its own source identity",
+  "fuzzy_or_nearest_fallback": "ABSENT: adapter has no matching or taxonomy lookup path",
+  "auto_repin": "ABSENT: adapter consumes resolver-returned exact pin and does not select releases"
+}

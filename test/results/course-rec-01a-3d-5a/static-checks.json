@@ -1,0 +1,21 @@
+{
+  "ruff_check": {
+    "status": "PASS",
+    "scope": [
+      "app/capability_governance/direct_claim_identity.py",
+      "app/capability_governance/course_projection.py",
+      "tests/test_direct_claim_identity.py",
+      "tests/test_governed_course_projection.py"
+    ]
+  },
+  "ruff_format_check": "PASS",
+  "mypy": {
+    "status": "PASS",
+    "scope": [
+      "app/capability_governance/direct_claim_identity.py",
+      "app/capability_governance/course_projection.py"
+    ],
+    "issues": 0
+  },
+  "diff_check": "PASS"
+}

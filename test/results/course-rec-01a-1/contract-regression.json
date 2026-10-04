@@ -1,0 +1,11 @@
+{
+  "command": "UV_CACHE_DIR=/private/tmp/course-rec-01a-uv-cache uv run pytest tests/test_course_catalog_*.py tests/test_settings.py -q",
+  "result": "PASS",
+  "passed": 52,
+  "failed": 0,
+  "notes": [
+    "existing MockExternalProvider tests remain passing",
+    "provider-only external normalized candidates may have zero capability claims",
+    "CourseCapabilityProfile still requires explicit capability claims"
+  ]
+}

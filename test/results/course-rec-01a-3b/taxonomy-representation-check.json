@@ -1,0 +1,96 @@
+{
+  "scope": "Only 9 SOURCE_SEMANTICS_CLEAR courses from original zero-coverage set.",
+  "method": "Source statements first, complete 11 governed entries and their declared aliases second; exact/equivalent representation only; no substitutes, fuzzy, nearest or new mappings.",
+  "counts": {
+    "EXACT_CANONICAL_MATCH": 0,
+    "NO_CANONICAL_MATCH": 9,
+    "NOT_ENOUGH_EVIDENCE_TO_ASSESS": 0
+  },
+  "checks": [
+    {
+      "provider_course_id": "4f3652e5-82d3-4a78-9b02-73126bb86bc9",
+      "title": "BA 177 - Payroll Accounting Online",
+      "supported_source_semantic": "payroll accounting and payroll-tax computation",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:4f3652e5-82d3-4a78-9b02-73126bb86bc9:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "1398f9e1-49ee-4885-8eba-7d2d36d680e9",
+      "title": "PRN0020 Human Development",
+      "supported_source_semantic": "normal human lifespan development",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:1398f9e1-49ee-4885-8eba-7d2d36d680e9:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "f38740c4-657e-4c62-abe1-d9ce94eb30b0",
+      "title": "PRN0070 Basic Nutrition",
+      "supported_source_semantic": "nutrition principles and diet therapy",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:f38740c4-657e-4c62-abe1-d9ce94eb30b0:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "9cbe25b2-7502-405f-bbc3-92016ddcfed8",
+      "title": "CTS1131 Hardware Configuration",
+      "supported_source_semantic": "computer hardware components and configuration",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:9cbe25b2-7502-405f-bbc3-92016ddcfed8:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "5aa287ec-ce0a-4773-a937-33a777056e07",
+      "title": "COP1510 Programming Concepts I",
+      "supported_source_semantic": "introductory programming fundamentals",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:5aa287ec-ce0a-4773-a937-33a777056e07:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "df391f77-5a76-4c10-9e45-0a2783706b30",
+      "title": "PTN0086 Pharmacy Technician III",
+      "supported_source_semantic": "preparing and dispensing drugs",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:df391f77-5a76-4c10-9e45-0a2783706b30:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "f252280a-b389-4dd7-bac4-669224a0dc96",
+      "title": "DES1051C Pain Management",
+      "supported_source_semantic": "dental pain management and local anesthesia",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:f252280a-b389-4dd7-bac4-669224a0dc96:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "c2d999f7-2867-43e1-b229-e205696e0c48",
+      "title": "CGS1560 Microcomputer Operating Systems",
+      "supported_source_semantic": "microcomputer operating-system concepts and usage",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:c2d999f7-2867-43e1-b229-e205696e0c48:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    },
+    {
+      "provider_course_id": "5776ecdb-fbd0-49a3-b11a-f96a4ed90a55",
+      "title": "HIM1253 Medical Coding",
+      "supported_source_semantic": "outpatient medical coding",
+      "result": "NO_CANONICAL_MATCH",
+      "reason": "No exact or governed semantically equivalent entry/alias for this stated content in the complete 11-entry taxonomy; no alternative mapping proposed.",
+      "source_locator": "dspace:item:5776ecdb-fbd0-49a3-b11a-f96a4ed90a55:metadata:dc.description.abstract",
+      "taxonomy_reference": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+    }
+  ],
+  "partial_cases_not_evaluated": 4,
+  "canonical_capabilities_added": 0,
+  "strong_granularity_gap_proven": false,
+  "warning": "No representation of these stated topics does not prove no supporting component exists in a course or no shared professional capability could be developed; whole package not reviewed."
+}

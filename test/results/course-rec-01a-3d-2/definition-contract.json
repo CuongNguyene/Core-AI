@@ -1,0 +1,8 @@
+{
+  "model": "CapabilityDefinition",
+  "identity_field": "canonical_ref",
+  "fields": ["canonical_ref", "label", "definition", "status", "replacement_ref", "deprecation"],
+  "statuses": ["draft", "active", "deprecated"],
+  "immutable": true,
+  "replacement_redirect": false
+}

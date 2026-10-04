@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "identity_version": "dc1",
+  "algorithm": "sha256",
+  "input_encoding": "canonical-json-utf8",
+  "canonical_json": {
+    "sort_keys": true,
+    "separators": [",", ":"],
+    "ensure_ascii": false
+  },
+  "source_id_format": "dc1_<64-lowercase-hex>",
+  "source_id_length": 68,
+  "normalizes_input": false,
+  "rejects_blank_only_parts": true,
+  "legacy_delimited_ids_accepted_for_current_use": false,
+  "generic_identity_contract_changed": false
+}

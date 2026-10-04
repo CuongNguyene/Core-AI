@@ -1,0 +1,14 @@
+{
+  "external_course": "compatible via adapter-local mapping: id, title, description, language, license, access URL, provider metadata",
+  "normalized_course_candidate": "compatible; capabilities may remain empty",
+  "course_capability_profile": "not produced; semantic enrichment is a later boundary",
+  "skillscommons_provider_repoint": "possible in a later bounded task",
+  "required_follow_up": [
+    "replace OAI/METS transport with DSpace HAL adapter",
+    "map dc.type and preserve taaccct metadata",
+    "define exact material-type selection without free-text false positives",
+    "follow HAL links for bundle/bitstream access",
+    "retain bounded SSRF and access verification"
+  ],
+  "canonical_schema_change_needed_now": false
+}

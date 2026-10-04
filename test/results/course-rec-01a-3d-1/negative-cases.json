@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {"input": "req-123", "meaning": "requirement ID", "canonical_ref": false},
+    {"input": "skillscommons:course-7", "meaning": "course ref", "canonical_ref": false},
+    {"input": "dc.subject:project management", "meaning": "provider value", "canonical_ref": false},
+    {"input": "Project Management", "meaning": "display label", "canonical_ref": false},
+    {"input": "capability:software:python@2", "meaning": "version in identity", "canonical_ref": false},
+    {"input": "capability:software@1:python", "meaning": "version in namespace", "canonical_ref": false}
+  ],
+  "fuzzy_or_nearest_conversion": false,
+  "silent_legacy_upgrade": false
+}

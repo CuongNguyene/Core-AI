@@ -35,6 +35,35 @@ class Settings(BaseSettings):
     lms_identity_context_url: str = "http://lms-backend:3000/api/organization/users"
     lms_identity_context_token: SecretStr = SecretStr("")
 
+    # Optional external catalog spike settings. An empty base URL keeps the
+    # provider disabled until a deployment explicitly opts into it.
+    openedx_base_url: str = Field(
+        default="",
+        validation_alias=AliasChoices("OPENEDX_BASE_URL", "openedx_base_url"),
+    )
+    openedx_access_token: SecretStr = Field(
+        default=SecretStr(""),
+        validation_alias=AliasChoices("OPENEDX_ACCESS_TOKEN", "openedx_access_token"),
+    )
+    openedx_timeout_seconds: float = Field(
+        default=10.0,
+        gt=0,
+        le=60,
+        validation_alias=AliasChoices("OPENEDX_TIMEOUT_SECONDS", "openedx_timeout_seconds"),
+    )
+    openedx_max_pages: int = Field(
+        default=2,
+        ge=1,
+        le=5,
+        validation_alias=AliasChoices("OPENEDX_MAX_PAGES", "openedx_max_pages"),
+    )
+    openedx_page_size: int = Field(
+        default=50,
+        ge=1,
+        le=100,
+        validation_alias=AliasChoices("OPENEDX_PAGE_SIZE", "openedx_page_size"),
+    )
+
     object_storage_endpoint: str = "http://localhost:9000"
     object_storage_access_key: str = "minio"
     object_storage_secret_key: SecretStr = SecretStr("miniosecret")

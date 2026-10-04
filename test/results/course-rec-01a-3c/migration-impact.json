@@ -1,0 +1,44 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "classification": "MEDIUM",
+  "items": [
+    {
+      "artifact": "professional_capability_core@0.1",
+      "class": "KEEP_AS_IS",
+      "action": "Remain CV reference; entry-by-entry governed import/mapping only in future"
+    },
+    {
+      "artifact": "Two SkillsCommons DRAFT profiles",
+      "class": "EXPERIMENT_ONLY",
+      "action": "Preserve both; PM needs new governed binding; physical therapy ambiguous. Future approved projection uses new version/ref"
+    },
+    {
+      "artifact": "Role requirement IDs",
+      "class": "KEEP_AS_IS",
+      "action": "ADAPT via separate sidecar canonical facet bindings scoped to profile/version"
+    },
+    {
+      "artifact": "LearningNeed IDs",
+      "class": "KEEP_AS_IS",
+      "action": "ADAPT separate canonical refs; retain legacy competency.id and provenance"
+    },
+    {
+      "artifact": "Candidate evidence/verification state",
+      "class": "KEEP_AS_IS",
+      "action": "Optional explicit reviewed bindings never imply verified state"
+    },
+    {
+      "artifact": "01B fixtures/results/engine",
+      "class": "KEEP_AS_IS",
+      "action": "Future adapter fixtures separate; opaque test refs never become governance source"
+    },
+    {
+      "artifact": "Normalization DomainKnowledgePack",
+      "class": "KEEP_AS_IS",
+      "action": "No automatic conversion into CapabilityPack"
+    }
+  ],
+  "strategy": "Future dry-run manifest, opt-in additive sidecars and new projections; no historical overwrite/backfill/prefix or label rewrites.",
+  "executed": false
+}

@@ -1,0 +1,1 @@
+{"resolver":"resolve_governed_mapping_historical","accepts_deprecated_mapping":true,"accepts_exact_deprecated_target":true,"requires_exact_source_pin":true,"requires_exact_target_pin":true,"draft_target_rejected_by_3d2":true,"eligible_for_new_use":false,"returns":"GovernedCapabilityBinding(mode=historical)"}

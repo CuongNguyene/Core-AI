@@ -1,0 +1,20 @@
+{
+  "milestone": "COURSE-REC-01A.2C",
+  "status": "COMPLETE",
+  "reason": "The DSpace provider and a bounded live exact-course/access pool are validated; 27 complete downloadable packages qualify and 3 records are correctly retained as materials-only.",
+  "dspace_provider": "implemented",
+  "legacy_live_path": "not used",
+  "exact_material_type": "dc.type == Online Course",
+  "selection_strategy": "BOUNDED_POST_FILTER",
+  "raw_search_results_seen": 80,
+  "exact_online_course_candidates_seen": 50,
+  "exact_online_course_processed": 30,
+  "strict_external_course_candidates": 27,
+  "observed_verified_yield_in_sample": 0.9,
+  "lms_changed": false,
+  "migrations": false,
+  "semantic_enrichment": false,
+  "recommendation_ranking": false,
+  "commit": false,
+  "push": false
+}

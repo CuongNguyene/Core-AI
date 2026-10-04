@@ -96,3 +96,13 @@ def test_settings_accepts_canonical_model_environment_names(
 def test_settings_rejects_extraction_budget_above_gateway_ceiling() -> None:
     with pytest.raises(ValidationError):
         Settings(_env_file=None, vllm_max_tokens=131072, cv_jd_extraction_max_tokens=131073)
+
+
+def test_openedx_provider_is_optional_and_bounded() -> None:
+    settings = Settings(_env_file=None)
+
+    assert settings.openedx_base_url == ""
+    assert settings.openedx_access_token.get_secret_value() == ""
+    assert settings.openedx_timeout_seconds == 10.0
+    assert settings.openedx_max_pages == 2
+    assert settings.openedx_page_size == 50

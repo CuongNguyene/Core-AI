@@ -1,0 +1,36 @@
+{
+  "taxonomy_entry_count": 11,
+  "classification": "MIXED",
+  "observed_levels": [
+    "broad professional capability families",
+    "domain activities/context",
+    "operational functional families"
+  ],
+  "examples": [
+    {
+      "id": "digital_platform_development",
+      "level": "Broad software/platform development family"
+    },
+    {
+      "id": "project_management",
+      "level": "Cross-domain planning/delivery capability family"
+    },
+    {
+      "id": "order_management",
+      "level": "Specific operational lifecycle family"
+    },
+    {
+      "id": "ecommerce",
+      "level": "Domain operating/delivery family"
+    },
+    {
+      "id": "team_leadership",
+      "level": "People/team behavioral capability family"
+    }
+  ],
+  "formal_granularity_definition": false,
+  "formal_hierarchy": false,
+  "strong_granularity_gap_claimed": false,
+  "qualification": "Mixed scope descriptions, not a formal subsumption relation. No task-level or topic-to-capability rule.",
+  "source": "services/pai-backend/backend/app/extraction/capability_taxonomy.py:57"
+}

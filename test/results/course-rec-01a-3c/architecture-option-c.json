@@ -1,0 +1,25 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "key": "C",
+  "architecture": "OPTION_C_CORE_PLUS_DOMAIN_PACKS",
+  "decision": "PARTIAL",
+  "assessment": "Owned releases solve extension; do not prove course development claims.",
+  "benefits": "Domain ownership, immutable releases",
+  "risks": "Fragmentation; topic promotion; normalization/definition pack confusion",
+  "migration": "Explicit release sidecars; no bulk extraction-taxonomy import",
+  "recommendation_impact": "01B_INPUT_ADAPTER_CHANGE",
+  "criteria": {
+    "semantic_correctness": "MODERATE",
+    "traceability": "MODERATE",
+    "governance": "STRONG",
+    "domain_extensibility": "STRONG",
+    "course_coverage": "MODERATE",
+    "role_alignment": "STRONG",
+    "implementation_simplicity": "MODERATE",
+    "migration_simplicity": "MODERATE",
+    "recommendation_compatibility": "STRONG",
+    "explainability": "MODERATE",
+    "resistance_to_forcing": "MODERATE"
+  }
+}

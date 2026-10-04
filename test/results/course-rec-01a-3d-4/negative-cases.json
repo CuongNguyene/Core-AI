@@ -1,0 +1,12 @@
+{
+  "wrong_facet_kind_or_namespace": "validation rejected",
+  "wrong_role_requirement_identity_or_version": "TARGET_FACET_INVALID",
+  "missing_need_requirement_reference": "TARGET_LINEAGE_MISMATCH",
+  "non_learning_need": "TARGET_NEED_NOT_LEARNING_ELIGIBLE",
+  "stale_mapping": "stale_source propagated",
+  "deprecated_mapping": "mapping_deprecated propagated",
+  "inactive_target_definition": "CapabilityNotActiveError propagated",
+  "repin_to_new_active_release": "target_pin_mismatch propagated",
+  "shared_facet_canonical_disagreement": "TARGET_CANONICAL_BINDING_CONFLICT",
+  "explicit_level_disagreement": "TARGET_LEVEL_CONFLICT"
+}

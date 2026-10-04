@@ -1,0 +1,40 @@
+{
+  "milestone": "COURSE-REC-01A.3B",
+  "status": "COMPLETE",
+  "taxonomy_fitness": "TAXONOMY_PARTIALLY_FIT",
+  "experiment_validity": "VALID_WITH_OVERSTATED_CONCLUSIONS",
+  "package_research_readiness": "PACKAGE_CONTENT_RESEARCH_PREMATURE",
+  "engine_impact": "ENGINE_VALID_BUT_CATALOG_COVERAGE_LIMITED",
+  "readiness_01c": "YES_WITH_SEMANTIC_COVERAGE_WARNING",
+  "recommended_next_step": "B. Perform taxonomy governance/design work first.",
+  "overall_decision": "TAXONOMY_DECISION_REQUIRED",
+  "claim_audit_counts": {
+    "SUPPORTED": 1,
+    "UNSUPPORTED": 2,
+    "AMBIGUOUS": 1
+  },
+  "source_counts": {
+    "SOURCE_SEMANTICS_CLEAR": 9,
+    "SOURCE_SEMANTICS_PARTIAL": 4,
+    "SOURCE_SEMANTICS_INSUFFICIENT": 0
+  },
+  "representation_counts": {
+    "EXACT_CANONICAL_MATCH": 0,
+    "NO_CANONICAL_MATCH": 9,
+    "NOT_ENOUGH_EVIDENCE_TO_ASSESS": 0
+  },
+  "identity_alignment": "PARTIALLY_SHARED",
+  "production_code_changed": false,
+  "taxonomy_changed": false,
+  "tests_changed": false,
+  "lms_changed": false,
+  "new_capabilities": 0,
+  "model_calls": 0,
+  "embeddings_used": false,
+  "fuzzy_or_nearest_matching_used": false,
+  "packages_parsed": false,
+  "original_evidence_modified": false,
+  "commit_created": false,
+  "push_performed": false,
+  "audit_limit": "Local repository/copied metadata reasoning; no live provider refetch, full course inspection, named SME adjudication, or population-wide coverage claim."
+}

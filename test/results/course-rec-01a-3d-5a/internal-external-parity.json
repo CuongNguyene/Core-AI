@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "internal_course_ref": "frappe_lms:course-9",
+  "internal_direct_claim_projection": "PASS",
+  "external_course_ref": "skillscommons:course-123",
+  "external_direct_claim_projection": "PASS",
+  "algorithm_shared": true,
+  "provider_specific_identity_branch": false
+}

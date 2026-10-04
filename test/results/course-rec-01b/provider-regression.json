@@ -1,0 +1,7 @@
+{
+  "command": "uv run pytest tests/test_course_catalog_*.py -q",
+  "result": "54 passed",
+  "mock_provider": "PASS",
+  "openedx_provider": "PASS",
+  "skillscommons_provider": "PASS"
+}

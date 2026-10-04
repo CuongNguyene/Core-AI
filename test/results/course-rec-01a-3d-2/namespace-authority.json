@@ -1,0 +1,7 @@
+{
+  "authority_rule": "one stable pack ID owns one namespace across the provided release history",
+  "different_pack_reclaim_after_deprecation": false,
+  "owner_ref_may_change_under_same_pack_id": true,
+  "namespace_transfer": false,
+  "simultaneous_active_canonical_ref_collision": "rejected"
+}

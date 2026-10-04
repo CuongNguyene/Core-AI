@@ -1,0 +1,96 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "capability_states": [
+    "DRAFT",
+    "ACTIVE",
+    "DEPRECATED"
+  ],
+  "pack_states": [
+    "DRAFT",
+    "ACTIVE",
+    "DEPRECATED"
+  ],
+  "mapping_states": [
+    "DRAFT",
+    "ACTIVE",
+    "DEPRECATED"
+  ],
+  "review_states": [
+    "PROPOSED",
+    "REVIEWED",
+    "APPROVED",
+    "REJECTED"
+  ],
+  "transitions": [
+    "DRAFT -> ACTIVE after explicit approval and dependency validation",
+    "DRAFT/ACTIVE -> DEPRECATED; terminal release state"
+  ],
+  "active_meaning": "Approved bounded concept/claim binding eligible for new compatible uses, not verified learner competence.",
+  "draft_use": "Experimental draft artifacts only, never recommendation eligible.",
+  "deprecated_use": "Read/replay only; no new recommendations; old IDs never deleted/reassigned.",
+  "pack_fields": [
+    "pack_id",
+    "version",
+    "owner_ref",
+    "domain_scope",
+    "status",
+    "definitions_with_revision_and_digest",
+    "aliases_with_language",
+    "exact_dependencies",
+    "checksum",
+    "approval_refs"
+  ],
+  "dependencies": "Exact acyclic releases; all active at activation; one defining owner per ID.",
+  "concept_relationship": "SemanticPolicy interpretation policy; CapabilityPack definitions; existing DomainKnowledgePack normalization/hints. Linked, not interchangeable.",
+  "resolution_context": "Proposed immutable SemanticResolutionContext pins existing role SemanticPolicy and its single normalization-pack binding, mapping policy and capability-pack releases. Current SemanticPolicy schema is not assumed to support capability packs.",
+  "roles": [
+    {
+      "role": "Taxonomy Owner",
+      "responsibility": "Namespace ownership, definition invariants, cross-domain collision decisions",
+      "authority": "PROPOSED; no existing grant inferred"
+    },
+    {
+      "role": "Domain Capability Pack Owner",
+      "responsibility": "Domain scope/definition and release proposal",
+      "authority": "PROPOSED"
+    },
+    {
+      "role": "Semantic/Course/Role Mapping Reviewer",
+      "responsibility": "Independent exact-facet and scope/evidence review",
+      "authority": "PROPOSED"
+    },
+    {
+      "role": "System Approver",
+      "responsibility": "Record validated approvals/releases/audit",
+      "authority": "Existing SemanticPolicy API requires REVIEWER; taxonomy authority requires separate explicit assignment"
+    },
+    {
+      "role": "SME",
+      "responsibility": "Assigned domain expertise",
+      "authority": "Existing SME role is not automatic taxonomy authority"
+    },
+    {
+      "role": "ADMIN",
+      "responsibility": "Platform administration",
+      "authority": "No automatic semantic approval"
+    }
+  ],
+  "new_capability_policy": {
+    "propose": "Named source stewards/domain reviewers/owners; AI draft proposals untrusted",
+    "threshold": "Business need plus at least two independently authored requirements/outcomes across sources, or one authoritative standard plus independent internal use; bounded scope/exclusions/evidence and collision review.",
+    "approve": "Namespace/domain owner and independent semantic reviewer; named assignments required before activation.",
+    "single_course_sufficient": false,
+    "workflow": [
+      "Observed unmapped semantic",
+      "Evidence-backed proposal",
+      "Domain review",
+      "Duplication check",
+      "Definition/exclusions",
+      "Approval",
+      "Immutable pack release",
+      "Mapping activation"
+    ]
+  },
+  "retired_deferred": true
+}

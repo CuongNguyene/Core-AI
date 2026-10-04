@@ -1,0 +1,10 @@
+{
+  "title_subject_occupation_industry_auto_promotion": "blocked",
+  "unknown_ref": "rejected",
+  "evidence_required": "enforced",
+  "locator_required": "enforced",
+  "duplicate_claim": "rejected",
+  "target_level_inference": "blocked",
+  "prerequisite_inference": "blocked",
+  "automatic_active": "blocked"
+}

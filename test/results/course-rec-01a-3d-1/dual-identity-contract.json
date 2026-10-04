@@ -1,0 +1,9 @@
+{
+  "type": "CapabilityIdentityPair",
+  "source_ref_required": true,
+  "canonical_capability_ref_optional": true,
+  "unmapped_source_valid": true,
+  "construction_implies_approval": false,
+  "mapping_metadata_included": false,
+  "raw_string_substitution_accepted": false
+}

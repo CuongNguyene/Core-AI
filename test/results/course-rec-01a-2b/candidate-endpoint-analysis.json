@@ -1,0 +1,16 @@
+{
+  "status": "PUBLIC_DATA_ENDPOINT_FOUND",
+  "candidate": "DSpace REST discover/search plus HAL-linked item, bundle, bitstream and content endpoints",
+  "base_url": "https://library.skillscommons.org/server/api",
+  "machine_readable": true,
+  "anonymous_access": true,
+  "stable_identity": "item UUID plus handle",
+  "metadata_sufficient_for_external_course": true,
+  "access_link_available": true,
+  "pagination": "page/size metadata observed; one bounded page sampled",
+  "exact_material_type_filter": "not_verified; f.dc.type filter probes returned 400",
+  "official_skillscommons_api_documentation": "not established for this DSpace REST surface",
+  "classification": "PUBLIC_UNDOCUMENTED_DATA_ENDPOINT",
+  "scraping_required": false,
+  "provider_repointed_in_this_milestone": false
+}

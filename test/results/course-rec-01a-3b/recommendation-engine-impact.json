@@ -1,0 +1,21 @@
+{
+  "classification": "ENGINE_VALID_BUT_CATALOG_COVERAGE_LIMITED",
+  "sources": [
+    "services/pai-backend/backend/app/course_recommendation/engine.py:105",
+    "services/pai-backend/backend/app/course_recommendation/engine.py:123",
+    "services/pai-backend/backend/app/course_recommendation/schemas.py:57",
+    "services/pai-backend/backend/tests/test_course_recommendation.py:110"
+  ],
+  "reason": "Exact intersection and ACTIVE-only eligibility remain valid for caller-supplied governed refs; bad mappings or incompatible identity strings are upstream risks, not grounds to invent similarity matching.",
+  "engine_code_changes_required_now": false,
+  "skillscommons_profiles_eligible_now": false,
+  "readiness_01c": "YES_WITH_SEMANTIC_COVERAGE_WARNING",
+  "constraints": [
+    "Keep SkillsCommons profiles experimental/DRAFT",
+    "Do not activate the ambiguous physical-therapy profile",
+    "Preserve source locators, import identity and original policy version",
+    "Do not infer requirement IDs equal taxonomy refs",
+    "Do not freeze a global taxonomy binding or auto-map/approve refs without governance decision"
+  ],
+  "persistence_api_implemented": false
+}

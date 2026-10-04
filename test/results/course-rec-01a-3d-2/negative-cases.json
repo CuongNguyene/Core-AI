@@ -1,0 +1,4 @@
+{
+  "covered_categories": ["empty or malformed definition", "invalid transition", "missing/rejected review or approval", "owner-review conflict", "non-exact release ref", "checksum mismatch", "namespace conflict/reassignment", "duplicate capability/release/dependency", "missing or inactive dependency", "dependency cycle", "unknown namespace/capability", "inactive authority", "draft historical resolution", "missing historical release"],
+  "result": "covered by focused tests"
+}

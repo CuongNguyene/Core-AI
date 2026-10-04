@@ -1,0 +1,6 @@
+{
+  "selected": "COURSE-REC-01C",
+  "title": "Recommendation Persistence + API",
+  "reason": "The domain-level target-to-course path now feeds unchanged 01B; durable request/result and trace persistence is the next product dependency.",
+  "implemented_in_3d_6": false
+}

@@ -1,0 +1,3573 @@
+[
+  {
+    "provider_course_id": "4f3652e5-82d3-4a78-9b02-73126bb86bc9",
+    "handle": "taaccct/13001",
+    "title": "BA 177 - Payroll Accounting Online",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 8,
+    "bitstreams": [
+      {
+        "uuid": "77b3b9ea-2637-412d-b753-f0d1442fc3cb",
+        "name": "BA 177 QM Rubric.docx.txt",
+        "mime_type": null,
+        "size_bytes": 5531,
+        "bundle_name": "TEXT",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "83569db4-f0e1-4ab9-8e92-d17feed88d93",
+        "name": "BA 177.pdf.txt",
+        "mime_type": null,
+        "size_bytes": 1526,
+        "bundle_name": "TEXT",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "a1c9e2e6-da35-48bd-b21b-76582e74ec28",
+        "name": "BA 177.pdf.jpg",
+        "mime_type": null,
+        "size_bytes": 3973,
+        "bundle_name": "THUMBNAIL",
+        "bitstream_type": "UNKNOWN",
+        "content_url_present": true
+      },
+      {
+        "uuid": "2513c924-393b-4bf3-b68d-c71962b60435",
+        "name": "skillscom-ba-177-16-dot-0-export.imscc",
+        "mime_type": null,
+        "size_bytes": 25818544,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "e5663fda-24af-476a-955c-b809f4c356e0",
+        "name": "Repository - BA 177.zip",
+        "mime_type": null,
+        "size_bytes": 51329,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "2f609dda-0a94-4dc6-81a6-5b1700650ac7",
+        "name": "BA 177 QM Rubric.docx",
+        "mime_type": null,
+        "size_bytes": 20733,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "DOCUMENT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "cbd02521-0757-47ad-b37c-d38a356c0132",
+        "name": "BA 177.pdf",
+        "mime_type": null,
+        "size_bytes": 30478,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "DOCUMENT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "f9937040-d5f2-46b4-b39b-6f7ababa8f49",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 26500,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "TEXT",
+      "THUMBNAIL",
+      "ORIGINAL",
+      "LICENSE"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "image/jpeg;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/pdf;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:4f3652e5-82d3-4a78-9b02-73126bb86bc9",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "4828d609-2f88-4324-bf80-55aa7b1c68fa",
+    "handle": "taaccct/13826",
+    "title": "General Education Massive Open Online Course (MOOC)",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 2,
+    "bitstreams": [
+      {
+        "uuid": "293b46cd-267a-4fbe-b815-b4ab391632c1",
+        "name": "mooc-development-shell-export (1).imscc",
+        "mime_type": null,
+        "size_bytes": 916680126,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "d8fdfd3f-5295-4147-8b5a-8d851cb95a1c",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 26500,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:4828d609-2f88-4324-bf80-55aa7b1c68fa",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "aee2a65b-d134-4a3e-93a2-118a4fef89d8",
+    "handle": "taaccct/13254",
+    "title": "Canvas Orientation Course",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 2,
+    "bitstreams": [
+      {
+        "uuid": "2ab51d0c-2240-41cb-82e9-d345012967ce",
+        "name": "webcampus-orientation-export.imscc",
+        "mime_type": null,
+        "size_bytes": 685582,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "3f473888-7eb5-4c3c-9d4f-62b261b00612",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 26500,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:aee2a65b-d134-4a3e-93a2-118a4fef89d8",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "4ad1ea9b-e45e-4498-88e6-2c5cbd36602a",
+    "handle": "taaccct/11074",
+    "title": "QMS 101",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_MATERIALS",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "84d1f374-6c1a-4382-b700-dafda3f72e1f",
+        "name": "Impact Class Rubric.docx.txt",
+        "mime_type": null,
+        "size_bytes": 35403,
+        "bundle_name": "TEXT",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "60770675-dd88-447b-b1ae-1863957032c2",
+        "name": "Impact Class Rubric.docx",
+        "mime_type": null,
+        "size_bytes": 115640,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "DOCUMENT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "009b464a-c6d6-4a84-831b-93e77de9f972",
+        "name": "ExportFile_GCTC_MASTER_QMS_101_20170228032942.zip",
+        "mime_type": null,
+        "size_bytes": 5577830,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "394f9a20-90e1-4a24-b563-3af67c41b5bd",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 26500,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "TEXT",
+      "ORIGINAL",
+      "LICENSE"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": false,
+    "course_ref": "skillscommons:4ad1ea9b-e45e-4498-88e6-2c5cbd36602a",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "8d935cbf-8afc-4180-b880-1509c1de77ed",
+    "handle": "taaccct/15432",
+    "title": "Intro to QA and QC Online Course",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_MATERIALS",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 7,
+    "bitstreams": [
+      {
+        "uuid": "cdf3cc4c-5efd-4953-8bdb-a96ce848bbd7",
+        "name": "Massasoit CC Review Process.docx.txt",
+        "mime_type": null,
+        "size_bytes": 3543,
+        "bundle_name": "TEXT",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "f71033b9-4e3c-45a1-b1a2-9224d8951bbf",
+        "name": "BestPracticesforOnlineCourses.pdf.txt",
+        "mime_type": null,
+        "size_bytes": 5825,
+        "bundle_name": "TEXT",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "592325d5-0d9f-443e-9353-a8529cf3e9a4",
+        "name": "BestPracticesforOnlineCourses.pdf.jpg",
+        "mime_type": null,
+        "size_bytes": 4830,
+        "bundle_name": "THUMBNAIL",
+        "bitstream_type": "UNKNOWN",
+        "content_url_present": true
+      },
+      {
+        "uuid": "89b2b270-04ee-4dbd-b8cc-eaf3ddd64cf3",
+        "name": "ExportFile_IQAQC_ol_dev_20180523023313.zip",
+        "mime_type": null,
+        "size_bytes": 2234583,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "3313bd34-c321-4aa5-a458-7a99ece406d8",
+        "name": "BestPracticesforOnlineCourses.pdf",
+        "mime_type": null,
+        "size_bytes": 437956,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "DOCUMENT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "83678089-070c-45d7-a9b1-25e0c1cedf3b",
+        "name": "Massasoit CC Review Process.docx",
+        "mime_type": null,
+        "size_bytes": 210919,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "DOCUMENT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "48a6816c-ada8-4bbe-b266-b51bad2e2a55",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 26500,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "TEXT",
+      "THUMBNAIL",
+      "ORIGINAL",
+      "LICENSE"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "RESTRICTED",
+        "http_status": 401,
+        "method": "HEAD",
+        "content_type": "application/json;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "RESTRICTED",
+        "http_status": 401,
+        "method": "HEAD",
+        "content_type": "application/json;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "RESTRICTED",
+        "http_status": 401,
+        "method": "HEAD",
+        "content_type": "application/json;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/pdf;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": false,
+    "course_ref": "skillscommons:8d935cbf-8afc-4180-b880-1509c1de77ed",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "1398f9e1-49ee-4885-8eba-7d2d36d680e9",
+    "handle": "taaccct/2947",
+    "title": "PRN0020 Human Development",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "8d47a795-6854-4c79-bfb8-a043e6f3edb3",
+        "name": "PRN0020-human-development-and-lifespan-export.imscc",
+        "mime_type": null,
+        "size_bytes": 23171345,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "fa9a673f-8ef8-4e40-9feb-fc9d82a4dcf0",
+        "name": "ArchiveFile_HSPRN0020DEVEL_20150623041945.zip",
+        "mime_type": null,
+        "size_bytes": 12531614,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "03f2004b-e242-4962-82ab-0432905df267",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "d5550afd-2aa6-45f8-9a95-caf5b73fbf32",
+        "name": "9d98276ffa1dd8b70b773042e582a33b.zip",
+        "mime_type": null,
+        "size_bytes": 25245148,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:1398f9e1-49ee-4885-8eba-7d2d36d680e9",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "f38740c4-657e-4c62-abe1-d9ce94eb30b0",
+    "handle": "taaccct/2948",
+    "title": "PRN0070 Basic Nutrition",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "5ab4925a-fc00-466f-9192-6f547d5e5e8c",
+        "name": "PRN0070-basic-nutrition-export.imscc",
+        "mime_type": null,
+        "size_bytes": 3882811,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "2b6e4fbe-a5b1-4d84-b13c-81badac5992f",
+        "name": "ArchiveFile_HSPRN0070DEVEL_20150623041953.zip",
+        "mime_type": null,
+        "size_bytes": 12398642,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "e790dd3b-5e2b-4728-a216-89a4d2d91114",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "8cddbb62-048d-4cef-8d76-1de6a8f34ff4",
+        "name": "40cdbb23e2c4af12d775ab02cbd0631d.zip",
+        "mime_type": null,
+        "size_bytes": 11764531,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:f38740c4-657e-4c62-abe1-d9ce94eb30b0",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "5bba6ffa-5493-4081-a600-bea082046efe",
+    "handle": "taaccct/9503",
+    "title": "Introduction to Distance Education",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 6,
+    "bitstreams": [
+      {
+        "uuid": "0e106db0-bec6-4f07-90a7-a3484c2dc078",
+        "name": "TAACCCT Grant Final Overview of Courses 09-29-14.pdf.txt",
+        "mime_type": null,
+        "size_bytes": 88137,
+        "bundle_name": "TEXT",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "1a460333-a65a-42a3-b183-78e8b3974476",
+        "name": "TAACCCT Grant Final Overview of Courses 09-29-14.pdf.jpg",
+        "mime_type": null,
+        "size_bytes": 3524,
+        "bundle_name": "THUMBNAIL",
+        "bitstream_type": "UNKNOWN",
+        "content_url_present": true
+      },
+      {
+        "uuid": "610f421c-b188-4822-89b8-e98c473ea27b",
+        "name": "backup-moodle2-course-21-introduction_to_distance_education-20160922-0827-nu.imscc",
+        "mime_type": null,
+        "size_bytes": 4488,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "890b1e1b-b3d5-4500-9ac6-de0c9556796b",
+        "name": "TAACCCT Grant Final Overview of Courses 09-29-14.pdf",
+        "mime_type": null,
+        "size_bytes": 2780659,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "DOCUMENT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "54343e24-6f7a-4d4b-b7b6-b412078c87b3",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 24945,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "22ed2b66-b0fa-4bd7-af10-1bd5024a6a4e",
+        "name": "backup-moodle2-course-21-introduction_to_distance_education-20160922-0827-nu.imscc",
+        "mime_type": null,
+        "size_bytes": 4488,
+        "bundle_name": "METADATA",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "TEXT",
+      "THUMBNAIL",
+      "ORIGINAL",
+      "LICENSE",
+      "METADATA"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "RESTRICTED",
+        "http_status": 401,
+        "method": "HEAD",
+        "content_type": "application/json;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "RESTRICTED",
+        "http_status": 401,
+        "method": "HEAD",
+        "content_type": "application/json;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/pdf;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:5bba6ffa-5493-4081-a600-bea082046efe",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+    "handle": "taaccct/3013",
+    "title": "PHT1007 Topics in Physical Therapy",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "e0c39ce4-42bf-417f-9e85-0430abf72d64",
+        "name": "PHT1007-topics-in-physical-therapy-export.imscc",
+        "mime_type": null,
+        "size_bytes": 10768988,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "2776dc24-7987-46a6-9768-530a72359e53",
+        "name": "ArchiveFile_HSPHT1007DEVEL_20150623041429.zip",
+        "mime_type": null,
+        "size_bytes": 56668272,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "749584d5-b3e8-46cb-af1b-419f9ad6f89e",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "9e82100f-f54b-44c2-a5cc-17d3e0dbcd70",
+        "name": "0dbb9c61c11205dc89944e05257a4d69.zip",
+        "mime_type": null,
+        "size_bytes": 63665694,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:f64795cb-b561-4bb6-9748-9841d6e982dd",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "9cbe25b2-7502-405f-bbc3-92016ddcfed8",
+    "handle": "taaccct/2974",
+    "title": "CTS1131 Hardware Configuration",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "bcfeb45c-de4e-479a-a25b-2c5d699d6344",
+        "name": "cts1131-hardware-configuration-export.imscc",
+        "mime_type": null,
+        "size_bytes": 1606484,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "61ce4c0b-8ad0-4d3a-8c72-18f78e3eb561",
+        "name": "ArchiveFile_ITCTS1131DEVEL_20150422090802.zip",
+        "mime_type": null,
+        "size_bytes": 14485725,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "27ccb65c-3ad4-4467-9ada-9286b87742ec",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "93bc147a-232e-405d-a5ad-5cab273b370c",
+        "name": "f0f9198a9b6b9c0e487e63ff05de5aaf.zip",
+        "mime_type": null,
+        "size_bytes": 12366687,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:9cbe25b2-7502-405f-bbc3-92016ddcfed8",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "5aa287ec-ce0a-4773-a937-33a777056e07",
+    "handle": "taaccct/2953",
+    "title": "COP1510 Programming Concepts I",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "42b07d9f-a412-423e-aed2-2fe850c09cb3",
+        "name": "cop1510-programming-concepts-export.imscc",
+        "mime_type": null,
+        "size_bytes": 15226007,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "fe5f5973-1db6-49a3-9cb5-05436b9801ff",
+        "name": "ArchiveFile_ITCOP1510DEVEL_20150623030739.zip",
+        "mime_type": null,
+        "size_bytes": 33791701,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "9df89cb7-fb8a-470d-9184-5ebf9e7df4b9",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "9000cac2-0c75-452f-bd84-e926ce17f13d",
+        "name": "6c4045663011368fc74c029e45816ec1.zip",
+        "mime_type": null,
+        "size_bytes": 44903774,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:5aa287ec-ce0a-4773-a937-33a777056e07",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "5fa371f7-e619-44d4-86e9-083feb5d45e9",
+    "handle": "taaccct/2941",
+    "title": "HCP0796 Patient Care Technician",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "2f5402c4-187a-46a8-92fa-61b8370b2183",
+        "name": "HCP0796-patient-care-technician-export.imscc",
+        "mime_type": null,
+        "size_bytes": 1706927,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "20f4f8e0-032f-43ce-bd5d-ee827aa736db",
+        "name": "ArchiveFile_HSHCP0796DEVEL_20150622052351.zip",
+        "mime_type": null,
+        "size_bytes": 17699695,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "e7b99ffb-5b4b-4b27-9cc4-6d47f2b3d6b5",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "354fcd6f-e51a-4f67-801d-cf7aee2c6ce6",
+        "name": "9b4362d2b69ddab45a12bb7186570d89.zip",
+        "mime_type": null,
+        "size_bytes": 16050163,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:5fa371f7-e619-44d4-86e9-083feb5d45e9",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "72590896-6084-49f3-a31a-5170d71d3af9",
+    "handle": "taaccct/2940",
+    "title": "HCP0780C Allied Health Care Assistant Phlebotomy",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "883c31fa-a6bb-4d52-b577-c84c4a5b539e",
+        "name": "HCP0780C-allied-health-assistant-phlebotomy-export.imscc",
+        "mime_type": null,
+        "size_bytes": 3224037,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "31a48e27-8bb9-409d-8586-ef129fdbe8b9",
+        "name": "ArchiveFile_HSHCP0780CDEVEL_20150622052003.zip",
+        "mime_type": null,
+        "size_bytes": 14446736,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "7a4bcf4d-f7d4-4fef-8fba-4e1ea6808de4",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "e200e077-7147-427c-9b3e-9efd56639de4",
+        "name": "f43f9abfe9ce579a0a0e7060b597050a.zip",
+        "mime_type": null,
+        "size_bytes": 13053626,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:72590896-6084-49f3-a31a-5170d71d3af9",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+    "handle": "taaccct/2946",
+    "title": "MAN2582 Introduction to Project Management",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "58ad36bf-8f09-4e4d-9923-9f6f0e5fe481",
+        "name": "man2582-intro-to-project-management-export.imscc",
+        "mime_type": null,
+        "size_bytes": 2704852,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "626fa100-0512-4536-b2bf-1d8debd77b6b",
+        "name": "ArchiveFile_ITMAN2582DEVEL_20150623090346.zip",
+        "mime_type": null,
+        "size_bytes": 19806352,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "e9956a07-da09-4cc3-ab37-915b1877da36",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "d65567ec-0ad6-4341-8ede-7e5615e15178",
+        "name": "d31817a4573615df615fc51e10f0d1e5.zip",
+        "mime_type": null,
+        "size_bytes": 19070986,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "df391f77-5a76-4c10-9e45-0a2783706b30",
+    "handle": "taaccct/3017",
+    "title": "PTN0086 Pharmacy Technician III",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "12b8ec04-0ffd-47bd-8af4-8094c01ecc05",
+        "name": "ptn0086-pharmacy-technician-iii-export.imscc",
+        "mime_type": null,
+        "size_bytes": 3423245,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "c21d0838-a7af-45d7-ac09-4453571b5093",
+        "name": "ArchiveFile_HSPTN0086DEVEL_20150623050404.zip",
+        "mime_type": null,
+        "size_bytes": 19546939,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "b7f8bc98-8090-46ef-9597-9deda7154efc",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "87fe5c23-332d-43d2-95d6-153eb4295ab5",
+        "name": "16e67004c77defd6d8b7bcf558eed88c.zip",
+        "mime_type": null,
+        "size_bytes": 18363610,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:df391f77-5a76-4c10-9e45-0a2783706b30",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "f252280a-b389-4dd7-bac4-669224a0dc96",
+    "handle": "taaccct/2997",
+    "title": "DES1051C Pain Management",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "e4191716-4411-4791-bd67-66b1b90fc11d",
+        "name": "des1051c-pain-management-export.imscc",
+        "mime_type": null,
+        "size_bytes": 1107534,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "bafa30b9-024b-4608-8ce2-219871203229",
+        "name": "ArchiveFile_HSDES1051CDEVEL_20150623033843.zip",
+        "mime_type": null,
+        "size_bytes": 15021242,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "bde34444-a6cd-4267-bb1d-b26faa8e0735",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "000b94e8-f9ab-47d2-af45-01a4afb0a061",
+        "name": "cd1fdebd1af218b0e4f4c7f859873be5.zip",
+        "mime_type": null,
+        "size_bytes": 12000413,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:f252280a-b389-4dd7-bac4-669224a0dc96",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "63e10921-279e-4404-912e-432c80fd82a1",
+    "handle": "taaccct/2939",
+    "title": "EGS1000 Professional Performance for the Technician",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "9914af03-5bf6-4afd-8d99-dc59321e7cf3",
+        "name": "EGS1000-professional-performance-for-the-technician-export.imscc",
+        "mime_type": null,
+        "size_bytes": 3111050,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "3fb951e1-1954-4fac-b3ba-69cc7fbec238",
+        "name": "ArchiveFile_ITEGS1000DEVEL_20150622051753.zip",
+        "mime_type": null,
+        "size_bytes": 11968545,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "7330f303-18b0-47e0-8ba4-f1af81b38a91",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "d9a30e82-2aae-4bb4-a36b-04173d2fe888",
+        "name": "e4be95ad41f3ca3fc9ba1a1a780e425c.zip",
+        "mime_type": null,
+        "size_bytes": 10591460,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:63e10921-279e-4404-912e-432c80fd82a1",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "c2d999f7-2867-43e1-b229-e205696e0c48",
+    "handle": "taaccct/2935",
+    "title": "CGS1560 Microcomputer Operating Systems",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "3a70bd4d-6a9e-4643-aaae-3f49019744b2",
+        "name": "CGS1560-microcomputer-operating-systems-export.imscc",
+        "mime_type": null,
+        "size_bytes": 3468099,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "18ffd2f5-6229-4639-85ea-d14273413e6a",
+        "name": "ArchiveFile_ITCGS1560CDEVEL_20150622050418.zip",
+        "mime_type": null,
+        "size_bytes": 13980753,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "439c92de-dadf-4f0c-984b-8583c801f406",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "81439a7e-87f8-4d43-aa88-6ee86313b64c",
+        "name": "8c64fb22901a4dadac83dfb274de307c.zip",
+        "mime_type": null,
+        "size_bytes": 12843050,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:c2d999f7-2867-43e1-b229-e205696e0c48",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "f0c4c602-e712-4db6-89c8-99e240ba943c",
+    "handle": "taaccct/12150",
+    "title": "CMCO Course",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_MATERIALS",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 2,
+    "bitstreams": [
+      {
+        "uuid": "9a3107b7-4124-409a-be76-33bd6bef0b49",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 26500,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "2b0dea99-0d03-4742-96e8-f2a20c348753",
+        "name": "ExportFile_CMCO-Exam-Prep_20170512092039.zip",
+        "mime_type": null,
+        "size_bytes": 146763339,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "LICENSE",
+      "ORIGINAL"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": false,
+    "course_ref": "skillscommons:f0c4c602-e712-4db6-89c8-99e240ba943c",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "05038746-5c98-4a31-ae26-a9f00f77fe2d",
+    "handle": "taaccct/2962",
+    "title": "DEH1720 Preventative Dentistry",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "208d6929-6551-4d5b-b0b4-fe1e08a8d7db",
+        "name": "deh1720-dental-hygiene-course-export.imscc",
+        "mime_type": null,
+        "size_bytes": 14068380,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "2d41df6a-3c9d-4ae4-bdcd-9388c6f152e6",
+        "name": "ArchiveFile_HSDEH1720DEVEL_20150623033022.zip",
+        "mime_type": null,
+        "size_bytes": 21546979,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "1d130d3c-539d-41cf-94b0-cbed1ee16f77",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "bd11c4c5-aa3a-42ae-905d-a7699d02f363",
+        "name": "bc398f00622328e284c7e68347e0d635.zip",
+        "mime_type": null,
+        "size_bytes": 26545114,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:05038746-5c98-4a31-ae26-a9f00f77fe2d",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "1a25c62e-0023-416a-ad38-ad5f112991bf",
+    "handle": "taaccct/2977",
+    "title": "CTS2307 Managing and Maintaining Windows 8",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "2392ce4a-1ecb-45b2-9e15-0ca521e067b6",
+        "name": "cts2307-windows-management-export.imscc",
+        "mime_type": null,
+        "size_bytes": 8334250,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "31783aaa-839c-4f08-a99f-b8550e423df7",
+        "name": "ArchiveFile_ITCTS2307DEVEL_20150623032504.zip",
+        "mime_type": null,
+        "size_bytes": 21541886,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "371ccc32-a209-40c2-9638-c122070a1552",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "e431da9a-1534-4735-950c-90e8eb62df03",
+        "name": "84e4bc06c13ea0f6c10200b08ccfb2cb.zip",
+        "mime_type": null,
+        "size_bytes": 25265172,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:1a25c62e-0023-416a-ad38-ad5f112991bf",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "2a84999a-b521-44cb-93b9-e2d45cad6a09",
+    "handle": "taaccct/2934",
+    "title": "CGS1100 Microcomputer Applications",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "f1f8272b-eb31-4cbe-a9d9-334d00175574",
+        "name": "CGS1100-microcomputer-applications-export.imscc",
+        "mime_type": null,
+        "size_bytes": 2636995,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "3904b315-7442-4008-b4bb-444a3a46b968",
+        "name": "ArchiveFile_ITCGS1100DEVEL_20150622045906.zip",
+        "mime_type": null,
+        "size_bytes": 24146557,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "f618a247-bedc-4310-8e43-db3f118933ca",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "8f830773-89a0-4722-9bf8-a13d7ac4965e",
+        "name": "efe4fc7545e4c7a17642e2c950e40257.zip",
+        "mime_type": null,
+        "size_bytes": 26488471,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:2a84999a-b521-44cb-93b9-e2d45cad6a09",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "4fb05a4d-5173-431a-80bd-8e6eb624931c",
+    "handle": "taaccct/2972",
+    "title": "COP2551 Intro to Object Oriented Programming",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "6a4dfe69-0945-40d1-a634-a3599e7ee163",
+        "name": "cop2551-intro-to-object-oriented-prog-export.imscc",
+        "mime_type": null,
+        "size_bytes": 2686140,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "098df664-2c19-41c6-9018-707a07c0b4e9",
+        "name": "ArchiveFile_ITCOP2551DEVEL_20150422102252.zip",
+        "mime_type": null,
+        "size_bytes": 15471331,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "8d7d1396-8c50-4215-b159-eada0e02a02b",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "fcb52ac9-9570-4254-8a9b-b9003f66325b",
+        "name": "21d6d9fea7a0a04835473233b41253c7.zip",
+        "mime_type": null,
+        "size_bytes": 13480339,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:4fb05a4d-5173-431a-80bd-8e6eb624931c",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "44874497-e712-40e6-adec-002a42101cc9",
+    "handle": "taaccct/2996",
+    "title": "DEH2821 Medically-Compromised Patient",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "4c334644-8b8c-41d5-bacc-d5284cc48af9",
+        "name": "deh2821-medically-compromised-patient-export.imscc",
+        "mime_type": null,
+        "size_bytes": 10206111,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "5e0ccd64-b58d-4df1-b422-f494c4ab45f3",
+        "name": "ArchiveFile_HSDEH2821DEVEL_20150623033625.zip",
+        "mime_type": null,
+        "size_bytes": 21804093,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "91080676-d831-459b-adc7-9b5366277420",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "067f1703-5ccb-49b7-935a-8e791e4e8a1f",
+        "name": "54f0f33105a5ca1255282d760a590e29.zip",
+        "mime_type": null,
+        "size_bytes": 27425009,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:44874497-e712-40e6-adec-002a42101cc9",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "7be3dc5b-dd05-4e75-9828-6662c79b4f69",
+    "handle": "taaccct/2976",
+    "title": "CTS2306 Windows Professional",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "4d12be3d-01b1-469c-8362-2e34ae226037",
+        "name": "cts2306-windows-professional-export.imscc",
+        "mime_type": null,
+        "size_bytes": 2246113,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "3ca9bbfc-6ef2-4b0c-b6f1-a81786d4348e",
+        "name": "ArchiveFile_ITCTS2306DEVEL_20150623032254.zip",
+        "mime_type": null,
+        "size_bytes": 13331448,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "691323ba-078f-4413-87ec-b636471d92b7",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "fea05fd3-f6e0-4b36-96c8-9fc6623eb30c",
+        "name": "a7699e0d414efe9b4a11f0649fbf39d9.zip",
+        "mime_type": null,
+        "size_bytes": 10985445,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:7be3dc5b-dd05-4e75-9828-6662c79b4f69",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "8285c02b-d685-4c7f-91c9-51b3b3404c03",
+    "handle": "taaccct/2938",
+    "title": "CTS2334 Server Operating Systems",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "e225deec-b32d-4ba3-bcfa-44e19b92afe7",
+        "name": "cts2334-server-operating-systems-export.imscc",
+        "mime_type": null,
+        "size_bytes": 3111084,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "eefa0129-911e-4e7e-8caa-a57782b2bf4d",
+        "name": "ArchiveFile_ITCTS2334DEVEL_20150622050736.zip",
+        "mime_type": null,
+        "size_bytes": 13368098,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "f0d00390-b0b9-4fe3-9a71-6b50ee19a5dd",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "f6bb934a-9732-40ed-bb61-1007080c6a0b",
+        "name": "5bb2e34e9cbd7e905e7bb13a807c14b5.zip",
+        "mime_type": null,
+        "size_bytes": 11832133,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:8285c02b-d685-4c7f-91c9-51b3b3404c03",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "5776ecdb-fbd0-49a3-b11a-f96a4ed90a55",
+    "handle": "taaccct/2942",
+    "title": "HIM1253 Medical Coding",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "18fa1172-2cea-4258-804d-b6d55c4ee8ee",
+        "name": "HIM1253-cpt4-coding-export.imscc",
+        "mime_type": null,
+        "size_bytes": 3642529,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "8d65359b-4bee-4719-9a43-9dc02895cc1a",
+        "name": "ArchiveFile_HSHIM1253DEVEL_20150622052658.zip",
+        "mime_type": null,
+        "size_bytes": 13760362,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "79774ae3-c140-4ed5-8218-9f063e3f8072",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "a197780e-8d3e-471c-9ca2-42513d0a3024",
+        "name": "3ce12b038ba8b9b961509a60b1f349f2.zip",
+        "mime_type": null,
+        "size_bytes": 12805412,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:5776ecdb-fbd0-49a3-b11a-f96a4ed90a55",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "203d01e6-c8a4-4ab0-b68e-cea5d4cd6806",
+    "handle": "taaccct/2998",
+    "title": "DES1100 Dental Materials",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "a98f13cc-1f67-4a83-9d00-e503bb99c8bb",
+        "name": "des1100-dental-materials-export.imscc",
+        "mime_type": null,
+        "size_bytes": 12619312,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "5ca3516a-ccb1-4311-98ac-9c6f66259fc5",
+        "name": "ArchiveFile_HSDES1100DEVEL_20150623033904.zip",
+        "mime_type": null,
+        "size_bytes": 13557537,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "caec4043-8c5a-43a9-970b-838291965172",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "84e3c44d-943d-4987-bd1f-a8f015300b77",
+        "name": "d4d3b25c5d755018c89355306485e8e2.zip",
+        "mime_type": null,
+        "size_bytes": 17512648,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:203d01e6-c8a4-4ab0-b68e-cea5d4cd6806",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "7205bb3e-b4cc-4c77-9d0c-34f182cced6c",
+    "handle": "taaccct/3014",
+    "title": "PHT1200C Basic Patient Care",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "31a24d77-f5e3-4855-bb55-ad6d229c0e41",
+        "name": "pht1200c-basic-patient-care-export.imscc",
+        "mime_type": null,
+        "size_bytes": 14518216,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "92d163d7-3b32-4559-8221-2979a0d5edbd",
+        "name": "ArchiveFile_HSPHT1200CP1DEVEL_20150623040544.zip",
+        "mime_type": null,
+        "size_bytes": 31374674,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "a5bf0a14-b639-4ef7-a492-b7353093ff70",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "8b13c30e-b9d0-44c4-a42f-94ecc52cc78d",
+        "name": "4aeab59cb914e2cb081e6f0f8269c648.zip",
+        "mime_type": null,
+        "size_bytes": 36659933,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:7205bb3e-b4cc-4c77-9d0c-34f182cced6c",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  },
+  {
+    "provider_course_id": "6fdaa2e9-bdb9-4975-935c-8e21cf3af483",
+    "handle": "taaccct/2943",
+    "title": "HIM2012 Health Law",
+    "material_type": "ONLINE_COURSE",
+    "learning_access": "DOWNLOADABLE_COURSE_PACKAGE",
+    "availability": "available",
+    "license_status": "KNOWN_OPEN",
+    "bitstream_count": 4,
+    "bitstreams": [
+      {
+        "uuid": "69f61827-9a41-4233-afd1-a4d43ecfe3ed",
+        "name": "HIM2012-health-law-export.imscc",
+        "mime_type": null,
+        "size_bytes": 2170489,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "COURSE_PACKAGE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "b7a8cc8d-70c8-4d00-ad13-ff4da58412d4",
+        "name": "ArchiveFile_HSHIM2012DEVEL_20150623085434.zip",
+        "mime_type": null,
+        "size_bytes": 12399514,
+        "bundle_name": "ORIGINAL",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      },
+      {
+        "uuid": "0b790654-5cde-4d64-bf83-f297222856de",
+        "name": "license.txt",
+        "mime_type": null,
+        "size_bytes": 22910,
+        "bundle_name": "LICENSE",
+        "bitstream_type": "TEXT",
+        "content_url_present": true
+      },
+      {
+        "uuid": "92d87c90-5c6f-43ed-8a6a-53dccc36a241",
+        "name": "212ade8026c79f5809dd667f0d0623f9.zip",
+        "mime_type": null,
+        "size_bytes": 9971670,
+        "bundle_name": "SWORD",
+        "bitstream_type": "ARCHIVE",
+        "content_url_present": true
+      }
+    ],
+    "bundle_names": [
+      "ORIGINAL",
+      "LICENSE",
+      "SWORD"
+    ],
+    "external_learning_url_count": 1,
+    "access_verifications": [
+      {
+        "url_host": "www.skillscommons.org",
+        "status": "UNKNOWN",
+        "http_status": null,
+        "method": null,
+        "content_type": null,
+        "content_length": null,
+        "accept_ranges": null,
+        "final_host": null,
+        "reason": "network failure"
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "text/plain;charset=utf-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      },
+      {
+        "url_host": "library.skillscommons.org",
+        "status": "VERIFIED_ACCESSIBLE",
+        "http_status": 200,
+        "method": "HEAD",
+        "content_type": "application/octet-stream;charset=UTF-8",
+        "content_length": null,
+        "accept_ranges": "bytes",
+        "final_host": "library.skillscommons.org",
+        "reason": null
+      }
+    ],
+    "strict_provider_candidate": true,
+    "course_ref": "skillscommons:6fdaa2e9-bdb9-4975-935c-8e21cf3af483",
+    "capabilities_count": 0,
+    "target_level": null,
+    "prerequisites_count": 0,
+    "error": null
+  }
+]

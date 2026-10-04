@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "cases": [
+    {"case": "stale course outcome evidence", "expected": "reject before candidate", "actual": "stale_source", "result": "PASS"},
+    {"case": "stale direct claim identity/evidence", "expected": "reject current use", "actual": "3D-5A identity/source-pin rejection", "result": "PASS"},
+    {"case": "deprecated course mapping", "expected": "reject current use", "actual": "mapping_deprecated", "result": "PASS"},
+    {"case": "inactive definition", "expected": "reject current use", "actual": "capability authority error", "result": "PASS"},
+    {"case": "DRAFT profile", "expected": "not recommendation eligible", "actual": "PROFILE_NOT_ACTIVE", "result": "PASS"},
+    {"case": "unmapped outcome", "expected": "no canonical coverage", "actual": "empty coverage and warning", "result": "PASS"}
+  ],
+  "stale_coverage_reaches_01b": false
+}

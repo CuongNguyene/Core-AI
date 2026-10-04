@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "direct_claim_external": "PASS",
+  "direct_claim_internal": "PASS",
+  "wrong_course": "REJECTED",
+  "wrong_namespace": "REJECTED",
+  "wrong_entity_kind": "REJECTED",
+  "legacy_source_id": "REJECTED",
+  "synthetic_outcome_created": false,
+  "course_learning_outcome_path": "PASS_UNCHANGED"
+}

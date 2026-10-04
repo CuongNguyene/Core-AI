@@ -1,0 +1,13 @@
+{
+  "milestone": "COURSE-REC-01A.3D-5",
+  "title": "Governed Course Projection Adapter",
+  "status": "COMPLETE",
+  "evidence_mode": "synthetic_unit_tests_only",
+  "production_module": "services/pai-backend/backend/app/capability_governance/course_projection.py",
+  "test_module": "services/pai-backend/backend/tests/test_governed_course_projection.py",
+  "recommendation_engine_modified": false,
+  "persistence_api_migration_added": false,
+  "lms_modified": false,
+  "commit_created": false,
+  "push_performed": false
+}

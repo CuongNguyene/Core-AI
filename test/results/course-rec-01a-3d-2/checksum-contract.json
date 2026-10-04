@@ -1,0 +1,8 @@
+{
+  "algorithm": "SHA-256",
+  "serialization": "UTF-8 canonical JSON, sorted keys, compact separators",
+  "includes": ["pack_id", "namespace_key", "version", "definitions", "exact dependencies"],
+  "excludes": ["lifecycle status", "owner_ref", "review", "approval", "deprecation"],
+  "unordered_inputs_sorted": true,
+  "lifecycle_change_preserves_checksum": true
+}

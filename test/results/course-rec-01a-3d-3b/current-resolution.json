@@ -1,0 +1,1 @@
+{"resolver":"resolve_governed_mapping_for_use","requires_active_mapping":true,"requires_exact_source_pin":true,"requires_exact_active_target_pin":true,"requires_active_dependency_closure":true,"newer_release_auto_repin":false,"returns":"GovernedCapabilityBinding(mode=current)"}

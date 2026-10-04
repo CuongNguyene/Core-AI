@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "payload_example": {
+    "course_ref": "skillscommons:course-A#segment",
+    "claim_id": "claim-B"
+  },
+  "serialized_key_order": ["claim_id", "course_ref"],
+  "serialization": "compact UTF-8 JSON; ensure_ascii=false; sorted keys",
+  "hash_input_is_ambiguous_concatenation": false
+}

@@ -1,0 +1,12 @@
+{
+  "milestone": "COURSE-REC-01A.3D-3A",
+  "status": "COMPLETE",
+  "decision": "READY_FOR_3D_3B_INTEGRATION",
+  "focused_tests_passed": 49,
+  "combined_tests_passed": 178,
+  "direct_3d2_symbol_dependencies": false,
+  "lms_changed": false,
+  "course_profile_or_role_need_schema_changed": false,
+  "persistence_api_migration_added": false,
+  "commit_or_push": false
+}

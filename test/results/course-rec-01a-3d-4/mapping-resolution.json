@@ -1,0 +1,9 @@
+{
+  "resolver": "resolve_governed_mapping_for_use",
+  "mode": "CURRENT",
+  "selection": "exact source identity and exact SourceSemanticPin for each explicit facet",
+  "unrelated_context_mappings": "ignored deterministically",
+  "same_source_without_current_pin": "resolver invoked to propagate stale/deprecated/authority error",
+  "resolver_errors": "propagated unchanged",
+  "taxonomy_or_fuzzy_fallback": false
+}

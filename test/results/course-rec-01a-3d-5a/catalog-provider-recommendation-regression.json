@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "command": "uv run pytest tests/test_course_catalog_schemas.py tests/test_course_catalog_fixtures.py tests/test_course_catalog_semantic_enrichment.py tests/test_course_catalog_openedx.py tests/test_course_catalog_skillscommons.py tests/test_course_recommendation.py -q",
+  "passed": 87,
+  "failed": 0,
+  "live_network_used": false
+}

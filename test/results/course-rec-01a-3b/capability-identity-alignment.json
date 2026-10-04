@@ -1,0 +1,68 @@
+{
+  "classification": "PARTIALLY_SHARED",
+  "objects": [
+    {
+      "object": "CandidateProfile",
+      "classification": "PARTIALLY_SHARED",
+      "actual_identity": "Source-preserving skill/entity labels and evidence; CV extraction may use taxonomy in bounded/discovery modes but projected CandidateProfile has no required taxonomy ref.",
+      "sources": [
+        "services/pai-backend/backend/app/extraction/profile.py:60",
+        "services/pai-backend/backend/app/extraction/capability_projection.py:107"
+      ]
+    },
+    {
+      "object": "RoleCompetencyProfile",
+      "classification": "NOT_ESTABLISHED",
+      "actual_identity": "Opaque RoleRequirement.id and evidence_terms, governed role semantic policy/pack; no professional_capability_core binding.",
+      "sources": [
+        "services/pai-backend/backend/app/matching/schemas.py:95",
+        "services/pai-backend/backend/app/matching/schemas.py:124"
+      ]
+    },
+    {
+      "object": "CapabilityGapProfile",
+      "classification": "PARTIALLY_SHARED",
+      "actual_identity": "requirement_id preserves role requirement identity; source candidate evidence carries separate entity/concept identities.",
+      "sources": [
+        "services/pai-backend/backend/app/capability_analysis/schemas.py:238"
+      ]
+    },
+    {
+      "object": "LearningNeedProfile",
+      "classification": "PARTIALLY_SHARED",
+      "actual_identity": "competency.id=requirement.id; lineage shared with gap/role requirements, not necessarily taxonomy capability ID.",
+      "sources": [
+        "services/pai-backend/backend/app/learning_need_profile/projection.py:112",
+        "services/pai-backend/backend/app/learning_need_profile/mapper.py:31"
+      ]
+    },
+    {
+      "object": "LearningPath",
+      "classification": "PARTIALLY_SHARED",
+      "actual_identity": "Capability-analysis path copies learning_need.competency.id; legacy verified path uses gap_id as competency_id; neither mandates this taxonomy.",
+      "sources": [
+        "services/pai-backend/backend/app/learning/mapper.py:41",
+        "services/pai-backend/backend/app/learning/service.py:440"
+      ]
+    },
+    {
+      "object": "CourseCapabilityProfile",
+      "classification": "PARTIALLY_SHARED",
+      "actual_identity": "Opaque capability_ref; synthetic catalog uses capability:python etc; only SkillsCommons experiment restricts to raw IDs from extraction taxonomy.",
+      "sources": [
+        "services/pai-backend/backend/app/course_catalog/schemas.py:45",
+        "services/pai-backend/backend/app/course_catalog/schemas.py:111",
+        "services/pai-backend/backend/app/course_catalog/fixtures.py:58",
+        "services/pai-backend/backend/app/course_catalog/semantic_enrichment.py:99"
+      ]
+    }
+  ],
+  "exact_engine_identity_explicit": true,
+  "exact_matching_sources": [
+    "services/pai-backend/backend/app/course_recommendation/engine.py:123",
+    "services/pai-backend/backend/app/course_recommendation/schemas.py:57",
+    "docs/research/COURSE-REC-01B-DETERMINISTIC-RECOMMENDATION-ENGINE.md:51"
+  ],
+  "end_to_end_single_taxonomy_identity_established": false,
+  "warning": "Requirement IDs, normalized concept IDs, raw extraction taxonomy IDs and synthetic capability: refs are not automatically equivalent. No conversion performed."
+}

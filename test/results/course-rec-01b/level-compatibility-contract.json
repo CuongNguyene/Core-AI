@@ -1,0 +1,8 @@
+{
+  "governed_ordered_level_policy": false,
+  "comparison": "equality-only",
+  "statuses": ["EXACT", "COMPATIBLE", "DIFFERENT", "UNKNOWN", "NOT_APPLICABLE"],
+  "compatible_used": false,
+  "different_automatically_incompatible": false,
+  "invented_ordering": false
+}

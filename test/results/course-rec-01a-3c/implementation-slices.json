@@ -1,0 +1,51 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "slices": [
+    {
+      "id": "01A.3D-1",
+      "purpose": "Identity + dual-identity contracts",
+      "scope": "Namespace grammar, owner/ref uniqueness and exact resolution context; no real catalog expansion",
+      "acceptance": "Source IDs unchanged; unknown/colliding refs reject; version/labels separate from ID",
+      "implemented": false
+    },
+    {
+      "id": "01A.3D-2",
+      "purpose": "Definition/pack lifecycle",
+      "scope": "Exact release/checksum/dependency contracts, owner/reviewer events",
+      "acceptance": "Immutable ACTIVE; DRAFT ineligible; deprecated historical reads; no latest; normalization pack remains distinct",
+      "implemented": false
+    },
+    {
+      "id": "01A.3D-3",
+      "purpose": "Outcome/facet/mapping/coverage contract",
+      "scope": "Source-versioned evidence, EXACT mapping and separate coverage approval",
+      "acceptance": "Topic-only/related/narrower/AI proposal cannot emit eligible refs; unmapped allowed; changed source invalidates binding",
+      "implemented": false
+    },
+    {
+      "id": "01A.3D-4",
+      "purpose": "Role/Need/target adapter",
+      "scope": "Retain requirement/gap/need IDs; attach separate canonical bindings",
+      "acceptance": "No requirement ID equality inference; preserve AND/OR/context/levels/verification state; missing mapping fail closed",
+      "implemented": false
+    },
+    {
+      "id": "01A.3D-5",
+      "purpose": "Course projection/eligibility adapter",
+      "scope": "Approved evidence/outcome claims project to existing CourseCapabilityProfile shape, pins in sidecars",
+      "acceptance": "ACTIVE profile + mapping/definition/pack; fresh evidence and target-compatible scope; 01B unchanged; no model/package calls",
+      "implemented": false
+    },
+    {
+      "id": "01A.3D-6",
+      "purpose": "Compatibility/migration",
+      "scope": "Dry-run manifests, explicit legacy mappings and new profile versions",
+      "acceptance": "No silent backfill, prefix rewrite or DRAFT activation; replay preserved; future gated fixtures separate",
+      "implemented": false
+    }
+  ],
+  "ready_for_contract_implementation": true,
+  "production_activation_requires": "Actual owner/reviewer assignments and approved releases; not allocated by this design",
+  "execution_authorized": false
+}

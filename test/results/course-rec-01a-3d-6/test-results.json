@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "command": "uv run pytest tests/test_direct_claim_identity.py tests/test_capability_identity_contracts.py tests/test_capability_definitions.py tests/test_capability_pack_lifecycle.py tests/test_capability_resolution.py tests/test_capability_outcome_mapping_contracts.py tests/test_governed_mapping.py tests/test_governed_target_adapter.py tests/test_governed_course_projection.py tests/test_course_rec_3d6_end_to_end.py tests/test_course_catalog_schemas.py tests/test_course_catalog_fixtures.py tests/test_course_catalog_semantic_enrichment.py tests/test_course_catalog_openedx.py tests/test_course_catalog_skillscommons.py tests/test_course_recommendation.py tests/test_role_profile_lineage.py tests/test_role_profile_source_adapter.py tests/test_role_profile_governance.py tests/test_capability_gap_profile.py tests/test_capability_gap_review_projection.py tests/test_learning_need_profile.py tests/test_learning_need_projection_policy.py tests/test_learning_path_integration.py -q",
+  "passed": 400,
+  "failed": 0,
+  "live_network": false,
+  "includes_new_3d6_tests": 14
+}

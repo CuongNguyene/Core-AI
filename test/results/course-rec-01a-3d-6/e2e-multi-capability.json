@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "target_capabilities": [
+    "capability:test_core:communication",
+    "capability:test_core:writing"
+  ],
+  "full_course": {
+    "course_ref": "skillscommons:course-full",
+    "coverage": "FULL_COVERAGE",
+    "rank": 1
+  },
+  "partial_course": {
+    "course_ref": "frappe_lms:course-partial",
+    "matched": ["capability:test_core:communication"],
+    "missing": ["capability:test_core:writing"],
+    "coverage": "PARTIAL_COVERAGE",
+    "rank": 2
+  },
+  "candidate_input_order_independent": true,
+  "target_course_definition_pins_exactly_match": true,
+  "extra_capabilities_synthesized": false
+}

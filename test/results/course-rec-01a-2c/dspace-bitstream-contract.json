@@ -1,0 +1,9 @@
+{
+  "endpoint": "/server/api/core/bundles/<UUID>/bitstreams",
+  "status": 200,
+  "hal_embedded_key": "bitstreams",
+  "fields": ["uuid", "name", "sizeBytes", "mimeType", "checksum", "description", "metadata", "_links.content"],
+  "observed_file_examples": [".imscc", ".zip", ".pdf", ".docx", ".txt", ".jpg"],
+  "content_check": "HEAD /server/api/core/bitstreams/<UUID>/content",
+  "binary_downloaded": false
+}

@@ -1,0 +1,8 @@
+{
+  "entrypoint": "resolve_historical",
+  "exact_match": ["pack_id", "version", "checksum", "canonical_ref"],
+  "active_and_deprecated_resolve": true,
+  "draft_resolves": false,
+  "replacement_redirect": false,
+  "exact_dependency_history_validated": true
+}

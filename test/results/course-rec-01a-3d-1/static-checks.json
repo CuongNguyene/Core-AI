@@ -1,0 +1,9 @@
+{
+  "ruff_format_check": {"result": "PASS", "scope": "new package and focused test"},
+  "ruff_check": {"result": "PASS", "scope": "new package and focused test"},
+  "mypy": {"result": "PASS", "scope": "app.capability_governance", "issues": 0},
+  "json_validation": {"result": "PASS"},
+  "core_ai_git_diff_check": {"result": "PASS"},
+  "lms_git_diff_check": {"result": "PASS"},
+  "secret_scan": {"result": "PASS"}
+}

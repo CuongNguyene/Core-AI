@@ -1,0 +1,7 @@
+{
+  "focused_skillscommons_tests": {"command": "uv run pytest tests/test_course_catalog_skillscommons.py -q", "result": "13 passed"},
+  "course_catalog_regression": {"command": "uv run pytest tests/test_course_catalog_*.py -q", "result": "54 passed"},
+  "mock_provider_regression": "covered by course catalog regression",
+  "openedx_provider_regression": "covered by course catalog regression",
+  "legacy_oai_mets_fixtures": "RETIRED; no longer used by live provider"
+}

@@ -1,0 +1,10 @@
+{
+  "ruff_format": "PASS",
+  "ruff": "PASS",
+  "mypy": "PASS",
+  "mypy_scope": "15 governance/catalog/recommendation production modules",
+  "json_validation": "PASS",
+  "git_diff_check": "PASS",
+  "whitespace_scan": "PASS",
+  "secret_scan": "PASS"
+}

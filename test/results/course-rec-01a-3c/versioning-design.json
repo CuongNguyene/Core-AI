@@ -1,0 +1,27 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "identity_version_independent": true,
+  "release_version": "Pack release with definition revision/digest, mapping version and policy version separate.",
+  "same_meaning": "Same stable ID for same operational meaning/scope; new immutable release/revision for editorial labels.",
+  "meaning_change": "New semantic ID with explicit replacement relation; never redefine/reuse prior ID.",
+  "split_merge": "Explicit replacement set + reviewed mappings/new artifacts; no automatic inheritance.",
+  "alias": "Same-meaning approved synonyms scoped by language/context/release; broader/narrower/related meanings forbidden as aliases.",
+  "hierarchy": "Deferred; no inferred parent-child rule.",
+  "pins": [
+    "source/profile/outcome version/checksum",
+    "capability ref",
+    "definition revision/digest",
+    "pack version/checksum",
+    "mapping version",
+    "mapping policy version",
+    "role semantic policy version when applicable",
+    "course profile version",
+    "algorithm version",
+    "resolution context checksum",
+    "eligibility time/lifecycle audit refs"
+  ],
+  "v1_compatibility": "Target and candidate use identical pinned definition/pack release per capability in one context. Different releases fail closed until explicit compatibility/adaptation approved.",
+  "historical": "Exact immutable archived records resolve under explicit historical mode; historical eligibility is not current eligibility.",
+  "full_taxonomy_snapshot_required": false
+}

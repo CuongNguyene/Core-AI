@@ -1,0 +1,10 @@
+{
+  "old_host": "https://www.skillscommons.org/",
+  "status": 301,
+  "location": "https://partner.skillscommons.org/",
+  "redirected_host_status": 200,
+  "redirected_content_type": "text/html; charset=UTF-8",
+  "tls_verification": "enabled",
+  "tls_disabled": false,
+  "observed_from": "host_network"
+}

@@ -1,0 +1,10 @@
+{
+  "focused": {
+    "command": "pytest -q tests/test_governed_target_adapter.py",
+    "result": "20 passed"
+  },
+  "regression": {
+    "command": "pytest -q tests/test_capability_identity_contracts.py tests/test_capability_definitions.py tests/test_capability_pack_lifecycle.py tests/test_capability_outcome_mapping_contracts.py tests/test_governed_mapping.py tests/test_governed_course_projection.py tests/test_role_profile_source_adapter.py tests/test_capability_gap_profile.py tests/test_learning_need_profile.py tests/test_learning_need_projection_policy.py tests/test_learning_path_integration.py tests/test_course_recommendation.py tests/test_governed_target_adapter.py",
+    "result": "274 passed"
+  }
+}

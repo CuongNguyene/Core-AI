@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "compatible_same_release_pin": "accepted",
+  "same_canonical_ref_different_exact_release_pin": "rejected_by_dry_run_gate",
+  "latest_selection": false,
+  "automatic_repin": false,
+  "production_join_code_added": false,
+  "reason": "01B joins stable canonical refs but has no definition-pin context; 3D-6 requires exact pin equality for reproducible cross-adapter evidence."
+}

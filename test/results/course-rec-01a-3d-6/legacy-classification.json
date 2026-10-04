@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "classifications": {
+    "KEEP_AS_IS": ["professional_capability_core@0.1 for its bounded extraction purpose", "RoleRequirement business IDs", "CapabilityGapProfile lineage", "LearningNeed IDs and source lineage", "LearningPath target/step refs", "provider-owned ExternalCourse identities", "historical exact-pin records"],
+    "ADAPT": ["future separate sidecar binding for eligible RoleRequirement/LearningNeed source semantics"],
+    "REMAP": ["legacy opaque course capability refs before any new current governed use"],
+    "EXPERIMENT_ONLY": ["both SkillsCommons semantic DRAFT profiles", "synthetic catalog fixtures"],
+    "DEPRECATE": [],
+    "BLOCKED_PENDING_GOVERNANCE": ["any unenumerated runtime/database records; runtime stores were not inventoried"]
+  },
+  "automatic_conversion": false
+}

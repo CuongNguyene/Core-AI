@@ -1,0 +1,13 @@
+{
+  "scope": [
+    "services/pai-backend/backend/app/capability_governance/course_projection.py",
+    "services/pai-backend/backend/tests/test_governed_course_projection.py"
+  ],
+  "ruff_format_check": "PASS",
+  "ruff_check": "PASS",
+  "mypy": "PASS",
+  "json_validation": "PASS: five evidence JSON files parsed",
+  "git_diff_check": "PASS",
+  "whitespace_scan": "PASS: no trailing whitespace in scoped files",
+  "secret_scan": "PASS: no credential/private-key patterns in scoped files"
+}

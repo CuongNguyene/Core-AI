@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "cases": [
+    {"case": "stale target source pin", "expected": "reject before 01B", "actual": "stale_source", "result": "PASS"},
+    {"case": "deprecated target mapping", "expected": "reject current use", "actual": "mapping_deprecated", "result": "PASS"},
+    {"case": "inactive definition", "expected": "reject current use", "actual": "capability authority error", "result": "PASS"},
+    {"case": "inactive dependency", "expected": "reject current use", "actual": "dependency closure error", "result": "PASS"},
+    {"case": "unresolved required facet", "expected": "reject without dropping facet", "actual": "TARGET_CAPABILITY_UNRESOLVED", "result": "PASS"}
+  ],
+  "no_target_constructed_from_stale_authority": true
+}

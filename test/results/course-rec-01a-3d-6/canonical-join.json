@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "target_refs": ["capability:test_core:communication"],
+  "course_refs": ["capability:test_core:communication"],
+  "exact_intersection": ["capability:test_core:communication"],
+  "aliases_or_labels_used": false,
+  "fuzzy_or_embedding_match_used": false,
+  "definition_pin_equality_required_by_dry_run": true
+}

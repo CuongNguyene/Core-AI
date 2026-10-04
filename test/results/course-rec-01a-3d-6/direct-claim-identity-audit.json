@@ -1,0 +1,12 @@
+{
+  "status": "DIRECT_CLAIM_CONVENTION_SAFE",
+  "original_delimiter_convention": "superseded by completed 3D-5A",
+  "current_identity": "dc1_ + SHA-256(canonical structured JSON of course_ref and claim_id)",
+  "internal_course_ref_tested": "frappe_lms:course-9",
+  "external_course_ref_tested": "skillscommons:course-123",
+  "ownership": "exact structured course_ref equality plus recomputed source ID",
+  "collision_pair_distinct": true,
+  "source_namespace_checked": true,
+  "provider_specific_parser": false,
+  "round_trip_decoder": false
+}

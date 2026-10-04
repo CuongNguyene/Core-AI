@@ -1,0 +1,25 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "key": "B",
+  "architecture": "OPTION_B_OUTCOME_MAPPING",
+  "decision": "PARTIAL",
+  "assessment": "Source outcomes plus mapping solve evidence; target namespace governance still missing.",
+  "benefits": "Unmapped outcomes and many-to-many provenance",
+  "risks": "Review cost; target vocabulary ownership unresolved",
+  "migration": "Additive outcome and mapping records",
+  "recommendation_impact": "01B_INPUT_ADAPTER_CHANGE",
+  "criteria": {
+    "semantic_correctness": "STRONG",
+    "traceability": "STRONG",
+    "governance": "MODERATE",
+    "domain_extensibility": "MODERATE",
+    "course_coverage": "STRONG",
+    "role_alignment": "STRONG",
+    "implementation_simplicity": "MODERATE",
+    "migration_simplicity": "MODERATE",
+    "recommendation_compatibility": "STRONG",
+    "explainability": "STRONG",
+    "resistance_to_forcing": "STRONG"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "milestone": "COURSE-REC-01A.3B",
+  "checks": {
+    "json_object_parse": "PASS",
+    "original_sample_and_accept_counts_preserved": "PASS",
+    "summary_matches_claim_source_representation_counts": "PASS",
+    "four_claim_UUID_titles_and_evidence_substrings_match_original_sample": "PASS",
+    "four_claim_source_locators_match_UUID_and_field": "PASS",
+    "thirteen_zero_coverage_course_IDs_match_original_sample_and_exclude_old_profiles": "PASS",
+    "nine_clear_four_partial_zero_insufficient": "PASS",
+    "representation_checks_only_nine_clear_courses": "PASS",
+    "numbered_report_sections": 25,
+    "git_diff_check_core_ai": "PASS",
+    "git_diff_check_lms": "PASS",
+    "audit_artifact_secret_pattern_scan": "PASS",
+    "production_bridge_tests_scripts_and_old_evidence_checksum": "UNCHANGED",
+    "old_report_checksum": "UNCHANGED",
+    "existing_graph_checksum": "UNCHANGED",
+    "lms_worktree": "CLEAN"
+  },
+  "scope": {
+    "production_code_modified": false,
+    "tests_modified": false,
+    "taxonomy_modified": false,
+    "old_experiment_artifacts_modified": false,
+    "models_called": 0,
+    "network_refetch": false,
+    "packages_parsed": false
+  },
+  "preserved_checksum": "1816451e1587992eac2038765aa95aa5732943f6611fbf35b38e82970a896a7a",
+  "verification_commands": [
+    "jq -e for each generated JSON object",
+    "jq --slurpfile cross-artifact counts, IDs, titles, source locators and source-excerpt substring assertions",
+    "git diff --check in both repositories",
+    "sorted source-file SHA256 manifest before/after",
+    "shasum -a 256 for previous report and graph",
+    "git status --short in both repositories"
+  ],
+  "not_executed": [
+    "production pytest regression",
+    "Ruff/mypy remediation",
+    "live provider refetch",
+    "full course semantic adjudication"
+  ],
+  "validation_command_corrections": "Two initial jq assertion invocations had command syntax/precedence errors. Corrected assertions all passed; audit data and production code were not changed to pass."
+}

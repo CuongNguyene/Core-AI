@@ -1,0 +1,6 @@
+{
+  "decision": "READY_FOR_01C_WITH_CONSTRAINTS",
+  "safe_to_persist": ["recommendation request/result", "algorithm ID/version", "target and candidate refs", "decision details", "trace refs", "exact mapping/source/definition provenance when needed for replay"],
+  "must_not_assume": ["latest pack or mapping", "business ID equals canonical ref", "automatic taxonomy migration", "DRAFT authority", "experiment profile eligibility"],
+  "blockers": ["production persistence requires a separately scoped migration/source inventory and durable governance authority store"]
+}

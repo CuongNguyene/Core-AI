@@ -1,0 +1,15 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "architecture": "OPTION_D_HYBRID_OUTCOMES_PLUS_DOMAIN_PACKS",
+  "shared_canonical_identity": true,
+  "dual_identity": true,
+  "domain_capability_packs_required": true,
+  "outcome_layer": "YES for outcome-derived claims; direct authored capability evidence may use equivalent provenance without synthetic outcomes.",
+  "course_profile_role": "Governed projection/export of approved evidence-backed coverage; mapping/claim approval records authoritative, profile ACTIVE separate gate.",
+  "engine_impact": "01B_INPUT_ADAPTER_CHANGE",
+  "existing_normalization_pack_is_capability_pack": false,
+  "new_capabilities_created": 0,
+  "overall_decision": "READY_FOR_CAPABILITY_GOVERNANCE_IMPLEMENTATION",
+  "authority": "Design recommendation; not production taxonomy approval, permission assignment or implementation authorization."
+}

@@ -1,0 +1,19 @@
+{
+  "milestone": "COURSE-REC-01A.3D-6",
+  "title": "COMPATIBILITY, MIGRATION & END-TO-END DRY RUN",
+  "status": "COMPLETE",
+  "verification": "PASS",
+  "tests_passed": 400,
+  "tests_failed": 0,
+  "production_code_changed": false,
+  "repository_data_mutated": false,
+  "database_mutated": false,
+  "api_added": false,
+  "lms_changed": false,
+  "course_rec_01b_changed": false,
+  "runtime_database_inventory": false,
+  "commit_created": false,
+  "push_performed": false,
+  "course_rec_01c_readiness": "READY_FOR_01C_WITH_CONSTRAINTS",
+  "next_milestone": "COURSE-REC-01C"
+}

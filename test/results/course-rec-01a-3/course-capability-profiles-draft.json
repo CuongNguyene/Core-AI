@@ -1,0 +1,108 @@
+[
+  {
+    "id": "course-profile:skillscommons:6f6156c3-7b85-4ce0-85cc-1efbd439d144:semantic",
+    "version": 1,
+    "course_ref": "skillscommons:6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+    "source_type": "external",
+    "source_system": "skillscommons",
+    "provider_ref": "skillscommons",
+    "provider_course_id": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+    "title_snapshot": "MAN2582 Introduction to Project Management",
+    "description_snapshot": "This introductory course in project management concepts, with Microsoft Project application, is designed to prepare students to utilize project management techniques in the workplace. Further, the course will prepare the student for further study in project management and related areas.",
+    "capabilities": [
+      {
+        "capability_ref": "project_management",
+        "coverage_type": "direct",
+        "target_level": null,
+        "provenance": [
+          {
+            "kind": "semantic_evidence",
+            "source_ref": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+            "source_field": "dc.description.abstract",
+            "source_locator": "dspace:item:6f6156c3-7b85-4ce0-85cc-1efbd439d144:metadata:dc.description.abstract",
+            "evidence_text": "This introductory course in project management concepts ... is designed to prepare students to utilize project management techniques in the workplace.",
+            "method": "GOVERNED_EXACT_MAPPING"
+          }
+        ]
+      }
+    ],
+    "prerequisites": [],
+    "target_level": null,
+    "duration_minutes": null,
+    "delivery_mode": null,
+    "language": null,
+    "availability": "available",
+    "status": "draft",
+    "provenance": [
+      {
+        "kind": "provider",
+        "source_ref": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+        "source_field": "uuid",
+        "source_locator": null,
+        "evidence_text": null,
+        "method": "dspace_rest_hal"
+      },
+      {
+        "kind": "semantic_enrichment_policy",
+        "source_ref": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+        "source_field": "enrichment_policy",
+        "source_locator": null,
+        "evidence_text": "skillscommons_course_semantic_enrichment@0.1",
+        "method": "governed_review"
+      }
+    ]
+  },
+  {
+    "id": "course-profile:skillscommons:f64795cb-b561-4bb6-9748-9841d6e982dd:semantic",
+    "version": 1,
+    "course_ref": "skillscommons:f64795cb-b561-4bb6-9748-9841d6e982dd",
+    "source_type": "external",
+    "source_system": "skillscommons",
+    "provider_ref": "skillscommons",
+    "provider_course_id": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+    "title_snapshot": "PHT1007 Topics in Physical Therapy",
+    "description_snapshot": "This course provides an overview of the profession of physical therapy, related issues and professional organizations. The course introduces topics on domestic violence, end of life issues, stress/stress management. Also presented are learning theories, leadership and teams, management and quality assurance and ethical/legal issues. The course introduces government agencies: ADA, OSHA; patient bill of rights and HIPAA. Discussion of the Models of Disability, professional ethics, and materials/resources available at APTA organization is presented. The course also presents communication skills and the SOAP format for documentation along with developing familiarity with other healthcare providers. This course is designed to engage the student in an active interest in the profession of physical therapy.",
+    "capabilities": [
+      {
+        "capability_ref": "team_leadership",
+        "coverage_type": "direct",
+        "target_level": null,
+        "provenance": [
+          {
+            "kind": "semantic_evidence",
+            "source_ref": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+            "source_field": "dc.description.abstract",
+            "source_locator": "dspace:item:f64795cb-b561-4bb6-9748-9841d6e982dd:metadata:dc.description.abstract",
+            "evidence_text": "Also presented are learning theories, leadership and teams, management and quality assurance...",
+            "method": "GOVERNED_EXACT_MAPPING"
+          }
+        ]
+      }
+    ],
+    "prerequisites": [],
+    "target_level": null,
+    "duration_minutes": null,
+    "delivery_mode": null,
+    "language": null,
+    "availability": "available",
+    "status": "draft",
+    "provenance": [
+      {
+        "kind": "provider",
+        "source_ref": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+        "source_field": "uuid",
+        "source_locator": null,
+        "evidence_text": null,
+        "method": "dspace_rest_hal"
+      },
+      {
+        "kind": "semantic_enrichment_policy",
+        "source_ref": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+        "source_field": "enrichment_policy",
+        "source_locator": null,
+        "evidence_text": "skillscommons_course_semantic_enrichment@0.1",
+        "method": "governed_review"
+      }
+    ]
+  }
+]

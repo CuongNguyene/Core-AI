@@ -1,0 +1,22 @@
+{
+  "provider_ref": "openedx",
+  "course_ref": "openedx:<provider_course_id>",
+  "mapping": {
+    "course_id_or_id": "provider_course_id",
+    "name": "title",
+    "overview_then_short_description": "description",
+    "effort": null,
+    "pacing_known_values": "delivery_mode",
+    "marketing_url_or_course_url": "course_url",
+    "start_end_hidden": "availability",
+    "provider_metadata": "provenance"
+  },
+  "non_fabricated_fields": {
+    "capabilities": [],
+    "target_level": null,
+    "prerequisites": [],
+    "duration_minutes": null
+  },
+  "html_handling": "preserve_as_provider_description; backend does not render HTML",
+  "secrets_present": false
+}

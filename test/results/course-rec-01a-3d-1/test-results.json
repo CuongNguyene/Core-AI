@@ -1,0 +1,14 @@
+{
+  "red_phase": {
+    "command": "pytest tests/test_capability_identity_contracts.py -q",
+    "result": "EXPECTED_FAIL",
+    "reason": "ModuleNotFoundError: app.capability_governance before package implementation"
+  },
+  "focused_regression": {
+    "command": "pytest tests/test_capability_identity_contracts.py tests/test_course_catalog_fixtures.py tests/test_course_catalog_schemas.py tests/test_course_catalog_semantic_enrichment.py tests/test_course_recommendation.py tests/test_learning_need_profile.py tests/test_learning_need_projection_policy.py tests/test_role_profile_source_adapter.py tests/test_semantic_core_contracts.py -q",
+    "result": "PASS",
+    "passed": 129,
+    "failed": 0
+  },
+  "contains_live_network_tests": false
+}

@@ -1,0 +1,11 @@
+{
+  "strategy": "LEXICOGRAPHIC",
+  "factors_in_order": ["coverage", "matched capability count", "prerequisite status", "target level status", "availability", "course_ref ascending"],
+  "coverage_order": ["FULL_COVERAGE", "PARTIAL_COVERAGE"],
+  "prerequisite_order": ["SATISFIED", "NOT_APPLICABLE", "UNKNOWN"],
+  "level_order": ["EXACT", "COMPATIBLE", "UNKNOWN_OR_DIFFERENT"],
+  "availability_order": ["AVAILABLE", "UNKNOWN"],
+  "weighted_score": false,
+  "source_provider_preference": false,
+  "duration_preference": false
+}

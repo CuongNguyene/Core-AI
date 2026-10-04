@@ -1,0 +1,1 @@
+{"fields_covered":["proposal_id","proposal_fingerprint","reviewer_ref","decision","rationale"],"algorithm":"sha256 canonical compact sorted-key JSON","deterministic":true}

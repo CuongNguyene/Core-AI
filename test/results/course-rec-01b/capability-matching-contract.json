@@ -1,0 +1,11 @@
+{
+  "matching": "exact governed capability_ref equality",
+  "full_coverage": "all target refs matched",
+  "partial_coverage": "at least one but not all target refs matched",
+  "no_coverage": "no target refs matched and candidate excluded",
+  "fuzzy_matching": false,
+  "title_matching": false,
+  "description_matching": false,
+  "subject_inference": false,
+  "occupation_inference": false
+}

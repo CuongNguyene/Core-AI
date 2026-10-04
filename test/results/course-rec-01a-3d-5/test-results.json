@@ -1,0 +1,18 @@
+{
+  "command": "uv run pytest tests/test_governed_course_projection.py tests/test_capability_identity_contracts.py tests/test_capability_definitions.py tests/test_capability_pack_lifecycle.py tests/test_capability_outcome_mapping_contracts.py tests/test_governed_mapping.py tests/test_course_catalog_schemas.py tests/test_course_catalog_fixtures.py tests/test_course_catalog_semantic_enrichment.py tests/test_course_catalog_openedx.py tests/test_course_catalog_skillscommons.py tests/test_course_recommendation.py -q",
+  "working_directory": "services/pai-backend/backend",
+  "exit_code": 0,
+  "passed": 277,
+  "failed": 0,
+  "skipped": 0,
+  "network": "not used",
+  "coverage_groups": [
+    "3D-1 capability identity",
+    "3D-2 definitions and pack lifecycle",
+    "3D-3A outcome and mapping evidence",
+    "3D-3B governed mapping activation and current resolution",
+    "course catalog schema, fixtures, semantic enrichment and providers",
+    "COURSE-REC-01B deterministic recommendation engine",
+    "3D-5 governed course projection"
+  ]
+}

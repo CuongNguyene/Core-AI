@@ -1,0 +1,8 @@
+{
+  "statuses": ["SATISFIED", "UNSATISFIED", "UNKNOWN", "NOT_APPLICABLE"],
+  "satisfied": "explicit context proves capability/course/provider condition",
+  "unsatisfied": "explicit context proves hard prerequisite absent or false",
+  "unknown": "evidence missing or prerequisite kind unsupported",
+  "missing_evidence_is_unsatisfied": false,
+  "raw_cv_or_jd_parsing": false
+}

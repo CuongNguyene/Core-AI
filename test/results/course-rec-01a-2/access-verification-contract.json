@@ -1,0 +1,13 @@
+{
+  "statuses": {
+    "2xx": "VERIFIED_ACCESSIBLE",
+    "401_or_403": "RESTRICTED",
+    "404_or_410": "BROKEN",
+    "timeout_dns_connection_429_5xx": "UNKNOWN"
+  },
+  "head_preferred": true,
+  "get_fallback": "bounded Range request",
+  "max_inspected_body_bytes": 32768,
+  "max_redirects": 3,
+  "enrollment_claimed": false
+}

@@ -1,0 +1,19 @@
+{
+  "unit_cases": [
+    "malformed HAL rejected",
+    "missing item UUID rejected",
+    "missing title rejected from normalization",
+    "empty bundles handled",
+    "empty bitstreams handled",
+    "401/403 restricted",
+    "404/410 broken",
+    "429/5xx unknown",
+    "HEAD 405 falls back to bounded Range GET",
+    "redirect to private IP blocked",
+    "unsafe URL schemes blocked",
+    "oversized response bounded",
+    "withdrawn/discoverable/inArchive state excluded by strict rule"
+  ],
+  "live_failures_preserved": true,
+  "live_binary_downloads": 0
+}

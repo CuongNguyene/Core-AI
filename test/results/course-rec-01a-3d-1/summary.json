@@ -1,0 +1,9 @@
+{
+  "milestone": "COURSE-REC-01A.3D-1",
+  "status": "COMPLETE",
+  "design_readiness": "READY_FOR_CAPABILITY_PACK_LIFECYCLE",
+  "tests": {"passed": 129, "failed": 0},
+  "static_checks": "PASS",
+  "commit": false,
+  "push": false
+}

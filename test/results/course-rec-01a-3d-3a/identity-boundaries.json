@@ -1,0 +1,9 @@
+{
+  "3d1_types_reused": ["CanonicalCapabilityRef", "SourceSemanticRef", "SourceSemanticKind"],
+  "capability_identity_pair_used": false,
+  "outcome_identity_equals_course_ref": false,
+  "outcome_identity_equals_canonical_ref": false,
+  "role_requirement_identity_preserved": true,
+  "learning_need_identity_preserved": true,
+  "source_version_kept_in_source_ref": true
+}

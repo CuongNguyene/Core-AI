@@ -1,0 +1,13 @@
+{
+  "milestone": "COURSE-REC-01A.1",
+  "title": "OPEN EDX EXTERNAL PROVIDER SPIKE",
+  "status": "OPENEDX_ACCESS_BLOCKED",
+  "implementation": "PASS",
+  "mocked_contract_verification": "PASS",
+  "live_smoke": "NOT_RUN_BLOCKED",
+  "model_calls": 0,
+  "lms_changes": 0,
+  "recommendation_runtime_changes": 0,
+  "commit": "NOT_CREATED",
+  "push": "NOT_PERFORMED"
+}

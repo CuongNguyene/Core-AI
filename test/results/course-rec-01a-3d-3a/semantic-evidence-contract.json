@@ -1,0 +1,13 @@
+{
+  "type": "SemanticEvidence",
+  "fields": ["source_ref", "source_locator", "evidence_text", "evidence_kind"],
+  "source_ref_required": true,
+  "source_locator_required": true,
+  "evidence_text_required": true,
+  "bounds": {
+    "source_locator_characters": 2048,
+    "evidence_text_characters": 500
+  },
+  "immutable": true,
+  "strength_implied": false
+}

@@ -1,0 +1,20 @@
+{
+  "endpoint_pattern": "https://www.skillscommons.org/metadata/handle/<handle>/mets.xml",
+  "observed_in_fixtures": [
+    "dc.title",
+    "dc.type",
+    "dc.language",
+    "dcterms.license",
+    "taaccct.archive",
+    "taaccct.level",
+    "taaccct.object.uri",
+    "cw.timeRequired",
+    "mets:file",
+    "mets:FLocat",
+    "MIMETYPE",
+    "SIZE",
+    "CHECKSUM"
+  ],
+  "live_status": "NOT_REACHED",
+  "secrets_present": false
+}

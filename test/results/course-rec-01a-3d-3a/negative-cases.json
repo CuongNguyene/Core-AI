@@ -1,0 +1,9 @@
+{
+  "title_or_topic_auto_converted_to_outcome": "PASS: no classifier/conversion path and source identity/locator required",
+  "outcome_equals_capability": "PASS: distinct identity types",
+  "requirement_equals_capability": "PASS: source requirement ID remains in SourceSemanticRef",
+  "review_approval_equals_authority": "PASS: review has no active/authority state",
+  "unknown_canonical_target_assumed_active": "PASS: synthetic syntactically valid target accepted without registry lookup",
+  "nearest_or_fuzzy_matching": "PASS: no such mapping type or reason",
+  "unmapped_semantic_valid": "PASS: source and evidence may be represented without target"
+}

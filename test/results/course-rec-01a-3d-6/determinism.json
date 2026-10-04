@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "repeated_target_projection": "identical serialized target/pins/mapping fingerprints",
+  "repeated_course_projection": "identical serialized candidate/mapping fingerprints",
+  "repeated_recommendation": "identical serialized result",
+  "candidate_order_independence": true,
+  "target_course_mapping_order_is_canonicalized_by_adapters": true,
+  "latest_fallback": false,
+  "automatic_repin": false
+}

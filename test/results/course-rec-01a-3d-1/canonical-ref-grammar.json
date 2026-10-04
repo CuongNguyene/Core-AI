@@ -1,0 +1,13 @@
+{
+  "format": "capability:<namespace_key>:<semantic_key>",
+  "namespace_pattern": "[a-z][a-z0-9_]{1,63}",
+  "semantic_key_pattern": "[a-z][a-z0-9_]{1,127}",
+  "namespace_length": {"minimum": 2, "maximum": 64},
+  "semantic_key_length": {"minimum": 2, "maximum": 128},
+  "strict_lowercase": true,
+  "normalization": false,
+  "version_embedded": false,
+  "label_embedded": false,
+  "unknown_syntactically_valid_namespace_allowed": true,
+  "serialization": "single string"
+}

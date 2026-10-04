@@ -1,0 +1,32 @@
+{
+  "provider": "skillscommons",
+  "authentication_required": false,
+  "endpoint": "https://www.skillscommons.org/oai/request",
+  "initial_request": {
+    "verb": "ListRecords",
+    "metadataPrefix": "oai_dc"
+  },
+  "resumption_request": {
+    "verb": "ListRecords",
+    "resumptionToken": "<token>"
+  },
+  "bounds": {
+    "max_pages": 5,
+    "max_records": 200
+  },
+  "observed_in_fixtures": [
+    "identifier",
+    "datestamp",
+    "title",
+    "creator",
+    "subject",
+    "description",
+    "date",
+    "type",
+    "identifier",
+    "language",
+    "publisher"
+  ],
+  "live_status": "BLOCKED_DNS_BEFORE_RESPONSE",
+  "secrets_present": false
+}

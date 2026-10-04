@@ -1,0 +1,1 @@
+{"states":["active","deprecated"],"activation_creates":"active","active_to_deprecated":"supported; immutable copy","deprecated_to_active":"blocked","fingerprint_changes_on_deprecation":false,"repeat_deprecation":"blocked"}

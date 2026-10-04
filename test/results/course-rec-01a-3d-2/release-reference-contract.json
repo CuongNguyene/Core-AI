@@ -1,0 +1,6 @@
+{
+  "fields": ["pack_id", "version", "checksum"],
+  "version_semantics": "bounded opaque exact token",
+  "moving_selectors_rejected": ["latest", "current", "ranges", "wildcards"],
+  "checksum_format": "sha256:<64 lowercase hex characters>"
+}

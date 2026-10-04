@@ -1,0 +1,16 @@
+{
+  "attributes": {
+    "identity": {"internal": "frappe_lms:<course_name>", "external": "<provider_ref>:<provider_course_id>", "normalized": "course_ref"},
+    "title": {"internal": "LMS Course.title", "external": "provider title", "normalized": "title"},
+    "description": {"internal": "description/short_introduction snapshot", "external": "provider description", "normalized": "description"},
+    "provider": {"internal": "frappe_lms", "external": "provider_ref", "normalized": "source_system/provider_ref"},
+    "capabilities": {"internal": "manual/source-grounded profile", "external": "future adapter mapping", "normalized": "capabilities"},
+    "target_level": {"internal": "nullable", "external": "nullable", "normalized": "target_level"},
+    "prerequisites": {"internal": "course-local", "external": "course-local/provider condition", "normalized": "prerequisites"},
+    "duration": {"internal": "duration minutes", "external": "provider metadata", "normalized": "duration_minutes"},
+    "delivery_mode": {"internal": "optional LMS metadata", "external": "provider metadata", "normalized": "delivery_mode"},
+    "availability": {"internal": "published", "external": "provider status", "normalized": "availability"},
+    "provenance": {"internal": "source_fact/manual_mapping", "external": "provider_metadata", "normalized": "provenance"}
+  },
+  "engine_source_branching": false
+}

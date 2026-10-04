@@ -1,0 +1,5 @@
+{
+  "fields": ["provider_ref", "provider_course_id", "title", "description", "duration_minutes", "delivery_mode", "language", "availability", "course_url", "provenance"],
+  "semantic_capability_fields": false,
+  "provider_identity_required": true
+}

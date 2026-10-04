@@ -1,0 +1,50 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "source_spaces": [
+    "role requirement capability facet",
+    "course outcome capability facet",
+    "candidate evidence-backed concept",
+    "provider/external taxonomy concept",
+    "occupation standard concept"
+  ],
+  "fields": [
+    "mapping_id",
+    "version",
+    "source_namespace/ref/version",
+    "source_kind",
+    "source_locator_refs",
+    "source_checksum",
+    "target_capability_ref",
+    "target_definition_revision",
+    "target_pack_id/version/checksum",
+    "mapping_type",
+    "source_scope",
+    "target_scope",
+    "evidence_refs",
+    "provenance",
+    "mapping_policy_id/version",
+    "review_status",
+    "reviewer_ref/time/rationale",
+    "lifecycle",
+    "supersedes_mapping_ref"
+  ],
+  "types_v1": [
+    "EXACT"
+  ],
+  "types_deferred": [
+    "NARROWER_THAN",
+    "BROADER_THAN",
+    "RELATED_TO"
+  ],
+  "exact_meaning": "Reviewed equivalence of source capability facet to target definition; not whole requirement/outcome equivalence, not keyword association.",
+  "eligibility": "APPROVED and ACTIVE exact mapping + ACTIVE target definition/pack under pinned context + unchanged source version/checksum + separately approved target-compatible claim scope.",
+  "coverage": "Course evidence must establish development/coverage; direct/supporting type plus behavior/context scope separately reviewed. Narrow evidence cannot silently satisfy broader requirement.",
+  "provider_topics": "Context/source concept only; cannot create course development claim without outcome/claim evidence.",
+  "human_approval": true,
+  "ai_authoritative": false,
+  "many_to_many": true,
+  "unmapped_allowed": true,
+  "rules": "Human-approved rule releases may propose deterministic mappings under exact conditions; instantiated evidence/review required.",
+  "source_edit": "New source version invalidates live binding pending re-review; new profile projection/version required."
+}

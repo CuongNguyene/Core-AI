@@ -1,0 +1,25 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "key": "D",
+  "architecture": "OPTION_D_HYBRID_OUTCOMES_PLUS_DOMAIN_PACKS",
+  "decision": "ACCEPT",
+  "assessment": "Source identities/outcomes plus governed mappings to owned core/domain refs address both source validity and extension.",
+  "benefits": "Traceability, unmapped retention, pure engine, safe migration",
+  "risks": "Extra review and activation dependency/scope validation",
+  "migration": "Medium staged additive adapters; historical artifacts unchanged",
+  "recommendation_impact": "01B_INPUT_ADAPTER_CHANGE",
+  "criteria": {
+    "semantic_correctness": "STRONG",
+    "traceability": "STRONG",
+    "governance": "STRONG",
+    "domain_extensibility": "STRONG",
+    "course_coverage": "STRONG",
+    "role_alignment": "STRONG",
+    "implementation_simplicity": "WEAK",
+    "migration_simplicity": "MODERATE",
+    "recommendation_compatibility": "STRONG",
+    "explainability": "STRONG",
+    "resistance_to_forcing": "STRONG"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "milestone": "COURSE-REC-01A.2B",
+  "status": "PUBLIC_DATA_ENDPOINT_FOUND",
+  "legacy_endpoint_usable": false,
+  "new_machine_readable_endpoint_found": true,
+  "scraper_allowed": false,
+  "provider_code_changed": false,
+  "recommendation_code_changed": false,
+  "lms_changed": false,
+  "next_action": "bounded provider repoint investigation against the public DSpace REST surface"
+}

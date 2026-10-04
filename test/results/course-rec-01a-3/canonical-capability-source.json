@@ -1,0 +1,12 @@
+{
+  "taxonomy_id": "professional_capability_core",
+  "taxonomy_version": "0.1",
+  "capability_ref_format": "existing taxonomy capability id",
+  "sample_refs_used": [
+    "digital_platform_development",
+    "project_management",
+    "team_leadership"
+  ],
+  "capabilities_invented": false,
+  "parallel_taxonomy_created": false
+}

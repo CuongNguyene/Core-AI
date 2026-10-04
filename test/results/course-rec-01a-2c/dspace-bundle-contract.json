@@ -1,0 +1,8 @@
+{
+  "endpoint": "/server/api/core/items/<UUID>/bundles",
+  "status": 200,
+  "hal_embedded_key": "bundles",
+  "bundle_names_observed": ["TEXT", "THUMBNAIL", "ORIGINAL", "LICENSE"],
+  "traversal": "item _links.bundles -> bundle _links.bitstreams",
+  "empty_bundles_supported": true
+}

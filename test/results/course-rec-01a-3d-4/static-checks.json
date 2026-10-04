@@ -1,0 +1,8 @@
+{
+  "ruff_format": "PASS",
+  "ruff_check": "PASS",
+  "mypy_target_adapter": "PASS",
+  "git_diff_check": "PASS",
+  "json_validation": "PASS",
+  "secret_scan": "PASS; no bearer token, key, or private-key material in milestone files"
+}

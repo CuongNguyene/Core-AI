@@ -1,0 +1,1 @@
+{"type":"MappingActivationApproval","pins":["proposal_id","proposal_fingerprint","review_fingerprint","source_pin","target_definition_pin"],"approver_required":true,"approver_is_authentication":false,"mismatch":"fail closed: activation_approval_mismatch","reviewer_may_equal_approver":true}

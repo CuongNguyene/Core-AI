@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "domains": {
+    "software_ai": "PASS",
+    "sales": "PASS",
+    "finance_accounting": "PASS",
+    "hr_communication": "PASS"
+  },
+  "all_cases_use_actual_3d4_3d5_and_01b": true,
+  "domain_specific_engine_branch": false,
+  "domain_taxonomy_created": false
+}

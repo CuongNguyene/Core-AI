@@ -1,0 +1,9 @@
+{
+  "model": "CapabilityPackRelease",
+  "pack_id_stable_across_releases": true,
+  "one_namespace_per_pack": true,
+  "definitions_nonempty": true,
+  "all_definition_namespaces_must_match_pack": true,
+  "owner_ref_is_opaque": true,
+  "authorization_implemented": false
+}

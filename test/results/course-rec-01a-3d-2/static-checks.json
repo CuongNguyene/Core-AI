@@ -1,0 +1,7 @@
+{
+  "ruff_format_check": "PASS",
+  "ruff_check": "PASS",
+  "mypy_app_capability_governance": "PASS: 6 source files",
+  "git_diff_check": "PASS",
+  "json_validation": "PASS"
+}

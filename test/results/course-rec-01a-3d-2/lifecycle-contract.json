@@ -1,0 +1,8 @@
+{
+  "pack_statuses": ["draft", "active", "deprecated"],
+  "definition_statuses": ["draft", "active", "deprecated"],
+  "transitions": "pure immutable value transformations",
+  "deprecated_replacement_redirect": false,
+  "draft_is_new_binding_eligible": false,
+  "draft_is_historical_resolution_eligible": false
+}

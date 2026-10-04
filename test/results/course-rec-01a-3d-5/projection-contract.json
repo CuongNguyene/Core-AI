@@ -1,0 +1,18 @@
+{
+  "course_identity": "CourseCapabilityProfile.course_ref, exact string preserved",
+  "outcome_identity": "CourseLearningOutcome.outcome_ref",
+  "direct_claim_identity": "SourceSemanticRef with COURSE_DIRECT_CLAIM; no outcome wrapper",
+  "direct_claim_course_binding": "course_ref namespace and source id prefix <course-id>#<claim-id> must agree",
+  "mapping_authority": "resolve_governed_mapping_for_use",
+  "source_freshness": "recomputed SourceSemanticPin from current evidence",
+  "definition_authority": "exact CapabilityDefinitionPin from current resolver result",
+  "coverage_ref": "resolver target CanonicalCapabilityRef serialized as canonical ref",
+  "coverage_claim_shape": "existing CourseCapability with DIRECT coverage; target_level null",
+  "deduplication": "one claim per canonical ref; deterministic ordered source traces and deduplicated evidence provenance",
+  "unmapped_semantics": "warning only; no canonical fallback or fabricated claim",
+  "draft_profile": "candidate only when existing DRAFT refs exactly match projection; status remains DRAFT",
+  "active_profile": "normalized candidate only when existing ACTIVE refs exactly match projection; profile is not rewritten",
+  "legacy_refs": "mismatch prevents candidate creation; no ref rewrite or migration",
+  "historical_mapping": "not used; current resolver mode required",
+  "provider_neutrality": "same code path for internal and external course source identities"
+}

@@ -1,0 +1,78 @@
+{
+  "taxonomy": "professional_capability_core@0.1",
+  "dimensions": [
+    {
+      "dimension": "owner",
+      "classification": "ABSENT",
+      "evidence": "No taxonomy owner/authority field or assigned owner found in inspected taxonomy, callers, evaluation docs or ADRs."
+    },
+    {
+      "dimension": "versioning",
+      "classification": "EXPLICIT",
+      "evidence": "Static ID/version 0.1, immutable models and exact get_taxonomy rejection."
+    },
+    {
+      "dimension": "lifecycle",
+      "classification": "ABSENT",
+      "evidence": "No draft/active/deprecated lifecycle for this taxonomy."
+    },
+    {
+      "dimension": "approval_semantics",
+      "classification": "ABSENT",
+      "evidence": "CV evaluation validation is not taxonomy release approval."
+    },
+    {
+      "dimension": "domain_scope",
+      "classification": "IMPLICIT",
+      "evidence": "Reusable professional families with business/commerce/operations emphasis; bounded CV intent explicit, domain applicability not formally declared."
+    },
+    {
+      "dimension": "extension_policy",
+      "classification": "ABSENT",
+      "evidence": "Classification labels include MERGE_CANDIDATE/SPLIT_CANDIDATE but no transition or extension policy."
+    },
+    {
+      "dimension": "alias_policy",
+      "classification": "IMPLICIT",
+      "evidence": "Aliases and deterministic name/alias mapping exist; alias approval/equivalence governance is absent."
+    },
+    {
+      "dimension": "hierarchy",
+      "classification": "ABSENT",
+      "evidence": "No parent/child fields, edges or subsumption rules."
+    },
+    {
+      "dimension": "competency_granularity_definition",
+      "classification": "ABSENT",
+      "evidence": "Descriptions exist; no formal family/skill/topic granularity rule."
+    },
+    {
+      "dimension": "deprecation_policy",
+      "classification": "ABSENT",
+      "evidence": "No taxonomy deprecation/version migration rules."
+    },
+    {
+      "dimension": "mapping_policy",
+      "classification": "EXPLICIT",
+      "evidence": "CV canonicalize_capabilities matches normalized name/declared aliases; unmapped grounded discoveries retained."
+    },
+    {
+      "dimension": "domain_pack_support",
+      "classification": "ABSENT",
+      "evidence": "No binding of this extraction taxonomy to versioned domain packs."
+    },
+    {
+      "dimension": "semantic_policy_integration",
+      "classification": "ABSENT",
+      "evidence": "Role assessment has separate exact policy/pack governance; no taxonomy binding in extraction/course contracts."
+    }
+  ],
+  "maturity": "Bounded versioned extraction reference; insufficient governance to declare enterprise course vocabulary.",
+  "sources": [
+    "services/pai-backend/backend/app/extraction/capability_taxonomy.py",
+    "services/pai-backend/backend/app/extraction/capability_discovery.py",
+    "services/pai-backend/docs/adr/0019-domain-neutral-capability-semantics.md",
+    "services/pai-backend/docs/adr/0020-semantic-policy-domain-pack-governance.md"
+  ],
+  "separate_role_semantic_policy_governance_is_not_taxonomy_governance": true
+}

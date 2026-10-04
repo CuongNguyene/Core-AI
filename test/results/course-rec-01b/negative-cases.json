@@ -1,0 +1,12 @@
+{
+  "title_to_capability": "PASS",
+  "description_to_capability": "PASS",
+  "subject_to_capability": "PASS",
+  "occupation_to_capability": "PASS",
+  "provider_preference_absent": "PASS",
+  "duration_bias_absent": "PASS",
+  "level_ordering_not_invented": "PASS",
+  "prerequisite_satisfaction_not_invented": "PASS",
+  "unavailable_excluded": "PASS",
+  "provider_only_skillscommons_excluded": "PASS"
+}

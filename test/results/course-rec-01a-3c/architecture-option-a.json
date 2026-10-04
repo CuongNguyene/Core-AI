@@ -1,0 +1,25 @@
+{
+  "kind": "PROPOSED_DESIGN",
+  "implemented": false,
+  "key": "A",
+  "architecture": "OPTION_A_SHARED_NAMESPACE",
+  "decision": "PARTIAL",
+  "assessment": "Common resolved refs useful; replacing all source semantics with one taxonomy loses source identities.",
+  "benefits": "Simple joins/common labels",
+  "risks": "Semantic forcing and central dumping ground",
+  "migration": "High if identity replacement; additive adapters safer",
+  "recommendation_impact": "01B_INPUT_ADAPTER_CHANGE",
+  "criteria": {
+    "semantic_correctness": "MODERATE",
+    "traceability": "WEAK",
+    "governance": "MODERATE",
+    "domain_extensibility": "MODERATE",
+    "course_coverage": "WEAK",
+    "role_alignment": "MODERATE",
+    "implementation_simplicity": "STRONG",
+    "migration_simplicity": "WEAK",
+    "recommendation_compatibility": "STRONG",
+    "explainability": "MODERATE",
+    "resistance_to_forcing": "WEAK"
+  }
+}

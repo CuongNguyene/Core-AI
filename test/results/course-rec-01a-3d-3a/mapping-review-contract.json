@@ -1,0 +1,10 @@
+{
+  "type": "CapabilityMappingReview",
+  "fields": ["proposal_id", "proposal_fingerprint", "reviewer_ref", "decision", "rationale"],
+  "decisions": ["approve", "reject", "uncertain"],
+  "proposer_ref_duplicated": false,
+  "reviewer_must_differ_from_proposer": true,
+  "proposal_id_and_fingerprint_checked": true,
+  "approval_activates_mapping": false,
+  "fingerprint_is_signature": false
+}

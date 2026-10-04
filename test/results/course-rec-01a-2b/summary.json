@@ -1,0 +1,17 @@
+{
+  "status": "PUBLIC_DATA_ENDPOINT_FOUND",
+  "legacy_root": "301 -> https://partner.skillscommons.org/",
+  "legacy_oai": "404 HTML on old and partner host",
+  "new_api": "public DSpace 9 REST/HAL at https://library.skillscommons.org/server/api",
+  "search_total_star": 16988,
+  "search_total_online_course_text": 7049,
+  "sample_item": "033ef675-a2dc-426b-b174-eac304086ec6",
+  "sample_item_metadata": "200",
+  "sample_bundle_metadata": "200",
+  "sample_bitstream_metadata": "200",
+  "sample_content_head": "200",
+  "exact_material_filter": "not verified",
+  "code_changes": 0,
+  "commit": false,
+  "push": false
+}

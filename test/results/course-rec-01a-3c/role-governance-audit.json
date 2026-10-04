@@ -1,0 +1,30 @@
+{
+  "kind": "OBSERVED",
+  "patterns": [
+    "DRAFT/ACTIVE/DEPRECATED",
+    "Exact policy/normalization-pack versions/checksums",
+    "Immutable active versions",
+    "Target-specific snapshot provenance",
+    "Historical replay and explicit legacy mapping",
+    "Lifecycle audit"
+  ],
+  "normalization_pack_purpose": "Aliases/concepts/evidence hints only; no taxonomy-definition, assessment or verification authority.",
+  "api_auth": "SemanticPolicy API calls require_reviewer; role resolved through trusted persistence.",
+  "missing": [
+    "Capability namespace owner",
+    "Definition pack registry",
+    "Approved course/role capability crosswalk",
+    "Taxonomy RBAC"
+  ],
+  "sources": [
+    "services/pai-backend/backend/app/semantic_policy/service.py",
+    "services/pai-backend/backend/app/semantic_policy/api.py",
+    "services/pai-backend/backend/app/extraction/auth.py",
+    "services/pai-backend/backend/tests/test_semantic_policy_governance.py",
+    "services/pai-backend/backend/tests/test_semantic_policy_api.py"
+  ],
+  "adrs": [
+    "services/pai-backend/docs/adr/0019-domain-neutral-capability-semantics.md",
+    "services/pai-backend/docs/adr/0020-semantic-policy-domain-pack-governance.md"
+  ]
+}

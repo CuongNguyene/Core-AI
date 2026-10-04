@@ -1,0 +1,7 @@
+{
+  "fields": ["id", "version", "course_ref", "source_type", "source_system", "provider_ref", "provider_course_id", "title_snapshot", "description_snapshot", "capabilities", "prerequisites", "target_level", "duration_minutes", "delivery_mode", "language", "availability", "status", "provenance"],
+  "lifecycle": ["draft", "active", "deprecated"],
+  "unknown_target_level": null,
+  "ranking_or_scoring": false,
+  "model_calls": false
+}

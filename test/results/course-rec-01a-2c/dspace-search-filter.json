@@ -1,0 +1,14 @@
+{
+  "endpoint": "https://library.skillscommons.org/server/api/discover/search/objects",
+  "query": "Online Course",
+  "max_pages": 5,
+  "max_raw_records": 200,
+  "page_size": 40,
+  "actual_pages_requested": 2,
+  "raw_search_results_seen": 80,
+  "exact_online_course_candidates_seen": 50,
+  "processed_target": 30,
+  "pagination": "page and size",
+  "strategy": "free-text recall followed by exact item metadata post-filter",
+  "population_wide": false
+}

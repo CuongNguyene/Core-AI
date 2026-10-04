@@ -1,0 +1,8 @@
+{
+  "status": "PASS_WITH_EXPLICIT_LEGACY_REJECTION",
+  "generic_source_semantic_ref_contract_changed": false,
+  "course_learning_outcome_identity_changed": false,
+  "direct_claim_old_current_use_format_preserved": false,
+  "silent_migration": false,
+  "legacy_requires_explicit_remap_review": true
+}

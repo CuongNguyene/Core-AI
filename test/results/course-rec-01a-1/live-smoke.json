@@ -1,0 +1,13 @@
+{
+  "status": "OPENEDX_ACCESS_BLOCKED",
+  "base_url_configured": false,
+  "credential_configured": false,
+  "requests_made": 0,
+  "reason": "No approved Open edX endpoint or read-only credential is present in the checkout/environment.",
+  "bounded_request_plan": {
+    "max_pages": 2,
+    "page_size": 50,
+    "timeout_seconds": 10
+  },
+  "secrets_present": false
+}

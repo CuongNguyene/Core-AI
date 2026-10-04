@@ -1,0 +1,59 @@
+{
+  "kind": "OBSERVED",
+  "date": "2026-10-04",
+  "core_ai": {
+    "path": "/Users/mac/Developers/work/LMS/Core-AI",
+    "branch": "feat/deterministic-ai-course-planning-workspace",
+    "head": "a078526ab7ea38327fdeece142aba325f3de3352",
+    "pre_existing_status": [
+      " M services/pai-backend/backend/.env.example",
+      " M services/pai-backend/backend/app/shared/config.py",
+      " M services/pai-backend/backend/tests/test_settings.py",
+      "?? docs/research/COURSE-REC-01A-1-OPENEDX-PROVIDER-SPIKE.md",
+      "?? docs/research/COURSE-REC-01A-2-SKILLSCOMMONS-AVAILABILITY-SPIKE.md",
+      "?? docs/research/COURSE-REC-01A-2B-SKILLSCOMMONS-ENDPOINT-DISCOVERY.md",
+      "?? docs/research/COURSE-REC-01A-2C-SKILLSCOMMONS-DSPACE-PROVIDER.md",
+      "?? docs/research/COURSE-REC-01A-3-SKILLSCOMMONS-SEMANTIC-ENRICHMENT.md",
+      "?? docs/research/COURSE-REC-01A-3B-SEMANTIC-VALIDITY-TAXONOMY-FITNESS-AUDIT.md",
+      "?? docs/research/COURSE-REC-01A-CATALOG-CAPABILITY-CONTRACT.md",
+      "?? docs/research/COURSE-REC-01B-DETERMINISTIC-RECOMMENDATION-ENGINE.md",
+      "?? docs/research/PAI-CURRICULUM-VERIFY-01.md",
+      "?? docs/superpowers/plans/2026-10-02-course-rec-01a-catalog-capability-contract.md",
+      "?? graphify-out/",
+      "?? services/pai-backend/backend/app/course_catalog/",
+      "?? services/pai-backend/backend/app/course_recommendation/",
+      "?? services/pai-backend/backend/scripts/prepare_skillscommons_enrichment_sample.py",
+      "?? services/pai-backend/backend/scripts/run_skillscommons_enrichment_experiment.py",
+      "?? services/pai-backend/backend/scripts/verify_skillscommons_dspace.py",
+      "?? services/pai-backend/backend/tests/test_course_catalog_fixtures.py",
+      "?? services/pai-backend/backend/tests/test_course_catalog_openedx.py",
+      "?? services/pai-backend/backend/tests/test_course_catalog_schemas.py",
+      "?? services/pai-backend/backend/tests/test_course_catalog_semantic_enrichment.py",
+      "?? services/pai-backend/backend/tests/test_course_catalog_skillscommons.py",
+      "?? services/pai-backend/backend/tests/test_course_recommendation.py",
+      "?? test/results/course-rec-01a-1/",
+      "?? test/results/course-rec-01a-2/",
+      "?? test/results/course-rec-01a-2b/",
+      "?? test/results/course-rec-01a-2c/",
+      "?? test/results/course-rec-01a-3/",
+      "?? test/results/course-rec-01a-3b/",
+      "?? test/results/course-rec-01a/",
+      "?? test/results/course-rec-01b/",
+      "?? test/results/frappe-core-auth-smoke-01/",
+      "?? test/results/pai-curriculum-verify-01/"
+    ]
+  },
+  "lms": {
+    "path": "/Users/mac/Developers/work/LMS/lms",
+    "branch": "feat/learning-operations-phase-1",
+    "head": "129fde12a3856eb07a8690ab0ebac528b2f26e61",
+    "status": "clean"
+  },
+  "code_manifest_sha256": "b824a431a532e309345ce3e207876ade2b1921d257177292ff352f61e6190c92",
+  "prior_docs_evidence_sha256": "19839b35e1c45a812cbca5f5a1358069f5c66b36ea3e1f7e41792d283912e2e8",
+  "unrelated_preserved": [
+    "graphify-out",
+    "earlier auth/curriculum verification artifacts"
+  ],
+  "git_diff_check": "PASS"
+}

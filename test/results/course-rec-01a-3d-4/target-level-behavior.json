@@ -1,0 +1,7 @@
+{
+  "sources": ["LearningNeedProfile.target_state.level", "RoleRequirement.target_level"],
+  "mismatch": "TARGET_LEVEL_CONFLICT",
+  "both_absent": null,
+  "capability_definition_used_for_level": false,
+  "learner_proficiency_inferred": false
+}

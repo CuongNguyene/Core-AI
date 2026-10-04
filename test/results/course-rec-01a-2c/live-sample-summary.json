@@ -1,0 +1,53 @@
+{
+  "status": "LIVE_VERIFIED",
+  "provider": "skillscommons",
+  "base_url": "https://library.skillscommons.org/server",
+  "material_type_key": "dc.type",
+  "selection_strategy": "BOUNDED_POST_FILTER",
+  "search_query": "Online Course",
+  "max_pages": 5,
+  "max_raw_records": 200,
+  "target_exact_online_course": 30,
+  "raw_search_results_seen": 80,
+  "exact_online_course_candidates": 50,
+  "exact_online_course_processed": 30,
+  "raw_type_counts": {
+    "Student Support Materials": 4,
+    "Online Course Module": 8,
+    "Online Course": 50,
+    "Partnership Resources": 1,
+    "Program Planning Resources": 3,
+    "Instructor and/or Advisor/Case Manager Support Materials": 2,
+    "Grant Management Materials": 1,
+    "Reference Material": 4,
+    "Program Assessment and Evaluation": 2,
+    "Syllabus": 1,
+    "Hybrid/Blended Course": 1,
+    "Development Tool": 1,
+    "Video - Outreach": 1,
+    "Workshop and Training Material": 1
+  },
+  "items_fetched_success": 80,
+  "items_fetched_failure": 0,
+  "strict_external_course_candidates": 27,
+  "observed_verified_yield_in_sample": 0.9,
+  "learning_access_counts": {
+    "DOWNLOADABLE_COURSE_PACKAGE": 27,
+    "DOWNLOADABLE_MATERIALS": 3
+  },
+  "access_status_counts": {
+    "UNKNOWN": 30,
+    "VERIFIED_ACCESSIBLE": 118,
+    "RESTRICTED": 5
+  },
+  "items_with_handle": 30,
+  "items_with_bundles": 30,
+  "items_with_bitstreams": 30,
+  "items_with_external_learning_url": 30,
+  "items_without_external_learning_url": 0,
+  "items_in_archive": 30,
+  "items_withdrawn": 0,
+  "items_not_discoverable": 0,
+  "sample_strategy": "bounded free-text search followed by exact dc.type post-filter",
+  "population_wide_claim": false
+}

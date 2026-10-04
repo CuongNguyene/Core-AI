@@ -1,0 +1,23 @@
+{
+  "definition": "Core semantic profile describing what a course develops; explicit direct/supporting coverage claims grounded in mandatory provenance.",
+  "explicit_contract": true,
+  "sources": [
+    "services/pai-backend/backend/app/course_catalog/schemas.py:1",
+    "services/pai-backend/backend/app/course_catalog/schemas.py:111",
+    "docs/research/COURSE-REC-01A-CATALOG-CAPABILITY-CONTRACT.md:85"
+  ],
+  "not_established": [
+    "Topic mention equals developed capability",
+    "Course completion proves verified capability",
+    "Full-family proficiency from introductory coverage",
+    "Mandatory professional_capability_core IDs",
+    "Course-wide ontology version/namespace and approved mapping"
+  ],
+  "required_by_schema": [
+    "non-empty opaque capability_ref",
+    "direct/supporting coverage",
+    "non-empty provenance",
+    "non-empty unique capabilities for a profile"
+  ],
+  "draft_does_not_mean_semantically_validated": true
+}

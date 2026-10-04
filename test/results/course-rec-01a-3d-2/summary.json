@@ -1,0 +1,11 @@
+{
+  "milestone": "COURSE-REC-01A.3D-2",
+  "status": "COMPLETE",
+  "scope": "pure in-memory capability definitions, pack release lifecycle, exact references, namespace ownership, activation/deprecation and active/historical resolution",
+  "tests_passed": 219,
+  "lms_changed": false,
+  "mappings_or_outcomes_implemented": false,
+  "persistence_api_migration_ui": false,
+  "production_taxonomy_created": false,
+  "commit_or_push": false
+}

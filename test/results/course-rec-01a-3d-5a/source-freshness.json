@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "changed_claim_id_changes_source_id": true,
+  "changed_claim_id_changes_source_pin": true,
+  "mapping_for_old_source_rejected_for_new_claim": true,
+  "source_pin_implementation_changed": false
+}

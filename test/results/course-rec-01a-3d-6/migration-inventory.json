@@ -1,0 +1,139 @@
+{
+  "status": "READ_ONLY_SIMULATION",
+  "runtime_database_enumerated": false,
+  "repository_mutation": "NONE",
+  "entries": [
+    {
+      "artifact_type": "extraction taxonomy",
+      "artifact_ref": "professional_capability_core@0.1",
+      "current_identity": "taxonomy ID/version plus opaque capability keys such as project_management",
+      "current_status": "versioned extraction reference; no pack lifecycle or owner approval",
+      "classification": "KEEP_AS_IS",
+      "canonical_binding_status": "UNRESOLVED_FOR_COURSE_AUTHORITY",
+      "future_action": "retain for current CV extraction; separately govern any future capability import/mapping",
+      "migration_safe_now": true,
+      "blocking_reason": "not universal course authority; no implicit pack conversion",
+      "provenance": ["app/extraction/capability_taxonomy.py", "test/results/course-rec-01a-3b/taxonomy-governance-audit.json"]
+    },
+    {
+      "artifact_type": "role requirement business identity",
+      "artifact_ref": "RoleRequirement.id (synthetic fixture req-1)",
+      "current_identity": "opaque business ID scoped by role profile and version",
+      "current_status": "source-owned requirement",
+      "classification": "KEEP_AS_IS",
+      "canonical_binding_status": "RESOLVED_ONLY_WHEN_3D4_MAPPING_APPROVED",
+      "future_action": "preserve ID; add governed mapping provenance through adapter",
+      "migration_safe_now": true,
+      "blocking_reason": null,
+      "provenance": ["tests/test_governed_target_adapter.py", "app/capability_governance/target_adapter.py"]
+    },
+    {
+      "artifact_type": "capability gap lineage",
+      "artifact_ref": "CapabilityGapProfile analysis-1 / gap-1 fixture",
+      "current_identity": "analysis, role target/version, requirement and gap IDs",
+      "current_status": "lineage source for LearningNeed",
+      "classification": "KEEP_AS_IS",
+      "canonical_binding_status": "NOT_A_CAPABILITY_IDENTITY",
+      "future_action": "preserve source gap refs and lineage",
+      "migration_safe_now": true,
+      "blocking_reason": null,
+      "provenance": ["tests/test_governed_target_adapter.py", "app/capability_governance/target_adapter.py"]
+    },
+    {
+      "artifact_type": "LearningNeed identity",
+      "artifact_ref": "LearningNeedProfile need-record-1 / competency req-1 fixture",
+      "current_identity": "LearningNeed record, competency identity, target reference, source gap lineage",
+      "current_status": "learning eligible synthetic fixture",
+      "classification": "KEEP_AS_IS",
+      "canonical_binding_status": "RESOLVED_ONLY_WHEN_3D4_MAPPING_APPROVED",
+      "future_action": "retain IDs and provenance; canonical binding stays additive",
+      "migration_safe_now": true,
+      "blocking_reason": null,
+      "provenance": ["tests/test_governed_target_adapter.py", "app/capability_governance/target_adapter.py"]
+    },
+    {
+      "artifact_type": "LearningPath trace refs",
+      "artifact_ref": "path:1 / step:2 synthetic trace",
+      "current_identity": "opaque path and step refs",
+      "current_status": "trace only",
+      "classification": "KEEP_AS_IS",
+      "canonical_binding_status": "NOT_A_CAPABILITY_IDENTITY",
+      "future_action": "preserve for recommendation traceability",
+      "migration_safe_now": true,
+      "blocking_reason": null,
+      "provenance": ["tests/test_governed_target_adapter.py", "tests/test_course_rec_3d6_end_to_end.py"]
+    },
+    {
+      "artifact_type": "legacy opaque course capability reference",
+      "artifact_ref": "project_management in legacy/draft course profile fixtures",
+      "current_identity": "taxonomy-like key with no exact governed canonical binding",
+      "current_status": "legacy or experimental",
+      "classification": "REMAP",
+      "canonical_binding_status": "UNRESOLVED",
+      "future_action": "new exact proposal, independent review, activation, and a new reviewed profile version",
+      "migration_safe_now": false,
+      "blocking_reason": "no label/key-based automatic conversion",
+      "provenance": ["tests/test_governed_course_projection.py", "test/results/course-rec-01a-3/course-capability-profiles-draft.json"]
+    },
+    {
+      "artifact_type": "SkillsCommons semantic DRAFT profile",
+      "artifact_ref": "course-profile:skillscommons:6f6156c3-7b85-4ce0-85cc-1efbd439d144:semantic",
+      "current_identity": "skillscommons:6f6156c3-7b85-4ce0-85cc-1efbd439d144; opaque capability project_management",
+      "current_status": "DRAFT",
+      "classification": "EXPERIMENT_ONLY",
+      "canonical_binding_status": "UNRESOLVED",
+      "future_action": "preserve unchanged; separately review exact evidence and mapping",
+      "migration_safe_now": false,
+      "blocking_reason": "experiment profile is not approved course authority",
+      "provenance": ["test/results/course-rec-01a-3/course-capability-profiles-draft.json"]
+    },
+    {
+      "artifact_type": "SkillsCommons semantic DRAFT profile",
+      "artifact_ref": "course-profile:skillscommons:f64795cb-b561-4bb6-9748-9841d6e982dd:semantic",
+      "current_identity": "skillscommons:f64795cb-b561-4bb6-9748-9841d6e982dd; opaque capability team_leadership",
+      "current_status": "DRAFT",
+      "classification": "EXPERIMENT_ONLY",
+      "canonical_binding_status": "UNRESOLVED",
+      "future_action": "preserve unchanged; ambiguity requires new human-governed review",
+      "migration_safe_now": false,
+      "blocking_reason": "experiment profile and semantic mapping are not production authority",
+      "provenance": ["test/results/course-rec-01a-3/course-capability-profiles-draft.json", "test/results/course-rec-01a-3b/existing-claim-reaudit.json"]
+    },
+    {
+      "artifact_type": "synthetic internal/external course catalogs",
+      "artifact_ref": "internal_course_catalog() / external_course_catalog()",
+      "current_identity": "24 internal profiles and 24 provider-owned ExternalCourse fixtures",
+      "current_status": "synthetic contract fixtures",
+      "classification": "EXPERIMENT_ONLY",
+      "canonical_binding_status": "fixture values only; no production authority inferred",
+      "future_action": "use only for deterministic tests",
+      "migration_safe_now": false,
+      "blocking_reason": "fixture capability values are not governed production mappings",
+      "provenance": ["app/course_catalog/fixtures.py"]
+    },
+    {
+      "artifact_type": "SkillsCommons provider course records",
+      "artifact_ref": "live sample evidence: 80 raw results; 30 exact online course items processed; 27 strict external course candidates",
+      "current_identity": "provider refs/IDs, DSpace handles and provider provenance",
+      "current_status": "provider-owned course facts; semantic capabilities are not assigned by ExternalCourse",
+      "classification": "KEEP_AS_IS",
+      "canonical_binding_status": "UNRESOLVED_UNTIL_REVIEWED_MAPPING",
+      "future_action": "preserve provider identity; no automatic capability assignment",
+      "migration_safe_now": true,
+      "blocking_reason": null,
+      "provenance": ["test/results/course-rec-01a-2c/live-course-results.json", "app/course_catalog/schemas.py"]
+    },
+    {
+      "artifact_type": "01B recommendation contract and fixture results",
+      "artifact_ref": "RecommendationTarget / CourseRecommendationResult schemas and tests",
+      "current_identity": "target, candidate course and trace refs",
+      "current_status": "pure, deterministic, no persistence/API",
+      "classification": "KEEP_AS_IS",
+      "canonical_binding_status": "requires upstream governed adapters for new current use",
+      "future_action": "preserve exact request/result and algorithm version if later persisted",
+      "migration_safe_now": true,
+      "blocking_reason": null,
+      "provenance": ["app/course_recommendation/schemas.py", "test/results/course-rec-01b/recommendation-contract.json"]
+    }
+  ]
+}

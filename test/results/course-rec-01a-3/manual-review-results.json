@@ -1,0 +1,46 @@
+[
+  {
+    "provider_course_id": "6f6156c3-7b85-4ce0-85cc-1efbd439d144",
+    "title": "MAN2582 Introduction to Project Management",
+    "capability_ref": "project_management",
+    "review_status": "ACCEPT",
+    "rejection_reason": null,
+    "rationale": "The source explicitly names project management concepts and techniques as the course objective.",
+    "source_locators": [
+      "dspace:item:6f6156c3-7b85-4ce0-85cc-1efbd439d144:metadata:dc.description.abstract"
+    ]
+  },
+  {
+    "provider_course_id": "f64795cb-b561-4bb6-9748-9841d6e982dd",
+    "title": "PHT1007 Topics in Physical Therapy",
+    "capability_ref": "team_leadership",
+    "review_status": "ACCEPT",
+    "rejection_reason": null,
+    "rationale": "Human review accepted the direct leadership-and-teams statement as supporting the existing team leadership ref.",
+    "source_locators": [
+      "dspace:item:f64795cb-b561-4bb6-9748-9841d6e982dd:metadata:dc.description.abstract"
+    ]
+  },
+  {
+    "provider_course_id": "5aa287ec-ce0a-4773-a937-33a777056e07",
+    "title": "COP1510 Programming Concepts I",
+    "capability_ref": "digital_platform_development",
+    "review_status": "REJECT",
+    "rejection_reason": "SEMANTIC_LEAP",
+    "rationale": "The source supports programming knowledge, but the available canonical ref is broader digital-platform development.",
+    "source_locators": [
+      "dspace:item:5aa287ec-ce0a-4773-a937-33a777056e07:metadata:dc.description.abstract"
+    ]
+  },
+  {
+    "provider_course_id": "63e10921-279e-4404-912e-432c80fd82a1",
+    "title": "EGS1000 Professional Performance for the Technician",
+    "capability_ref": "team_leadership",
+    "review_status": "REJECT",
+    "rejection_reason": "SEMANTIC_LEAP",
+    "rationale": "Interpersonal and professional-performance language does not establish team leadership.",
+    "source_locators": [
+      "dspace:item:63e10921-279e-4404-912e-432c80fd82a1:metadata:dc.description.abstract"
+    ]
+  }
+]

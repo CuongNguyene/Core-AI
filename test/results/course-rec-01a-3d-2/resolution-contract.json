@@ -1,0 +1,6 @@
+{
+  "entrypoint": "resolve_for_new_binding",
+  "requires": ["registered namespace", "registered capability", "unique ACTIVE release", "ACTIVE definition", "ACTIVE dependency closure"],
+  "returns": "CapabilityDefinitionPin with exact pack ID/version/checksum",
+  "latest_selection": false
+}

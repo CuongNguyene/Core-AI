@@ -1,0 +1,9 @@
+{
+  "duplicate_ref_within_release": "rejected",
+  "duplicate_active_authority": "rejected",
+  "namespace_reassignment_to_other_pack": "rejected",
+  "duplicate_release_identity": "rejected",
+  "duplicate_dependency": "rejected",
+  "dependency_cycle": "rejected",
+  "activation_collision_evidence": "required"
+}

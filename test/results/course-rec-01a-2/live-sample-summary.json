@@ -1,0 +1,26 @@
+{
+  "status": "LIVE_PROVIDER_UNAVAILABLE",
+  "attempted": true,
+  "stage": "OAI ListRecords",
+  "host_root": {
+    "http_status": 301,
+    "location": "https://partner.skillscommons.org/"
+  },
+  "oai_endpoint_curl": {
+    "http_status": 404,
+    "content_type": "text/html",
+    "payload_is_oai_xml": false
+  },
+  "provider_result": {
+    "error_type": "ConnectError",
+    "error_summary": "TLS certificate verification failed before provider response"
+  },
+  "raw_records_harvested": 0,
+  "online_course_records": null,
+  "full_course_attempts": 0,
+  "mets_fetch_success": 0,
+  "mets_fetch_failure": 0,
+  "strict_recommendation_candidates": 0,
+  "live_counts_claimed": false,
+  "secrets_present": false
+}

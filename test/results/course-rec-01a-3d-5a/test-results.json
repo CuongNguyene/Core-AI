@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "command": "uv run pytest tests/test_direct_claim_identity.py tests/test_governed_course_projection.py tests/test_capability_identity_contracts.py tests/test_capability_outcome_mapping_contracts.py tests/test_governed_mapping.py tests/test_capability_resolution.py tests/test_capability_definitions.py tests/test_capability_pack_lifecycle.py tests/test_governed_target_adapter.py -q",
+  "suite_results": [
+    {
+      "scope": "direct claim and COURSE-REC-01A 3D-1 through 3D-5 governance regression",
+      "passed": 248,
+      "failed": 0
+    },
+    {
+      "scope": "catalog, providers, and COURSE-REC-01B regression",
+      "passed": 87,
+      "failed": 0
+    }
+  ],
+  "aggregate_passed": 335,
+  "aggregate_failed": 0
+}
