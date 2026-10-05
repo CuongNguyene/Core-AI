@@ -1,0 +1,8 @@
+{
+  "ruff_check_changed_scope": "PASS",
+  "ruff_format_changed_scope": "PASS",
+  "mypy_changed_source_scope": "5 findings remain, all pre-existing in app/documents/safety.py; no finding in changed source files",
+  "alembic_heads": "PASS: 20261005_51",
+  "git_diff_check": "CRLF-aware check required for two existing CRLF files; no source whitespace issue",
+  "secret_scan": "PASS; no credentials or bearer tokens added"
+}

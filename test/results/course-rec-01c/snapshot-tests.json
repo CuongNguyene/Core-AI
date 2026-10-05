@@ -1,0 +1,14 @@
+{
+  "command": "uv run pytest tests/test_course_recommendation_execution_snapshots.py -q",
+  "result": "PASS",
+  "tests": 7,
+  "coverage": [
+    "target/provenance equality and minimized snapshot",
+    "inconsistent target refs rejected",
+    "DRAFT projection excluded",
+    "candidate coverage mismatch rejected",
+    "exact definition-pin join enforced",
+    "JSON round-trip and candidate-order-stable fingerprint",
+    "internal candidate and dc1_ direct-claim source identity round-trip"
+  ]
+}

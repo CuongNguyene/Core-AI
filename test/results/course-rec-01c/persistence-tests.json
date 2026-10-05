@@ -1,0 +1,17 @@
+{
+  "command": "uv run pytest tests/test_course_recommendation_execution_repository.py tests/test_course_recommendation_execution_service.py -q",
+  "result": "PASS",
+  "tests": 9,
+  "coverage": [
+    "JSON snapshot create/read round-trip",
+    "scoped unique idempotency and replay",
+    "changed fingerprint conflict",
+    "actor scope isolation",
+    "NO_SUITABLE_COURSE persisted as success",
+    "multi-capability targets, results, and exact definition pins preserved",
+    "engine called once; replay and historical GET do not rerun",
+    "owner/admin and cross-organization access behavior",
+    "engine failure leaves no row",
+    "aggregate serialized snapshot size bound"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "milestone": "COURSE-REC-01C",
+  "core_ai": {
+    "path": "/Users/mac/Developers/work/LMS/Core-AI",
+    "branch": "feat/deterministic-ai-course-planning-workspace",
+    "head": "37f59e5fe408f1702af4d984d50efe34b9582e63",
+    "preexisting_user_untracked_preserved": [
+      "docs/research/PAI-CURRICULUM-VERIFY-01.md",
+      "graphify-out/",
+      "test/results/frappe-core-auth-smoke-01/",
+      "test/results/pai-curriculum-verify-01/"
+    ],
+    "database": "PostgreSQL; current revision unavailable because configured DB role is absent",
+    "migration_head_before": "20260929_50"
+  },
+  "lms": {
+    "path": "/Users/mac/Developers/work/LMS/lms",
+    "branch": "feat/learning-operations-phase-1",
+    "head": "289174af73ad648a2e42c7d55a2273d815790235",
+    "working_tree": "clean"
+  },
+  "scope": {
+    "lms_modified": false,
+    "domain_3d_modified": false,
+    "recommendation_01b_modified": false,
+    "committed": false,
+    "pushed": false
+  }
+}

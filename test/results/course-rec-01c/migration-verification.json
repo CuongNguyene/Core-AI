@@ -1,0 +1,11 @@
+{
+  "previous_head": "20260929_50",
+  "new_head": "20261005_51",
+  "alembic_heads": "PASS",
+  "upgrade_sqlite": "PASS",
+  "columns_json_types_indexes_unique_scope": "PASS",
+  "downgrade_sqlite": "PASS",
+  "runtime_database_current": "NOT VERIFIED; configured role pai is unavailable; runtime DB was not modified",
+  "backfill": false,
+  "governance_tables_added": false
+}

@@ -43,6 +43,8 @@ from app.course_generation.dispatch import SqlAlchemyCourseGenerationDispatchRep
 from app.course_generation.dispatcher import ArqCourseGenerationDispatcher
 from app.course_generation.generator import ModelGatewayLessonContentGenerator
 from app.course_generation.hierarchical_service import HierarchicalCourseGenerationService
+from app.course_recommendation.execution_service import CourseRecommendationExecutionService
+from app.course_recommendation.repository import SqlAlchemyCourseRecommendationExecutionRepository
 from app.credential.api import router as credential_router
 from app.credential.evaluators import (
     CompetencyCredentialEvaluator,
@@ -77,6 +79,7 @@ from app.instructional_design.contracts import register_instructional_design_exp
 from app.integration.capability_gap_api import router as capability_gap_integration_router
 from app.integration.content_generation_api import router as content_generation_router
 from app.integration.course_authoring_api import router as course_authoring_router
+from app.integration.course_recommendation_api import router as course_recommendation_router
 from app.integration.fixtures import development_course_blueprint
 from app.integration.identity_bridge import (
     CandidateIdentityBridgeService,
@@ -377,6 +380,12 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.state.course_authoring_repository = SqlAlchemyCourseAuthoringRepository(
         app.state.database.session_factory
     )
+    app.state.course_recommendation_execution_repository = (
+        SqlAlchemyCourseRecommendationExecutionRepository(app.state.database.session_factory)
+    )
+    app.state.course_recommendation_execution_service = CourseRecommendationExecutionService(
+        repository=app.state.course_recommendation_execution_repository
+    )
     app.state.authoring_brief_revision_repository = SqlAlchemyAuthoringBriefRevisionRepository(
         app.state.database.session_factory
     )
@@ -504,6 +513,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.include_router(learning_authoring_router)
     app.include_router(content_generation_router)
     app.include_router(course_authoring_router)
+    app.include_router(course_recommendation_router)
     return app
 
 

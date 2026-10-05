@@ -1,0 +1,15 @@
+{
+  "focused_01c": {
+    "command": "uv run pytest tests/test_course_recommendation_execution_snapshots.py tests/test_course_recommendation_execution_repository.py tests/test_course_recommendation_execution_service.py tests/test_course_recommendation_api.py tests/test_course_recommendation_migration.py tests/test_migration_config.py -q",
+    "result": "PASS",
+    "passed": 24
+  },
+  "full_backend": {
+    "command": "uv run pytest -q",
+    "passed": 1571,
+    "failed": 1,
+    "failure": "Existing ClamAV test could not bind 127.0.0.1 in sandbox",
+    "isolated_rerun_with_local_socket_permission": "PASS; 1 passed"
+  },
+  "course_recommendation_3d6_and_01b": "included in the full backend run; no milestone-specific regression observed"
+}

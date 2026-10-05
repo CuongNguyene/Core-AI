@@ -16,7 +16,7 @@ def test_alembic_configuration_uses_project_script_directory() -> None:
 def test_alembic_has_current_course_authoring_revision() -> None:
     config = Config("alembic.ini")
 
-    assert ScriptDirectory.from_config(config).get_current_head() == "20260916_46"
+    assert ScriptDirectory.from_config(config).get_current_head() == "20261005_51"
 
 
 def test_candidate_profile_governance_migration_is_additive_and_bounded() -> None:
@@ -49,7 +49,7 @@ def test_candidate_domain_migration_contains_all_relationship_tables() -> None:
         '"candidate_claims"',
         '"candidate_evidence"',
     ):
-        assert f'op.create_table(\n        {table}' in revision
+        assert f"op.create_table(\n        {table}" in revision
 
 
 def test_candidate_review_idempotency_migration_is_additive() -> None:

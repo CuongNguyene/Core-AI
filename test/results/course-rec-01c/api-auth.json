@@ -1,0 +1,14 @@
+{
+  "command": "uv run pytest tests/test_course_recommendation_api.py -q",
+  "result": "PASS",
+  "tests": 3,
+  "coverage": [
+    "signed actor plus integration bearer authentication",
+    "POST 201 and envelope contract",
+    "GET immutable persisted response",
+    "same-key replay 200 and changed payload conflict 409",
+    "unauthenticated rejection",
+    "request validation 422",
+    "stable not-found 404"
+  ]
+}
