@@ -1,0 +1,11 @@
+{
+  "milestone": "COURSE-REC-01C.1",
+  "status": "GOVERNANCE_AUTHORITY_NOT_DURABLY_RESOLVABLE",
+  "implementation": false,
+  "primary_blocker": "3D-2/3D-3 governance objects have no durable runtime authority repository",
+  "additional_blockers": ["LearningNeedProfile is derived in memory", "CourseCapabilityProfile and ExternalCourse have no durable catalog", "No active course discovery service", "Runtime DB is behind source migration head"],
+  "recommended_next_milestone": "CAPABILITY-GOVERNANCE-PERSISTENCE",
+  "lms_modified": false,
+  "commit": false,
+  "push": false
+}

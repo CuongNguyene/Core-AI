@@ -1,0 +1,36 @@
+{
+  "core_ai": {
+    "integration_key_present": true,
+    "integration_key_length": 64,
+    "loaded_by_recreated_container": true,
+    "config_source": "services/pai-backend/backend/.env",
+    "backend_container": "pai-local-backend-1"
+  },
+  "frappe": {
+    "config_source": "PAI Settings.integration_api_key Password field",
+    "integration_key_present": true,
+    "integration_key_length_before": 43,
+    "integration_key_length_after": 64,
+    "keys_match_before": false,
+    "update_required": true,
+    "update_result": "UPDATED",
+    "keys_match_after": true,
+    "service_url": "http://host.docker.internal:18000",
+    "settings_enabled": true
+  },
+  "signed_actor": {
+    "actor_uuid_present": true,
+    "organization_uuid_present": true,
+    "issuer": "lms",
+    "key_id": "lms-key-2026-01",
+    "private_signing_key_accessible": true,
+    "core_public_key_registered": true,
+    "iat_exp_nonce_generation": true,
+    "request_id_generation": true
+  },
+  "secret_disclosure": {
+    "full_key_recorded": false,
+    "private_key_recorded": false,
+    "signature_recorded": false
+  }
+}

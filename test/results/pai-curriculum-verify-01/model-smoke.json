@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "real_model_called": true,
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "http_status": 200,
+  "latency_ms": 7458,
+  "attempt_count": 1,
+  "schema_parse": "PASS",
+  "sensitive_prompt_logged": false,
+  "mock_contract_tests": "PASS",
+  "provider_adapter_tests": "PASS"
+}

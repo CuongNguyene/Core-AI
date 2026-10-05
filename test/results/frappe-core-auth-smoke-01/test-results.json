@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "command": "uv run pytest tests/test_integration_api.py tests/test_course_authoring_api.py tests/test_errors.py",
+      "scope": "Core-AI integration auth, signed actor/course-authoring, safe error handling",
+      "passed": 21,
+      "failed": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest discover -s apps/pai_frappe/pai_frappe/tests -p test_client.py -v",
+      "scope": "pai_frappe bridge client, settings validation, ownership and safe error mapping",
+      "passed": 19,
+      "failed": 0,
+      "result": "PASS"
+    }
+  ],
+  "runtime_note": "Container pytest was unavailable; standard unittest runner in the Frappe runtime was used for pai_frappe tests.",
+  "secrets_recorded": false
+}

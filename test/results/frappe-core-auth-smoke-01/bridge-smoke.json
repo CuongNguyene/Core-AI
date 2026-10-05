@@ -1,0 +1,15 @@
+{
+  "method": "PAIClient.request via Frappe server-side bridge",
+  "frappe_site": "lms.localhost",
+  "core_ai_endpoint": "/api/v1/course-authoring/requests",
+  "http_status": 200,
+  "envelope_schema": "v1",
+  "request_id_generated": true,
+  "safe_response_summary": {
+    "data_type": "list",
+    "item_count": 6
+  },
+  "browser_to_core_ai_direct_call": false,
+  "authorization_header_recorded": false,
+  "signed_actor_material_recorded": false
+}

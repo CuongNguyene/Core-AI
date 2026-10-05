@@ -1,0 +1,10 @@
+{
+  "decision": "C_BLOCKED",
+  "route_added_or_extended": false,
+  "existing_route": "POST /api/v1/course-recommendations",
+  "existing_route_classification": "INTERNAL_EXECUTION_API",
+  "request_fields": ["request_key", "target_projection", "course_projections", "max_results"],
+  "caller_supplies_governed_projections": true,
+  "stable_ref_contract_frozen": false,
+  "reason": "No durable governance authority, LearningNeed profile, or active course profile/catalog source"
+}

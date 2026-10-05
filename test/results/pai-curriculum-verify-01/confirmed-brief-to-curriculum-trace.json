@@ -1,0 +1,22 @@
+{
+  "status": "TRACE_COMPLETE",
+  "input": "request_id",
+  "chain": [
+    "CurriculumPlanningService.plan",
+    "AuthoringBriefRevisionRepository.latest",
+    "confirmed revision guard",
+    "CourseGenerationContextBuilder.build",
+    "planning_context_from_generation_context",
+    "ModelGatewayCurriculumPlanner.plan",
+    "ModelGatewayService.infer_structured",
+    "CurriculumPlanningOutput",
+    "_from_model_output",
+    "allocate_curriculum_plan_workload",
+    "validate_curriculum_plan",
+    "SqlAlchemyContentGenerationRepository.create_curriculum_plan",
+    "CurriculumPlanningService.get_latest"
+  ],
+  "live_model_step": "PASS",
+  "live_plan_ref": "curriculum-plan:b6ea4666438a47618eeb4b5e7bc968c1",
+  "live_reload_same_plan": true
+}

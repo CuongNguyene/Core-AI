@@ -1,0 +1,10 @@
+{
+  "status": "VERIFIED",
+  "schema": "app.curriculum_planning.schemas.CurriculumPlan",
+  "required_fields": ["id", "authoring_request_ref", "version", "course_title", "course_description", "normalized_duration", "learning_objectives", "modules", "estimated_total_learning_hours", "status"],
+  "optional_fields": ["supersedes_plan_ref", "planning_metadata"],
+  "first_class_concepts": ["learning_objectives", "modules", "lessons", "sequence", "estimated_effort", "source_request_reference", "generation_metadata", "lifecycle_status"],
+  "not_first_class": ["prerequisites", "assessment_strategy", "bloom_level", "successful_full_inference_audit"],
+  "source_revision_pin": "planning_metadata.authoring_brief_revision_ref",
+  "contract_classification": "NEEDS_HARDENING"
+}

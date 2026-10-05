@@ -1,0 +1,11 @@
+{
+  "status": "VERIFIED",
+  "production_validators": [
+    {"name": "CurriculumPlanningOutput Pydantic validation", "blocking": true, "findings": "schema errors"},
+    {"name": "collect_curriculum_plan_validation", "blocking": true, "findings": "objective/module/lesson/reference/duration/workload issues"},
+    {"name": "allocate_curriculum_plan_workload", "blocking": true, "findings": "unsupported lesson type and workload normalization"},
+    {"name": "microlearning effort validation", "blocking": true, "findings": "conditional target/range issues"}
+  ],
+  "missing_dedicated_dimensions": ["prerequisite consistency", "assessment alignment", "Bloom/cognitive level"],
+  "invalid_candidate_persistence": "failed attempts only, with sanitized candidate and validation issues"
+}

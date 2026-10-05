@@ -1,0 +1,8 @@
+{
+  "external_course": {"classification": "IN_MEMORY_ONLY", "durable_repository": false, "provider_adapters": ["SkillsCommons", "OpenEdX"]},
+  "course_capability_profile": {"classification": "IN_MEMORY_ONLY", "durable_repository_or_table": false},
+  "course_learning_outcome": {"classification": "IN_MEMORY_ONLY", "durable_repository_or_table": false},
+  "direct_course_capability_claim": {"classification": "IN_MEMORY_ONLY", "durable_repository_or_table": false},
+  "provider_identity": {"classification": "PERSISTED_BUT_NOT_ADAPTED", "note": "present in provider contracts, not stored in a durable catalog"},
+  "active_profile_discovery": "NOT_AVAILABLE"
+}

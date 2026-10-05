@@ -1,0 +1,35 @@
+{
+  "endpoint": "/api/v1/course-authoring/requests",
+  "checks": [
+    {
+      "case": "Bearer only",
+      "expected_status": 401,
+      "actual_status": 401,
+      "error_code": "ACTOR_CONTEXT_MISSING",
+      "result": "PASS"
+    },
+    {
+      "case": "Signed actor only",
+      "expected_status": 401,
+      "actual_status": 401,
+      "error_code": "integration_authentication_failed",
+      "result": "PASS"
+    },
+    {
+      "case": "Invalid Bearer + valid signature",
+      "expected_status": 401,
+      "actual_status": 401,
+      "error_code": "integration_authentication_failed",
+      "result": "PASS"
+    },
+    {
+      "case": "Valid Bearer + invalid signature",
+      "expected_status": 401,
+      "actual_status": 401,
+      "error_code": "ACTOR_CONTEXT_INVALID",
+      "result": "PASS"
+    }
+  ],
+  "request_id_response_header_present": true,
+  "secrets_recorded": false
+}

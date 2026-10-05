@@ -1,0 +1,12 @@
+{
+  "capability_definition": {"domain_contract": true, "durable_model_repository_api": false},
+  "capability_pack_release": {"domain_contract": true, "durable_model_repository_api": false},
+  "governed_capability_mapping": {"domain_contract": true, "durable_model_repository_api": false},
+  "mapping_activation_and_review": {"domain_contract": true, "durable_model_repository_api": false},
+  "source_semantic_pins": {"domain_contract": true, "durable_authority_store": false},
+  "current_resolution": "pure in-memory resolver over supplied Pydantic objects",
+  "historical_resolution": "pure in-memory resolver over supplied Pydantic objects",
+  "semantic_policy_tables_are_equivalent_authority": false,
+  "durably_resolvable": false,
+  "stop_status": "GOVERNANCE_AUTHORITY_NOT_DURABLY_RESOLVABLE"
+}

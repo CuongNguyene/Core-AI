@@ -1,0 +1,14 @@
+{
+  "status": "VERIFIED_IN_FOCUSED_TESTS",
+  "cases": [
+    {"case": "unconfirmed brief", "result": "PASS"},
+    {"case": "missing brief/revision", "result": "PASS"},
+    {"case": "stale/non-latest curriculum revision", "result": "PASS"},
+    {"case": "unauthorized actor", "result": "PASS"},
+    {"case": "invalid model JSON", "result": "PASS"},
+    {"case": "schema-invalid model output", "result": "PASS"},
+    {"case": "validator failure", "result": "PASS"},
+    {"case": "provider timeout/rejection", "result": "PASS"},
+    {"case": "duplicate/retry", "result": "PASS_IN_REPOSITORY_TESTS_LIVE_UNVERIFIED"}
+  ]
+}

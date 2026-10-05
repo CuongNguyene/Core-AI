@@ -1,0 +1,18 @@
+{
+  "core_ai_path": "/Users/mac/Developers/work/LMS/Core-AI",
+  "core_ai_branch": "feat/deterministic-ai-course-planning-workspace",
+  "core_ai_head": "ee0c85a21b9646ce1ea8b152b5cb4a8b4cd69c39",
+  "lms_path": "/Users/mac/Developers/work/LMS/lms",
+  "lms_branch": "feat/learning-operations-phase-1",
+  "lms_head": "f8d51b9dda0a4cbe67c3331d566faf4f9afef60f",
+  "lms_changed": false,
+  "core_ai_preexisting_untracked": [
+    "docs/research/PAI-CURRICULUM-VERIFY-01.md",
+    "graphify-out/",
+    "test/results/frappe-core-auth-smoke-01/",
+    "test/results/pai-curriculum-verify-01/"
+  ],
+  "core_ai_diff_check_before_artifacts": "PASS",
+  "commit": false,
+  "push": false
+}

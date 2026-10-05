@@ -1,0 +1,22 @@
+{
+  "reachable": true,
+  "runtime_alembic_revision": "20260929_50",
+  "source_alembic_head": "20261005_51",
+  "runtime_schema_current": false,
+  "mutations_performed": false,
+  "tables_present_and_counts": {
+    "role_competency_profiles": 2,
+    "capability_gap_portfolios": 6,
+    "learning_paths": 1
+  },
+  "tables_absent": [
+    "capability_definitions",
+    "capability_pack_releases",
+    "governed_capability_mappings",
+    "learning_need_profiles",
+    "course_capability_profiles",
+    "external_courses",
+    "course_recommendation_executions"
+  ],
+  "sensitive_record_contents_printed": false
+}

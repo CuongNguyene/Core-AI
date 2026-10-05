@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "confirmed_brief_ref": "course-authoring-request-33df73339b5943048bebd21705b89b7a",
+  "confirmed_revision_ref": "authoring-brief-revision:036a67dd60924262aa5ae79e23f024a0",
+  "confirmed_revision_version": 1,
+  "plan_id": "curriculum-plan:b6ea4666438a47618eeb4b5e7bc968c1",
+  "post_status": 201,
+  "get_status": 200,
+  "objective_count": 3,
+  "module_count": 3,
+  "lesson_count": 7,
+  "schema_validation": "PASS",
+  "deterministic_validation": "PASS",
+  "persist": "PASS",
+  "reload": "PASS",
+  "reload_same_plan": true,
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite"
+}

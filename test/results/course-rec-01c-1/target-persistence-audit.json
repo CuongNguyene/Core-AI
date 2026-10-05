@@ -1,0 +1,9 @@
+{
+  "candidate_profile": {"classification": "DURABLY_RESOLVABLE", "source": "candidate_profiles + extraction_profiles and candidate repository", "stable_versioned_link": true},
+  "role_competency_profile": {"classification": "DURABLY_RESOLVABLE", "table": "role_competency_profiles", "exact_version_lookup": true},
+  "role_requirement": {"classification": "DURABLY_RESOLVABLE", "storage": "requirements JSON embedded in exact RoleCompetencyProfile", "stable_requirement_id": true},
+  "capability_gap_profile": {"classification": "DURABLY_RESOLVABLE", "tables": ["capability_gap_portfolios", "capability_gap_assessments", "capability_target_gaps"], "scoped_repository": true},
+  "learning_need_profile": {"classification": "IN_MEMORY_ONLY", "durable_table_or_repository": false, "identity": "learning-need:{portfolio.id}:{gap.id}"},
+  "learning_path": {"classification": "DURABLY_RESOLVABLE", "table": "learning_paths", "versioned": true},
+  "learning_path_step": {"classification": "NOT_FOUND", "storage": "nested path JSON; no independently addressable step model"}
+}

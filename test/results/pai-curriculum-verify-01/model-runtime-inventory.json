@@ -1,0 +1,16 @@
+{
+  "status": "MODEL_RUNTIME_READY",
+  "provider_abstraction": "ModelGateway -> ModelGatewayService -> ProviderRegistry -> configured adapter",
+  "configured_provider": "gemini",
+  "configured_endpoint_origin": "https://generativelanguage.googleapis.com",
+  "configured_model": "gemini-3.5-flash-lite",
+  "placeholder_key": false,
+  "external_ai_enabled": true,
+  "structured_output": true,
+  "repair_retries": 1,
+  "timeout_seconds": 200.0,
+  "max_retries": 1,
+  "provenance": "InferenceAuditMetadata",
+  "live_call_attempted": true,
+  "live_call": {"http_status": 200, "schema_parse": "PASS", "latency_ms": 7458, "attempt_count": 1}
+}

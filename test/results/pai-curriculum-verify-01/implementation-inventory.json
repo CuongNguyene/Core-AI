@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE_WITH_LIVE_MODEL_BLOCKER",
+  "canonical_repo": "/Users/mac/Developers/work/LMS/Core-AI",
+  "branch": "feat/deterministic-ai-course-planning-workspace",
+  "head": "2bd68ac23f51630ce60d08ab9a0f7516daff5d3f",
+  "layers": [
+    {"layer": "brief", "file": "services/pai-backend/backend/app/course_authoring/brief_revision_schemas.py", "object": "AuthoringBriefRevision", "status": "EXISTS_AND_VERIFIED"},
+    {"layer": "planning", "file": "services/pai-backend/backend/app/curriculum_planning/service.py", "object": "CurriculumPlanningService.plan", "status": "EXISTS_NOT_LIVE_VERIFIED"},
+    {"layer": "model", "file": "services/pai-backend/backend/app/model_gateway/service.py", "object": "ModelGatewayService.infer_structured", "status": "EXISTS_NOT_LIVE_VERIFIED"},
+    {"layer": "schema", "file": "services/pai-backend/backend/app/curriculum_planning/schemas.py", "object": "CurriculumPlan/CurriculumPlanningOutput", "status": "EXISTS_AND_VERIFIED"},
+    {"layer": "validation", "file": "services/pai-backend/backend/app/curriculum_planning/validation.py", "object": "validate_curriculum_plan", "status": "EXISTS_AND_VERIFIED"},
+    {"layer": "persistence", "file": "services/pai-backend/backend/app/content_generation/repository.py", "object": "SqlAlchemyContentGenerationRepository", "status": "EXISTS_AND_VERIFIED"},
+    {"layer": "api", "file": "services/pai-backend/backend/app/integration/course_authoring_api.py", "object": "POST/GET requests/{request_id}/plan", "status": "EXISTS_AND_VERIFIED"}
+  ],
+  "production_code_changed": false,
+  "lms_changed": false
+}
