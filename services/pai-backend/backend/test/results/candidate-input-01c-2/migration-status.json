@@ -1,0 +1,36 @@
+{
+  "milestone": "PAI-CANDIDATE-INPUT-01C.2",
+  "new_revision": "20261006_53",
+  "down_revision": "20261006_52",
+  "alembic_file_head": "20261006_53",
+  "alembic_head_count": 1,
+  "local_migration_tests": "4 passed",
+  "identity_backfill": "exact tuple; migration aborts if any snapshot resolves to zero or multiple identities",
+  "legacy_source_revision": "nullable; no synthetic backfill",
+  "canonical_runtime_revision_before": "20260929_50",
+  "canonical_runtime_revision_after": "20261006_53",
+  "runtime_read_only_inspection": "PASS via PAI Compose PostgreSQL service using its configured Compose credentials",
+  "host_auth_root_cause": "Host Alembic loaded backend/.env targeting localhost:5432 (separate host PostgreSQL) instead of PAI Compose PostgreSQL; Compose publishes PAI PostgreSQL on 15433 and overrides DATABASE_URL inside backend to postgres:5432 with Compose credentials.",
+  "normal_alembic_upgrade_head_attempt": {
+    "attempted": true,
+    "exit_code": 0,
+    "sanitized_error_class": null,
+    "migration_applied": true,
+    "revisions_applied": ["20261005_51", "20261006_52", "20261006_53"]
+  },
+  "post_upgrade_schema_smoke": {
+    "candidate_source_tables_present": 4,
+    "snapshots": 0,
+    "snapshots_missing_external_identity": 0,
+    "snapshots_with_null_legacy_revision": 0,
+    "snapshots_with_null_content_fingerprint": 0,
+    "identity_match_violations": 0,
+    "required_fk_check_unique_constraints_present": true
+  },
+  "backend_runtime_smoke": {
+    "rebuilt_and_recreated": true,
+    "health_ready_http": 200,
+    "candidate_source_snapshot_route": true,
+    "organization_mapping_route": true
+  }
+}

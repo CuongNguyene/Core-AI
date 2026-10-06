@@ -1,0 +1,13 @@
+{
+  "milestone": "PAI-CANDIDATE-INPUT-01C.2",
+  "database": "isolated temporary local PostgreSQL cluster; not canonical runtime",
+  "test_command": "uv run pytest -q tests/test_candidate_source_concurrency.py",
+  "summary": "4 passed",
+  "scenarios": [
+    {"case": "concurrent_same_revision_same_content", "result": "PASS", "assertion": "one snapshot; other request resolves as replay"},
+    {"case": "concurrent_same_revision_different_content", "result": "PASS", "assertion": "one accepted snapshot; other request conflicts"},
+    {"case": "concurrent_revision_2_and_3", "result": "PASS", "assertion": "revision 3 remains current"}
+  ],
+  "first_identity_creation": "same-revision races exercise targeted unique-identity retry",
+  "transaction_boundary": "identity row lock, snapshot/evidence insertion, current pointer promotion"
+}

@@ -16,6 +16,9 @@ from app.authorization.repository import SqlAlchemyDelegationRepository, SqlAlch
 from app.candidate.api import router as candidate_router
 from app.candidate.repository import SqlAlchemyCandidateRepository
 from app.candidate.service import CandidateService
+from app.candidate_semantics.prompts import register_candidate_semantics
+from app.candidate_source.api import router as candidate_source_router
+from app.candidate_source.repository import SqlAlchemyCandidateSourceRepository
 from app.capability_analysis.api import router as capability_analysis_router
 from app.capability_analysis.domain_packs.it_ai import IT_AI_PACK
 from app.capability_analysis.domain_packs.registry import DomainPackRegistry
@@ -239,6 +242,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     register_instructional_design_experiment_contracts(prompt_templates, output_schemas)
     register_course_generation_contracts(prompt_templates, output_schemas)
     register_authoring_conversation_contracts(prompt_templates, output_schemas)
+    register_candidate_semantics(prompt_templates, output_schemas)
     providers = ProviderRegistry()
     configured_provider = _build_model_provider(
         provider_id=active_settings.model_provider,
@@ -300,6 +304,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         app.state.document_source,
     )
     app.state.candidate_repository = SqlAlchemyCandidateRepository(
+        app.state.database.session_factory
+    )
+    app.state.candidate_source_repository = SqlAlchemyCandidateSourceRepository(
         app.state.database.session_factory
     )
     app.state.candidate_service = CandidateService(
@@ -499,6 +506,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.include_router(competency_router)
     app.include_router(extraction_router)
     app.include_router(candidate_router)
+    app.include_router(candidate_source_router)
     app.include_router(matching_router)
     app.include_router(role_profile_authoring_router)
     app.include_router(role_registry_router)

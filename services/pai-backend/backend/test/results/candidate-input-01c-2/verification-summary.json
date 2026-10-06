@@ -1,0 +1,23 @@
+{
+  "milestone": "PAI-CANDIDATE-INPUT-01C.2",
+  "date": "2026-10-06",
+  "status": "COMPLETE",
+  "focused_candidate_source_tests": "21 passed",
+  "full_backend_suite": "1593 passed",
+  "ruff_touched_python": "PASS",
+  "alembic_head": "20261006_53 (one head)",
+  "migration_upgrade_backfill_downgrade_tests": "4 passed",
+  "openapi_external_revision_shape": "PASS; snapshot.source_revision required; no internal top-level source_revision in transport schema",
+  "postgresql_concurrency_races": "3 scenarios passed on isolated temporary PostgreSQL",
+  "canonical_runtime_migration_and_smoke": "PASS; observed 20260929_50, normal upgrade head applied 20261005_51/20261006_52/20261006_53, schema integrity checks passed, rebuilt backend ready HTTP 200 and exposes both candidate-source routes",
+  "runtime_auth_root_cause": "Host Alembic used backend/.env credentials against localhost:5432 rather than the PAI Compose PostgreSQL service; migration was rerun through the Compose backend environment without changing secret files.",
+  "changes": [
+    "revision-aware full-snapshot persistence and current promotion",
+    "strict external projection DTO and explicit nested-to-internal revision mapping",
+    "additive Alembic 20261006_53 migration",
+    "focused API, migration, persistence, and PostgreSQL concurrency tests",
+    "01C implementation research update"
+  ],
+  "secrets_recorded": false,
+  "commit_or_push": false
+}

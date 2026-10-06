@@ -1,0 +1,19 @@
+{
+  "milestone": "PAI-CANDIDATE-INPUT-01C.2",
+  "date": "2026-10-06",
+  "external_contract": "HRM -> PAI Learning Projection v1",
+  "semantics": "FULL_SNAPSHOT",
+  "external_revision_path": "snapshot.source_revision",
+  "internal_revision_path": "CandidateSourceEnvelope.source_revision",
+  "mapping": "CandidateSourceProjectionV1.to_candidate_source_envelope maps snapshot.source_revision to source_revision and snapshot audit fields to source_snapshot.",
+  "source_revision": {
+    "type": "integer",
+    "required": true,
+    "minimum": 1,
+    "scope": "(organization_id, source_system, employee_ref)",
+    "first_observed_revision_may_exceed_one": true
+  },
+  "upstream_status": "CONTRACT_ASSUMPTION_PENDING_HRM_IMPLEMENTATION",
+  "ordering_authority": "source_revision_only",
+  "timestamps_or_fingerprints_order": false
+}

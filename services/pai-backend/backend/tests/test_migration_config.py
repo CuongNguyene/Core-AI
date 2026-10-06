@@ -13,10 +13,10 @@ def test_alembic_configuration_uses_project_script_directory() -> None:
     assert Path(script_location).is_dir()
 
 
-def test_alembic_has_current_course_authoring_revision() -> None:
+def test_alembic_has_current_candidate_source_revision() -> None:
     config = Config("alembic.ini")
 
-    assert ScriptDirectory.from_config(config).get_current_head() == "20261005_51"
+    assert ScriptDirectory.from_config(config).get_current_head() == "20261006_53"
 
 
 def test_candidate_profile_governance_migration_is_additive_and_bounded() -> None:

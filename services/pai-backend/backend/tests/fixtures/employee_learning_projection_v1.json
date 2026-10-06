@@ -1,0 +1,43 @@
+{
+  "schema_id": "pai.employee-learning-projection",
+  "schema_version": "1.0",
+  "identity": {"employee_ref": "HR-EMP-00280", "source_system": "HRM"},
+  "snapshot": {"source_revision": 17, "source_updated_at": "2026-10-06T10:30:00+07:00"},
+  "employment_context": {
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN C.T",
+    "department": "Trung tâm Công nghệ Thông tin",
+    "job_title": "Chuyên viên Lập trình Python/Odoo",
+    "designation_label": "Chuyên viên",
+    "grade_label": "Level 3",
+    "date_of_joining": "2026-09-15"
+  },
+  "target_job_source": {
+    "source_application_ref": "142",
+    "job_description_html": "<p>Phát triển Python &amp; Odoo.</p>",
+    "job_requirements_html": "<p>Đọc hiểu tài liệu kỹ thuật.</p>",
+    "job_posting_url": "/recruitment/job/14"
+  },
+  "candidate_source": {
+    "career_history": [{"source_record_ref": "career-1", "company": "Acme", "role": "Engineer", "responsibilities": "Phát triển dịch vụ Python; không phải capability claim."}],
+    "education": [{"institution": "Đại học", "degree": "Cử nhân", "field": "CNTT"}],
+    "languages": [{"name": "English", "proficiency": "B2", "scale": "CEFR"}],
+    "tools": [{"name": "Odoo", "description": "Source label"}],
+    "certifications": [{"name": "Source certificate", "issuer": "Source issuer"}],
+    "projects": [{"name": "Project A", "description": "Nguồn dự án"}]
+  },
+  "recruitment_evidence": {
+    "interviewer_feedback": [{"round_name": "Technical", "comment": "Nhận xét nguồn", "score": 7, "score_scale": "0-10", "criteria": [{"name": "Source criterion", "comment": "Nguồn", "score": 7}]}],
+    "assessments": [{"name": "Source assessment", "score": 8, "score_scale": "0-10", "dimensions": [{"name": "Source dimension", "score": 8}]}]
+  },
+  "auxiliary_signals": {
+    "current_application_ai_score": 0.75,
+    "ats_ai_profile": {
+      "cv_match_score": 85.5,
+      "verified_by_recruiter": true,
+      "verified_by": "recruiter@example.com",
+      "verified_at": "2026-10-06T10:30:00+07:00",
+      "summary": "Ứng viên phù hợp với các yêu cầu chính của vị trí."
+    },
+    "ats_ai_scanning": {"job_ref": "14", "score": 0.8, "reason": "Nguồn AI", "keywords_found": ["Python"], "keywords_missing": ["Odoo"]}
+  }
+}

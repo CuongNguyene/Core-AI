@@ -1,0 +1,15 @@
+{
+  "milestone": "PAI-CANDIDATE-INPUT-01C.2",
+  "results": [
+    {"case": "no_current_snapshot", "behavior": "accept_any_positive_revision_as_baseline", "persistence": "snapshot_and_evidence_then_promote"},
+    {"case": "incoming_revision_greater", "behavior": "accept_and_promote_atomically", "persistence": "new_immutable_snapshot_and_evidence"},
+    {"case": "incoming_revision_less", "behavior": "candidate_source_snapshot_stale", "http_status": 409, "persistence": "none"},
+    {"case": "same_revision_same_content", "behavior": "replay_existing_snapshot", "http_status": 200, "persistence": "none"},
+    {"case": "same_revision_different_content", "behavior": "candidate_source_snapshot_revision_conflict", "http_status": 409, "persistence": "none"},
+    {"case": "higher_revision_same_content", "behavior": "accept_distinct_revision", "persistence": "new_snapshot_and_promote"},
+    {"case": "current_revision_missing", "behavior": "candidate_source_current_revision_unavailable", "http_status": 409, "persistence": "none"}
+  ],
+  "current_state_source": "CandidateExternalEmployeeIdentityRecord.current_snapshot_id",
+  "legacy_fingerprint_preserved": true,
+  "content_fingerprint_unique": false
+}
