@@ -173,6 +173,19 @@ async def test_content_approval_is_explicit_and_latest_version_bound() -> None:
 
 
 @pytest.mark.asyncio
+async def test_approved_content_can_be_marked_ready_for_materialization() -> None:
+    service, repository = await seeded_service()
+
+    await service.approve('content-generation-result-001', actor())
+    ready = await service.mark_ready('content-generation-result-001', actor())
+
+    assert ready.status is ContentGenerationStatus.READY_FOR_MATERIALIZATION
+    assert (
+        await repository.get_result('content-generation-result-001')
+    ).status is ContentGenerationStatus.READY_FOR_MATERIALIZATION
+
+
+@pytest.mark.asyncio
 async def test_rejected_content_cannot_be_approved_or_materialized() -> None:
     service, repository = await seeded_service()
 
