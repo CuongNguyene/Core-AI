@@ -44,7 +44,7 @@ async def create_content_generation_request(
     request: Request,
     actor: ActorContext = Depends(get_signed_actor_context),
 ) -> IntegrationEnvelopeV1[ContentGenerationRequestAcceptedV1]:
-    # A service API key identifies pai_frappe; the signed context identifies the
+    # A service API key identifies the LMS bridge; the signed context identifies the
     # acting LMS user. Repository-level organization scope follows next.
     del actor
     accepted: ContentGenerationRequestAccepted = await _service(request).create(

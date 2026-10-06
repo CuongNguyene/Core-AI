@@ -6,7 +6,7 @@ Accepted.
 
 ## Context
 
-`pai_frappe` signs a short-lived actor context when it calls PAI on behalf of
+The LMS bridge (`lms/lms/pai/client.py`, formerly the `pai_frappe` app) signs a short-lived actor context when it calls PAI on behalf of
 an LMS author. The previous verifier remembered used nonces in a process-local
 set. That prevented immediate replay only while the same FastAPI worker lived;
 another API instance or a process restart could accept the same signed request.

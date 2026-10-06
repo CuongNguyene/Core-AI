@@ -1,1 +1,0 @@
-"""PAI Frappe DocTypes."""

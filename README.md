@@ -6,16 +6,14 @@ API exposed by this repository.
 
 ## Layout
 
-- `apps/pai_frappe`: Frappe bridge app installed into an existing LMS Bench.
 - `services/pai-backend`: FastAPI API, asynchronous workers, Alembic migrations and Docker stack.
-- `scripts/attach-lms.sh`: installs the bridge app into an existing LMS site without changing LMS
-  Docker or CI/CD configuration.
 
 ## Local development with an existing LMS checkout
 
-1. Clone this repository alongside (or anywhere accessible to) the existing Frappe Bench/LMS
-   checkout.
-2. Start PAI. The commands and required local secrets are documented in
+The bridge to PAI lives in the LMS repository (`lms/lms/pai/`), not here. Core-AI no longer ships a
+Frappe app.
+
+1. Start PAI. The commands and required local secrets are documented in
    [`services/pai-backend/docs/local-development.md`](services/pai-backend/docs/local-development.md):
 
    ```bash
@@ -26,14 +24,7 @@ API exposed by this repository.
      -f devops/compose/docker-compose.local.yml up -d --build
    ```
 
-3. Attach the Frappe bridge to the existing LMS site. This does not edit the LMS source code,
-   Compose configuration or CI/CD pipeline:
-
-   ```bash
-   ./scripts/attach-lms.sh --bench /path/to/frappe-bench --site your-site-name
-   ```
-
-4. In the LMS Desk, complete **PAI Settings**: for local development set the service URL to
+2. In the LMS Desk, complete **PAI Settings**: for local development set the service URL to
    `http://127.0.0.1:18000`, enable **Allow Insecure Local PAI URL**, then add the organisation,
    integration key and Ed25519 signing key that match `backend/.env`. Create a **PAI User Identity**
    for each LMS user who will use PAI.
