@@ -65,6 +65,27 @@ class RecordingProvider:
         )
 
 
+@pytest.mark.asyncio
+async def test_gateway_accepts_provider_parsed_output_without_a_second_json_parse() -> None:
+    gateway, provider = configured_gateway(["not-json"])
+
+    async def typed_complete(request: ProviderRequest) -> ProviderResponse:
+        del request
+        return ProviderResponse(
+            provider="local-vllm",
+            model="mock-local",
+            content="not-json",
+            structured_output=SampleOutput(skill="typed result"),
+            latency_ms=0,
+        )
+
+    provider.complete = typed_complete  # type: ignore[method-assign]
+
+    result = await gateway.infer_structured(structured_request(), SampleOutput)
+
+    assert result.parsed == SampleOutput(skill="typed result")
+
+
 def structured_request() -> InferenceRequest:
     return InferenceRequest(
         purpose=InferencePurpose.CV_EXTRACTION,
@@ -137,9 +158,7 @@ async def test_structured_output_is_validated_and_returns_safe_audit_metadata() 
 def test_strict_structured_json_accepts_valid_enum_wire_values() -> None:
     gateway, _ = configured_gateway(['{"skill":"Python"}'])
 
-    result = gateway._validate_structured_output(
-        '{"process":"apply"}', EnumOutput, strict=True
-    )
+    result = gateway._validate_structured_output('{"process":"apply"}', EnumOutput, strict=True)
 
     assert result == EnumOutput(process=SampleProcess.APPLY)
 
@@ -216,8 +235,12 @@ async def test_schema_repair_prompt_includes_safe_validation_paths() -> None:
     result = await gateway.infer_structured(structured_request(), SampleOutput)
 
     assert result.parsed == SampleOutput(skill="Python")
-    assert provider.requests[1].messages[-1].content.endswith(
-        "Error category: model_output_validation_failed; paths=skill; types=string_type."
+    assert (
+        provider.requests[1]
+        .messages[-1]
+        .content.endswith(
+            "Error category: model_output_validation_failed; paths=skill; types=string_type."
+        )
     )
 
 

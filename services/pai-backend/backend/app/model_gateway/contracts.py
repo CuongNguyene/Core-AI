@@ -32,6 +32,8 @@ class OutputContract(BaseModel):
 class ModelUsage(BaseModel):
     input_tokens: int | None = Field(default=None, ge=0)
     output_tokens: int | None = Field(default=None, ge=0)
+    total_tokens: int | None = Field(default=None, ge=0)
+    cached_tokens: int | None = Field(default=None, ge=0)
 
 
 class DocumentInput(BaseModel):
@@ -45,6 +47,8 @@ class DocumentInput(BaseModel):
 class InferenceAuditMetadata(BaseModel):
     provider: str
     model: str
+    requested_model: str | None = None
+    provider_response_id: str | None = None
     model_revision: str | None = None
     prompt_template_id: str
     prompt_template_version: str
@@ -54,6 +58,7 @@ class InferenceAuditMetadata(BaseModel):
     correlation_id: str
     routing_decision: str
     attempt_count: int = Field(ge=1)
+    provider_attempt_count: int = Field(default=1, ge=1)
     latency_ms: int = Field(ge=0)
     usage: ModelUsage
     outcome: str

@@ -1,0 +1,13 @@
+{
+  "runner_version": "jd-breakdown-runner-v1",
+  "dataset_id": "pai-jd-requirement-breakdown-synthetic",
+  "dataset_version": "requirement-breakdown-eval-00-v1",
+  "expected_cases": 40,
+  "execution": "one full sequential pass after freeze; no partial semantic inspection",
+  "resume_identity": ["dataset_fingerprint", "case_id", "extractor_spec_sha256", "input_fingerprint", "provider", "model"],
+  "results": "append-only JSONL; never overwrite an existing run",
+  "raw_response": "ModelGateway exposes parsed output, not raw provider body; record canonical parsed structured-output hash without claiming it is raw",
+  "errors": "capture safe category only; transient provider retries remain gateway-owned",
+  "empty_input": "record completed zero-statement result without provider call",
+  "concurrency": 1
+}

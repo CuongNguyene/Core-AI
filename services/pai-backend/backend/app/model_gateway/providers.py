@@ -14,22 +14,29 @@ class ProviderRequest(BaseModel):
     temperature: float = Field(default=0.7, ge=0, le=2)
     max_tokens: int = Field(default=2048, gt=0)
     json_schema: dict[str, object] | None = None
+    response_model: type[BaseModel] | None = Field(default=None, exclude=True, repr=False)
     document: DocumentInput | None = None
 
 
 class ProviderResponse(BaseModel):
     provider: str
     model: str
+    requested_model: str | None = None
+    provider_response_id: str | None = None
     model_revision: str | None = None
     content: str
+    structured_output: BaseModel | None = Field(default=None, exclude=True, repr=False)
     protocol: str = "unknown"
     deployment_type: str = "unknown"
     endpoint_origin: str | None = None
     data_boundary: str = "unknown"
     finish_reason: str | None = None
     latency_ms: int = Field(ge=0)
+    provider_attempt_count: int = Field(default=1, ge=1)
     input_tokens: int | None = Field(default=None, ge=0)
     output_tokens: int | None = Field(default=None, ge=0)
+    total_tokens: int | None = Field(default=None, ge=0)
+    cached_tokens: int | None = Field(default=None, ge=0)
 
 
 class ModelProvider(Protocol):

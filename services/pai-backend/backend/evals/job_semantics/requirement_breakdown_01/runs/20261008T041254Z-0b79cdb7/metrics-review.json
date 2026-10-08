@@ -1,0 +1,13 @@
+{
+  "review_version": "post-run-metric-interpretation-v1",
+  "run_id": "20261008T041254Z-0b79cdb7",
+  "attempted_cases": 40,
+  "completed_cases": 0,
+  "provider_errors": 40,
+  "semantic_metrics_status": "NOT_MEASURABLE_NO_SUCCESSFUL_PROVIDER_OUTPUTS",
+  "semantic_metrics": null,
+  "reason": "All attempted cases ended in provider_response_error. The frozen metrics implementation's zero-denominator defaults are not interpretable as measured 1.0 precision/recall/F1 when there are zero completed cases; the raw metrics.json is retained for provenance but its semantic rates must not be reported.",
+  "transport_observation": "Provider logs included HTTP 400 Bad Request and HTTP 429 Too Many Requests. Per-case status/retry counts were not retained by ModelGateway exception metadata.",
+  "model_identity": "Configured model was gemini-3.5-flash-lite; provider returned no successful audit records, so actual model revision is unavailable.",
+  "no_provider_rerun": true
+}

@@ -48,3 +48,25 @@ provider ADR, danh sách model production hoặc policy retention cho raw conten
 
 Không có database migration hoặc public HTTP API. Đây là internal application
 boundary trong modular monolith.
+
+## Amendment — 2026-10-08: eval-only OpenAI JD extraction
+
+The user explicitly approved OpenAI processing of `RESTRICTED` JD
+source blocks for the bounded `PAI-JD-SEMANTIC-OPENAI-LUNA-ADAPTER-01`
+evaluation adapter. This approval is limited to the eval-only job-requirement
+extractor and the explicitly configured `openai` provider using the exact
+`gpt-6-luna` model. It does not approve CV, candidate, employee, ATS, or other
+restricted payloads, nor production extraction routing.
+
+- The eval-only composition must continue through `PrivacyGateway` and
+  `RoutingPolicy`; both `EXTERNAL_AI_ENABLED` and
+  `EXTERNAL_RESTRICTED_DATA_APPROVED` remain required before transport.
+- The OpenAI provider is not registered by `app.main`, is not a production
+  default, and has no automatic Gemini/local fallback.
+- Only allowlisted JD semantic source blocks may be sent. Source application
+  references, URLs, candidate data, and evaluation labels remain local.
+- Core-AI does not log or persist API credentials, full prompts, source text,
+  or raw SDK responses. Provider-side retention and account controls remain
+  governed by the approved OpenAI account configuration and must be checked
+  before any live run.
+- This amendment adds no database migration or public HTTP API.

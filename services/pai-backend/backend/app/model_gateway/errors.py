@@ -39,11 +39,38 @@ class ExternalProviderNotApprovedError(ModelGatewayError):
 
 
 class ProviderTimeoutError(ModelGatewayError):
-    pass
+    def __init__(self, message: str, *, attempt_count: int = 1) -> None:
+        self.attempt_count = attempt_count
+        super().__init__(message)
 
 
 class ProviderResponseError(ModelGatewayError):
-    pass
+    def __init__(
+        self,
+        message: str,
+        *,
+        provider_response_id: str | None = None,
+        observed_model: str | None = None,
+        latency_ms: int | None = None,
+        attempt_count: int = 1,
+    ) -> None:
+        self.provider_response_id = provider_response_id
+        self.observed_model = observed_model
+        self.latency_ms = latency_ms
+        self.attempt_count = attempt_count
+        super().__init__(message)
+
+
+class ProviderRefusalError(ProviderResponseError):
+    """Provider explicitly declined the request; this is not an empty prediction."""
+
+
+class ProviderIncompleteError(ProviderResponseError):
+    """Provider returned an incomplete response that cannot be interpreted."""
+
+
+class ProviderSchemaError(ProviderResponseError):
+    """Provider rejected or failed the requested strict structured-output schema."""
 
 
 class ProviderOutputBudgetError(ModelGatewayError):

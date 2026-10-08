@@ -1,0 +1,52 @@
+{
+  "$defs": {
+    "ProviderSourceBlock": {
+      "additionalProperties": false,
+      "properties": {
+        "block_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Block Id",
+          "type": "string"
+        },
+        "source_field": {
+          "enum": [
+            "JOB_DESCRIPTION",
+            "JOB_REQUIREMENTS"
+          ],
+          "title": "Source Field",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "block_id",
+        "source_field",
+        "text"
+      ],
+      "title": "ProviderSourceBlock",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "source_blocks": {
+      "items": {
+        "$ref": "#/$defs/ProviderSourceBlock"
+      },
+      "maxItems": 200,
+      "title": "Source Blocks",
+      "type": "array"
+    }
+  },
+  "required": [
+    "source_blocks"
+  ],
+  "title": "ProviderInputV1",
+  "type": "object"
+}

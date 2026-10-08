@@ -1,0 +1,216 @@
+{
+  "code_head": "0654cf0f3d64aafaa7c001c74e578643d07d1e03",
+  "code_worktree_clean": false,
+  "counts": {
+    "atomic_statement_count": 301,
+    "boundary_tag_distribution": {
+      "age_or_personal_condition_other": 1,
+      "behavioral_capability_candidate": 1,
+      "certificate_not_capability": 1,
+      "coordinated_clause_keep": 1,
+      "coordinated_clause_split": 1,
+      "degree_subject_not_capability": 1,
+      "duplicate_semantics_across_source_fields": 1,
+      "education_not_capability": 1,
+      "experience_with_capability_signal": 1,
+      "generic_behavior_not_capability": 1,
+      "generic_keyword_overlap": 1,
+      "html_inline_formatting": 1,
+      "html_list_boundary": 1,
+      "location_or_schedule_other": 1,
+      "mandatory_vs_preferred": 1,
+      "mixed_language": 1,
+      "mixed_requirement_clause": 1,
+      "qualification_not_capability": 1,
+      "responsibility_vs_behavioral": 1,
+      "responsibility_vs_experience": 1,
+      "salary_benefit_other": 1,
+      "tool_mention_in_responsibility": 1,
+      "tool_mention_without_capability": 1,
+      "weak_preference_language": 1,
+      "years_experience_not_level": 1
+    },
+    "capability_relevance_distribution": {
+      "CAPABILITY_BEARING": 181,
+      "NON_CAPABILITY": 108,
+      "UNCLEAR": 12
+    },
+    "difficulty_distribution": {
+      "EASY": 14,
+      "HARD": 13,
+      "MEDIUM": 13
+    },
+    "domain_by_capability_relevance": {
+      "BUSINESS_COMMUNICATION": {
+        "CAPABILITY_BEARING": 30,
+        "NON_CAPABILITY": 12,
+        "UNCLEAR": 0
+      },
+      "DATA_ANALYTICS": {
+        "CAPABILITY_BEARING": 26,
+        "NON_CAPABILITY": 17,
+        "UNCLEAR": 3
+      },
+      "FINANCE_ACCOUNTING": {
+        "CAPABILITY_BEARING": 32,
+        "NON_CAPABILITY": 28,
+        "UNCLEAR": 4
+      },
+      "PROJECT_MANAGEMENT": {
+        "CAPABILITY_BEARING": 30,
+        "NON_CAPABILITY": 12,
+        "UNCLEAR": 0
+      },
+      "RECRUITMENT_HR": {
+        "CAPABILITY_BEARING": 28,
+        "NON_CAPABILITY": 13,
+        "UNCLEAR": 1
+      },
+      "SOFTWARE_ENGINEERING": {
+        "CAPABILITY_BEARING": 35,
+        "NON_CAPABILITY": 26,
+        "UNCLEAR": 4
+      }
+    },
+    "domain_by_statement_type": {
+      "BUSINESS_COMMUNICATION": {
+        "BEHAVIORAL_REQUIREMENT": 6,
+        "EDUCATION_REQUIREMENT": 3,
+        "EXPERIENCE_REQUIREMENT": 6,
+        "OTHER": 6,
+        "QUALIFICATION_REQUIREMENT": 3,
+        "RESPONSIBILITY": 18
+      },
+      "DATA_ANALYTICS": {
+        "BEHAVIORAL_REQUIREMENT": 6,
+        "EDUCATION_REQUIREMENT": 5,
+        "EXPERIENCE_REQUIREMENT": 6,
+        "OTHER": 6,
+        "QUALIFICATION_REQUIREMENT": 5,
+        "RESPONSIBILITY": 18
+      },
+      "FINANCE_ACCOUNTING": {
+        "BEHAVIORAL_REQUIREMENT": 7,
+        "EDUCATION_REQUIREMENT": 8,
+        "EXPERIENCE_REQUIREMENT": 8,
+        "OTHER": 8,
+        "QUALIFICATION_REQUIREMENT": 8,
+        "RESPONSIBILITY": 25
+      },
+      "PROJECT_MANAGEMENT": {
+        "BEHAVIORAL_REQUIREMENT": 3,
+        "EDUCATION_REQUIREMENT": 3,
+        "EXPERIENCE_REQUIREMENT": 6,
+        "OTHER": 6,
+        "QUALIFICATION_REQUIREMENT": 3,
+        "RESPONSIBILITY": 21
+      },
+      "RECRUITMENT_HR": {
+        "BEHAVIORAL_REQUIREMENT": 6,
+        "EDUCATION_REQUIREMENT": 3,
+        "EXPERIENCE_REQUIREMENT": 6,
+        "OTHER": 6,
+        "QUALIFICATION_REQUIREMENT": 3,
+        "RESPONSIBILITY": 18
+      },
+      "SOFTWARE_ENGINEERING": {
+        "BEHAVIORAL_REQUIREMENT": 8,
+        "EDUCATION_REQUIREMENT": 8,
+        "EXPERIENCE_REQUIREMENT": 8,
+        "OTHER": 8,
+        "QUALIFICATION_REQUIREMENT": 8,
+        "RESPONSIBILITY": 25
+      }
+    },
+    "domain_distribution": {
+      "BUSINESS_COMMUNICATION": 6,
+      "DATA_ANALYTICS": 6,
+      "FINANCE_ACCOUNTING": 8,
+      "PROJECT_MANAGEMENT": 6,
+      "RECRUITMENT_HR": 6,
+      "SOFTWARE_ENGINEERING": 8
+    },
+    "language_distribution": {
+      "ENGLISH": 10,
+      "MIXED": 6,
+      "VIETNAMESE": 24
+    },
+    "posting_count": 40,
+    "source_field_by_statement_type": {
+      "JOB_DESCRIPTION": {
+        "BEHAVIORAL_REQUIREMENT": 34,
+        "EDUCATION_REQUIREMENT": 20,
+        "EXPERIENCE_REQUIREMENT": 4,
+        "OTHER": 4,
+        "QUALIFICATION_REQUIREMENT": 21,
+        "RESPONSIBILITY": 85
+      },
+      "JOB_REQUIREMENTS": {
+        "BEHAVIORAL_REQUIREMENT": 2,
+        "EDUCATION_REQUIREMENT": 10,
+        "EXPERIENCE_REQUIREMENT": 36,
+        "OTHER": 36,
+        "QUALIFICATION_REQUIREMENT": 9,
+        "RESPONSIBILITY": 40
+      }
+    },
+    "source_field_distribution": {
+      "JOB_DESCRIPTION": 168,
+      "JOB_REQUIREMENTS": 133
+    },
+    "statement_type_by_capability_relevance": {
+      "BEHAVIORAL_REQUIREMENT": {
+        "CAPABILITY_BEARING": 24,
+        "NON_CAPABILITY": 0,
+        "UNCLEAR": 12
+      },
+      "EDUCATION_REQUIREMENT": {
+        "CAPABILITY_BEARING": 0,
+        "NON_CAPABILITY": 30,
+        "UNCLEAR": 0
+      },
+      "EXPERIENCE_REQUIREMENT": {
+        "CAPABILITY_BEARING": 40,
+        "NON_CAPABILITY": 0,
+        "UNCLEAR": 0
+      },
+      "OTHER": {
+        "CAPABILITY_BEARING": 0,
+        "NON_CAPABILITY": 40,
+        "UNCLEAR": 0
+      },
+      "QUALIFICATION_REQUIREMENT": {
+        "CAPABILITY_BEARING": 0,
+        "NON_CAPABILITY": 30,
+        "UNCLEAR": 0
+      },
+      "RESPONSIBILITY": {
+        "CAPABILITY_BEARING": 117,
+        "NON_CAPABILITY": 8,
+        "UNCLEAR": 0
+      }
+    },
+    "statement_type_distribution": {
+      "BEHAVIORAL_REQUIREMENT": 36,
+      "EDUCATION_REQUIREMENT": 30,
+      "EXPERIENCE_REQUIREMENT": 40,
+      "OTHER": 40,
+      "QUALIFICATION_REQUIREMENT": 30,
+      "RESPONSIBILITY": 125
+    }
+  },
+  "frozen_at_utc": "2026-10-08T03:20:32.854101Z",
+  "hashes": {
+    "conformance_jsonl_sha256": "b54cc3749800f75ed343bf5a10b23f6ff9f8a22c28f33f9029d5204b2c8da4de",
+    "conformance_review_sha256": "c18a244cc56cf0a61a8b8726a7c0ba8e5c46f38c031266a2e4cf1198776561fe",
+    "dataset_jsonl_sha256": "6b9453a1c000f51a95b0ead39a94aca55eb7582489fca2a1b13550128df32cc5",
+    "protocol_sha256": "c0f5d94b0297e8ff417e9b29c8ff2dcafa775ffad11241dbd83d6514c6fd5106",
+    "review_pass1_sha256": "98991b1a8b9d21bf6ad9adf5f7d48ef693592e6fa8321896afaba319bd8bc550",
+    "review_pass2_sha256": "5139940cdee2ce5c5d82def54f10de3d21848edb01d35c73b67aca6410b3b8d4",
+    "semantic_fingerprint_sha256": "b479fe2ecce0b7278506c4376e336b0cda916eba9f57c4e73b661e829a867421",
+    "taxonomy_sha256": "bfb17a8f931e11f8c3e455048e9b4669c0cdd444246a66ade95a287e5a2622b4"
+  },
+  "manifest_id": "jd-requirement-breakdown-synthetic-v1",
+  "manifest_version": 1,
+  "provider_calls_before_freeze": 0
+}

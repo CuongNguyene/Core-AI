@@ -66,13 +66,13 @@ class ModelGatewayService:
             request.prompt_template_id, request.prompt_template_version
         )
         response = await provider.complete(
-                self._provider_request(
-                    template.render(request.payload),
-                    require_json_object=False,
-                    output_token_budget=request.output_token_budget,
-                    temperature=request.temperature,
-                    document=request.document,
-                )
+            self._provider_request(
+                template.render(request.payload),
+                require_json_object=False,
+                output_token_budget=request.output_token_budget,
+                temperature=request.temperature,
+                document=request.document,
+            )
         )
         return TextInferenceResponse(
             content=response.content,
@@ -109,15 +109,23 @@ class ModelGatewayService:
                     temperature=request.temperature,
                     json_schema=output_schema.model_json_schema(),
                     document=request.document,
+                    response_model=output_schema,
                 )
             )
             try:
-                parsed = self._validate_structured_output(
-                    response.content,
-                    output_schema,
-                    output_contract.strict,
-                    provider_finish_reason=response.finish_reason,
-                )
+                if response.structured_output is not None:
+                    if type(response.structured_output) is not output_schema:
+                        raise StructuredOutputFailedError("provider_parsed_schema_mismatch")
+                    parsed = response.structured_output
+                else:
+                    parsed = self._validate_structured_output(
+                        response.content,
+                        output_schema,
+                        output_contract.strict,
+                        provider_finish_reason=response.finish_reason,
+                    )
+            except StructuredOutputFailedError:
+                raise
             except StructuredOutputError as exc:
                 if attempt == self._max_structured_repair_retries + 1:
                     raise StructuredOutputFailedError(
@@ -159,12 +167,14 @@ class ModelGatewayService:
         temperature: float | None = None,
         json_schema: dict[str, object] | None = None,
         document: DocumentInput | None = None,
+        response_model: type[BaseModel] | None = None,
     ) -> ProviderRequest:
         request = ProviderRequest(
             model=self._model,
             messages=list(messages),
             require_json_object=require_json_object,
             document=document,
+            response_model=response_model,
         )
         if output_token_budget is not None:
             request = request.model_copy(update={"max_tokens": output_token_budget})
@@ -326,6 +336,8 @@ class ModelGatewayService:
         return InferenceAuditMetadata(
             provider=response.provider,
             model=response.model,
+            requested_model=response.requested_model or self._model,
+            provider_response_id=response.provider_response_id,
             model_revision=response.model_revision,
             protocol=response.protocol,
             deployment_type=response.deployment_type,
@@ -339,10 +351,13 @@ class ModelGatewayService:
             correlation_id=request.correlation_id,
             routing_decision=route.decision,
             attempt_count=attempt_count,
+            provider_attempt_count=response.provider_attempt_count,
             latency_ms=response.latency_ms,
             usage=ModelUsage(
                 input_tokens=response.input_tokens,
                 output_tokens=response.output_tokens,
+                total_tokens=response.total_tokens,
+                cached_tokens=response.cached_tokens,
             ),
             outcome=outcome,
             finish_reason=response.finish_reason,

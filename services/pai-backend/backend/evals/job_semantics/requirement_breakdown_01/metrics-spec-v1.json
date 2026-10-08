@@ -1,0 +1,8 @@
+{
+  "metrics_version": "jd-breakdown-metrics-v1",
+  "decomposition": ["statement_precision", "statement_recall", "statement_f1", "case_exact_decomposition_rate", "over_split_count", "under_split_count", "hallucinated_count", "missed_count", "source_order_accuracy", "source_field_provenance_accuracy"],
+  "classification": {"statement_type": ["accuracy", "macro_f1", "per_class_precision_recall_f1", "confusion_matrix"], "capability_relevance": ["accuracy", "macro_f1", "per_class_precision_recall_f1", "confusion_matrix"]},
+  "fidelity": ["valid_source_span_rate", "unknown_block_reference_count", "invented_span_count", "normalized_statement_fidelity_failures", "nullable_source_violations", "empty_field_hallucinations"],
+  "slices": ["domain", "language", "difficulty", "boundary_tags"],
+  "provider_errors_are_not_semantic_predictions": true
+}

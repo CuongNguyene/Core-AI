@@ -1,0 +1,8 @@
+{
+  "adapter_id": "jd-html-visible-source-blocks",
+  "version": "1.0.0",
+  "source_fields": {"JOB_DESCRIPTION": "job_description_html", "JOB_REQUIREMENTS": "job_requirements_html"},
+  "block_tags": ["p", "div", "h1", "h2", "h3", "h4", "h5", "h6", "li", "br"],
+  "rules": ["HTMLParser; no network/browser", "inline tags transparent", "decode character/entity references once", "replace NBSP with ASCII space", "collapse whitespace inside blocks", "preserve block/list order", "omit empty visible blocks", "join source-local blocks with LF for span validation", "deterministic jdblock:{field}:{order:04d} identifiers"],
+  "null_omitted_empty_whitespace": "all produce zero blocks for that source field"
+}

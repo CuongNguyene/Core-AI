@@ -1,0 +1,28 @@
+{
+  "code_head": "0654cf0f3d64aafaa7c001c74e578643d07d1e03",
+  "component_sha256": {
+    "../../../app/job_semantics_eval/contracts.py": "sha256:fcefbc210fba000b5f625341b28c51c5d848def19897e67a0a5fd9d38ac2c0a8",
+    "../../../app/job_semantics_eval/freeze.py": "sha256:b8c9016c3e993a62046fa3dd0f60c757a161b3e1ce26dc2cb518064c2da68559",
+    "../../../app/job_semantics_eval/metrics.py": "sha256:964d068d98276314f5117f4de6c820749a6fedd8a95c78ed4017610cedc8a1fd",
+    "../../../app/job_semantics_eval/provider.py": "sha256:d1f5d2d207ea586f4906b50b652c3a72aad61f2790b19eca41367379e7d0694f",
+    "../../../app/job_semantics_eval/runner.py": "sha256:4da95cffaeb3f857e16c7e6edb4de686b0bccc4319878bf3c614c1aefe0e48a5",
+    "../../../app/job_semantics_eval/source_adapter.py": "sha256:c27d28b578b65c5841a17c90734d79ad46927e4198e706fb6b45468bf7cf4172",
+    "../../../app/job_semantics_eval/validation.py": "sha256:a0789863ed60c715b8b6625c092a6e4b96517a8db528e96ea18252bb61001829",
+    "extractor-spec-v1.json": "sha256:3484122a6923b92962b1bda9c9bc342d628aec9aa10495aca23cfd64231f7f7a",
+    "matching-spec-v1.json": "sha256:cebb9c81b109b6c5dcaf64e87731e41a2be3225cf5cdc021a36a2cb0dbe485f5",
+    "metrics-spec-v1.json": "sha256:4598cbb49212e7cbbf5c0c0a0c88242665d2ad6bb4b107434d1ae8e3849cefd4",
+    "output-schema-v1.json": "sha256:8412be7bdaa25977f6bc6a4b68e1d839ae3d7a3d14075e9c4957da52a96a55a0",
+    "provider-input-schema-v1.json": "sha256:2bb20bc68628f48ee3431df1552b872187460bf653fd56e75073c311b80f8cf5",
+    "runner-spec-v1.json": "sha256:f539f9817162d1778151bbefa60ec17418cf4aac395321f8c23521f0d8e8f3d2",
+    "source-adapter-spec-v1.json": "sha256:ca3d127a2331386347d9cf8056cbfc2c4e877b3570ad0f119aa00960a098fac4"
+  },
+  "eval00_dataset_sha256": "sha256:6b9453a1c000f51a95b0ead39a94aca55eb7582489fca2a1b13550128df32cc5",
+  "eval00_semantic_fingerprint": "sha256:b479fe2ecce0b7278506c4376e336b0cda916eba9f57c4e73b661e829a867421",
+  "eval00_taxonomy_sha256": "sha256:bfb17a8f931e11f8c3e455048e9b4669c0cdd444246a66ade95a287e5a2622b4",
+  "extractor_spec_sha256": "sha256:a1342ed0eb386485f5e965acc8c25b24a45e717ad645d7e00c8cb74cb4ae6721",
+  "first_provider_call_permitted_after_freeze": true,
+  "frozen_at_utc": "2026-10-08T04:12:41.082392Z",
+  "manifest_id": "pai-jd-semantic-requirement-breakdown-01",
+  "manifest_version": 1,
+  "provider_calls_before_freeze": 0
+}

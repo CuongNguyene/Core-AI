@@ -1,0 +1,10 @@
+{
+  "matching_version": "exact-visible-span-v1",
+  "primary_identity": ["source_field", "source_text"],
+  "duplicates": "multiset matching in source-order occurrence order",
+  "order_source": "server-derived visible source offsets and frozen gold source_order",
+  "normalization": "none for primary equality; source HTML view uses frozen EVAL-00 rules",
+  "split_merge_diagnostics": "strict contiguous source-span containment among unmatched items",
+  "no_llm_judge": true,
+  "no_embeddings": true
+}
