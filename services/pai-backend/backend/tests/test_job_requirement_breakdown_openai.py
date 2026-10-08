@@ -11,6 +11,7 @@ from app.job_semantics_eval.openai_luna import (
     build_openai_luna_gateway,
     openai_execution_status,
     openai_luna_spec_fingerprint,
+    prepare_openai_luna_settings,
 )
 from app.job_semantics_eval.provider import extract_requirements
 from app.job_semantics_eval.source_adapter import JobSourceBlock
@@ -61,6 +62,42 @@ def approved_settings() -> Settings:
         external_ai_provider="openai",
         external_ai_api_key=SecretStr("test-only-not-a-real-key"),
     )
+
+
+def test_eval_uses_approved_existing_openai_model_configuration() -> None:
+    original = Settings(
+        model_provider="openai",
+        vllm_model="gpt-6-luna",
+        vllm_base_url="https://api.openai.com/v1",
+        vllm_api_key=SecretStr("test-only-not-a-real-key"),
+        external_ai_enabled=True,
+        external_restricted_data_approved=True,
+        external_ai_provider="typesafe-jev",
+    )
+    settings = prepare_openai_luna_settings(original)
+
+    assert settings.external_ai_provider == "openai"
+    assert settings.external_ai_api_key.get_secret_value() == "test-only-not-a-real-key"
+    assert original.external_ai_provider == "typesafe-jev"
+    assert original.external_ai_api_key.get_secret_value() == ""
+    assert settings.model_provider == "openai"
+    assert settings.vllm_model == "gpt-6-luna"
+
+
+@pytest.mark.parametrize(
+    "updates",
+    [
+        {"model_provider": "typesafe-jev"},
+        {"vllm_model": "gpt-6-sol"},
+        {"vllm_base_url": "https://example.invalid/v1"},
+        {"vllm_api_key": SecretStr("local-token")},
+        {"external_ai_enabled": False},
+        {"external_restricted_data_approved": False},
+    ],
+)
+def test_eval_rejects_unapproved_or_mismatched_openai_configuration(updates) -> None:
+    with pytest.raises(ValueError):
+        prepare_openai_luna_settings(approved_settings().model_copy(update=updates))
 
 
 def blocks() -> tuple[JobSourceBlock, ...]:

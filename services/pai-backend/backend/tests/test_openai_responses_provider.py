@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import asyncio
+import socket
+import ssl
 from types import SimpleNamespace
 
 import httpx
 import pytest
-from openai import APITimeoutError, AsyncOpenAI, BadRequestError, RateLimitError
+from openai import APIConnectionError, APITimeoutError, AsyncOpenAI, BadRequestError, RateLimitError
 from pydantic import BaseModel, ConfigDict, SecretStr
 
 from app.model_gateway.errors import (
@@ -117,6 +119,8 @@ def test_uses_responses_parse_with_pydantic_and_requested_model() -> None:
     assert result.cached_tokens == 4
     assert model_identity_matches("gpt-6-luna", result.model)
     assert not model_identity_matches("gpt-6-luna", "gpt-6-lunatic")
+    assert not model_identity_matches("gpt-6-luna", "gpt-6-luna-experimental")
+    assert not model_identity_matches("gpt-6-luna", "gpt-6-luna-2026-10-01-preview")
 
 
 def test_refusal_is_not_returned_as_semantic_text() -> None:
@@ -187,7 +191,106 @@ def test_timeout_exhaustion_is_provider_timeout_without_fallback() -> None:
         asyncio.run(provider.complete(request()))
 
     assert error.value.attempt_count == 2
+    assert [row["attempt"] for row in error.value.transport_diagnostics] == [1, 2]
     assert len(client.responses.calls) == 2
+
+
+@pytest.mark.parametrize(
+    ("failure", "expected_class", "expected_phase"),
+    [
+        (httpx.ConnectTimeout("token-never-store"), "ConnectTimeout", "connect"),
+        (httpx.ReadTimeout("token-never-store"), "ReadTimeout", "read"),
+        (httpx.WriteTimeout("token-never-store"), "WriteTimeout", "write"),
+        (httpx.PoolTimeout("token-never-store"), "PoolTimeout", "pool"),
+    ],
+)
+def test_timeout_failure_persists_sanitized_transport_diagnostic(
+    failure: Exception, expected_class: str, expected_phase: str
+) -> None:
+    client = FakeClient(provider_response())
+    request_error = httpx.Request("POST", "https://api.openai.com/v1/responses")
+    top = APITimeoutError(request=request_error)
+    top.__cause__ = failure
+    client.responses.failures.append(top)
+    provider = OpenAIResponsesProvider(
+        api_key=SecretStr("test-only"),
+        timeout_seconds=2,
+        max_retries=0,
+        client=client,
+    )
+
+    with pytest.raises(ProviderTimeoutError) as error:
+        asyncio.run(provider.complete(request()))
+
+    diagnostic = error.value.transport_diagnostics[0]
+    assert diagnostic == {
+        "error_class": "APITimeoutError",
+        "transport_error_class": expected_class,
+        "transport_phase": expected_phase,
+        "attempt": 1,
+        "cause_chain": ["APITimeoutError", expected_class],
+    }
+    assert "token-never-store" not in repr(diagnostic)
+
+
+@pytest.mark.parametrize(
+    ("cause", "transport_class", "phase"),
+    [
+        (httpx.ConnectError("secret"), "ConnectError", "connect"),
+        (socket.gaierror(-2, "secret dns text"), "gaierror", "dns"),
+        (ssl.SSLError("secret tls text"), "SSLError", "tls"),
+        (ssl.SSLCertVerificationError("secret cert text"), "SSLCertVerificationError", "tls"),
+        (httpx.ProxyError("secret proxy text"), "ProxyError", "proxy"),
+        (ConnectionResetError("secret reset text"), "ConnectionResetError", "connection_reset"),
+    ],
+)
+def test_connection_failure_persists_sanitized_transport_diagnostic(
+    cause: BaseException, transport_class: str, phase: str
+) -> None:
+    client = FakeClient(provider_response())
+    request_error = httpx.Request("POST", "https://api.openai.com/v1/responses")
+    top = APIConnectionError(message="secret URL or token text", request=request_error)
+    top.__cause__ = cause
+    client.responses.failures.append(top)
+    provider = OpenAIResponsesProvider(
+        api_key=SecretStr("test-only"), timeout_seconds=2, max_retries=0, client=client
+    )
+
+    with pytest.raises(ProviderResponseError) as error:
+        asyncio.run(provider.complete(request()))
+
+    diagnostic = error.value.transport_diagnostics[0]
+    assert diagnostic["error_class"] == "APIConnectionError"
+    assert diagnostic["transport_error_class"] == transport_class
+    assert diagnostic["transport_phase"] == phase
+    assert diagnostic["attempt"] == 1
+    assert diagnostic["cause_chain"] == ["APIConnectionError", type(cause).__name__]
+    assert "secret" not in repr(diagnostic)
+
+
+def test_connection_failure_with_no_cause_is_classified_unknown() -> None:
+    client = FakeClient(provider_response())
+    client.responses.failures.append(
+        APIConnectionError(
+            message="do not serialize this", request=httpx.Request("POST", "https://api.openai.com")
+        )
+    )
+    provider = OpenAIResponsesProvider(
+        api_key=SecretStr("test-only"), timeout_seconds=2, max_retries=0, client=client
+    )
+
+    with pytest.raises(ProviderResponseError) as error:
+        asyncio.run(provider.complete(request()))
+
+    assert error.value.transport_diagnostics == [
+        {
+            "error_class": "APIConnectionError",
+            "transport_error_class": "APIConnectionError",
+            "transport_phase": "unknown",
+            "attempt": 1,
+            "cause_chain": ["APIConnectionError"],
+        }
+    ]
 
 
 def test_rate_limit_retries_same_structured_request() -> None:

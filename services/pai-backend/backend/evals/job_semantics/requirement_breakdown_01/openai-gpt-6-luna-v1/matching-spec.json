@@ -1,0 +1,16 @@
+{
+  "duplicate_resolution": "multiset occurrence order; source field rank, start/end offsets, output index; gold source_order then statement_id",
+  "field_agreement_required": true,
+  "fuzzy_matching": false,
+  "one_to_one": true,
+  "over_split": "unmatched prediction span contained in an unmatched gold span in same source field",
+  "semantic_similarity": false,
+  "signal_text_scoring": "exact/null classification on matched items; no fuzzy scoring",
+  "statement_identity": [
+    "source_field",
+    "source_text exact"
+  ],
+  "tie_break": "stable source field rank, offsets, output index, gold source_order and statement_id",
+  "under_split": "unmatched gold span contained in an unmatched prediction span in same source field",
+  "version": "exact-visible-span-v1"
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+from urllib.parse import urlparse
 
 from pydantic import BaseModel
 
@@ -36,6 +37,35 @@ SOURCE_ADAPTER_SHA256 = (
     "sha256:"
     + hashlib.sha256(Path(__file__).with_name("source_adapter.py").read_bytes()).hexdigest()
 )
+
+
+def prepare_openai_luna_settings(settings: Settings) -> Settings:
+    """Bind the eval-only adapter to the repository's approved OpenAI settings.
+
+    The shared deployment convention stores the OpenAI credential in
+    ``MODEL_API_KEY``.  The eval gateway has an explicit external-provider
+    boundary, so copy that credential into its isolated external-provider
+    fields only after validating provider, model, endpoint, and privacy gates.
+    """
+    parsed_base_url = urlparse(settings.vllm_base_url)
+    api_key = settings.vllm_api_key.get_secret_value()
+    if (
+        settings.model_provider != OPENAI_PROVIDER_ID
+        or settings.vllm_model != LUNA_MODEL
+        or parsed_base_url.scheme != "https"
+        or parsed_base_url.hostname != "api.openai.com"
+        or not api_key
+        or api_key == "local-token"
+        or not settings.external_ai_enabled
+        or not settings.external_restricted_data_approved
+    ):
+        raise ValueError("configured OpenAI Luna provider/model/privacy settings are not approved")
+    return settings.model_copy(
+        update={
+            "external_ai_provider": OPENAI_PROVIDER_ID,
+            "external_ai_api_key": settings.vllm_api_key,
+        }
+    )
 
 
 def openai_execution_status(error: Exception) -> str:

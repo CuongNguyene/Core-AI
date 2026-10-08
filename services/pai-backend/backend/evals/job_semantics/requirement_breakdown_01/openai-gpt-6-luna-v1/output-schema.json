@@ -1,0 +1,89 @@
+{
+  "$defs": {
+    "PredictedJobRequirementStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "capability_relevance": {
+          "enum": [
+            "CAPABILITY_BEARING",
+            "NON_CAPABILITY",
+            "UNCLEAR"
+          ],
+          "title": "Capability Relevance",
+          "type": "string"
+        },
+        "capability_signal_text": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capability Signal Text"
+        },
+        "normalized_statement": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Normalized Statement",
+          "type": "string"
+        },
+        "source_block_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Source Block Ids",
+          "type": "array"
+        },
+        "source_text": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Source Text",
+          "type": "string"
+        },
+        "statement_type": {
+          "enum": [
+            "RESPONSIBILITY",
+            "EXPERIENCE_REQUIREMENT",
+            "EDUCATION_REQUIREMENT",
+            "QUALIFICATION_REQUIREMENT",
+            "BEHAVIORAL_REQUIREMENT",
+            "OTHER"
+          ],
+          "title": "Statement Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_block_ids",
+        "source_text",
+        "normalized_statement",
+        "statement_type",
+        "capability_relevance"
+      ],
+      "title": "PredictedJobRequirementStatement",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "statements": {
+      "items": {
+        "$ref": "#/$defs/PredictedJobRequirementStatement"
+      },
+      "maxItems": 200,
+      "title": "Statements",
+      "type": "array"
+    }
+  },
+  "required": [
+    "statements"
+  ],
+  "title": "JobRequirementExtractionOutputV1",
+  "type": "object"
+}

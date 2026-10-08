@@ -1,0 +1,11 @@
+{
+  "attempt_count": 0,
+  "attempts_without_transport_diagnostics": 80,
+  "by_error_category": {
+    "timeout": 40
+  },
+  "by_error_class": {},
+  "by_transport_error_class": {},
+  "by_transport_phase": {},
+  "error_case_count": 40
+}

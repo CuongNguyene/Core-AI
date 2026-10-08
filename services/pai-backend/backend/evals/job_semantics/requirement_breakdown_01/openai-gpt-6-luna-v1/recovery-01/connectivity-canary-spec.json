@@ -1,0 +1,27 @@
+{
+  "canary_id": "luna-connectivity-canary-01",
+  "provider": "openai",
+  "api_family": "responses",
+  "requested_model": "gpt-6-luna",
+  "sdk_version": "1.109.1",
+  "structured_output": "responses.parse with strict Pydantic model",
+  "trusted_instruction": "This is a connectivity canary using synthetic non-benchmark data. Return the requested structured fields exactly. Do not infer anything beyond the supplied marker.",
+  "user_payload": "Synthetic connectivity check marker: luna-connectivity-canary-01. Return ok=true and echo this exact marker.",
+  "output_schema": {
+    "ok": {
+      "type": "boolean",
+      "const": true
+    },
+    "marker": {
+      "type": "string",
+      "const": "luna-connectivity-canary-01"
+    }
+  },
+  "temperature": 0,
+  "max_output_tokens": 64,
+  "maximum_provider_attempts": 1,
+  "automatic_retries": 0,
+  "contains_eval00": false,
+  "contains_jd_or_gold": false,
+  "live_call_authorization": "explicitly requested in Recovery-01 task"
+}

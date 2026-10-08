@@ -1,0 +1,9 @@
+{
+  "invalid_span": "invalid output; no fuzzy match or repair",
+  "normalized_statement": "exact source span except optional terminal punctuation",
+  "source_field": "server-derived from referenced source blocks",
+  "source_order": "server-derived source offsets; never provider-authored",
+  "source_text": "exact contiguous visible-text span within cited adjacent block IDs and one source field",
+  "unknown_block_id": "invalid output; no repair",
+  "validation_status": "UNVALIDATED"
+}

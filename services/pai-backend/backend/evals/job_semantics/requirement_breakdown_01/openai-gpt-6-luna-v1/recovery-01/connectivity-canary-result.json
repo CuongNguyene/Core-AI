@@ -1,0 +1,25 @@
+{
+  "canary_id": "luna-connectivity-canary-01",
+  "canary_spec_sha256": "sha256:eefe1b2c469820eef1c306dc94c2351283408b3d64dbe3f7b51a28544a216b75",
+  "provider": "openai",
+  "api_family": "responses",
+  "requested_model": "gpt-6-luna",
+  "status": "FAILED",
+  "failure_layer": "provider_api_response",
+  "error_class": "BadRequestError",
+  "http_status": 400,
+  "cause_chain": [
+    "BadRequestError",
+    "HTTPStatusError"
+  ],
+  "provider_attempts": 1,
+  "automatic_retries": 0,
+  "observed_model": null,
+  "output_parsed_received": false,
+  "response_id": null,
+  "exact_provider_error_body_retained": false,
+  "diagnostic_limit": "The provider returned HTTP 400; the sanitized execution capture retained exception classes but not the provider error code or parameter, so the specific rejected request field is unknown.",
+  "contains_eval00": false,
+  "contains_jd_or_gold": false,
+  "baseline_run_id_created": false
+}

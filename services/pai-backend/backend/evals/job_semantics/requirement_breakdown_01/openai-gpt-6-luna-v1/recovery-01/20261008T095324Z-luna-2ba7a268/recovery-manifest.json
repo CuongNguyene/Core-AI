@@ -1,0 +1,13 @@
+{
+  "provider_calls_during_recomputation": 0,
+  "quality_status": "NOT_MEASURABLE",
+  "recovery_milestone": "PAI-JD-SEMANTIC-REQUIREMENT-BREAKDOWN-01-RECOVERY-01",
+  "report_status": "complete",
+  "source_artifact_sha256": {
+    "results.jsonl": "sha256:d44baabdaf0f87f43b3d8ee269e4dedddfa5ea4e242b1524e5349ab5abc0af13",
+    "run-manifest.json": "sha256:6b83f916941f535991e825543f8a68462dc9ae1232e247946b9b6ced787088b0"
+  },
+  "source_case_count": 40,
+  "source_run_id": "20261008T095324Z-luna-2ba7a268",
+  "source_run_mutated": false
+}

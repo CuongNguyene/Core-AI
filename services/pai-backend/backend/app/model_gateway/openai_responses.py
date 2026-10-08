@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import re
 from time import perf_counter
 from typing import Protocol, cast
 
@@ -34,6 +35,21 @@ class ResponsesEndpoint(Protocol):
 
 class OpenAIClient(Protocol):
     responses: ResponsesEndpoint
+
+
+class OpenAITransportTimeoutError(ProviderTimeoutError):
+    def __init__(self, *, attempt_count: int, diagnostics: list[dict[str, object]]) -> None:
+        self.transport_diagnostics = diagnostics
+        super().__init__("OpenAI Responses request timed out", attempt_count=attempt_count)
+
+
+class OpenAITransportConnectionError(ProviderResponseError):
+    def __init__(self, *, attempt_count: int, diagnostics: list[dict[str, object]]) -> None:
+        self.transport_diagnostics = diagnostics
+        super().__init__(
+            "OpenAI Responses connection failed",
+            attempt_count=attempt_count,
+        )
 
 
 class OpenAIResponsesProvider:
@@ -73,17 +89,27 @@ class OpenAIResponsesProvider:
         started = perf_counter()
         response: object | None = None
         provider_attempt_count = 0
+        transport_diagnostics: list[dict[str, object]] = []
         for attempt in range(self._max_retries + 1):
             provider_attempt_count = attempt + 1
             try:
                 response = await self._client_instance().responses.parse(**payload)
                 break
-            except (APITimeoutError, APIConnectionError) as exc:
+            except APITimeoutError as exc:
+                transport_diagnostics.append(_transport_diagnostic(exc, provider_attempt_count))
                 if attempt < self._max_retries:
                     await asyncio.sleep(self._retry_delay_seconds * (2**attempt))
                     continue
-                raise ProviderTimeoutError(
-                    "OpenAI Responses transport timed out", attempt_count=provider_attempt_count
+                raise OpenAITransportTimeoutError(
+                    attempt_count=provider_attempt_count, diagnostics=transport_diagnostics
+                ) from exc
+            except APIConnectionError as exc:
+                transport_diagnostics.append(_transport_diagnostic(exc, provider_attempt_count))
+                if attempt < self._max_retries:
+                    await asyncio.sleep(self._retry_delay_seconds * (2**attempt))
+                    continue
+                raise OpenAITransportConnectionError(
+                    attempt_count=provider_attempt_count, diagnostics=transport_diagnostics
                 ) from exc
             except (RateLimitError, InternalServerError) as exc:
                 if attempt < self._max_retries:
@@ -205,8 +231,12 @@ class OpenAIResponsesProvider:
 
 
 def model_identity_matches(requested_model: str, observed_model: str) -> bool:
-    """Accept an exact ID or provider-returned dated snapshot of that ID."""
-    return observed_model == requested_model or observed_model.startswith(requested_model + "-")
+    """Accept only the exact ID or the approved YYYY-MM-DD snapshot form."""
+    if observed_model == requested_model:
+        return True
+    return (
+        re.fullmatch(re.escape(requested_model) + r"-\d{4}-\d{2}-\d{2}", observed_model) is not None
+    )
 
 
 def _attr(value: object | None, name: str) -> object | None:
@@ -233,3 +263,74 @@ def _contains_refusal(output: object | None) -> bool:
         if any(_string_attr(part, "type") == "refusal" for part in content):
             return True
     return False
+
+
+def _transport_diagnostic(error: Exception, attempt: int) -> dict[str, object]:
+    """Return exception class metadata only; never persist messages or reprs."""
+    chain: list[BaseException] = []
+    seen: set[int] = set()
+    current: BaseException | None = error
+    while current is not None and id(current) not in seen:
+        seen.add(id(current))
+        chain.append(current)
+        current = current.__cause__ or current.__context__
+
+    names = [type(item).__name__ for item in chain]
+    transport_names = names[1:]
+    phase = "unknown"
+    for name in transport_names:
+        if name == "gaierror":
+            phase = "dns"
+            break
+        if name.startswith("SSL"):
+            phase = "tls"
+            break
+        if name in {"ProxyError", "ProxyConnectionError"}:
+            phase = "proxy"
+            break
+        if name == "ConnectTimeout":
+            phase = "connect"
+            break
+        if name == "ReadTimeout":
+            phase = "read"
+            break
+        if name == "WriteTimeout":
+            phase = "write"
+            break
+        if name == "PoolTimeout":
+            phase = "pool"
+            break
+        if name in {"ConnectionResetError", "BrokenPipeError"}:
+            phase = "connection_reset" if name == "ConnectionResetError" else "write"
+            break
+        if name == "ConnectError":
+            phase = "connect"
+
+    transport_error_class = next(
+        (
+            name
+            for name in reversed(transport_names)
+            if name.startswith("SSL")
+            or name
+            in {
+                "ConnectTimeout",
+                "ReadTimeout",
+                "WriteTimeout",
+                "PoolTimeout",
+                "ConnectError",
+                "ProxyError",
+                "ProxyConnectionError",
+                "gaierror",
+                "ConnectionResetError",
+                "BrokenPipeError",
+            }
+        ),
+        transport_names[-1] if transport_names else names[0],
+    )
+    return {
+        "error_class": names[0],
+        "transport_error_class": transport_error_class,
+        "transport_phase": phase,
+        "attempt": attempt,
+        "cause_chain": names,
+    }

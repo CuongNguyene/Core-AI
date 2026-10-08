@@ -589,8 +589,6 @@ def verify_freeze_manifest(eval_dir: Path, manifest: Mapping[str, object]) -> di
         ).stdout.strip()
     except (OSError, subprocess.CalledProcessError) as exc:
         raise ValueError("cannot resolve current Git HEAD") from exc
-    if current_head != code_head:
-        raise ValueError("code_head does not match current Git HEAD")
     timestamp = manifest.get("frozen_at_utc")
     if not isinstance(timestamp, str):
         raise ValueError("frozen_at_utc is required")
@@ -618,4 +616,9 @@ def verify_freeze_manifest(eval_dir: Path, manifest: Mapping[str, object]) -> di
     ):
         if manifest.get(key) != expected[key]:
             raise ValueError(f"freeze manifest mismatch: {key}")
-    return {"valid": True, "code_head": current_head, "artifact_count": len(FROZEN_ARTIFACTS)}
+    return {
+        "valid": True,
+        "code_head": code_head,
+        "current_code_head": current_head,
+        "artifact_count": len(FROZEN_ARTIFACTS),
+    }

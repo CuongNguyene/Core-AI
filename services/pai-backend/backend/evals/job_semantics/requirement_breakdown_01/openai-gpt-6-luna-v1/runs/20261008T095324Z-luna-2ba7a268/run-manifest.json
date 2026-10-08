@@ -1,0 +1,23 @@
+{
+  "api_family": "responses",
+  "concurrency": 1,
+  "dataset_id": "pai-jd-requirement-breakdown-synthetic",
+  "dataset_sha256": "sha256:6b9453a1c000f51a95b0ead39a94aca55eb7582489fca2a1b13550128df32cc5",
+  "dataset_version": "requirement-breakdown-eval-00-v1",
+  "expected_cases": 40,
+  "extractor_spec_sha256": "sha256:b1f32b8813c2aba0b5d632ec5f8d5247aee0085bfe87c160384e094a7789673b",
+  "freeze_manifest_sha256": "sha256:b0dcf60268754008499e4f5330abff9b64264ed9a84c8da3c9bbd9803c2c5ee6",
+  "hard_provider_call_cap": 80,
+  "live_provider_run": true,
+  "no_gold_sent": true,
+  "no_midrun_tuning": true,
+  "nonempty_cases": 40,
+  "privacy_tier": "RESTRICTED",
+  "provider": "openai",
+  "provider_calls_before_run": 0,
+  "requested_model": "gpt-6-luna",
+  "run_id": "20261008T095324Z-luna-2ba7a268",
+  "semantic_fingerprint": "sha256:b479fe2ecce0b7278506c4376e336b0cda916eba9f57c4e73b661e829a867421",
+  "started_at_utc": "2026-10-08T09:53:24.565352Z",
+  "taxonomy_sha256": "sha256:bfb17a8f931e11f8c3e455048e9b4669c0cdd444246a66ade95a287e5a2622b4"
+}

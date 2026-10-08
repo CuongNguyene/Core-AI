@@ -1,0 +1,11 @@
+{
+  "call_cap": 80,
+  "concurrency": 1,
+  "empty_source": "zero calls; completed empty result",
+  "execution": "single sequential pass over all 40 cases; no semantic result inspection until terminal records exist for all cases",
+  "model_drift": "stop immediately before next case; no mixed-model run accepted",
+  "report_recomputation": "offline only; no provider construction/calls",
+  "results": "append-only per-case JSONL; typed structured result hash; no full SDK response persistence",
+  "resume": "new unique run only; never append to or overwrite prior run",
+  "version": "jd-breakdown-openai-luna-runner-v1"
+}

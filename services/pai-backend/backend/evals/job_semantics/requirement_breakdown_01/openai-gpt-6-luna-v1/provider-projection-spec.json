@@ -1,0 +1,28 @@
+{
+  "allowed_payload": {
+    "source_blocks": [
+      "block_id",
+      "source_field",
+      "text"
+    ]
+  },
+  "excluded": [
+    "source_application_ref",
+    "job_posting_url",
+    "case_id",
+    "gold",
+    "expected_statements",
+    "difficulty",
+    "boundary_tags",
+    "review_metadata",
+    "candidate_data",
+    "employee_identity",
+    "salary",
+    "benefits"
+  ],
+  "schema_sha256": "sha256:2eaab8fe6c06ec65041c54e2aa44a5c108cafbb78308fc37afb1f1be11120d36",
+  "source_fields": [
+    "JOB_DESCRIPTION",
+    "JOB_REQUIREMENTS"
+  ]
+}

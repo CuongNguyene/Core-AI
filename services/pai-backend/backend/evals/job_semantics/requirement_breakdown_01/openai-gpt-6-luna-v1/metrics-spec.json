@@ -1,0 +1,36 @@
+{
+  "case_exact": "same statement count and all gold statements matched exactly",
+  "classification": "accuracy, macro-F1 over complete frozen enum set, per-class precision/recall/F1, confusion matrix on exact matched spans only",
+  "cost": "not calculated without approved pinned pricing",
+  "f1": "harmonic mean; zero when precision+recall=0",
+  "operational": [
+    "provider_calls",
+    "retries",
+    "errors",
+    "refusals",
+    "incomplete",
+    "schema_errors",
+    "latency_ms_total_mean_p50_p95",
+    "input_output_total_tokens",
+    "observed_model_identities"
+  ],
+  "precision": "exact matched predictions / predicted statement count; empty/empty=1",
+  "primary": [
+    "statement_f1",
+    "case_exact_decomposition_rate",
+    "statement_type_macro_f1",
+    "capability_relevance_macro_f1",
+    "valid_source_span_rate"
+  ],
+  "provenance_validity": "validated statements / raw provider statements; no raw statements gives 0",
+  "provider_errors": "execution failures, not semantic predictions",
+  "recall": "exact matched gold / gold statement count; empty/empty=1",
+  "slices": [
+    "domain",
+    "language_profile",
+    "difficulty",
+    "boundary_tags"
+  ],
+  "statement_counts": "exact source_field + source_text one-to-one matches",
+  "version": "jd-breakdown-metrics-v1"
+}
