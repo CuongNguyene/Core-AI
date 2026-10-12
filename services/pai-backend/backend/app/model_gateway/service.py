@@ -108,6 +108,7 @@ class ModelGatewayService:
                     output_token_budget=request.output_token_budget,
                     temperature=request.temperature,
                     json_schema=output_schema.model_json_schema(),
+                    response_model=output_schema,
                     document=request.document,
                 )
             )
@@ -158,6 +159,7 @@ class ModelGatewayService:
         output_token_budget: int | None = None,
         temperature: float | None = None,
         json_schema: dict[str, object] | None = None,
+        response_model: type[BaseModel] | None = None,
         document: DocumentInput | None = None,
     ) -> ProviderRequest:
         request = ProviderRequest(
@@ -172,6 +174,8 @@ class ModelGatewayService:
             request = request.model_copy(update={"temperature": temperature})
         if json_schema is not None:
             request = request.model_copy(update={"json_schema": json_schema})
+        if response_model is not None:
+            request = request.model_copy(update={"response_model": response_model})
         return request
 
     def _validate_structured_output(

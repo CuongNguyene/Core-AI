@@ -4,6 +4,7 @@ from app.main import _build_model_provider
 from app.model_gateway.ctpai_gateway import CTPAIGatewayProvider
 from app.model_gateway.gemini import GeminiProvider
 from app.model_gateway.local_vllm import LocalVLLMProvider
+from app.model_gateway.openai_responses import OpenAIResponsesProvider
 
 
 def test_vilao_openai_base_url_selects_chat_completions_provider() -> None:
@@ -90,3 +91,36 @@ def test_gemini_generate_content_endpoint_selects_gemini_provider() -> None:
     assert isinstance(provider, GeminiProvider)
     assert provider.provider_id == "gemini"
     assert provider.is_external is True
+
+
+def test_explicit_openai_provider_selects_responses_adapter_for_api_base_url() -> None:
+    provider = _build_model_provider(
+        provider_id="openai",
+        endpoint="https://api.openai.com/v1",
+        api_key=SecretStr("test-key"),
+        model="gpt-6-luna",
+        timeout_seconds=10,
+        max_retries=1,
+        max_tokens=8192,
+    )
+
+    assert isinstance(provider, OpenAIResponsesProvider)
+    assert provider.provider_id == "openai"
+    assert provider.is_external is True
+    assert provider.protocol == "openai_responses"
+    assert provider.endpoint_origin == "https://api.openai.com"
+
+
+def test_openai_provider_rejects_chat_completions_url_instead_of_misrouting() -> None:
+    import pytest
+
+    with pytest.raises(ValueError, match="HTTPS API base ending in /v1"):
+        _build_model_provider(
+            provider_id="openai",
+            endpoint="https://api.openai.com/v1/chat/completions",
+            api_key=SecretStr("test-key"),
+            model="gpt-6-luna",
+            timeout_seconds=10,
+            max_retries=1,
+            max_tokens=8192,
+        )

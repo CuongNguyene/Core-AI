@@ -108,6 +108,7 @@ from app.matching.repository import (
 from app.matching.service import PreliminaryMatchService
 from app.model_gateway.ctpai_gateway import CTPAIGatewayProvider
 from app.model_gateway.gemini import GeminiProvider
+from app.model_gateway.openai_responses import OpenAIResponsesProvider
 from app.model_gateway.local_vllm import LocalVLLMProvider
 from app.model_gateway.prompts import PromptTemplateRegistry
 from app.model_gateway.providers import ModelProvider, ProviderRegistry
@@ -151,6 +152,16 @@ def _build_model_provider(
     retry_delay_seconds: float = 0.05,
 ) -> ModelProvider:
     """Select the protocol adapter from the configured model endpoint shape."""
+    if provider_id == "openai":
+        return OpenAIResponsesProvider(
+            base_url=endpoint,
+            api_key=api_key,
+            model=model,
+            timeout_seconds=timeout_seconds,
+            max_retries=max_retries,
+            max_tokens=max_tokens,
+            retry_delay_seconds=retry_delay_seconds,
+        )
     if "generativelanguage.googleapis.com" in endpoint or provider_id == "gemini":
         return GeminiProvider(
             endpoint=endpoint,
@@ -187,6 +198,11 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     try:
         yield
     finally:
+        model_provider = getattr(app.state, "model_provider", None)
+        if model_provider is not None:
+            close_model_provider = getattr(model_provider, "close", None)
+            if close_model_provider is not None:
+                await close_model_provider()
         dispatcher = getattr(app.state, "course_generation_dispatcher", None)
         if dispatcher is not None:
             await dispatcher.close()
@@ -256,6 +272,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         retry_delay_seconds=active_settings.model_retry_base_delay_seconds,
     )
     providers.register(configured_provider)
+    app.state.model_provider = configured_provider
     app.state.model_provider_id = configured_provider.provider_id
     app.state.model_gateway = ModelGatewayService(
         prompt_templates=prompt_templates,

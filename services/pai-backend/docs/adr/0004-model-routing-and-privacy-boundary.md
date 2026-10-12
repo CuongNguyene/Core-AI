@@ -48,3 +48,35 @@ provider ADR, danh sách model production hoặc policy retention cho raw conten
 
 Không có database migration hoặc public HTTP API. Đây là internal application
 boundary trong modular monolith.
+
+## Amendment — OpenAI for existing Gemini-backed ModelGateway flows (2026-10-08)
+
+The product owner explicitly approved OpenAI external processing for every
+existing shared ModelGateway flow that previously used Gemini, including the
+restricted CV/JD/document extraction inputs used by those flows. The approved
+provider/model for the current migration is OpenAI Responses API with
+`gpt-6-luna`.
+
+- The approval supersedes the earlier statement that no external provider is
+  approved, but only for existing Gemini-backed ModelGateway consumers. Jev /
+  SystemOne and unrelated data flows are not covered by this approval.
+- `PrivacyGateway.inspect` remains mandatory and runs before routing/transport.
+  Restricted inputs reach OpenAI only when both `EXTERNAL_AI_ENABLED=true` and
+  `EXTERNAL_RESTRICTED_DATA_APPROVED=true`; denied/failed inspection and disabled
+  routing remain fail-closed.
+- Requests use the OpenAI Responses API with strict Structured Outputs for
+  registered schemas, followed by the existing application-side Pydantic
+  validation. Responses are requested with `store=false`; credentials, prompts,
+  CV/JD content, raw documents, and full SDK response objects are not logged.
+- The configured OpenAI reasoning model rejects the shared gateway's
+  `temperature` parameter at its default reasoning effort. The adapter omits
+  that unsupported parameter; it does not approximate it with reasoning effort.
+- There is no Gemini, CTPAI, local-model, or Jev fallback when OpenAI fails.
+  Runtime provider selection is explicit through `MODEL_PROVIDER=openai` and
+  model selection through `MODEL_NAME=gpt-6-luna`.
+- The Gemini adapter remains in source for compatibility/regression and
+  historical scripts. It is no longer the selected provider in the approved
+  local runtime configuration after rollout.
+
+This amendment adds no public route or database migration. Any change in data
+categories, provider scope, or retention behavior requires a new approval.

@@ -158,6 +158,41 @@ def test_restricted_vilao_route_requires_explicit_external_approval() -> None:
     assert route.decision == "approved_external_restricted"
 
 
+def test_restricted_openai_route_requires_both_explicit_gates() -> None:
+    route = RoutingPolicy(
+        external_ai_enabled=True,
+        external_restricted_data_approved=True,
+        external_provider_id="openai",
+        configured_provider_id="openai",
+    ).route(
+        inference_request(DataClassification.RESTRICTED),
+        allow_local(),
+    )
+
+    assert route.provider_id == "openai"
+    assert route.decision == "approved_external_restricted"
+
+
+@pytest.mark.parametrize(
+    ("external_ai_enabled", "restricted_approved"),
+    [(False, True), (True, False)],
+)
+def test_restricted_openai_route_denies_when_either_gate_is_missing(
+    external_ai_enabled: bool,
+    restricted_approved: bool,
+) -> None:
+    with pytest.raises(PrivacyDeniedError):
+        RoutingPolicy(
+            external_ai_enabled=external_ai_enabled,
+            external_restricted_data_approved=restricted_approved,
+            external_provider_id="openai",
+            configured_provider_id="openai",
+        ).route(
+            inference_request(DataClassification.RESTRICTED),
+            allow_local(),
+        )
+
+
 def test_external_route_requires_sanitized_privacy_decision() -> None:
     with pytest.raises(PrivacyDeniedError):
         RoutingPolicy(

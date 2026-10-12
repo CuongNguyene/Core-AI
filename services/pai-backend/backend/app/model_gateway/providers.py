@@ -14,6 +14,7 @@ class ProviderRequest(BaseModel):
     temperature: float = Field(default=0.7, ge=0, le=2)
     max_tokens: int = Field(default=2048, gt=0)
     json_schema: dict[str, object] | None = None
+    response_model: type[BaseModel] | None = None
     document: DocumentInput | None = None
 
 
